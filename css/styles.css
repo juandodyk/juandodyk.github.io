@@ -347,13 +347,18 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
 
-td,
-th {
-  padding: 0; }
+  table {
+      border-collapse: collapse;
+      margin-left: auto;
+    margin-right: auto;
+    }
+
+    table td,
+    table th {
+      padding: 5px;
+      border: 1px solid lightgray;
+    }
 
 @font-face {
   font-family: 'fontello';
@@ -779,3 +784,7 @@ body.post-template .site-header h2 .logo {
 
 .clearfix:after {
   clear: both; }
+
+.highlight {
+  color: #ddd;
+}

@@ -32,11 +32,7 @@
     </head>
     <body>
         
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2>Juan Dodyk</h2>
-          </div>
-        </header>
+        
 
 
 <div class="container clearfix">
@@ -58,23 +54,271 @@
 
             
 
-<p>La pregunta del título no tiene respuesta: el voto es secreto. Igual queremos saber. ¿No se puede hacer trampa? Buena noticia: si suspendemos pretenciones de verdad se puede. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?</p>
+<p>La pregunta del título no tiene respuesta: el voto es secreto. Igual queremos saber. La matemática permite hacer trampa. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?</p>
 
-<h2 id="primer-método:448496e36607547436ff4093d400128c">Primer método</h2>
+<h2 id="primer-modelo:448496e36607547436ff4093d400128c">Primer modelo</h2>
 
-<p>Podemos formular la pregunta así. Numeremos los candidatos de la primera vuelta: Scioli, Macri, Massa, Del Caño, Stolbizer, Rodríguez Saá serán 1, 2, …, 6, respectivamente. Agregamos una opción 7: no ir a votar o votar no afirmativamente (en blanco, nulo, etc.) Llamemos <code>$A_1, A_2, \ldots, A_7$</code> a la cantidad de votos que obtuvo cada candidato en las elecciones generales, respectivamente. Llamemos <code>$B_1$</code> y <code>$B_2$</code> a la cantidad de gente que votó a Scioli y a Macri, resp; y <code>$B_3$</code> al resto, como <code>$A_7$</code>. Lo que buscamos es la matriz de transferencia, es decir una matriz <code>$T$</code> con 7 filas y 3 columnas tal que <code>$T_{ij}$</code> sea la cantidad de votos del candidato <code>$i$</code> en las generales que fueron al candidato <code>$j$</code> en la segunda vuelta. La pregunta ¿a dónde fueron los votos de Massa? se transforma en ¿cuánto valen <code>$T_{3,1}$</code> y <code>$T_{3,2}$</code>?</p>
+<p>Podemos formular la pregunta así. Numeremos los candidatos de la primera vuelta: Scioli, Macri, Massa, Del Caño, Stolbizer, Rodríguez Saá serán 1, 2, …, 6, respectivamente. Agregamos una opción 7: no ir a votar o votar no afirmativamente (en blanco, nulo, etc.) Llamemos <code>$A_1, A_2, \ldots, A_7$</code> a la cantidad de votos que obtuvo cada candidato en las elecciones generales, respectivamente.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Candidato</th>
+<th align="center">Cantidad de votos</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>$A_1$</code></td>
+<td align="center">Scioli</td>
+<td align="center">9002242</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_2$</code></td>
+<td align="center">Macri</td>
+<td align="center">8382610</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_3$</code></td>
+<td align="center">Massa</td>
+<td align="center">5211705</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_4$</code></td>
+<td align="center">Del Caño</td>
+<td align="center">798031</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_5$</code></td>
+<td align="center">Stolbizer</td>
+<td align="center">619051</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_6$</code></td>
+<td align="center">Rodríguez Saá</td>
+<td align="center">407202</td>
+</tr>
+
+<tr>
+<td align="left"><code>$A_7$</code></td>
+<td align="center">No Votó/Blanco</td>
+<td align="center">7642568</td>
+</tr>
+</tbody>
+</table>
+
+<p>Llamemos <code>$B_1$</code> y <code>$B_2$</code> a la cantidad de gente que votó a Scioli y a Macri, respectivamente, en la <em>segunda</em> vuelta; y <code>$B_3$</code> al resto, como <code>$A_7$</code>.</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Candidato</th>
+<th align="center">Cantidad de votos</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left"><code>$B_1$</code></td>
+<td align="center">Scioli</td>
+<td align="center">12198441</td>
+</tr>
+
+<tr>
+<td align="left"><code>$B_2$</code></td>
+<td align="center">Macri</td>
+<td align="center">12903301</td>
+</tr>
+
+<tr>
+<td align="left"><code>$B_3$</code></td>
+<td align="center">No Votó/Blanco</td>
+<td align="center">6962942</td>
+</tr>
+</tbody>
+</table>
+
+<p>Lo que buscamos es la matriz de transferencia, es decir, una matriz <code>$T$</code> con 7 filas y 3 columnas tal que <code>$T_{ij}$</code> sea la cantidad de votos del candidato <code>$i$</code> en las generales que fueron al candidato <code>$j$</code> en la segunda vuelta. La pregunta ¿a dónde fueron los votos de Massa? se transforma en ¿cuánto valen <code>$T_{3,1}$</code> y <code>$T_{3,2}$</code>?</p>
+
+<table>
+<thead>
+<tr>
+<th align="left">Primera vuelta</th>
+<th align="center">Scioli</th>
+<th align="center">Macri</th>
+<th align="center">No Votó/Blanco</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Scioli</td>
+<td align="center"><code>$T_{1,1}$</code></td>
+<td align="center"><code>$T_{1,2}$</code></td>
+<td align="center"><code>$T_{1,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">Macri</td>
+<td align="center"><code>$T_{2,1}$</code></td>
+<td align="center"><code>$T_{2,2}$</code></td>
+<td align="center"><code>$T_{2,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">Massa</td>
+<td align="center"><code>$T_{3,1}$</code></td>
+<td align="center"><code>$T_{3,2}$</code></td>
+<td align="center"><code>$T_{3,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">Del Caño</td>
+<td align="center"><code>$T_{4,1}$</code></td>
+<td align="center"><code>$T_{4,2}$</code></td>
+<td align="center"><code>$T_{4,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">Stolbizer</td>
+<td align="center"><code>$T_{5,1}$</code></td>
+<td align="center"><code>$T_{5,2}$</code></td>
+<td align="center"><code>$T_{5,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">Rodríguez Saá</td>
+<td align="center"><code>$T_{6,1}$</code></td>
+<td align="center"><code>$T_{6,2}$</code></td>
+<td align="center"><code>$T_{6,3}$</code></td>
+</tr>
+
+<tr>
+<td align="left">No Votó/Blanco</td>
+<td align="center"><code>$T_{7,1}$</code></td>
+<td align="center"><code>$T_{7,2}$</code></td>
+<td align="center"><code>$T_{7,3}$</code></td>
+</tr>
+</tbody>
+</table>
 
 <p>Tenemos que <code>$T_{i1}+T_{i2}+T_{i3}=A_i$</code> para cada <code>$i$</code>, ya que los votos del candidato <code>$i$</code> en la primera vuelta tuvieron que ir a algún candidato en la segunda vuelta (o al “no candidato” que representa ausentarse o emitir un voto no afirmativo), así que sumados dan todos los votos iniciales para ese candidato, es decir, <code>$A_i$</code>.</p>
 
 <p>Tenemos, por otro lado, que <code>$T_{1j}+T_{2j}+\cdots+T_{7j}=B_j$</code> para cada <code>$j$</code>, ya que los votos del candidato <code>$j$</code> en la segunda vuelta tuvieron que provenir de algún candidato (o del &ldquo;no candidato&rdquo;) en la primera.</p>
 
-<p>Definimos ahora otra matriz de las mismas dimensiones de <code>$T$</code> así: <code>$X_{ij} = T_{ij}/A_i$</code>. Es decir, <code>$X_{ij}$</code> es la proporción de votantes de <code>$i$</code> en primera vuelta que votaron a <code>$j$</code> en segunda vuelta. Las dos ecuaciones que obtuvimos se reescriben así: <code>$X_{i1}+X_{i2}+X_{i3}=1$</code> para cada <code>$i$</code>, y <code>$AX=B$</code> (donde <code>$AX$</code> es la multiplicación de matrices, entendiendo <code>$A$</code> y <code>$B$</code> como vectores horizontales). (Además sabemos que los números <code>$X_{ij}$</code> son no negativos: <code>$X_{ij}\geqq0$</code>.) Esto da un sistema de ecuaciones lineales con <code>$3\times 7=21$</code> incógnitas y <code>$7+3=10$</code> ecuaciones. Es obviamente indeterminado: el voto sigue siendo secreto.</p>
+<p>Definimos ahora otra matriz de las mismas dimensiones de <code>$T$</code> así: <code>$X_{ij} = T_{ij}/A_i$</code>. Es decir, <code>$X_{ij}$</code> es la proporción de votantes de <code>$i$</code> en primera vuelta que votaron a <code>$j$</code> en segunda vuelta. Las dos ecuaciones que obtuvimos se reescriben así: <code>$X_{i1}+X_{i2}+X_{i3}=1$</code> para cada <code>$i$</code>, y <code>$AX=B$</code>, donde <code>$AX$</code> es la multiplicación de matrices, entendiendo <code>$A$</code> y <code>$B$</code> como vectores horizontales:</p>
+
+<div>$$(\begin{array}{ccc} A_1 & \cdots & A_7 \end{array})\left(\begin{array}{ccc} X_{11}&X_{12}&X_{13} \\ & \vdots& \\ X_{71}&X_{72}&X_{73}\end{array}\right)=\left(\begin{array}{ccc} B_1&B_2&B_3\end{array}\right).$$</div>
+
+<p>(Además sabemos que los números <code>$X_{ij}$</code> son no negativos: <code>$X_{ij}\geqq0$</code>.) Esto da un sistema de ecuaciones lineales con <code>$3\times 7=21$</code> incógnitas y <code>$7+3=10$</code> ecuaciones. Es obviamente indeterminado: el voto sigue siendo secreto.</p>
 
 <p>Pero sabemos algo más que los vectores <code>$A$</code> y <code>$B$</code>. Contamos con los datos desagregados por mesa. Es decir, para cada mesa de votación del país sabemos cuánta gente estaba empadronada para votar ahí, cuánta gente votó a cada candidato, cuánta votó en blanco, nulo, etc. Tanto en las generales como en la segunda vuelta.</p>
 
-<p>Supongamos que en lugar de mirar el resultado de la elección a nivel global (la cantidad de votos total que recibió cada candidato en las elecciones) lo miramos a nivel local, en cada mesa. El razonamiento sobre la transferencia de votos se mantiene: en cada mesa podemos definir una matriz <code>$X$</code> de transferencia de votos en esa mesa. Ahora supongamos que la matriz de transferencia es la misma en cada mesa. Eso es obviamente falso, pero desoigamos a la realidad por un momento. En ese caso, si tomamos cada mesa, con sus vectores horizontales que dan los resultados, y los apilamos formando matrices <code>$A$</code>, de 7 columnas y <code>$P$</code> filas (donde <code>$P$</code> es la cantidad de mesas) y <code>$B$</code>, de 3 columnas y <code>$P$</code> filas, la ecuación matricial <code>$AX=B$</code> se mantiene. Sigue teniendo 21 incógnitas. Pero ahora tiene <code>$7+3P$</code> ecuaciones. Hay más de 90 mil mesas. Seguimos teniendo un sistema de ecuaciones lineales, sólo que pasó de *in*determinado a *sobre*determinado.</p>
+<p>Supongamos que en lugar de mirar el resultado de la elección a nivel global (la cantidad de votos total que recibió cada candidato en las elecciones) lo miramos a nivel local, en cada mesa. El razonamiento sobre la transferencia de votos se mantiene: en cada mesa podemos definir una matriz <code>$X$</code> de transferencia de votos en esa mesa. Ahora <strong>supongamos que la matriz de transferencia es la misma en cada mesa</strong>. Eso es obviamente falso, pero desoigamos a la realidad por un momento. En ese caso, si tomamos cada mesa y apilamos sus vectores horizontales de resultados formando matrices <code>$A$</code>, de 7 columnas y <code>$P$</code> filas (donde <code>$P$</code> es la cantidad de mesas) y <code>$B$</code>, de 3 columnas y <code>$P$</code> filas, la ecuación matricial <code>$AX=B$</code> se mantiene.</p>
 
-<p>Que sea sobredeterminado es bueno. No podemos buscamos la solución, porque no existe, pero podemos buscar la &ldquo;solución&rdquo; que le erre por menos margen. Es decir la matriz <code>$X$</code> tal que la suma de los cuadrados de los elementos de <code>$AX-B$</code> (el error) sea mínima. Hay dos restricciones a no olvidar: <code>$X_{i1}+X_{i2}+X_{i3}=1$</code> para cada <code>$i$</code>, y <code>$X_{ij}\geqq0$</code> para cada <code>$i,j$</code>. Esto deja de ser un sistema de ecuaciones lineales. Pasa a ser un problema de <a href="https://en.wikipedia.org/wiki/Quadratic_programming">programación cuadrática</a>. Y hay algoritmos eficientes que lo resuelven con exactitud.</p>
+<div>$$ \left(\begin{array}{ccc} 87 & 11 & 3 & 113 & 17 & 32 & 80\\69 & 16 & 2 & 104 & 14 & 37 & 104\\80 & 11 & 5 & 102 & 21 & 31 & 95\\72 & 14 & 0 & 95 & 13 & 46 & 104\\ & & & \vdots &  &  &  \end{array}\right)\left(\begin{array}{ccc} X_{11}&X_{12}&X_{13} \\ & \vdots& \\ X_{71}&X_{72}&X_{73}\end{array}\right)=\left(\begin{array}{ccc} 113 & 138 & 92\\101 & 138 & 107\\106 & 139 & 100\\105 & 134 & 105\\ & \vdots & \end{array}\right) $$</div>
+
+<p>Sigue teniendo 21 incógnitas. Pero ahora tiene <code>$7+3P$</code> ecuaciones. Hay más de 90 mil mesas. Seguimos teniendo un sistema de ecuaciones lineales, sólo que pasó de <i>in</i>determinado a <i>sobre</i>determinado.</p>
+
+<p>Que sea sobredeterminado es bueno. No podemos buscar la solución, porque no existe, pero podemos buscar la &ldquo;solución&rdquo; que le erre por menos margen. Es decir la matriz <code>$X$</code> tal que la suma de los cuadrados de los elementos de <code>$AX-B$</code> (el error) sea mínima. Apuntamos, pues, a minimizar <code>$f(X)=\sum_{p=1}^P\sum_{j=1}^3 (AX-B)_{pj}^2$</code>, bajo dos restricciones: <code>$X_{i1}+X_{i2}+X_{i3}=1$</code> para cada <code>$i$</code>, y <code>$X_{ij}\geqq0$</code> para cada <code>$i,j$</code>. Esto deja de ser un sistema de ecuaciones lineales. Pasa a ser un problema de <a href="https://en.wikipedia.org/wiki/Quadratic_programming">programación cuadrática</a>. Y hay algoritmos eficientes que lo resuelven con exactitud. En R se puede implementar así:</p>
+
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%">ei.lls <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">,</span> B<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+  n <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">ncol</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">)</span>
+  m <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">ncol</span><span style="color: #f8f8f2">(</span>B<span style="color: #f8f8f2">)</span>
+  
+  myind <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>i<span style="color: #f8f8f2">,</span> j<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">(</span>i<span style="color: #ae81ff">-1</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">*</span>m<span style="color: #f92672">+</span><span style="color: #f8f8f2">(</span>j<span style="color: #ae81ff">-1</span><span style="color: #f8f8f2">)</span><span style="color: #ae81ff">+1</span>
+  AA <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">t</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">)</span> <span style="color: #f92672">%*%</span> A
+  AB <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">t</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">)</span> <span style="color: #f92672">%*%</span> B
+  Dmat <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">matrix</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> nrow<span style="color: #f92672">=</span>n<span style="color: #f92672">*</span>m<span style="color: #f8f8f2">,</span> ncol<span style="color: #f92672">=</span>n<span style="color: #f92672">*</span>m<span style="color: #f8f8f2">)</span>
+  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>i1 <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>n<span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>i2 <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>n<span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>j <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>m<span style="color: #f8f8f2">)</span>
+    Dmat<span style="color: #f8f8f2">[</span>myind<span style="color: #f8f8f2">(</span>i1<span style="color: #f8f8f2">,</span>j<span style="color: #f8f8f2">),</span> myind<span style="color: #f8f8f2">(</span>i2<span style="color: #f8f8f2">,</span>j<span style="color: #f8f8f2">)]</span> <span style="color: #f92672">&lt;-</span> AA<span style="color: #f8f8f2">[</span>i1<span style="color: #f8f8f2">,</span> i2<span style="color: #f8f8f2">]</span>
+  dvec <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">rep</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> n<span style="color: #f92672">*</span>m<span style="color: #f8f8f2">)</span>
+  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>i <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>n<span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>j <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>m<span style="color: #f8f8f2">)</span> dvec<span style="color: #f8f8f2">[</span>myind<span style="color: #f8f8f2">(</span>i<span style="color: #f8f8f2">,</span>j<span style="color: #f8f8f2">)]</span> <span style="color: #f92672">&lt;-</span> AB<span style="color: #f8f8f2">[</span>i<span style="color: #f8f8f2">,</span>j<span style="color: #f8f8f2">]</span>
+  Amat <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">matrix</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> nrow<span style="color: #f92672">=</span>n<span style="color: #f92672">*</span>m<span style="color: #f92672">+</span>n<span style="color: #f8f8f2">,</span> ncol<span style="color: #f92672">=</span>n<span style="color: #f92672">*</span>m<span style="color: #f8f8f2">)</span>
+  bvec <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">rep</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">0</span><span style="color: #f8f8f2">,</span> n<span style="color: #f92672">*</span>m<span style="color: #f92672">+</span>n<span style="color: #f8f8f2">)</span>
+  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>i <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>n<span style="color: #f8f8f2">)</span> <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>j <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span>m<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span> Amat<span style="color: #f8f8f2">[</span>i<span style="color: #f8f8f2">,</span> myind<span style="color: #f8f8f2">(</span>i<span style="color: #f8f8f2">,</span> j<span style="color: #f8f8f2">)]</span> <span style="color: #f92672">&lt;-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> bvec<span style="color: #f8f8f2">[</span>i<span style="color: #f8f8f2">]</span> <span style="color: #f92672">&lt;-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">}</span>
+  <span style="color: #66d9ef">for</span><span style="color: #f8f8f2">(</span>ij <span style="color: #66d9ef">in</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">:</span><span style="color: #f8f8f2">(</span>n<span style="color: #f92672">*</span>m<span style="color: #f8f8f2">))</span> <span style="color: #f8f8f2">{</span> Amat<span style="color: #f8f8f2">[</span>ij<span style="color: #f92672">+</span>n<span style="color: #f8f8f2">,</span> ij<span style="color: #f8f8f2">]</span> <span style="color: #f92672">&lt;-</span> <span style="color: #ae81ff">1</span><span style="color: #f8f8f2">;</span> bvec<span style="color: #f8f8f2">[</span>ij<span style="color: #f92672">+</span>n<span style="color: #f8f8f2">]</span> <span style="color: #f92672">&lt;-</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #f8f8f2">}</span>
+  
+  <span style="color: #f92672">require</span><span style="color: #f8f8f2">(</span>quadprog<span style="color: #f8f8f2">)</span>
+  sc <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">norm</span><span style="color: #f8f8f2">(</span>Dmat<span style="color: #f8f8f2">,</span><span style="color: #e6db74">&quot;2&quot;</span><span style="color: #f8f8f2">)</span>
+  sol <span style="color: #f92672">&lt;-</span> solve.QP<span style="color: #f8f8f2">(</span>Dmat<span style="color: #f92672">/</span>sc<span style="color: #f8f8f2">,</span> dvec<span style="color: #f92672">/</span>sc<span style="color: #f8f8f2">,</span> <span style="color: #66d9ef">t</span><span style="color: #f8f8f2">(</span>Amat<span style="color: #f8f8f2">),</span> bvec<span style="color: #f8f8f2">,</span> meq<span style="color: #f92672">=</span>n<span style="color: #f8f8f2">)</span>
+  S <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">matrix</span><span style="color: #f8f8f2">(</span>sol<span style="color: #f92672">$</span>solution<span style="color: #f8f8f2">,</span> nrow<span style="color: #f92672">=</span>n<span style="color: #f8f8f2">,</span> ncol<span style="color: #f92672">=</span>m<span style="color: #f8f8f2">,</span> byrow<span style="color: #f92672">=</span><span style="color: #66d9ef">TRUE</span><span style="color: #f8f8f2">)</span>
+  <span style="color: #66d9ef">return</span><span style="color: #f8f8f2">(</span>S<span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">}</span>
+</pre></div>
+
+
+<p>Este es el resultado:</p>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">Scioli</th>
+<th align="center">Macri</th>
+<th align="center">No Votó/Blanco</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">Scioli</td>
+<td align="center">97.68%</td>
+<td align="center">0%</td>
+<td align="center">2.32%</td>
+</tr>
+
+<tr>
+<td align="left">Macri</td>
+<td align="center">0%</td>
+<td align="center">96.19%</td>
+<td align="center">3.81%</td>
+</tr>
+
+<tr>
+<td align="left">Massa</td>
+<td align="center">34.62%</td>
+<td align="center">51.94%</td>
+<td align="center">13.44%</td>
+</tr>
+
+<tr>
+<td align="left">Del Caño</td>
+<td align="center">67.52%</td>
+<td align="center">5.69%</td>
+<td align="center">26.79%</td>
+</tr>
+
+<tr>
+<td align="left">Stolbizer</td>
+<td align="center">17.71%</td>
+<td align="center">33.43%</td>
+<td align="center">48.86%</td>
+</tr>
+
+<tr>
+<td align="left">Rodríguez Saá</td>
+<td align="center">30.76%</td>
+<td align="center">55.59%</td>
+<td align="center">13.65%</td>
+</tr>
+
+<tr>
+<td align="left">No Votó/Blanco</td>
+<td align="center">8.67%</td>
+<td align="center">21.11%</td>
+<td align="center">70.22%</td>
+</tr>
+</tbody>
+</table>
 
 <p>Pero ¿qué quieren decir los números obtenidos? En rigor nada. Dirían una verdad si se cumpliera la suposición (falsa): las matrices de transferencia son las mismas en cada mesa. Ahora, supongamos que no son iguales con exactitud pero sí aproximadamente. Hay casos en los que es plausible y casos en los que no. Si imaginamos un pueblo en el que todos los electores fueron consumidores involuntarios de la misma campaña (entendida como el conjunto de la información política publicada sobre los candidatos: lo que representan, sus propuestas, sus alianzas, etc) podemos suponer que la transferencia de votos fue aproximadamente la misma en todas las escuelas. Es decir, que cada escuela tomó una muestra de gente más o menos al azar. (No se puede decir lo mismo de una escuela cordobesa y una del conurbano bonaerense: el que votó a Massa en Córdoba probablemente lo hizo como segunda opción después de que De la Sota resultara vencido en las PASO (es decir, lo prefiere más por ser aliado a De la Sota que por lo que representa); en el conurbano la lógica sería muy distinta. Estas dos mesas no toman muestras al azar: una toma una muestra de cordobeses y la otra una de bonaerenses, tribus muy distintas en cuanto a la información política relevante que manejan.) Si tomamos esta suposición -en zonas chicas las transferencias son constantes- surge un método que tiene un poco más de verosimilitud que el método incial. Consiste en correr el método inicial sobre esas zonas y luego juntar las matrices locales en una matriz global. Esto se hace pasando de la matriz <code>$X$</code> a la <code>$T$</code> (multiplicando las filas por las sumas de los <code>$A_{pi}$</code> tomados sobre las mesas <code>$p$</code> de la zona) y luego simplemente sumando todas las matrices <code>$T$</code>.</p>
 
@@ -110,7 +354,7 @@ MathJax.Hub.Config({
 code.has-jax {font: inherit;
               font-size: 100%;
               background: inherit;
-              border: inherit;
+              //border: inherit;
               color: #515151;}
 </style>
 </div>
