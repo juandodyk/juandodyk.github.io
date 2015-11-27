@@ -1,0 +1,354 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Juan Dodyk</title>
+        <meta name="author">
+        <meta name="description" content="Blog de Juan Dodyk.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.15" />
+          <link href="http://juandodyk.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Juan Dodyk" />
+          <link href="http://juandodyk.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Juan Dodyk" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://juandodyk.github.io/css/styles.css">
+        <link rel="icon" href="http://juandodyk.github.io/favicon.ico">
+        <link rel="apple-touch-icon" href="http://juandodyk.github.io/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://juandodyk.github.io/css/highlightjs/monokai.css">
+        <script src="http://juandodyk.github.io/js/vendor/modernizr-2.8.0.min.js"></script>
+        <style>
+        .site-header h2 .logo {
+        background: url(http://juandodyk.github.io/img/anr.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://juandodyk.github.io/img/anr.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://juandodyk.github.io/img/anr.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2>Juan Dodyk</h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn" href="http://juandodyk.github.io/" title="">&laquo; </a>
+            
+<h1><a href="http://juandodyk.github.io/post/contando-intendentes-en-py/" title="Contando intendentes en Paraguay">Contando intendentes en Paraguay</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.11.21">2015.11.21</time>
+&middot; 
+    
+    <a href="http://juandodyk.github.io/tags/elecciones">elecciones</a>
+    , 
+    
+    <a href="http://juandodyk.github.io/tags/paraguay">paraguay</a>
+    
+    
+
+</span>
+</footer>
+
+            <p><img src="/img/anr.jpg" alt="Foto" /></p>
+
+<p>En las elecciones municipales del domingo pasado se eligieron intendentes y concejales en los 250 distritos que conforman Paraguay. El primer dato que arrojaron las elecciones, antes de iniciarse, fue precisamente ese número: 250, la cantidad de municipios. En las elecciones de 2010 había 238: 12 menos. En las de 2006 había 230: 8 menos. Podemos decir: la geografía política distrital es dinámica.</p>
+
+<p>El Partido Colorado (ANR) presentó candidatos en todos los distritos. El Partido Liberal (PLRA) se presentó en 200. Lo siguió el Frente Guasú, en 86, y el UNACE en 68.</p>
+
+<div id="container_cant_dis" style="min-height: 500px;"></div>
+
+<p>Esto es hasta cierto punto engañoso, ya que liberales y miembros del Frente Guasú se presentaron en muchos distritos en partidos o alianzas con otro nombre. Los liberales tienen presencia en prácticamente todo el territorio, salvo en como mucho 25 distritos. En cambio, hay 97 distritos (un 39%) en los que el Frente Guasú no tiene presencia, ni siquiera a través de posibles aliados, si no entra en alianza con el PLRA. Es decir, hay 97 distritos en los que para el Frente Guasú es indispensable aliarse al PLRA. Esos distritos concentran un 23% de la población.</p>
+
+<p>El siguiente gráfico muestra cuántos candidatos se presentaron en cada distrito:</p>
+
+<div id="container_cant_parts"></div>
+
+<p>La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
+Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.</p>
+
+<p>¿Cómo quedó el mapa político? Así:</p>
+
+<p><img src="/img/mapa_py.jpg" alt="Mapa" /></p>
+
+<div id="container_cant_dis_ganados"></div>
+<div id="container_pop_dis_ganados"></div>
+
+<p>Lo que se observa en el gráfico anterior es que en cantidad de habitantes el Partido Colorado sólo gobierna al 51% (descontando que tiene la presidencia), mientras que el Partido Liberal gobierna al 34%. Si sumamos Asunción (donde ganó el Partido Revolucionario Febrerista, encabezado por el PLRA), alcanza un 41%. Sólo 10 puntos por debajo de la ANR.</p>
+
+<p>Notar también que el UNACE, con sus 3 intendencias, está tercero, pero sólo gobierna al 0.3% de la población. El Frente Guasú está peor aún: el mismo 0.3% con una intendencia menos.</p>
+
+<div id="container_cant_votos"></div>
+
+<p>Si contamos la cantidad total de votos recibidos por cada partido, el Partido Colorado queda debajo del 50%: sólo obtuvo el 48.2% de los votos totales. El PLRA sumando Asunción obtuvo el 39.7%. De nuevo 10 puntos de diferencia. El Frente Guasú en soledad quedó tercero (descontando Asunción) con el 2.7% de los votos, seguido por el UNACE y su 1.1%.</p>
+
+<p>El Frente Guasú en soledad, librado a la lucha cuerpo a cuerpo por el territorio, es un partido de un dígito, como el trotskismo en Argentina. Y sin embargo el próximo presidente puede salir de ese Frente. Contar intendentes y pintar mapas nos dice algo: sin la ayuda del PLRA ese objetivo es imposible. Pero no hay que dejar de lado el primer número que mencioné: el mapa también cambia.</p>
+
+<p>Fuentes:</p>
+
+<ul>
+<li>Los resultados los tomé de <a href="http://resultados.tsje.gov.py/divulgacion.html">acá</a></li>
+<li>Los números de habitantes de cada distrito los tomé de <a href="https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3">acá</a></li>
+<li>La cantidad de distritos en 2006 y 2010 salió de <a href="http://tsje.gov.py/elecciones-municipales-2006.html">acá</a></li>
+<li>El mapa político fue publicado por ABC.</li>
+<li>Mis gráficos fueron hechos con <a href="http://www.highcharts.com/">Highcharts</a>.</li>
+</ul>
+
+<p>PD: <a href="http://panamarevista.com/2015/11/19/el-dron-del-politologo/">Pablo Touzon</a> escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.</p>
+
+<div><script>
+$(function() {
+
+var cant_parts = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_parts',
+        type: 'column'
+    },
+    title: {
+        text: "Cantidad de candidatos en cada distrito"
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de distritos'
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: 'Cantidad de candidatos'
+        }
+    },
+    series: [{
+        data: JSON.parse('[[3,72],[2,102],[4,51],[6,5],[5,10],[1,5],[7,4],[9,1]]'),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_dis',
+        type: 'column'
+    },
+    title: {
+        text: "Cantidad de distritos en los que se presentó cada partido"
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de distritos'
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: ''
+        },
+        categories: JSON.parse('["PARTIDO COLORADO","PARTIDO LIBERAL RADICAL AUTENTICO","CONCERTACION NACIONAL FRENTE GUASU","PARTIDO UNACE","CONCERTACION JUNTOS PODEMOS","PARTIDO ENCUENTRO NACIONAL","PARTIDO DEMOCRATICO PROGRESISTA","PARTIDO POPULAR TEKOJOJA","PARTIDO PARAGUAY TEKOPYAHU","PARTIDO PATRIA QUERIDA","MOVIMIENTO INDEPENDIENTE POICHO","PARTIDO DE LA JUVENTUD","ALIANZA PARA TODOS","PARTIDO DEMOCRATA CRISTIANO","PARTIDO REVOLUCIONARIO FEBRERISTA","PARTIDO DE LA PARTICIPACION CIUDADANA"]')
+    },
+    series: [{
+        data: JSON.parse('[{"y":250,"color":"#f8020e"},{"y":200,"color":"#069fff"},{"y":86,"color":"#aa72ff"},{"y":68,"color":"#7f7e92"},{"y":18,"color":"#ffcc03"},{"y":16,"color":"#ffff17"},{"y":11,"color":"#97de01"},{"y":11,"color":"#468a6a"},{"y":9,"color":"#913505"},{"y":8,"color":"#57947f"},{"y":5,"color":"#ffedee"},{"y":5,"color":"#8eff29"},{"y":4,"color":"#fffe03"},{"y":3,"color":"#ffffe5"},{"y":2,"color":"#00fe00"},{"y":2,"color":"#ff8754"}]'),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_dis_ganados',
+        type: 'pie'
+    },
+    title: {
+        text: 'Cantidad de distritos ganados por partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.y}', //{point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":149,"color":"#e70000","name":"PARTIDO COLORADO"},{"y":76,"color":"#00bcff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":3,"color":"#917e85","name":"PARTIDO UNACE"},{"y":2,"color":"#9aff00","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":2,"color":"#e7ff00","name":"ALIANZA PARA TODOS"},{"y":2,"color":"#956ce6","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":16,"color":"#7b3e0c","name":"OTROS"}]')
+    }]
+});
+
+var pop_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_pop_dis_ganados',
+        type: 'pie'
+    },
+    title: {
+        text: 'Población de los distritos donde ganó cada partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":3438519,"color":"#ff000c","name":"PARTIDO COLORADO"},{"y":2277736,"color":"#00c6ff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":526408,"color":"#00e506","name":"PARTIDO REVOLUCIONARIO FEBRERISTA"},{"y":125429,"color":"#ffffff","name":"ALIANZA ENCARNACION AL FRENTE"},{"y":72145,"color":"#f2ee00","name":"ALIANZA PARA TODOS"},{"y":59480,"color":"#97ff03","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":35275,"color":"#95cca6","name":"ALIANZA SAN JUAN DIFERENTE"},{"y":28332,"color":"#93c4a4","name":"ALIANZA TODOS POR YBY YAU"},{"y":23473,"color":"#a654ff","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":22629,"color":"#80756f","name":"PARTIDO UNACE"},{"y":144438,"color":"#815010","name":"OTROS"}]')
+    }]
+});
+
+var cant_votos = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_votos',
+        type: 'pie'
+    },
+    title: {
+        text: 'Cantidad de votos totales obtenidos por cada partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":1015058,"color":"#ff0000","name":"PARTIDO COLORADO"},{"y":722238,"color":"#00b3ff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":114760,"color":"#00ff00","name":"PARTIDO REVOLUCIONARIO FEBRERISTA"},{"y":55985,"color":"#9966ff","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":22535,"color":"#808080","name":"PARTIDO UNACE"},{"y":19378,"color":"#ffcc00","name":"CONCERTACION JUNTOS PODEMOS"},{"y":16475,"color":"#99ff00","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":16410,"color":"#ffffff","name":"ALIANZA ENCARNACION AL FRENTE"},{"y":124380,"color":"#783c1e","name":"OTROS"}]')
+    }]
+});
+
+});
+</script></div>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fjuandodyk.github.io%2fpost%2fcontando-intendentes-en-py%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Contando%20intendentes%20en%20Paraguay&amp;url=http%3a%2f%2fjuandodyk.github.io%2fpost%2fcontando-intendentes-en-py%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fjuandodyk.github.io%2fpost%2fcontando-intendentes-en-py%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjuandodyk.github.io%2fpost%2fcontando-intendentes-en-py%2f&title=Contando%20intendentes%20en%20Paraguay" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'juandodyk';
+    var disqus_identifier = 'http:\/\/juandodyk.github.io\/post\/contando-intendentes-en-py\/';
+    var disqus_title = 'Contando intendentes en Paraguay';
+    var disqus_url = 'http:\/\/juandodyk.github.io\/post\/contando-intendentes-en-py\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://juandodyk.github.io/img/yo.jpg" alt="John Dodyk" />
+  <p class="name"> 
+  <strong>John Dodyk</strong></p>
+  <p class="address">Avellaneda, PBA, Argentina</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+<li><a href="//twitter.com/tuvedengueyque" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
+
+<li><a href="//facebook.com/juan.dodyk" class="icon-facebook-squared" target="_blank" title="Facebook"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/juandodyk" class="icon-instagram" target="_blank" title="Instagram"></a></li>
+
+
+
+<li><a href="//github.com/juandodyk" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://juandodyk.github.io/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://juandodyk.github.io/post/index.xml" title="RSS"></a>
+        <p>&copy; 2015 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/juandodyk.github.io\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://juandodyk.github.io/js/plugins.js"></script>
+
+</body>
+</html>
+

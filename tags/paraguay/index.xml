@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paraguay on Juan Dodyk</title>
+    <link>http://juandodyk.github.io/tags/paraguay/</link>
+    <description>Recent content in Paraguay on Juan Dodyk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://juandodyk.github.io/tags/paraguay/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Contando intendentes en Paraguay</title>
+      <link>http://juandodyk.github.io/post/contando-intendentes-en-py/</link>
+      <pubDate>Sat, 21 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/contando-intendentes-en-py/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/anr.jpg&#34; alt=&#34;Foto&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En las elecciones municipales del domingo pasado se eligieron intendentes y concejales en los 250 distritos que conforman Paraguay. El primer dato que arrojaron las elecciones, antes de iniciarse, fue precisamente ese número: 250, la cantidad de municipios. En las elecciones de 2010 había 238: 12 menos. En las de 2006 había 230: 8 menos. Podemos decir: la geografía política distrital es dinámica.&lt;/p&gt;
+
+&lt;p&gt;El Partido Colorado (ANR) presentó candidatos en todos los distritos. El Partido Liberal (PLRA) se presentó en 200. Lo siguió el Frente Guasú, en 86, y el UNACE en 68.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis&#34; style=&#34;min-height: 500px;&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Esto es hasta cierto punto engañoso, ya que liberales y miembros del Frente Guasú se presentaron en muchos distritos en partidos o alianzas con otro nombre. Los liberales tienen presencia en prácticamente todo el territorio, salvo en como mucho 25 distritos. En cambio, hay 97 distritos (un 39%) en los que el Frente Guasú no tiene presencia, ni siquiera a través de posibles aliados, si no entra en alianza con el PLRA. Es decir, hay 97 distritos en los que para el Frente Guasú es indispensable aliarse al PLRA. Esos distritos concentran un 23% de la población.&lt;/p&gt;
+
+&lt;p&gt;El siguiente gráfico muestra cuántos candidatos se presentaron en cada distrito:&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_parts&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
+Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo quedó el mapa político? Así:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/mapa_py.jpg&#34; alt=&#34;Mapa&#34; /&gt;&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis_ganados&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;container_pop_dis_ganados&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo que se observa en el gráfico anterior es que en cantidad de habitantes el Partido Colorado sólo gobierna al 51% (descontando que tiene la presidencia), mientras que el Partido Liberal gobierna al 34%. Si sumamos Asunción (donde ganó el Partido Revolucionario Febrerista, encabezado por el PLRA), alcanza un 41%. Sólo 10 puntos por debajo de la ANR.&lt;/p&gt;
+
+&lt;p&gt;Notar también que el UNACE, con sus 3 intendencias, está tercero, pero sólo gobierna al 0.3% de la población. El Frente Guasú está peor aún: el mismo 0.3% con una intendencia menos.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_votos&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Si contamos la cantidad total de votos recibidos por cada partido, el Partido Colorado queda debajo del 50%: sólo obtuvo el 48.2% de los votos totales. El PLRA sumando Asunción obtuvo el 39.7%. De nuevo 10 puntos de diferencia. El Frente Guasú en soledad quedó tercero (descontando Asunción) con el 2.7% de los votos, seguido por el UNACE y su 1.1%.&lt;/p&gt;
+
+&lt;p&gt;El Frente Guasú en soledad, librado a la lucha cuerpo a cuerpo por el territorio, es un partido de un dígito, como el trotskismo en Argentina. Y sin embargo el próximo presidente puede salir de ese Frente. Contar intendentes y pintar mapas nos dice algo: sin la ayuda del PLRA ese objetivo es imposible. Pero no hay que dejar de lado el primer número que mencioné: el mapa también cambia.&lt;/p&gt;
+
+&lt;p&gt;Fuentes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;El mapa político fue publicado por ABC.&lt;/li&gt;
+&lt;li&gt;Mis gráficos fueron hechos con &lt;a href=&#34;http://www.highcharts.com/&#34;&gt;Highcharts&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PD: &lt;a href=&#34;http://panamarevista.com/2015/11/19/el-dron-del-politologo/&#34;&gt;Pablo Touzon&lt;/a&gt; escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.&lt;/p&gt;
+
+&lt;div&gt;&lt;script&gt;
+$(function() {
+
+var cant_parts = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_parts&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de candidatos en cada distrito&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;Cantidad de candidatos&#39;
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[[3,72],[2,102],[4,51],[6,5],[5,10],[1,5],[7,4],[9,1]]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de distritos en los que se presentó cada partido&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;&#39;
+        },
+        categories: JSON.parse(&#39;[&#34;PARTIDO COLORADO&#34;,&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;,&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;,&#34;PARTIDO UNACE&#34;,&#34;CONCERTACION JUNTOS PODEMOS&#34;,&#34;PARTIDO ENCUENTRO NACIONAL&#34;,&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;,&#34;PARTIDO POPULAR TEKOJOJA&#34;,&#34;PARTIDO PARAGUAY TEKOPYAHU&#34;,&#34;PARTIDO PATRIA QUERIDA&#34;,&#34;MOVIMIENTO INDEPENDIENTE POICHO&#34;,&#34;PARTIDO DE LA JUVENTUD&#34;,&#34;ALIANZA PARA TODOS&#34;,&#34;PARTIDO DEMOCRATA CRISTIANO&#34;,&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;,&#34;PARTIDO DE LA PARTICIPACION CIUDADANA&#34;]&#39;)
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:250,&#34;color&#34;:&#34;#f8020e&#34;},{&#34;y&#34;:200,&#34;color&#34;:&#34;#069fff&#34;},{&#34;y&#34;:86,&#34;color&#34;:&#34;#aa72ff&#34;},{&#34;y&#34;:68,&#34;color&#34;:&#34;#7f7e92&#34;},{&#34;y&#34;:18,&#34;color&#34;:&#34;#ffcc03&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#ffff17&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#97de01&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#468a6a&#34;},{&#34;y&#34;:9,&#34;color&#34;:&#34;#913505&#34;},{&#34;y&#34;:8,&#34;color&#34;:&#34;#57947f&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#ffedee&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#8eff29&#34;},{&#34;y&#34;:4,&#34;color&#34;:&#34;#fffe03&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#ffffe5&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#00fe00&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#ff8754&#34;}]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de distritos ganados por partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.y}&#39;, //{point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:149,&#34;color&#34;:&#34;#e70000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:76,&#34;color&#34;:&#34;#00bcff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#917e85&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#9aff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#e7ff00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#956ce6&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#7b3e0c&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var pop_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_pop_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Población de los distritos donde ganó cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:3438519,&#34;color&#34;:&#34;#ff000c&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:2277736,&#34;color&#34;:&#34;#00c6ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:526408,&#34;color&#34;:&#34;#00e506&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:125429,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:72145,&#34;color&#34;:&#34;#f2ee00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:59480,&#34;color&#34;:&#34;#97ff03&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:35275,&#34;color&#34;:&#34;#95cca6&#34;,&#34;name&#34;:&#34;ALIANZA SAN JUAN DIFERENTE&#34;},{&#34;y&#34;:28332,&#34;color&#34;:&#34;#93c4a4&#34;,&#34;name&#34;:&#34;ALIANZA TODOS POR YBY YAU&#34;},{&#34;y&#34;:23473,&#34;color&#34;:&#34;#a654ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22629,&#34;color&#34;:&#34;#80756f&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:144438,&#34;color&#34;:&#34;#815010&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var cant_votos = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_votos&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de votos totales obtenidos por cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:1015058,&#34;color&#34;:&#34;#ff0000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:722238,&#34;color&#34;:&#34;#00b3ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:114760,&#34;color&#34;:&#34;#00ff00&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:55985,&#34;color&#34;:&#34;#9966ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22535,&#34;color&#34;:&#34;#808080&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:19378,&#34;color&#34;:&#34;#ffcc00&#34;,&#34;name&#34;:&#34;CONCERTACION JUNTOS PODEMOS&#34;},{&#34;y&#34;:16475,&#34;color&#34;:&#34;#99ff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:16410,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:124380,&#34;color&#34;:&#34;#783c1e&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+});
+&lt;/script&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elecciones municipales en Paraguay</title>
+      <link>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</link>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</guid>
+      <description>
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://juandodyk.github.io/img/anr_cartes.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;El presidente Horacio Cartes, del Partido Colorado (ANR), tomó la decisión de nacionalizar la elección. Se erigió como jefe de campaña y definió las elecciones como un &amp;ldquo;gran referéndum&amp;rdquo; de su gobierno. Perdió.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;La gran derrota del Partido Colorado se dio en Asunción, donde perdió su candidato Arnaldo Samaniego, en manos de Mario Ferreiro, por una diferencia de 23.000 votos entre los dos postulantes. [11 puntos porcentuales.]&lt;/p&gt;
+
+&lt;p&gt;Otra de las notas negativas para la ANR es que en Central solo se quedaron con 6 intendencias de las 19 posibles, el resto fue para el Partido Liberal Radical Auténtico (PLRA). Este es el departamento con mayor caudal de electores.&lt;/p&gt;
+
+&lt;p&gt;No obstante, la ANR logró imponerse en 148 distritos a nivel país, 10 más que lo obtenido en las elecciones municipales del 2010. Por eso, los analistas refieren que no es una tragedia para el partido oficialista y podrá reponerse rápidamente.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/cartes-el-gran-perdedor-las-elecciones-municipales-n946377.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No es una tragedia para el partido. Ni para el bipartidismo. Sí para el liderazgo de Cartes dentro del Partido Colorado, que podría estar en disputa a partir de ahora, de cara a las elecciones generales del 2018.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;El vicepresidente Juan Afara sufrió la humillante derrota en su propio pueblo por el PDP, de Desirée Masi. En vez de resolver con inteligencia una interna, tomó el camino de la prepotencia y así le fue. Víctor Casas era intendente colorado, pero fue expulsado del partido por problemas con el matrimonio Afara. Se candidató por el PDP y asestó un duro golpe al vicepresidente.&lt;/p&gt;
+
+&lt;p&gt;Así como Asunción, otra derrota catastrófica para la ANR es Encarnación. Luis Yd, en una puja de infarto, se impuso anoche por 11 votos al candidato colorado que tuvo a su favor la poderosa estructura de Yacyretá y la Gobernación de Itapúa. Un golpe para el gobernador Luis Gneiting y Afara.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/el-voto-castigo-golpea-los-caudillos-la-anr-n946306.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;En Encarnación la oposición ganó por 100 votos, aclaran. Con su victoria, el opositor del Partido Patria Querida rompe una hegemonía de 87 años [del Partido Colorado].&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/en-encarnacion-oposicion-gano-por-100-votos-aclaran&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Se dice que Cartes, empresario tabacalero vinculado al narcotráfico, compró la estructura del Partido Colorado. Eso lo llevó al poder en las elecciones de 2013, tras el golpe parlamentario a Fernando Lugo. Pero su estilo de conducción del partido, calificado como prepotente, no está dando resultados electorales. Es posible que los dirigentes colorados desplazados impulsen un liderazgo alternativo.&lt;/p&gt;
+
+&lt;p&gt;Por otra parte, Fernando Lugo también fue vencido. En Asunción no apoyó al opositor Mario Ferreiro sino a Ricardo Meyer, que quedó tercero con el 4.5% de los votos.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Tras las elecciones municipales, en el Frente Guasu se habla como posible un “paso al costado” de Fernando Lugo, y la elección de un nuevo líder. La idea sería que el mismo negocie &amp;ldquo;con todos&amp;rdquo; (¿incluso con los colorados?) instalar la reelección para el 2018.&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/lugo-piensa-dejar-frente-guasu-para-negociar-con-todos-la-reeleccin&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

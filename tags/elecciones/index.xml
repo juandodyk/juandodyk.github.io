@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Elecciones on Juan Dodyk</title>
+    <link>http://juandodyk.github.io/tags/elecciones/</link>
+    <description>Recent content in Elecciones on Juan Dodyk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://juandodyk.github.io/tags/elecciones/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Contando intendentes en Paraguay</title>
+      <link>http://juandodyk.github.io/post/contando-intendentes-en-py/</link>
+      <pubDate>Sat, 21 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/contando-intendentes-en-py/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/anr.jpg&#34; alt=&#34;Foto&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En las elecciones municipales del domingo pasado se eligieron intendentes y concejales en los 250 distritos que conforman Paraguay. El primer dato que arrojaron las elecciones, antes de iniciarse, fue precisamente ese número: 250, la cantidad de municipios. En las elecciones de 2010 había 238: 12 menos. En las de 2006 había 230: 8 menos. Podemos decir: la geografía política distrital es dinámica.&lt;/p&gt;
+
+&lt;p&gt;El Partido Colorado (ANR) presentó candidatos en todos los distritos. El Partido Liberal (PLRA) se presentó en 200. Lo siguió el Frente Guasú, en 86, y el UNACE en 68.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis&#34; style=&#34;min-height: 500px;&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Esto es hasta cierto punto engañoso, ya que liberales y miembros del Frente Guasú se presentaron en muchos distritos en partidos o alianzas con otro nombre. Los liberales tienen presencia en prácticamente todo el territorio, salvo en como mucho 25 distritos. En cambio, hay 97 distritos (un 39%) en los que el Frente Guasú no tiene presencia, ni siquiera a través de posibles aliados, si no entra en alianza con el PLRA. Es decir, hay 97 distritos en los que para el Frente Guasú es indispensable aliarse al PLRA. Esos distritos concentran un 23% de la población.&lt;/p&gt;
+
+&lt;p&gt;El siguiente gráfico muestra cuántos candidatos se presentaron en cada distrito:&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_parts&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
+Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo quedó el mapa político? Así:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/mapa_py.jpg&#34; alt=&#34;Mapa&#34; /&gt;&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis_ganados&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;container_pop_dis_ganados&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo que se observa en el gráfico anterior es que en cantidad de habitantes el Partido Colorado sólo gobierna al 51% (descontando que tiene la presidencia), mientras que el Partido Liberal gobierna al 34%. Si sumamos Asunción (donde ganó el Partido Revolucionario Febrerista, encabezado por el PLRA), alcanza un 41%. Sólo 10 puntos por debajo de la ANR.&lt;/p&gt;
+
+&lt;p&gt;Notar también que el UNACE, con sus 3 intendencias, está tercero, pero sólo gobierna al 0.3% de la población. El Frente Guasú está peor aún: el mismo 0.3% con una intendencia menos.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_votos&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Si contamos la cantidad total de votos recibidos por cada partido, el Partido Colorado queda debajo del 50%: sólo obtuvo el 48.2% de los votos totales. El PLRA sumando Asunción obtuvo el 39.7%. De nuevo 10 puntos de diferencia. El Frente Guasú en soledad quedó tercero (descontando Asunción) con el 2.7% de los votos, seguido por el UNACE y su 1.1%.&lt;/p&gt;
+
+&lt;p&gt;El Frente Guasú en soledad, librado a la lucha cuerpo a cuerpo por el territorio, es un partido de un dígito, como el trotskismo en Argentina. Y sin embargo el próximo presidente puede salir de ese Frente. Contar intendentes y pintar mapas nos dice algo: sin la ayuda del PLRA ese objetivo es imposible. Pero no hay que dejar de lado el primer número que mencioné: el mapa también cambia.&lt;/p&gt;
+
+&lt;p&gt;Fuentes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;El mapa político fue publicado por ABC.&lt;/li&gt;
+&lt;li&gt;Mis gráficos fueron hechos con &lt;a href=&#34;http://www.highcharts.com/&#34;&gt;Highcharts&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PD: &lt;a href=&#34;http://panamarevista.com/2015/11/19/el-dron-del-politologo/&#34;&gt;Pablo Touzon&lt;/a&gt; escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.&lt;/p&gt;
+
+&lt;div&gt;&lt;script&gt;
+$(function() {
+
+var cant_parts = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_parts&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de candidatos en cada distrito&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;Cantidad de candidatos&#39;
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[[3,72],[2,102],[4,51],[6,5],[5,10],[1,5],[7,4],[9,1]]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de distritos en los que se presentó cada partido&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;&#39;
+        },
+        categories: JSON.parse(&#39;[&#34;PARTIDO COLORADO&#34;,&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;,&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;,&#34;PARTIDO UNACE&#34;,&#34;CONCERTACION JUNTOS PODEMOS&#34;,&#34;PARTIDO ENCUENTRO NACIONAL&#34;,&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;,&#34;PARTIDO POPULAR TEKOJOJA&#34;,&#34;PARTIDO PARAGUAY TEKOPYAHU&#34;,&#34;PARTIDO PATRIA QUERIDA&#34;,&#34;MOVIMIENTO INDEPENDIENTE POICHO&#34;,&#34;PARTIDO DE LA JUVENTUD&#34;,&#34;ALIANZA PARA TODOS&#34;,&#34;PARTIDO DEMOCRATA CRISTIANO&#34;,&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;,&#34;PARTIDO DE LA PARTICIPACION CIUDADANA&#34;]&#39;)
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:250,&#34;color&#34;:&#34;#f8020e&#34;},{&#34;y&#34;:200,&#34;color&#34;:&#34;#069fff&#34;},{&#34;y&#34;:86,&#34;color&#34;:&#34;#aa72ff&#34;},{&#34;y&#34;:68,&#34;color&#34;:&#34;#7f7e92&#34;},{&#34;y&#34;:18,&#34;color&#34;:&#34;#ffcc03&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#ffff17&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#97de01&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#468a6a&#34;},{&#34;y&#34;:9,&#34;color&#34;:&#34;#913505&#34;},{&#34;y&#34;:8,&#34;color&#34;:&#34;#57947f&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#ffedee&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#8eff29&#34;},{&#34;y&#34;:4,&#34;color&#34;:&#34;#fffe03&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#ffffe5&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#00fe00&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#ff8754&#34;}]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de distritos ganados por partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.y}&#39;, //{point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:149,&#34;color&#34;:&#34;#e70000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:76,&#34;color&#34;:&#34;#00bcff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#917e85&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#9aff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#e7ff00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#956ce6&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#7b3e0c&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var pop_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_pop_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Población de los distritos donde ganó cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:3438519,&#34;color&#34;:&#34;#ff000c&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:2277736,&#34;color&#34;:&#34;#00c6ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:526408,&#34;color&#34;:&#34;#00e506&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:125429,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:72145,&#34;color&#34;:&#34;#f2ee00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:59480,&#34;color&#34;:&#34;#97ff03&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:35275,&#34;color&#34;:&#34;#95cca6&#34;,&#34;name&#34;:&#34;ALIANZA SAN JUAN DIFERENTE&#34;},{&#34;y&#34;:28332,&#34;color&#34;:&#34;#93c4a4&#34;,&#34;name&#34;:&#34;ALIANZA TODOS POR YBY YAU&#34;},{&#34;y&#34;:23473,&#34;color&#34;:&#34;#a654ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22629,&#34;color&#34;:&#34;#80756f&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:144438,&#34;color&#34;:&#34;#815010&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var cant_votos = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_votos&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de votos totales obtenidos por cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:1015058,&#34;color&#34;:&#34;#ff0000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:722238,&#34;color&#34;:&#34;#00b3ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:114760,&#34;color&#34;:&#34;#00ff00&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:55985,&#34;color&#34;:&#34;#9966ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22535,&#34;color&#34;:&#34;#808080&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:19378,&#34;color&#34;:&#34;#ffcc00&#34;,&#34;name&#34;:&#34;CONCERTACION JUNTOS PODEMOS&#34;},{&#34;y&#34;:16475,&#34;color&#34;:&#34;#99ff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:16410,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:124380,&#34;color&#34;:&#34;#783c1e&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+});
+&lt;/script&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elecciones municipales en Paraguay</title>
+      <link>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</link>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</guid>
+      <description>
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://juandodyk.github.io/img/anr_cartes.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;El presidente Horacio Cartes, del Partido Colorado (ANR), tomó la decisión de nacionalizar la elección. Se erigió como jefe de campaña y definió las elecciones como un &amp;ldquo;gran referéndum&amp;rdquo; de su gobierno. Perdió.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;La gran derrota del Partido Colorado se dio en Asunción, donde perdió su candidato Arnaldo Samaniego, en manos de Mario Ferreiro, por una diferencia de 23.000 votos entre los dos postulantes. [11 puntos porcentuales.]&lt;/p&gt;
+
+&lt;p&gt;Otra de las notas negativas para la ANR es que en Central solo se quedaron con 6 intendencias de las 19 posibles, el resto fue para el Partido Liberal Radical Auténtico (PLRA). Este es el departamento con mayor caudal de electores.&lt;/p&gt;
+
+&lt;p&gt;No obstante, la ANR logró imponerse en 148 distritos a nivel país, 10 más que lo obtenido en las elecciones municipales del 2010. Por eso, los analistas refieren que no es una tragedia para el partido oficialista y podrá reponerse rápidamente.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/cartes-el-gran-perdedor-las-elecciones-municipales-n946377.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No es una tragedia para el partido. Ni para el bipartidismo. Sí para el liderazgo de Cartes dentro del Partido Colorado, que podría estar en disputa a partir de ahora, de cara a las elecciones generales del 2018.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;El vicepresidente Juan Afara sufrió la humillante derrota en su propio pueblo por el PDP, de Desirée Masi. En vez de resolver con inteligencia una interna, tomó el camino de la prepotencia y así le fue. Víctor Casas era intendente colorado, pero fue expulsado del partido por problemas con el matrimonio Afara. Se candidató por el PDP y asestó un duro golpe al vicepresidente.&lt;/p&gt;
+
+&lt;p&gt;Así como Asunción, otra derrota catastrófica para la ANR es Encarnación. Luis Yd, en una puja de infarto, se impuso anoche por 11 votos al candidato colorado que tuvo a su favor la poderosa estructura de Yacyretá y la Gobernación de Itapúa. Un golpe para el gobernador Luis Gneiting y Afara.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/el-voto-castigo-golpea-los-caudillos-la-anr-n946306.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;En Encarnación la oposición ganó por 100 votos, aclaran. Con su victoria, el opositor del Partido Patria Querida rompe una hegemonía de 87 años [del Partido Colorado].&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/en-encarnacion-oposicion-gano-por-100-votos-aclaran&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Se dice que Cartes, empresario tabacalero vinculado al narcotráfico, compró la estructura del Partido Colorado. Eso lo llevó al poder en las elecciones de 2013, tras el golpe parlamentario a Fernando Lugo. Pero su estilo de conducción del partido, calificado como prepotente, no está dando resultados electorales. Es posible que los dirigentes colorados desplazados impulsen un liderazgo alternativo.&lt;/p&gt;
+
+&lt;p&gt;Por otra parte, Fernando Lugo también fue vencido. En Asunción no apoyó al opositor Mario Ferreiro sino a Ricardo Meyer, que quedó tercero con el 4.5% de los votos.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Tras las elecciones municipales, en el Frente Guasu se habla como posible un “paso al costado” de Fernando Lugo, y la elección de un nuevo líder. La idea sería que el mismo negocie &amp;ldquo;con todos&amp;rdquo; (¿incluso con los colorados?) instalar la reelección para el 2018.&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/lugo-piensa-dejar-frente-guasu-para-negociar-con-todos-la-reeleccin&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015</title>
+      <link>http://juandodyk.github.io/post/elecciones-exactas/</link>
+      <pubDate>Sun, 20 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/elecciones-exactas/</guid>
+      <description>
+
+&lt;p&gt;Se votaron consejeros estudiantiles (obligatorio) y representantes del CECEN (no obligatorio). Votaron 5675 personas para consejo y 2528 para centro (el 44%).&lt;/p&gt;
+
+&lt;h2 id=&#34;resultados:9894787ee065505e574858cea67f49ec&#34;&gt;Resultados&lt;/h2&gt;
+
+&lt;p&gt;Se esperaba que gane el FEM (la Mella). Arrasó: 44% para consejo, 51% para centro. El segundo puesto estaba peleado entre la Izquierda al Frente (PO + Nuevo MAS + Izquierda Socialista + La Corriente) y Exactas Puede Más (La Cámpora + Nuevo Encuentro + Mov Evita + Seamos Libres). Se lo llevó la izquierda con facilidad: 21% tanto para consejo como para centro, quedándose con el consejero de la minoría. EPM sacó 16% para consejo y lo mismo para centro. Las dos listas restantes, Cambio de Base (Bandera Negra, anarquistas) y Nuevo Espacio (reformistas), fueron irrelevantes.&lt;/p&gt;
+
+&lt;h2 id=&#34;fem:9894787ee065505e574858cea67f49ec&#34;&gt;FEM&lt;/h2&gt;
+
+&lt;p&gt;El FEM hizo una elección notable. Tanto en comparación con años anteriores (27% en 2013, 35% en 2014) como en comparación con otras facultades (se profundizó la caída de la Mella en todas excepto Exactas, Psicología y -por aliarse al ganador- Fadu). Es récord histórico: sólo se puede comparar con la elección de 2011 (43% para consejo, 46% para centro). Esto se explica por los siguientes motivos: 1) una buena gestión, 2) un uso racional de los recursos de poder, 3) la homogeneidad y presencia visible en espacios académicos de su base militante, y 4) el apoyo de los estudiantes a su tratamiento del conflicto presupuestario.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Gestión.&lt;/em&gt; El FEM conducía el centro, y por lo tanto contó con la ventaja de ser oficialismo. Esto rindió electoralmente por su buena gestión. El CECEN amplió y mejoró espacios públicos y servicios (nuevo bar, mejoras en la biblioteca Noriega y el sum, desayuno y merienda baratos). Funcionó como herramienta gremial en los conflictos que surgieron (CBC, Tecnópolis, Becas Bicentenario, presupuesto). Tuvo una buena política de comunicación (carteles, presencia en redes sociales, asambleas). Y ofreció espacios de participación a los estudiantes (comisiones de carrera, comisiones del CECEN) que alcanzaron el objetivo mínimo de llevar a cabo actividades abiertas. En resumen: hizo bien lo que debe hacer un centro de estudiantes. Lo cual no es poco, dada la pésima gestión de la Izquierda al Frente en 2014.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Manejo de recursos de poder.&lt;/em&gt; Los logros de gestión en el CECEN fueron capitalizados políticamente por el FEM. La estrategia para conseguir esto no fue la obvia (ponerle el sello de la agrupación a todo). Se apostó al CECEN como vehículo de acción política jugando inteligentemente con sus límites. Se invirtieron los recursos de poder racionalmente: el CECEN se expandió donde fue más redituable para el FEM y se detuvo o retrocedió en los terrenos más adversos, menos rendidores o más riesgosos.&lt;/p&gt;
+
+&lt;p&gt;El FEM apostó al fortalecimiento y ampliación institucional del CECEN. Durante el año hizo sus campañas a través del centro sin la firma FEM. Con esto marcó la cancha a las demás agrupaciones: usó la legitimidad que da el sello CECEN para imponer los términos de la discusión pública (el mejor ejemplo: instalar el hashtag #DefendamosExactas). Al mismo tiempo amplió los espacios de representación: impulsó actividades desde las comisiones de carrera que saturaron esa agenda y cooptaron voluntades no partidarias.&lt;/p&gt;
+
+&lt;p&gt;Pero así como el CECEN se expandió en espacios de participación bajo la conducción hegemónica del FEM, en otros espacios mostró nula iniciativa o incluso retrocesos por tensiones con otros actores que no quiso o no pudo resolver. Hubo tensiones con los &amp;ldquo;becarios&amp;rdquo;: trabajadores de las fotocopiadoras y kioskos del centro, que -¿sorprende a alguien?- están en negro y ganan poco. Algunos de ellos son independientes u opositores, y les costaron la elección de centro en 2013. El FEM a principio de este año intentó echar a una administradora no partidaria y hacer electivos esos cargos para asegurarse el control de ese espacio de poder. Intentó justificarlo públicamente y falló.&lt;/p&gt;
+
+&lt;p&gt;También hubo tensiones con las otras agrupaciones, cansadas de que les roben proyectos o campañas. Y con las autoridades y los consejeros de otros claustros: si bien hubo un diálogo fluido, el FEM no dudó en traicionarlos y jugar su propio juego cuando le resultó conveniente (reunirse con el rector Barbieri por el conflicto presupuestario a espaldas de las autoridades de la facultad). Lo cual tiene como costo el debilitamiento de su posición en el consejo directivo para avanzar proyectos a escala superior a la del CECEN. Por último, el FEM convive con una tensión con la institucionalidad misma del centro: el CECEN no tiene estatuto ni personería jurídica. El FEM calcula que la dificultad y el costo de llevar adelante estas reformas superan los posibles beneficios.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Homogeneidad y presencia.&lt;/em&gt; El FEM no es una alianza política. No tiene facciones ni se observan grandes diferencias internas. Si bien proclama que tiene una clase de militantes diferenciada, los &amp;ldquo;independientes&amp;rdquo; (no orgánicos a la afiliación partidaria en Patria Grande), lo que hay es un gris de organicidad o adhesión ideológica que es común a cualquier agrupación política. Los militantes entran siendo &amp;ldquo;independientes&amp;rdquo; y van siendo persuadidos y formados gradualmente en la línea política. Hay -eso sí- flexibilidad y se incorporan nuevas ideas, las que mejor se adaptan a la sensibilidad de los estudiantes de la facultad. Pero la acción es coordinada y todos los éxitos son capitalizados por la organización.&lt;/p&gt;
+
+&lt;p&gt;El FEM está resistiendo un recambio generacional. Pero no sólo no presenta grandes peligros en el corto plazo sino que constituye un activo, en tanto muchos veteranos permanecen en la facultad como docentes o investigadores y aportan su ayuda desde ese lugar. Esta presencia en espacios académicos se suma a la de la propia base militante estudiantil: el FEM tiene &amp;ldquo;codepers&amp;rdquo; en las comisiones departamentales (y si no los tiene intenta cooptarlos), y varios de sus miembros son ayudantes en materias de sus carreras.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Conflicto por el presupuesto.&lt;/em&gt; Además de contar con estas tres ventajas frente a la competencia, el FEM protagonizó este año una campaña que entiendo que fue decisiva para el resultado electoral. Se trató de la campaña por más presupuesto para la Facultad. El FEM la condujo desde el movimiento estudiantil, fijó el significante (la etiqueta) con el que todos los actores la nombraron (el hashtag #DefendamosExactas, en clara imitación de #NiUnaMenos), estableció una narrativa que tuvo aceptación incluso entre la oposición de izquierda, y obtuvo una &amp;ldquo;victoria&amp;rdquo; controvertida pero validada como tal por una amplia mayoría de estudiantes.&lt;/p&gt;
+
+&lt;p&gt;Resumo la historia. A principio de año el decano Reboreda anunció que con el presupuesto que le asignó el Consejo Superior para 2015 Exactas &amp;ldquo;no llega a Octubre&amp;rdquo;. El presupuesto de la UBA se reparte así: se destina lo necesario para el pago de salarios, y el resto se destina entre administración central (Rectorado), facultades y hospitales para &amp;ldquo;gastos de funcionamiento&amp;rdquo;. El presupuesto para facultades, a su vez, se reparte entre las trece. Está en discusión qué porcentaje le debería tocar a cada una. Hasta hace unos años, gracias la gestión del ex decano Jorge Aliaga, la repartición se hacía de acuerdo a un criterio que tenía en cuenta el tamaño y la complejidad de cada facultad. Exactas es pequeña demográficamente, pero sus laboratorios y sus tres edificios la hacen merecedora de entre 13 y 15% del presupuesto de acuerdo a ese criterio, muy por encima del promedio que, por ser 13 facultades, está en 7.7%. Exactas perdió el lugar político que tenía en esos años en el CS, lo cual recrudeció tras la elección del rector Barbieri en 2013, apoyado por casi todos los decanos pero no por el de Exactas. Por este motivo la porción del presupuesto que le asigna el CS viene cayendo desde ese momento, tendiendo al 10%, a lo cual se suma que por ser opositora al rector no recibe fondos discrecionales extra. Exactas tenía ahorros que fue gastando en este último tiempo, pero se terminaron el año pasado. Por eso este año el decano anunció la situación de emergencia presupuestaria.&lt;/p&gt;
+
+&lt;p&gt;El decano lo anunció a toda la comunidad académica. El FEM reaccionó rápidamente poniéndose al hombro, a través del CECEN, la tarea de pelear por más presupuesto entendida como un reclamo estudiantil bajo la consigna &amp;ldquo;#DefendamosExactas&amp;rdquo;. Desde el primer momento hubo comunicación entre el FEM y las autoridades pero también desacuerdos en los métodos de presión. Las autoridades buscaban canalizar el reclamo por vía institucional dentro del CS, lo cual terminó en un fracaso rotundo (una primera propuesta de reasignación de una partida presupuestaria ni se trató en la comisión correspondiente del CS; una segunda, que llamaba a repartir una partida nueva con una variante del criterio que beneficiaba a Exactas fue rechazada incluso por el representante de la Mella en el claustro estudiantil). El FEM, en cambio, fue al choque: desde el CECEN colgó una bandera gigante con la consigna #DefendamosExactas y reunió a buena parte de la facultad en una foto, y organizó asambleas y movilizaciones al Rectorado desde el primer momento. Es altamente cuestionable que esto haya tenido algún impacto real en las decisiones del Rector. Estoy convencido de que no lo tuvo, pero entiendo que una mayoría de estudiantes creyó que sí. Y que tanto la instalación del conflicto en la agenda de los estudiantes como del relato de victoria fueron validados por los votantes y fueron determinantes en la elección.&lt;/p&gt;
+
+&lt;p&gt;La &amp;ldquo;victoria&amp;rdquo; que se atribuye el FEM se dio como sigue. Lucas Tavolaro, militante del FEM y tesorero del CECEN, participó en la competencia de programación mundial ICPC como parte del equipo que representó a la UBA. Su equipo obtuvo un buen resultado, posicionándose en el ranking global como el mejor de Latinoamérica. Pero lo que llamó la atención de los medios locales no fue eso, sino un resultado anecdótico pero simbólicamente fuerte: la UBA le ganó a Harvard. Así lo editaron los medios, que por ese motivo entrevistaron a Tavolaro. Tavolaro aprovechó la cobertura mediática en diarios, programas de TV y radio para pedir más presupuesto para la Facultad. El rector Barbieri, muy atento a su imagen mediática, respondió al poco tiempo. El Ministerio de Educación le estaba girando a la UBA una partida presupuestaria extra de $20 millones (como pudimos reconstruir más tarde), seguramente no relacionada de ningún modo con el conflicto de Exactas. Barbieri se reunió con Tavolaro y Galpern, presidente del CECEN, en su oficina, a solas, para anunciarles la primicia de que iba a destinar $15 millones extra para gastos de funcionamiento a repartir entre las facultades (usando, por supuesto, el criterio que perjudica a Exactas, otorgándole un 10% de ese dinero). El FEM definió esto como una victoria estudiantil, e instaló el relato de que fue una conquista de todos los estudiantes organizados y movilizados por&amp;hellip; ellos, el FEM. El consejo directivo de Exactas, sin embargo, no lo vio de esta manera: al legitimar desde la &amp;ldquo;izquierda&amp;rdquo; estudiantil la repartición de los $15 millones, el FEM hizo que se debilite el reclamo de Exactas en el CS, dejándola en una posición política aún más precaria que la que tenía. El éxito del FEM en 2015 puede significar el fracaso de Exactas del 2016 en adelante. Y de los $5 millones de esa partida de $20 millones que recibió Barbieri y que no repartió entre las facultades nunca se supo nada, ni se hizo ningún reclamo. El triunfalismo no dejó lugar para esos detalles.&lt;/p&gt;
+
+&lt;p&gt;No es la primera vez que el FEM lleva a cabo una campaña con este éxito. En 2010 organizó desde el CECEN (junto a AGD, gremio docente de izquierda) un plebiscito entre estudiantes, docentes y graduados que planteaba una pregunta: acreditar las carreras de grado en la CONEAU, sí o no. Un 92% votó que no. Junto a esto se confeccionó y colgó una bandera gigante con la leyenda “en Exactas no acreditamos”. El CECEN conducido por el FEM organizó asambleas y movilizaciones para defender esa posición. El resultado fue un éxito: si bien se acreditaron doctorados y maestrías, las carreras de grado continúan hasta hoy sin acreditar. Y el FEM cosechó resultados frondosos en las elecciones siguientes. Hay elementos en común con el conflicto por el presupuesto de este año de los que puede extraerse un patrón. 1) La instalación de un tema en la agenda estudiantil durante todo el año, más el esfuerzo por no perder la atención de los estudiantes en ningún momento. 2) El interesamiento de los demás actores académicos en la consigna, manteniendo un margen de autonomía siempre. 3) El uso del CECEN como vehículo exclusivo de organización estudiantil legítima. Y 4) el monopolio de los símbolos (la bandera gigante, la consigna simple: acreditar sí/no, #DefendamosExactas). Esto deja planteada una pregunta: ¿podemos detectar este mismo patrón en hechos políticos exitosos de la política estudiantil democrática en otras facultades?&lt;/p&gt;
+
+&lt;h2 id=&#34;la-izquierda-al-frente:9894787ee065505e574858cea67f49ec&#34;&gt;La Izquierda al Frente&lt;/h2&gt;
+
+&lt;p&gt;La Izquierda al Frente (la izquierda, de ahora en más) salió segunda con el 21% de los votos tanto para centro como para consejo. Consiguió, así, el consejero por la minoría, peleado con el frente kirchnerista Exactas Puede Más. Pero no es para festejar: la izquierda en Exactas está en una decadencia sostenida. Obtuvo 24% el año pasado y ganó el centro con 30% en 2013. La Corriente (maoístas) está agonizando. Y el PTS ni siquiera perdió tiempo en presentarse. Prefirió invertirlo en dividir el voto de izquierda en FADU para que el PRO gane el centro. Y ni siquiera eso logró. La izquierda en Exactas está con vida gracias al PO -mayormente-, al Nuevo MAS y a IS.&lt;/p&gt;
+
+&lt;p&gt;La campaña del PO se orientó a hacer reclamos y denuncias. Reclamos por más presupuesto, más becas, más y mejores laboratorios, mejoras edilicias, mejoras laborales para los trabajadores en Tecnópolis. Y denuncias de convenios con empresas privadas: Papel Prensa y Pan American Energy.&lt;/p&gt;
+
+&lt;p&gt;El PO tiene presencia en espacios en donde se toman decisiones (el consejo directivo, pero no sólo ahí). Y una manera de procesar los conflictos de intereses híper eficiente: si hay que discutir cómo asignamos recursos escasos (difícil), decimos que no son suficientes y que hay que exigir más (fácil); si hay que discutir las condiciones de un convenio con un privado (difícil), decimos que hay que rechazarlo de plano ya que todo convenio es privatista y lleva a la mercantilización de la educación (fácil). De esta manera el PO puede mantener una línea discursiva activa y coherente en el tiempo con un costo muy bajo. Donde hay un conflicto el PO está, de manera visible y defendiendo banderas atractivas para los estudiantes. Pero jamás lo veremos impulsando discusiones profundas con capacidad transformadora. Su desempeño electoral depende más que nada de su buen manejo de la comunicación, de la conservación y reproducción de su base militante, y de que haya algo por lo que reclamar.&lt;/p&gt;
+
+&lt;p&gt;El Nuevo MAS en su campaña promocionó enfrentamientos. Los enemigos: el ajuste, el estatuto universitario, los convenios con privados, los comedores, el patriarcado y el capitalismo. Aprovechó para hacer campaña por el MAS y Las Rojas. Izquierda Socialista hizo una campaña similar, con un énfasis también en la lucha feminista.&lt;/p&gt;
+
+&lt;p&gt;Se pide el voto para que el representante, de ser elegido, luche. Pero no se hacen explícitos planes de lucha concretos en los que el movimiento estudiantil con los recursos institucionales que se ponen en juego en la elección tome la iniciativa. Hagamos asambleas, emitamos declaraciones, pintemos carteles, marchemos a rectorado, tomemos la facultad. Los instrumentos son específicos, pero los objetivos no. Y la capacidad de articular voluntades para acumular poder real se muestra limitada. Ofrecen más una vidriera del activismo más o menos real que se da afuera de la facultad que un proyecto creíble de lucha desde el interior. Sus votantes son simpatizantes, adherentes de sus causas. No hacen una apuesta política.&lt;/p&gt;
+
+&lt;h2 id=&#34;exactas-puede-más:9894787ee065505e574858cea67f49ec&#34;&gt;Exactas Puede Más&lt;/h2&gt;
+
+&lt;p&gt;Las tres agrupaciones kirchneristas (La Cámpora, Nuevo Encuentro y Mov Evita) se unieron en un frente político, Exactas Puede Más, que además incorporó a Seamos Libres. El año pasado los K fueron a elecciones en una lista única, pero con campañas diferenciadas. Seamos Libre se presentó aparte. La lista K obtuvo el 15% de los votos. Seamos Libres, el 6%. Este año obtuvieron juntos el 16%. Se puede computar como un retroceso: no lograron siquiera sumar los votos del año pasado. El objetivo era crecer y superar a la izquierda. No lo alcanzaron.&lt;/p&gt;
+
+&lt;p&gt;La lista K venía de crecer 6% entre 2013 (obtuvo el 9%) y 2014 (15%). Sus militantes proyectaban un nuevo crecimiento del 6% para este año, que no se dio. Era verosímil: no por la extrapolación lineal que proponían sino porque ese 6% lo podían aportar los votantes de Seamos Libres, que se sumó al frente. Pero quizás lo que haya que explicar no sea la caída (o el estancamiento) del kirchnerismo en 2015, sino el crecimiento en 2014. Lo primero se explica fácil. La excelente elección del FEM hizo que fuera un año inusualmente difícil para la oposición. Y la izquierda demostró que tiene una base de apoyo sólida y una capacidad de llegada a los estudiantes que resiste.&lt;/p&gt;
+
+&lt;p&gt;Lo segundo también tiene explicación: en 2014 la izquierda venía de hacer una pésima gestión del CECEN, lo que abría las puertas a la oposición. Y era el año de llegada a la facultad de Nuevo Encuentro, que conectó con los estudiantes con campañas basadas en acciones reales sin el aparato del CECEN o el voto en el consejo (filmación de teóricas, cursos de portugués, un festival, militancia por un menú de desayuno y merienda). A lo que contribuyó una buena comunicación (con recursos innovadores y el carisma de su representante).&lt;/p&gt;
+
+&lt;p&gt;Este año, en cambio, Nuevo Encuentro se deslució. Buscó renovar y consolidar la organización hacia su interior, dejando de lado las campañas gremiales que le habían ganado el reconocimiento de los votos el año pasado. La Cámpora, contando con un liderazgo renovado a nivel UBA, apostó a seguir el camino que marcó NE en 2014. Con aciertos y algunos desaciertos se hizo más visible e hizo crecer su base militante. Lo cual quizás explique que en el contexto desfavorable no haya retrocedido tanto su voto.&lt;/p&gt;
+
+&lt;p&gt;EPM buscó pelearle a la izquierda el consejero de la minoría con la consigna &amp;ldquo;pluralidad de voces&amp;rdquo;. La izquierda tuvo razón en burlarse: el consejo tiene mayoría kirchnerista (tanto en graduados como en profesores); sumar kirchnerismo no iba a hacer crecer la pluralidad. Pero, por esa misma razón, la apuesta política a la que llamó EPM fue la más sustancial.&lt;/p&gt;
+
+&lt;p&gt;El FEM llamaba a validar su buena gestión del CECEN y su conducción de los conflictos gremiales. La izquierda llamaba a validar sus reclamos y sus luchas. EPM, en cambio, hizo una campaña propositiva, sin referencias partidarias. &amp;ldquo;Imaginate todo lo que podemos hacer&amp;rdquo;, fue el slogan. Resulta difícil imaginar el éxito de todas las propuestas que hicieron en su plataforma, incluso en un escenario hipotético de ser mayoría tanto en el CECEN como en el CD. Pero fueron los únicos que hicieron un planteo político transformador y hasta cierto punto creíble. Propusieron reformas académicas necesarias pero políticamente costosas, que requerirían un enorme trabajo y grandes consensos (una revisión del plan de estudios de biología y títulos intermedios para todas las carreras).&lt;/p&gt;
+
+&lt;p&gt;Exactas es una facultad que produce investigación, más básica que aplicada. Pero tiene un enorme potencial para contribuir al proceso de desarrollo del país. Lograr eso requiere de una discusión profunda y de cambios de conducta y de valores por parte de todos los actores que la integran. El kirchnerismo, con su retórica y su política de promoción de la ciencia y la tecnología como sectores estratégicos, provee un fondo sobre el cual llevar adelante estas reformas. Hay, con esto, una oportunidad para que la política universitaria transforme significativamente su realidad, empoderando a los estudiantes en ese proceso. Lo cual tendría la chance de alcanzar un resultado muy distinto al caso paradigmático de la facultad de Económicas, que sí logró atravesar un proceso de gran transformación. Pero que, siendo un éxito de la política democrática, fue un fracaso para los valores que defienden los estudiantes de Exactas (Económicas consiguió su autonomía económica a cambio de su apertura al mercado, y logró cambios en sus planes de estudio a costa de multiplicar los posgrados arancelados). Hay, por lo tanto, una oportunidad pero también un enorme riesgo.&lt;/p&gt;
+
+&lt;p&gt;Frente a este escenario la izquierda es conservadora. Tiene motivos ideológicos y prácticos para esto. En contraposición el kirchnerismo hace una apuesta arriesgada. Pero por ahora no despega. Frente el FEM tiene dos grandes desventajas. Los militantes del FEM están organizados en un espacio político coherente y durable, conocen el funcionamiento de la facultad desde adentro y son conocidos en los espacios en los que participan. Los militantes de EPM, en cambio, están distribuidos en cuatro espacios políticos que tienen sus propias identidades, que no están consolidados hacia adentro ni consolidaron una organización que les permita actuar compartiendo recursos y beneficios. La segunda ventaja del FEM está en que logró imponer su versión de los hechos en torno al conflicto por el presupuesto. EPM vindicó el reclamo estudiantil que condujo el FEM pero cuestionó la victoria. El FEM le ganó la batalla por la credibilidad, poniendo así a EPM en una posición impopular y reaccionaria.&lt;/p&gt;
+
+&lt;p&gt;La victoria del kirchnerismo en Sociales se podría haber replicado en Exactas. Leandro Germán, un militante del PO, en un análisis muy interesante hace un listado de las condiciones que hicieron eso posible. Resumo: 1) Sociales está ligada institucional e ideológicamente al kirchnerismo (sociología a Carta Abierta, comunicación a la &amp;ldquo;ley de medios&amp;rdquo;, ciencia política a la &amp;ldquo;reforma política&amp;rdquo; del 2009, trabajo social a la AUH, relaciones del trabajo al Ministerio de Trabajo), 2) hay una mayoría kirchnerista en docentes, 3) el centro de estudiantes viene de ser conducido por La Mella (entre 2008 y 2013), una izquierda que no es abiertamente antikirchnerista, y 4) viene de una mala gestión de la izquierda. Las primeras tres condiciones se repiten en Exactas: 1) Exactas tiene un vínculo con el kirchnerismo en la repatriación de científicos y la creación del Ministerio de Ciencia, 2) tiene mayoría kirchnerista en docentes, y 3) La Mella conduce el centro de estudiantes. Hay una gran diferencia: la Mella se repuso a la crisis del 2013 en Exactas. En Sociales no. La pregunta que queda abierta es por qué.&lt;/p&gt;
+
+&lt;h2 id=&#34;fuentes:9894787ee065505e574858cea67f49ec&#34;&gt;Fuentes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Juventud Informada, &lt;a href=&#34;http://www.juventudinformada.com.ar/&#34;&gt;http://www.juventudinformada.com.ar/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Max Pérez Fallik, El “No a la CONEAU” en la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires: rupturas y continuidades, &lt;a href=&#34;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&#34;&gt;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leandro Germán, análisis de la elección en Sociales, &lt;a href=&#34;https://www.facebook.com/leandro.german.10/posts/10205785886543289&#34;&gt;https://www.facebook.com/leandro.german.10/posts/10205785886543289&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

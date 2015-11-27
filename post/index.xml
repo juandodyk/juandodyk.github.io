@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Juan Dodyk</title>
+    <link>http://juandodyk.github.io/post/</link>
+    <description>Recent content in Posts on Juan Dodyk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://juandodyk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Contando intendentes en Paraguay</title>
+      <link>http://juandodyk.github.io/post/contando-intendentes-en-py/</link>
+      <pubDate>Sat, 21 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/contando-intendentes-en-py/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/anr.jpg&#34; alt=&#34;Foto&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;En las elecciones municipales del domingo pasado se eligieron intendentes y concejales en los 250 distritos que conforman Paraguay. El primer dato que arrojaron las elecciones, antes de iniciarse, fue precisamente ese número: 250, la cantidad de municipios. En las elecciones de 2010 había 238: 12 menos. En las de 2006 había 230: 8 menos. Podemos decir: la geografía política distrital es dinámica.&lt;/p&gt;
+
+&lt;p&gt;El Partido Colorado (ANR) presentó candidatos en todos los distritos. El Partido Liberal (PLRA) se presentó en 200. Lo siguió el Frente Guasú, en 86, y el UNACE en 68.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis&#34; style=&#34;min-height: 500px;&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Esto es hasta cierto punto engañoso, ya que liberales y miembros del Frente Guasú se presentaron en muchos distritos en partidos o alianzas con otro nombre. Los liberales tienen presencia en prácticamente todo el territorio, salvo en como mucho 25 distritos. En cambio, hay 97 distritos (un 39%) en los que el Frente Guasú no tiene presencia, ni siquiera a través de posibles aliados, si no entra en alianza con el PLRA. Es decir, hay 97 distritos en los que para el Frente Guasú es indispensable aliarse al PLRA. Esos distritos concentran un 23% de la población.&lt;/p&gt;
+
+&lt;p&gt;El siguiente gráfico muestra cuántos candidatos se presentaron en cada distrito:&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_parts&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
+Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo quedó el mapa político? Así:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;http://juandodyk.github.io/img/mapa_py.jpg&#34; alt=&#34;Mapa&#34; /&gt;&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_dis_ganados&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;container_pop_dis_ganados&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Lo que se observa en el gráfico anterior es que en cantidad de habitantes el Partido Colorado sólo gobierna al 51% (descontando que tiene la presidencia), mientras que el Partido Liberal gobierna al 34%. Si sumamos Asunción (donde ganó el Partido Revolucionario Febrerista, encabezado por el PLRA), alcanza un 41%. Sólo 10 puntos por debajo de la ANR.&lt;/p&gt;
+
+&lt;p&gt;Notar también que el UNACE, con sus 3 intendencias, está tercero, pero sólo gobierna al 0.3% de la población. El Frente Guasú está peor aún: el mismo 0.3% con una intendencia menos.&lt;/p&gt;
+
+&lt;div id=&#34;container_cant_votos&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Si contamos la cantidad total de votos recibidos por cada partido, el Partido Colorado queda debajo del 50%: sólo obtuvo el 48.2% de los votos totales. El PLRA sumando Asunción obtuvo el 39.7%. De nuevo 10 puntos de diferencia. El Frente Guasú en soledad quedó tercero (descontando Asunción) con el 2.7% de los votos, seguido por el UNACE y su 1.1%.&lt;/p&gt;
+
+&lt;p&gt;El Frente Guasú en soledad, librado a la lucha cuerpo a cuerpo por el territorio, es un partido de un dígito, como el trotskismo en Argentina. Y sin embargo el próximo presidente puede salir de ese Frente. Contar intendentes y pintar mapas nos dice algo: sin la ayuda del PLRA ese objetivo es imposible. Pero no hay que dejar de lado el primer número que mencioné: el mapa también cambia.&lt;/p&gt;
+
+&lt;p&gt;Fuentes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;El mapa político fue publicado por ABC.&lt;/li&gt;
+&lt;li&gt;Mis gráficos fueron hechos con &lt;a href=&#34;http://www.highcharts.com/&#34;&gt;Highcharts&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;PD: &lt;a href=&#34;http://panamarevista.com/2015/11/19/el-dron-del-politologo/&#34;&gt;Pablo Touzon&lt;/a&gt; escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.&lt;/p&gt;
+
+&lt;div&gt;&lt;script&gt;
+$(function() {
+
+var cant_parts = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_parts&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de candidatos en cada distrito&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;Cantidad de candidatos&#39;
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[[3,72],[2,102],[4,51],[6,5],[5,10],[1,5],[7,4],[9,1]]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis&#39;,
+        type: &#39;column&#39;
+    },
+    title: {
+        text: &#34;Cantidad de distritos en los que se presentó cada partido&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de distritos&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;&#39;
+        },
+        categories: JSON.parse(&#39;[&#34;PARTIDO COLORADO&#34;,&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;,&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;,&#34;PARTIDO UNACE&#34;,&#34;CONCERTACION JUNTOS PODEMOS&#34;,&#34;PARTIDO ENCUENTRO NACIONAL&#34;,&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;,&#34;PARTIDO POPULAR TEKOJOJA&#34;,&#34;PARTIDO PARAGUAY TEKOPYAHU&#34;,&#34;PARTIDO PATRIA QUERIDA&#34;,&#34;MOVIMIENTO INDEPENDIENTE POICHO&#34;,&#34;PARTIDO DE LA JUVENTUD&#34;,&#34;ALIANZA PARA TODOS&#34;,&#34;PARTIDO DEMOCRATA CRISTIANO&#34;,&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;,&#34;PARTIDO DE LA PARTICIPACION CIUDADANA&#34;]&#39;)
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:250,&#34;color&#34;:&#34;#f8020e&#34;},{&#34;y&#34;:200,&#34;color&#34;:&#34;#069fff&#34;},{&#34;y&#34;:86,&#34;color&#34;:&#34;#aa72ff&#34;},{&#34;y&#34;:68,&#34;color&#34;:&#34;#7f7e92&#34;},{&#34;y&#34;:18,&#34;color&#34;:&#34;#ffcc03&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#ffff17&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#97de01&#34;},{&#34;y&#34;:11,&#34;color&#34;:&#34;#468a6a&#34;},{&#34;y&#34;:9,&#34;color&#34;:&#34;#913505&#34;},{&#34;y&#34;:8,&#34;color&#34;:&#34;#57947f&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#ffedee&#34;},{&#34;y&#34;:5,&#34;color&#34;:&#34;#8eff29&#34;},{&#34;y&#34;:4,&#34;color&#34;:&#34;#fffe03&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#ffffe5&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#00fe00&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#ff8754&#34;}]&#39;),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de distritos ganados por partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.y}&#39;, //{point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:149,&#34;color&#34;:&#34;#e70000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:76,&#34;color&#34;:&#34;#00bcff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:3,&#34;color&#34;:&#34;#917e85&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#9aff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#e7ff00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:2,&#34;color&#34;:&#34;#956ce6&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:16,&#34;color&#34;:&#34;#7b3e0c&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var pop_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_pop_dis_ganados&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Población de los distritos donde ganó cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:3438519,&#34;color&#34;:&#34;#ff000c&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:2277736,&#34;color&#34;:&#34;#00c6ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:526408,&#34;color&#34;:&#34;#00e506&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:125429,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:72145,&#34;color&#34;:&#34;#f2ee00&#34;,&#34;name&#34;:&#34;ALIANZA PARA TODOS&#34;},{&#34;y&#34;:59480,&#34;color&#34;:&#34;#97ff03&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:35275,&#34;color&#34;:&#34;#95cca6&#34;,&#34;name&#34;:&#34;ALIANZA SAN JUAN DIFERENTE&#34;},{&#34;y&#34;:28332,&#34;color&#34;:&#34;#93c4a4&#34;,&#34;name&#34;:&#34;ALIANZA TODOS POR YBY YAU&#34;},{&#34;y&#34;:23473,&#34;color&#34;:&#34;#a654ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22629,&#34;color&#34;:&#34;#80756f&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:144438,&#34;color&#34;:&#34;#815010&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+var cant_votos = new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;container_cant_votos&#39;,
+        type: &#39;pie&#39;
+    },
+    title: {
+        text: &#39;Cantidad de votos totales obtenidos por cada partido&#39;
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: &#39;&lt;b&gt;{point.name}&lt;/b&gt;: {point.percentage:.1f} %&#39;,
+                style: {
+                    color: (Highcharts.theme &amp;&amp; Highcharts.theme.contrastTextColor) || &#39;black&#39;
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse(&#39;[{&#34;y&#34;:1015058,&#34;color&#34;:&#34;#ff0000&#34;,&#34;name&#34;:&#34;PARTIDO COLORADO&#34;},{&#34;y&#34;:722238,&#34;color&#34;:&#34;#00b3ff&#34;,&#34;name&#34;:&#34;PARTIDO LIBERAL RADICAL AUTENTICO&#34;},{&#34;y&#34;:114760,&#34;color&#34;:&#34;#00ff00&#34;,&#34;name&#34;:&#34;PARTIDO REVOLUCIONARIO FEBRERISTA&#34;},{&#34;y&#34;:55985,&#34;color&#34;:&#34;#9966ff&#34;,&#34;name&#34;:&#34;CONCERTACION NACIONAL FRENTE GUASU&#34;},{&#34;y&#34;:22535,&#34;color&#34;:&#34;#808080&#34;,&#34;name&#34;:&#34;PARTIDO UNACE&#34;},{&#34;y&#34;:19378,&#34;color&#34;:&#34;#ffcc00&#34;,&#34;name&#34;:&#34;CONCERTACION JUNTOS PODEMOS&#34;},{&#34;y&#34;:16475,&#34;color&#34;:&#34;#99ff00&#34;,&#34;name&#34;:&#34;PARTIDO DEMOCRATICO PROGRESISTA&#34;},{&#34;y&#34;:16410,&#34;color&#34;:&#34;#ffffff&#34;,&#34;name&#34;:&#34;ALIANZA ENCARNACION AL FRENTE&#34;},{&#34;y&#34;:124380,&#34;color&#34;:&#34;#783c1e&#34;,&#34;name&#34;:&#34;OTROS&#34;}]&#39;)
+    }]
+});
+
+});
+&lt;/script&gt;&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elecciones municipales en Paraguay</title>
+      <link>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</link>
+      <pubDate>Mon, 16 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/elecciones-municipales-py-2015/</guid>
+      <description>
+&lt;figure &gt;
+    
+        &lt;img src=&#34;http://juandodyk.github.io/img/anr_cartes.jpg&#34; /&gt;
+    
+    
+&lt;/figure&gt;
+
+
+&lt;p&gt;El presidente Horacio Cartes, del Partido Colorado (ANR), tomó la decisión de nacionalizar la elección. Se erigió como jefe de campaña y definió las elecciones como un &amp;ldquo;gran referéndum&amp;rdquo; de su gobierno. Perdió.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;La gran derrota del Partido Colorado se dio en Asunción, donde perdió su candidato Arnaldo Samaniego, en manos de Mario Ferreiro, por una diferencia de 23.000 votos entre los dos postulantes. [11 puntos porcentuales.]&lt;/p&gt;
+
+&lt;p&gt;Otra de las notas negativas para la ANR es que en Central solo se quedaron con 6 intendencias de las 19 posibles, el resto fue para el Partido Liberal Radical Auténtico (PLRA). Este es el departamento con mayor caudal de electores.&lt;/p&gt;
+
+&lt;p&gt;No obstante, la ANR logró imponerse en 148 distritos a nivel país, 10 más que lo obtenido en las elecciones municipales del 2010. Por eso, los analistas refieren que no es una tragedia para el partido oficialista y podrá reponerse rápidamente.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/cartes-el-gran-perdedor-las-elecciones-municipales-n946377.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No es una tragedia para el partido. Ni para el bipartidismo. Sí para el liderazgo de Cartes dentro del Partido Colorado, que podría estar en disputa a partir de ahora, de cara a las elecciones generales del 2018.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;El vicepresidente Juan Afara sufrió la humillante derrota en su propio pueblo por el PDP, de Desirée Masi. En vez de resolver con inteligencia una interna, tomó el camino de la prepotencia y así le fue. Víctor Casas era intendente colorado, pero fue expulsado del partido por problemas con el matrimonio Afara. Se candidató por el PDP y asestó un duro golpe al vicepresidente.&lt;/p&gt;
+
+&lt;p&gt;Así como Asunción, otra derrota catastrófica para la ANR es Encarnación. Luis Yd, en una puja de infarto, se impuso anoche por 11 votos al candidato colorado que tuvo a su favor la poderosa estructura de Yacyretá y la Gobernación de Itapúa. Un golpe para el gobernador Luis Gneiting y Afara.&amp;rdquo; &lt;a href=&#34;http://www.ultimahora.com/el-voto-castigo-golpea-los-caudillos-la-anr-n946306.html&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;En Encarnación la oposición ganó por 100 votos, aclaran. Con su victoria, el opositor del Partido Patria Querida rompe una hegemonía de 87 años [del Partido Colorado].&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/en-encarnacion-oposicion-gano-por-100-votos-aclaran&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Se dice que Cartes, empresario tabacalero vinculado al narcotráfico, compró la estructura del Partido Colorado. Eso lo llevó al poder en las elecciones de 2013, tras el golpe parlamentario a Fernando Lugo. Pero su estilo de conducción del partido, calificado como prepotente, no está dando resultados electorales. Es posible que los dirigentes colorados desplazados impulsen un liderazgo alternativo.&lt;/p&gt;
+
+&lt;p&gt;Por otra parte, Fernando Lugo también fue vencido. En Asunción no apoyó al opositor Mario Ferreiro sino a Ricardo Meyer, que quedó tercero con el 4.5% de los votos.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;Tras las elecciones municipales, en el Frente Guasu se habla como posible un “paso al costado” de Fernando Lugo, y la elección de un nuevo líder. La idea sería que el mismo negocie &amp;ldquo;con todos&amp;rdquo; (¿incluso con los colorados?) instalar la reelección para el 2018.&amp;rdquo; &lt;a href=&#34;http://www.hoy.com.py/politica/lugo-piensa-dejar-frente-guasu-para-negociar-con-todos-la-reeleccin&#34;&gt;Fuente&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015</title>
+      <link>http://juandodyk.github.io/post/elecciones-exactas/</link>
+      <pubDate>Sun, 20 Sep 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/elecciones-exactas/</guid>
+      <description>
+
+&lt;p&gt;Se votaron consejeros estudiantiles (obligatorio) y representantes del CECEN (no obligatorio). Votaron 5675 personas para consejo y 2528 para centro (el 44%).&lt;/p&gt;
+
+&lt;h2 id=&#34;resultados:9894787ee065505e574858cea67f49ec&#34;&gt;Resultados&lt;/h2&gt;
+
+&lt;p&gt;Se esperaba que gane el FEM (la Mella). Arrasó: 44% para consejo, 51% para centro. El segundo puesto estaba peleado entre la Izquierda al Frente (PO + Nuevo MAS + Izquierda Socialista + La Corriente) y Exactas Puede Más (La Cámpora + Nuevo Encuentro + Mov Evita + Seamos Libres). Se lo llevó la izquierda con facilidad: 21% tanto para consejo como para centro, quedándose con el consejero de la minoría. EPM sacó 16% para consejo y lo mismo para centro. Las dos listas restantes, Cambio de Base (Bandera Negra, anarquistas) y Nuevo Espacio (reformistas), fueron irrelevantes.&lt;/p&gt;
+
+&lt;h2 id=&#34;fem:9894787ee065505e574858cea67f49ec&#34;&gt;FEM&lt;/h2&gt;
+
+&lt;p&gt;El FEM hizo una elección notable. Tanto en comparación con años anteriores (27% en 2013, 35% en 2014) como en comparación con otras facultades (se profundizó la caída de la Mella en todas excepto Exactas, Psicología y -por aliarse al ganador- Fadu). Es récord histórico: sólo se puede comparar con la elección de 2011 (43% para consejo, 46% para centro). Esto se explica por los siguientes motivos: 1) una buena gestión, 2) un uso racional de los recursos de poder, 3) la homogeneidad y presencia visible en espacios académicos de su base militante, y 4) el apoyo de los estudiantes a su tratamiento del conflicto presupuestario.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Gestión.&lt;/em&gt; El FEM conducía el centro, y por lo tanto contó con la ventaja de ser oficialismo. Esto rindió electoralmente por su buena gestión. El CECEN amplió y mejoró espacios públicos y servicios (nuevo bar, mejoras en la biblioteca Noriega y el sum, desayuno y merienda baratos). Funcionó como herramienta gremial en los conflictos que surgieron (CBC, Tecnópolis, Becas Bicentenario, presupuesto). Tuvo una buena política de comunicación (carteles, presencia en redes sociales, asambleas). Y ofreció espacios de participación a los estudiantes (comisiones de carrera, comisiones del CECEN) que alcanzaron el objetivo mínimo de llevar a cabo actividades abiertas. En resumen: hizo bien lo que debe hacer un centro de estudiantes. Lo cual no es poco, dada la pésima gestión de la Izquierda al Frente en 2014.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Manejo de recursos de poder.&lt;/em&gt; Los logros de gestión en el CECEN fueron capitalizados políticamente por el FEM. La estrategia para conseguir esto no fue la obvia (ponerle el sello de la agrupación a todo). Se apostó al CECEN como vehículo de acción política jugando inteligentemente con sus límites. Se invirtieron los recursos de poder racionalmente: el CECEN se expandió donde fue más redituable para el FEM y se detuvo o retrocedió en los terrenos más adversos, menos rendidores o más riesgosos.&lt;/p&gt;
+
+&lt;p&gt;El FEM apostó al fortalecimiento y ampliación institucional del CECEN. Durante el año hizo sus campañas a través del centro sin la firma FEM. Con esto marcó la cancha a las demás agrupaciones: usó la legitimidad que da el sello CECEN para imponer los términos de la discusión pública (el mejor ejemplo: instalar el hashtag #DefendamosExactas). Al mismo tiempo amplió los espacios de representación: impulsó actividades desde las comisiones de carrera que saturaron esa agenda y cooptaron voluntades no partidarias.&lt;/p&gt;
+
+&lt;p&gt;Pero así como el CECEN se expandió en espacios de participación bajo la conducción hegemónica del FEM, en otros espacios mostró nula iniciativa o incluso retrocesos por tensiones con otros actores que no quiso o no pudo resolver. Hubo tensiones con los &amp;ldquo;becarios&amp;rdquo;: trabajadores de las fotocopiadoras y kioskos del centro, que -¿sorprende a alguien?- están en negro y ganan poco. Algunos de ellos son independientes u opositores, y les costaron la elección de centro en 2013. El FEM a principio de este año intentó echar a una administradora no partidaria y hacer electivos esos cargos para asegurarse el control de ese espacio de poder. Intentó justificarlo públicamente y falló.&lt;/p&gt;
+
+&lt;p&gt;También hubo tensiones con las otras agrupaciones, cansadas de que les roben proyectos o campañas. Y con las autoridades y los consejeros de otros claustros: si bien hubo un diálogo fluido, el FEM no dudó en traicionarlos y jugar su propio juego cuando le resultó conveniente (reunirse con el rector Barbieri por el conflicto presupuestario a espaldas de las autoridades de la facultad). Lo cual tiene como costo el debilitamiento de su posición en el consejo directivo para avanzar proyectos a escala superior a la del CECEN. Por último, el FEM convive con una tensión con la institucionalidad misma del centro: el CECEN no tiene estatuto ni personería jurídica. El FEM calcula que la dificultad y el costo de llevar adelante estas reformas superan los posibles beneficios.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Homogeneidad y presencia.&lt;/em&gt; El FEM no es una alianza política. No tiene facciones ni se observan grandes diferencias internas. Si bien proclama que tiene una clase de militantes diferenciada, los &amp;ldquo;independientes&amp;rdquo; (no orgánicos a la afiliación partidaria en Patria Grande), lo que hay es un gris de organicidad o adhesión ideológica que es común a cualquier agrupación política. Los militantes entran siendo &amp;ldquo;independientes&amp;rdquo; y van siendo persuadidos y formados gradualmente en la línea política. Hay -eso sí- flexibilidad y se incorporan nuevas ideas, las que mejor se adaptan a la sensibilidad de los estudiantes de la facultad. Pero la acción es coordinada y todos los éxitos son capitalizados por la organización.&lt;/p&gt;
+
+&lt;p&gt;El FEM está resistiendo un recambio generacional. Pero no sólo no presenta grandes peligros en el corto plazo sino que constituye un activo, en tanto muchos veteranos permanecen en la facultad como docentes o investigadores y aportan su ayuda desde ese lugar. Esta presencia en espacios académicos se suma a la de la propia base militante estudiantil: el FEM tiene &amp;ldquo;codepers&amp;rdquo; en las comisiones departamentales (y si no los tiene intenta cooptarlos), y varios de sus miembros son ayudantes en materias de sus carreras.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Conflicto por el presupuesto.&lt;/em&gt; Además de contar con estas tres ventajas frente a la competencia, el FEM protagonizó este año una campaña que entiendo que fue decisiva para el resultado electoral. Se trató de la campaña por más presupuesto para la Facultad. El FEM la condujo desde el movimiento estudiantil, fijó el significante (la etiqueta) con el que todos los actores la nombraron (el hashtag #DefendamosExactas, en clara imitación de #NiUnaMenos), estableció una narrativa que tuvo aceptación incluso entre la oposición de izquierda, y obtuvo una &amp;ldquo;victoria&amp;rdquo; controvertida pero validada como tal por una amplia mayoría de estudiantes.&lt;/p&gt;
+
+&lt;p&gt;Resumo la historia. A principio de año el decano Reboreda anunció que con el presupuesto que le asignó el Consejo Superior para 2015 Exactas &amp;ldquo;no llega a Octubre&amp;rdquo;. El presupuesto de la UBA se reparte así: se destina lo necesario para el pago de salarios, y el resto se destina entre administración central (Rectorado), facultades y hospitales para &amp;ldquo;gastos de funcionamiento&amp;rdquo;. El presupuesto para facultades, a su vez, se reparte entre las trece. Está en discusión qué porcentaje le debería tocar a cada una. Hasta hace unos años, gracias la gestión del ex decano Jorge Aliaga, la repartición se hacía de acuerdo a un criterio que tenía en cuenta el tamaño y la complejidad de cada facultad. Exactas es pequeña demográficamente, pero sus laboratorios y sus tres edificios la hacen merecedora de entre 13 y 15% del presupuesto de acuerdo a ese criterio, muy por encima del promedio que, por ser 13 facultades, está en 7.7%. Exactas perdió el lugar político que tenía en esos años en el CS, lo cual recrudeció tras la elección del rector Barbieri en 2013, apoyado por casi todos los decanos pero no por el de Exactas. Por este motivo la porción del presupuesto que le asigna el CS viene cayendo desde ese momento, tendiendo al 10%, a lo cual se suma que por ser opositora al rector no recibe fondos discrecionales extra. Exactas tenía ahorros que fue gastando en este último tiempo, pero se terminaron el año pasado. Por eso este año el decano anunció la situación de emergencia presupuestaria.&lt;/p&gt;
+
+&lt;p&gt;El decano lo anunció a toda la comunidad académica. El FEM reaccionó rápidamente poniéndose al hombro, a través del CECEN, la tarea de pelear por más presupuesto entendida como un reclamo estudiantil bajo la consigna &amp;ldquo;#DefendamosExactas&amp;rdquo;. Desde el primer momento hubo comunicación entre el FEM y las autoridades pero también desacuerdos en los métodos de presión. Las autoridades buscaban canalizar el reclamo por vía institucional dentro del CS, lo cual terminó en un fracaso rotundo (una primera propuesta de reasignación de una partida presupuestaria ni se trató en la comisión correspondiente del CS; una segunda, que llamaba a repartir una partida nueva con una variante del criterio que beneficiaba a Exactas fue rechazada incluso por el representante de la Mella en el claustro estudiantil). El FEM, en cambio, fue al choque: desde el CECEN colgó una bandera gigante con la consigna #DefendamosExactas y reunió a buena parte de la facultad en una foto, y organizó asambleas y movilizaciones al Rectorado desde el primer momento. Es altamente cuestionable que esto haya tenido algún impacto real en las decisiones del Rector. Estoy convencido de que no lo tuvo, pero entiendo que una mayoría de estudiantes creyó que sí. Y que tanto la instalación del conflicto en la agenda de los estudiantes como del relato de victoria fueron validados por los votantes y fueron determinantes en la elección.&lt;/p&gt;
+
+&lt;p&gt;La &amp;ldquo;victoria&amp;rdquo; que se atribuye el FEM se dio como sigue. Lucas Tavolaro, militante del FEM y tesorero del CECEN, participó en la competencia de programación mundial ICPC como parte del equipo que representó a la UBA. Su equipo obtuvo un buen resultado, posicionándose en el ranking global como el mejor de Latinoamérica. Pero lo que llamó la atención de los medios locales no fue eso, sino un resultado anecdótico pero simbólicamente fuerte: la UBA le ganó a Harvard. Así lo editaron los medios, que por ese motivo entrevistaron a Tavolaro. Tavolaro aprovechó la cobertura mediática en diarios, programas de TV y radio para pedir más presupuesto para la Facultad. El rector Barbieri, muy atento a su imagen mediática, respondió al poco tiempo. El Ministerio de Educación le estaba girando a la UBA una partida presupuestaria extra de $20 millones (como pudimos reconstruir más tarde), seguramente no relacionada de ningún modo con el conflicto de Exactas. Barbieri se reunió con Tavolaro y Galpern, presidente del CECEN, en su oficina, a solas, para anunciarles la primicia de que iba a destinar $15 millones extra para gastos de funcionamiento a repartir entre las facultades (usando, por supuesto, el criterio que perjudica a Exactas, otorgándole un 10% de ese dinero). El FEM definió esto como una victoria estudiantil, e instaló el relato de que fue una conquista de todos los estudiantes organizados y movilizados por&amp;hellip; ellos, el FEM. El consejo directivo de Exactas, sin embargo, no lo vio de esta manera: al legitimar desde la &amp;ldquo;izquierda&amp;rdquo; estudiantil la repartición de los $15 millones, el FEM hizo que se debilite el reclamo de Exactas en el CS, dejándola en una posición política aún más precaria que la que tenía. El éxito del FEM en 2015 puede significar el fracaso de Exactas del 2016 en adelante. Y de los $5 millones de esa partida de $20 millones que recibió Barbieri y que no repartió entre las facultades nunca se supo nada, ni se hizo ningún reclamo. El triunfalismo no dejó lugar para esos detalles.&lt;/p&gt;
+
+&lt;p&gt;No es la primera vez que el FEM lleva a cabo una campaña con este éxito. En 2010 organizó desde el CECEN (junto a AGD, gremio docente de izquierda) un plebiscito entre estudiantes, docentes y graduados que planteaba una pregunta: acreditar las carreras de grado en la CONEAU, sí o no. Un 92% votó que no. Junto a esto se confeccionó y colgó una bandera gigante con la leyenda “en Exactas no acreditamos”. El CECEN conducido por el FEM organizó asambleas y movilizaciones para defender esa posición. El resultado fue un éxito: si bien se acreditaron doctorados y maestrías, las carreras de grado continúan hasta hoy sin acreditar. Y el FEM cosechó resultados frondosos en las elecciones siguientes. Hay elementos en común con el conflicto por el presupuesto de este año de los que puede extraerse un patrón. 1) La instalación de un tema en la agenda estudiantil durante todo el año, más el esfuerzo por no perder la atención de los estudiantes en ningún momento. 2) El interesamiento de los demás actores académicos en la consigna, manteniendo un margen de autonomía siempre. 3) El uso del CECEN como vehículo exclusivo de organización estudiantil legítima. Y 4) el monopolio de los símbolos (la bandera gigante, la consigna simple: acreditar sí/no, #DefendamosExactas). Esto deja planteada una pregunta: ¿podemos detectar este mismo patrón en hechos políticos exitosos de la política estudiantil democrática en otras facultades?&lt;/p&gt;
+
+&lt;h2 id=&#34;la-izquierda-al-frente:9894787ee065505e574858cea67f49ec&#34;&gt;La Izquierda al Frente&lt;/h2&gt;
+
+&lt;p&gt;La Izquierda al Frente (la izquierda, de ahora en más) salió segunda con el 21% de los votos tanto para centro como para consejo. Consiguió, así, el consejero por la minoría, peleado con el frente kirchnerista Exactas Puede Más. Pero no es para festejar: la izquierda en Exactas está en una decadencia sostenida. Obtuvo 24% el año pasado y ganó el centro con 30% en 2013. La Corriente (maoístas) está agonizando. Y el PTS ni siquiera perdió tiempo en presentarse. Prefirió invertirlo en dividir el voto de izquierda en FADU para que el PRO gane el centro. Y ni siquiera eso logró. La izquierda en Exactas está con vida gracias al PO -mayormente-, al Nuevo MAS y a IS.&lt;/p&gt;
+
+&lt;p&gt;La campaña del PO se orientó a hacer reclamos y denuncias. Reclamos por más presupuesto, más becas, más y mejores laboratorios, mejoras edilicias, mejoras laborales para los trabajadores en Tecnópolis. Y denuncias de convenios con empresas privadas: Papel Prensa y Pan American Energy.&lt;/p&gt;
+
+&lt;p&gt;El PO tiene presencia en espacios en donde se toman decisiones (el consejo directivo, pero no sólo ahí). Y una manera de procesar los conflictos de intereses híper eficiente: si hay que discutir cómo asignamos recursos escasos (difícil), decimos que no son suficientes y que hay que exigir más (fácil); si hay que discutir las condiciones de un convenio con un privado (difícil), decimos que hay que rechazarlo de plano ya que todo convenio es privatista y lleva a la mercantilización de la educación (fácil). De esta manera el PO puede mantener una línea discursiva activa y coherente en el tiempo con un costo muy bajo. Donde hay un conflicto el PO está, de manera visible y defendiendo banderas atractivas para los estudiantes. Pero jamás lo veremos impulsando discusiones profundas con capacidad transformadora. Su desempeño electoral depende más que nada de su buen manejo de la comunicación, de la conservación y reproducción de su base militante, y de que haya algo por lo que reclamar.&lt;/p&gt;
+
+&lt;p&gt;El Nuevo MAS en su campaña promocionó enfrentamientos. Los enemigos: el ajuste, el estatuto universitario, los convenios con privados, los comedores, el patriarcado y el capitalismo. Aprovechó para hacer campaña por el MAS y Las Rojas. Izquierda Socialista hizo una campaña similar, con un énfasis también en la lucha feminista.&lt;/p&gt;
+
+&lt;p&gt;Se pide el voto para que el representante, de ser elegido, luche. Pero no se hacen explícitos planes de lucha concretos en los que el movimiento estudiantil con los recursos institucionales que se ponen en juego en la elección tome la iniciativa. Hagamos asambleas, emitamos declaraciones, pintemos carteles, marchemos a rectorado, tomemos la facultad. Los instrumentos son específicos, pero los objetivos no. Y la capacidad de articular voluntades para acumular poder real se muestra limitada. Ofrecen más una vidriera del activismo más o menos real que se da afuera de la facultad que un proyecto creíble de lucha desde el interior. Sus votantes son simpatizantes, adherentes de sus causas. No hacen una apuesta política.&lt;/p&gt;
+
+&lt;h2 id=&#34;exactas-puede-más:9894787ee065505e574858cea67f49ec&#34;&gt;Exactas Puede Más&lt;/h2&gt;
+
+&lt;p&gt;Las tres agrupaciones kirchneristas (La Cámpora, Nuevo Encuentro y Mov Evita) se unieron en un frente político, Exactas Puede Más, que además incorporó a Seamos Libres. El año pasado los K fueron a elecciones en una lista única, pero con campañas diferenciadas. Seamos Libre se presentó aparte. La lista K obtuvo el 15% de los votos. Seamos Libres, el 6%. Este año obtuvieron juntos el 16%. Se puede computar como un retroceso: no lograron siquiera sumar los votos del año pasado. El objetivo era crecer y superar a la izquierda. No lo alcanzaron.&lt;/p&gt;
+
+&lt;p&gt;La lista K venía de crecer 6% entre 2013 (obtuvo el 9%) y 2014 (15%). Sus militantes proyectaban un nuevo crecimiento del 6% para este año, que no se dio. Era verosímil: no por la extrapolación lineal que proponían sino porque ese 6% lo podían aportar los votantes de Seamos Libres, que se sumó al frente. Pero quizás lo que haya que explicar no sea la caída (o el estancamiento) del kirchnerismo en 2015, sino el crecimiento en 2014. Lo primero se explica fácil. La excelente elección del FEM hizo que fuera un año inusualmente difícil para la oposición. Y la izquierda demostró que tiene una base de apoyo sólida y una capacidad de llegada a los estudiantes que resiste.&lt;/p&gt;
+
+&lt;p&gt;Lo segundo también tiene explicación: en 2014 la izquierda venía de hacer una pésima gestión del CECEN, lo que abría las puertas a la oposición. Y era el año de llegada a la facultad de Nuevo Encuentro, que conectó con los estudiantes con campañas basadas en acciones reales sin el aparato del CECEN o el voto en el consejo (filmación de teóricas, cursos de portugués, un festival, militancia por un menú de desayuno y merienda). A lo que contribuyó una buena comunicación (con recursos innovadores y el carisma de su representante).&lt;/p&gt;
+
+&lt;p&gt;Este año, en cambio, Nuevo Encuentro se deslució. Buscó renovar y consolidar la organización hacia su interior, dejando de lado las campañas gremiales que le habían ganado el reconocimiento de los votos el año pasado. La Cámpora, contando con un liderazgo renovado a nivel UBA, apostó a seguir el camino que marcó NE en 2014. Con aciertos y algunos desaciertos se hizo más visible e hizo crecer su base militante. Lo cual quizás explique que en el contexto desfavorable no haya retrocedido tanto su voto.&lt;/p&gt;
+
+&lt;p&gt;EPM buscó pelearle a la izquierda el consejero de la minoría con la consigna &amp;ldquo;pluralidad de voces&amp;rdquo;. La izquierda tuvo razón en burlarse: el consejo tiene mayoría kirchnerista (tanto en graduados como en profesores); sumar kirchnerismo no iba a hacer crecer la pluralidad. Pero, por esa misma razón, la apuesta política a la que llamó EPM fue la más sustancial.&lt;/p&gt;
+
+&lt;p&gt;El FEM llamaba a validar su buena gestión del CECEN y su conducción de los conflictos gremiales. La izquierda llamaba a validar sus reclamos y sus luchas. EPM, en cambio, hizo una campaña propositiva, sin referencias partidarias. &amp;ldquo;Imaginate todo lo que podemos hacer&amp;rdquo;, fue el slogan. Resulta difícil imaginar el éxito de todas las propuestas que hicieron en su plataforma, incluso en un escenario hipotético de ser mayoría tanto en el CECEN como en el CD. Pero fueron los únicos que hicieron un planteo político transformador y hasta cierto punto creíble. Propusieron reformas académicas necesarias pero políticamente costosas, que requerirían un enorme trabajo y grandes consensos (una revisión del plan de estudios de biología y títulos intermedios para todas las carreras).&lt;/p&gt;
+
+&lt;p&gt;Exactas es una facultad que produce investigación, más básica que aplicada. Pero tiene un enorme potencial para contribuir al proceso de desarrollo del país. Lograr eso requiere de una discusión profunda y de cambios de conducta y de valores por parte de todos los actores que la integran. El kirchnerismo, con su retórica y su política de promoción de la ciencia y la tecnología como sectores estratégicos, provee un fondo sobre el cual llevar adelante estas reformas. Hay, con esto, una oportunidad para que la política universitaria transforme significativamente su realidad, empoderando a los estudiantes en ese proceso. Lo cual tendría la chance de alcanzar un resultado muy distinto al caso paradigmático de la facultad de Económicas, que sí logró atravesar un proceso de gran transformación. Pero que, siendo un éxito de la política democrática, fue un fracaso para los valores que defienden los estudiantes de Exactas (Económicas consiguió su autonomía económica a cambio de su apertura al mercado, y logró cambios en sus planes de estudio a costa de multiplicar los posgrados arancelados). Hay, por lo tanto, una oportunidad pero también un enorme riesgo.&lt;/p&gt;
+
+&lt;p&gt;Frente a este escenario la izquierda es conservadora. Tiene motivos ideológicos y prácticos para esto. En contraposición el kirchnerismo hace una apuesta arriesgada. Pero por ahora no despega. Frente el FEM tiene dos grandes desventajas. Los militantes del FEM están organizados en un espacio político coherente y durable, conocen el funcionamiento de la facultad desde adentro y son conocidos en los espacios en los que participan. Los militantes de EPM, en cambio, están distribuidos en cuatro espacios políticos que tienen sus propias identidades, que no están consolidados hacia adentro ni consolidaron una organización que les permita actuar compartiendo recursos y beneficios. La segunda ventaja del FEM está en que logró imponer su versión de los hechos en torno al conflicto por el presupuesto. EPM vindicó el reclamo estudiantil que condujo el FEM pero cuestionó la victoria. El FEM le ganó la batalla por la credibilidad, poniendo así a EPM en una posición impopular y reaccionaria.&lt;/p&gt;
+
+&lt;p&gt;La victoria del kirchnerismo en Sociales se podría haber replicado en Exactas. Leandro Germán, un militante del PO, en un análisis muy interesante hace un listado de las condiciones que hicieron eso posible. Resumo: 1) Sociales está ligada institucional e ideológicamente al kirchnerismo (sociología a Carta Abierta, comunicación a la &amp;ldquo;ley de medios&amp;rdquo;, ciencia política a la &amp;ldquo;reforma política&amp;rdquo; del 2009, trabajo social a la AUH, relaciones del trabajo al Ministerio de Trabajo), 2) hay una mayoría kirchnerista en docentes, 3) el centro de estudiantes viene de ser conducido por La Mella (entre 2008 y 2013), una izquierda que no es abiertamente antikirchnerista, y 4) viene de una mala gestión de la izquierda. Las primeras tres condiciones se repiten en Exactas: 1) Exactas tiene un vínculo con el kirchnerismo en la repatriación de científicos y la creación del Ministerio de Ciencia, 2) tiene mayoría kirchnerista en docentes, y 3) La Mella conduce el centro de estudiantes. Hay una gran diferencia: la Mella se repuso a la crisis del 2013 en Exactas. En Sociales no. La pregunta que queda abierta es por qué.&lt;/p&gt;
+
+&lt;h2 id=&#34;fuentes:9894787ee065505e574858cea67f49ec&#34;&gt;Fuentes&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Juventud Informada, &lt;a href=&#34;http://www.juventudinformada.com.ar/&#34;&gt;http://www.juventudinformada.com.ar/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Max Pérez Fallik, El “No a la CONEAU” en la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires: rupturas y continuidades, &lt;a href=&#34;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&#34;&gt;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Leandro Germán, análisis de la elección en Sociales, &lt;a href=&#34;https://www.facebook.com/leandro.german.10/posts/10205785886543289&#34;&gt;https://www.facebook.com/leandro.german.10/posts/10205785886543289&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Demarcación científica</title>
+      <link>http://juandodyk.github.io/post/demarcacion-cientifica/</link>
+      <pubDate>Sun, 07 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/demarcacion-cientifica/</guid>
+      <description>&lt;p&gt;No creo que sea posible la “demarcación” de la ciencia, la distinción entre ciencia y no ciencia por un criterio seguro (ejemplo paradigmático: el de Popper).&lt;/p&gt;
+
+&lt;p&gt;¿Qué pienso yo sobre las “pseudociencias” si no creo en la demarcación? Primero que nada: hay casos muy importantes en los que la demarcación ciencia/pseudociencia pasa por responder una pregunta científica posta, sobre la realidad, y no una mera pregunta metodológica (sobre qué actitud tenés). Ponele que un grupo de investigadores desarrolla un programa de investigación basado en una conjetura X. Ponele que otros investigadores hacen lo mismo, basados en una conjetura Y. Los segundos investigadores “refutan” la conjetura X, pero bajo la conjetura Y. Entonces para los segundos los primeros hacen pseudociencia, pero los primeros no se dan por aludidos porque no creen en Y. Estas cosas pasan. Pasan cuando hay experimentos de por medio, cuya interpretación depende de una teoría: si aceptás la teoría, el experimento “refuta” una teoría rival, pero si no la aceptás te parece inconcluyente. Otra cosa: ¿cómo sabés si el experimento está bien hecho, bien llevado a cabo? A veces necesitás una teoría controvertida para decir, ponele, que tus instrumentos son confiables. (A veces la fuente de desconfianza pasa por fuera de la teoría: por la pericia práctica del operario o por la honestidad del investigador.) Resumen: para mí el problema de la demarcación está en que es imposible hacer una distinción a priori entre cuestiones metodológicas (por donde pasaría la demarcación) y cuestiones fácticas. Hay teorías que sostienen verdad y teorías que sostienen falsedad; esa distinción me parece bien, y nadie espera que haya un criterio a priori para demarcar unas de otras. Igualmente no creo que haya un criterio único para distinguir ciencia de no ciencia en todos los casos, que justifique la idea de demarcación.&lt;/p&gt;
+
+&lt;p&gt;Vos podés decir: pero hay casos en los que es obvio; esos casos justificarían el uso del concepto, por más vago que sea. El ejemplo sería el té chino que asegura que te hace bajar de peso porque la física cuántica así lo dice. Es obvio que no es “científico” eso. Pero igual yo digo que resistamos la tentación de decir que no es científico. Seamos más específicos: si hay algo claro y cero problemático es que la física cuántica no tiene nada que decir sobre la efectividad del té chino. Mirá todos los programas de física cuántica en todos los centros de investigación del mundo (más o menos reconocidos por universidades o revistas confiables) y preguntale a un representante de cada uno: todos te van a responder que no, que la física cuántica no tiene nada para decir sobre el té. Suficiente. No hace falta aceptar algo súper controvertido como es el criterio de Popper. No necesitás demarcación ciencia/pseudociencia para desasociar al té chino de la física cuántica mínimamente seria o reconocida como tal. Usar algo tan delicado como un criterio de demarcación contra el té chino es como matar un mosquito con una bazuca (y una bazuca a la cual el tiro le puede salir por la culata).&lt;/p&gt;
+
+&lt;p&gt;¿Qué pasa con el psicoanálisis? ¿Es ciencia o pseudociencia? Me parece una mala pregunta. ¿Está bien que se enseñe en la UBA, o que se den becas conicet a investigadores en psicoanálisis? Esa me parece una pregunta mejor. ¿Está bien que haya psicoanalistas en hospitales públicos? Todavía mejor. Pero no creo que ningún criterio de demarcación científica tenga la respuesta. ¿Cómo se responden esas preguntas? No lo sé a priori. Tendría que ponerme a leer un montón sobre el tema, escuchar todas las voces y formar una opinión. Si hay teoría, experimentos, y ese tipo de cosas, también voy a tener que enterarme en cierto detalle cómo funcionan, qué dicen, y ver si me convencen. Pero no hay un criterio a priori, tipo un algoritmo por el que pueda pasar esas cosas y que me diga OK o NO OK.&lt;/p&gt;
+
+&lt;p&gt;Creo que no hay distinción entre metodología y ciencia; no es que Dios (o San Popper) te entrega la metodología, como algo que nunca en tu vida vas a cuestionar, y a partir de ahí te ponés a hacer ciencia, nunca discutiendo la metodología. Al contrario: el progreso de la ciencia está, en parte, en modificar la metodología recibida; hasta que “ganes” vas a recibir un montón de acusaciones de pseudociencia. (¿Cómo “ganás”? La “naturaleza” tiene que estar de tu lado, por supuesto, pero también tenés que convencer a los humanos. No queda claro dónde termina convencer-a-los-humanos y dónde empieza que-te-dé-la-razón-la-naturaleza.) Neurath decía que cuando hacés ciencia es como que estás en un barco (la metodología) que tenés que arreglar en altamar. Los criterios de demarcación buscan ponerse como un piso sólido sobre el que moverte. Bueno, no hay ese piso sólido, y no lo necesitamos.&lt;/p&gt;
+
+&lt;p&gt;Otra idea (llamada fisicalismo) es que hay una “metaciencia” y es la física. Un cuerpo teórico es “ciencia” si o bien es la física, o bien sus entidades y sus leyes se pueden reducir a entidades y leyes físicas. Vale transitividad, por supuesto. Entonces la química es ciencia porque se puede reducir a la física; la biología es ciencia porque se puede reducir a la química. La psicología podría ser ciencia en tanto se pueda reducir a la biología. Ahora bien, que la química se pueda reducir posta a la física es algo muy discutido, y con la biología es aún peor. ¿Hasta que no estén resueltas totalmente esas disputas vamos a dejar de llamar ciencia a la química y a la biología? ¿Cómo sabemos si esas disputas están resueltas totalmente? ¿El cuerpo teórico que se use para justificar que la química es reducible a la física, es en sí reducible a la física? Parece una estupidez todo esto, pero hay discusiones posta sobre estas preguntas. (Para determinar si hay reducción o no es relevante la filosofía del lenguaje; ¿se pueden reducir a la física los conceptos de la filosofía del lenguaje? Buena pregunta: Hartry Field decía en los 70 que sí -ahora creo que ya no, no sé bien-; Putnam está convencido de que no. ¿Cuál de los dos tiene razón? No creo que la física tenga una respuesta.)&lt;/p&gt;
+
+&lt;p&gt;Conclusión: no hay demarcación. ¿Entonces? Hay que evaluar caso por caso. Usar las ciencias (y no La Ciencia) para refutar estafadores (como sería el té chino) está perfecto, obviamente. Pero quejarse de que tal cuerpo teórico es defectuoso porque no es parte de “La Ciencia” es estúpido, no se sustenta en nada.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Comentario sobre Harman</title>
+      <link>http://juandodyk.github.io/post/comentario-sobre-Harman/</link>
+      <pubDate>Mon, 07 Jul 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/comentario-sobre-Harman/</guid>
+      <description>
+
+&lt;p&gt;Comentario sobre el texto &lt;a href=&#34;http://www.revistaluthor.com.ar/spip.php?article103&#34;&gt;&amp;ldquo;Descubrir objetos nuevos es más importante que eliminar objetos viejos&amp;rdquo;&lt;/a&gt;, de Graham Harman.&lt;/p&gt;
+
+&lt;h2 id=&#34;1-puesta-en-escena-latour-irreduccionismo-y-reduccionismo-hacia-arriba-strong:3c813fd34cf2df9902434313a026abe8&#34;&gt;1. Puesta en escena. Latour, irreduccionismo, y reduccionismo hacia arriba&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;En la primera parte Harman dice esto, en resumen. Latour en su libro Irreducciones se plantea la tarea de hacer una filosofía que evite todo reduccionismo. Harman se pregunta si lo consigue realmente. Hay dos objeciones a la estrategia de Latour. La primera es mayormente obvia, inevitable e inofensiva. Latour propone ver a toda entidad, para evitar aplastarla con presupuestos a priori, como un agente sin ninguna propiedad determinante (interna), y por lo tanto completamente libre en principio; su realidad no pasa por su esencia o su existencia (reconoce gradientes de existencia por los que puede pasar una entidad) sino por su acción, que siempre involucra a otros agentes y produce un desplazamiento de roles por el proceso que Latour llama traducción. La objeción es: esto también es un molde a priori con el que tratar a todas las entidades de la misma manera. Harman dice: sí, pero toda teorización metafísica está condenada a esto. El mérito de la propuesta de Latour está en que si bien todo es un actor, ningún actor (en principio) está reducido a ningún otro. Algo para notar es que Latour sí admite la reducción; el truco es que no es &amp;ldquo;el analista&amp;rdquo; (así hablan los sociólgos) el que reduce, sino los agentes mismos los que operan reducción cuando lo consiguen (y nunca es definitivo). Lo que propone Latour es que no sea la teoría la que reduce, que es, por supuesto, todo a lo que se puede aspirar desde la teoría misma. Entonces esta primera objeción llama a cuestionarse qué esperar y qué no de un antirreduccionismo radical como el de Latour, pero no invalida el suyo.&lt;/p&gt;
+
+&lt;p&gt;Hay una segunda objeción que sí es más dañina, y alrededor de la cual gira el argumento de Harman. Latour busca evitar un reduccionismo hacia abajo: el de un objeto que &amp;ldquo;no es más que&amp;rdquo; ciertos objetos más fundamentales, el de una predicación que &amp;ldquo;no es más que&amp;rdquo; la determinación de una propiedad esencial, o el de un evento que &amp;ldquo;no es más que&amp;rdquo; la consecuencia de una ley causal. Entonces Latour prohibe a la teoría elegir sus entidades fundamentales favoritas (y de esa manera, por ejemplo, bloquea desde el vamos el debate realismo vs nominalismo), prohibe el esencialismo y la noción de sustancia, y propone reemplazar la explicación causal por descripción en términos de acción. Negadas estas salidas comunes propone ver toda entidad como un agente en principio libre, todo evento como acción bajo el modelo de la traducción, en el que dos o más agentes se combinan para formas un tercero que los coordina, y toda propiedad en términos de estos efectos relacionales. Harman objeta: si no hay más orden que el que aparece con la coordinación de actores bajo el mando de uno nuevo, es decir, si toda propiedad es relacional, lo único que hizo Latour fue cambiar un reduccionismo hacia abajo por un reduccionismo hacia arriba. La primera apuesta de Harman es introducir la posibilidad de este otro reduccionismo del que también habría que liberarse (al menos si uno busca liberarse del reduccionismo en general siguiendo a Latour). Latour se habría quedado a mitad de camino, apuesta Harman. él nos va a enseñar finalmente cómo ser irreduccionistas tout court.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;2-el-argumento-central-contra-los-dos-tipos-de-reduccionismo-strong:3c813fd34cf2df9902434313a026abe8&#34;&gt;2. El argumento central: contra los dos tipos de reduccionismo&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;La segunda parte del texto se dedica a establecer estos dos tipos de reducción: hacia abajo y hacia arriba, que el llama, respectivamente, socavamiento y disolución. Traza una génesis de estos dos modos de la metafísica y los postula ubicuos: nadie antes logró liberarse de ambos. El cientismo cae más en el socavamiento, pero las humanidades caen igualmente en la disolución. Seguido hace la observación que hice con respecto a la primera objeción contra Latour: no es que esté mal socavar o disolver, sólo que no puede ser un objetivo primordial y sistemático, como si de eso se tratara relacionarse bien con el mundo (la idea de la ilustración). Y acá viene lo que yo creo que es el argumento central del texto, que es por qué o en qué cree Harman que fallan generalmente los dos tipos de reducciones. Antes de hacer un comentario voy a repasar también estos argumentos. Hago esto, en lugar de lanzar mis críticas directamente, porque no uso el mismo vocabulario que Harman, entonces para poder conversar tengo necesariamente que traducirlo; y no voy a dejar de ser latouriano justo acá como para creer que no opera ninguna transformación cuando hago esto.&lt;/p&gt;
+
+&lt;p&gt;El argumento anti socavamiento dice que éste va contra la &amp;ldquo;emergencia&amp;rdquo;. Este es un concepto viejo, que si yo no entiendo mal Latour elige evitar, y que incluso ataca. Está asociado a la &amp;ldquo;complejidad&amp;rdquo; y a los &amp;ldquo;sistemas&amp;rdquo;, a Prigogine, a Deleuze y a Luhmann. Argumentos en contra a los que adhiero se encuentran en Latour y Strum, Redefining the social link. Todos los ejemplos que da Harman de emergentes pueden entenderse en otros términos. Sus objetos emergentes se arreglan incluyendo la dimensión del tiempo (que por algún motivo se cuidad de no tocar jamás, como si fuera sagrada). Por ejemplo, &amp;ldquo;un cuerpo sigue siendo el mismo si le es sustraído un cierto número de células&amp;rdquo;. Sí, es cierto, pero nada impide reducir al cuerpo no a un conjunto de células sino a un cierto conjunto de células-tiempo (entre t0 y t1 a tales células, entre t1 y t2 a tales otras, etc); no digo que esto no tenga problemas, pero no es vulnerable a la objeción de Harman, y no queda claro que de esta manera (más o menos ad hoc) no se pueda evitar sistemáticamente todo contraejemplo de este tipo. Esto ya lo decía Carnap hace quizás 100 años; Quine es un ejemplo de filósofo que lo sostuvo hasta sus últimas consecuencias, con el máximo de reducción posible. Sobre las propiedades emergentes que cita hay un problema epistémico: que tengamos evidencia incompleta o sólo tengamos leyes cualitativas o estadísticas no quiere decir que el fenómeno no esté determinado por sus partes. Puede ser imposible una reducción nomológica, de leyes de un tipo a leyes de otro tipo, pero eso no es motivo suficiente para bloquear toda reducción ontológica. (Ejemplo, Davidson en Anomalous monism: se puede ser monista ontológico, es decir, no creer que existe el alma, y creer sin embargo que las leyes físicas no pueden bastar para fijar el contenido de nuestros conceptos semánticos.)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;p&gt;Cuando argumenta en contra de la disolución Harman cae en el mismo problema en el que parece atrapado: el tiempo para él es sagrado, no se toca. La ontología está separada del tiempo, para él. Alguien que sepa de Heidegger quizás pueda sugerir por qué no deja de aferrarse a esta creencia (quizás él mismo), pero en cualquier caso creo que adoptar esta postura sin ningún argumento es motivo suficiente para rechazar la propuesta que hace en su texto. Quizás para él sea obvio, pero para mí que en este momento sólo tengo presente este texto suyo no. La crítica a la disolución que hace, si funcionara, recaería de lleno en la teoría del actor-red de Latour, con efectos quizás fatales. Como funciona la traducción, un actor traducido no tendría manera de zafarse de una red más que siendo traducido por otro actor, y por lo tanto quedaría maniatado por su traductor. Finalmente no serían tan libres los agentes de Latour como éste se propuso una vez lanzados al mundo. Pero eso es porque Harman ignora otra vez la dimensión del tiempo: para Latour ninguna traducción es definitiva. Todo actor-red puede colapsar y descomponerse en un conjunto de actores con metas divergentes. Un auto puede funcionar bajo el mando del conductor lego como auto por un buen tiempo, hasta romperse y convertirse en un empaquetado heterogéneo de partes cada una de las cuales responde únicamente a un especialista propio. La disolución es una restricción a la libertad o autonomía pero no es esencial ni definitiva, y es en esto en lo que radica el mérito de la teoría de Latour. Por los argumentos que da Harman no queda claro que la segunda objeción (en los términos de la primera parte de este texto) sea más dañina que la primera. Esto es el centro de la argumentación de Harman, y creo que expuse motivos suficientes para rechazarla.&lt;/p&gt;
+
+&lt;h2 id=&#34;3-la-propuesta-de-harman-strong:3c813fd34cf2df9902434313a026abe8&#34;&gt;3. La propuesta de Harman&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;A pesar de que rechacé su argumento central, del que depende el resto, quiero repasar lo que propone. Podría arguirse: la propuesta es buena, solo que necesita un mejor abogado. Yo creo que no: los problemas que tienen los argumentos antirreduccionistas se reproducen en la propuesta de la sección 3. Y de hecho yo estoy de acuerdo en gran medida con el ánimo antirreduccionista de Harman. Es la calidad de la argumentación y sus recursos con los que tengo problemas, y hacia dónde hacen dirigir a su ejecutor.&lt;/p&gt;
+
+&lt;p&gt;Habla mal de los &amp;ldquo;métodos intelectuales&amp;rdquo;. Yo estoy en contra de la &amp;ldquo;metodología&amp;rdquo; y la filosofía me acompaña hace unas cuantas décadas en esto. Queda sin efecto el llamado de Harman a abandonar algo que ya fue abandonado hace mucho. Es llamativo igual lo que propone en cambio, los &amp;ldquo;contramétodos&amp;rdquo;. Lo primero que noto es que Harman no está dispuesto a señalar o definir los contramétodos explícitamente. La fuerza de su propuesta radica antes en convencernos de que tiene que haber algo más que los métodos, en señalar ese espacio vacío. Algo tiene que haber además de los métodos: esa es la apuesta, no una descripción explícita de un candidato. Pero ¿tenemos que creer esto? Yo no creo ni que tenga que haber &amp;ldquo;métodos&amp;rdquo; intelectuales ni mucho menos estos &amp;ldquo;contramétodos&amp;rdquo; misteriosos. Los ejemplos que delinea oblicuamente no ayudan a convencerme. El argumento sobre la &amp;ldquo;alusión&amp;rdquo; y el bosón de Higgs es una simplificación tonta de los argumentos de Kripke y Putnam sobre los nombres de tipos naturales.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; A continuación tira esta frase: &amp;ldquo;Para llegar hasta la naturaleza oculta de las cosas, la oblicuidad y la metáfora son herramientas más precisas que cualquier catálogo engreído, despreciativo y reduccionista de sus rasgos palpables.&amp;rdquo; Yo me pregunto: ¿quién quiere llegar hasta la &amp;ldquo;naturaleza oculta de las cosas&amp;rdquo;? ¿Qué es eso? ¿Cómo tiene sentido pedir herramientas &amp;ldquo;precisas&amp;rdquo; para llegar a una naturaleza &amp;ldquo;oculta&amp;rdquo;? Si la naturaleza es oculta a priori ¿tiene sentido buscar herramientas para llegar a ella? Harman tiene una tendencia contradictoria: por un lado nos llama a dejar libres a los objetos, no encarcelarlos asignándoles una naturaleza que los determina de una vez y para siempre; por otro lado nos llama a buscar &amp;ldquo;contramétodos&amp;rdquo; para acceder a esa misma naturaleza que nos llama a rechazar. Es profundamente incoherente su propuesta. Notar que podemos, de nuevo, detectar el fantasma de Heidegger dando vueltas acá, como justificación posible de estas movidas aparentemente irracionales. Pero hay que recordar el desarrollo de las ideas de Heidegger: del pragmatismo de El ser y el tiempo a la autofagia del lenguaje y de toda comunicación intelectual en su último período. Claro que El Ser queda afuera de los &amp;ldquo;métodos&amp;rdquo;, pero ninguna propuesta va a reparar esto. En tanto intenta proponer algo, en tanto cree que hay algo, alguna cosa, que poner en lugar de los &amp;ldquo;métodos&amp;rdquo;, la posición de Harman es incoherente.&lt;/p&gt;
+
+&lt;p&gt;Después se defiende de dos objeciones. La primera es una versión del verificacionismo. El verificacionismo se viene combatiendo en filosofía analítica desde el año 1950 o antes, por ejemplo en Quine, Two dogmas of empiricism, en el que ataca también cierta forma de reduccionismo. Si lo único que tiene para decir Harman es esto, ya lo viene diciendo Quine hace 60 años. Llegó tarde.&lt;/p&gt;
+
+&lt;p&gt;Después dice que el esencialismo es la pretensión de que podemos conocer las esencias. Esto es falso. Hay esencialismo epistémico y esencialismo metafísico; Kripke viene sosteniendo un esencialismo no epistémico desde los 60s. La idea de que la filosofía tiende a decir que lo que podemos conocer es todo lo que hay, o todo acerca de lo que se puede hablar objetivamente, existe y estoy completamente de acuerdo con Harman en que hay que atacarla. Pero se viene atacando hace muchos años; un ejemplo explícito es Davidson en Indeterminism and antirealism, pero la tendencia es anterior.&lt;/p&gt;
+
+&lt;p&gt;Para finalizar, el último párrafo es simplemente estúpido. La matemática, por lo menos, nunca trabaja a través de la catalogación exacta de propiedades y cualidades. Simplemente porque es imposible en la mayoría de los casos, por los teoremas de incompletitud de Gödel. La matemática ya era harmaniana antes de que Harman naciera. Y yo me pregunto: ¿qué pasaría si los próximos quinientos años vieran una filosofía que no hace la distinción aberrante que hace Harman entre &amp;ldquo;artes&amp;rdquo; y &amp;ldquo;ciencias duras&amp;rdquo;? Una filosofía que deja libres a los objetos, a los conceptos y a los métodos. Notar que Latour y Putnam ya se propusieron esto, y en gran medida creo que podemos confiar en que lo lograron. Pero Harman no tiene nada que aportar a esta historia triunfal, lamentablemente.&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;En Deleuze-Guatari y DeLanda aparece este cambio de dirección con los llamados &amp;ldquo;ensamblados&amp;rdquo;, que no se determinan por lo que contienen sino por los otros ensamblados en los que eligen incluirse.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;Notar de paso que críticas al reduccionismo ontológico, llamados al pluralismo ontológico incluso, existen hace mucho, y mucho más sofisticadas que esta. El locus clásico es el principio de tolerancia de Carnap. Para él nadie puede determinar racionalmente qué tipo de objetos pueblan el mundo. Quine, sin embargo, lo contradijo al sostener que la distinción entre preguntas internas (las que sí se pueden responder) y externas (metafísicas reductivas) de Carnap colapsa con la distinción analítico-sintético que él rechaza (verdad por significado contra verdad por hecho), y que por lo tanto preguntas sobre qué es y qué no deben ser tratadas a la par de preguntas más normales. Plantea, de todas maneras, que en última instancia la ontología queda indeterminada en su tesis del relativismo ontológico, y que, en cualquier caso, la referencia de nuestros términos singulares es inescrutable más allá de toda teorización. Putnam en sus escritos de los 80 sostiene y refuerza esta última tesis bajo la hipótesis de un marco de teorización en el que buscamos posicionarnos desde el punto de vista de Dios (que asocia tanto al realismo metafísico como al antirrealismo relativista), haciendo colapsar la pretensión de ese punto de vista. Su conclusión es sostener una noción de verdad objetiva (a la que hacemos referencia pero que no pretendemos capturar), si bien conceptualmente indeterminada. (En paralelo Davidson rechaza la noción de referencia como innecesaria, haciendo un punto similar.) El pluralismo conceptual de Putnam 1980 parece lo más cercano a la posición de Harman en esta parte, pero notar la diferencia: mientras para Harman encontrar un punto medio entre la reducción hacia abajo y la reducción hacia arriba es despojarnos de toda arma conceptual (todo &amp;ldquo;método&amp;rdquo;, como lo llama) para hacernos entrar en el terreno imposible de los &amp;ldquo;contramétodos&amp;rdquo; como única garantía para asegurar el falibilismo en todo el camino, Putnam nos llama a abrazar la proliferación de conceptos (y de los métodos para producir enunciados sobre el mundo que traen consigo) sin dejar nunca de tener en mente, y justamente por, que ninguno trae una garantía exclusiva a priori de producir verdad de manera privilegiada. Carnap es &lt;em&gt;Semantics, empiricism, ontology&lt;/em&gt;. Quine es &lt;em&gt;On what there is&lt;/em&gt;, &lt;em&gt;Two dogmas of empiricism&lt;/em&gt; y &lt;em&gt;Ontological relativity&lt;/em&gt;. Putnam es &lt;em&gt;Reason, truth and history&lt;/em&gt; y &lt;em&gt;Realism with a human face&lt;/em&gt;.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;Ver &lt;em&gt;Naming and necessity&lt;/em&gt; de Kripke y &lt;em&gt;The meaning of &amp;lsquo;meaning&amp;rsquo;&lt;/em&gt; de Putnam.
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Nuevo libro de Latour</title>
+      <link>http://juandodyk.github.io/post/nuevo-libro-de-Latour/</link>
+      <pubDate>Fri, 13 Sep 2013 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/nuevo-libro-de-Latour/</guid>
+      <description>&lt;p&gt;Hace un mes [esto fue escrito en Septiembre, 2013] se publicó la traducción al inglés del &amp;uacute;ltimo libro de Bruno Latour, &lt;em&gt;An Inquiry Into Modes of Existence&lt;/em&gt; (publicado en francés en septiembre del año pasado), traducción de Catherine Porter. En Internet está colgado el primer capítulo y el índice &lt;a href=&#34;http://www.bruno-latour.fr/node/252&#34;&gt;http://www.bruno-latour.fr/node/252&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Leí el primer capítulo. Parece un libro muy general, que sigue la línea de &lt;em&gt;Science in action&lt;/em&gt; y &lt;em&gt;Reassembling the social&lt;/em&gt;: tratados más o menos sistemáticos de teoría del actor-red, cada vez más ampliada (se podría poner &lt;em&gt;Irreductions&lt;/em&gt; como predecesor en esta serie). ¿Qué se puede agregar a RTS? En palabras de Latour, la idea es hacer una antropología positiva de los Modernos, quienes, como recuerda, nunca fueron modernos, pero eso es sólo una definición negativa. El camino es estudiar los varios tipos de condiciones de felicidad de los varios tipos de producción de verdad, los varios &lt;em&gt;regímenes de enunciación&lt;/em&gt; (científica, legal, religiosa, etc). Esta es la manera semiótica de decirlo; otra manera, mezcla de Simondon y William James, equivalente para Latour, es estudiar los diversos &lt;em&gt;modos de existencia&lt;/em&gt; de las cosas que pueblan el mundo de los modernos, que recordemos son como &amp;ldquo;adverbios&amp;rdquo; directamente accesibles a la experiencia. El tema no es aprender a hablar &lt;em&gt;sobre&lt;/em&gt; la ciencia, o &lt;em&gt;sobre&lt;/em&gt; la ley, o &lt;em&gt;sobre&lt;/em&gt; la religión, sino aprender lo que es hablar &lt;em&gt;científicamente&lt;/em&gt;, &lt;em&gt;legalmente&lt;/em&gt;, &lt;em&gt;religiosamente&lt;/em&gt;. Capturar la &amp;ldquo;esencia&amp;rdquo; de la ciencia, la ley, la religión, no como &lt;em&gt;dominios&lt;/em&gt; sino como &lt;em&gt;maneras&lt;/em&gt; específicas de establecer relaciones entre elementos heterogéneos.&lt;/p&gt;
+
+&lt;p&gt;¿Cómo se engancha esto con la &amp;ldquo;vieja&amp;rdquo; teoría del actor-red? La historia es más o menos así: el concepto de red, o de &lt;em&gt;actor-red&lt;/em&gt;, sirve para hablar sobre las cosas mostrando una dualidad entre &lt;em&gt;actor&lt;/em&gt; (o &amp;ldquo;actante&amp;rdquo;) y &lt;em&gt;red&lt;/em&gt;, &amp;ldquo;efecto de red&amp;rdquo;, &amp;ldquo;asociación&amp;rdquo; entre entidades que uno no reconocería como que son la cosa, o que son parte de la cosa. (Dualidad como la dualidad onda/partícula: las cosas se pueden ver alternativamente como actores o como redes; como entidades (Quine) o como ficciones (Yablo).) La idea es no negar la &lt;em&gt;realidad&lt;/em&gt; de las cosas, pero verla como &lt;em&gt;efecto de relaciones&lt;/em&gt;. Las relaciones, las conexiones, las asociaciones, las mediaciones están primero, no son relaciones entre cosas fijas sino que hacen que las cosas que relacionan existan. Bajando a algo un poco más concreto, tenemos por un lado la sociología de la ciencia que, mal pero com&amp;uacute;nmente entendida, estudia los &amp;ldquo;factores sociales&amp;rdquo; que intervienen en la ciencia. O la sociología de la denuncia que muestra que la ciencia o el arte, el conocimiento, la &amp;ldquo;realidad&amp;rdquo; o el gusto artístico, son &amp;ldquo;sociales&amp;rdquo;, están &amp;ldquo;socialmente construidos&amp;rdquo;. Plantean la ciencia/el arte, por un lado, y la sociedad, por otro, como dominios, como cosas fijas, y estudian las relaciones causales entre ambos, mostrando que lo que es supuestamente puramente científico, o puramente artístico, tiene un &amp;ldquo;componente&amp;rdquo; o una &amp;ldquo;causa&amp;rdquo; social, donde &amp;ldquo;lo social&amp;rdquo; es un material, un tipo de cosa. Latour dice: &lt;em&gt;la sociedad no cuenta como recurso explicativo&lt;/em&gt;. La sociedad no es algo que puede explicar otra cosa; es algo que hay que explicar por las otras cosas. Sociedad entendida como relaciones, y no como la cosa de la que hablan los sociólogos, como dominio sui generis que se puede estudiar con métodos específicos, etc. No hay un dominio primitivo, puramente social, puramente humano, de &amp;ldquo;convenciones&amp;rdquo;, &amp;ldquo;ritos&amp;rdquo;, &amp;ldquo;afinidades&amp;rdquo;, etc, que convive con el resto de los dominios definidos por los modernos, la Ciencia, el Arte, la Ley, el Mercado, etc. La idea es no separar a priori entre dominios separados (mucho menos para después denunciar que la separación es ilusoria) sino mostrar el duro y eterno &lt;em&gt;trabajo&lt;/em&gt; de &lt;em&gt;asociaciones&lt;/em&gt; y de &lt;em&gt;asignación de identidades&lt;/em&gt; al que deben dedicarse los actores para poder usar los apelativos de científico, artístico, legal, etc. Se abandonan así todas las distinciones a priori entre naturaleza y cultura, conocimiento científico y no científico, experiencia estética y no estética, etc. Lo que dice Latour es, entonces: todo es social, todo es red (pero es un dictum vacío, una tautología); cada práctica, cada conexión, establece un tipo de construcción de realidad distinto: la ciencia a su manera, el arte a la suya, etc; pero la ciencia no está hecha de cosas científicas ni el arte de cosas artísticas, sino que tejen, cada una a su manera, lazos entre elementos de todo tipo. &amp;ldquo;Objective facts are not produced objectively, the same way milk is not produced &amp;lsquo;milkly&amp;rsquo;.&amp;rdquo; De esta manera, en el contexto de la teoría del actor-red, los dominios de los modernos se ven como tipos de asociaciones que entre todas hacen el entramado de nuestro mundo, es decir, de la sociedad o, mejor dicho, del &amp;ldquo;colectivo&amp;rdquo;. Nada queda afuera: conocimiento científico, personas, la &amp;ldquo;naturaleza&amp;rdquo;, objetos técnicos, obras de arte, códigos legales, todo es parte del colectivo, todo debe estar imbricado en alguna red para poder existir, red que lo conecta de mil maneras diferentes con mil cosas todas de distintos tipos pasando por mil lugares y mil tiempos diferentes.&lt;/p&gt;
+
+&lt;p&gt;Hasta acá todo me parece que viene bien. Con este espíritu venían estando escritos todos los libros anteriores de Latour, incluso los más abocados a &amp;ldquo;definir&amp;rdquo; alg&amp;uacute;n tipo particular de régimen de verdad, a responder una pregunta &amp;ldquo;qué es&amp;rdquo;. Todo venía en la dirección de la pluralidad, de mostrar que hay muchas maneras de hacer las cosas, que nunca hay que cerrarse a conexiones inesperadas, que la sociología es problema de los actores, etc. Pero este nuevo libro parece que pretende hacer algo distinto. Cito la página web: &amp;ldquo;a research protocol has been developed that is very different from the actor-network theory. The question is no longer only to define &amp;lsquo;associations&amp;rsquo; and to follow networks in order to redefine the notion of &amp;lsquo;society&amp;rsquo; and &amp;lsquo;social&amp;rsquo; (as in &amp;lsquo;Reassembling the Social&amp;rsquo;) but to follow the different types of connectors that provide those networks with their specific tonalities. Those modes of extension, or modes of existence, account for the many differences between law, science, politics, and so on.&amp;rdquo; En el texto esta bisagra, este punto donde el proyecto se despega de aquél de RTS, está, entiendo, exactamente en la página 37, en esos dos párrafos.&lt;/p&gt;
+
+&lt;p&gt;En el primer párrafo dice que lo que define una práctica es, para los actores, un &amp;ldquo;no sé qué&amp;rdquo;, y que es el trabajo del antropólogo dar una formulación precisa. En el segundo, que la red no basta, no es todo: hay que determinar los &amp;ldquo;valores&amp;rdquo; que circulan en la red.&lt;/p&gt;
+
+&lt;p&gt;Acá Latour me defrauda: da un paso atrás, me parece. La tarea de definir los &amp;ldquo;valores&amp;rdquo; parece una vuelta a Weber, el Weber que lleva directo a Merton. Se pierde la lección de Garfinkel (que está en Wittgenstein, en Heidegger, en Rorty, en Putnam): no hay una mejor formulación de ese &amp;ldquo;no sé qué&amp;rdquo;. La sociología tiene que contentarse con ser una teoría negativa, que termine justamente donde termina la red, donde alg&amp;uacute;n actor hizo alg&amp;uacute;n trabajo de definición, y no avanzar más.&lt;/p&gt;
+
+&lt;p&gt;Latour había ayudado, entre otros, a despegarnos de las definciones de ciencia, ya sea basadas en un &amp;ldquo;método científico&amp;rdquo; (ejemplo, el falsacionismo de Popper) o en ciertas &amp;ldquo;condiciones sociales&amp;rdquo; (las teorías de Merton o Bourdieu), encargados de diferenciar la construcción de teorías/creencias &amp;ldquo;racionales&amp;rdquo; de las demás, ya sea desde adentro o desde afuera. Latour (con muchos otros) nos enseñó que la ciencia no está hecha sólo de teoría, sino de infinidad de elementos heterogéneos, y que la sociedad no afecta o crea a la ciencia, sino que la ciencia crea sociedad, es en efecto &amp;ldquo;política hecha por otros medios&amp;rdquo; (así como &amp;ldquo;technology is society made durable&amp;rdquo;), por lo que la distinción entre adentro y afuera debe colapsar [el primer paso en esta dirección, medio chueco, lo dieron Bloor y Collins, al proponer estudiar la ciencia desde adentro pero sociológicamente]. Así como Baxandall y Svetlana Alpers nos enseñaron, con el arte, que la experiencia estética es un producto complicado de experiencias de muy diversos tipos (eg el estudio de la experiencia estética del Quattrocento de Baxandall) y que los artistas crean las condiciones sociales para la valoración y definición de su arte como arte y de ellos como artistas (eg el estudio de Rembrandt como empresario de Alpers); y que por lo tanto una definición, una demarcación, ya sea interna (como la de Kant) como externa (como la de Bourdieu) no sirve para entender el arte.&lt;/p&gt;
+
+&lt;p&gt;Ahora Latour dice: yo y mis amigos hicimos todos los trabajos de campo que hicieron falta. Con cada uno de los supuestos dominios modernos fuimos mostrando cómo las definiciones de los teóricos fallaban, una por una. Pero ya está, &lt;em&gt;ya terminamos&lt;/em&gt;, ya hicimos suficiente trabajo de campo. Ahora podemos poner nosotros nuestras definiciones. La ciencia no es conocimiento falsable, o el bien que se comercializa en el campo científico. Ciencia es un tipo de conexión, que llamamos &amp;ldquo;referencia&amp;rdquo;, en la que información es transportada a través de una larga cadena de transformaciones. Con la religión lo mismo: no es creencia en una deidad, en un mundo invisible, o la formación de la identidad de un grupo (la definición durkheimiana; esto Latour lo llamaría política), sino un tipo de relación, muy parecida a lo que llamamos amor, en la que una persona se hace presente.&lt;/p&gt;
+
+&lt;p&gt;Pero, ¿qué pasó? ¿Qué hacen estas definiciones? ¿Para qué las queremos? ¿Cómo sabemos si están bien o están mal? En el contexto de la teoría del actor-red se pueden responder estas preguntas: uno estudia un actor-red particular y sigue las conexiones con elementos de todo tipo que lo hacen funcionar; uno ve que no toda conexión que se prueba funciona, que no todo da lo mismo, y se puede extraer (de las controversias que surgen y la manera en la que se cierran) la definición del modo en el que existe el actor-red en cuestión, es decir, el régimen de verdad en el que cuenta su historia, el &amp;ldquo;order of worth&amp;rdquo; propio con el que se justifica (a la Boltanski-Thevenot). Pero en este contexto de antropología filosófica tan general, en el que buscamos determinar los &amp;ldquo;valores&amp;rdquo; con los que se guían los modernos para construir su mundo, ¿podemos decir algo?, ¿queremos decir algo? ¿Por qué no basta con la teoría negativa de RTS?&lt;/p&gt;
+
+&lt;p&gt;Conclusión: no sé, tendré que leer el libro. Pero el sabor que me deja leer el primer capítulo es agridulce. No sé si Latour está dando un paso adelante o un paso atrás con esto.&lt;/p&gt;
+
+&lt;p&gt;PD: Ya está la traducción al español en librerías. No me esperaba que apareciera antes en español que en inglés. Parece que hay un p&amp;uacute;blico hispanoparlante.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
