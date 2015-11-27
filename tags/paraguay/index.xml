@@ -61,7 +61,12 @@ Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los d
 
 &lt;p&gt;PD: &lt;a href=&#34;http://panamarevista.com/2015/11/19/el-dron-del-politologo/&#34;&gt;Pablo Touzon&lt;/a&gt; escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.&lt;/p&gt;
 
-&lt;div&gt;&lt;script&gt;
+&lt;div&gt;
+&lt;script src=&#34;https://code.jquery.com/jquery-1.10.2.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts-more.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/modules/exporting.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
 $(function() {
 
 var cant_parts = new Highcharts.Chart({
