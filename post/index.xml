@@ -19,7 +19,7 @@
 
 &lt;p&gt;La pregunta del título no tiene respuesta: el voto es secreto. Igual queremos saber. La matemática permite hacer trampa. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?&lt;/p&gt;
 
-&lt;h2 id=&#34;primer-modelo:448496e36607547436ff4093d400128c&#34;&gt;Primer modelo&lt;/h2&gt;
+&lt;h2 id=&#34;primer-modelo-goodman-remixado:448496e36607547436ff4093d400128c&#34;&gt;Primer modelo: Goodman remixado&lt;/h2&gt;
 
 &lt;p&gt;Podemos formular la pregunta así. Numeremos los candidatos de la primera vuelta: Scioli, Macri, Massa, Del Caño, Stolbizer, Rodríguez Saá serán 1, 2, …, 6, respectivamente. Agregamos una opción 7: no ir a votar o votar no afirmativamente (en blanco, nulo, etc.) Llamemos &lt;code&gt;$A_1, A_2, \ldots, A_7$&lt;/code&gt; a la cantidad de votos que obtuvo cada candidato en las elecciones generales, respectivamente.&lt;/p&gt;
 
@@ -114,7 +114,7 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Primera vuelta&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
 &lt;th align=&#34;center&#34;&gt;Scioli&lt;/th&gt;
 &lt;th align=&#34;center&#34;&gt;Macri&lt;/th&gt;
 &lt;th align=&#34;center&#34;&gt;No Votó/Blanco&lt;/th&gt;
@@ -123,49 +123,49 @@
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Scioli&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Scioli&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{1,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{1,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{1,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Macri&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Macri&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{2,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{2,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{2,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Massa&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Massa&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{3,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{3,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{3,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Del Caño&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Del Caño&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{4,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{4,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{4,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Stolbizer&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Stolbizer&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{5,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{5,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{5,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Rodríguez Saá&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Rodríguez Saá&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{6,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{6,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{6,3}$&lt;/code&gt;&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;No Votó/Blanco&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;No Votó/Blanco&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{7,1}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{7,2}$&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;&lt;code&gt;$T_{7,3}$&lt;/code&gt;&lt;/td&gt;
@@ -205,49 +205,49 @@
 
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Scioli&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Scioli&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;97.68%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;0%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;2.32%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Macri&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Macri&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;0%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;96.19%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;3.81%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Massa&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Massa&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;34.62%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;51.94%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;13.44%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Del Caño&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Del Caño&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;67.52%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;5.69%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;26.79%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Stolbizer&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Stolbizer&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;17.71%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;33.43%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;48.86%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Rodríguez Saá&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Rodríguez Saá&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;30.76%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;55.59%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;13.65%&lt;/td&gt;
 &lt;/tr&gt;
 
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;No Votó/Blanco&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;No Votó/Blanco&lt;/strong&gt;&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;8.67%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;21.11%&lt;/td&gt;
 &lt;td align=&#34;center&#34;&gt;70.22%&lt;/td&gt;
@@ -259,7 +259,145 @@
 
 &lt;p&gt;¿Qué quiere decir &amp;ldquo;homogéneos&amp;rdquo;? Que en cada mesa las probabilidades &lt;code&gt;P(la persona vota a Scioli en la segunda vuelta | votó a Massa en primera)&lt;/code&gt; son más o menos constantes. En cada mesa, &lt;code&gt;P(la persona vota a Scioli en segunda vuelta)&lt;/code&gt; varía sensiblemente: si hay algo así como un clivaje territorial, aunque sea a escala pequeña (por ejemplo patrones versus peones en un pueblo rural), unas escuelas quedarán de un lado y otras del otro, lo cual afectaría directamente esas probabilidades. Pero incluso en ese caso es plausible que las probabilidades &lt;code&gt;P(vota a X en el ballotage | votó a Y en las generales)&lt;/code&gt; sean constantes.&lt;/p&gt;
 
-&lt;p&gt;Esto abre el camino a un nuevo modelo: se asume que las matrices de transición son constantes en unidades subnacionales (como provincias o departamentos), se calculan mediando el método que describí localmente, y al final se agregan los resultados. ¿Cómo agregamos matrices locales en una matriz global? Convertimos la matriz &lt;code&gt;$X$&lt;/code&gt; a &lt;code&gt;$T$&lt;/code&gt;, que expresa la redistribución de votos en términos absolutos (cantidad de votos) y no relativos, con la fórmula &lt;code&gt;$T_{ij}=X_{ij}\sum_{p=1}^PA_{pi}$&lt;/code&gt;. Y luego simplemente sumamos todas las matrices &lt;code&gt;$T$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Esto abre el camino a un nuevo modelo: se asume que las matrices de transición son constantes en unidades subnacionales (como provincias o departamentos), se calculan mediante el método que describí localmente, y al final se agregan los resultados. ¿Cómo agregamos matrices locales en una matriz global? Convertimos la matriz &lt;code&gt;$X$&lt;/code&gt; a &lt;code&gt;$T$&lt;/code&gt;, que expresa la redistribución de votos en términos absolutos (cantidad de votos) y no relativos, con la fórmula &lt;code&gt;$T_{ij}=X_{ij}\sum_{p=1}^PA_{pi}$&lt;/code&gt;. Y luego simplemente sumamos todas las matrices &lt;code&gt;$T$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Esto son los resultados tomando como unidades las provincias:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Scioli&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Macri&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;No Votó/Blanco&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Scioli&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;96.27%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.48%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3.25%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Macri&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.06%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;95.81%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4.13%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Massa&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;32.51%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;50.77%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;16.72%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Del Caño&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;54.03%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;16.88%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;29.09%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Stolbizer&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;5.05%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;61.02%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;33.93%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Rodríguez Saá&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;29.19%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;45.16%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;25.65%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;No Votó/Blanco&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;14.67%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18.61%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;66.73%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Esto son los resultados tomando como unidades los departamentos:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Scioli&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Macri&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;No Votó/Blanco&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Scioli&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;95.22%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1.11%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3.67%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Macri&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.45%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;94.7%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4.85%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Massa&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;30.81%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;49.76%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;19.44%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Del Caño&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;39.09%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;29.25%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;31.66%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Stolbizer&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;12.33%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;59.45%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;28.22%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Rodríguez Saá&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;38.87%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;39.74%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;21.39%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;No Votó/Blanco&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;17.28%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;18.92%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;63.8%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hace falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas salió igual, es como si hubiera una sola.&lt;/p&gt;
+
+&lt;p&gt;Surgen preguntas que dejo abiertas: cómo expresar estas ideas en un modelo estadístico riguroso, y cómo detectar cuándo el modelo tiene &amp;ldquo;poca información&amp;rdquo;. Esto último permitiría elegir las unidades subnacionales mínimas donde hay información suficiente.&lt;/p&gt;
+
+&lt;p&gt;Pueden bajar el código y los datos &lt;a href=&#34;http://juandodyk.github.io/data/Transferencia_Primera_Segunda_vuelta_via_QP.zip&#34;&gt;acá&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;segundo-modelo-king-rosen-y-tanner-nonlinear-least-squares:448496e36607547436ff4093d400128c&#34;&gt;Segundo modelo: King, Rosen y Tanner, nonlinear least squares&lt;/h2&gt;
+
+&lt;p&gt;El modelo que acabo de describir se basa en el que propuso Leo Goodman en su paper &lt;a href=&#34;http://www.jstor.org/stable/2088121&#34;&gt;Ecological Regressions and Behavior of Individuals&lt;/a&gt;, publicado en 1953. En 1997 &lt;a href=&#34;http://gking.harvard.edu/&#34;&gt;Gary King&lt;/a&gt; publicó un &lt;a href=&#34;http://gking.harvard.edu/eicamera/kinroot.html&#34;&gt;libro&lt;/a&gt; en el que propone un modelo superador. En el 99 propone&lt;/p&gt;
 
 &lt;h2 id=&#34;notas:448496e36607547436ff4093d400128c&#34;&gt;Notas&lt;/h2&gt;
 
@@ -342,7 +480,7 @@ code.has-jax {font: inherit;
               font-size: 100%;
               background: inherit;
               //border: inherit;
-              color: #515151;}
+              color: #222222;}
 &lt;/style&gt;
 &lt;/div&gt;
 </description>
