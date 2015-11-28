@@ -17,7 +17,7 @@
       <guid>http://juandodyk.github.io/post/inferencia-ecologica-1/</guid>
       <description>
 
-&lt;p&gt;La pregunta del título no tiene respuesta: el voto es secreto. Igual queremos saber. La matemática permite hacer trampa. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?&lt;/p&gt;
+&lt;p&gt;La pregunta del título no tiene respuesta: el voto es secreto. Pero igual queremos saber. La matemática nos permite hacer trampa. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?&lt;/p&gt;
 
 &lt;h2 id=&#34;primer-modelo-goodman-remixado:448496e36607547436ff4093d400128c&#34;&gt;Primer modelo: Goodman remixado&lt;/h2&gt;
 
@@ -259,7 +259,7 @@
 
 &lt;p&gt;¿Qué quiere decir &amp;ldquo;homogéneos&amp;rdquo;? Que en cada mesa las probabilidades &lt;code&gt;P(la persona vota a Scioli en la segunda vuelta | votó a Massa en primera)&lt;/code&gt; son más o menos constantes. En cada mesa, &lt;code&gt;P(la persona vota a Scioli en segunda vuelta)&lt;/code&gt; varía sensiblemente: si hay algo así como un clivaje territorial, aunque sea a escala pequeña (por ejemplo patrones versus peones en un pueblo rural), unas escuelas quedarán de un lado y otras del otro, lo cual afectaría directamente esas probabilidades. Pero incluso en ese caso es plausible que las probabilidades &lt;code&gt;P(vota a X en el ballotage | votó a Y en las generales)&lt;/code&gt; sean constantes.&lt;/p&gt;
 
-&lt;p&gt;Esto abre el camino a un nuevo modelo: se asume que las matrices de transición son constantes en unidades subnacionales (como provincias o departamentos), se calculan mediante el método que describí localmente, y al final se agregan los resultados. ¿Cómo agregamos matrices locales en una matriz global? Convertimos la matriz &lt;code&gt;$X$&lt;/code&gt; a &lt;code&gt;$T$&lt;/code&gt;, que expresa la redistribución de votos en términos absolutos (cantidad de votos) y no relativos, con la fórmula &lt;code&gt;$T_{ij}=X_{ij}\sum_{p=1}^PA_{pi}$&lt;/code&gt;. Y luego simplemente sumamos todas las matrices &lt;code&gt;$T$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Esto abre el camino a una modificación del modelo: se asume que las matrices de transición son constantes en unidades subnacionales (como provincias o departamentos), se calculan mediante el método que describí localmente, y al final se agregan los resultados. ¿Cómo agregamos matrices locales en una matriz global? Convertimos la matriz &lt;code&gt;$X$&lt;/code&gt; a &lt;code&gt;$T$&lt;/code&gt;, que expresa la redistribución de votos en términos absolutos (cantidad de votos) y no relativos, con la fórmula &lt;code&gt;$T_{ij}=X_{ij}\sum_{p=1}^PA_{pi}$&lt;/code&gt;. Y luego simplemente sumamos todas las matrices &lt;code&gt;$T$&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;Esto son los resultados tomando como unidades las provincias:&lt;/p&gt;
 
@@ -389,15 +389,113 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;p&gt;Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hace falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas salió igual, es como si hubiera una sola.&lt;/p&gt;
+&lt;p&gt;Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hace falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas pasó lo mismo es como si hubiera una sola.&lt;/p&gt;
 
-&lt;p&gt;Surgen preguntas que dejo abiertas: cómo expresar estas ideas en un modelo estadístico riguroso, y cómo detectar cuándo el modelo tiene &amp;ldquo;poca información&amp;rdquo;. Esto último permitiría elegir las unidades subnacionales mínimas donde hay información suficiente.&lt;/p&gt;
+&lt;p&gt;Surgen pues preguntas que dejo abiertas: cómo expresar estas ideas en un modelo estadístico riguroso, y cómo detectar cuándo el modelo tiene &amp;ldquo;poca información&amp;rdquo;. Esto último permitiría elegir las unidades subnacionales mínimas donde hay información suficiente.&lt;/p&gt;
 
 &lt;p&gt;Pueden bajar el código y los datos &lt;a href=&#34;http://juandodyk.github.io/data/Transferencia_Primera_Segunda_vuelta_via_QP.zip&#34;&gt;acá&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;segundo-modelo-king-rosen-y-tanner-nonlinear-least-squares:448496e36607547436ff4093d400128c&#34;&gt;Segundo modelo: King, Rosen y Tanner, nonlinear least squares&lt;/h2&gt;
 
-&lt;p&gt;El modelo que acabo de describir se basa en el que propuso Leo Goodman en su paper &lt;a href=&#34;http://www.jstor.org/stable/2088121&#34;&gt;Ecological Regressions and Behavior of Individuals&lt;/a&gt;, publicado en 1953. En 1997 &lt;a href=&#34;http://gking.harvard.edu/&#34;&gt;Gary King&lt;/a&gt; publicó un &lt;a href=&#34;http://gking.harvard.edu/eicamera/kinroot.html&#34;&gt;libro&lt;/a&gt; en el que propone un modelo superador. En el 99 propone&lt;/p&gt;
+&lt;p&gt;El modelo que acabo de describir se basa en el que propuso Leo Goodman en su paper &lt;a href=&#34;http://www.jstor.org/stable/2088121&#34;&gt;Ecological Regressions and Behavior of Individuals&lt;/a&gt;, publicado en 1953. En 1997 &lt;a href=&#34;http://gking.harvard.edu/&#34;&gt;Gary King&lt;/a&gt; publicó un &lt;a href=&#34;http://gking.harvard.edu/eicamera/kinroot.html&#34;&gt;libro&lt;/a&gt; en el que propuso un modelo superador. En el 99, junto a Ori Rosen y Martin Tanner, &lt;a href=&#34;http://gking.harvard.edu/files/abs/binom-abs.shtml&#34;&gt;extendió&lt;/a&gt; el trabajo del libro incoporando &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo&#34;&gt;MCMC&lt;/a&gt; y haciendo posible la aplicación a cantidades de datos más grandes, pero acotado a tablas de &lt;code&gt;$2\times2$&lt;/code&gt; (el caso que nos interesa es de &lt;code&gt;$7\times3$&lt;/code&gt;). En el 2001 &lt;a href=&#34;http://gking.harvard.edu/files/abs/rosen-abs.shtml&#34;&gt;extendieron&lt;/a&gt; el modelo a tablas de tamaño general, lo que se aplica directamente sobre nuestro problema. Voy a hacer un comentario sobre ese &lt;a href=&#34;http://gking.harvard.edu/files/gking/files/em.pdf?m=1360038990&#34;&gt;paper&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;El modelo de King, Rosen y Taner plantea lo siguiente. En cada mesa, el resultado de la elección en la segunda vuelta, es decir los números &lt;code&gt;$B_1,B_2,B_3$&lt;/code&gt; (para seguir con la notación que introduje en la sección anterior), se distribuye de acuerdo a una &lt;a href=&#34;https://en.wikipedia.org/wiki/Multinomial_distribution&#34;&gt;distribución multinomial&lt;/a&gt; con parámetros &lt;code&gt;$\theta_1,\theta_2,\theta_3$&lt;/code&gt;, donde &lt;code&gt;$\theta_j=\frac{B_j}{N}$&lt;/code&gt; y &lt;code&gt;$N$&lt;/code&gt; es la cantidad de electores de la mesa. Teníamos &lt;code&gt;$B_j=\sum_{i=1}^7A_iX_i$&lt;/code&gt;, por lo que &lt;code&gt;$\theta_j=\frac1{N}\sum_{i=1}^7A_iX_i$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dejamos de asumir que las matrices de transferencia de cada mesa son iguales, y llamamos &lt;code&gt;$X^p$&lt;/code&gt; a la de la mesa &lt;code&gt;$p$&lt;/code&gt;. Los vectores &lt;code&gt;$X^p_i=(X^p_{i1},X^p_{i2},X^p_{i3})$&lt;/code&gt; siguen &lt;a href=&#34;https://en.wikipedia.org/wiki/Dirichlet_distribution&#34;&gt;distribuciones de Dirichlet&lt;/a&gt; independientes con parámetros &lt;code&gt;$(d_ie^{\gamma_{i1}},d_ie^{\gamma_{i2}},d_i)$&lt;/code&gt; (notar que estos parámetros son los mismos para todas las mesas). Finalmente, los parámetros &lt;code&gt;$\gamma_{i1},\gamma_{i2}$&lt;/code&gt; son independientes (no los conocemos) y &lt;code&gt;$d_i$&lt;/code&gt; sigue una &lt;a href=&#34;https://en.wikipedia.org/wiki/Exponential_distribution&#34;&gt;distribución exponencial&lt;/a&gt; con media &lt;code&gt;$1/\lambda$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;La idea es estimar los parámetros &lt;code&gt;$\gamma$&lt;/code&gt; y &lt;code&gt;$d$&lt;/code&gt; en base a las observaciones (los resultados por mesa). Entendemos que &lt;code&gt;$B^p=f(A^p,\gamma,d)+\epsilon$&lt;/code&gt;, donde &lt;code&gt;$f(A^p,\gamma,d)$&lt;/code&gt; es el valor esperado de &lt;code&gt;$B^p$&lt;/code&gt; dado &lt;code&gt;$A^p,\gamma,d$&lt;/code&gt; y &lt;code&gt;$\epsilon$&lt;/code&gt; es un error con media cero. El método consiste en tomar los &lt;code&gt;$\gamma$&lt;/code&gt; y &lt;code&gt;$d$&lt;/code&gt; que minimizan la desviación cuadrática &lt;code&gt;$\text{SSE}(\gamma,d)=\sum_{p=1}^P\sum_{j=1}^3(B_j^p-f(A^p,\gamma,d)_j)^2$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Hay que calcular &lt;code&gt;$f(A^p,\gamma,d)_j$&lt;/code&gt;. Es &lt;code&gt;$\text{E}(B_j^p|\gamma,d)$&lt;/code&gt;. Ahora &lt;code&gt;$B_j^p=\sum_{i=1}^7X_{ij}^pA_i^p$&lt;/code&gt;, por lo que&lt;/p&gt;
+
+&lt;div&gt;$$\text{E}(B_j^p|\gamma,d)=\sum_{i=1}^7A^p_i\text{E}(X_{ij}^p|\gamma,d)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+\gamma_{i1}+\gamma_{i2})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$&lt;/div&gt; 
+
+&lt;p&gt;(Usé que &lt;code&gt;$X_{ij}^p$&lt;/code&gt; sigue la distribución Dirichlet que definí más arriba para calcular &lt;code&gt;$\text{E}(X_{ij}^p|\gamma,d)$&lt;/code&gt;.) Notar que el parámetro &lt;code&gt;$d$&lt;/code&gt; es irrelevante. Entonces buscamos los &lt;code&gt;$\gamma_{ij}$&lt;/code&gt; que minimizan la función&lt;/p&gt;
+
+&lt;div&gt;$$SSE(\gamma)=\sum_{p=1}^P\sum_{j=1}^3\left(B_j^p-\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}\right)^2.$$&lt;/div&gt;
+
+&lt;p&gt;En base a eso no podemos conocer los &lt;code&gt;$X$&lt;/code&gt; (lo que en realidad buscamos) por mesa, pero aceptando la estimación de los &lt;code&gt;$\gamma$&lt;/code&gt; podemos determinar su media. Esto nos da &lt;code&gt;$X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$&lt;/code&gt; para &lt;code&gt;$j=1,2$&lt;/code&gt; y &lt;code&gt;$X_{i3}=1-X_{i1}-X_{i2}$&lt;/code&gt;. El resultado es este:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Scioli&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Macri&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;No Votó/Blanco&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Scioli&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;99.7%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.3%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Macri&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;99.91%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.09%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Massa&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;32.78%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;52.92%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;14.3%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Del Caño&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;70.68%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4.91%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;24.41%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Stolbizer&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;21.65%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;21.28%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;57.08%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;Rodríguez Saá&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;32.9%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;53.52%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;13.58%&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;No Votó/Blanco&lt;/strong&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;6.41%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;17.2%&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;76.39%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Este método es el que ha usado el politólogo &lt;a href=&#34;https://twitter.com/ecalvo68&#34;&gt;Ernesto Calvo&lt;/a&gt; en &lt;a href=&#34;http://elestadista.com.ar/?p=7336&#34;&gt;varios&lt;/a&gt; &lt;a href=&#34;http://ar.bastiondigital.com/notas/los-gatos-se-estaban-peleando&#34;&gt;artículos&lt;/a&gt; muy interesantes (y que son el origen de mi interés por el tema). Y es el que está detrás de &lt;a href=&#34;https://twitter.com/CIPPEC/status/669631428422983680&#34;&gt;este gráfico&lt;/a&gt; que publicó CIPPEC. Si quieren mirar el código, gentilmente publicado por Calvo, lo reproduzco y analizo &lt;a href=&#34;#CodRCalvo&#34;&gt;acá&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;La pregunta que quiero plantear es: ¿qué diferencia &lt;em&gt;matemática&lt;/em&gt; hay entre el resultado de este modelo y el que presento en la sección anterior? La diferencia teórica es enorme: este se basa en un modelo bayesiano jerárquico en el que no asume que las matrices de transferencia sean iguales en cada mesa. El anterior hace exactamente lo contrario.&lt;/p&gt;
+
+&lt;p&gt;Pero matemáticamente los dos están buscando parámetros globales (en el primer caso &lt;code&gt;$X$&lt;/code&gt; y en este, &lt;code&gt;$\gamma$&lt;/code&gt;) que minimizan &lt;code&gt;$\sum_{p=1}^P\sum_{j=1}^3(AX-B)_{pj}^2$&lt;/code&gt;, sólo que en el primer modelo &lt;code&gt;$X$&lt;/code&gt; es una variable independiente y, en este, &lt;code&gt;$X$&lt;/code&gt; está controlado por otros parámetros que sí son independientes, los &lt;code&gt;$\gamma$&lt;/code&gt;. Ambos están minimizando una misma función sobre un dominio. Afirmo que ese dominio es el mismo en ambos casos.&lt;/p&gt;
+
+&lt;p&gt;Los posibles &lt;code&gt;$X$&lt;/code&gt; que explora el primer modelo son todos los que cumplen &lt;code&gt;$\sum_{j=1}^3X_{ij}=1$&lt;/code&gt; y &lt;code&gt;$X_{ij}&amp;gt;0$&lt;/code&gt;. Ese es su dominio. Los posibles &lt;code&gt;$X$&lt;/code&gt; que explora este modelo son los que salen de la fórmula &lt;code&gt;$X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$&lt;/code&gt; para &lt;code&gt;$j=1,2$&lt;/code&gt; y &lt;code&gt;$X_{i3}=1-X_{i1}-X_{i2}$&lt;/code&gt;, con &lt;code&gt;$\gamma$&lt;/code&gt; arbitrario. Pero hay una biyección entre ambos conjuntos: dado &lt;code&gt;$X$&lt;/code&gt; hay un único &lt;code&gt;$\gamma$&lt;/code&gt; de donde puede venir: &lt;code&gt;$\gamma_{ij}=\ln\left(\frac{X_{ij}}{X_{i3}}\right)$&lt;/code&gt;. Como están minimizando la misma función sobre el mismo dominio, el resultado al que llegan va a ser el mismo. Las diferencias que haya se van a deber a los problemas numéricos que tiene el algoritmo que usa Calvo y que detallo &lt;a href=&#34;#CodRCalvo&#34;&gt;acá&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;conclusión:448496e36607547436ff4093d400128c&#34;&gt;Conclusión&lt;/h2&gt;
+
+&lt;p&gt;La conclusión es que si bien el modelo de King, Rosen y Tanner es teóricamente más sofisticado que el primer modelo que presenté, matemáticamente son equivalentes. El modelo bayesiano jerárquico no tiene ningún impacto en el resultado que lo diferencie de la regresión lineal &amp;ldquo;controlada&amp;rdquo; que propuse primero.&lt;/p&gt;
+
+&lt;p&gt;Esto quiere decir que los resultados que presenta Calvo en sus trabajos, a pesar de estar hechos sobre un modelo sofisticado, pueden ser analizados matemáticamente como si provinieran de un modelo mucho más simple. Cuando Abel Fernández dice que &lt;a href=&#34;https://abelfer.wordpress.com/2015/11/13/anibal-julian-y-los-votos-de-buenos-aires/&#34;&gt;&amp;ldquo;se necesita un doctorado en matemática&amp;rdquo;&lt;/a&gt; para evaluar ese trabajo se equivoca.&lt;/p&gt;
+
+&lt;h2 id=&#34;trabajo-futuro:448496e36607547436ff4093d400128c&#34;&gt;Trabajo futuro&lt;/h2&gt;
+
+&lt;p&gt;El método de cuadrados mínimos que acabo de describir y analizar no es el único posible para estimar los parámetros en el modelo de King, Rosen y Tanner. Como exponen en su paper, se puede usar un algoritmo de tipo &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo&#34;&gt;MCMC&lt;/a&gt; acompañado de &lt;a href=&#34;https://en.wikipedia.org/wiki/Gibbs_sampling&#34;&gt;Gibbs sampling&lt;/a&gt; para estimar la &lt;em&gt;distribución&lt;/em&gt; de los parámetros (y no sólo su media) mediante inferencia bayesiana. Incluso hay una &lt;a href=&#34;http://rpackages.ianhowson.com/cran/eiPack/&#34;&gt;librería R&lt;/a&gt; que implementa dicho método. En cuanto tenga tiempo voy a aplicar esto y reportar los resultados. La desventaja del método bayesiano es que es computacionalmente más costoso, por lo que hay que &amp;ldquo;poner huevo&amp;rdquo; para correrlo (con esto quiero decir: ajustar los parámetros con suficiente pericia para que sea ejecutable en una notebook).&lt;/p&gt;
+
+&lt;p&gt;En cuanto al problema general, llamado &lt;em&gt;inferencia ecológica&lt;/em&gt;, al modelo de King, Rosen y Tanner le siguieron desarrollos más sofisticados, de los que podemos beneficiarnos para obtener una mejor solución de nuestro problema particular. Ernesto Calvo mismo desarrolló, junto a Marcelo Escobar, un modelo que parte del de King pero introduce una variable geográfica. Puede ser de especial interés para las elecciones argentinas, en las que es obvia la influencia de &amp;ldquo;factores geográficos&amp;rdquo; (simplificando &lt;em&gt;mucho&lt;/em&gt;, un &amp;ldquo;voto urbano&amp;rdquo;, un &amp;ldquo;voto sojero&amp;rdquo; y un &amp;ldquo;voto petrolero&amp;rdquo; manifiestos en la &lt;a href=&#34;http://www.lanacion.com.ar/1848689-como-fue-el-resultado-del-ballottage-en-la-escuela-donde-votaste&#34;&gt;distribución territorial&lt;/a&gt; del voto). El trabajo de Calvo y Escobar es el capítulo 11 de &lt;a href=&#34;http://gking.harvard.edu/files/abs/ecinf04-abs.shtml&#34;&gt;este libro&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h2 id=&#34;notas:448496e36607547436ff4093d400128c&#34;&gt;Notas&lt;/h2&gt;
 
@@ -446,6 +544,58 @@
 &lt;div&gt;$$=\sum_{i_1=1}^n\sum_{i_2=1}^n\sum_{j=1}^m (A^tA)_{i_1i_2}X_{i_1j}X_{i_2j}-2\sum_{i=1}^n\sum_{j=1}^m(A^tB)_{ij}X_{ij}+C.$$&lt;/div&gt;
 
 &lt;p&gt;Podemos verla como &lt;code&gt;$m(x)=x^tDx-2d^tx$&lt;/code&gt; considerando la matriz &lt;code&gt;$X$&lt;/code&gt; como un vector &lt;code&gt;$x\in\mathbb{R}^N$&lt;/code&gt; con &lt;code&gt;$N=nm$&lt;/code&gt;, y con &lt;code&gt;$D_{i_1j,i_2j}=(A^tA)_{i_1i_2}$&lt;/code&gt; y &lt;code&gt;$d_{ij}=(A^tB)_{ij}$&lt;/code&gt;. Las restricciones serían &lt;code&gt;$R=I_N$&lt;/code&gt; y &lt;code&gt;$b=0$&lt;/code&gt;, sumadas a las que fijan &lt;code&gt;$\sum_{j=1}^m X_{ij} = 1$&lt;/code&gt; para todo &lt;code&gt;$i$&lt;/code&gt;, que se expresa similarmente. El código R usa &lt;code&gt;solve.QP&lt;/code&gt; para resolver el problema cuadrático, calculando la entrada como acabo de comentar.&lt;/p&gt;
+
+&lt;h3 id=&#34;a-name-codrcalvo-a-segundo-modelo-código-r:448496e36607547436ff4093d400128c&#34;&gt;&lt;a name=&#34;CodRCalvo&#34;&gt;&lt;/a&gt;Segundo modelo: código R&lt;/h3&gt;
+
+&lt;p&gt;&lt;div class=&#34;highlight&#34; style=&#34;background: #272822&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;call.difp &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;function&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;mx&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;my&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;const&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    gamma &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;matrix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;data&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;p&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nrow&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;ncol&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;nC&lt;span style=&#34;color: #ae81ff&#34;&gt;-1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;byrow&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;T);&lt;/span&gt;
+    ebeta &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;exp&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;gamma&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;apply&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;exp&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;gamma&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;));&lt;/span&gt;
+    yhat  &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; mx &lt;span style=&#34;color: #f92672&#34;&gt;%*%&lt;/span&gt; ebeta&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+    diff &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;((&lt;/span&gt;yhat&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;my&lt;span style=&#34;color: #f8f8f2&#34;&gt;[,&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt;nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;])&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;const&lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;gamma&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;^&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;));&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;diff&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+params.estim &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;function&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;data&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;const&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;0.001&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    mx &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; data&lt;span style=&#34;color: #f8f8f2&#34;&gt;[,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;];&lt;/span&gt;
+    my &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; data&lt;span style=&#34;color: #f8f8f2&#34;&gt;[,(&lt;/span&gt;nR&lt;span style=&#34;color: #ae81ff&#34;&gt;+1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color: #f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;nR&lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt;nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;)];&lt;/span&gt;
+    nP &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;nrow&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;data&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+    parSeed &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; rnorm&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;nR&lt;span style=&#34;color: #f92672&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;nC&lt;span style=&#34;color: #ae81ff&#34;&gt;-1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;));&lt;/span&gt;
+    fit &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; optim&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;parSeed&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; fn &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; call.difp&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; method&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #e6db74&#34;&gt;&amp;quot;L-BFGS-B&amp;quot;&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;
+                 nR &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; nC &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; mx &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; mx&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; my &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; my&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; const &lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt; const&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;fit&lt;span style=&#34;color: #f92672&#34;&gt;$&lt;/span&gt;par&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+calc.fractions &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;function&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nC&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    p.exp &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;exp&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+    p.matrix &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;matrix&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p.exp&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nrow&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;nR&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;byrow&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;T);&lt;/span&gt;
+    p.sums &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;apply&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p.matrix&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+    p.sums &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; p.sums &lt;span style=&#34;color: #f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+    p.less &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; p.matrix&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;p.sums&lt;span style=&#34;color: #f8f8f2&#34;&gt;;&lt;/span&gt;
+    ests &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;cbind&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p.less&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;apply&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;p.less&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;sum&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;));&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;ests&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color: #75715e&#34;&gt;# Se llama esta función con A y B como parámetros&lt;/span&gt;
+ei.nls &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;function&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;A&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;B&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f8f8f2&#34;&gt;{&lt;/span&gt;
+    A &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; A&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;rowSums&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;A&lt;span style=&#34;color: #f8f8f2&#34;&gt;);&lt;/span&gt; B &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; B&lt;span style=&#34;color: #f92672&#34;&gt;/&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;rowSums&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;B&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    Gamma &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; params.estim&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color: #66d9ef&#34;&gt;cbind&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;A&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;B&lt;span style=&#34;color: #f8f8f2&#34;&gt;),&lt;/span&gt;nR&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nC&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    X &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; calc.fractions&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;Gamma&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nR&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;7&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;,&lt;/span&gt;nC&lt;span style=&#34;color: #f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color: #ae81ff&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;colnames&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;X&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;colnames&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;B&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;rownames&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;X&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color: #f92672&#34;&gt;&amp;lt;-&lt;/span&gt; &lt;span style=&#34;color: #66d9ef&#34;&gt;colnames&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;A&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+    &lt;span style=&#34;color: #66d9ef&#34;&gt;return&lt;/span&gt;&lt;span style=&#34;color: #f8f8f2&#34;&gt;(&lt;/span&gt;X&lt;span style=&#34;color: #f8f8f2&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color: #f8f8f2&#34;&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+&lt;/p&gt;
+
+&lt;p&gt;Lo de arriba es una versión simplificada del código que en realidad publicó Calvo &lt;a href=&#34;https://t.co/nxuPmn5pAR&#34;&gt;acá&lt;/a&gt;. Juro por la mitad de la carrera de Ciencia de la Computación que hice en la UBA que funcionalmente es equivalente, es decir, que hace lo mismo.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;params.estim&lt;/code&gt; devuelve &lt;code&gt;$\gamma$&lt;/code&gt;, según mi notación. Para eso busca el mínimo de &lt;code&gt;call.difp&lt;/code&gt;, que devuelve lo que llamé &lt;code&gt;$SSE(\gamma)$&lt;/code&gt; más un factor &lt;code&gt;$c\sum_{i=1}^7\sum_{j=1}^2\gamma_{ij}^2$&lt;/code&gt;, con &lt;code&gt;$c=.001$&lt;/code&gt;, que entiendo que está para controlar que los &lt;code&gt;$\gamma_{ij}$&lt;/code&gt; no entren a crecer indefinidamente (porque si uno suma una constante a todos el valor de &lt;code&gt;$X$&lt;/code&gt; no cambia mucho).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;calc.fractions&lt;/code&gt; devuelve &lt;code&gt;$X$&lt;/code&gt; dado &lt;code&gt;$\gamma$&lt;/code&gt;. Lo que hace es aplicar la fórmula que escribí más arriba: &lt;code&gt;$X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$&lt;/code&gt; para &lt;code&gt;$j=1,2$&lt;/code&gt; y &lt;code&gt;$X_{i3}=1-X_{i1}-X_{i2}$&lt;/code&gt;. Y devolver &lt;code&gt;$X$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lo que hay que notar es que el método que usa para buscar el &lt;code&gt;$\gamma$&lt;/code&gt; que minimiza el error es &lt;code&gt;optim&lt;/code&gt;, que implementa &lt;a href=&#34;https://en.wikipedia.org/wiki/Limited-memory_BFGS&#34;&gt;L-BFGS-B&lt;/a&gt;. No es un método de optimización exacto ni específico para este problema, como sí es el método que usé para resolver el problema cuadrático que plantea el primer modelo. Como no es exacto y se alimenta, como valor inicial, con números al azar (la línea &lt;code&gt;parSeed = rnorm(nR*(nC-1))&lt;/code&gt;), cada vez que se corre da números distintos, a veces &lt;em&gt;muy&lt;/em&gt; distintos. &lt;strong&gt;Es por eso que creo que el primer método es&lt;/strong&gt;, además de matemáticamente equivalente, &lt;strong&gt;numéricamente mejor&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;(En realidad hay dos diferencias más. 1) Cuando &lt;code&gt;call.difp&lt;/code&gt; calcula el error dado &lt;code&gt;$\gamma$&lt;/code&gt; no tiene en cuenta la última columna de &lt;code&gt;$B$&lt;/code&gt;. Es decir, sólo apunta a aproximar la cantidad de votos obtenida por Macri y Scioli; no cuántos votos se fueron a &amp;ldquo;No Votó/Blanco&amp;rdquo;. Estimo que eso es redundante y que no tiene ningún impacto. Y si lo tiene entiendo que es mejor la opción que implemento para el primer modelo. 2) &lt;code&gt;$A$&lt;/code&gt; y &lt;code&gt;$B$&lt;/code&gt; se toman &amp;ldquo;normalizadas&amp;rdquo;, es decir, se toma &lt;code&gt;$A_{pi}&#39;=\frac{A_{pi}}{\sum_{k=1}^7A_{pk}}$&lt;/code&gt;, y similarmente &lt;code&gt;$B&#39;$&lt;/code&gt;. Si los números &lt;code&gt;$\sum_{k=1}^7A_{pk}$&lt;/code&gt; fueran iguales en todas las mesas, es decir, si los empadronados en cada mesa fueran la misma cantidad, no habría diferencia: es lo mismo minimizar &lt;code&gt;$f(x)$&lt;/code&gt; que &lt;code&gt;$\lambda f(x)$&lt;/code&gt; si &lt;code&gt;$\lambda&amp;gt;0$&lt;/code&gt;. En tanto sean distintos, el efecto es que el primer método penaliza más el error en mesas más populosas, mientras que este las cuenta todas igual. Estimo que el impacto es bajo y que si hubiera una diferencia es preferible la opción del primer modelo: las mesas &amp;ldquo;grandes&amp;rdquo; dan más información, así que está bien privilegiadas proporcionalmente a su tamaño.)&lt;/p&gt;
 
 &lt;div&gt;
 &lt;script type=&#34;text/javascript&#34;
