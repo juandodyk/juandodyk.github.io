@@ -532,7 +532,7 @@
 
 <p>El método de cuadrados mínimos que acabo de describir y analizar no es el único posible para estimar los parámetros en el modelo de King, Rosen y Tanner. Como exponen en su paper, se puede usar un algoritmo de tipo <a href="https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo">MCMC</a> acompañado de <a href="https://en.wikipedia.org/wiki/Gibbs_sampling">Gibbs sampling</a> para estimar la <em>distribución</em> de los parámetros (y no sólo su media) mediante inferencia bayesiana. Incluso hay una <a href="http://rpackages.ianhowson.com/cran/eiPack/">librería R</a> que implementa dicho método. En cuanto tenga tiempo voy a aplicar esto y reportar los resultados. La desventaja del método bayesiano es que es computacionalmente más costoso, por lo que hay que &ldquo;poner huevo&rdquo; para correrlo (con esto quiero decir: ajustar los parámetros con suficiente pericia para que sea ejecutable en una notebook).</p>
 
-<p>En cuanto al problema general, llamado <em>inferencia ecológica</em>, al modelo de King, Rosen y Tanner le siguieron desarrollos más sofisticados, de los que podemos beneficiarnos para obtener una mejor solución de nuestro problema particular. Ernesto Calvo mismo desarrolló, junto a Marcelo Escobar, un modelo que parte del de King pero introduce una variable geográfica. Puede ser de especial interés para las elecciones argentinas, en las que es obvia la influencia de &ldquo;factores geográficos&rdquo; (simplificando <em>mucho</em>, un &ldquo;voto urbano&rdquo;, un &ldquo;voto sojero&rdquo; y un &ldquo;voto petrolero&rdquo; manifiestos en la <a href="http://www.lanacion.com.ar/1848689-como-fue-el-resultado-del-ballottage-en-la-escuela-donde-votaste">distribución territorial</a> del voto). El trabajo de Calvo y Escobar es el capítulo 11 de <a href="http://gking.harvard.edu/files/abs/ecinf04-abs.shtml">este libro</a>.</p>
+<p>En cuanto al problema general, llamado <em>inferencia ecológica</em>, al modelo de King, Rosen y Tanner le siguieron desarrollos más sofisticados, de los que podemos beneficiarnos para obtener una mejor solución de nuestro problema particular. Ernesto Calvo mismo desarrolló, junto a Marcelo Escolar, un modelo que parte del de King pero introduce una variable geográfica. Puede ser de especial interés para las elecciones argentinas, en las que es obvia la influencia de &ldquo;factores geográficos&rdquo; (simplificando <em>mucho</em>, un &ldquo;voto urbano&rdquo;, un &ldquo;voto sojero&rdquo; y un &ldquo;voto petrolero&rdquo; manifiestos en la <a href="http://www.lanacion.com.ar/1848689-como-fue-el-resultado-del-ballottage-en-la-escuela-donde-votaste">distribución territorial</a> del voto). El trabajo de Calvo y Escolar es el capítulo 11 de <a href="http://gking.harvard.edu/files/abs/ecinf04-abs.shtml">este libro</a>.</p>
 
 <h2 id="notas:448496e36607547436ff4093d400128c">Notas</h2>
 
@@ -742,6 +742,7 @@ code.has-jax {font: inherit;
 
   </ul>
   <br><br>
+  <div id="container" style="height: 800px"></div>
 </aside>
 
 </div>
