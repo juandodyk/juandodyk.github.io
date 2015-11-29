@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Juan Dodyk</title>
+        <meta name="author">
+        <meta name="description" content="Blog de Juan Dodyk.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.15" />
+          <link href="http://juandodyk.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Juan Dodyk" />
+          <link href="http://juandodyk.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Juan Dodyk" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://juandodyk.github.io/css/styles.css">
+        <link rel="icon" href="http://juandodyk.github.io/favicon.ico">
+        <link rel="apple-touch-icon" href="http://juandodyk.github.io/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://juandodyk.github.io/css/highlightjs/monokai.css">
+        <script src="http://juandodyk.github.io/js/vendor/modernizr-2.8.0.min.js"></script>
+        <style>
+        .site-header h2 .logo {
+        background: url(http://juandodyk.github.io/img/anr.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://juandodyk.github.io/img/anr.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://juandodyk.github.io/img/anr.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn" href="http://juandodyk.github.io/" title="">&laquo; </a>
+            
+<h1><a href="http://juandodyk.github.io/post/inferencia-ecologica-2/" title="Transferencia de votos por provincia">Transferencia de votos por provincia</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2015.11.27">2015.11.27</time>
+&middot; 
+    
+    <a href="http://juandodyk.github.io/tags/elecciones">elecciones</a>
+    
+    
+
+</span>
+</footer>
+
+            <p>Modelo: <select id="modelo">
+  <option value="lls">Goodman con restricciones</option>
+  <option value="nls">King, Rosen, Tanner, nonlinear least squares</option>
+</select></p>
+
+<p><select id="opcion">
+<option value="transferencia">Transferencia</option>
+<option value="diferencia">Diferencia</option>
+</select><span id="opcion_html"></span></p>
+
+<p>Provincia: <select id="provincia"></select></p>
+
+<p>Transferencia de votos en <span id="prov_nombre">Córdoba</span>:</p>
+
+<div id="tabla_prov"></div>
+
+<p>Transferencia de votos en el resto del país:</p>
+
+<div id="tabla_resto"></div>
+
+<p>(Se puede hacer click en el mapa.)</p>
+
+<div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/ar/ar-all.js"></script>
+<script>
+$(function () {
+
+var cands_pri = ["Scioli","Stolbizer","Rodríguez Saá","Macri","Del Caño","Massa","No Votó/Blanco"];
+var cands_seg = ["Scioli","Macri","No Votó/Blanco"];
+var provs = JSON.parse('{"1":"Ciudad de Buenos Aires","2":"Buenos Aires","3":"Catamarca","4":"Córdoba","5":"Corrientes","6":"Chaco","7":"Chubut","8":"Entre Ríos","9":"Formosa","10":"Jujuy","11":"La Pampa","12":"La Rioja","13":"Mendoza","14":"Misiones","15":"Neuquén","16":"Río Negro","17":"Salta","18":"San Juan","19":"San Luis","20":"Santa Cruz","21":"Santa Fe","22":"Santiago del Estero","23":"Tucumán","24":"Tierra del Fuego"}');
+var keys = JSON.parse('{"1":"ar-df","2":"ar-ba","3":"ar-ct","4":"ar-cb","5":"ar-cn","6":"ar-cc","7":"ar-ch","8":"ar-er","9":"ar-fm","10":"ar-jy","11":"ar-lp","12":"ar-lr","13":"ar-mz","14":"ar-mn","15":"ar-nq","16":"ar-rn","17":"ar-sa","18":"ar-sj","19":"ar-sl","20":"ar-sc","21":"ar-sf","22":"ar-se","23":"ar-tm","24":"ar-tf"}');
+
+var cand_desde = 5;
+var cand_hacia = 1;
+var load_cands_selects = function() {
+    for(i in cands_pri)
+        $("#cand_desde").append('<option value="'+i+'">'+cands_pri[i]+'</option>');
+    $('#cand_desde option:eq('+cand_desde+')').attr('selected', 'selected');
+    for(i in cands_seg)
+        $("#cand_hacia").append('<option value="'+i+'">'+cands_seg[i]+'</option>');
+    $('#cand_hacia option:eq('+cand_hacia+')').attr('selected', 'selected');
+    $("#cand_desde").change(function() {
+        cand_desde = parseInt($("#cand_desde").val());
+        restart();
+    });
+    $("#cand_hacia").change(function() {
+        cand_hacia = parseInt($("#cand_hacia").val());
+        restart();
+    });
+};
+for(i in provs)
+    $("#provincia").append('<option value="'+i+'">'+provs[i]+'</option>');
+$('#provincia option:eq(3)').attr('selected', 'selected');
+
+var opt_html = {
+    transferencia: ' de votos de <select id="cand_desde"></select> a <select id="cand_hacia"></select>',
+    diferencia: ' entre transferencia de votos de <select id="cand_desde"></select> a Macri y a Scioli.'
+};
+var opcion = "transferencia";
+$("#opcion").change(function() {
+    opcion = $("#opcion").val();
+    $("#opcion_html").html(opt_html[opcion]);
+    load_cands_selects();
+    restart();
+});
+$("#opcion_html").html(opt_html[opcion]);
+load_cands_selects();
+
+var modelo = "lls";
+$("#modelo").change(function() {
+    modelo = $("#modelo").val();
+    restart();
+});
+var prov = "4";
+$("#provincia").change(function() {
+    prov = $("#provincia").val();
+    fill_tables();
+});
+
+var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
+    chart: {
+        renderTo: 'container'
+    },
+    title : {
+        text : 'Transferencia de votos de ' + cand + (opcion=="transferencia"?(" a "+cands_seg[cand_hacia]):"")
+    },
+    subtitle : {
+        text : 'Click para ver la transferencia de votos completa por provincia'
+    },
+    plotOptions: { map: { events: { click: function(e) {
+        console.log(e.point['hc-key']);
+        for(i in keys) if(keys[i] == e.point['hc-key']) {console.log("found: "+i); prov = i;}
+        fill_tables();
+        
+    }}}},
+    colorAxis: colorAxis,
+    series : [{
+        data : data,
+        mapData: Highcharts.maps['countries/ar/ar-all'],
+        joinBy: 'hc-key',
+        name: 'Diferencia entre transferencia de ' + cand + ' a Macri y a Scioli',
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+})};
+
+var json_data = null;
+
+var fill_table = function(id, m) {
+    var html = '<table><thead><tr><th align="left"></th>';
+    for(i in cands_seg) html += '<th align="center">'+cands_seg[i]+'</th>';
+    html += '</tr></thead><tbody>';
+    for(i in cands_pri) {
+        html += '<tr><td align="left"><strong>' + cands_pri[i] + '</strong></td>';
+        for(j in m[i])
+            html += '<td align="center">' + m[i][j] + '%</td>';
+        html += '</tr>';
+    }
+    html += '</tbody></table>';
+    $(id).html(html);
+};
+
+var fill_tables = function() {
+    $("#prov_nombre").text(provs[prov]);
+    $("#provincia option[value="+prov+"]").attr('selected', 'selected');
+    if(!json_data) return;
+    fill_table("#tabla_prov", json_data[modelo][prov].prov);
+    fill_table("#tabla_resto", json_data[modelo][prov].resto_como_suma);
+};
+
+var round = function(num) {
+    return Math.round(num * 100) / 100;
+}
+
+var main = function(data) {
+    json_data = data;
+
+    fill_tables();
+
+    var map_data = [];
+    var stops = [];
+    var colorAxis = {};
+    if(opcion == "diferencia") {
+        for(i in data[modelo])
+            map_data.push({"hc-key": keys[i], "value": round(data[modelo][i].prov[cand_desde][1]-data[modelo][i].prov[cand_desde][0])});
+        stops = [[0, '#0000FF'], [0.5, '#FFFFFF'], [1, '#FFFF00']];
+        colorAxis = {min: -100, max: 100, stops: stops};
+    } else {
+        for(i in data[modelo])
+            map_data.push({"hc-key": keys[i], "value": data[modelo][i].prov[cand_desde][cand_hacia]});
+        if(cand_hacia == 0)
+            stops = [[0, '#FFFFFF'], [1, '#0000FF']];
+        else if(cand_hacia == 1)
+            stops = [[0, '#FFFFFF'], [1, '#FFFF00']];
+        else
+            stops = [[0, '#FFFFFF'], [1, '#000000']];
+        colorAxis = {min: 0, max: 100, stops: stops};
+    }
+
+    var mapa_ = mapa(map_data, cands_pri[cand_desde], colorAxis);
+};
+
+var restart = function() {
+    if(json_data) main(json_data);
+    else $.getJSON("/json/ei_prov.json", main);
+};
+
+restart();
+
+});
+</script>
+</div>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fjuandodyk.github.io%2fpost%2finferencia-ecologica-2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Transferencia%20de%20votos%20por%20provincia&amp;url=http%3a%2f%2fjuandodyk.github.io%2fpost%2finferencia-ecologica-2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fjuandodyk.github.io%2fpost%2finferencia-ecologica-2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fjuandodyk.github.io%2fpost%2finferencia-ecologica-2%2f&title=Transferencia%20de%20votos%20por%20provincia" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'juandodyk';
+    var disqus_identifier = 'http:\/\/juandodyk.github.io\/post\/inferencia-ecologica-2\/';
+    var disqus_title = 'Transferencia de votos por provincia';
+    var disqus_url = 'http:\/\/juandodyk.github.io\/post\/inferencia-ecologica-2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://juandodyk.github.io/img/yo.jpg" alt="John Dodyk" />
+  <p class="name"> 
+  <strong>John Dodyk</strong></p>
+  <p class="address">Avellaneda, PBA, Argentina</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+<li><a href="//twitter.com/tuvedengueyque" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+
+
+
+<li><a href="//facebook.com/juan.dodyk" class="icon-facebook-squared" target="_blank" title="Facebook"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//instagram.com/juandodyk" class="icon-instagram" target="_blank" title="Instagram"></a></li>
+
+
+
+<li><a href="//github.com/juandodyk" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://juandodyk.github.io/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+  <div id="container" style="height: 800px"></div>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://juandodyk.github.io/post/index.xml" title="RSS"></a>
+        <p>&copy; 2015 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+  </div>
+</footer>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/juandodyk.github.io\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://juandodyk.github.io/js/plugins.js"></script>
+
+</body>
+</html>
+

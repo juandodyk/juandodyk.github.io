@@ -10,6 +10,197 @@
     <atom:link href="http://juandodyk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Transferencia de votos por provincia</title>
+      <link>http://juandodyk.github.io/post/inferencia-ecologica-2/</link>
+      <pubDate>Fri, 27 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/inferencia-ecologica-2/</guid>
+      <description>&lt;p&gt;Modelo: &lt;select id=&#34;modelo&#34;&gt;
+  &lt;option value=&#34;lls&#34;&gt;Goodman con restricciones&lt;/option&gt;
+  &lt;option value=&#34;nls&#34;&gt;King, Rosen, Tanner, nonlinear least squares&lt;/option&gt;
+&lt;/select&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;select id=&#34;opcion&#34;&gt;
+&lt;option value=&#34;transferencia&#34;&gt;Transferencia&lt;/option&gt;
+&lt;option value=&#34;diferencia&#34;&gt;Diferencia&lt;/option&gt;
+&lt;/select&gt;&lt;span id=&#34;opcion_html&#34;&gt;&lt;/span&gt;&lt;/p&gt;
+
+&lt;p&gt;Provincia: &lt;select id=&#34;provincia&#34;&gt;&lt;/select&gt;&lt;/p&gt;
+
+&lt;p&gt;Transferencia de votos en &lt;span id=&#34;prov_nombre&#34;&gt;Córdoba&lt;/span&gt;:&lt;/p&gt;
+
+&lt;div id=&#34;tabla_prov&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;Transferencia de votos en el resto del país:&lt;/p&gt;
+
+&lt;div id=&#34;tabla_resto&#34;&gt;&lt;/div&gt;
+
+&lt;p&gt;(Se puede hacer click en el mapa.)&lt;/p&gt;
+
+&lt;div&gt;
+&lt;script src=&#34;https://code.jquery.com/jquery-1.10.2.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://code.highcharts.com/maps/highmaps.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/modules/exporting.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/mapdata/countries/ar/ar-all.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(function () {
+
+var cands_pri = [&#34;Scioli&#34;,&#34;Stolbizer&#34;,&#34;Rodríguez Saá&#34;,&#34;Macri&#34;,&#34;Del Caño&#34;,&#34;Massa&#34;,&#34;No Votó/Blanco&#34;];
+var cands_seg = [&#34;Scioli&#34;,&#34;Macri&#34;,&#34;No Votó/Blanco&#34;];
+var provs = JSON.parse(&#39;{&#34;1&#34;:&#34;Ciudad de Buenos Aires&#34;,&#34;2&#34;:&#34;Buenos Aires&#34;,&#34;3&#34;:&#34;Catamarca&#34;,&#34;4&#34;:&#34;Córdoba&#34;,&#34;5&#34;:&#34;Corrientes&#34;,&#34;6&#34;:&#34;Chaco&#34;,&#34;7&#34;:&#34;Chubut&#34;,&#34;8&#34;:&#34;Entre Ríos&#34;,&#34;9&#34;:&#34;Formosa&#34;,&#34;10&#34;:&#34;Jujuy&#34;,&#34;11&#34;:&#34;La Pampa&#34;,&#34;12&#34;:&#34;La Rioja&#34;,&#34;13&#34;:&#34;Mendoza&#34;,&#34;14&#34;:&#34;Misiones&#34;,&#34;15&#34;:&#34;Neuquén&#34;,&#34;16&#34;:&#34;Río Negro&#34;,&#34;17&#34;:&#34;Salta&#34;,&#34;18&#34;:&#34;San Juan&#34;,&#34;19&#34;:&#34;San Luis&#34;,&#34;20&#34;:&#34;Santa Cruz&#34;,&#34;21&#34;:&#34;Santa Fe&#34;,&#34;22&#34;:&#34;Santiago del Estero&#34;,&#34;23&#34;:&#34;Tucumán&#34;,&#34;24&#34;:&#34;Tierra del Fuego&#34;}&#39;);
+var keys = JSON.parse(&#39;{&#34;1&#34;:&#34;ar-df&#34;,&#34;2&#34;:&#34;ar-ba&#34;,&#34;3&#34;:&#34;ar-ct&#34;,&#34;4&#34;:&#34;ar-cb&#34;,&#34;5&#34;:&#34;ar-cn&#34;,&#34;6&#34;:&#34;ar-cc&#34;,&#34;7&#34;:&#34;ar-ch&#34;,&#34;8&#34;:&#34;ar-er&#34;,&#34;9&#34;:&#34;ar-fm&#34;,&#34;10&#34;:&#34;ar-jy&#34;,&#34;11&#34;:&#34;ar-lp&#34;,&#34;12&#34;:&#34;ar-lr&#34;,&#34;13&#34;:&#34;ar-mz&#34;,&#34;14&#34;:&#34;ar-mn&#34;,&#34;15&#34;:&#34;ar-nq&#34;,&#34;16&#34;:&#34;ar-rn&#34;,&#34;17&#34;:&#34;ar-sa&#34;,&#34;18&#34;:&#34;ar-sj&#34;,&#34;19&#34;:&#34;ar-sl&#34;,&#34;20&#34;:&#34;ar-sc&#34;,&#34;21&#34;:&#34;ar-sf&#34;,&#34;22&#34;:&#34;ar-se&#34;,&#34;23&#34;:&#34;ar-tm&#34;,&#34;24&#34;:&#34;ar-tf&#34;}&#39;);
+
+var cand_desde = 5;
+var cand_hacia = 1;
+var load_cands_selects = function() {
+    for(i in cands_pri)
+        $(&#34;#cand_desde&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands_pri[i]+&#39;&lt;/option&gt;&#39;);
+    $(&#39;#cand_desde option:eq(&#39;+cand_desde+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+    for(i in cands_seg)
+        $(&#34;#cand_hacia&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands_seg[i]+&#39;&lt;/option&gt;&#39;);
+    $(&#39;#cand_hacia option:eq(&#39;+cand_hacia+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+    $(&#34;#cand_desde&#34;).change(function() {
+        cand_desde = parseInt($(&#34;#cand_desde&#34;).val());
+        restart();
+    });
+    $(&#34;#cand_hacia&#34;).change(function() {
+        cand_hacia = parseInt($(&#34;#cand_hacia&#34;).val());
+        restart();
+    });
+};
+for(i in provs)
+    $(&#34;#provincia&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+provs[i]+&#39;&lt;/option&gt;&#39;);
+$(&#39;#provincia option:eq(3)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+
+var opt_html = {
+    transferencia: &#39; de votos de &lt;select id=&#34;cand_desde&#34;&gt;&lt;/select&gt; a &lt;select id=&#34;cand_hacia&#34;&gt;&lt;/select&gt;&#39;,
+    diferencia: &#39; entre transferencia de votos de &lt;select id=&#34;cand_desde&#34;&gt;&lt;/select&gt; a Macri y a Scioli.&#39;
+};
+var opcion = &#34;transferencia&#34;;
+$(&#34;#opcion&#34;).change(function() {
+    opcion = $(&#34;#opcion&#34;).val();
+    $(&#34;#opcion_html&#34;).html(opt_html[opcion]);
+    load_cands_selects();
+    restart();
+});
+$(&#34;#opcion_html&#34;).html(opt_html[opcion]);
+load_cands_selects();
+
+var modelo = &#34;lls&#34;;
+$(&#34;#modelo&#34;).change(function() {
+    modelo = $(&#34;#modelo&#34;).val();
+    restart();
+});
+var prov = &#34;4&#34;;
+$(&#34;#provincia&#34;).change(function() {
+    prov = $(&#34;#provincia&#34;).val();
+    fill_tables();
+});
+
+var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
+    chart: {
+        renderTo: &#39;container&#39;
+    },
+    title : {
+        text : &#39;Transferencia de votos de &#39; + cand + (opcion==&#34;transferencia&#34;?(&#34; a &#34;+cands_seg[cand_hacia]):&#34;&#34;)
+    },
+    subtitle : {
+        text : &#39;Click para ver la transferencia de votos completa por provincia&#39;
+    },
+    plotOptions: { map: { events: { click: function(e) {
+        console.log(e.point[&#39;hc-key&#39;]);
+        for(i in keys) if(keys[i] == e.point[&#39;hc-key&#39;]) {console.log(&#34;found: &#34;+i); prov = i;}
+        fill_tables();
+        
+    }}}},
+    colorAxis: colorAxis,
+    series : [{
+        data : data,
+        mapData: Highcharts.maps[&#39;countries/ar/ar-all&#39;],
+        joinBy: &#39;hc-key&#39;,
+        name: &#39;Diferencia entre transferencia de &#39; + cand + &#39; a Macri y a Scioli&#39;,
+        states: {
+            hover: {
+                color: &#39;#BADA55&#39;
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: &#39;{point.name}&#39;
+        }
+    }]
+})};
+
+var json_data = null;
+
+var fill_table = function(id, m) {
+    var html = &#39;&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;&#39;;
+    for(i in cands_seg) html += &#39;&lt;th align=&#34;center&#34;&gt;&#39;+cands_seg[i]+&#39;&lt;/th&gt;&#39;;
+    html += &#39;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&#39;;
+    for(i in cands_pri) {
+        html += &#39;&lt;tr&gt;&lt;td align=&#34;left&#34;&gt;&lt;strong&gt;&#39; + cands_pri[i] + &#39;&lt;/strong&gt;&lt;/td&gt;&#39;;
+        for(j in m[i])
+            html += &#39;&lt;td align=&#34;center&#34;&gt;&#39; + m[i][j] + &#39;%&lt;/td&gt;&#39;;
+        html += &#39;&lt;/tr&gt;&#39;;
+    }
+    html += &#39;&lt;/tbody&gt;&lt;/table&gt;&#39;;
+    $(id).html(html);
+};
+
+var fill_tables = function() {
+    $(&#34;#prov_nombre&#34;).text(provs[prov]);
+    $(&#34;#provincia option[value=&#34;+prov+&#34;]&#34;).attr(&#39;selected&#39;, &#39;selected&#39;);
+    if(!json_data) return;
+    fill_table(&#34;#tabla_prov&#34;, json_data[modelo][prov].prov);
+    fill_table(&#34;#tabla_resto&#34;, json_data[modelo][prov].resto_como_suma);
+};
+
+var round = function(num) {
+    return Math.round(num * 100) / 100;
+}
+
+var main = function(data) {
+    json_data = data;
+
+    fill_tables();
+
+    var map_data = [];
+    var stops = [];
+    var colorAxis = {};
+    if(opcion == &#34;diferencia&#34;) {
+        for(i in data[modelo])
+            map_data.push({&#34;hc-key&#34;: keys[i], &#34;value&#34;: round(data[modelo][i].prov[cand_desde][1]-data[modelo][i].prov[cand_desde][0])});
+        stops = [[0, &#39;#0000FF&#39;], [0.5, &#39;#FFFFFF&#39;], [1, &#39;#FFFF00&#39;]];
+        colorAxis = {min: -100, max: 100, stops: stops};
+    } else {
+        for(i in data[modelo])
+            map_data.push({&#34;hc-key&#34;: keys[i], &#34;value&#34;: data[modelo][i].prov[cand_desde][cand_hacia]});
+        if(cand_hacia == 0)
+            stops = [[0, &#39;#FFFFFF&#39;], [1, &#39;#0000FF&#39;]];
+        else if(cand_hacia == 1)
+            stops = [[0, &#39;#FFFFFF&#39;], [1, &#39;#FFFF00&#39;]];
+        else
+            stops = [[0, &#39;#FFFFFF&#39;], [1, &#39;#000000&#39;]];
+        colorAxis = {min: 0, max: 100, stops: stops};
+    }
+
+    var mapa_ = mapa(map_data, cands_pri[cand_desde], colorAxis);
+};
+
+var restart = function() {
+    if(json_data) main(json_data);
+    else $.getJSON(&#34;/json/ei_prov.json&#34;, main);
+};
+
+restart();
+
+});
+&lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>¿A dónde fueron los votos de Massa?</title>
       <link>http://juandodyk.github.io/post/inferencia-ecologica-1/</link>
       <pubDate>Fri, 27 Nov 2015 00:00:00 +0000</pubDate>
