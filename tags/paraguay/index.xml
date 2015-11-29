@@ -29,8 +29,9 @@
 
 &lt;div id=&#34;container_cant_parts&#34;&gt;&lt;/div&gt;
 
-&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
-Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
+&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.&lt;/p&gt;
+
+&lt;p&gt;Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
 
 &lt;p&gt;¿Cómo quedó el mapa político? Así:&lt;/p&gt;
 
@@ -52,10 +53,10 @@ Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los d
 &lt;p&gt;Fuentes:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;El mapa político fue publicado por ABC.&lt;/li&gt;
+&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;El mapa político fue publicado por &lt;a href=&#34;http://www.abc.com.py/&#34;&gt;ABC&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Mis gráficos fueron hechos con &lt;a href=&#34;http://www.highcharts.com/&#34;&gt;Highcharts&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 

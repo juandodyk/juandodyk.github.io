@@ -37,11 +37,19 @@
 
 &lt;p&gt;(Se puede hacer click en el mapa.)&lt;/p&gt;
 
+&lt;p&gt;Transferencias de: &lt;select id=&#34;cand_desde_bubbles&#34;&gt;&lt;/select&gt;&lt;/p&gt;
+
+&lt;div id=&#34;bubble&#34;&gt;&lt;/div&gt;
+
 &lt;div&gt;
 &lt;script src=&#34;https://code.jquery.com/jquery-1.10.2.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;http://code.highcharts.com/maps/highmaps.js&#34;&gt;&lt;/script&gt;
-&lt;script src=&#34;https://code.highcharts.com/modules/exporting.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/maps/modules/map.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/maps/modules/data.js&#34;&gt;&lt;/script&gt;
 &lt;script src=&#34;https://code.highcharts.com/mapdata/countries/ar/ar-all.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts-more.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/modules/exporting.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://juandodyk.github.io/js/chroma.min.js&#34;&gt;&lt;/script&gt;
 &lt;script&gt;
 $(function () {
 
@@ -49,6 +57,8 @@ var cands_pri = [&#34;Scioli&#34;,&#34;Stolbizer&#34;,&#34;Rodríguez Saá&#34;,
 var cands_seg = [&#34;Scioli&#34;,&#34;Macri&#34;,&#34;No Votó/Blanco&#34;];
 var provs = JSON.parse(&#39;{&#34;1&#34;:&#34;Ciudad de Buenos Aires&#34;,&#34;2&#34;:&#34;Buenos Aires&#34;,&#34;3&#34;:&#34;Catamarca&#34;,&#34;4&#34;:&#34;Córdoba&#34;,&#34;5&#34;:&#34;Corrientes&#34;,&#34;6&#34;:&#34;Chaco&#34;,&#34;7&#34;:&#34;Chubut&#34;,&#34;8&#34;:&#34;Entre Ríos&#34;,&#34;9&#34;:&#34;Formosa&#34;,&#34;10&#34;:&#34;Jujuy&#34;,&#34;11&#34;:&#34;La Pampa&#34;,&#34;12&#34;:&#34;La Rioja&#34;,&#34;13&#34;:&#34;Mendoza&#34;,&#34;14&#34;:&#34;Misiones&#34;,&#34;15&#34;:&#34;Neuquén&#34;,&#34;16&#34;:&#34;Río Negro&#34;,&#34;17&#34;:&#34;Salta&#34;,&#34;18&#34;:&#34;San Juan&#34;,&#34;19&#34;:&#34;San Luis&#34;,&#34;20&#34;:&#34;Santa Cruz&#34;,&#34;21&#34;:&#34;Santa Fe&#34;,&#34;22&#34;:&#34;Santiago del Estero&#34;,&#34;23&#34;:&#34;Tucumán&#34;,&#34;24&#34;:&#34;Tierra del Fuego&#34;}&#39;);
 var keys = JSON.parse(&#39;{&#34;1&#34;:&#34;ar-df&#34;,&#34;2&#34;:&#34;ar-ba&#34;,&#34;3&#34;:&#34;ar-ct&#34;,&#34;4&#34;:&#34;ar-cb&#34;,&#34;5&#34;:&#34;ar-cn&#34;,&#34;6&#34;:&#34;ar-cc&#34;,&#34;7&#34;:&#34;ar-ch&#34;,&#34;8&#34;:&#34;ar-er&#34;,&#34;9&#34;:&#34;ar-fm&#34;,&#34;10&#34;:&#34;ar-jy&#34;,&#34;11&#34;:&#34;ar-lp&#34;,&#34;12&#34;:&#34;ar-lr&#34;,&#34;13&#34;:&#34;ar-mz&#34;,&#34;14&#34;:&#34;ar-mn&#34;,&#34;15&#34;:&#34;ar-nq&#34;,&#34;16&#34;:&#34;ar-rn&#34;,&#34;17&#34;:&#34;ar-sa&#34;,&#34;18&#34;:&#34;ar-sj&#34;,&#34;19&#34;:&#34;ar-sl&#34;,&#34;20&#34;:&#34;ar-sc&#34;,&#34;21&#34;:&#34;ar-sf&#34;,&#34;22&#34;:&#34;ar-se&#34;,&#34;23&#34;:&#34;ar-tm&#34;,&#34;24&#34;:&#34;ar-tf&#34;}&#39;);
+var res_pri = JSON.parse(&#39;{&#34;1&#34;:[24.09,5.09,0.72,50.55,4.28,15.28],&#34;2&#34;:[37.13,2.87,0.97,32.92,3.71,22.4],&#34;3&#34;:[44.89,1.15,1.04,35.38,1.67,15.87],&#34;4&#34;:[19.21,1.81,2.15,53.24,3.19,20.4],&#34;5&#34;:[50.29,1.06,0.54,31.76,1.11,15.24],&#34;6&#34;:[53.74,1.07,0.72,28.28,1.45,14.74],&#34;7&#34;:[41.56,3.01,0.96,21.38,3.65,29.44],&#34;8&#34;:[37.6,2.09,0.98,37.82,1.77,19.75],&#34;9&#34;:[64.75,0.39,0.23,16.1,0.95,17.58],&#34;10&#34;:[37.32,0.77,0.5,17.52,2.47,41.42],&#34;11&#34;:[37.91,2.61,1.79,33.65,2.49,21.56],&#34;12&#34;:[36.21,1.11,3.33,31.68,1.7,25.97],&#34;13&#34;:[31.34,1.44,4.42,40.8,7.62,14.37],&#34;14&#34;:[61.02,1.27,0.36,22.74,0.91,13.7],&#34;15&#34;:[35.64,2.68,1.83,28.09,5.42,26.33],&#34;16&#34;:[45.21,2.81,1.43,22.43,3.88,24.24],&#34;17&#34;:[40.56,1.07,0.78,20.77,2.77,34.06],&#34;18&#34;:[46.07,1.76,3.49,20.87,1.47,26.34],&#34;19&#34;:[15.61,1.33,36.79,30.96,1.79,13.52],&#34;20&#34;:[47.17,1.19,0.45,25.72,3.17,22.3],&#34;21&#34;:[31.77,3.95,1.5,35.3,2.68,24.81],&#34;22&#34;:[63.07,0.95,0.47,14.72,1.46,19.34],&#34;23&#34;:[48.54,1.39,0.93,26.84,1.79,20.52],&#34;24&#34;:[45.48,3.29,1.62,21.82,4.4,23.39]}&#39;);
+var res_seg = JSON.parse(&#39;{&#34;1&#34;:[35.22,64.78],&#34;2&#34;:[51.1,48.9],&#34;3&#34;:[52.96,47.04],&#34;4&#34;:[28.49,71.51],&#34;5&#34;:[55.37,44.63],&#34;6&#34;:[59.23,40.77],&#34;7&#34;:[58.84,41.16],&#34;8&#34;:[46.17,53.83],&#34;9&#34;:[63.96,36.04],&#34;10&#34;:[47.07,52.93],&#34;11&#34;:[49.09,50.91],&#34;12&#34;:[43.49,56.51],&#34;13&#34;:[42.49,57.51],&#34;14&#34;:[58.04,41.96],&#34;15&#34;:[52.86,47.14],&#34;16&#34;:[62.85,37.15],&#34;17&#34;:[54.27,45.73],&#34;18&#34;:[59.76,40.24],&#34;19&#34;:[35.84,64.16],&#34;20&#34;:[58.37,41.63],&#34;21&#34;:[44.27,55.73],&#34;22&#34;:[72.06,27.94],&#34;23&#34;:[58.59,41.41],&#34;24&#34;:[58.72,41.28]}&#39;);
 
 var cand_desde = 5;
 var cand_hacia = 1;
@@ -56,12 +66,23 @@ var load_cands_selects = function() {
     for(i in cands_pri)
         $(&#34;#cand_desde&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands_pri[i]+&#39;&lt;/option&gt;&#39;);
     $(&#39;#cand_desde option:eq(&#39;+cand_desde+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+    $(&#34;#cand_desde_bubbles&#34;).html(&#39;&#39;);
+    for(i in cands_pri)
+        $(&#34;#cand_desde_bubbles&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands_pri[i]+&#39;&lt;/option&gt;&#39;);
+    $(&#39;#cand_desde_bubbles option:eq(&#39;+cand_desde+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
     for(i in cands_seg)
         $(&#34;#cand_hacia&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands_seg[i]+&#39;&lt;/option&gt;&#39;);
     $(&#39;#cand_hacia option:eq(&#39;+cand_hacia+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
     $(&#34;#cand_desde&#34;).change(function() {
         cand_desde = parseInt($(&#34;#cand_desde&#34;).val());
+        $(&#39;#cand_desde_bubbles option:eq(&#39;+cand_desde+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
         restart();
+    });
+    $(&#34;#cand_desde_bubbles&#34;).change(function() {
+        cand_desde = parseInt($(&#34;#cand_desde_bubbles&#34;).val());
+        $(&#39;#cand_desde option:eq(&#39;+cand_desde+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+        restart();
+        $(&#34;#cand_desde_bubbles&#34;)[0].scrollIntoView( true );
     });
     $(&#34;#cand_hacia&#34;).change(function() {
         cand_hacia = parseInt($(&#34;#cand_hacia&#34;).val());
@@ -131,6 +152,75 @@ var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
     }]
 })};
 
+var bubble = function(data) {
+    return new Highcharts.Chart({
+        chart: {
+            type: &#39;bubble&#39;,
+            plotBorderWidth: 1,
+            renderTo: &#39;bubble&#39;,
+            height: $(&#34;#bubble&#34;).width()
+        },
+        title: {
+            text: &#34;Transferencia de votos de &#34;+cands_pri[cand_desde]
+        },
+        subtitle : {
+            text : &#39;El color de las burbujas indica si ganó Scioli o Macri en esa provincia. El tamaño, cuánto voto recibió &#39;+cands_pri[cand_desde]+&#39; en primera vuelta. Cuanto más lejos de la línea diagonal, más voto se transfirió a &#34;No votó/Blanco&#34;.&#39;
+        },
+        yAxis: {
+            title: {
+                text: &#39;Transferencia a Macri&#39;
+            },
+            min:0,
+            max:100,
+            labels: {
+                format: &#39;{value}%&#39;
+            },
+        },
+        xAxis: {
+            title: {
+                text: &#39;Transferencia a Scioli&#39;
+            },
+            min:0,
+            max:100,
+            labels: {
+                format: &#39;{value}%&#39;
+            },
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: &#39;{point.name}&#39;
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        tooltip: {
+            useHTML: true,
+            headerFormat: &#39;&lt;table&gt;&#39;,
+            pointFormat: &#39;&lt;tr&gt;&lt;th colspan=&#34;2&#34;&gt;&lt;h3&gt;{point.nombre}&lt;/h3&gt;&lt;/th&gt;&lt;/tr&gt;&#39; +
+                &#39;&lt;tr&gt;&lt;th&gt;Transferencia a Scioli:&lt;/th&gt;&lt;td&gt;{point.x}%&lt;/td&gt;&lt;/tr&gt;&#39; +
+                &#39;&lt;tr&gt;&lt;th&gt;Transferencia a Macri:&lt;/th&gt;&lt;td&gt;{point.y}%&lt;/td&gt;&lt;/tr&gt;&#39; +
+                &#39;&lt;tr&gt;&lt;th&gt;Transferencia a No Votó/Blanco:&lt;/th&gt;&lt;td&gt;{point.nvb}%&lt;/td&gt;&lt;/tr&gt;&#39; +
+                &#39;&lt;tr&gt;&lt;th&gt;&#39;+cands_pri[cand_desde]+&#39; (primera vuelta):&lt;/th&gt;&lt;td&gt;{point.z}%&lt;/td&gt;&lt;/tr&gt;&#39;,
+            footerFormat: &#39;&lt;/table&gt;&#39;,
+            followPointer: true
+        },
+        series: [{data: data, states: {
+            hover: {
+                color: &#39;#BADA55&#39;
+            }
+        }}, {
+            type: &#39;line&#39;,
+            data: [[0,100],[100,0]],
+            marker: {enabled: false},
+            enableMouseTracking: false
+        }]
+    });
+};
+
 var json_data = null;
 
 var fill_table = function(id, m) {
@@ -183,6 +273,19 @@ var main = function(data) {
             stops = [[0, &#39;#FFFFFF&#39;], [1, &#39;#000000&#39;]];
         colorAxis = {min: 0, max: 100, stops: stops};
     }
+
+    var data_bubble = [];
+    for(i in res_pri)
+        data_bubble.push({
+            x: json_data[modelo][i].prov[cand_desde][0],
+            y: json_data[modelo][i].prov[cand_desde][1],
+            nvb: json_data[modelo][i].prov[cand_desde][2],
+            z: res_pri[i][cand_desde],
+            name: keys[i].substring(3,5).toUpperCase(),
+            nombre: provs[i],
+            color: (res_seg[i][1]&gt;res_seg[i][0] ? &#34;#FFFF00&#34; : &#34;#008ae5&#34;)//chroma.scale([&#39;white&#39;,&#39;yellow&#39;])(res_seg[i][1]/100).hex()
+        });
+    var bubble_ = bubble(data_bubble);
 
     var mapa_ = mapa(map_data, cands_pri[cand_desde], colorAxis);
 };
@@ -847,8 +950,9 @@ code.has-jax {font: inherit;
 
 &lt;div id=&#34;container_cant_parts&#34;&gt;&lt;/div&gt;
 
-&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
-Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
+&lt;p&gt;La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.&lt;/p&gt;
+
+&lt;p&gt;Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.&lt;/p&gt;
 
 &lt;p&gt;¿Cómo quedó el mapa político? Así:&lt;/p&gt;
 
@@ -870,10 +974,10 @@ Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los d
 &lt;p&gt;Fuentes:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;El mapa político fue publicado por ABC.&lt;/li&gt;
+&lt;li&gt;Los resultados los tomé de &lt;a href=&#34;http://resultados.tsje.gov.py/divulgacion.html&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Los números de habitantes de cada distrito los tomé de &lt;a href=&#34;https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;La cantidad de distritos en 2006 y 2010 salió de &lt;a href=&#34;http://tsje.gov.py/elecciones-municipales-2006.html&#34;&gt;acá&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;El mapa político fue publicado por &lt;a href=&#34;http://www.abc.com.py/&#34;&gt;ABC&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Mis gráficos fueron hechos con &lt;a href=&#34;http://www.highcharts.com/&#34;&gt;Highcharts&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -1102,9 +1206,13 @@ var cant_votos = new Highcharts.Chart({
 
 &lt;p&gt;El FEM hizo una elección notable. Tanto en comparación con años anteriores (27% en 2013, 35% en 2014) como en comparación con otras facultades (se profundizó la caída de la Mella en todas excepto Exactas, Psicología y -por aliarse al ganador- Fadu). Es récord histórico: sólo se puede comparar con la elección de 2011 (43% para consejo, 46% para centro). Esto se explica por los siguientes motivos: 1) una buena gestión, 2) un uso racional de los recursos de poder, 3) la homogeneidad y presencia visible en espacios académicos de su base militante, y 4) el apoyo de los estudiantes a su tratamiento del conflicto presupuestario.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Gestión.&lt;/em&gt; El FEM conducía el centro, y por lo tanto contó con la ventaja de ser oficialismo. Esto rindió electoralmente por su buena gestión. El CECEN amplió y mejoró espacios públicos y servicios (nuevo bar, mejoras en la biblioteca Noriega y el sum, desayuno y merienda baratos). Funcionó como herramienta gremial en los conflictos que surgieron (CBC, Tecnópolis, Becas Bicentenario, presupuesto). Tuvo una buena política de comunicación (carteles, presencia en redes sociales, asambleas). Y ofreció espacios de participación a los estudiantes (comisiones de carrera, comisiones del CECEN) que alcanzaron el objetivo mínimo de llevar a cabo actividades abiertas. En resumen: hizo bien lo que debe hacer un centro de estudiantes. Lo cual no es poco, dada la pésima gestión de la Izquierda al Frente en 2014.&lt;/p&gt;
+&lt;h3 id=&#34;gestión:9894787ee065505e574858cea67f49ec&#34;&gt;Gestión&lt;/h3&gt;
 
-&lt;p&gt;&lt;em&gt;Manejo de recursos de poder.&lt;/em&gt; Los logros de gestión en el CECEN fueron capitalizados políticamente por el FEM. La estrategia para conseguir esto no fue la obvia (ponerle el sello de la agrupación a todo). Se apostó al CECEN como vehículo de acción política jugando inteligentemente con sus límites. Se invirtieron los recursos de poder racionalmente: el CECEN se expandió donde fue más redituable para el FEM y se detuvo o retrocedió en los terrenos más adversos, menos rendidores o más riesgosos.&lt;/p&gt;
+&lt;p&gt;El FEM conducía el centro, y por lo tanto contó con la ventaja de ser oficialismo. Esto rindió electoralmente por su buena gestión. El CECEN amplió y mejoró espacios públicos y servicios (nuevo bar, mejoras en la biblioteca Noriega y el sum, desayuno y merienda baratos). Funcionó como herramienta gremial en los conflictos que surgieron (CBC, Tecnópolis, Becas Bicentenario, presupuesto). Tuvo una buena política de comunicación (carteles, presencia en redes sociales, asambleas). Y ofreció espacios de participación a los estudiantes (comisiones de carrera, comisiones del CECEN) que alcanzaron el objetivo mínimo de llevar a cabo actividades abiertas. En resumen: hizo bien lo que debe hacer un centro de estudiantes. Lo cual no es poco, dada la pésima gestión de la Izquierda al Frente en 2014.&lt;/p&gt;
+
+&lt;h3 id=&#34;manejo-de-recursos-de-poder:9894787ee065505e574858cea67f49ec&#34;&gt;Manejo de recursos de poder&lt;/h3&gt;
+
+&lt;p&gt;Los logros de gestión en el CECEN fueron capitalizados políticamente por el FEM. La estrategia para conseguir esto no fue la obvia (ponerle el sello de la agrupación a todo). Se apostó al CECEN como vehículo de acción política jugando inteligentemente con sus límites. Se invirtieron los recursos de poder racionalmente: el CECEN se expandió donde fue más redituable para el FEM y se detuvo o retrocedió en los terrenos más adversos, menos rendidores o más riesgosos.&lt;/p&gt;
 
 &lt;p&gt;El FEM apostó al fortalecimiento y ampliación institucional del CECEN. Durante el año hizo sus campañas a través del centro sin la firma FEM. Con esto marcó la cancha a las demás agrupaciones: usó la legitimidad que da el sello CECEN para imponer los términos de la discusión pública (el mejor ejemplo: instalar el hashtag #DefendamosExactas). Al mismo tiempo amplió los espacios de representación: impulsó actividades desde las comisiones de carrera que saturaron esa agenda y cooptaron voluntades no partidarias.&lt;/p&gt;
 
@@ -1112,17 +1220,23 @@ var cant_votos = new Highcharts.Chart({
 
 &lt;p&gt;También hubo tensiones con las otras agrupaciones, cansadas de que les roben proyectos o campañas. Y con las autoridades y los consejeros de otros claustros: si bien hubo un diálogo fluido, el FEM no dudó en traicionarlos y jugar su propio juego cuando le resultó conveniente (reunirse con el rector Barbieri por el conflicto presupuestario a espaldas de las autoridades de la facultad). Lo cual tiene como costo el debilitamiento de su posición en el consejo directivo para avanzar proyectos a escala superior a la del CECEN. Por último, el FEM convive con una tensión con la institucionalidad misma del centro: el CECEN no tiene estatuto ni personería jurídica. El FEM calcula que la dificultad y el costo de llevar adelante estas reformas superan los posibles beneficios.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Homogeneidad y presencia.&lt;/em&gt; El FEM no es una alianza política. No tiene facciones ni se observan grandes diferencias internas. Si bien proclama que tiene una clase de militantes diferenciada, los &amp;ldquo;independientes&amp;rdquo; (no orgánicos a la afiliación partidaria en Patria Grande), lo que hay es un gris de organicidad o adhesión ideológica que es común a cualquier agrupación política. Los militantes entran siendo &amp;ldquo;independientes&amp;rdquo; y van siendo persuadidos y formados gradualmente en la línea política. Hay -eso sí- flexibilidad y se incorporan nuevas ideas, las que mejor se adaptan a la sensibilidad de los estudiantes de la facultad. Pero la acción es coordinada y todos los éxitos son capitalizados por la organización.&lt;/p&gt;
+&lt;h3 id=&#34;homogeneidad-y-presencia:9894787ee065505e574858cea67f49ec&#34;&gt;Homogeneidad y presencia&lt;/h3&gt;
+
+&lt;p&gt;El FEM no es una alianza política. No tiene facciones ni se observan grandes diferencias internas. Si bien proclama que tiene una clase de militantes diferenciada, los &amp;ldquo;independientes&amp;rdquo; (no orgánicos a la afiliación partidaria en Patria Grande), lo que hay es un gris de organicidad o adhesión ideológica que es común a cualquier agrupación política. Los militantes entran siendo &amp;ldquo;independientes&amp;rdquo; y van siendo persuadidos y formados gradualmente en la línea política. Hay -eso sí- flexibilidad y se incorporan nuevas ideas, las que mejor se adaptan a la sensibilidad de los estudiantes de la facultad. Pero la acción es coordinada y todos los éxitos son capitalizados por la organización.&lt;/p&gt;
 
 &lt;p&gt;El FEM está resistiendo un recambio generacional. Pero no sólo no presenta grandes peligros en el corto plazo sino que constituye un activo, en tanto muchos veteranos permanecen en la facultad como docentes o investigadores y aportan su ayuda desde ese lugar. Esta presencia en espacios académicos se suma a la de la propia base militante estudiantil: el FEM tiene &amp;ldquo;codepers&amp;rdquo; en las comisiones departamentales (y si no los tiene intenta cooptarlos), y varios de sus miembros son ayudantes en materias de sus carreras.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;Conflicto por el presupuesto.&lt;/em&gt; Además de contar con estas tres ventajas frente a la competencia, el FEM protagonizó este año una campaña que entiendo que fue decisiva para el resultado electoral. Se trató de la campaña por más presupuesto para la Facultad. El FEM la condujo desde el movimiento estudiantil, fijó el significante (la etiqueta) con el que todos los actores la nombraron (el hashtag #DefendamosExactas, en clara imitación de #NiUnaMenos), estableció una narrativa que tuvo aceptación incluso entre la oposición de izquierda, y obtuvo una &amp;ldquo;victoria&amp;rdquo; controvertida pero validada como tal por una amplia mayoría de estudiantes.&lt;/p&gt;
+&lt;h3 id=&#34;conflicto-por-el-presupuesto:9894787ee065505e574858cea67f49ec&#34;&gt;Conflicto por el presupuesto&lt;/h3&gt;
+
+&lt;p&gt;Además de contar con estas tres ventajas frente a la competencia, el FEM protagonizó este año una campaña que entiendo que fue decisiva para el resultado electoral. Se trató de la campaña por más presupuesto para la Facultad. El FEM la condujo desde el movimiento estudiantil, fijó el significante (la etiqueta) con el que todos los actores la nombraron (el hashtag #DefendamosExactas, en clara imitación de #NiUnaMenos), estableció una narrativa que tuvo aceptación incluso entre la oposición de izquierda, y obtuvo una &amp;ldquo;victoria&amp;rdquo; controvertida pero validada como tal por una amplia mayoría de estudiantes.&lt;/p&gt;
 
 &lt;p&gt;Resumo la historia. A principio de año el decano Reboreda anunció que con el presupuesto que le asignó el Consejo Superior para 2015 Exactas &amp;ldquo;no llega a Octubre&amp;rdquo;. El presupuesto de la UBA se reparte así: se destina lo necesario para el pago de salarios, y el resto se destina entre administración central (Rectorado), facultades y hospitales para &amp;ldquo;gastos de funcionamiento&amp;rdquo;. El presupuesto para facultades, a su vez, se reparte entre las trece. Está en discusión qué porcentaje le debería tocar a cada una. Hasta hace unos años, gracias la gestión del ex decano Jorge Aliaga, la repartición se hacía de acuerdo a un criterio que tenía en cuenta el tamaño y la complejidad de cada facultad. Exactas es pequeña demográficamente, pero sus laboratorios y sus tres edificios la hacen merecedora de entre 13 y 15% del presupuesto de acuerdo a ese criterio, muy por encima del promedio que, por ser 13 facultades, está en 7.7%. Exactas perdió el lugar político que tenía en esos años en el CS, lo cual recrudeció tras la elección del rector Barbieri en 2013, apoyado por casi todos los decanos pero no por el de Exactas. Por este motivo la porción del presupuesto que le asigna el CS viene cayendo desde ese momento, tendiendo al 10%, a lo cual se suma que por ser opositora al rector no recibe fondos discrecionales extra. Exactas tenía ahorros que fue gastando en este último tiempo, pero se terminaron el año pasado. Por eso este año el decano anunció la situación de emergencia presupuestaria.&lt;/p&gt;
 
 &lt;p&gt;El decano lo anunció a toda la comunidad académica. El FEM reaccionó rápidamente poniéndose al hombro, a través del CECEN, la tarea de pelear por más presupuesto entendida como un reclamo estudiantil bajo la consigna &amp;ldquo;#DefendamosExactas&amp;rdquo;. Desde el primer momento hubo comunicación entre el FEM y las autoridades pero también desacuerdos en los métodos de presión. Las autoridades buscaban canalizar el reclamo por vía institucional dentro del CS, lo cual terminó en un fracaso rotundo (una primera propuesta de reasignación de una partida presupuestaria ni se trató en la comisión correspondiente del CS; una segunda, que llamaba a repartir una partida nueva con una variante del criterio que beneficiaba a Exactas fue rechazada incluso por el representante de la Mella en el claustro estudiantil). El FEM, en cambio, fue al choque: desde el CECEN colgó una bandera gigante con la consigna #DefendamosExactas y reunió a buena parte de la facultad en una foto, y organizó asambleas y movilizaciones al Rectorado desde el primer momento. Es altamente cuestionable que esto haya tenido algún impacto real en las decisiones del Rector. Estoy convencido de que no lo tuvo, pero entiendo que una mayoría de estudiantes creyó que sí. Y que tanto la instalación del conflicto en la agenda de los estudiantes como del relato de victoria fueron validados por los votantes y fueron determinantes en la elección.&lt;/p&gt;
 
 &lt;p&gt;La &amp;ldquo;victoria&amp;rdquo; que se atribuye el FEM se dio como sigue. Lucas Tavolaro, militante del FEM y tesorero del CECEN, participó en la competencia de programación mundial ICPC como parte del equipo que representó a la UBA. Su equipo obtuvo un buen resultado, posicionándose en el ranking global como el mejor de Latinoamérica. Pero lo que llamó la atención de los medios locales no fue eso, sino un resultado anecdótico pero simbólicamente fuerte: la UBA le ganó a Harvard. Así lo editaron los medios, que por ese motivo entrevistaron a Tavolaro. Tavolaro aprovechó la cobertura mediática en diarios, programas de TV y radio para pedir más presupuesto para la Facultad. El rector Barbieri, muy atento a su imagen mediática, respondió al poco tiempo. El Ministerio de Educación le estaba girando a la UBA una partida presupuestaria extra de $20 millones (como pudimos reconstruir más tarde), seguramente no relacionada de ningún modo con el conflicto de Exactas. Barbieri se reunió con Tavolaro y Galpern, presidente del CECEN, en su oficina, a solas, para anunciarles la primicia de que iba a destinar $15 millones extra para gastos de funcionamiento a repartir entre las facultades (usando, por supuesto, el criterio que perjudica a Exactas, otorgándole un 10% de ese dinero). El FEM definió esto como una victoria estudiantil, e instaló el relato de que fue una conquista de todos los estudiantes organizados y movilizados por&amp;hellip; ellos, el FEM. El consejo directivo de Exactas, sin embargo, no lo vio de esta manera: al legitimar desde la &amp;ldquo;izquierda&amp;rdquo; estudiantil la repartición de los $15 millones, el FEM hizo que se debilite el reclamo de Exactas en el CS, dejándola en una posición política aún más precaria que la que tenía. El éxito del FEM en 2015 puede significar el fracaso de Exactas del 2016 en adelante. Y de los $5 millones de esa partida de $20 millones que recibió Barbieri y que no repartió entre las facultades nunca se supo nada, ni se hizo ningún reclamo. El triunfalismo no dejó lugar para esos detalles.&lt;/p&gt;
+
+&lt;h3 id=&#34;cómo-traducir-un-conflicto-en-hegemonía-electoral:9894787ee065505e574858cea67f49ec&#34;&gt;Cómo traducir un conflicto en hegemonía electoral&lt;/h3&gt;
 
 &lt;p&gt;No es la primera vez que el FEM lleva a cabo una campaña con este éxito. En 2010 organizó desde el CECEN (junto a AGD, gremio docente de izquierda) un plebiscito entre estudiantes, docentes y graduados que planteaba una pregunta: acreditar las carreras de grado en la CONEAU, sí o no. Un 92% votó que no. Junto a esto se confeccionó y colgó una bandera gigante con la leyenda “en Exactas no acreditamos”. El CECEN conducido por el FEM organizó asambleas y movilizaciones para defender esa posición. El resultado fue un éxito: si bien se acreditaron doctorados y maestrías, las carreras de grado continúan hasta hoy sin acreditar. Y el FEM cosechó resultados frondosos en las elecciones siguientes. Hay elementos en común con el conflicto por el presupuesto de este año de los que puede extraerse un patrón. 1) La instalación de un tema en la agenda estudiantil durante todo el año, más el esfuerzo por no perder la atención de los estudiantes en ningún momento. 2) El interesamiento de los demás actores académicos en la consigna, manteniendo un margen de autonomía siempre. 3) El uso del CECEN como vehículo exclusivo de organización estudiantil legítima. Y 4) el monopolio de los símbolos (la bandera gigante, la consigna simple: acreditar sí/no, #DefendamosExactas). Esto deja planteada una pregunta: ¿podemos detectar este mismo patrón en hechos políticos exitosos de la política estudiantil democrática en otras facultades?&lt;/p&gt;
 
@@ -1161,11 +1275,11 @@ var cant_votos = new Highcharts.Chart({
 &lt;h2 id=&#34;fuentes:9894787ee065505e574858cea67f49ec&#34;&gt;Fuentes&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Juventud Informada, &lt;a href=&#34;http://www.juventudinformada.com.ar/&#34;&gt;http://www.juventudinformada.com.ar/&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://www.juventudinformada.com.ar/&#34;&gt;Juventud Informada&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Max Pérez Fallik, El “No a la CONEAU” en la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires: rupturas y continuidades, &lt;a href=&#34;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&#34;&gt;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Max Pérez Fallik, &lt;a href=&#34;http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf&#34;&gt;El “No a la CONEAU” en la Facultad de Ciencias Exactas y Naturales de la Universidad de Buenos Aires: rupturas y continuidades&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Leandro Germán, análisis de la elección en Sociales, &lt;a href=&#34;https://www.facebook.com/leandro.german.10/posts/10205785886543289&#34;&gt;https://www.facebook.com/leandro.german.10/posts/10205785886543289&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Leandro Germán, &lt;a href=&#34;https://www.facebook.com/leandro.german.10/posts/10205785886543289&#34;&gt;análisis de la elección en Sociales&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -1206,13 +1320,13 @@ var cant_votos = new Highcharts.Chart({
 
 &lt;p&gt;En la primera parte Harman dice esto, en resumen. Latour en su libro Irreducciones se plantea la tarea de hacer una filosofía que evite todo reduccionismo. Harman se pregunta si lo consigue realmente. Hay dos objeciones a la estrategia de Latour. La primera es mayormente obvia, inevitable e inofensiva. Latour propone ver a toda entidad, para evitar aplastarla con presupuestos a priori, como un agente sin ninguna propiedad determinante (interna), y por lo tanto completamente libre en principio; su realidad no pasa por su esencia o su existencia (reconoce gradientes de existencia por los que puede pasar una entidad) sino por su acción, que siempre involucra a otros agentes y produce un desplazamiento de roles por el proceso que Latour llama traducción. La objeción es: esto también es un molde a priori con el que tratar a todas las entidades de la misma manera. Harman dice: sí, pero toda teorización metafísica está condenada a esto. El mérito de la propuesta de Latour está en que si bien todo es un actor, ningún actor (en principio) está reducido a ningún otro. Algo para notar es que Latour sí admite la reducción; el truco es que no es &amp;ldquo;el analista&amp;rdquo; (así hablan los sociólgos) el que reduce, sino los agentes mismos los que operan reducción cuando lo consiguen (y nunca es definitivo). Lo que propone Latour es que no sea la teoría la que reduce, que es, por supuesto, todo a lo que se puede aspirar desde la teoría misma. Entonces esta primera objeción llama a cuestionarse qué esperar y qué no de un antirreduccionismo radical como el de Latour, pero no invalida el suyo.&lt;/p&gt;
 
-&lt;p&gt;Hay una segunda objeción que sí es más dañina, y alrededor de la cual gira el argumento de Harman. Latour busca evitar un reduccionismo hacia abajo: el de un objeto que &amp;ldquo;no es más que&amp;rdquo; ciertos objetos más fundamentales, el de una predicación que &amp;ldquo;no es más que&amp;rdquo; la determinación de una propiedad esencial, o el de un evento que &amp;ldquo;no es más que&amp;rdquo; la consecuencia de una ley causal. Entonces Latour prohibe a la teoría elegir sus entidades fundamentales favoritas (y de esa manera, por ejemplo, bloquea desde el vamos el debate realismo vs nominalismo), prohibe el esencialismo y la noción de sustancia, y propone reemplazar la explicación causal por descripción en términos de acción. Negadas estas salidas comunes propone ver toda entidad como un agente en principio libre, todo evento como acción bajo el modelo de la traducción, en el que dos o más agentes se combinan para formas un tercero que los coordina, y toda propiedad en términos de estos efectos relacionales. Harman objeta: si no hay más orden que el que aparece con la coordinación de actores bajo el mando de uno nuevo, es decir, si toda propiedad es relacional, lo único que hizo Latour fue cambiar un reduccionismo hacia abajo por un reduccionismo hacia arriba. La primera apuesta de Harman es introducir la posibilidad de este otro reduccionismo del que también habría que liberarse (al menos si uno busca liberarse del reduccionismo en general siguiendo a Latour). Latour se habría quedado a mitad de camino, apuesta Harman. él nos va a enseñar finalmente cómo ser irreduccionistas tout court.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;Hay una segunda objeción que sí es más dañina, y alrededor de la cual gira el argumento de Harman. Latour busca evitar un reduccionismo hacia abajo: el de un objeto que &amp;ldquo;no es más que&amp;rdquo; ciertos objetos más fundamentales, el de una predicación que &amp;ldquo;no es más que&amp;rdquo; la determinación de una propiedad esencial, o el de un evento que &amp;ldquo;no es más que&amp;rdquo; la consecuencia de una ley causal. Entonces Latour prohibe a la teoría elegir sus entidades fundamentales favoritas (y de esa manera, por ejemplo, bloquea desde el vamos el debate realismo vs nominalismo), prohibe el esencialismo y la noción de sustancia, y propone reemplazar la explicación causal por descripción en términos de acción. Negadas estas salidas comunes propone ver toda entidad como un agente en principio libre, todo evento como acción bajo el modelo de la traducción, en el que dos o más agentes se combinan para formas un tercero que los coordina, y toda propiedad en términos de estos efectos relacionales. Harman objeta: si no hay más orden que el que aparece con la coordinación de actores bajo el mando de uno nuevo, es decir, si toda propiedad es relacional, lo único que hizo Latour fue cambiar un reduccionismo hacia abajo por un reduccionismo hacia arriba. La primera apuesta de Harman es introducir la posibilidad de este otro reduccionismo del que también habría que liberarse (al menos si uno busca liberarse del reduccionismo en general siguiendo a Latour). Latour se habría quedado a mitad de camino, apuesta Harman. Él nos va a enseñar finalmente cómo ser irreduccionistas tout court.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;2-el-argumento-central-contra-los-dos-tipos-de-reduccionismo-strong:3c813fd34cf2df9902434313a026abe8&#34;&gt;2. El argumento central: contra los dos tipos de reduccionismo&lt;/strong&gt;&lt;/h2&gt;
 
 &lt;p&gt;La segunda parte del texto se dedica a establecer estos dos tipos de reducción: hacia abajo y hacia arriba, que el llama, respectivamente, socavamiento y disolución. Traza una génesis de estos dos modos de la metafísica y los postula ubicuos: nadie antes logró liberarse de ambos. El cientismo cae más en el socavamiento, pero las humanidades caen igualmente en la disolución. Seguido hace la observación que hice con respecto a la primera objeción contra Latour: no es que esté mal socavar o disolver, sólo que no puede ser un objetivo primordial y sistemático, como si de eso se tratara relacionarse bien con el mundo (la idea de la ilustración). Y acá viene lo que yo creo que es el argumento central del texto, que es por qué o en qué cree Harman que fallan generalmente los dos tipos de reducciones. Antes de hacer un comentario voy a repasar también estos argumentos. Hago esto, en lugar de lanzar mis críticas directamente, porque no uso el mismo vocabulario que Harman, entonces para poder conversar tengo necesariamente que traducirlo; y no voy a dejar de ser latouriano justo acá como para creer que no opera ninguna transformación cuando hago esto.&lt;/p&gt;
 
-&lt;p&gt;El argumento anti socavamiento dice que éste va contra la &amp;ldquo;emergencia&amp;rdquo;. Este es un concepto viejo, que si yo no entiendo mal Latour elige evitar, y que incluso ataca. Está asociado a la &amp;ldquo;complejidad&amp;rdquo; y a los &amp;ldquo;sistemas&amp;rdquo;, a Prigogine, a Deleuze y a Luhmann. Argumentos en contra a los que adhiero se encuentran en Latour y Strum, Redefining the social link. Todos los ejemplos que da Harman de emergentes pueden entenderse en otros términos. Sus objetos emergentes se arreglan incluyendo la dimensión del tiempo (que por algún motivo se cuidad de no tocar jamás, como si fuera sagrada). Por ejemplo, &amp;ldquo;un cuerpo sigue siendo el mismo si le es sustraído un cierto número de células&amp;rdquo;. Sí, es cierto, pero nada impide reducir al cuerpo no a un conjunto de células sino a un cierto conjunto de células-tiempo (entre t0 y t1 a tales células, entre t1 y t2 a tales otras, etc); no digo que esto no tenga problemas, pero no es vulnerable a la objeción de Harman, y no queda claro que de esta manera (más o menos ad hoc) no se pueda evitar sistemáticamente todo contraejemplo de este tipo. Esto ya lo decía Carnap hace quizás 100 años; Quine es un ejemplo de filósofo que lo sostuvo hasta sus últimas consecuencias, con el máximo de reducción posible. Sobre las propiedades emergentes que cita hay un problema epistémico: que tengamos evidencia incompleta o sólo tengamos leyes cualitativas o estadísticas no quiere decir que el fenómeno no esté determinado por sus partes. Puede ser imposible una reducción nomológica, de leyes de un tipo a leyes de otro tipo, pero eso no es motivo suficiente para bloquear toda reducción ontológica. (Ejemplo, Davidson en Anomalous monism: se puede ser monista ontológico, es decir, no creer que existe el alma, y creer sin embargo que las leyes físicas no pueden bastar para fijar el contenido de nuestros conceptos semánticos.)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;El argumento anti socavamiento dice que éste va contra la &amp;ldquo;emergencia&amp;rdquo;. Este es un concepto viejo, que si yo no entiendo mal Latour elige evitar, y que incluso ataca. Está asociado a la &amp;ldquo;complejidad&amp;rdquo; y a los &amp;ldquo;sistemas&amp;rdquo;, a Prigogine, a Deleuze y a Luhmann. Argumentos en contra a los que adhiero se encuentran en Latour y Strum, Redefining the social link. Todos los ejemplos que da Harman de emergentes pueden entenderse en otros términos. Sus objetos emergentes se arreglan incluyendo la dimensión del tiempo (que por algún motivo se cuidad de no tocar jamás, como si fuera sagrada). Por ejemplo, &amp;ldquo;un cuerpo sigue siendo el mismo si le es sustraído un cierto número de células&amp;rdquo;. Sí, es cierto, pero nada impide reducir al cuerpo no a un conjunto de células sino a un cierto conjunto de células-tiempo (entre &lt;em&gt;t0&lt;/em&gt; y &lt;em&gt;t1&lt;/em&gt; a tales células, entre &lt;em&gt;t1&lt;/em&gt; y &lt;em&gt;t2&lt;/em&gt; a tales otras, etc); no digo que esto no tenga problemas, pero no es vulnerable a la objeción de Harman, y no queda claro que de esta manera (más o menos ad hoc) no se pueda evitar sistemáticamente todo contraejemplo de este tipo. Esto ya lo decía Carnap hace quizás 100 años; Quine es un ejemplo de filósofo que lo sostuvo hasta sus últimas consecuencias, con el máximo de reducción posible. Sobre las propiedades emergentes que cita hay un problema epistémico: que tengamos evidencia incompleta o sólo tengamos leyes cualitativas o estadísticas no quiere decir que el fenómeno no esté determinado por sus partes. Puede ser imposible una reducción nomológica, de leyes de un tipo a leyes de otro tipo, pero eso no es motivo suficiente para bloquear toda reducción ontológica. (Ejemplo, Davidson en &lt;em&gt;Anomalous monism&lt;/em&gt;: se puede ser monista ontológico, es decir, no creer que existe el alma, y creer sin embargo que las leyes físicas no pueden bastar para fijar el contenido de nuestros conceptos semánticos.)&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;p&gt;Cuando argumenta en contra de la disolución Harman cae en el mismo problema en el que parece atrapado: el tiempo para él es sagrado, no se toca. La ontología está separada del tiempo, para él. Alguien que sepa de Heidegger quizás pueda sugerir por qué no deja de aferrarse a esta creencia (quizás él mismo), pero en cualquier caso creo que adoptar esta postura sin ningún argumento es motivo suficiente para rechazar la propuesta que hace en su texto. Quizás para él sea obvio, pero para mí que en este momento sólo tengo presente este texto suyo no. La crítica a la disolución que hace, si funcionara, recaería de lleno en la teoría del actor-red de Latour, con efectos quizás fatales. Como funciona la traducción, un actor traducido no tendría manera de zafarse de una red más que siendo traducido por otro actor, y por lo tanto quedaría maniatado por su traductor. Finalmente no serían tan libres los agentes de Latour como éste se propuso una vez lanzados al mundo. Pero eso es porque Harman ignora otra vez la dimensión del tiempo: para Latour ninguna traducción es definitiva. Todo actor-red puede colapsar y descomponerse en un conjunto de actores con metas divergentes. Un auto puede funcionar bajo el mando del conductor lego como auto por un buen tiempo, hasta romperse y convertirse en un empaquetado heterogéneo de partes cada una de las cuales responde únicamente a un especialista propio. La disolución es una restricción a la libertad o autonomía pero no es esencial ni definitiva, y es en esto en lo que radica el mérito de la teoría de Latour. Por los argumentos que da Harman no queda claro que la segunda objeción (en los términos de la primera parte de este texto) sea más dañina que la primera. Esto es el centro de la argumentación de Harman, y creo que expuse motivos suficientes para rechazarla.&lt;/p&gt;
 
@@ -1220,11 +1334,11 @@ var cant_votos = new Highcharts.Chart({
 
 &lt;p&gt;A pesar de que rechacé su argumento central, del que depende el resto, quiero repasar lo que propone. Podría arguirse: la propuesta es buena, solo que necesita un mejor abogado. Yo creo que no: los problemas que tienen los argumentos antirreduccionistas se reproducen en la propuesta de la sección 3. Y de hecho yo estoy de acuerdo en gran medida con el ánimo antirreduccionista de Harman. Es la calidad de la argumentación y sus recursos con los que tengo problemas, y hacia dónde hacen dirigir a su ejecutor.&lt;/p&gt;
 
-&lt;p&gt;Habla mal de los &amp;ldquo;métodos intelectuales&amp;rdquo;. Yo estoy en contra de la &amp;ldquo;metodología&amp;rdquo; y la filosofía me acompaña hace unas cuantas décadas en esto. Queda sin efecto el llamado de Harman a abandonar algo que ya fue abandonado hace mucho. Es llamativo igual lo que propone en cambio, los &amp;ldquo;contramétodos&amp;rdquo;. Lo primero que noto es que Harman no está dispuesto a señalar o definir los contramétodos explícitamente. La fuerza de su propuesta radica antes en convencernos de que tiene que haber algo más que los métodos, en señalar ese espacio vacío. Algo tiene que haber además de los métodos: esa es la apuesta, no una descripción explícita de un candidato. Pero ¿tenemos que creer esto? Yo no creo ni que tenga que haber &amp;ldquo;métodos&amp;rdquo; intelectuales ni mucho menos estos &amp;ldquo;contramétodos&amp;rdquo; misteriosos. Los ejemplos que delinea oblicuamente no ayudan a convencerme. El argumento sobre la &amp;ldquo;alusión&amp;rdquo; y el bosón de Higgs es una simplificación tonta de los argumentos de Kripke y Putnam sobre los nombres de tipos naturales.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; A continuación tira esta frase: &amp;ldquo;Para llegar hasta la naturaleza oculta de las cosas, la oblicuidad y la metáfora son herramientas más precisas que cualquier catálogo engreído, despreciativo y reduccionista de sus rasgos palpables.&amp;rdquo; Yo me pregunto: ¿quién quiere llegar hasta la &amp;ldquo;naturaleza oculta de las cosas&amp;rdquo;? ¿Qué es eso? ¿Cómo tiene sentido pedir herramientas &amp;ldquo;precisas&amp;rdquo; para llegar a una naturaleza &amp;ldquo;oculta&amp;rdquo;? Si la naturaleza es oculta a priori ¿tiene sentido buscar herramientas para llegar a ella? Harman tiene una tendencia contradictoria: por un lado nos llama a dejar libres a los objetos, no encarcelarlos asignándoles una naturaleza que los determina de una vez y para siempre; por otro lado nos llama a buscar &amp;ldquo;contramétodos&amp;rdquo; para acceder a esa misma naturaleza que nos llama a rechazar. Es profundamente incoherente su propuesta. Notar que podemos, de nuevo, detectar el fantasma de Heidegger dando vueltas acá, como justificación posible de estas movidas aparentemente irracionales. Pero hay que recordar el desarrollo de las ideas de Heidegger: del pragmatismo de El ser y el tiempo a la autofagia del lenguaje y de toda comunicación intelectual en su último período. Claro que El Ser queda afuera de los &amp;ldquo;métodos&amp;rdquo;, pero ninguna propuesta va a reparar esto. En tanto intenta proponer algo, en tanto cree que hay algo, alguna cosa, que poner en lugar de los &amp;ldquo;métodos&amp;rdquo;, la posición de Harman es incoherente.&lt;/p&gt;
+&lt;p&gt;Habla mal de los &amp;ldquo;métodos intelectuales&amp;rdquo;. Yo estoy en contra de la &amp;ldquo;metodología&amp;rdquo; y la filosofía me acompaña hace unas cuantas décadas en esto. Queda sin efecto el llamado de Harman a abandonar algo que ya fue abandonado hace mucho. Es llamativo igual lo que propone en cambio, los &amp;ldquo;contramétodos&amp;rdquo;. Lo primero que noto es que Harman no está dispuesto a señalar o definir los contramétodos explícitamente. La fuerza de su propuesta radica antes en convencernos de que tiene que haber algo más que los métodos, en señalar ese espacio vacío. Algo tiene que haber además de los métodos: esa es la apuesta, no una descripción explícita de un candidato. Pero ¿tenemos que creer esto? Yo no creo ni que tenga que haber &amp;ldquo;métodos&amp;rdquo; intelectuales ni mucho menos estos &amp;ldquo;contramétodos&amp;rdquo; misteriosos. Los ejemplos que delinea oblicuamente no ayudan a convencerme. El argumento sobre la &amp;ldquo;alusión&amp;rdquo; y el bosón de Higgs es una simplificación tonta de los argumentos de Kripke y Putnam sobre los nombres de tipos naturales.&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3c813fd34cf2df9902434313a026abe8:3&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; A continuación tira esta frase: &amp;ldquo;Para llegar hasta la naturaleza oculta de las cosas, la oblicuidad y la metáfora son herramientas más precisas que cualquier catálogo engreído, despreciativo y reduccionista de sus rasgos palpables.&amp;rdquo; Yo me pregunto: ¿quién quiere llegar hasta la &amp;ldquo;naturaleza oculta de las cosas&amp;rdquo;? ¿Qué es eso? ¿Cómo tiene sentido pedir herramientas &amp;ldquo;precisas&amp;rdquo; para llegar a una naturaleza &amp;ldquo;oculta&amp;rdquo;? Si la naturaleza es oculta a priori ¿tiene sentido buscar herramientas para llegar a ella? Harman tiene una tendencia contradictoria: por un lado nos llama a dejar libres a los objetos, no encarcelarlos asignándoles una naturaleza que los determina de una vez y para siempre; por otro lado nos llama a buscar &amp;ldquo;contramétodos&amp;rdquo; para acceder a esa misma naturaleza que nos llama a rechazar. Es profundamente incoherente su propuesta. Notar que podemos, de nuevo, detectar el fantasma de Heidegger dando vueltas acá, como justificación posible de estas movidas aparentemente irracionales. Pero hay que recordar el desarrollo de las ideas de Heidegger: del pragmatismo de &lt;em&gt;El ser y el tiempo&lt;/em&gt; a la autofagia del lenguaje y de toda comunicación intelectual en su último período. Claro que El Ser queda afuera de los &amp;ldquo;métodos&amp;rdquo;, pero ninguna propuesta va a reparar esto. En tanto intenta proponer algo, en tanto cree que hay algo, alguna cosa, que poner en lugar de los &amp;ldquo;métodos&amp;rdquo;, la posición de Harman es incoherente.&lt;/p&gt;
 
-&lt;p&gt;Después se defiende de dos objeciones. La primera es una versión del verificacionismo. El verificacionismo se viene combatiendo en filosofía analítica desde el año 1950 o antes, por ejemplo en Quine, Two dogmas of empiricism, en el que ataca también cierta forma de reduccionismo. Si lo único que tiene para decir Harman es esto, ya lo viene diciendo Quine hace 60 años. Llegó tarde.&lt;/p&gt;
+&lt;p&gt;Después se defiende de dos objeciones. La primera es una versión del verificacionismo. El verificacionismo se viene combatiendo en filosofía analítica desde el año 1950 o antes, por ejemplo en Quine, &lt;em&gt;Two dogmas of empiricism&lt;/em&gt;, en el que ataca también cierta forma de reduccionismo. Si lo único que tiene para decir Harman es esto, ya lo viene diciendo Quine hace 60 años. Llegó tarde.&lt;/p&gt;
 
-&lt;p&gt;Después dice que el esencialismo es la pretensión de que podemos conocer las esencias. Esto es falso. Hay esencialismo epistémico y esencialismo metafísico; Kripke viene sosteniendo un esencialismo no epistémico desde los 60s. La idea de que la filosofía tiende a decir que lo que podemos conocer es todo lo que hay, o todo acerca de lo que se puede hablar objetivamente, existe y estoy completamente de acuerdo con Harman en que hay que atacarla. Pero se viene atacando hace muchos años; un ejemplo explícito es Davidson en Indeterminism and antirealism, pero la tendencia es anterior.&lt;/p&gt;
+&lt;p&gt;Después dice que el esencialismo es la pretensión de que podemos conocer las esencias. Esto es falso. Hay esencialismo epistémico y esencialismo metafísico; Kripke viene sosteniendo un esencialismo no epistémico desde los 60s. La idea de que la filosofía tiende a decir que lo que podemos conocer es todo lo que hay, o todo acerca de lo que se puede hablar objetivamente, existe y estoy completamente de acuerdo con Harman en que hay que atacarla. Pero se viene atacando hace muchos años; un ejemplo explícito es Davidson en &lt;em&gt;Indeterminism and antirealism&lt;/em&gt;, pero la tendencia es anterior.&lt;/p&gt;
 
 &lt;p&gt;Para finalizar, el último párrafo es simplemente estúpido. La matemática, por lo menos, nunca trabaja a través de la catalogación exacta de propiedades y cualidades. Simplemente porque es imposible en la mayoría de los casos, por los teoremas de incompletitud de Gödel. La matemática ya era harmaniana antes de que Harman naciera. Y yo me pregunto: ¿qué pasaría si los próximos quinientos años vieran una filosofía que no hace la distinción aberrante que hace Harman entre &amp;ldquo;artes&amp;rdquo; y &amp;ldquo;ciencias duras&amp;rdquo;? Una filosofía que deja libres a los objetos, a los conceptos y a los métodos. Notar que Latour y Putnam ya se propusieron esto, y en gran medida creo que podemos confiar en que lo lograron. Pero Harman no tiene nada que aportar a esta historia triunfal, lamentablemente.&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
