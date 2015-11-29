@@ -6,13 +6,190 @@
     <description>Recent content on Juan Dodyk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 27 Nov 2015 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 Nov 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://juandodyk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Distribución del voto por provincia</title>
+      <link>http://juandodyk.github.io/post/distribucion-voto/</link>
+      <pubDate>Sun, 29 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/distribucion-voto/</guid>
+      <description>&lt;p&gt;Distribución de votos a &lt;select id=&#34;cand&#34;&gt;&lt;/select&gt; en la provincia &lt;select id=&#34;provincia&#34;&gt;&lt;/select&gt;.&lt;/p&gt;
+
+&lt;div id=&#34;hist&#34;&gt;&lt;/div&gt;
+
+&lt;div id=&#34;tabla&#34;&gt;&lt;/div&gt;
+
+&lt;div&gt;
+&lt;script src=&#34;https://code.jquery.com/jquery-1.10.2.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/maps/modules/map.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/maps/modules/data.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/mapdata/countries/ar/ar-all.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/highcharts-more.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;https://code.highcharts.com/modules/exporting.js&#34;&gt;&lt;/script&gt;
+&lt;script src=&#34;http://juandodyk.github.io/js/chroma.min.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+$(function() {
+
+var cands = [&#34;Scioli&#34;,&#34;Macri&#34;,&#34;No Votó/Blanco&#34;];
+var provs = JSON.parse(&#39;{&#34;0&#34;:&#34;Argentina&#34;,&#34;1&#34;:&#34;Ciudad de Buenos Aires&#34;,&#34;2&#34;:&#34;Buenos Aires&#34;,&#34;3&#34;:&#34;Catamarca&#34;,&#34;4&#34;:&#34;Córdoba&#34;,&#34;5&#34;:&#34;Corrientes&#34;,&#34;6&#34;:&#34;Chaco&#34;,&#34;7&#34;:&#34;Chubut&#34;,&#34;8&#34;:&#34;Entre Ríos&#34;,&#34;9&#34;:&#34;Formosa&#34;,&#34;10&#34;:&#34;Jujuy&#34;,&#34;11&#34;:&#34;La Pampa&#34;,&#34;12&#34;:&#34;La Rioja&#34;,&#34;13&#34;:&#34;Mendoza&#34;,&#34;14&#34;:&#34;Misiones&#34;,&#34;15&#34;:&#34;Neuquén&#34;,&#34;16&#34;:&#34;Río Negro&#34;,&#34;17&#34;:&#34;Salta&#34;,&#34;18&#34;:&#34;San Juan&#34;,&#34;19&#34;:&#34;San Luis&#34;,&#34;20&#34;:&#34;Santa Cruz&#34;,&#34;21&#34;:&#34;Santa Fe&#34;,&#34;22&#34;:&#34;Santiago del Estero&#34;,&#34;23&#34;:&#34;Tucumán&#34;,&#34;24&#34;:&#34;Tierra del Fuego&#34;}&#39;);
+var colors = [&#39;#538ed5&#39;, chroma(&#39;yellow&#39;).desaturate().hex(), &#39;darkgrey&#39;];
+var mesas = JSON.parse(&#39;{&#34;0&#34;:94956,&#34;1&#34;:7365,&#34;2&#34;:34502,&#34;3&#34;:922,&#34;4&#34;:8411,&#34;5&#34;:2403,&#34;6&#34;:2556,&#34;7&#34;:1241,&#34;8&#34;:3119,&#34;9&#34;:1308,&#34;10&#34;:1583,&#34;11&#34;:829,&#34;12&#34;:872,&#34;13&#34;:3996,&#34;14&#34;:2480,&#34;15&#34;:1426,&#34;16&#34;:1535,&#34;17&#34;:2897,&#34;18&#34;:1606,&#34;19&#34;:1129,&#34;20&#34;:810,&#34;21&#34;:7934,&#34;22&#34;:2123,&#34;23&#34;:3474,&#34;24&#34;:435}&#39;);
+var keys = JSON.parse(&#39;{&#34;1&#34;:&#34;ar-df&#34;,&#34;2&#34;:&#34;ar-ba&#34;,&#34;3&#34;:&#34;ar-ct&#34;,&#34;4&#34;:&#34;ar-cb&#34;,&#34;5&#34;:&#34;ar-cn&#34;,&#34;6&#34;:&#34;ar-cc&#34;,&#34;7&#34;:&#34;ar-ch&#34;,&#34;8&#34;:&#34;ar-er&#34;,&#34;9&#34;:&#34;ar-fm&#34;,&#34;10&#34;:&#34;ar-jy&#34;,&#34;11&#34;:&#34;ar-lp&#34;,&#34;12&#34;:&#34;ar-lr&#34;,&#34;13&#34;:&#34;ar-mz&#34;,&#34;14&#34;:&#34;ar-mn&#34;,&#34;15&#34;:&#34;ar-nq&#34;,&#34;16&#34;:&#34;ar-rn&#34;,&#34;17&#34;:&#34;ar-sa&#34;,&#34;18&#34;:&#34;ar-sj&#34;,&#34;19&#34;:&#34;ar-sl&#34;,&#34;20&#34;:&#34;ar-sc&#34;,&#34;21&#34;:&#34;ar-sf&#34;,&#34;22&#34;:&#34;ar-se&#34;,&#34;23&#34;:&#34;ar-tm&#34;,&#34;24&#34;:&#34;ar-tf&#34;}&#39;);
+
+var prov = &#34;2&#34;;
+for(i in provs)
+    $(&#34;#provincia&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+provs[i]+&#39;&lt;/option&gt;&#39;);
+$(&#39;#provincia option:eq(&#39;+prov+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+$(&#34;#provincia&#34;).change(function() {
+    prov = $(&#34;#provincia&#34;).val();
+    restart();
+});
+
+var cand = 0;
+for(i in cands)
+    $(&#34;#cand&#34;).append(&#39;&lt;option value=&#34;&#39;+i+&#39;&#34;&gt;&#39;+cands[i]+&#39;&lt;/option&gt;&#39;);
+$(&#39;#cand option:eq(&#39;+cand+&#39;)&#39;).attr(&#39;selected&#39;, &#39;selected&#39;);
+$(&#34;#cand&#34;).change(function() {
+    cand = parseInt($(&#34;#cand&#34;).val());
+    restart();
+});
+
+var round = function(num) {
+    return Math.round(num * 100) / 100;
+}
+
+var mapa = function(data, colorAxis) { return new Highcharts.Map({
+    chart: {
+        renderTo: &#39;mapa&#39;,
+        height: 700
+    },
+    title : {
+        text : &#39;Votos a &#39; + cands[cand]
+    },
+    subtitle : {
+        text : &#39;Click para ver la distribución de votos por provincia&#39;
+    },
+    plotOptions: { map: { events: { click: function(e) {
+        for(i in keys) if(keys[i] == e.point[&#39;hc-key&#39;]) prov = i;
+        restart();      
+    }}}},
+    colorAxis: colorAxis,
+    series : [{
+        data : data,
+        mapData: Highcharts.maps[&#39;countries/ar/ar-all&#39;],
+        joinBy: &#39;hc-key&#39;,
+        name: &#39;Media de la proporción &#39; + cand + &#39; a Macri y a Scioli&#39;,
+        states: {
+            hover: {
+                color: &#39;#BADA55&#39;
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: &#39;{point.name}&#39;
+        }
+    }]
+})};
+
+var hist = function(data) { return new Highcharts.Chart({
+    chart: {
+        renderTo: &#39;hist&#39;,
+        type: &#39;column&#39;,
+        height: $(&#34;#hist&#34;).width()
+    },
+    title: {
+        text: &#34;Distribución de voto a &#34;+cands[cand]+&#34; en &#34;+provs[prov]+&#34; por mesa&#34;
+    },
+    yAxis: {
+        title: {
+            text: &#39;Cantidad de mesas&#39;
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: &#39;Proporción de votos a &#39;+cands[cand]+&#39; sobre el total de empadronados en esa mesa&#39;
+        }
+    },
+    series: [{
+        data: data,
+        pointRange: 1/100,
+        pointPadding: 0,
+        groupPadding: 0,
+        color: colors[cand]
+    }],
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+            formatter: function() {
+                return &#39;&lt;table&gt;&lt;tr&gt;&lt;th&gt;Desde:&lt;/th&gt;&lt;td&gt;&#39;+round(this.x-1/200)+&#39;&lt;/td&gt;&lt;/tr&gt;&#39; +
+                    &#39;&lt;tr&gt;&lt;th&gt;Hasta:&lt;/th&gt;&lt;td&gt;&#39;+round(this.x+1/200)+&#39;&lt;/td&gt;&lt;/tr&gt;&#39; +
+                    &#39;&lt;tr&gt;&lt;th&gt;Cantidad de mesas:&lt;/th&gt;&lt;td&gt;&#39;+(this.y)+&#39;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#39;;
+            },
+            useHTML: true,
+            followPointer: true
+        },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: false
+            }
+        }
+    },
+}); };
+
+var json_data = null;
+
+var fill_tables = function() {
+    $(&#34;#provincia option[value=&#34;+prov+&#34;]&#34;).attr(&#39;selected&#39;, &#39;selected&#39;);
+    var html = &#39;&lt;table style=&#34;padding-top:500px&#34;&gt;&lt;tr&gt;&lt;th colspan=&#34;2&#34;&gt;&#39;+provs[prov]+&#39;&lt;/th&gt;&lt;/tr&gt;&#39;;
+    var rots = [&#34;Cantidad de mesas&#34;, &#34;Media&#34;, &#34;Desviación estándar&#34;, &#34;Mediana&#34;];
+    var keys = [&#34;num&#34;, &#34;mean&#34;, &#34;sd&#34;, &#34;median&#34;];
+    for(i in rots)
+        html += &#39;&lt;tr&gt;&lt;th align=&#34;left&#34;&gt;&#39; + rots[i] + &#39;&lt;/td&gt;&lt;td align=&#34;center&#34;&gt;&#39; + round(json_data[prov][cand][keys[i]][0]) + &#39;&lt;/td&gt;&lt;/tr&gt;&#39;;
+    //html += &#39;&lt;tr&gt;&lt;th align=&#34;left&#34;&gt;Proporción de mesas sobre el total&lt;/td&gt;&lt;td align=&#34;center&#34;&gt;&#39; + round(json_data[prov][cand].num[0]/mesas[prov]*100) + &#39;%&lt;/td&gt;&lt;/tr&gt;&#39;;
+    var num = json_data[prov][cand].num[0];
+    var tot = mesas[prov];
+    html += &#39;&lt;tr&gt;&lt;th align=&#34;left&#34;&gt;Mesas sin contar&lt;/th&gt;&lt;td&gt;&#39;+(tot-num)+&#39;&lt;/td&gt;&lt;/tr&gt;&#39;;
+    html += &#39;&lt;tr&gt;&lt;th align=&#34;left&#34;&gt;Mesas sin contar (% total)&lt;/th&gt;&lt;td&gt;&#39;+round((tot-num)/num*100)+&#39;%&lt;/td&gt;&lt;/tr&gt;&#39;;
+    html += &#39;&lt;/table&gt;&lt;div id=&#34;mapa&#34; stye=&#34;height:1000px&#34;&gt;&lt;/div&gt;&#39;;
+    $(&#34;#container&#34;).html(html);
+};
+
+var main = function(data) {
+    if(!json_data) json_data = data;
+    fill_tables();
+    var hist_ = hist(data[prov][cand].hist);
+
+    var map_data = [];
+    for(i in keys)
+        map_data.push({&#34;hc-key&#34;: keys[i], &#34;value&#34;: data[i][cand].mean[0]});
+    var stops = [[0, &#39;#FFFFFF&#39;], [1, colors[cand]]];
+    var colorAxis = {stops: stops};
+    var mapa_ = mapa(map_data, colorAxis);
+};
+
+var restart = function() {
+    if(json_data) main(json_data);
+    else $.getJSON(&#34;/json/hist_ballotage.json&#34;, main);
+};
+
+restart();
+
+});
+&lt;/script&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Transferencia de votos por provincia</title>
       <link>http://juandodyk.github.io/post/inferencia-ecologica-2/</link>
-      <pubDate>Fri, 27 Nov 2015 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 28 Nov 2015 00:00:00 +0000</pubDate>
       
       <guid>http://juandodyk.github.io/post/inferencia-ecologica-2/</guid>
       <description>&lt;p&gt;Modelo: &lt;select id=&#34;modelo&#34;&gt;
@@ -129,10 +306,8 @@ var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
         text : &#39;Click para ver la transferencia de votos completa por provincia&#39;
     },
     plotOptions: { map: { events: { click: function(e) {
-        console.log(e.point[&#39;hc-key&#39;]);
-        for(i in keys) if(keys[i] == e.point[&#39;hc-key&#39;]) {console.log(&#34;found: &#34;+i); prov = i;}
-        fill_tables();
-        
+        for(i in keys) if(keys[i] == e.point[&#39;hc-key&#39;]) prov = i;
+        fill_tables();      
     }}}},
     colorAxis: colorAxis,
     series : [{
@@ -283,7 +458,7 @@ var main = function(data) {
             z: res_pri[i][cand_desde],
             name: keys[i].substring(3,5).toUpperCase(),
             nombre: provs[i],
-            color: (res_seg[i][1]&gt;res_seg[i][0] ? &#34;#FFFF00&#34; : &#34;#008ae5&#34;)//chroma.scale([&#39;white&#39;,&#39;yellow&#39;])(res_seg[i][1]/100).hex()
+            color: (res_seg[i][1]&gt;res_seg[i][0] ? &#34;#FFFF00&#34; : &#34;#008ae5&#34;)
         });
     var bubble_ = bubble(data_bubble);
 
