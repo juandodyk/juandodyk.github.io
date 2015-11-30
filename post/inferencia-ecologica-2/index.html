@@ -174,7 +174,9 @@ var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
         data : data,
         mapData: Highcharts.maps['countries/ar/ar-all'],
         joinBy: 'hc-key',
-        name: 'Diferencia entre transferencia de ' + cand + ' a Macri y a Scioli',
+        name: (opcion=="transferencia" ?
+            ('Transferencia de ' + cand + ' a ' + cands_seg[cand_hacia]) :
+            ('Diferencia entre transferencia de ' + cand + ' a Macri y a Scioli')),
         states: {
             hover: {
                 color: '#BADA55'
