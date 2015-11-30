@@ -81,7 +81,7 @@ var mapa = function(data, colorAxis) { return new Highcharts.Map({
         data : data,
         mapData: Highcharts.maps[&#39;countries/ar/ar-all&#39;],
         joinBy: &#39;hc-key&#39;,
-        name: &#39;Media de la proporción &#39; + cand + &#39; a Macri y a Scioli&#39;,
+        name: &#39;Media de la proporción de votos a &#39; + cands[cand],
         states: {
             hover: {
                 color: &#39;#BADA55&#39;
