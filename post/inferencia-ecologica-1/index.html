@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="Blog de Juan Dodyk.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16-DEV" />
           <link href="http://juandodyk.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Juan Dodyk" />
           <link href="http://juandodyk.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Juan Dodyk" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -426,7 +426,7 @@
 </tbody>
 </table>
 
-<p>Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hace falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas pasó lo mismo es como si hubiera una sola.</p>
+<p>Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hacen falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas pasó lo mismo es como si hubiera una sola.</p>
 
 <p>Surgen pues preguntas que dejo abiertas: cómo expresar estas ideas en un modelo estadístico riguroso, y cómo detectar cuándo el modelo tiene &ldquo;poca información&rdquo;. Esto último permitiría elegir las unidades subnacionales mínimas donde hay información suficiente.</p>
 
@@ -444,7 +444,7 @@
 
 <p>Hay que calcular <code>$f(A^p,\gamma,d)_j$</code>. Es <code>$\text{E}(B_j^p|\gamma,d)$</code>. Ahora <code>$B_j^p=\sum_{i=1}^7X_{ij}^pA_i^p$</code>, por lo que</p>
 
-<div>$$\text{E}(B_j^p|\gamma,d)=\sum_{i=1}^7A^p_i\text{E}(X_{ij}^p|\gamma,d)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+\gamma_{i1}+\gamma_{i2})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$</div> 
+<div>$$\text{E}(B_j^p|\gamma,d)=\sum_{i=1}^7A^p_i\text{E}(X_{ij}^p|\gamma,d)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+e^{\gamma_{i1}}+e^{\gamma_{i2}})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$</div> 
 
 <p>(Usé que <code>$X_{ij}^p$</code> sigue la distribución Dirichlet que definí más arriba para calcular <code>$\text{E}(X_{ij}^p|\gamma,d)$</code>.) Notar que el parámetro <code>$d$</code> es irrelevante. Entonces buscamos los <code>$\gamma_{ij}$</code> que minimizan la función</p>
 
@@ -538,7 +538,7 @@
 
 <h3 id="a-name-codr-a-primer-modelo-código-r:448496e36607547436ff4093d400128c"><a name="CodR"></a>Primer modelo: código R</h3>
 
-<div class="highlight" style="background: #272822"><pre style="line-height: 125%">ei.lls <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">,</span> B<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+<div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>ei.lls <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">,</span> B<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
   n <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">ncol</span><span style="color: #f8f8f2">(</span>A<span style="color: #f8f8f2">)</span>
   m <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">ncol</span><span style="color: #f8f8f2">(</span>B<span style="color: #f8f8f2">)</span>
   
@@ -584,7 +584,7 @@
 
 <h3 id="a-name-codrcalvo-a-segundo-modelo-código-r:448496e36607547436ff4093d400128c"><a name="CodRCalvo"></a>Segundo modelo: código R</h3>
 
-<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%">call.difp <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>p<span style="color: #f8f8f2">,</span>mx<span style="color: #f8f8f2">,</span>my<span style="color: #f8f8f2">,</span>nR<span style="color: #f8f8f2">,</span>nC<span style="color: #f8f8f2">,</span>const<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
+<p><div class="highlight" style="background: #272822"><pre style="line-height: 125%"><span></span>call.difp <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">function</span><span style="color: #f8f8f2">(</span>p<span style="color: #f8f8f2">,</span>mx<span style="color: #f8f8f2">,</span>my<span style="color: #f8f8f2">,</span>nR<span style="color: #f8f8f2">,</span>nC<span style="color: #f8f8f2">,</span>const<span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">{</span>
     gamma <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">matrix</span><span style="color: #f8f8f2">(</span>data<span style="color: #f92672">=</span>p<span style="color: #f8f8f2">,</span>nrow<span style="color: #f92672">=</span>nR<span style="color: #f8f8f2">,</span>ncol<span style="color: #f92672">=</span>nC<span style="color: #ae81ff">-1</span><span style="color: #f8f8f2">,</span>byrow<span style="color: #f92672">=</span><span style="color: #f8f8f2">T);</span>
     ebeta <span style="color: #f92672">&lt;-</span> <span style="color: #66d9ef">exp</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">gamma</span><span style="color: #f8f8f2">)</span><span style="color: #f92672">/</span><span style="color: #f8f8f2">(</span><span style="color: #ae81ff">1</span> <span style="color: #f92672">+</span> <span style="color: #66d9ef">apply</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">exp</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">gamma</span><span style="color: #f8f8f2">),</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span><span style="color: #66d9ef">sum</span><span style="color: #f8f8f2">));</span>
     yhat  <span style="color: #f92672">&lt;-</span> mx <span style="color: #f92672">%*%</span> ebeta<span style="color: #f8f8f2">;</span>
@@ -694,9 +694,9 @@ code.has-jax {font: inherit;
         </div>
     </main>
     <aside class="author">
-  <img class="profile-image" src="http://juandodyk.github.io/img/yo.jpg" alt="John Dodyk" />
+  <img class="profile-image" src="http://juandodyk.github.io/img/yo.jpg" alt="Juan Dodyk" />
   <p class="name"> 
-  <strong>John Dodyk</strong></p>
+  <strong>Juan Dodyk</strong></p>
   <p class="address">Avellaneda, PBA, Argentina</p>
   <p class="link"></p>
   <ul class="social">
@@ -736,7 +736,7 @@ code.has-jax {font: inherit;
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://juandodyk.github.io/post/index.xml" title="RSS"></a>
-        <p>&copy; 2015 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
+        <p>&copy; 2016 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

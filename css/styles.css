@@ -471,6 +471,23 @@ a {
   a:hover {
     color: #222222; }
 
+.post p a {
+   color: #00b9e7;
+}
+.post p a:hover { color: #e70000; }
+
+blockquote {
+  border-left: 1px solid #ddd;
+  color: #6f6f6f;
+  padding-left: 30px;
+  margin-bottom: 1.0em;
+  margin: 0;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
   color: #222222; }
   h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
