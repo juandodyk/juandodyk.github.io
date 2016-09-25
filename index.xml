@@ -6,8 +6,102 @@
     <description>Recent content on Juan Dodyk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 Sep 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Sep 2016 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://juandodyk.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Ideas para modelos de inferencia ecológica</title>
+      <link>http://juandodyk.github.io/post/inferencia-ecologica-4/</link>
+      <pubDate>Sun, 25 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/inferencia-ecologica-4/</guid>
+      <description>
+
+&lt;p&gt;Las tres ideas que describo a continuación buscan resolver el problema que presenta la &lt;em&gt;heterogeneidad espacial&lt;/em&gt; en inferencia ecológica. En el caso de las transiciones entre votos en primera vuelta y en ballotage (ver mi &lt;a href=&#34;http://juandodyk.github.io/post/inferencia-ecologica-1/&#34;&gt;post anterior&lt;/a&gt; sobre el tema), esto se expresa en que en lugares distintos el comportamiento electoral difiere. El modelo tiene que incorporar esta heterogeneidad. El &lt;a href=&#34;http://gvptsites.umd.edu/calvo/calvo-escolar-ajps.pdf&#34;&gt;trabajo&lt;/a&gt; de Calvo y Escolar (2003) sirve de inspiración para el planteo del problema y para una de las ideas.$\def\N{\mathbb{N}}\def\R{\mathbb{R}}\def\Err{\text{Err}}\def\E{\mathbb{E}}\def\sen{\text{sen}}$&lt;/p&gt;
+
+&lt;h1 id=&#34;idea-1-suavidad-espacial:d413691eee64c85726259774e00b01e5&#34;&gt;Idea 1: suavidad espacial&lt;/h1&gt;
+
+&lt;p&gt;La idea es partir del modelo multinomial-Dirichlet de King, Rosen y Tanner pero hacer un cambio. King et al buscan modelar las diferencias entre mesas de votación, y para eso ponen una fuente de aleatoriedad en la variable $\beta$ de cada mesa (que estima la matriz de transferencia): la hacen tomar valores según una distribución Dirichlet, en cuyos parámetros se puede incluir una covariable que asocia un número a cada mesa, y por lo tanto las distingue. La idea es eliminar esa aleatoriedad, pero incorporar una restricción sobre las $\beta$: si están asociados a mesas que pertenecen a una misma unidad geográfica predeterminada (un mismo departamento, por ejemplo) son iguales; y la variación entre $\beta$ de unidades cercanas está acotada, de manera que la función que, dada una unidad, asigna su $\beta$, resulta &lt;em&gt;suave&lt;/em&gt; en un sentido que cuantificamos. Doy los detalles.&lt;/p&gt;
+
+&lt;p&gt;La idea es hacer maximum likelihood sobre un modelo multinomial. En la mesa $p$ los resultados de la primera vuelta son $X^p\in\N^7$ y los de la segunda, $Y^p\in\N^3$; tenemos &lt;code&gt;$N^p=\sum_{i=1}^7X^p_i=\sum_{j=1}^3 Y^p_j$&lt;/code&gt; (la cantidad de gente en esa mesa). Asigno una variable $\beta^p\in\R^{7\times 3}$ a la mesa, que cumple &lt;code&gt;$\beta^p_{ij}\geqq 0$&lt;/code&gt; y &lt;code&gt;$\sum_{j=1}^3\beta^p_{ij}=1$&lt;/code&gt; para $i=1,\ldots,7$. La idea es que $\beta$ no sea exactamente la matriz de transición, pero que el valor esperado de $Y^p$ sea $X^p\beta^p$. Modelamos $Y^p$ como dada por una distribución multinomial de $N^p$ tiradas con probabilidades de que salga $j=1,2,3$ dadas por &lt;code&gt;$p_j=\frac{1}{N^p}\sum_{i=1}^7 X_i^p\beta^p_{ij}$&lt;/code&gt;. Entonces tenemos &lt;code&gt;$$P(Y^p=y\mid X^p=x,\beta^p)=\frac{N^p!}{Y_1^p!Y_2^p!Y_3^p!}p_1^{Y_1^p}p_2^{Y_2^p}p_3^{Y_3^p}.$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Ahora ¿cómo tomo los $\beta^p$? La idea de King-Rosen-Tanner es samplearlos de una distribución Dirichlet con ciertos parámetros. Nuestra idea es tomarlos como incógnitas a estimar bajo una restricción de &lt;em&gt;suavidad espacial&lt;/em&gt;. Es decir, que los $\beta^p$, como función de una variable espacial (geográfica), varíen de forma &amp;ldquo;suave&amp;rdquo;. O, si pensamos que las mesas forman un grafo, de manera que si $p$ y $p&amp;rsquo;$ son escuelas &amp;ldquo;vecinas&amp;rdquo; está definida su distancia $d(p,p&amp;rsquo;)$, entonces restringimos el espacio de búsqueda a los $\beta^p$ tal que los &lt;code&gt;$\|\beta^p-\beta^{p&#39;}\|$&lt;/code&gt; están controlados de alguna manera por los $d(p,p&amp;rsquo;)$. Una manera posible: poner una constante $C&amp;gt;0$ y restricciones &lt;code&gt;$\|\beta^p-\beta^{p&#39;}\|\leqq Cd(p,p&#39;)$&lt;/code&gt; estilo Lipschitz, donde &lt;code&gt;$\|{\cdot}\|$&lt;/code&gt; es alguna norma. Otra: restringir &lt;code&gt;$\sum_{(p,p&#39;)\in E}\frac{1}{d(p,p&#39;)}\|\beta^p-\beta^{p&#39;}\|\leqq C$&lt;/code&gt; y $\beta^p=\beta^{p&amp;rsquo;}$ si $d(p,p&amp;rsquo;)=0$; o &lt;code&gt;$\sum_{(p,p&#39;)\in E}e^{-\lambda d(p,p&#39;)}\|\beta^p-\beta^{p&#39;}\|\leqq C$&lt;/code&gt;, algo por el estilo. &lt;strong&gt;Una pregunta importante va a ser cómo elegir $C$.&lt;/strong&gt; Creemos que se puede hacer cross-validation sobre la log-likelihood media para obtener el mejor valor de este parámetro.&lt;/p&gt;
+
+&lt;p&gt;Entonces, dada $\beta$, uno puede medir cuánto se ajusta a la realidad tomando como medida del &amp;ldquo;error&amp;rdquo; lo siguiente: &lt;code&gt;$$\Err(\beta)=-\sum_p\log(P(Y^p=y\mid X^p=x,\beta^p))=$$ $$=-\sum_p\left(\log(N^p!)-\sum_{j=1}^3\log(Y_j^p!)+\sum_{j=1}^3Y_j^p\log\left(\frac{1}{N^p}\sum_{i=1}^7 X_i^p\beta^p_{ij}\right)\right).$$&lt;/code&gt; Maximum likelihood es lo mismo que minimizar esa función. Lo que uno busca es, pues, buscar $\beta$ que minimice $\Err(\beta)$ sujeto a las restricciones de suavidad espacial. Quitando los términos constantes, se busca minimizar
+&lt;code&gt;$$\Err(\beta)=-\sum_p\sum_{j=1}^3Y_j^p\log\left(\frac{1}{N^p}\sum_{i=1}^7 X_i^p\beta^p_{ij}\right)_{}.$$&lt;/code&gt;
+Si los $Y_j^p$ sumaran 1 lo que estaríamos minimizando es la Kullback-Leibler distance, o &lt;em&gt;cross entropy&lt;/em&gt;, entre la distribución del voto en segunda vuelta que da $X^p$ y $\beta^p$ contra la que efectivamente se dio.&lt;/p&gt;
+
+&lt;p&gt;Para asegurar la suavidad espacial podemos incorporar el término regularizador a la función a minimizar: &lt;code&gt;$$\Err(\beta)=-\sum_p\sum_{j=1}^3Y_j^p\log\left(\frac{1}{N^p}\sum_{i=1}^7 X_i^p\beta^p_{ij}\right)+\phi\left(\sum_{(p,p&#39;)\in E}\frac{1}{d(p,p&#39;)}\|\beta^p-\beta^{p&#39;}\|\right),$$&lt;/code&gt; donde $\phi$ es una función penalizadora para imponer la restricción, por ejemplo $\phi(x)=k\max{x-C,0}$ o $\phi(x)=\frac1k(e^{k(x-C)}-1)$, con $k\to+\infty$. Otra posibilidad es tomar $\phi(x)=\lambda x$ y buscar (con búsqueda binaria) el $\lambda$ más chico tal que &lt;code&gt;$\text{argmín}_\beta\Err(\beta)$&lt;/code&gt; cumple la restricción.&lt;/p&gt;
+
+&lt;p&gt;Para olvidarnos de la restricción &lt;code&gt;$\beta^p_{ij}\geqq 0$&lt;/code&gt;, &lt;code&gt;$\sum_{j=1}^3\beta^p_{ij}=1$&lt;/code&gt; para $i=1,\ldots,7$, podemos tomar $\beta^p=\sigma(\gamma^p)$, donde $\sigma:\R^{7\times 3}\to\R^{7\times 3}$ está dada por &lt;code&gt;$$\sigma(\gamma)_{ij}=\frac{e^{\gamma_{ij}}}{\sum_{k=1}^3e^{\gamma_{ik}}}$$&lt;/code&gt; y $\gamma^p$ puede tomar cualquier valor en $\R^{7\times 3}$ (es una biyección entre ambos dominios si fijamos &lt;code&gt;$\gamma^p_{i3}=0$&lt;/code&gt; para $i=1,\ldots,7$ y reforzamos las desigualdades a &lt;code&gt;$\beta^p_{ij}&amp;gt;0$&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Podemos tomar como aristas del grafo los $K$ vecinos más cercanos de cada unidad que tomamos (escuela, circuito electoral o departamento), y $d(p, p&amp;rsquo;)$ puede ser simplemente la distancia en kilómetros entre los centroides de las unidades. Otra posibilidad: un minimum spanning tree.&lt;/p&gt;
+
+&lt;h2 id=&#34;metodología:d413691eee64c85726259774e00b01e5&#34;&gt;Metodología&lt;/h2&gt;
+
+&lt;p&gt;Tomamos unidades geográficas. Voy a tomar los departamentos como unidades. Son el siguiente nivel de desagregación después de provincias; en CABA son las comunas y en el resto del país son los municipios. El modelo va a asumir que en cada unidad las mesas van a seguir la misma distribución. (El resultado de la segunda vuelta en la unidad $p$ y en la mesa $k$ sigue una distribución multinomial con probabilidades &lt;code&gt;$q_j=\frac{1}{N^p}\sum_{i=1}^7 X_i^k\beta^p_{ij}$&lt;/code&gt;, $j=1,2,3$; notar que el $\beta^p$ está dado por la unidad y es el mismo para cada mesa; el $X^k$ -el resultado de la primera vuelta- es propio de la mesa.) ¿Cómo se eligen las unidades, en general? Es un metaparámetro del modelo. Lo que dice el modelo es que en cada unidad las mesas se comportan exactamente igual. Entonces hay que tomar las unidades más grandes posibles en las que pase eso. En la práctica va a depender de la cantidad de datos.&lt;/p&gt;
+
+&lt;p&gt;Voy a comparar modelos, por lo que voy a separar un &lt;em&gt;train set&lt;/em&gt; de un &lt;em&gt;test set&lt;/em&gt; antes de entrenarlos. El entrenamiento de cada $\beta^p$, donde $p$ es una unidad, se hace sobre una muestra de mesas en esa unidad. Por lo tanto la separación de train set y test set va a darse en cada unidad: para cada una voy a tomar un $30\%$ de mesas al azar y separarlas; todas esas mesas van a conformar el &lt;em&gt;test set&lt;/em&gt;. Si no hacemos esto podríamos terminar haciendo overfitting en algunas unidades y &amp;ldquo;underfitting&amp;rdquo; en otras. (Se podría hacer la prueba para ver si esto tiene un impacto o no.)&lt;/p&gt;
+
+&lt;p&gt;Dentro del train set podemos hacer $K$-cross validation. Y vamos a hacer la partición de la misma manera: para cada unidad partimos la muestra de entrenamiento en $K$ partes proporcionales, etc.&lt;/p&gt;
+
+&lt;h2 id=&#34;generalización:d413691eee64c85726259774e00b01e5&#34;&gt;Generalización&lt;/h2&gt;
+
+&lt;p&gt;La suavidad espacial no tiene que ser necesariamente geográfica. Si uno tiene indicadores &lt;code&gt;$Z_1,\ldots,Z_K$&lt;/code&gt; sobre las mesas (&lt;code&gt;$Z_k\in\R$&lt;/code&gt;) podemos definir una distancia entre mesas $r$ y $s$ dada por &lt;code&gt;$d(r,s)=\sum_{k=1}^K\eta_k(Z_k^r-Z_k^s)^2$&lt;/code&gt;, con &lt;code&gt;$\eta_k\geqq 0$&lt;/code&gt; fijos (o algo por el estilo). Usando algún método de clustering podemos obtener nuestras unidades (la generalización del concepto de &amp;ldquo;municipio&amp;rdquo;). Y luego podemos usar como distancia entre unidades ya sea &lt;code&gt;$d(p,p&#39;)=\sum_{k=1}^K\eta_k(\E(Z_k^r)-\E(Z_k^s))^2=\sum_{k=1}^K\eta_k\E(Z_k^r-Z_k^s)^2$&lt;/code&gt; o &lt;code&gt;$d(p,p&#39;)=\E\left[d(r,s)\right]=\sum_{k=1}^K\eta_k\E\left[(Z_k^r-Z_k^s)^2\right]$&lt;/code&gt;, donde $r$ y $s$ son las mesas de las unidades $p$ y $p&amp;rsquo;$, respectivamente, con la distribución empírica.&lt;/p&gt;
+
+&lt;h1 id=&#34;idea-2-regularización:d413691eee64c85726259774e00b01e5&#34;&gt;Idea 2: regularización&lt;/h1&gt;
+
+&lt;p&gt;Partimos de la misma base: en la mesa $p$, $X^p\in\N^7$ son los votos en primera vuelta, $Y^p\in\N^p$ son los votos en la segunda vuelta, con &lt;code&gt;$\sum_{i=1}^7X_i^p=\sum_{j=1}^3Y_j^p=N^p$&lt;/code&gt;, y $\beta^p\in\R^{7\times 3}$ es una estimación de la matriz de transición, de manera que $Y^p$ sigue una distribución multinomial de $N^p$ tiradas con probabilidades &lt;code&gt;$q_j = \frac{1}{N^p}\sum_{i=1}^7 \beta_{ij}^pX_i^p$&lt;/code&gt;. Tenemos &lt;code&gt;$$\beta^p_{ij}=\frac{e^{\gamma_{ij}^p}}{\sum_{k=1}^3e^{\gamma_{ik}^p}},$$&lt;/code&gt; con $\gamma^p\in\R^{7\times 3}$, &lt;code&gt;$\gamma^p_{i3}=0$&lt;/code&gt;. El modelo es: &lt;code&gt;$\gamma_{ij}^p = \sum_{k=1}^K \delta^k_{ij} Z_k^p$&lt;/code&gt;, donde &lt;code&gt;$Z_1,\ldots,Z_K$&lt;/code&gt; son indicadores o covariables que toman valores en $\R$ para cada mesa.&lt;/p&gt;
+
+&lt;p&gt;Si lo pensamos como un problema de estimación, buscamos los números &lt;code&gt;$\delta_{ij}^k$&lt;/code&gt; (con $i=1,\ldots,7$, $j=1,2,3$, $k=1,\ldots,K$) que maximizan la verosimilitud, es decir, buscamos minimizar &lt;code&gt;$$\Err(\delta)=-\sum_p\sum_{j=1}^3Y_j^p\log\left(\frac{1}{N^p}\sum_{i=1}^7 X_i^p\frac{e^{\sum_{k=1}^K \delta^k_{ij} Z_k^p}}{\sum_{j&#39;=1}^3e^{\sum_{k=1}^K \delta^k_{ij&#39;} Z_k^p}}\right)_{}.$$&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Si esto lo pensamos como un problema de predicción (no es necesario), buscamos minimizar el error cuadrático medio, es decir, &lt;code&gt;$$\Err(\delta)=\sum_p\sum_{j=1}^3\left(Y_j^p-\sum_{i=1}^7 X_i^p\frac{e^{\sum_{k=1}^K \delta^k_{ij} Z_k^p}}{\sum_{j&#39;=1}^3e^{\sum_{k=1}^K \delta^k_{ij&#39;} Z_k^p}}\right)^2.$$&lt;/code&gt; Imitando a LASSO podemos hacer regularización $L^1$, lo que sería minimizar &lt;code&gt;$$\Err(\delta)=\sum_p\sum_{j=1}^3\left(Y_j^p-\sum_{i=1}^7 X_i^p\frac{e^{\sum_{k=1}^K \delta^k_{ij} Z_k^p}}{\sum_{j&#39;=1}^3e^{\sum_{k=1}^K \delta^k_{ij&#39;} Z_k^p}}\right)^2+\lambda\sum_{i=1}^7\sum_{j=1}^3\sum_{k=1}^k|\delta_{ij}^k|,$$&lt;/code&gt; donde $\lambda$ se determina por cross-validation.&lt;/p&gt;
+
+&lt;p&gt;¿Esto basta para capturar el impacto no lineal de la variable geográfica? Si la variable es $U,V$ (latitud y longitud, por ejemplo) se puede probar con indicadores de forma monomial $U^nV^m$ o trigonométrica $\sen(nU)\sen(mV)$, $\sen(nU)\cos(mV)$, etc, o splines.&lt;/p&gt;
+
+&lt;h1 id=&#34;idea-3-eliminar-la-autocorrelación-espacial:d413691eee64c85726259774e00b01e5&#34;&gt;Idea 3: eliminar la autocorrelación espacial&lt;/h1&gt;
+
+&lt;p&gt;El modelo de King, Rosen y Tanner dice que &lt;code&gt;$\E(Y_j^p) = \frac{1}{N^p}\sum_{i=1}^7 \beta_{ij}^pX_i^p$&lt;/code&gt;. Es decir, &lt;code&gt;$$Y_j^p = \frac{1}{N^p}\sum_{i=1}^7 \beta_{ij}^pX_i^p + \epsilon_j^p,$$&lt;/code&gt; con &lt;code&gt;$\E(\epsilon_j^p)=0$&lt;/code&gt;. Supone que &lt;code&gt;$\epsilon_j^p$&lt;/code&gt; y &lt;code&gt;$\epsilon_j^{p&#39;}$&lt;/code&gt; son independientes si $p$ y $p&amp;rsquo;$ son mesas distintas. Ahora bien, si no incorporamos la variable geográfica al modelo, esto va a fallar: mesas cercanas no van a ser independientes entre sí. Podemos modelar esto así, basándonos en &lt;a href=&#34;http://onlinelibrary.wiley.com/doi/10.1111/j.1538-4632.1991.tb00228.x/epdf&#34;&gt;Anselin y Ray (1991)&lt;/a&gt;: &lt;code&gt;$$\epsilon_j = \lambda W \epsilon_j + \mu_j,$$&lt;/code&gt; donde $\lambda$ es un parámetro a estimar (suficientemente chico), $W\in\R^{P\times P}$ con &lt;code&gt;$W_{p,p&#39;}=d(p,p&#39;),$&lt;/code&gt; y &lt;code&gt;$\mu_j^p$&lt;/code&gt; son errores independientes y con esperanza nula. Es decir, &lt;code&gt;$(I-\lambda W)\epsilon_j = \mu_j$&lt;/code&gt;, o &lt;code&gt;$\epsilon_j = (I-\lambda W)^{-1}\mu_j$&lt;/code&gt;. Reemplazando y multiplicando por $I-\lambda W$ obtenemos &lt;code&gt;$(I-\lambda W)Y_j = (I-\lambda W)\frac{1}{N}\sum_{i=1}^7 \beta_{ij}X_i+ \mu_j$&lt;/code&gt;. Esto da el modelo auto-regresivo &lt;code&gt;$$Y_j^p = \lambda \sum_{p&#39;}d(p,p&#39;)Y_j^{p&#39;} + \frac{1}{N^{p}}\sum_{i=1}^7 \beta_{ij}^{p}X_i^{p} - \lambda\sum_{p&#39;}d(p,p&#39;)\frac{1}{N^{p&#39;}}\sum_{i=1}^7 \beta_{ij}^{p&#39;}X_i^{p&#39;}+\mu_j^p.$$&lt;/code&gt;
+Usando mínimos cuadrados podemos estimar $\lambda$ y los parámetros &lt;code&gt;$\gamma_{ij}$&lt;/code&gt; que determinan la distribución de los &lt;code&gt;$\beta_{ij}^p$&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div&gt;
+&lt;script type=&#34;text/javascript&#34;
+  src=&#34;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&#34;&gt;
+&lt;/script&gt;
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]],
+    displayMath: [[&#39;$$&#39;,&#39;$$&#39;], [&#39;\[&#39;,&#39;\]&#39;]],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: [&#39;script&#39;, &#39;noscript&#39;, &#39;style&#39;, &#39;textarea&#39;, &#39;pre&#39;],
+    TeX: { equationNumbers: { autoNumber: &#34;AMS&#34; },
+         extensions: [&#34;AMSmath.js&#34;, &#34;AMSsymbols.js&#34;] }
+  }
+});
+&lt;/script&gt;
+&lt;script type=&#34;text/x-mathjax-config&#34;&gt;
+  MathJax.Hub.Queue(function() {
+    // Fix &lt;code&gt; tags after MathJax finishes running. This is a
+    // hack to overcome a shortcoming of Markdown. Discussion at
+    // https://github.com/mojombo/jekyll/issues/199
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i &lt; all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += &#39; has-jax&#39;;
+    }
+});
+&lt;/script&gt;
+&lt;style&gt;
+code.has-jax {font: inherit;
+              font-size: 100%;
+              background: inherit;
+              //border: inherit;
+              color: #222222;}
+&lt;/style&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>El cartismo cultural</title>
@@ -1502,21 +1596,22 @@ restart();
 
 &lt;p&gt;El modelo que acabo de describir se basa en el que propuso Leo Goodman en su paper &lt;a href=&#34;http://www.jstor.org/stable/2088121&#34;&gt;Ecological Regressions and Behavior of Individuals&lt;/a&gt;, publicado en 1953. En 1997 &lt;a href=&#34;http://gking.harvard.edu/&#34;&gt;Gary King&lt;/a&gt; publicó un &lt;a href=&#34;http://gking.harvard.edu/eicamera/kinroot.html&#34;&gt;libro&lt;/a&gt; en el que propuso un modelo superador. En el 99, junto a Ori Rosen y Martin Tanner, &lt;a href=&#34;http://gking.harvard.edu/files/abs/binom-abs.shtml&#34;&gt;extendió&lt;/a&gt; el trabajo del libro incoporando &lt;a href=&#34;https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo&#34;&gt;MCMC&lt;/a&gt; y haciendo posible la aplicación a cantidades de datos más grandes, pero acotado a tablas de &lt;code&gt;$2\times2$&lt;/code&gt; (el caso que nos interesa es de &lt;code&gt;$7\times3$&lt;/code&gt;). En el 2001 &lt;a href=&#34;http://gking.harvard.edu/files/abs/rosen-abs.shtml&#34;&gt;extendieron&lt;/a&gt; el modelo a tablas de tamaño general, lo que se aplica directamente sobre nuestro problema. Voy a hacer un comentario sobre ese &lt;a href=&#34;http://gking.harvard.edu/files/gking/files/em.pdf?m=1360038990&#34;&gt;paper&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;El modelo de King, Rosen y Taner plantea lo siguiente. En cada mesa, el resultado de la elección en la segunda vuelta, es decir los números &lt;code&gt;$B_1,B_2,B_3$&lt;/code&gt; (para seguir con la notación que introduje en la sección anterior), se distribuye de acuerdo a una &lt;a href=&#34;https://en.wikipedia.org/wiki/Multinomial_distribution&#34;&gt;distribución multinomial&lt;/a&gt; con parámetros &lt;code&gt;$\theta_1,\theta_2,\theta_3$&lt;/code&gt;, donde &lt;code&gt;$\theta_j=\frac{B_j}{N}$&lt;/code&gt; y &lt;code&gt;$N$&lt;/code&gt; es la cantidad de electores de la mesa. Teníamos &lt;code&gt;$B_j=\sum_{i=1}^7A_iX_i$&lt;/code&gt;, por lo que &lt;code&gt;$\theta_j=\frac1{N}\sum_{i=1}^7A_iX_i$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;El modelo de King, Rosen y Taner plantea lo siguiente. En cada mesa, el resultado de la elección en la segunda vuelta, es decir los números &lt;code&gt;$B_1,B_2,B_3$&lt;/code&gt; (para seguir con la notación que introduje en la sección anterior), se distribuye de acuerdo a una &lt;a href=&#34;https://en.wikipedia.org/wiki/Multinomial_distribution&#34;&gt;distribución multinomial&lt;/a&gt; con parámetros &lt;code&gt;$\theta_1,\theta_2,\theta_3$&lt;/code&gt;, donde &lt;code&gt;$\theta_j=\frac1{N}\sum_{i=1}^7A_i\beta_{ij}$&lt;/code&gt;, &lt;code&gt;$N=\sum_{i=1}^7A_i$&lt;/code&gt; es la cantidad de electores de la mesa y &lt;code&gt;$\beta\in\mathbb{R}^{7\times 3}$&lt;/code&gt; es una variable aleatoria que funciona como una estimación del $X_{ij}$ de la mesa.&lt;/p&gt;
 
-&lt;p&gt;Dejamos de asumir que las matrices de transferencia de cada mesa son iguales, y llamamos &lt;code&gt;$X^p$&lt;/code&gt; a la de la mesa &lt;code&gt;$p$&lt;/code&gt;. Los vectores &lt;code&gt;$X^p_i=(X^p_{i1},X^p_{i2},X^p_{i3})$&lt;/code&gt; siguen &lt;a href=&#34;https://en.wikipedia.org/wiki/Dirichlet_distribution&#34;&gt;distribuciones de Dirichlet&lt;/a&gt; independientes con parámetros &lt;code&gt;$(d_ie^{\gamma_{i1}},d_ie^{\gamma_{i2}},d_i)$&lt;/code&gt; (notar que estos parámetros son los mismos para todas las mesas). Finalmente, los parámetros &lt;code&gt;$\gamma_{i1},\gamma_{i2}$&lt;/code&gt; son independientes (no los conocemos) y &lt;code&gt;$d_i$&lt;/code&gt; sigue una &lt;a href=&#34;https://en.wikipedia.org/wiki/Exponential_distribution&#34;&gt;distribución exponencial&lt;/a&gt; con media &lt;code&gt;$1/\lambda$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Dejamos de asumir que las matrices de transferencia de cada mesa son iguales. Por lo tanto hay una variable $\beta^p$ por cada mesa &lt;code&gt;$p$&lt;/code&gt;. Los vectores &lt;code&gt;$\beta^p_i=(\beta^p_{i1},\beta^p_{i2},\beta^p_{i3})$&lt;/code&gt;, según el modelo, siguen &lt;a href=&#34;https://en.wikipedia.org/wiki/Dirichlet_distribution&#34;&gt;distribuciones de Dirichlet&lt;/a&gt; independientes con parámetros &lt;code&gt;$(d_ie^{\gamma_{i1}},d_ie^{\gamma_{i2}},d_i)$&lt;/code&gt; (notar que estos parámetros son los mismos para todas las mesas). Finalmente, los parámetros &lt;code&gt;$\gamma_{i1},\gamma_{i2}$&lt;/code&gt; son independientes (desconocidos) y &lt;code&gt;$d_i$&lt;/code&gt; sigue una &lt;a href=&#34;https://en.wikipedia.org/wiki/Exponential_distribution&#34;&gt;distribución exponencial&lt;/a&gt; con media &lt;code&gt;$1/\lambda$&lt;/code&gt; ($\lambda$ está fijo; puede ser $2$, por ejemplo).&lt;/p&gt;
 
-&lt;p&gt;La idea es estimar los parámetros &lt;code&gt;$\gamma$&lt;/code&gt; y &lt;code&gt;$d$&lt;/code&gt; en base a las observaciones (los resultados por mesa). Entendemos que &lt;code&gt;$B^p=f(A^p,\gamma,d)+\epsilon$&lt;/code&gt;, donde &lt;code&gt;$f(A^p,\gamma,d)$&lt;/code&gt; es el valor esperado de &lt;code&gt;$B^p$&lt;/code&gt; dado &lt;code&gt;$A^p,\gamma,d$&lt;/code&gt; y &lt;code&gt;$\epsilon$&lt;/code&gt; es un error con media cero. El método consiste en tomar los &lt;code&gt;$\gamma$&lt;/code&gt; y &lt;code&gt;$d$&lt;/code&gt; que minimizan la desviación cuadrática &lt;code&gt;$\text{SSE}(\gamma,d)=\sum_{p=1}^P\sum_{j=1}^3(B_j^p-f(A^p,\gamma,d)_j)^2$&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La idea es estimar los parámetros &lt;code&gt;$\gamma$&lt;/code&gt; en base a las observaciones (los resultados por mesa). Si $f(A^p,\gamma)=\text{E}(B^p|\gamma)$ tenemos &lt;code&gt;$B^p=f(A^p,\gamma)+\epsilon$&lt;/code&gt;, donde &lt;code&gt;$\epsilon$&lt;/code&gt; es un error con media cero. El método consiste en tomar los &lt;code&gt;$\gamma$&lt;/code&gt; que minimizan la desviación cuadrática &lt;code&gt;$\text{SSE}(\gamma)=\sum_{p=1}^P\sum_{j=1}^3(B_j^p-f(A^p,\gamma)_j)^2$&lt;/code&gt;.&lt;/p&gt;
 
-&lt;p&gt;Hay que calcular &lt;code&gt;$f(A^p,\gamma,d)_j$&lt;/code&gt;. Es &lt;code&gt;$\text{E}(B_j^p|\gamma,d)$&lt;/code&gt;. Ahora &lt;code&gt;$B_j^p=\sum_{i=1}^7X_{ij}^pA_i^p$&lt;/code&gt;, por lo que&lt;/p&gt;
+&lt;p&gt;Hay que calcular &lt;code&gt;$f(A^p,\gamma)_j$&lt;/code&gt;. Es &lt;code&gt;$\text{E}(B_j^p|\gamma)$&lt;/code&gt;. Como &lt;code&gt;$B_j^p$&lt;/code&gt; tiene distribución multinomial,&lt;/p&gt;
 
-&lt;div&gt;$$\text{E}(B_j^p|\gamma,d)=\sum_{i=1}^7A^p_i\text{E}(X_{ij}^p|\gamma,d)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+e^{\gamma_{i1}}+e^{\gamma_{i2}})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$&lt;/div&gt; 
+&lt;div&gt;$$\text{E}(B_j^p|\gamma)=\text{E}(\text{E}(B_j^p|\beta,\gamma)|\gamma)=\text{E}\left(\sum_{i=1}^7A_i^p\beta_{ij}^p|\gamma\right)=$$
+$$=\sum_{i=1}^7A_i^p\text{E}(\beta_{ij}^p|\gamma)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+e^{\gamma_{i1}}+e^{\gamma_{i2}})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$&lt;/div&gt; 
 
-&lt;p&gt;(Usé que &lt;code&gt;$X_{ij}^p$&lt;/code&gt; sigue la distribución Dirichlet que definí más arriba para calcular &lt;code&gt;$\text{E}(X_{ij}^p|\gamma,d)$&lt;/code&gt;.) Notar que el parámetro &lt;code&gt;$d$&lt;/code&gt; es irrelevante. Entonces buscamos los &lt;code&gt;$\gamma_{ij}$&lt;/code&gt; que minimizan la función&lt;/p&gt;
+&lt;p&gt;(Usé que &lt;code&gt;$X_{ij}^p$&lt;/code&gt; sigue la distribución Dirichlet que definí más arriba para calcular &lt;code&gt;$\text{E}(\beta_{ij}^p|\gamma)$&lt;/code&gt;.) Entonces buscamos los &lt;code&gt;$\gamma_{ij}$&lt;/code&gt; que minimizan la función&lt;/p&gt;
 
 &lt;div&gt;$$\text{SSE}(\gamma)=\sum_{p=1}^P\sum_{j=1}^3\left(B_j^p-\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}\right)^2.$$&lt;/div&gt;
 
-&lt;p&gt;En base a eso no podemos conocer los &lt;code&gt;$X$&lt;/code&gt; (lo que en realidad buscamos) por mesa, pero aceptando la estimación de los &lt;code&gt;$\gamma$&lt;/code&gt; podemos determinar su media. Esto nos da &lt;code&gt;$X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$&lt;/code&gt; para &lt;code&gt;$j=1,2$&lt;/code&gt; y &lt;code&gt;$X_{i3}=1-X_{i1}-X_{i2}$&lt;/code&gt;. El resultado es este:&lt;/p&gt;
+&lt;p&gt;En base a eso no podemos conocer los &lt;code&gt;$X^p$&lt;/code&gt; (lo que en realidad buscamos) por mesa, pero aceptando la estimación de los &lt;code&gt;$\gamma$&lt;/code&gt; podemos aproximarlos por $\text{E}(\beta^p)$. Esto nos da &lt;code&gt;$X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$&lt;/code&gt; para &lt;code&gt;$j=1,2$&lt;/code&gt; y &lt;code&gt;$X_{i3}=1-X_{i1}-X_{i2}$&lt;/code&gt;. El resultado es este:&lt;/p&gt;
 
 &lt;table&gt;
 &lt;thead&gt;
