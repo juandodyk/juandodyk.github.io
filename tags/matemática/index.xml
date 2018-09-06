@@ -6,8 +6,30 @@
     <description>Recent content in Matemática on Juan Dodyk</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://juandodyk.github.io/tags/matem%C3%A1tica/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Apuntes de matemática</title>
+      <link>http://juandodyk.github.io/post/apuntes-matematica/</link>
+      <pubDate>Wed, 01 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/post/apuntes-matematica/</guid>
+      <description>&lt;p&gt;Apuntes con esencialmente toda la matemática que aprendí.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://juandodyk.github.io/data/analisis.pdf&#34;&gt;Análisis&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://juandodyk.github.io/data/algebra.pdf&#34;&gt;Álgebra&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://juandodyk.github.io/data/algoritmos.pdf&#34;&gt;Algoritmos&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://juandodyk.github.io/data/funcional.pdf&#34;&gt;Análisis funcional&lt;/a&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;&lt;a href=&#34;http://juandodyk.github.io/data/modelos.pdf&#34;&gt;Modelos en economía política&lt;/a&gt; (incluye algunos temas de análisis y de probabilidad/estadística).&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+    </item>
     
     <item>
       <title>Consejos para olimpíadas matemáticas</title>
