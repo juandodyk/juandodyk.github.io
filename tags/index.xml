@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Juan Dodyk</title>
+    <link>http://juandodyk.github.io/tags/</link>
+    <description>Recent content in Tags on Juan Dodyk</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 24 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://juandodyk.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Matemática</title>
+      <link>http://juandodyk.github.io/tags/matem%C3%A1tica/</link>
+      <pubDate>Sat, 24 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/matem%C3%A1tica/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paraguay</title>
+      <link>http://juandodyk.github.io/tags/paraguay/</link>
+      <pubDate>Sun, 18 Sep 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/paraguay/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elecciones</title>
+      <link>http://juandodyk.github.io/tags/elecciones/</link>
+      <pubDate>Sun, 29 Nov 2015 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/elecciones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ciencia</title>
+      <link>http://juandodyk.github.io/tags/ciencia/</link>
+      <pubDate>Sun, 07 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/ciencia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filosofía</title>
+      <link>http://juandodyk.github.io/tags/filosof%C3%ADa/</link>
+      <pubDate>Sun, 07 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/filosof%C3%ADa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Educación</title>
+      <link>http://juandodyk.github.io/tags/educaci%C3%B3n/</link>
+      <pubDate>Sun, 21 Oct 2012 00:00:00 +0000</pubDate>
+      
+      <guid>http://juandodyk.github.io/tags/educaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

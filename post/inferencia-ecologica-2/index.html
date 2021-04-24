@@ -7,7 +7,7 @@
         <meta name="author">
         <meta name="description" content="Blog de Juan Dodyk.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.16-DEV" />
+        <meta name="generator" content="Hugo 0.82.1" />
           <link href="http://juandodyk.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Juan Dodyk" />
           <link href="http://juandodyk.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Juan Dodyk" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
@@ -16,17 +16,6 @@
         <link rel="apple-touch-icon" href="http://juandodyk.github.io/apple-touch-icon.png" />
         <link rel="stylesheet" href="http://juandodyk.github.io/css/highlightjs/monokai.css">
         
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84471521-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 
         <script src="http://juandodyk.github.io/js/vendor/modernizr-2.8.0.min.js"></script>
         <style>
@@ -43,32 +32,10 @@
         }
         </style>
     
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84471521-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 
     </head>
     <body>
     
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-84471521-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
 
         
         
@@ -87,296 +54,255 @@
     <a href="http://juandodyk.github.io/tags/elecciones">elecciones</a>
     
     
-
 </span>
 </footer>
 
-            <p>Modelo: <select id="modelo">
-  <option value="lls">Goodman con restricciones</option>
-  <option value="nls">King, Rosen, Tanner, nonlinear least squares</option>
-</select></p>
-
-<p><select id="opcion">
-<option value="transferencia">Transferencia</option>
-<option value="diferencia">Diferencia</option>
-</select><span id="opcion_html"></span></p>
-
-<p>Provincia: <select id="provincia"></select></p>
-
-<p>Transferencia de votos en <span id="prov_nombre">Córdoba</span>:</p>
-
-<div id="tabla_prov"></div>
-
+            <p>Modelo: <!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Provincia: <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<p>Transferencia de votos en <!-- raw HTML omitted -->Córdoba<!-- raw HTML omitted -->:</p>
+<!-- raw HTML omitted -->
 <p>Transferencia de votos en el resto del país:</p>
-
-<div id="tabla_resto"></div>
-
+<!-- raw HTML omitted -->
 <p>(Se puede hacer click en el mapa.)</p>
-
-<p>Transferencias de: <select id="cand_desde_bubbles"></select></p>
-
-<div id="bubble"></div>
-
-<div>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/maps/modules/map.js"></script>
-<script src="https://code.highcharts.com/maps/modules/data.js"></script>
-<script src="https://code.highcharts.com/mapdata/countries/ar/ar-all.js"></script>
-<script src="https://code.highcharts.com/highcharts-more.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="/js/chroma.min.js"></script>
-<script>
-$(function () {
-
-var cands_pri = ["Scioli","Stolbizer","Rodríguez Saá","Macri","Del Caño","Massa","No Votó/Blanco"];
-var cands_seg = ["Scioli","Macri","No Votó/Blanco"];
-var provs = JSON.parse('{"1":"Ciudad de Buenos Aires","2":"Buenos Aires","3":"Catamarca","4":"Córdoba","5":"Corrientes","6":"Chaco","7":"Chubut","8":"Entre Ríos","9":"Formosa","10":"Jujuy","11":"La Pampa","12":"La Rioja","13":"Mendoza","14":"Misiones","15":"Neuquén","16":"Río Negro","17":"Salta","18":"San Juan","19":"San Luis","20":"Santa Cruz","21":"Santa Fe","22":"Santiago del Estero","23":"Tucumán","24":"Tierra del Fuego"}');
-var keys = JSON.parse('{"1":"ar-df","2":"ar-ba","3":"ar-ct","4":"ar-cb","5":"ar-cn","6":"ar-cc","7":"ar-ch","8":"ar-er","9":"ar-fm","10":"ar-jy","11":"ar-lp","12":"ar-lr","13":"ar-mz","14":"ar-mn","15":"ar-nq","16":"ar-rn","17":"ar-sa","18":"ar-sj","19":"ar-sl","20":"ar-sc","21":"ar-sf","22":"ar-se","23":"ar-tm","24":"ar-tf"}');
-var res_pri = JSON.parse('{"1":[24.09,5.09,0.72,50.55,4.28,15.28],"2":[37.13,2.87,0.97,32.92,3.71,22.4],"3":[44.89,1.15,1.04,35.38,1.67,15.87],"4":[19.21,1.81,2.15,53.24,3.19,20.4],"5":[50.29,1.06,0.54,31.76,1.11,15.24],"6":[53.74,1.07,0.72,28.28,1.45,14.74],"7":[41.56,3.01,0.96,21.38,3.65,29.44],"8":[37.6,2.09,0.98,37.82,1.77,19.75],"9":[64.75,0.39,0.23,16.1,0.95,17.58],"10":[37.32,0.77,0.5,17.52,2.47,41.42],"11":[37.91,2.61,1.79,33.65,2.49,21.56],"12":[36.21,1.11,3.33,31.68,1.7,25.97],"13":[31.34,1.44,4.42,40.8,7.62,14.37],"14":[61.02,1.27,0.36,22.74,0.91,13.7],"15":[35.64,2.68,1.83,28.09,5.42,26.33],"16":[45.21,2.81,1.43,22.43,3.88,24.24],"17":[40.56,1.07,0.78,20.77,2.77,34.06],"18":[46.07,1.76,3.49,20.87,1.47,26.34],"19":[15.61,1.33,36.79,30.96,1.79,13.52],"20":[47.17,1.19,0.45,25.72,3.17,22.3],"21":[31.77,3.95,1.5,35.3,2.68,24.81],"22":[63.07,0.95,0.47,14.72,1.46,19.34],"23":[48.54,1.39,0.93,26.84,1.79,20.52],"24":[45.48,3.29,1.62,21.82,4.4,23.39]}');
-var res_seg = JSON.parse('{"1":[35.22,64.78],"2":[51.1,48.9],"3":[52.96,47.04],"4":[28.49,71.51],"5":[55.37,44.63],"6":[59.23,40.77],"7":[58.84,41.16],"8":[46.17,53.83],"9":[63.96,36.04],"10":[47.07,52.93],"11":[49.09,50.91],"12":[43.49,56.51],"13":[42.49,57.51],"14":[58.04,41.96],"15":[52.86,47.14],"16":[62.85,37.15],"17":[54.27,45.73],"18":[59.76,40.24],"19":[35.84,64.16],"20":[58.37,41.63],"21":[44.27,55.73],"22":[72.06,27.94],"23":[58.59,41.41],"24":[58.72,41.28]}');
-
-var cand_desde = 5;
+<p>Transferencias de: <!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>var cands_pri = [&ldquo;Scioli&rdquo;,&ldquo;Stolbizer&rdquo;,&ldquo;Rodríguez Saá&rdquo;,&ldquo;Macri&rdquo;,&ldquo;Del Caño&rdquo;,&ldquo;Massa&rdquo;,&ldquo;No Votó/Blanco&rdquo;];
+var cands_seg = [&ldquo;Scioli&rdquo;,&ldquo;Macri&rdquo;,&ldquo;No Votó/Blanco&rdquo;];
+var provs = JSON.parse('{&ldquo;1&rdquo;:&ldquo;Ciudad de Buenos Aires&rdquo;,&ldquo;2&rdquo;:&ldquo;Buenos Aires&rdquo;,&ldquo;3&rdquo;:&ldquo;Catamarca&rdquo;,&ldquo;4&rdquo;:&ldquo;Córdoba&rdquo;,&ldquo;5&rdquo;:&ldquo;Corrientes&rdquo;,&ldquo;6&rdquo;:&ldquo;Chaco&rdquo;,&ldquo;7&rdquo;:&ldquo;Chubut&rdquo;,&ldquo;8&rdquo;:&ldquo;Entre Ríos&rdquo;,&ldquo;9&rdquo;:&ldquo;Formosa&rdquo;,&ldquo;10&rdquo;:&ldquo;Jujuy&rdquo;,&ldquo;11&rdquo;:&ldquo;La Pampa&rdquo;,&ldquo;12&rdquo;:&ldquo;La Rioja&rdquo;,&ldquo;13&rdquo;:&ldquo;Mendoza&rdquo;,&ldquo;14&rdquo;:&ldquo;Misiones&rdquo;,&ldquo;15&rdquo;:&ldquo;Neuquén&rdquo;,&ldquo;16&rdquo;:&ldquo;Río Negro&rdquo;,&ldquo;17&rdquo;:&ldquo;Salta&rdquo;,&ldquo;18&rdquo;:&ldquo;San Juan&rdquo;,&ldquo;19&rdquo;:&ldquo;San Luis&rdquo;,&ldquo;20&rdquo;:&ldquo;Santa Cruz&rdquo;,&ldquo;21&rdquo;:&ldquo;Santa Fe&rdquo;,&ldquo;22&rdquo;:&ldquo;Santiago del Estero&rdquo;,&ldquo;23&rdquo;:&ldquo;Tucumán&rdquo;,&ldquo;24&rdquo;:&ldquo;Tierra del Fuego&rdquo;}');
+var keys = JSON.parse('{&ldquo;1&rdquo;:&ldquo;ar-df&rdquo;,&ldquo;2&rdquo;:&ldquo;ar-ba&rdquo;,&ldquo;3&rdquo;:&ldquo;ar-ct&rdquo;,&ldquo;4&rdquo;:&ldquo;ar-cb&rdquo;,&ldquo;5&rdquo;:&ldquo;ar-cn&rdquo;,&ldquo;6&rdquo;:&ldquo;ar-cc&rdquo;,&ldquo;7&rdquo;:&ldquo;ar-ch&rdquo;,&ldquo;8&rdquo;:&ldquo;ar-er&rdquo;,&ldquo;9&rdquo;:&ldquo;ar-fm&rdquo;,&ldquo;10&rdquo;:&ldquo;ar-jy&rdquo;,&ldquo;11&rdquo;:&ldquo;ar-lp&rdquo;,&ldquo;12&rdquo;:&ldquo;ar-lr&rdquo;,&ldquo;13&rdquo;:&ldquo;ar-mz&rdquo;,&ldquo;14&rdquo;:&ldquo;ar-mn&rdquo;,&ldquo;15&rdquo;:&ldquo;ar-nq&rdquo;,&ldquo;16&rdquo;:&ldquo;ar-rn&rdquo;,&ldquo;17&rdquo;:&ldquo;ar-sa&rdquo;,&ldquo;18&rdquo;:&ldquo;ar-sj&rdquo;,&ldquo;19&rdquo;:&ldquo;ar-sl&rdquo;,&ldquo;20&rdquo;:&ldquo;ar-sc&rdquo;,&ldquo;21&rdquo;:&ldquo;ar-sf&rdquo;,&ldquo;22&rdquo;:&ldquo;ar-se&rdquo;,&ldquo;23&rdquo;:&ldquo;ar-tm&rdquo;,&ldquo;24&rdquo;:&ldquo;ar-tf&rdquo;}');
+var res_pri = JSON.parse('{&ldquo;1&rdquo;:[24.09,5.09,0.72,50.55,4.28,15.28],&ldquo;2&rdquo;:[37.13,2.87,0.97,32.92,3.71,22.4],&ldquo;3&rdquo;:[44.89,1.15,1.04,35.38,1.67,15.87],&ldquo;4&rdquo;:[19.21,1.81,2.15,53.24,3.19,20.4],&ldquo;5&rdquo;:[50.29,1.06,0.54,31.76,1.11,15.24],&ldquo;6&rdquo;:[53.74,1.07,0.72,28.28,1.45,14.74],&ldquo;7&rdquo;:[41.56,3.01,0.96,21.38,3.65,29.44],&ldquo;8&rdquo;:[37.6,2.09,0.98,37.82,1.77,19.75],&ldquo;9&rdquo;:[64.75,0.39,0.23,16.1,0.95,17.58],&ldquo;10&rdquo;:[37.32,0.77,0.5,17.52,2.47,41.42],&ldquo;11&rdquo;:[37.91,2.61,1.79,33.65,2.49,21.56],&ldquo;12&rdquo;:[36.21,1.11,3.33,31.68,1.7,25.97],&ldquo;13&rdquo;:[31.34,1.44,4.42,40.8,7.62,14.37],&ldquo;14&rdquo;:[61.02,1.27,0.36,22.74,0.91,13.7],&ldquo;15&rdquo;:[35.64,2.68,1.83,28.09,5.42,26.33],&ldquo;16&rdquo;:[45.21,2.81,1.43,22.43,3.88,24.24],&ldquo;17&rdquo;:[40.56,1.07,0.78,20.77,2.77,34.06],&ldquo;18&rdquo;:[46.07,1.76,3.49,20.87,1.47,26.34],&ldquo;19&rdquo;:[15.61,1.33,36.79,30.96,1.79,13.52],&ldquo;20&rdquo;:[47.17,1.19,0.45,25.72,3.17,22.3],&ldquo;21&rdquo;:[31.77,3.95,1.5,35.3,2.68,24.81],&ldquo;22&rdquo;:[63.07,0.95,0.47,14.72,1.46,19.34],&ldquo;23&rdquo;:[48.54,1.39,0.93,26.84,1.79,20.52],&ldquo;24&rdquo;:[45.48,3.29,1.62,21.82,4.4,23.39]}');
+var res_seg = JSON.parse('{&ldquo;1&rdquo;:[35.22,64.78],&ldquo;2&rdquo;:[51.1,48.9],&ldquo;3&rdquo;:[52.96,47.04],&ldquo;4&rdquo;:[28.49,71.51],&ldquo;5&rdquo;:[55.37,44.63],&ldquo;6&rdquo;:[59.23,40.77],&ldquo;7&rdquo;:[58.84,41.16],&ldquo;8&rdquo;:[46.17,53.83],&ldquo;9&rdquo;:[63.96,36.04],&ldquo;10&rdquo;:[47.07,52.93],&ldquo;11&rdquo;:[49.09,50.91],&ldquo;12&rdquo;:[43.49,56.51],&ldquo;13&rdquo;:[42.49,57.51],&ldquo;14&rdquo;:[58.04,41.96],&ldquo;15&rdquo;:[52.86,47.14],&ldquo;16&rdquo;:[62.85,37.15],&ldquo;17&rdquo;:[54.27,45.73],&ldquo;18&rdquo;:[59.76,40.24],&ldquo;19&rdquo;:[35.84,64.16],&ldquo;20&rdquo;:[58.37,41.63],&ldquo;21&rdquo;:[44.27,55.73],&ldquo;22&rdquo;:[72.06,27.94],&ldquo;23&rdquo;:[58.59,41.41],&ldquo;24&rdquo;:[58.72,41.28]}');</p>
+<p>var cand_desde = 5;
 var cand_hacia = 1;
 var load_cands_selects = function() {
-    for(i in cands_pri)
-        $("#cand_desde").append('<option value="'+i+'">'+cands_pri[i]+'</option>');
-    $('#cand_desde option:eq('+cand_desde+')').attr('selected', 'selected');
-    $("#cand_desde_bubbles").html('');
-    for(i in cands_pri)
-        $("#cand_desde_bubbles").append('<option value="'+i+'">'+cands_pri[i]+'</option>');
-    $('#cand_desde_bubbles option:eq('+cand_desde+')').attr('selected', 'selected');
-    for(i in cands_seg)
-        $("#cand_hacia").append('<option value="'+i+'">'+cands_seg[i]+'</option>');
-    $('#cand_hacia option:eq('+cand_hacia+')').attr('selected', 'selected');
-    $("#cand_desde").change(function() {
-        cand_desde = parseInt($("#cand_desde").val());
-        $('#cand_desde_bubbles option:eq('+cand_desde+')').attr('selected', 'selected');
-        restart();
-    });
-    $("#cand_desde_bubbles").change(function() {
-        cand_desde = parseInt($("#cand_desde_bubbles").val());
-        $('#cand_desde option:eq('+cand_desde+')').attr('selected', 'selected');
-        restart();
-        $("#cand_desde_bubbles")[0].scrollIntoView( true );
-    });
-    $("#cand_hacia").change(function() {
-        cand_hacia = parseInt($("#cand_hacia").val());
-        restart();
-    });
+for(i in cands_pri)
+$(&quot;#cand_desde&quot;).append('<!-- raw HTML omitted -->'+cands_pri[i]+'<!-- raw HTML omitted -->');
+$('#cand_desde option:eq('+cand_desde+')').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+$(&quot;#cand_desde_bubbles&quot;).html('');
+for(i in cands_pri)
+$(&quot;#cand_desde_bubbles&quot;).append('<!-- raw HTML omitted -->'+cands_pri[i]+'<!-- raw HTML omitted -->');
+$('#cand_desde_bubbles option:eq('+cand_desde+')').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+for(i in cands_seg)
+$(&quot;#cand_hacia&quot;).append('<!-- raw HTML omitted -->'+cands_seg[i]+'<!-- raw HTML omitted -->');
+$('#cand_hacia option:eq('+cand_hacia+')').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+$(&quot;#cand_desde&quot;).change(function() {
+cand_desde = parseInt($(&quot;#cand_desde&quot;).val());
+$('#cand_desde_bubbles option:eq('+cand_desde+')').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+restart();
+});
+$(&quot;#cand_desde_bubbles&quot;).change(function() {
+cand_desde = parseInt($(&quot;#cand_desde_bubbles&quot;).val());
+$('#cand_desde option:eq('+cand_desde+')').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+restart();
+$(&quot;#cand_desde_bubbles&quot;)[0].scrollIntoView( true );
+});
+$(&quot;#cand_hacia&quot;).change(function() {
+cand_hacia = parseInt($(&quot;#cand_hacia&quot;).val());
+restart();
+});
 };
 for(i in provs)
-    $("#provincia").append('<option value="'+i+'">'+provs[i]+'</option>');
-$('#provincia option:eq(3)').attr('selected', 'selected');
-
-var opt_html = {
-    transferencia: ' de votos de <select id="cand_desde"></select> a <select id="cand_hacia"></select>',
-    diferencia: ' entre transferencia de votos de <select id="cand_desde"></select> a Macri y a Scioli.'
+$(&quot;#provincia&quot;).append('<!-- raw HTML omitted -->'+provs[i]+'<!-- raw HTML omitted -->');
+$('#provincia option:eq(3)').attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);</p>
+<p>var opt_html = {
+transferencia: ' de votos de <!-- raw HTML omitted --><!-- raw HTML omitted --> a <!-- raw HTML omitted --><!-- raw HTML omitted -->',
+diferencia: ' entre transferencia de votos de <!-- raw HTML omitted --><!-- raw HTML omitted --> a Macri y a Scioli.'
 };
-var opcion = "transferencia";
-$("#opcion").change(function() {
-    opcion = $("#opcion").val();
-    $("#opcion_html").html(opt_html[opcion]);
-    load_cands_selects();
-    restart();
-});
-$("#opcion_html").html(opt_html[opcion]);
+var opcion = &ldquo;transferencia&rdquo;;
+$(&quot;#opcion&quot;).change(function() {
+opcion = $(&quot;#opcion&quot;).val();
+$(&quot;#opcion_html&quot;).html(opt_html[opcion]);
 load_cands_selects();
-
-var modelo = "lls";
-$("#modelo").change(function() {
-    modelo = $("#modelo").val();
-    restart();
+restart();
 });
-var prov = "4";
-$("#provincia").change(function() {
-    prov = $("#provincia").val();
-    fill_tables();
+$(&quot;#opcion_html&quot;).html(opt_html[opcion]);
+load_cands_selects();</p>
+<p>var modelo = &ldquo;lls&rdquo;;
+$(&quot;#modelo&quot;).change(function() {
+modelo = $(&quot;#modelo&quot;).val();
+restart();
 });
+var prov = &ldquo;4&rdquo;;
+$(&quot;#provincia&quot;).change(function() {
+prov = $(&quot;#provincia&quot;).val();
+fill_tables();
+});</p>
+<p>var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
+chart: {
+renderTo: &lsquo;container&rsquo;
+},
+title : {
+text : &lsquo;Transferencia de votos de ' + cand + (opcion==&ldquo;transferencia&rdquo;?(&quot; a &ldquo;+cands_seg[cand_hacia]):&quot;&quot;)
+},
+subtitle : {
+text : &lsquo;Click para ver la transferencia de votos completa por provincia&rsquo;
+},
+plotOptions: { map: { events: { click: function(e) {
+for(i in keys) if(keys[i] == e.point[&lsquo;hc-key&rsquo;]) prov = i;
+fill_tables();    
+}}}},
+colorAxis: colorAxis,
+series : [{
+data : data,
+mapData: Highcharts.maps[&lsquo;countries/ar/ar-all&rsquo;],
+joinBy: &lsquo;hc-key&rsquo;,
+name: (opcion==&ldquo;transferencia&rdquo; ?
+(&lsquo;Transferencia de ' + cand + ' a ' + cands_seg[cand_hacia]) :
+(&lsquo;Diferencia entre transferencia de ' + cand + ' a Macri y a Scioli&rsquo;)),
+states: {
+hover: {
+color: &lsquo;#BADA55&rsquo;
+}
+},
+dataLabels: {
+enabled: true,
+format: &lsquo;{point.name}&rsquo;
+}
+}]
+})};</p>
+<p>var bubble = function(data) {
+return new Highcharts.Chart({
+chart: {
+type: &lsquo;bubble&rsquo;,
+plotBorderWidth: 1,
+renderTo: &lsquo;bubble&rsquo;,
+height: $(&quot;#bubble&rdquo;).width()
+},
+title: {
+text: &ldquo;Transferencia de votos de &ldquo;+cands_pri[cand_desde]
+},
+subtitle : {
+text : &lsquo;El color de las burbujas indica si ganó Scioli o Macri en esa provincia. El tamaño, cuánto voto recibió &lsquo;+cands_pri[cand_desde]+&rsquo; en primera vuelta. Cuanto más lejos de la línea diagonal, más voto se transfirió a &ldquo;No votó/Blanco&rdquo;.&rsquo;
+},
+yAxis: {
+title: {
+text: &lsquo;Transferencia a Macri&rsquo;
+},
+min:0,
+max:100,
+labels: {
+format: &lsquo;{value}%&rsquo;
+},
+},
+xAxis: {
+title: {
+text: &lsquo;Transferencia a Scioli&rsquo;
+},
+min:0,
+max:100,
+labels: {
+format: &lsquo;{value}%&rsquo;
+},
+},
+plotOptions: {
+series: {
+dataLabels: {
+enabled: true,
+format: &lsquo;{point.name}&rsquo;
+}
+}
+},
+legend: {
+enabled: false
+},
+tooltip: {
+useHTML: true,
+headerFormat: &lsquo;<!-- raw HTML omitted -->&rsquo;,
+pointFormat: &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->{point.nombre}<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo; +
+&lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->Transferencia a Scioli:<!-- raw HTML omitted --><!-- raw HTML omitted -->{point.x}%<!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo; +
+&lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->Transferencia a Macri:<!-- raw HTML omitted --><!-- raw HTML omitted -->{point.y}%<!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo; +
+&lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->Transferencia a No Votó/Blanco:<!-- raw HTML omitted --><!-- raw HTML omitted -->{point.nvb}%<!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo; +
+&lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->'+cands_pri[cand_desde]+&rsquo; (primera vuelta):<!-- raw HTML omitted --><!-- raw HTML omitted -->{point.z}%<!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo;,
+footerFormat: &lsquo;<!-- raw HTML omitted -->&rsquo;,
+followPointer: true
+},
+series: [{data: data, states: {
+hover: {
+color: &lsquo;#BADA55&rsquo;
+}
+}}, {
+type: &lsquo;line&rsquo;,
+data: [[0,100],[100,0]],
+marker: {enabled: false},
+enableMouseTracking: false
+}]
+});
+};</p>
+<p>var json_data = null;</p>
+<p>var fill_table = function(id, m) {
+var html = &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->';
+for(i in cands_seg) html += &lsquo;<!-- raw HTML omitted -->'+cands_seg[i]+'<!-- raw HTML omitted -->';
+html += &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->';
+for(i in cands_pri) {
+html += &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted -->&rsquo; + cands_pri[i] + &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->';
+for(j in m[i])
+html += &lsquo;<!-- raw HTML omitted -->&rsquo; + m[i][j] + &lsquo;%<!-- raw HTML omitted -->';
+html += &lsquo;<!-- raw HTML omitted -->';
+}
+html += &lsquo;<!-- raw HTML omitted --><!-- raw HTML omitted -->';
+$(id).html(html);
+};</p>
+<p>var fill_tables = function() {
+$(&quot;#prov_nombre&rdquo;).text(provs[prov]);
+$(&quot;#provincia option[value=&quot;+prov+&quot;]&quot;).attr(&lsquo;selected&rsquo;, &lsquo;selected&rsquo;);
+if(!json_data) return;
+fill_table(&quot;#tabla_prov&rdquo;, json_data[modelo][prov].prov);
+fill_table(&quot;#tabla_resto&quot;, json_data[modelo][prov].resto_como_suma);
+};</p>
+<p>var round = function(num) {
+return Math.round(num * 100) / 100;
+}</p>
+<p>var main = function(data) {
+json_data = data;</p>
+<pre><code>fill_tables();
 
-var mapa = function(data, cand, colorAxis) { return new Highcharts.Map({
-    chart: {
-        renderTo: 'container'
-    },
-    title : {
-        text : 'Transferencia de votos de ' + cand + (opcion=="transferencia"?(" a "+cands_seg[cand_hacia]):"")
-    },
-    subtitle : {
-        text : 'Click para ver la transferencia de votos completa por provincia'
-    },
-    plotOptions: { map: { events: { click: function(e) {
-        for(i in keys) if(keys[i] == e.point['hc-key']) prov = i;
-        fill_tables();      
-    }}}},
-    colorAxis: colorAxis,
-    series : [{
-        data : data,
-        mapData: Highcharts.maps['countries/ar/ar-all'],
-        joinBy: 'hc-key',
-        name: (opcion=="transferencia" ?
-            ('Transferencia de ' + cand + ' a ' + cands_seg[cand_hacia]) :
-            ('Diferencia entre transferencia de ' + cand + ' a Macri y a Scioli')),
-        states: {
-            hover: {
-                color: '#BADA55'
-            }
-        },
-        dataLabels: {
-            enabled: true,
-            format: '{point.name}'
-        }
-    }]
-})};
-
-var bubble = function(data) {
-    return new Highcharts.Chart({
-        chart: {
-            type: 'bubble',
-            plotBorderWidth: 1,
-            renderTo: 'bubble',
-            height: $("#bubble").width()
-        },
-        title: {
-            text: "Transferencia de votos de "+cands_pri[cand_desde]
-        },
-        subtitle : {
-            text : 'El color de las burbujas indica si ganó Scioli o Macri en esa provincia. El tamaño, cuánto voto recibió '+cands_pri[cand_desde]+' en primera vuelta. Cuanto más lejos de la línea diagonal, más voto se transfirió a "No votó/Blanco".'
-        },
-        yAxis: {
-            title: {
-                text: 'Transferencia a Macri'
-            },
-            min:0,
-            max:100,
-            labels: {
-                format: '{value}%'
-            },
-        },
-        xAxis: {
-            title: {
-                text: 'Transferencia a Scioli'
-            },
-            min:0,
-            max:100,
-            labels: {
-                format: '{value}%'
-            },
-        },
-        plotOptions: {
-            series: {
-                dataLabels: {
-                    enabled: true,
-                    format: '{point.name}'
-                }
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        tooltip: {
-            useHTML: true,
-            headerFormat: '<table>',
-            pointFormat: '<tr><th colspan="2"><h3>{point.nombre}</h3></th></tr>' +
-                '<tr><th>Transferencia a Scioli:</th><td>{point.x}%</td></tr>' +
-                '<tr><th>Transferencia a Macri:</th><td>{point.y}%</td></tr>' +
-                '<tr><th>Transferencia a No Votó/Blanco:</th><td>{point.nvb}%</td></tr>' +
-                '<tr><th>'+cands_pri[cand_desde]+' (primera vuelta):</th><td>{point.z}%</td></tr>',
-            footerFormat: '</table>',
-            followPointer: true
-        },
-        series: [{data: data, states: {
-            hover: {
-                color: '#BADA55'
-            }
-        }}, {
-            type: 'line',
-            data: [[0,100],[100,0]],
-            marker: {enabled: false},
-            enableMouseTracking: false
-        }]
-    });
-};
-
-var json_data = null;
-
-var fill_table = function(id, m) {
-    var html = '<table><thead><tr><th align="left"></th>';
-    for(i in cands_seg) html += '<th align="center">'+cands_seg[i]+'</th>';
-    html += '</tr></thead><tbody>';
-    for(i in cands_pri) {
-        html += '<tr><td align="left"><strong>' + cands_pri[i] + '</strong></td>';
-        for(j in m[i])
-            html += '<td align="center">' + m[i][j] + '%</td>';
-        html += '</tr>';
-    }
-    html += '</tbody></table>';
-    $(id).html(html);
-};
-
-var fill_tables = function() {
-    $("#prov_nombre").text(provs[prov]);
-    $("#provincia option[value="+prov+"]").attr('selected', 'selected');
-    if(!json_data) return;
-    fill_table("#tabla_prov", json_data[modelo][prov].prov);
-    fill_table("#tabla_resto", json_data[modelo][prov].resto_como_suma);
-};
-
-var round = function(num) {
-    return Math.round(num * 100) / 100;
+var map_data = [];
+var stops = [];
+var colorAxis = {};
+if(opcion == &quot;diferencia&quot;) {
+	for(i in data[modelo])
+        map_data.push({&quot;hc-key&quot;: keys[i], &quot;value&quot;: round(data[modelo][i].prov[cand_desde][1]-data[modelo][i].prov[cand_desde][0])});
+	stops = [[0, '#0000FF'], [0.5, '#FFFFFF'], [1, '#FFFF00']];
+	colorAxis = {min: -100, max: 100, stops: stops};
+} else {
+	for(i in data[modelo])
+        map_data.push({&quot;hc-key&quot;: keys[i], &quot;value&quot;: data[modelo][i].prov[cand_desde][cand_hacia]});
+	if(cand_hacia == 0)
+        stops = [[0, '#FFFFFF'], [1, '#0000FF']];
+	else if(cand_hacia == 1)
+        stops = [[0, '#FFFFFF'], [1, '#FFFF00']];
+	else
+        stops = [[0, '#FFFFFF'], [1, '#000000']];
+	colorAxis = {min: 0, max: 100, stops: stops};
 }
 
-var main = function(data) {
-    json_data = data;
+var data_bubble = [];
+for(i in res_pri)
+	data_bubble.push({
+        x: json_data[modelo][i].prov[cand_desde][0],
+        y: json_data[modelo][i].prov[cand_desde][1],
+        nvb: json_data[modelo][i].prov[cand_desde][2],
+        z: res_pri[i][cand_desde],
+        name: keys[i].substring(3,5).toUpperCase(),
+        nombre: provs[i],
+        color: (res_seg[i][1]&gt;res_seg[i][0] ? &quot;#FFFF00&quot; : &quot;#008ae5&quot;)
+	});
+var bubble_ = bubble(data_bubble);
 
-    fill_tables();
-
-    var map_data = [];
-    var stops = [];
-    var colorAxis = {};
-    if(opcion == "diferencia") {
-        for(i in data[modelo])
-            map_data.push({"hc-key": keys[i], "value": round(data[modelo][i].prov[cand_desde][1]-data[modelo][i].prov[cand_desde][0])});
-        stops = [[0, '#0000FF'], [0.5, '#FFFFFF'], [1, '#FFFF00']];
-        colorAxis = {min: -100, max: 100, stops: stops};
-    } else {
-        for(i in data[modelo])
-            map_data.push({"hc-key": keys[i], "value": data[modelo][i].prov[cand_desde][cand_hacia]});
-        if(cand_hacia == 0)
-            stops = [[0, '#FFFFFF'], [1, '#0000FF']];
-        else if(cand_hacia == 1)
-            stops = [[0, '#FFFFFF'], [1, '#FFFF00']];
-        else
-            stops = [[0, '#FFFFFF'], [1, '#000000']];
-        colorAxis = {min: 0, max: 100, stops: stops};
-    }
-
-    var data_bubble = [];
-    for(i in res_pri)
-        data_bubble.push({
-            x: json_data[modelo][i].prov[cand_desde][0],
-            y: json_data[modelo][i].prov[cand_desde][1],
-            nvb: json_data[modelo][i].prov[cand_desde][2],
-            z: res_pri[i][cand_desde],
-            name: keys[i].substring(3,5).toUpperCase(),
-            nombre: provs[i],
-            color: (res_seg[i][1]>res_seg[i][0] ? "#FFFF00" : "#008ae5")
-        });
-    var bubble_ = bubble(data_bubble);
-
-    var mapa_ = mapa(map_data, cands_pri[cand_desde], colorAxis);
-};
-
-var restart = function() {
-    if(json_data) main(json_data);
-    else $.getJSON("/json/ei_prov.json", main);
-};
-
-restart();
-
-});
-</script>
-</div>
-
+var mapa_ = mapa(map_data, cands_pri[cand_desde], colorAxis);
+</code></pre>
+<p>};</p>
+<p>var restart = function() {
+if(json_data) main(json_data);
+else $.getJSON(&quot;/json/ei_prov.json&quot;, main);
+};</p>
+<p>restart();</p>
+<p>});
+<!-- raw HTML omitted --></p>
+<!-- raw HTML omitted -->
             <ul class="share-buttons">
     <li></li>
     <li>
@@ -442,7 +368,6 @@ restart();
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://juandodyk.github.io/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
