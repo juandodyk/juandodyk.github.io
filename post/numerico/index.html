@@ -7,17 +7,15 @@
         <meta name="author">
         <meta name="description" content="Blog de Juan Dodyk.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.82.1" />
-          <link href="http://juandodyk.github.io/post/index.xml" rel="alternate" type="application/rss+xml" title="Juan Dodyk" />
-          <link href="http://juandodyk.github.io/post/index.xml" rel="feed" type="application/rss+xml" title="Juan Dodyk" />
+        <meta name="generator" content="Hugo 0.83.1" />
+        
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://juandodyk.github.io/css/styles.css">
         <link rel="icon" href="http://juandodyk.github.io/favicon.ico">
         <link rel="apple-touch-icon" href="http://juandodyk.github.io/apple-touch-icon.png" />
         <link rel="stylesheet" href="http://juandodyk.github.io/css/highlightjs/monokai.css">
-        
-
         <script src="http://juandodyk.github.io/js/vendor/modernizr-2.8.0.min.js"></script>
+        
         <style>
         .site-header h2 .logo {
         background: url(http://juandodyk.github.io/img/anr.jpg) no-repeat 0 0;
@@ -31,12 +29,8 @@
          z-index: -1;
         }
         </style>
-    
-
     </head>
     <body>
-    
-
         
         
 
@@ -44,20 +38,108 @@
 <div class="container clearfix">
     <main role="main" class="content">
         <article class="post">
-            <a class="btn" href="http://juandodyk.github.io/" title="">&laquo; </a>
+            <a class="btn home" href="http://juandodyk.github.io/" title="">&laquo; </a>
             
 <h1><a href="http://juandodyk.github.io/post/numerico/" title="Apunte: Elementos de cálculo numérico">Apunte: Elementos de cálculo numérico</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.06.25">2016.06.25</time>
-&middot; 
+
+    &middot; 
+        
+        <a href="http://juandodyk.github.io/tags/matem%C3%A1tica">matemática</a>
+        
     
-    <a href="http://juandodyk.github.io/tags/matem%c3%a1tica">matemática</a>
-    
-    
+
 </span>
 </footer>
 
-            <!-- raw HTML omitted -->
+            <p>$$\def\lim{\mathop{\text{lím}}\limits}
+\def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\text{ínf}}\limits}
+\def\max{\mathop{\text{máx}}\limits}
+\def\min{\mathop{\text{mín}}\limits}
+\def\limsup{\mathop{\text{lím},\text{sup}}\limits}
+\def\liminf{\mathop{\text{lím},\text{ínf}}\limits}
+\def\varlimsup{\mathop{\overline{\text{lím}}}\limits}
+\def\varliminf{\mathop{\underline{\text{lím}}}\limits}
+\def\sen{\mathop{\mathrm{sen}}}
+\def\ord{\mathop{\mbox{\rm ord}}}
+\def\sig{\mathop{\text{sig}}}
+\def\adj{\mathop{\mbox{\rm adj}}}
+\def\Im{\mathop{\mathrm{Im}}}
+\def\im{\mathop{\mathrm{im}}}
+\def\coker{\mathop{\mathrm{coker}}}
+\def\codim{\mathop{\mathrm{codim}}}
+\def\Hom{\mathop{\mathrm{Hom}}}
+\def\Nu{\mathop{\mathrm{Nu}}}
+\def\Dom{\mathop{\mathrm{Dom}}}
+\def\mcm{\mathop{\mathrm{mcm}}}
+\def\mcd{\mathop{\mathrm{mcd}}}
+\def\Obj{\mathop{\mathrm{Obj}}}
+\def\End{\mathop{\mathrm{End}}}
+\def\Aut{\mathop{\mathrm{Aut}}}
+\def\Gal{\mathop{\mathrm{Gal}}}
+\def\car{\mathop{\mathrm{car}}}
+\def\Spec{\mathop{\mathrm{Spec}}}
+\def\nil{\mathop{\mathrm{nil}}}
+\def\ann{\mathop{\mathrm{ann}}}
+\def\Tr{\mathop{\mathrm{Tr}}}
+\def\Res{\mathop{\mathrm{Res}}}
+\def\dive{\mathrel{||}}
+\def\ldot{\mathrel{.}}
+\def\symdiff{\mathrel{\triangle}}
+\def\vacio{\varnothing}
+\def\blacksquare{\hbox{\vrule width 5pt height 10pt depth 0pt}}
+\def\qed{\ \ \ \hbox{}\nolinebreak $\blacksquare$ \par{}\medskip}
+\def\multint{\int!!\cdot!\cdot!\cdot!!\int}
+\newcommand{\pila}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\newcommand{\comb}[2]{\binom{#1}{#2}}
+\newcommand{\parti}[1]{\frac{\partial}{\partial{#1}}}
+\newcommand{\partii}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\def\syss{\Leftrightarrow}
+\def\then{\Rightarrow}
+\def\tri{\bigtriangleup}
+\def\medio{\textstyle{\frac12}}
+\def\ms{\medskip}
+\def\mm{\mathrm}
+\def\ni{\noindent}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\flecha{\mathop{\to}\limits}
+\def\longflecha{\mathop{\longrightarrow}\limits}
+\def\longinvflecha{\mathop{\longleftarrow}\limits}
+\def\1{\mathbbm{1}}
+\def\Re{\mathop{\mm{Re}}}
+\def\ext{\mathop{\mm{ext}}}
+\def\co{\mathop{\mm{co}}}
+\def\pr{\mathop{\mm{pr}}}
+\def\id{\mm{id}}
+\def\ind{\mathop{\mm{ind}}}
+\def\rg{\mathop{\mm{rg}}}
+\def\GL{\mm{GL}}
+\def\cte{\mm{cte}}
+\def\ev{\mm{ev}}
+%Cosos que uso:
+% \smallsetminus es el \ de conjuntos
+% \leqq, \geqq, \lneqq, \gneqq, \subset, \supset, \subsetneqq, \supsetneqq
+% \overline, \hat, \underbrace, \overbrace
+% \rtimes, \ltimes producto semidirecto
+% \coprod \amalg
+% \hookrightarrow \twoheadrightarrow \dashrightarrow \leadsto
+\def\menos{\smallsetminus}
+\def\cdtos{\cdots}
+\def\bl{\as\begin{leftbar}}
+\def\el{\end{leftbar}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}}
+\def\FF{\mathcal{F}}
+\def\PP{\mathcal{P}}
+\def\E{\mm{E}}
+\def\Var{\mm{Var}}
+\def\Cond{\mm{Cond}}$$</p>
 <h2 id="punto-flotante">Punto flotante</h2>
 <p>Los <em>números de máquina</em> son de la forma <code>$0,a_1a_2\ldots a_m\cdot B^l=q\cdot B^l$</code>, donde <code>$a_1\neq0$</code>, <code>$a_i\in\{0,\ldots,B-1\}$</code>, $B$ es la base y <code>$-M_1\leqq l\leqq M_2$</code>. Dado <code>$x=0,a_1a_2\ldots\cdot B^l\in\R$</code> definimos el truncado <code>$x^*=0,a_1a_2\ldots a_m \cdot B^l$</code>; vale <code>$\frac{|x-x^*|}{|x|}\leqq B^{-m+1}$</code>. El redondeo cumple <code>$\frac{|x-x^*|}{|x|}\leqq \frac12B^{-m+1}$</code>. Tenemos pues <code>$x^*=(1+\delta)x$</code>, con <code>$|\delta|\leqq\epsilon=\frac12B^{-m+1}$</code>, donde $\epsilon$ se llama <em>$\epsilon$ de máquina</em>; es el menor número tal que $(1+\epsilon)^*\neq 1$. Sumar números muy distintos en magnitud es malo; restar números muy parecidos también; la mejor manera de sumar muchos números es de menor a mayor.</p>
 <h2 id="normas-matriciales">Normas matriciales</h2>
@@ -141,10 +223,7 @@
 </ul>
 
         </article>
-        <div class="comments">
-            <h3></h3>
-            
-        </div>
+        
     </main>
     <aside class="author">
   <img class="profile-image" src="http://juandodyk.github.io/img/yo.jpg" alt="Juan Dodyk" />
@@ -154,7 +233,7 @@
   <p class="link"></p>
   <ul class="social">
     
-<li><a href="//twitter.com/tuvedengueyque" class="icon-twitter" target="_blank" title="Twitter"></a></li>
+<li><a href="//twitter.com/jdodyk" class="icon-twitter" target="_blank" title="Twitter"></a></li>
 
 
 
@@ -181,7 +260,6 @@
 
   </ul>
   <br><br>
-  <div id="container" style="height: 800px"></div>
 </aside>
 
 </div>
@@ -189,13 +267,46 @@
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://juandodyk.github.io/post/index.xml" title="RSS"></a>
+        <p>&copy; 2021 &middot; Powered by <a href="http://gohugo.io">Hugo</a>.</p>
   </div>
 </footer>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/juandodyk.github.io\/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script>window.jQuery || document.write('<script src="http:\/\/juandodyk.github.io\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
 <script src="http://juandodyk.github.io/js/plugins.js"></script>
+
+
+
 
 </body>
 </html>

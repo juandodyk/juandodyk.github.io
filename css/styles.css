@@ -347,18 +347,13 @@ optgroup {
 /**
  * Remove most spacing between table cells.
  */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
 
-  table {
-      border-collapse: collapse;
-      margin-left: auto;
-    margin-right: auto;
-    }
-
-    table td,
-    table th {
-      padding: 5px;
-      border: 1px solid lightgray;
-    }
+td,
+th {
+  padding: 0; }
 
 @font-face {
   font-family: 'fontello';
@@ -527,13 +522,19 @@ hr {
   color: #fff;
   text-align: center;
   position: relative;
-  height: 400px;
+  width: 100%;
+  display: table;
   transition: all 0.3s ease; }
+
+.site-header div {
+  display: table-cell;
+  vertical-align: middle;
+}
 
 .site-header h2 {
   margin: 0;
   font-size: 74px;
-  line-height: 400px;
+  vertical-align: middle;
   font-weight: 500;
 }
 
@@ -660,9 +661,6 @@ hr {
     border-color: #2a373d;
     color: #FFF; }
 
-.post .btn {
-  width: 140px; }
-
 .btn.btn-download {
   background-color: #2a373d;
   border-color: #2a373d;
@@ -672,6 +670,9 @@ hr {
     background-color: #49606a;
     border-color: #2a373d;
     color: #FFF; }
+
+.home {
+  width: 140px; }
 
 .newer {
   position: absolute;
@@ -754,8 +755,11 @@ body.post-template .site-header h2 .logo {
   .container {
     width: 100%; }
 
+  .site-header div {
+      height: 400px;
+  }
+
   .site-header h2 {
-      line-height: 400px;
       font-size: 56px;
   }
 }
@@ -776,8 +780,11 @@ body.post-template .site-header h2 .logo {
     height: 180px;
     transition: all 0.3s ease; }
 
+
+  .site-header div {
+    height: 180px;
+  }
   .site-header h2 {
-    line-height: 180px;
     font-size: 36px;
     background-size: 90px 74px; } }
 .ir {
@@ -801,7 +808,3 @@ body.post-template .site-header h2 .logo {
 
 .clearfix:after {
   clear: both; }
-
-.highlight {
-  color: #ddd;
-}
