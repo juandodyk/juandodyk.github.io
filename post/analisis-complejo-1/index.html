@@ -53,7 +53,89 @@
 </span>
 </footer>
 
-            <!-- raw HTML omitted -->
+            <p>$$\def\lim{\mathop{\text{lím}}\limits}
+\def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\text{ínf}}\limits}
+\def\max{\mathop{\text{máx}}\limits}
+\def\min{\mathop{\text{mín}}\limits}
+\def\limsup{\mathop{\text{lím},\text{sup}}\limits}
+\def\liminf{\mathop{\text{lím},\text{ínf}}\limits}
+\def\varlimsup{\mathop{\overline{\text{lím}}}\limits}
+\def\varliminf{\mathop{\underline{\text{lím}}}\limits}
+\def\sen{\mathop{\mathrm{sen}}}
+\def\ord{\mathop{\mbox{\rm ord}}}
+\def\sig{\mathop{\text{sig}}}
+\def\adj{\mathop{\mbox{\rm adj}}}
+\def\Im{\mathop{\mathrm{Im}}}
+\def\im{\mathop{\mathrm{im}}}
+\def\coker{\mathop{\mathrm{coker}}}
+\def\codim{\mathop{\mathrm{codim}}}
+\def\Hom{\mathop{\mathrm{Hom}}}
+\def\Nu{\mathop{\mathrm{Nu}}}
+\def\Dom{\mathop{\mathrm{Dom}}}
+\def\mcm{\mathop{\mathrm{mcm}}}
+\def\mcd{\mathop{\mathrm{mcd}}}
+\def\Obj{\mathop{\mathrm{Obj}}}
+\def\End{\mathop{\mathrm{End}}}
+\def\Aut{\mathop{\mathrm{Aut}}}
+\def\Gal{\mathop{\mathrm{Gal}}}
+\def\car{\mathop{\mathrm{car}}}
+\def\Spec{\mathop{\mathrm{Spec}}}
+\def\nil{\mathop{\mathrm{nil}}}
+\def\ann{\mathop{\mathrm{ann}}}
+\def\Tr{\mathop{\mathrm{Tr}}}
+\def\Res{\mathop{\mathrm{Res}}}
+\def\dive{\mathrel{||}}
+\def\ldot{\mathrel{.}}
+\def\symdiff{\mathrel{\triangle}}
+\def\vacio{\varnothing}
+\def\blacksquare{\hbox{\vrule width 5pt height 10pt depth 0pt}}
+\def\qed{\ \ \ \hbox{}\nolinebreak $\blacksquare$ \par{}\medskip}
+\def\multint{\int!!\cdot!\cdot!\cdot!!\int}
+\newcommand{\pila}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
+\newcommand{\comb}[2]{\binom{#1}{#2}}
+\newcommand{\parti}[1]{\frac{\partial}{\partial{#1}}}
+\newcommand{\partii}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\def\syss{\Leftrightarrow}
+\def\then{\Rightarrow}
+\def\tri{\bigtriangleup}
+\def\medio{\textstyle{\frac12}}
+\def\ms{\medskip}
+\def\mm{\mathrm}
+\def\ni{\noindent}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\flecha{\mathop{\to}\limits}
+\def\longflecha{\mathop{\longrightarrow}\limits}
+\def\longinvflecha{\mathop{\longleftarrow}\limits}
+\def\1{\mathbbm{1}}
+\def\Re{\mathop{\mm{Re}}}
+\def\ext{\mathop{\mm{ext}}}
+\def\co{\mathop{\mm{co}}}
+\def\pr{\mathop{\mm{pr}}}
+\def\id{\mm{id}}
+\def\ind{\mathop{\mm{ind}}}
+\def\rg{\mathop{\mm{rg}}}
+\def\GL{\mm{GL}}
+\def\cte{\mm{cte}}
+\def\ev{\mm{ev}}
+%Cosos que uso:
+% \smallsetminus es el \ de conjuntos
+% \leqq, \geqq, \lneqq, \gneqq, \subset, \supset, \subsetneqq, \supsetneqq
+% \overline, \hat, \underbrace, \overbrace
+% \rtimes, \ltimes producto semidirecto
+% \coprod \amalg
+% \hookrightarrow \twoheadrightarrow \dashrightarrow \leadsto
+\def\menos{\smallsetminus}
+\def\cdtos{\cdots}
+\def\bl{\as\begin{leftbar}}
+\def\el{\end{leftbar}}
+\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}}
+\def\FF{\mathcal{F}}$$</p>
 <h2 id="funciones-holomorfas-goursat-integrales-paramétricas">Funciones holomorfas, Goursat, integrales paramétricas</h2>
 <p>Damos a $\C$ la topología inducida por la norma $|x+yi|=\sqrt{x^2+y^2}$. Si $U\subset\C$ es abierto y $f:U\to\C$ es una función, decimos que es <em>holomorfa</em> si para todo $z\in U$ existe el límite $f'(z)=\lim_{h\to0}\frac{f(z+h)-f(z)}h$. Las holomorfas forman un álgebra $\HH(U)$. Vale la regla de la cadena <code>$(f\circ g)'(z)=f'(g(z))g'(z)$</code>. La función $f$ es holomorfa si y sólo si vista como $f(x+yi)=u(x,y)+v(x,y)i$, con <code>$u,v:\{(x,y)\in\R^2\mid x+yi\in U\}\to\R$</code>, vale que $u$ y $v$ son diferenciables y $\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}$ y $\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}$, las *ecuaciones de Cauchy-Riemann*. Defino $e^{x+yi}=e^x(\cos y+i\sen y)$, $\sen z=\frac{e^{iz}-e^{-iz}}{2i}$ y $\cos z=\frac{e^{iz}+e^{-iz}}2$; son holomorfas, $e^{z+w}=e^ze^w$, $\sen&rsquo;z=\cos z$ y $\cos&rsquo;z=-\sen z$.</p>
 <p>Si $U$ es abierto, $\gamma:[a,b]\to\C$ es $C^1$ a trozos y $f:U\to\C$ es continua, definimos <code>$\int_\gamma f=\int_a^b f(\gamma(t))\gamma'(t)\,dt$</code>. Es lineal y <code>$|\int_\gamma f|\leqq \max_{z\in\gamma}|f(z)|\int_a^b|\gamma'|$</code>. Si $F:U\to\C$ cumple $F'=f$, $\int_\gamma f=F(\gamma(b))-F(\gamma(a))$.</p>
