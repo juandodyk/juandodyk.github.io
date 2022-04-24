@@ -1,0 +1,148 @@
+---
+title: "Apunte: Elementos de cálculo numérico"
+description: ""
+date: 2016-06-25
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+## Punto flotante
+
+$\def\inf{\mathop{\text{inf}}\limits}\def\la{\langle}
+\def\ra{\rangle}\def\mm{\mathrm}\def\menos{\smallsetminus}
+\newcommand{\comb}[2]{\binom{#1}{#2}}\def\then{\Rightarrow}\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}}
+\def\FF{\mathcal{F}}
+\def\PP{\mathcal{P}}
+\def\E{\mm{E}}
+\def\Var{\mm{Var}}
+\def\Cond{\mm{Cond}}$Los *números de máquina* son de la forma $0,a_1a_2\ldots a_m\cdot B^l=q\cdot B^l$, donde $a_1\neq0$, $a_i\in\{0,\ldots,B-1\}$, $B$ es la base y $-M_1\leqq l\leqq M_2$. Dado $x=0,a_1a_2\ldots\cdot B^l\in\R$ definimos el truncado $x^*=0,a_1a_2\ldots a_m \cdot B^l$; vale $\frac{|x-x^*|}{|x|}\leqq B^{-m+1}$. El redondeo cumple $\frac{|x-x^*|}{|x|}\leqq \frac12B^{-m+1}$. Tenemos pues $x^*=(1+\delta)x$, con $|\delta|\leqq\epsilon=\frac12B^{-m+1}$, donde $\epsilon$ se llama *$\epsilon$ de máquina*; es el menor número tal que $(1+\epsilon)^*\neq 1$. Sumar números muy distintos en magnitud es malo; restar números muy parecidos también; la mejor manera de sumar muchos números es de menor a mayor.
+
+## Normas matriciales
+
+**Equivalencia de normas.** Las normas en $\R^n$ son equivalentes, es decir, dadas $\|{\cdot}\|$, $\|{\cdot}\|'$ hay $K_1,K_2>0$ con $K_1\|{\cdot}\|'\leqq\|{\cdot}\|\leqq K_2\|{\cdot}\|'$.
+
+*Prueba.* Basta probarlo para $\|x\|'=\|x\|_2=\sqrt{\sum_{i=1}^nx_i^2}$; tenemos $\|\sum_{i=1}^nx_ie_i\|\leqq\sum_{i=1}^n|x_i|\|e_i\|\leqq \sqrt{\sum_{i=1}^n\|e_i\|}\|x\|_2$ por Cauchy-Schwarz; la otra por el absurdo: si no, para todo $n$ hay $x_n$ con $\|x_n\|<\frac{1}{n}\|x_n\|_2$; podemos tomar $\|x_n\|_2=1$ y $\|x_n\|<\frac{1}{n}$; luego hay una subsecuencia con $\|x_{n_k}-x\|_2\to0$, luego $\|x_{n_k}-x\|\to0$, $\|x\|=0$, $x=0$, absurdo.&#8718;
+
+**Normas matriciales.** Dada una norma $\|{\cdot}\|$ de $\R^n$ obtenemos una norma para $\R^{n\times n}$ dada por $\|A\|=\max_{\|x\|=1}\|Ax\|$, y tenemos $\|Ax\|\leqq \|A\|\|x\|$ y $\|AB\|\leqq\|A\|\|B\|$. Vale $\|A\|_\infty=\max_i\left\{\sum_{j=1}^n|A_{ij}|\right\}$, $\|A\|_1=\max_j\left\{\sum_{i=1\vphantom{j}}^n|A_{ij}|\right\}$, $\|A\|_2=\sqrt{\rho(A^tA)}$, donde $\rho(A)=|\lambda_{\max}|$ es el *radio espectral*, con $\lambda_{\max}\in\C$ el autovalor de norma máxima.
+
+*Prueba.* Sea $v_1,\ldots,v_n$ una base ortonormal de autovectores de $A^tA$ con autovalores $\lambda_1,\ldots,\lambda_n$. Dada $x=\sum_{i=1}^na_iv_i$ tenemos $\|Ax\|_2^2=\la Ax,Ax\ra=\la A^tAx,x\ra=$ $\bigl\langle\sum_{i=1}^n\lambda_ia_iv_i,\sum_{i=1}^na_iv_i\bigl\rangle=\sum_{i=1}^n\lambda_ia_i^2\leqq |\lambda_{\max}|\|x\|_2^2$, con igualdad si $x=v_{\max}$, luego $\|A\|_2=\sqrt{\rho(A^tA)}$.&#8718;
+
+**Número de condición.** Si $A\in\R^{n\times n}$ es inversible definimos $\Cond(A)=\|A\|\|A^{-1}\|$. Vale $\Cond(A)\geqq 1$ y $\frac1{\Cond(A)}=\inf_{\text{$B$ singular}}\frac{\|A-B\|}{\|A\|}$. Aplicación: si $Ax=b$ y $A\tilde x=\tilde b$, $\frac{\|\tilde x-x\|}{\|x\|}\leqq\Cond(A)\frac{\|\tilde b-b\|}{\|b\|}$.
+
+*Prueba.* Si $B$ es singular hay $x\neq0$ con $Bx=0$; vale $\|x\|=\|A^{-1}(A-B)x\|$ luego $1\leqq\|A^{-1}\|\|A-B\|$ y $\frac1{\Cond(A)}\leqq \frac{\|A-B\|}{\|A\|}$. Ahora tomo $y$ con $\|A^{-1}y\|=\|A^{-1}\|\|y\|$ y $x$ con $Ax=y$, $\|y\|=\frac{1}{\|A^{-1}\|}$ y $\|x\|=1$; tomo $z$ tal que $z^tu\leqq 1$ si $\|u\|=1$ pero $z^tx=1$ (hiperplano que pasa por $x$ y deja a la bola unitaria de un lado); $B=A-yz^t$ es singular porque $Bx=0$; $\|yz^tu\|\leqq\|y\|=\frac{1}{\|A^{-1}\|}$ si $\|u\|=1$ con igualdad si $u=x$, luego $\|A-B\|=\|yz^t\|=\frac1{\|A^{-1}\|}$.&#8718;
+
+**Radio espectral.** Dado $\epsilon>0$ hay una norma matricial $\|{\cdot}\|$ tal que $\rho(A)\leqq \|A\|\leqq \rho(A)+\epsilon$. Equivalen $A^n\to 0$ y $\rho(A)<1$. Además, $\|A^n\|^{\frac1n}\to\rho(A)$.
+
+*Prueba.* Primero, sea $v_1,\ldots,v_n\in\C^n$ una base que pone a $A$ en su forma de Jordan; multiplicando los $v_i$ por potencias de $\epsilon$ logramos que los números fuera de la diagonal sean $\epsilon$. Defino la norma $\|\sum_{i=1}^n a_iv_i\|=\max_i|a_i|$; vale $\|A\|\leqq \rho(A)+\epsilon$ en esa norma. Segundo, si $\rho(A)<1$ con $\epsilon$ chico obtengo $\|A\|<1$, luego $\|A^n\|\leqq\|A\|^n\to0$; si $A^n\to 0$, sea $v_i$ con $Av_i=\lambda_{\max}v_i$; si $v_i=x+yi$, con $x,y\in\R^n$, $A^nv_i=A^nx+A^nyi\to0$, pero $\|A^nv_i\|=\rho(A)^n$, luego $\rho(A)^n\to0$ y $\rho(A)<1$. Tercero, de $\|A\|\leqq \rho(A)+\epsilon$ obtengo $\|A^n\|^{\frac1n}\leqq \rho(A)+\epsilon$; por otro lado $\rho(A)^n\leqq \rho(A^n)\leqq\|A^n\|$ luego $\rho(A)\leqq \|A^n\|^{\frac1n}\leqq \rho(A)+\epsilon$ si $n$ grande.&#8718;
+
+## Matrices
+
+**Descomposición LU.** Dada $A\in\R^{n\times n}$ hay una matriz de permutación $P$ con $PA=LU$, $L$ diagonal inferior y con 1 en la diagonal y $U$ diagonal superior.
+
+**Descomposición de Cholesky.** Dada $A\in\R^{n\times n}$ simétrica y definida positiva (o sea $\la x,Ax\ra>0$ si $x\neq0$) existe una única $L$ diagonal inferior con elementos de la diagonal positivos tal que $A=LL^t$.
+
+*Prueba.* Vale $A_{ij}=\sum_{k=1}^{\min\{i,j\}}L_{ik}L_{jk}$. Si tenemos los $L_{ij}$ con $j< k$, tenemos $A_{kk}=\sum_{j=1}^k L_{kj}^2$, luego $L_{kk}^2=A_{kk}-\sum_{i=1}^{k-1}L_{kj}^2$. Veamos que podemos tomar una raíz positiva: si no, tomamos raíz $L_{kk}\in\C$; tenemos que $A_k,L_k\in\R^{k\times k}$, con $A_{kij}=A_{ij}$ y $L_{kij}=L_{ij}$ cumplen $A_k=L_kL_k^t$, luego $0<|A_k|=|L_k|^2=L_{11}^2\ldots L_{kk}^2$ (por Sylvester), con lo que $L_{kk}^2>0$. Faltarían los $L_{ik}$ con $i>k$; ahora $A_{ik}=\sum_{j=1}^{k}L_{ij}L_{kj}$, luego $L_{ik}=\frac1{L_{kk}}(A_{ik}-\sum_{j=1}^{k-1}L_{ij}L_{kj})$.&#8718;
+
+**Descomposición en valores singulares (SVD).** Dada $A\in\R^{n\times m}$ existen matrices ortogonales $U\in\R^{n\times n}$, $V\in\R^{m\times m}$ y $\Sigma\in\R^{n\times m}$ diagonal tales que $A=U\Sigma V$ y si $\sigma_1,\ldots,\sigma_r$ son los valores de la diagonal de $\Sigma$ entonces $\sigma_1 \geqq \cdots \geqq \sigma_r \geqq 0$. Los números positivos $\sigma_i$ se llaman *valores singulares* de $A$, son tantos como el rango de $A$, y están determinados: son las raíces cuadradas de los autovalores no nulos de $A^tA$.
+
+**Teorema de Eckart-Young.** Si $A=U\Sigma V$ es la SVD de $A$ y $k\leqq r$, donde $r=\text{rg}(A)$, la matriz $A_k=U\Sigma_k V$ que viene de llenar con ceros $\Sigma$ a partir del valor singular $k+1$ es la matriz de rango $k$ que minimiza $\|A-A_k\|$ tanto en norma matricial $\|\cdot\|_2$ como en norma Frobenius. ([*Prueba.*](https://en.wikipedia.org/wiki/Low-rank_approximation))
+
+**Componentes principales.** Si $X\in\R^{n\times m}$ se interpreta como observaciones de $m$ variables (columnas) sobre $n$ unidades (filas), las variables están centradas ($\sum_{i=1}^n A_{ij}=0$ para $j=1,\ldots,m$), su SVD es $X=U\Sigma V$, $k\leqq m$ y $V_k\in\R^{k\times m}$ es $V$ con sólo sus primeras $k$ filas, $Y=XV_k^t$ es una representación de $X$ con sólo $k$ variables que minimiza el error de reconstrucción $\|X-YV\|_F$ entre transformaciones lineales. Además, las columnas (variables) de $Y$ no están correlacionadas; se denominan las $k$ *componentes principales* de $X$. La varianza total de $X$ es $\|X\|_F=\sum_{i=1}^r \sigma_i^2$, por lo que la proporción de la varianza que captura $Y$ es $\frac{\|Y\|_F}{\|X\|_F}=\frac{\sum_{i=1}^k \sigma_i^2}{\sum_{i=1}^r \sigma_i^2}$.
+
+**Problema de Procrustes ortogonal.** Si $A,B\in\R^{n\times m}$ buscamos $R\in\R^{n\times n}$ ortogonal tal que minimice $\|RA-B\|_F$; la solución es $R=UV$, donde $BA^t=U\Sigma V$ es la SVD.
+
+*[Prueba](https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem).* Primero notamos que si $X,Y\in\R^{n\times m}$, podemos definir $\langle X,Y\rangle = \sum_{i=1}^n \sum_{j=1}^m X_{ij}Y_{ij},$ de manera que $\|X\|_F^2=\langle X,X\rangle,$ y se tiene $\langle X,Y\rangle=\text{tr}(X^tY);$ es bilineal, simétrico y $\langle XY,Z\rangle=\langle Y,X^tZ\rangle=\langle X,ZY^t\rangle.$ De aquí que minimizar $\|RA-B\|_F^2$ con $R^tR=I$ es maximizar $\langle RA,B\rangle=\langle R,BA^t\rangle=\langle R,U\Sigma V\rangle=\langle U^tRV^t,\Sigma\rangle.$ Si $S=U^tRV^t$, $S^tS=I$, luego $\langle S, \Sigma\rangle$ se maximiza con unos en la diagonal de $S$ y ceros afuera, lo que da $R=UV$.&#8718;
+
+**Métodos de Jacobi y Gauss-Seidel.** Dada $A\in\R^{n\times n}$ escribimos $A=L+D+U$, con $L_{ij}=0$ si $i\leqq j$, $D$ diagonal y $U_{ij}=0$ si $i\geqq j$. Queremos resolver $Ax=b$. Métodos iterativos: dado $x^0$ ponemos $x^{k+1}=Bx^k+c$, asumiendo $x=Bx+c$. Jacobi: $x^{k+1}=-D^{-1}(L+U)x^k+D^{-1}b$; Gauss-Seidel: $x^{k+1}=-(D+L)^{-1}Ux^k+(D+L)^{-1}b$. O sea Jacobi es $x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j\neq i}a_{ij}x^k_j)$ y Gauss-Seidel, $x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j<i}a_{ij}x^{k+1}_j-\sum_{j>i}a_{ij}x^k_j)$. El error $e_k=x^k-x$ cumple $e_{k+1}=Be_k=B^ke_1$, luego el método converge para todo punto inicial si y sólo si $B^k\to0$, es decir, sii $\rho(B)<1$. Si $A$ es *estrictamente diagonal dominante*, es decir, si $|a_{ii}|>\sum_{j\neq i}|a_{ij}|$ para $i=1,\ldots,n$, entonces tanto Jacobi como Gauss-Seidel convergen. Si $A$ es simétrica y definida positiva entonces Gauss-Seidel converge. Si $A$ es *tridiagonal* ($A_{ij}=0$ si $|i-j|>1$) entonces Jacobi converge si y sólo si Gauss-Seidel converge, y $\rho(B_{GS})=\rho(B_J)^2$.
+
+*Prueba.* Primero, que GS converge si $A$ cumple $|a_{ii}|>\sum_{j\neq i}|a_{ij}|$: $B=-(D+L)^{-1}U$ cumple $B_{ij}=-\frac1{A_{ii}}(A_{ij}-\sum_{k=1}^{i-1}A_{ik}B_{kj})$ si $i< j$ y 0 si no; queremos ver que $\|B\|_\infty=\max_{i}\{\sum_{j>i}|B_{ij}|\}<1$; supongamos que sabemos que $\sum_{j>k}|B_{kj}|<1$ para $k< i;$ $\sum_{j>i}|B_{ki}|\leqq\frac1{|A_{ii}|}\sum_{j>i}(|A_{ij}|+\sum_{k< i}|A_{ik}||B_{kj}|)=\frac1{|A_{ii}|}(\sum_{j>i}|A_{ij}|+\sum_{k<i}|A_{ik}|\sum_{j>i}|B_{kj}|)\leqq$ $\frac1{|A_{ii}|}(\sum_{j>i}|A_{ij}|+\sum_{k<i}|A_{ik}|)<1$ y vale para $i$, luego $\|B\|_\infty<1$. Segundo, que GS converge si $A$ es simétrica y definida positiva: sea $\lambda\in\C$, $x\in\C^n$, $x\neq0$, con $Bx=\lambda x$; es $-L^tx=\lambda(D+L)x$, $Ax=(1-\lambda)(D+L)x$; tenemos $\frac{1}{1-\lambda}=\frac{x^*(D+L)x}{x^*Ax}$ y conjugando $\frac{1}{1-\overline\lambda}=\frac{x^*(D+L^*)x}{x^*Ax}$; sumo: $2\Re(\frac{1}{1-\lambda})=1+\frac{x^*Dx}{x^*Ax}>1$, lo que da $|\lambda|<1$. Tercero, si $A$ es tridiagonal vale $|A|=|D+\alpha^{-1}L+\alpha U|$ si $\alpha\neq0$: $A+\alpha^{-1} L+\alpha U$ es $A$ en la base $v_1,\alpha v_2,\ldots,\alpha^{n-1}v_n$; con eso se ve que si $\lambda\neq0$, $\lambda^2$ es autovalor de $B_{GS}$ sii $\lambda$ es autovalor de $B_J$.&#8718;
+
+## Raíces
+
+**Punto fijo.** Dada $f:I\to I$, con $I=[a,b]$ intervalo, se busca $r$ con $f(r)=r$. El algoritmo: tomar $x_0$ y luego $x_n=f(x_{n-1})$. Si $|f'|\leqq\lambda<1$ converge y se tiene $|x_n-r|\leqq \frac{\lambda^n}{1-\lambda}|x_1-x_0|$.
+
+*Prueba.* $|x_n-r|=|f(x_{n-1})-f(r)|\leqq \lambda|x_{n-1}-r|\leqq \cdots\leqq \lambda^n|x_0-r|$. Por otro lado $|x_1-x_0|=|f(x_0)-x_0|\geqq |x_0-f(r)|-|f(r)-f(x_0)|\geqq |x_0-r|-\lambda|x_0-r|=(1-\lambda)|x_0-r|$.&#8718;
+
+**Newton-Raphson.** Dada $f:I\to\R$ consiste en buscar una raíz $r$ como punto fijo de $g(x)=x-\frac{f(x)}{f'(x)}$. Si $f''$ está acotada y $f'(r)\neq0$, hay un entorno de $r$ en el que el algoritmo converge con orden 2, es decir $\frac{|e_{n+1}|}{|e_n|^2}$ está acotado, con $e_n=x_n-r$. Si $f''>0$ converge partiendo de cualquier punto.
+
+*Prueba.* Por Taylor $\left|\frac{e_{n+1}}{e_n^2}\right|=\frac12\frac{|f''(\xi)|}{|f'(x_n)|}$, que está acotado, lo que prueba lo primero. La convexidad $f''>0$ da por Taylor que si $f$ decrece en $I_1=(-\infty,v)$ y crece en $I_2=(v,\infty)$, si $x_0\in I_i$, $x_n\in I_i$ para todo $n$, y $x_n$ es creciente en $I_1$ y decreciente en $I_2$, por lo que converge en ambos casos.&#8718;
+
+**Secante.** Algoritmo: $x_{n+1}=x_n-f(x_n)\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}$. Si $r$ es raíz, $f''$ acotado y $f'(r)\neq0$, hay un entorno de $r$ en el que converge con orden $p>0$, $p^2=p+1$, es decir, $\frac{|e_{n+1}|}{|e_n|^p}$ está acotado.
+
+*Prueba.* Se ve que $e_{n+1}=e_ne_{n-1}\frac{f[x_n,r,x_{n-1}]}{f[x_n,x_{n-1}]}=\frac12\frac{f''(\eta_n)}{f'(\xi_n)}e_ne_{n-1}$. Sea $y_n=\frac{|e_{n+1}|}{|e_n|^p}$, $c_n=\frac12\frac{f''(\eta_n)}{f'(\xi_n)}$ y $c=\frac12\frac{f''(r)}{f'(r)}$. Tenemos $y_n=|c_n|y_{n-1}^{1-p}$; si $c_n\to c\neq0$ se ve que $|y_n|\to |c|^{1/p}$.&#8718;
+
+## Interpolación polinómica
+
+**Forma de Newton.** Defino $f[x_0]=f(x_0)$ y $f[x_0,\ldots,x_n]=\frac{f[x_0,\ldots,x_{n-1}]-f[x_1,\ldots,x_n]}{x_0-x_n}$. Defino $\PP_n$ como el conjunto de polinomios de grado a lo sumo $n$. El $p_n\in\PP_n$ que interpola a $f$ en $x_0,\ldots,x_n$ es $$p_n(x)=f(x_0)+f[x_0,x_1](x-x_0)+\cdots+f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})$$
+
+y vale $f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)$ para todo $x$. Si $f\in C^n[a,b]$ hay $\xi$ con $f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}$.
+
+*Prueba.* Lo primero es obvio por inducción, probando además que $f[x_0,\ldots,x_n]$ es simétrica. Para lo segundo $F(x)=f(x)-p_{n-1}(x)-f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})$ tiene $n+1$ raíces $x_0,\ldots,x_n$, luego hay $\xi$ con $F^{(n)}(\xi)=0$, es decir, $f^{(n)}(\xi)-f[x_0,\ldots,x_n]n!=0$.&#8718;
+
+**Interpolación de Hermite.** Sea $f\in C^n(I)$. La función $f[x_0,\ldots,x_n]:I^n\menos\bigcup_{i\neq j}\{x_i=x_j\}\to\R$ se puede extender a una función continua sobre $I^n$ calculada ordenando $(x_0,\ldots,x_n)$ y usando la fórmula recursiva con base $f[\underbrace{x,\ldots,x}_{\text{$k+1$ veces}}]=\frac{f^{(k)}(x)}{k!}$. Con eso dados puntos $x_0,\ldots,x_n$ obtenemos $p_n\in\PP_n$ por la fórmula de Newton y es el único que satisface $p_n^{(j)}(x)=f^{(j)}(x)$ si $x$ aparece $j+1$ veces. Sigue valiendo $f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)$ y $f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}$.
+
+*Prueba.* Que $p_n$ cumple la condición se ve reordenando $(x_i)$ para que los $x$ estén al principio (se ve que el $p_n$ obtenido es el mismo perturbando los $(x_i)$ para que sean distintos). Que es único: si $q_n$ cumple $q_n(x)-p_n(x)=q_n[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)$ pero $q_n[x_0,\ldots,x_n,x]=\frac{q_n^{(n+1)}(\xi)}{(n+1)!}=0$ (porque $q_n\in\PP_n$), entonces $q_n=p_n$.&#8718;
+
+**Polinomios de Chebyshev.** Sea $T_n(x)=\cos(n\cos^{-1}(x))$, donde $\cos^{-1}:[-1,1]\to[0,\pi]$. Restringido a $[-1,1]$ está en $\PP_n$, sigue la recursión $T_{n+1}=2xT_n-T_{n-1}$, $T_1=x$, $T_0=1$, tiene coeficiente principal $2^{n-1}$, tiene $n$ raíces distintas en $[-1,1]$, $|T_n|\leqq1$ en $[-1,1]$ y lo alcanza en $n+1$ puntos. Si $P$ es un polinomio mónico de grado $n$ entonces $\|P\|_{L^\infty[-1,1]}\geqq \frac1{2^{n-1}}$. Por lo tanto la mejor interpolación sobre $n$ puntos en $[-1,1]$ es sobre las raíces de $T_{n+1}$. Esto se lleva a $[a,b]$ tomando $\tilde T_n(x)=T_n(\frac{2x-a-b}{b-a})$. Se obtiene $\|f-p_n\|_{L^\infty[a,b]}\leqq \frac{\|f^{(n+1)}\|_{L^\infty[a,b]}}{2^{2n+1}(n+1)!}(b-a)^{n+1}$.
+
+*Prueba.* Lo primero es claro. Supongamos que hay $P$ mónico de grado $n$ con $|P(x)|<\frac1{2^{n-1}}$ para todo $x\in[-1,1]$. Sea $W_n=\frac1{2^{n-1}}T_n$ y $-1=y_0<y_1<\cdots<y_n=1$ con $|W_n(y_i)|=\frac1{2^{n-1}}$, alternando de signo. Entonces $(P(y_i)-W_n(y_i))(P(y_{i+1})-W_n(y_{i+1}))<0$, luego $P-W_n$ tiene $n$ raíces, pero grado a lo sumo $n-1$; luego es nulo y $P=W_n$, absurdo.&#8718;
+
+**Splines cúbicos.** Dada $f\in C[a,b]$ y $a=x_0<x_1<\cdots<x_n=b$ hay una única $S\in C^2[a,b]$ tal que $S|_{[x_i,x_{i+1}]}$ es cúbica, $S(x_i)=f(x_i)$ y $S''(x_0)=S''(x_n)=0$.
+
+## Cuadrados mínimos
+
+**Productos internos.** Sea $V$ un $\R$-espacio vectorial; un *producto interno* es una función bilineal $\langle{\cdot},{\cdot}\rangle:V^2\to\R$ simétrica tal que $\langle x,x\rangle\geqq0$, con igualdad sii $x=0$. Define una norma $\|x\|=\sqrt{\langle x,x\rangle}$. Vale Cauchy-Schwarz: $\langle x,y\rangle\leqq\|x\|\|y\|$, desigualdad triangular $\|x+y\|\leqq\|x\|+\|y\|$ y Pitágoras: $\|x+y\|^2=\|x\|^2+\|y\|^2$ si $\la x,y\ra=0$. Sea $S\subset V$ un subespacio, y $x\in V$; $y\in S$ minimiza $\|x-y\|$ sii para todo $s\in S$ vale $\langle x-y,s\rangle$; en ese caso $y$ es único. Si $S$ es finitamente generado se puede tomar una base ortonormal $v_1,\ldots,v_n$, con $\|v_i\|=1$ y $\la v_i,v_j\ra=0$ si $i\neq j$. En ese caso $y=\sum_{i=1}^n \la x,v_i\ra v_i$.
+
+*Prueba.* Si $y\in S$ hace a $\|x-y\|$ mínimo, $\|x-y+ts\|\geqq \|x-y\|$ para $s\in S$, $t\in\R$, luego $t^2\langle s,s\rangle+2t\langle x-y,s\rangle\geqq0$, imposible si $\langle x-y,s\rangle\neq0$; además hay igualdad sii $s=0$, lo que dice que $y$ es único. Si $\langle x-y,s\rangle=0$ para todo $s\in S$, $\|x-y+s\|^2=\|x-y\|^2+\|s\|^2\geqq\|x-y\|^2$ y $\|x-y\|$ es mínimo. Dado $S$ con base $\{u_1,\ldots,u_n\}$ hacemos Gram-Schmidt: ponemos $v_k=u_k-\sum_{i=1}^{k-1}\frac{\la u_k,v_i\ra}{\la v_i,v_i\ra}v_i$ y queda una base ortonormal $e_n=\frac1{\|v_n\|}v_n$.&#8718;
+
+**Regresión lineal.** Dado $y\in\R^n$ y $x\in\R^{n\times k}$ queremos $\beta\in\R^k$ tal que $\sum_{i=1}^n \left(y_i-\sum_{j=1}^k\beta_jx_{ij}\right)^2$ sea mínimo. Se da sii $x^tx\beta=x^ty$. Si las columnas de $x$ son independientes la solución es única: $\beta=(x^tx)^{-1}x^ty$.
+
+*Lema.* Si $A\in\R^{n\times k}, x\in\R^k, y\in\R^n$ entonces $\la Ax,y\ra=\la x,A^ty\ra$.
+
+*Prueba.* $S=\{x\beta\mid \beta\in\R^k\}$ es un subespacio; queremos $\beta$ con $\|y-x\beta\|$ mínimo; luego $\la y-x\beta,xs\ra=0$ para todo $s\in\R^k$, pero por el lema es $\la x^t(y-x\beta),s\ra=0$, o sea $x^tx\beta=x^ty$. Si las columnas de $x$ son independientes, $\beta\mapsto x\beta$ es inyectiva, luego $\beta$ es única; además $\la x^tx\beta,\beta\ra=\la x\beta,x\beta\ra$, luego $x^tx\beta=0\then \beta=0$ y $x^tx$ es inversible.&#8718;
+
+**Descomposición QR.** Si $A\in\R^{n\times k}$, sean $a_1,\ldots,a_k$ sus columnas; tomo $u_i=a_i-\sum_{j=1}^{i-1}\frac{\la a_i,u_j\ra}{\la u_j,u_j\ra}u_j$ y $e_i=\frac1{\|u_i\|}u_i$; se ve $a_i=\sum_{j=1}^i \la a_i,e_j\ra e_j$; luego $A=QR$ con $Q_{ij}=e_{ji}$ y $R=\la a_i,e_j\ra$, $Q$ ortogonal (o sea $Q^tQ=1$) y $R$ triangular superior.
+
+**Aproximación por polinomios.** Wierstrass: si $f\in C[0,1]$ hay una sucesión $p_n\in\PP_n$ que converge uniformemente: $p_n=\sum_{k=0}^n f\left(\frac kn\right)\comb{n}{k}x^k(1-x)^k$. Si $w\in C[0,1]$ es positiva, $C[0,1]$ tiene un producto interno $\la f,g\ra=\int_0^1 wfg$ y si $p_n^*$ es la proyección de $f$ en $\PP_n$ tenemos $\|f-p_n^*\|\to0$, y por lo tanto (Parseval) $\|f\|^2=\sum_{n=0}^\infty \la f, e_n\ra^2$ si $\{e_n\}$ es la base ortonormal de polinomios.
+
+*Prueba.* Sea $f\in C[0,1]$. Sea $x\in[0,1]$; dado $n$ sean $X_n$ variables aleatorias iid con $P(X_n=1)=x$, $P(X_n=0)=1-x$, y sea $X=\frac1n\sum_{i=1}^nX_i$. Vale $\E(X)=x$, $\Var(X)=\frac1nx(1-x)\leqq \frac1{4n}$, $P(X=\frac kn)=\comb{n}{k}x^k(1-x)^k$ para $k=0,\ldots,n$. Dado $\delta>0$ tenemos $P(|X-x|\geqq\delta)\leqq\frac{\Var(X)}{\delta^2}\leqq \frac1{4n\delta^2}$ por [Chebyshev](https://en.wikipedia.org/wiki/Chebyshev%27s_inequality). Dado $\epsilon>0$ hay $\delta>0$ con $|x-y|<\delta\then|f(x)-f(y)|<\epsilon$ si $x,y\in[0,1]$, luego $\E(|f(X)-f(x)|)=$$\E_{|X-x|<\delta}(|f(X)-f(x)|)+\E_{|X-x|\geqq\delta}(|f(X)-f(x)|)\leqq\epsilon+\frac{2\|f\|_\infty}{4n\delta^2}$. Luego $|\E(f(X))-\E(f(x))|\leqq \E(|f(X)-f(x)|)\to0$ uniformemente cuando $n\to\infty$; ahora $\E(f(X))=\sum_{k=0}^n f\left(\frac kn\right)\comb{n}{k}x^k(1-x)^k$, luego $\|p_n-f\|_\infty\to0$, y probamos Wierstrass. Ahora dada $w$, $\la f,g\ra=\int_0^1 wfg$, $f$ y $p_n^*$ tenemos $\|f-p_n^*\|\leqq\|f-p_n\|=\sqrt{\int_0^1w(f-p_n)^2}\leqq$$\sqrt{\int_0^1w\epsilon^2}=\epsilon\|1\|\to0$ si $n\to\infty$.&#8718;
+
+## Integración numérica
+
+Dado $[a,b]$ se buscan puntos $x_0,\ldots,x_n$ y pesos $A_0,\ldots,A_n$ para aproximar $I(f)=\int_a^bfw$, con $w>0$, por $Q(f)=\sum_{i=0}^n A_if(x_i)$. El *grado de exactitud* es el máximo $k$ tal que $I(p)=Q(p)$ para todo $p\in\PP_k$; por linealidad basta testear $x^k$. Si hay $M$ con $|Q(f)|\leqq M(b-a)\|f\|_\infty$ entonces si $f\in C^{k+1}[a,b]$ se tiene $|R(f)|=|I(f)-Q(f)|\leqq \frac{(1+M)(b-a)^{k+2}}{(k+1)!}\|f^{(k+1)}\|_{\infty}$. Si partimos $[a,b]$ en $a=x_0<\cdots<x_n=b$ y tenemos $|Q_i(f|_{[x_{i-1},x_i]})|\leqq M(x_i-x_{i-1})\|f\|_\infty$, las combinamos en $Q=\sum_{i=1}^nQ_i$ y tenemos $|R(f)|\leqq \frac{(1+M)(b-a)\max\{x_i-x_{i-1}\}^{k+1}}{(k+1)!}\|f^{(k+1)}\|_{\infty}$.
+
+**Newton-Côtes.** Dados los $x_i$ tomamos el polinomio interpolador $p(x)=\sum_{i=0}^nf(x_i)\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}$ y se obtiene $A_i=\int_a^b\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}w(x)dx$. Llevar la regla de $[-1,1]$ a $[a,b]$ da $Q(f)=\frac{b-a}2\sum_{i=0}^nA_if\left(\frac{b-a}2x_i+\frac{a+b}2\right)$.
+
+**Trapecios.** Es Newton-Côtes con $w=1$ y dos puntos: $\{-1,1\}$, es decir, $I(f)=f(-1)+f(1)$. (También está la versión abierta $\{-\frac12,\frac12\}$.) Error: si $f\in C^2[a,b]$, $R(f)=-\frac{(b-a)^3}{12}f''(\eta)$, con $\eta\in(a,b)$. Si partimos $[a,b]$ en $[x_i,x_i+h]$ con $h=\frac{b-a}n$ y $x_i=a+hi$ resulta $Q(f)=\left(\frac{f(a)}2+\sum_{i=1}^{n-1}f(x_i)+\frac{f(b)}2\right)h$ y $R(f)=-\frac{h^2}{12}(b-a)f''(\xi)$.
+
+*Prueba.* $R(f)=\int_a^b(f-p)=\int_a^bf[a,b,x](x-a)(x-b)\,dx=\frac12f''(\eta)\int_a^b(x-a)(x-b)\,dx=$$-\frac{(b-a)^3}{12}f''(\eta)$ (usamos valor medio integral).&#8718;
+
+**Simpson.** Es Newton-Côtes con $w=1$ y tres puntos: $\{-1,0,1\}$, es decir, $I(f)=\frac{f(-1)+4f(0)+f(1)}3$. (También está la versión abierta $\{-\frac12,0,\frac12\}$ que da $\frac{4f(-\frac12)-2f(0)+4f(\frac12)}{3}$.) Error: si $f\in C^4[a,b]$, $R(f)=-\frac1{90}\left(\frac{b-a}2\right)^5f^{(4)}(\eta)$, con $\eta\in(a,b)$. Si partimos $[a,b]$ en $[x_i,x_i+2h]$ con $h=\frac{b-a}{2n}$ y $x_i=a+2hi$ resulta $Q(f)=\left(f(a)+2\sum_{i=1}^{n-1}f(x_i)+4\sum_{i=0}^{n-1}f(x_i+h)+f(b)\right)\frac{h}{3}$ y $R(f)=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)$.
+
+*Prueba.* La idea es ver el problema en $[-h,h]$ y poner $e(t)=\int_{-t}^t f-t\left(\frac{f(-t)+4f(0)+f(t)}{3}\right)$, calcular $e'''(t)=\frac{f'''(-t)-f'''(t)}3t=-\frac23t^2f^{(4)}(\xi)$, luego obtener $e''$, $e'$ y $e$ integrando y usando valor medio integral, lo que da $e(h)=-\frac{h^5}{90}f^{(4)}(\eta)$.&#8718;
+
+**Cuadratura gaussiana.** Sea $\la f, g\ra=\int_a^b fgw$; sean $p_n$ los polinomios ortonormales; $p_n$ tiene $n$ raíces distintas $x_1,\ldots,x_n$ en $(a,b)$. Newton-Côtes sobre $x_i$ da la *cuadratura gaussiana* $Q(f)=\sum_{i=1}^n A_if(x_i)$; $Q$ tiene grado de exactitud $2n-1$; el grado de exactitud es máximo para $n$ puntos y los $x_i$ son los únicos que lo alcazan; además $A_i>0$. Error: si $f\in C^{2n}[a,b]$, $R(f)=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b q_n^2w$, donde $q_n=\prod_{i=1}^n(x-x_i)$.
+
+*Prueba.* Primero, vemos que $p_n$ tiene raíz en $(a,b)$ (viendo $\la p_n,1\ra=0$); luego que no tiene raíces distintas (si no $p_n=(x-x_0)^2q$ y vemos $\la p_n,q\ra=0$); luego que tiene $n$ raíces (si no $p_n=qr$ con $\deg r>0$ sin raíces y vemos $\la p_n,q\ra=0$). Segundo, $Q$ tiene grado de exactitud $2n-1$: si $f\in\PP_{2n-1}$, $f=p_nq+r$ con $q,r\in\PP_{n-1}$, luego $r$ es el interpolador de $f$ en los $x_i$, luego $R(f)=\int_a^b(f-r)w=\la p_n,q\ra=0$; si $f=\prod_{i=1}^n(x-x_i)^2$, $r=0$ y $R(f)>0$. Tercero, si $x_0',\ldots,x_n'$ son otros puntos y $R(f)=0$ para todo $f\in\PP_{2n-1}$, si $p=\prod_{i=1}^n(x-x_i')$ y $q\in\PP_{n-1}$ tengo $0=R(pq)=\la p,q\ra$, luego $p$ es ortogonal a $\PP_{n-1}$ y tiene que ser $\lambda p_n$. Cuarto, si $f_i=\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}$, $0<\int_a^b f^2w=\sum_{i=1}^n A_if(x_i)^2=A_i$. Quinto, sea $f\in C^{2n}[a,b]$ y $p\in\PP_{2n-1}$ con $p(x_i)=f(x_i)$ y $p'(x_i)=f'(x_i)$; tengo $R(f)=R(f-p+p)=R(f-p)=\int_a^b(f-p)w=\int_a^b\frac{f^{(2n)}(\eta)}{(2n)!}q_n^2w=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b q_n^2w$.&#8718;
+
+**Fórmula de Rodrígues.** Los polinomios ortogonales para $\la f, g\ra=\int_a^b fg$ se llaman *polinomios de Legendre* $\ell_n$. Rodrígues: $\ell_n=\frac{n!}{(2n)!}\frac{d^n}{dx^n}(x^2-1)^n$ y $\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}$. Error de la cuadratura gausiana en $[a,b]$: $R(f)=\frac{(n!)^4(b-a)^{2n+1}}{(2n+1)(2n)!^3}f^{(2n)}(\xi)$.
+
+*Prueba.* Si $p\in \PP_{n-1}$ se ve que $\int_{-1}^1 \ell_np=(-1)^n\int_{-1}^1 \frac{n!}{(2n)!}(x^2-1)^np^{(n)}=0$ por integración por partes. Si $q=(x^2-1)^n$, $\int_{-1}^1 (\partial^n q)^2=(-1)^n\int_{-1}^1 q\partial^{2n}q=(2n)!\int_{-1}^1(1-x^2)^n$, que es, con $x=\sin y$, $\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n}\sin'=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}\sin^2=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}(1-\cos^2)$. Entonces $\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{2n}{2n+1}\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n-1}$ y $\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{(2^nn!)^2}{(2n+1)!}\int_{-1\frac\pi2}^{\frac\pi2}\cos=\frac{2^{2n+1}(n!)^2}{(2n+1)!}$ y se obtiene $\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}$.&#8718;
+
+## Ecuaciones diferenciales ordinarias
+
+**Método de Taylor.** Dada la ecuación $x'(t)=f(t,x(t))$, $x(t_0)=x_0$ queremos encontrar $x(T).$ Tomamos $n$, $h=\frac{T-t_0}n$, $t_i=t_0+hi$. Tenemos $x(t_{i+1})=x(t_i+h)=\sum_{k=0}^p \frac{h^k}{k!}x^{(k)}(t_i)+$ $\frac{h^{p+1}}{(p+1)!}x^{(p+1)}(\xi)$. Dada una aproximación $x_i\approx x(t_i)$ podemos aproximar $x'(t_i)=f(t_i,x(t_i))\approx f(t_i,x_i)$, $x''(t_i)=f_t(t_i,x(t_i))+f_x(t_i,x(t_i))x'(t_i)\approx$ $f_t(t_i,x_i)+f_x(t_i,x_i)f(t_i,x_i)$, etc, y obtenemos una aproximación de $x_{i+1}\approx x(t_{i+1})$, hasta $x_n\approx x(T)$.
+
+**Métodos de [Runge-Kutta](https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods) de orden 2.** Dado $\alpha\in[0,1]$, $x_{i+1}=x_i+h\Phi(t_i,x_i,h)$, con $\Phi(t,x,h)=(1-\frac1{2\alpha}))f(t,x)+\frac1{2\alpha}f(t+\alpha h, x+\alpha hf(t,x))$. Vale por Taylor que $x(t+h)-x(t)-h\Phi(t,x,h)=O(h^3)$.
+
+**Error.** Dado $n$, $h=\frac{T-t_0}n$, $x_{i+1}=x_i+h\Phi(t_i,x_i,h)$ con $K$ tal que $|\Phi(t,x,h)-\Phi(t,y,h)|\leqq K|x-y|$ para todos $x,y\in\R$, $t\in[t_0,T]$, y $\tau$ tal que $\left|\frac{x(t_{i+1})-x(t_i)}h-\Phi(t_i,x(t_i),h)\right|\leqq\tau$, se tiene $|x(T)-x_n|\leqq \frac{\tau}{K}(e^{K(T_0-t)}-1)$.
+
+*Prueba.* Si $e_i=|x(t_i)-x_i|$ tenemos $e_1\leqq h\tau$; $x(t_{i+1})=x(t_i)+h\Phi(t_i,x(t_i),h)+h\tau_i$, con $|\tau_i|\leqq\tau$; y $x_{i+1}=x_i+h\Phi(t_i,x_i,h)$; luego $x(t_{i+1})-x_{i+1}=x(t_i)-x_i+$ $h(\Phi(t_i,x(t_i),h)-\Phi(t_i,x_i,h))+h\tau_i$ y $e_{i+1}\leqq e_i+hKe_i+h\tau=(1+Kh)e_i+\tau h$; luego $e_n\leqq \frac{\tau}K((1+Kh)^{n}-1)\leqq \frac{\tau}{K}(e^{K(T_0-t)}-1)$.&#8718;
+
+**[Métodos multipaso lineales](https://en.wikipedia.org/wiki/Linear_multistep_method).** Consisten en aproximar $x_{n+k}$ dados $x_{n},\ldots,x_{n+k-1}$ por una fórmula $\sum_{i=0}^k \alpha_ix_{n+i}=h\sum_{i=0}^k \beta_if(t_{n+i},x_{n+i})$. Decimos que es de orden $p$ si $\tau_th=\sum_{i=0}^k \alpha_ix(t+hi)-h\sum_{i=0}^k \beta_ix'(t+hi)=O(h^{p+1})$; equivale a que $\sum_{i=0}^k\alpha_i=0$ y $\sum_{i=0}^k i^q\alpha_i=q\sum_{i=0}^k i^{q-1}\beta_i$ para $q=1,\ldots,p$. Sea $p(x)=\sum_{i=0}^k \alpha_ix^i$; si para toda raíz simple $r$ de $p$ vale $|r|\leqq 1$ y para toda raíz múltiple vale $|r|<1$, y además $\lim_{h\to0}\tau_t=0$, entonces el método converge.

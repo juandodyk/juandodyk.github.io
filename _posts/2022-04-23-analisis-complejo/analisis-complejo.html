@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Apunte: Análisis complejo</title>
+
+  <meta property="description" itemprop="description" content=""/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2016-01-13"/>
+  <meta property="article:created" itemprop="dateCreated" content="2016-01-13"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Apunte: Análisis complejo"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Apunte: Análisis complejo"/>
+  <meta property="twitter:description" content=""/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Apunte: Análisis complejo"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2016-01-13"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["analisis-complejo_files/anchor-4.2.2/anchor.min.js","analisis-complejo_files/bowser-1.9.3/bowser.min.js","analisis-complejo_files/distill-2.2.21/template.v2.js","analisis-complejo_files/header-attrs-2.13/header-attrs.js","analisis-complejo_files/jquery-3.6.0/jquery-3.6.0.js","analisis-complejo_files/jquery-3.6.0/jquery-3.6.0.min.js","analisis-complejo_files/jquery-3.6.0/jquery-3.6.0.min.map","analisis-complejo_files/popper-2.6.0/popper.min.js","analisis-complejo_files/tippy-6.2.7/tippy-bundle.umd.min.js","analisis-complejo_files/tippy-6.2.7/tippy-light-border.css","analisis-complejo_files/tippy-6.2.7/tippy.css","analisis-complejo_files/tippy-6.2.7/tippy.umd.min.js","analisis-complejo_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="analisis-complejo_files/header-attrs-2.13/header-attrs.js"></script>
+  <script src="analisis-complejo_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="analisis-complejo_files/popper-2.6.0/popper.min.js"></script>
+  <link href="analisis-complejo_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="analisis-complejo_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="analisis-complejo_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="analisis-complejo_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="analisis-complejo_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="analisis-complejo_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="analisis-complejo_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Apunte: Análisis complejo","description":"","authors":[],"publishedDate":"2016-01-13T00:00:00.000-05:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Apunte: Análisis complejo</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a
+href="#funciones-holomorfas-goursat-integrales-paramétricas">Funciones
+holomorfas, Goursat, integrales paramétricas</a></li>
+<li><a href="#cauchy-homotópico">Cauchy homotópico</a></li>
+<li><a href="#cauchy-homológico">Cauchy homológico</a></li>
+<li><a href="#series-de-laurent-singularidades-residuos">Series de
+Laurent, singularidades, residuos</a></li>
+<li><a href="#convergencia-casi-uniforme">Convergencia casi
+uniforme</a></li>
+<li><a href="#productos">Productos</a></li>
+<li><a href="#función-gamma">Función gamma</a></li>
+<li><a href="#automorfismos">Automorfismos</a></li>
+<li><a href="#teorema-de-riemann">Teorema de Riemann</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="funciones-holomorfas-goursat-integrales-paramétricas">Funciones
+holomorfas, Goursat, integrales paramétricas</h2>
+<p><span class="math inline">\(\def\N{\mathbb{N}} \def\R{\mathbb{R}}
+\def\C{\mathbb{C}} \def\Z{\mathbb{Z}} \def\HH{\mathcal{H}}
+\def\FF{\mathcal{F}} \def\menos{\smallsetminus}
+\def\im{\mathop{\mathrm{im}}} \def\lim{\mathop{\text{lim}}\limits}
+\def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\text{inf}}\limits}
+\def\max{\mathop{\text{max}}\limits}
+\def\min{\mathop{\text{mín}}\limits} \def\mm{\mathrm} \def\id{\mm{id}}
+\def\Aut{\mathop{\mathrm{Aut}}}\)</span>Damos a <span
+class="math inline">\(\C\)</span> la topología inducida por la norma
+<span class="math inline">\(|x+yi|=\sqrt{x^2+y^2}\)</span>. Si <span
+class="math inline">\(U\subset\C\)</span> es abierto y <span
+class="math inline">\(f:U\to\C\)</span> es una función, decimos que es
+<em>holomorfa</em> si para todo <span class="math inline">\(z\in
+U\)</span> existe el límite <span
+class="math inline">\(f&#39;(z)=\lim_{h\to0}\frac{f(z+h)-f(z)}h\)</span>.
+Las holomorfas forman un álgebra <span
+class="math inline">\(\HH(U)\)</span>. Vale la regla de la cadena <span
+class="math inline">\((f\circ g)&#39;(z)=f&#39;(g(z))g&#39;(z)\)</span>.
+La función <span class="math inline">\(f\)</span> es holomorfa si y sólo
+si vista como <span
+class="math inline">\(f(x+yi)=u(x,y)+v(x,y)i\)</span>, con <span
+class="math inline">\(u,v:\{(x,y)\in\R^2\mid x+yi\in U\}\to\R\)</span>,
+vale que <span class="math inline">\(u\)</span> y <span
+class="math inline">\(v\)</span> son diferenciables y <span
+class="math inline">\(\frac{\partial u}{\partial x}=\frac{\partial
+v}{\partial y}\)</span> y <span class="math inline">\(\frac{\partial
+u}{\partial y}=-\frac{\partial v}{\partial x}\)</span>, las
+<em>ecuaciones de Cauchy-Riemann</em>. Defino <span
+class="math inline">\(e^{x+yi}=e^x(\cos y+i\sin y)\)</span>, <span
+class="math inline">\(\sin z=\frac{e^{iz}-e^{-iz}}{2i}\)</span> y <span
+class="math inline">\(\cos z=\frac{e^{iz}+e^{-iz}}2\)</span>; son
+holomorfas, <span class="math inline">\(e^{z+w}=e^ze^w\)</span>, <span
+class="math inline">\(\sin&#39;z=\cos z\)</span> y <span
+class="math inline">\(\cos&#39;z=-\sin z\)</span>.</p>
+<p>Si <span class="math inline">\(U\)</span> es abierto, <span
+class="math inline">\(\gamma:[a,b]\to\C\)</span> es <span
+class="math inline">\(C^1\)</span> a trozos y <span
+class="math inline">\(f:U\to\C\)</span> es continua, definimos <span
+class="math inline">\(\int_\gamma f=\int_a^b
+f(\gamma(t))\gamma&#39;(t)\,dt\)</span>. Es lineal y <span
+class="math inline">\(|\int_\gamma f|\leqq
+\max_{z\in\gamma}|f(z)|\int_a^b|\gamma&#39;|\)</span>. Si <span
+class="math inline">\(F:U\to\C\)</span> cumple <span
+class="math inline">\(F&#39;=f\)</span>, <span
+class="math inline">\(\int_\gamma
+f=F(\gamma(b))-F(\gamma(a))\)</span>.</p>
+<p><strong>Goursat.</strong> Si <span class="math inline">\(R\)</span>
+es un rectángulo y <span class="math inline">\(f\)</span> es holomorfa
+en un abierto que contiene a <span class="math inline">\(R\)</span>,
+entonces <span class="math display">\[\int_{\partial R} f =
+0.\]</span></p>
+<p><em>Prueba.</em> Tenemos <span class="math inline">\(\int_{\partial
+R} f = \sum_{i=1}^4\int_{\partial R_i} f\)</span>, donde <span
+class="math inline">\(R_1,\ldots,R_4\)</span> son rectángulos iguales en
+los que dividimos a <span class="math inline">\(R\)</span>. Hay
+rectángulos <span class="math inline">\(R^1\supset
+R^2\supset\cdots\)</span> tales que <span
+class="math inline">\(|\int_{\partial R^{n+1}}
+f|\geqq\frac14|\int_{\partial R^n} f|\)</span>. Si <span
+class="math inline">\(L_n\)</span> es el perímetro de <span
+class="math inline">\(R^n\)</span>, tenemos <span
+class="math inline">\(L_n=\frac1{2^n}L_0\)</span>. La intersección de
+los <span class="math inline">\(R^n\)</span> es un punto <span
+class="math inline">\(z_0\)</span>.</p>
+<p>Tenemos <span
+class="math inline">\(f(z)=f(z_0)+f&#39;(z_0)(z-z_0)+(z-z_0)h(z)\)</span>,
+con <span class="math inline">\(h(z)\to 0\)</span> si <span
+class="math inline">\(z\to z_0\)</span>. Integrando y usando que las
+funciones con primitiva tienen integral cerrada nula, resulta <span
+class="math inline">\(\int_{\partial R^n} f=\int_{\partial
+R^n}(z-z_0)h(z)\)</span>. Tenemos <span
+class="math inline">\(|\int_{\partial R^n} f|\geqq
+\frac1{4^n}|\int_{\partial R}f|\)</span> y <span
+class="math inline">\(|\int_{\partial R^n}(z-z_0)h(z)|\leqq
+\frac1{2^n}L_0\text{diam}(R^n)\max_{z\in R^n}|h(z)|\)</span>, con <span
+class="math inline">\(\text{diam}(R^n)=\frac1{2^n}\text{diam}(R)\)</span>.
+Luego <span class="math inline">\(|\int_{\partial R}f|\leqq
+L_0\text{diam}(R)\max_{z\in R^n}|h(z)|\)</span> para todo <span
+class="math inline">\(n\)</span>, por lo que <span
+class="math inline">\(\int_{\partial R}f=0\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>La conclusión es que si <span class="math inline">\(f\)</span> es
+holomorfa en un disco, tiene primitiva.</p>
+<p><strong>Integrales paramétricas.</strong> Si <span
+class="math inline">\(U\)</span> es abierto, <span
+class="math inline">\(\gamma:[0,1]\to\C\)</span> es <span
+class="math inline">\(C^1\)</span> a trozos y <span
+class="math inline">\(f:U\times\gamma\to\C\)</span> es continua entonces
+<span class="math inline">\(F(z)=\int_\gamma f(x,w)\,dw\)</span> es
+continua. Si <span class="math inline">\(f(-,w)\)</span> tiene derivada
+<span class="math inline">\(f&#39;(-,w)\)</span> para todo <span
+class="math inline">\(w\in\gamma\)</span> y <span
+class="math inline">\(f&#39;\)</span> es continua, <span
+class="math inline">\(F&#39;(z)=\int_\gamma
+f&#39;(x,w)\,dw\)</span>.</p>
+<p><em>Prueba.</em> Dado <span class="math inline">\(z\in U\)</span>,
+hay <span class="math inline">\(r&gt;0\)</span> con <span
+class="math inline">\(\overline{B(z,r)}\subset U\)</span>; <span
+class="math inline">\(f|_{\overline{B(z,r)}\times\gamma}\)</span> es
+uniformemente continua, luego si <span
+class="math inline">\(|h|&lt;\delta\)</span>, <span
+class="math inline">\(|f(z+h,w)-f(z,w)|&lt;\epsilon\)</span> para <span
+class="math inline">\(z\in U,w\in\gamma\)</span>, y <span
+class="math inline">\(|F(z+h)-F(z)|=|\int_\gamma(f(z+h,w)-f(z,w))\,dw|\leqq
+\epsilon |\gamma|\)</span>, por lo que <span
+class="math inline">\(F\)</span> es continua. Ahora si <span
+class="math inline">\(f&#39;\)</span> es continua, usando continuidad
+uniforme, <span class="math inline">\(|\frac{F(z+h)-F(z)}h - \int_\gamma
+f&#39;(z,w)\,dw| = |\int_\gamma
+\int_z^{z+h}\frac{f&#39;(t,w)-f&#39;(z,w)}h\,dtdw|\leqq
+\epsilon|\gamma|\)</span> si <span
+class="math inline">\(|h|&lt;\delta\)</span>, como queríamos. <span
+class="math inline">\(\blacksquare\)</span></p>
+<h2 id="cauchy-homotópico">Cauchy homotópico</h2>
+<p>Sean <span class="math inline">\(U\)</span> un abierto, <span
+class="math inline">\(f\)</span> holomorfa en <span
+class="math inline">\(U\)</span> y <span
+class="math inline">\(\gamma,\eta:[0,1]\to U\)</span> caminos <span
+class="math inline">\(C^1\)</span> a trozos con <span
+class="math inline">\(\gamma(0)=\eta(0)\)</span>, <span
+class="math inline">\(\gamma(1)=\eta(1)\)</span> <em>homotópicos</em>.
+Es decir existe <span class="math inline">\(H:[0,1]\times[0,1]\to
+U\)</span> continua tal que <span
+class="math inline">\(H(-,0)=H(-,1)\)</span>, <span
+class="math inline">\(H(0,-)=\gamma\)</span> y <span
+class="math inline">\(H(1,-)=\eta\)</span>. Entonces <span
+class="math display">\[\int_{\gamma} f = \int_{\eta} f.\]</span></p>
+<p><em>Prueba.</em> Por continuidad uniforme hay <span
+class="math inline">\(n\)</span> tal que <span
+class="math inline">\(H([\frac
+{i-1}{n},\frac{i}{n}]\times[\frac{j-1}{n},\frac{j}{n}])\subset
+D_{ij}\subset U\)</span>, con <span
+class="math inline">\(D_{ij}\)</span> discos. Sean <span
+class="math inline">\(I_i=\sum_{j=1}^{n}(g_{ij}(H(\frac{i}{n},\frac{j}{n}))
+- g_{ij}(H(\frac{i}{n},\frac{j-1}{n})))\)</span>, donde <span
+class="math inline">\(g_{ij}&#39;=f\)</span> en <span
+class="math inline">\(D_{ij}\)</span>, que existen por Goursat. Se ve
+que <span class="math inline">\(I_i=I_{i-1}\)</span>. En particular
+<span class="math inline">\(I_1=I_n\)</span>. Ahora <span
+class="math inline">\(I_1=\int_\gamma f\)</span> y <span
+class="math inline">\(I_n=\int_\eta f\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>En particular si <span class="math inline">\(\gamma\)</span> es
+homotópico a 0, <span class="math inline">\(\int_{\gamma} f =
+0\)</span>. Si <span class="math inline">\(U\)</span> es <em>simplemente
+conexo</em>, es decir, es conexo y toda curva cerrada es contráctil, eso
+vale siempre. Más aún, toda función holomorfa <span
+class="math inline">\(f\)</span> tiene primitiva. Un ejemplo es <span
+class="math inline">\(\C\menos\R_{\leqq0}\)</span>. Por lo tanto ahí
+puede definirse el <em>logaritmo</em> como una primitiva <span
+class="math inline">\(\ln\)</span> de <span
+class="math inline">\(\frac1z\)</span> tal que <span
+class="math inline">\(\ln(1)=2\pi ik\)</span>, <span
+class="math inline">\(k\in\Z\)</span>. En general, si <span
+class="math inline">\(f\)</span> es holomorfa en <span
+class="math inline">\(U\)</span> simplemente conexo, y <span
+class="math inline">\(f\neq0\)</span>, definimos <span
+class="math inline">\(L_f(z)=\int_{z_0}^z\frac{f&#39;}f+c\)</span>, con
+<span class="math inline">\(z_0\in U\)</span> y <span
+class="math inline">\(e^c=f(z_0)\)</span>, y vale <span
+class="math inline">\(e^{L_f(z)}=f(z)\)</span>.</p>
+<p><strong>Cauchy.</strong> Sea <span class="math inline">\(f\)</span>
+holomorfa en un abierto <span class="math inline">\(U\)</span>, y <span
+class="math inline">\(D\)</span> un disco con <span
+class="math inline">\(\overline D\subset U\)</span>. Si <span
+class="math inline">\(z_0\in D\)</span> entonces <span
+class="math display">\[f(z_0)=\frac1{2\pi i}\int_D
+\frac{f(z)}{z-z_0}dz.\]</span></p>
+<p><em>Prueba.</em> La función <span
+class="math inline">\(g(z)=\frac{f(z)-f(z_0)}{z-z_0}\)</span> es
+holomorfa en <span class="math inline">\(U\menos\{z_0\}\)</span>. Si
+<span class="math inline">\(D(z_0,r)\subset D\)</span>, por Cauchy <span
+class="math inline">\(\int_{D(z_0,r)}g=\int_{D}g\)</span>. Ahora <span
+class="math inline">\(|\int_{D(z_0,r)}g|\leqq 2\pi
+r\max_{|z-z_0|=r}|g(z)|\to 0\)</span> si <span
+class="math inline">\(r\to0\)</span>. Luego <span
+class="math inline">\(\int_{D}g=0\)</span> y queda. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>Derivando la fórmula resulta <span
+class="math inline">\(f^{(n)}(z_0)=\frac{n!}{2\pi
+i}\int_D\frac{f(z)}{(z-z_0)^{n+1}}dz.\)</span></p>
+<p>Si <span class="math inline">\(f\)</span> es holomorfa en un abierto
+que contiene a <span class="math inline">\(D=D(z_0,R)\)</span> y <span
+class="math inline">\(w\in D\)</span> entonces <span
+class="math inline">\(f(w)=\sum_{n=0}^\infty
+\frac{1}{n!}f^{(n)}(z_0)(w-z_0)^n\)</span>.</p>
+<p><em>Prueba.</em> Tenemos <span class="math inline">\(2\pi
+if(w)=\int_D\frac{f(z)}{z-w}dz=\int_D\frac{f(z)}{z-z_0}\frac1{1-\frac{w-z_0}{z-z_0}}dz=\int_D\frac{f(z)}{z-z_0}\sum_{n=0}^\infty\left(\frac{w-z_0}{z-z_0}\right)^ndz\)</span>.
+Sacando la serie afuera es <span
+class="math inline">\(\sum_{n=0}^\infty\int_D\frac{f(z)}{(z-z_0)^{n+1}}dz(w-z_0)^n\)</span>
+y queda. <span class="math inline">\(\blacksquare\)</span></p>
+<p>Si <span class="math inline">\(f\)</span> es holomorfa en un abierto
+<span class="math inline">\(U\)</span>, sus ceros están aislados.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(f(z_0)=0\)</span>,
+<span class="math inline">\(f(z)=(z-z_0)^mg(z)\)</span> con <span
+class="math inline">\(g\)</span> holomorfa, <span
+class="math inline">\(g(z_0)\neq0\)</span>. Sigue por continuidad de
+<span class="math inline">\(g\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Liouville.</strong> Si <span
+class="math inline">\(f:\C\to\C\)</span> es holomorfa y acotada entonces
+es constante.</p>
+<p><em>Prueba.</em> Tenemos <span
+class="math inline">\(f&#39;(z)=\frac1{2\pi
+i}\int_{D(z,R)}\frac{f(w)}{(w-z)^2}dw\)</span>. Luego <span
+class="math inline">\(|f&#39;(z)|\leqq \frac MR\)</span>, con <span
+class="math inline">\(M\)</span> tal que <span
+class="math inline">\(|f|\leqq M\)</span>. Con <span
+class="math inline">\(R\to\infty\)</span> resulta <span
+class="math inline">\(f&#39;(z)=0\)</span> y el teorema sigue. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Morera.</strong> Si <span class="math inline">\(f\)</span> es
+continua en un abierto <span class="math inline">\(U\)</span> y para
+todo rectángulo <span class="math inline">\(\gamma\)</span> en <span
+class="math inline">\(U\)</span> vale <span
+class="math inline">\(\int_\gamma f=0\)</span> entonces es
+holomorfa.</p>
+<p><strong>Integral paramétrica 2.</strong> Si <span
+class="math inline">\(U\)</span> es abierto, <span
+class="math inline">\(\gamma:[0,1]\to\C\)</span> es <span
+class="math inline">\(C^1\)</span> a trozos y <span
+class="math inline">\(f:U\times\gamma\to\C\)</span> es continua con
+<span class="math inline">\(f(-,w)\)</span> holomorfa para todo <span
+class="math inline">\(w\in\gamma\)</span>, entonces <span
+class="math inline">\(F(z)=\int_\gamma f(z,w)\,dw\)</span> es
+holomorfa.</p>
+<p><em>Prueba.</em> Vimos que es continua. Ahora si <span
+class="math inline">\(R\)</span> es un rectángulo en <span
+class="math inline">\(U\)</span>, <span
+class="math inline">\(\int_{\partial R}F=\int_{\partial R}\int_\gamma
+f(z,w)\,dwdz=\int_\gamma\int_{\partial R}f(z,w)\,dzdw=0\)</span>, y
+resulta por Morera. <span
+class="math inline">\(\blacksquare\)</span></p>
+<h2 id="cauchy-homológico">Cauchy homológico</h2>
+<p>Si <span class="math inline">\(\gamma:[a,b]\to\mathbb{C}\)</span> es
+<span class="math inline">\(C^1\)</span> a trozos y <span
+class="math inline">\(\alpha\not\in\gamma\)</span> definimos el
+<em>winding number</em> <span class="math display">\[W(\gamma,
+\alpha)=\frac1{2\pi i}\int_\gamma\frac{dz}{z-\alpha}.\]</span></p>
+<p>Probamos que es un entero. Definimos <span
+class="math inline">\(F(t)=\int_a^t\frac{\gamma&#39;(t)}{\gamma(t)-\alpha}dt\)</span>.
+Es continua y derivable salvo en finitos puntos. Tenemos <span
+class="math inline">\(\frac{d}{dt}e^{-F(t)}(\gamma(t)-\alpha)=0\)</span>
+salvo en finitos puntos. Luego <span
+class="math inline">\(e^{-F(t)}(\gamma(t)-\alpha)=C\)</span>, <span
+class="math inline">\(e^{F(b)}=e^{F(a)}\)</span>, luego <span
+class="math inline">\(F(b)=F(a)+2\pi ik\)</span> con <span
+class="math inline">\(k\in\mathbb{Z}\)</span> y <span
+class="math inline">\(W(\gamma,\alpha)=k\)</span>. Probamos además que
+es continua como función de <span
+class="math inline">\(\alpha\)</span>.</p>
+<p>Una <em>cadena</em> es una suma formal de caminos cerrados. Sea <span
+class="math inline">\(U\)</span> un abierto, y <span
+class="math inline">\(\gamma, \eta\in U\)</span> dos cadenas. Decimos
+que son <em>homólogas en <span class="math inline">\(U\)</span></em> si
+<span class="math inline">\(\forall\alpha\not\in
+U.W(\gamma,\alpha)=W(\eta,\alpha)\)</span>.</p>
+<p><strong>Fórmula de Cauchy.</strong> Si <span
+class="math inline">\(\gamma\)</span> es homóloga a 0 en <span
+class="math inline">\(U\)</span>, <span class="math inline">\(f\)</span>
+holomorfa en <span class="math inline">\(U\)</span>, <span
+class="math inline">\(z_0\in U\)</span>, <span
+class="math inline">\(z_0\not\in\gamma\)</span>, entonces <span
+class="math display">\[W(\gamma,z_0)f(z_0) = \frac1{2\pi i}\int_\gamma
+\frac{f(z)}{z-z_0}dz.\]</span></p>
+<p><em>Prueba.</em> Definimos <span class="math inline">\(g\)</span> en
+<span class="math inline">\(U\times U\)</span> así: <span
+class="math display">\[g(z,w)=\left\{\begin{matrix}
+\frac{f(w)-f(z)}{w-z} &amp; \text{ si } w\neq z, \\ f&#39;(z) &amp;
+\text{ si } w=z.\end{matrix}\right.\]</span></p>
+<p>Sea <span class="math inline">\(V=\{z\in\mathbb{C}\mid
+W(\gamma,z)=0\}\)</span>. Vale <span
+class="math inline">\(\mathbb{C}=U\cup V\)</span>. Definimos <span
+class="math inline">\(h\)</span> así: <span
+class="math display">\[h(z)=\left\{\begin{matrix} \int_\gamma g(z,w)\,dw
+&amp; \text{ si } z\in U, \\ \int_\gamma \frac{f(w)}{w-z}\,dw &amp;
+\text{ si } z\in V.\end{matrix}\right.\]</span></p>
+<p>Se ve que <span class="math inline">\(g\)</span> es continua y <span
+class="math inline">\(g(-,w)\)</span> es holomorfa, y lo mismo para
+<span class="math inline">\(\frac{f(w)}{w-z}\)</span>. Luego <span
+class="math inline">\(h\)</span> es holomorfa en <span
+class="math inline">\(\mathbb{C}\)</span>. Además es acotada y tiende a
+0 en el límite. Por Liouville es nula y el teorema sigue. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>La fórmula <span
+class="math inline">\(W(\gamma,z)f^{(n)}(z)=\frac1{2\pi i}\int_\gamma
+\frac{f(z)}{(z-z_0)^{n+1}}dz\)</span> se obtiene derivando. Con <span
+class="math inline">\(F(z)=(z-z_0)f(z)\)</span> resulta el teorema de
+Cauchy <span class="math inline">\(\int_\gamma f=0\)</span>.</p>
+<h2 id="series-de-laurent-singularidades-residuos">Series de Laurent,
+singularidades, residuos</h2>
+<p>Si <span class="math inline">\(f\)</span> es holomorfa en <span
+class="math inline">\(\{z\mid r&lt;|z-z_0|&lt;R\}\)</span> entonces hay
+únicos <span class="math inline">\(a_n\)</span> para <span
+class="math inline">\(n\in\Z\)</span> tales que <span
+class="math inline">\(f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n\)</span>,
+y vale, para <span class="math inline">\(r&lt;\rho&lt;R\)</span>, <span
+class="math display">\[a_{n}=\frac{1}{2\pi
+i}\int_{|z-z_0|=\rho}\frac{f(z)}{(z-z_0)^{n+1}}dz.\]</span></p>
+<p>Sale como la fórmula de Cauchy pero usando dos círculos. Para ver la
+unicidad de <span class="math inline">\(a_n\)</span> se integra término
+a término <span
+class="math inline">\(\frac{f(z)}{(z-z_0)^{n+1}}\)</span>.</p>
+<p>Si <span class="math inline">\(f\)</span> es holomorfa en un disco
+menos su centro <span class="math inline">\(z_0\)</span> hay tres
+posibilidades:</p>
+<ul>
+<li><p><em>Singularidad evitable.</em> El desarrollo de Laurent no tiene
+parte singular. Equivale a que <span class="math inline">\(f\)</span>
+sea acotada alrededor de <span
+class="math inline">\(z_0\)</span>.</p></li>
+<li><p><em>Polo</em>. La parte singular tiene finitos términos. En ese
+caso definimos el <em>orden</em> como el menor <span
+class="math inline">\(n\in\Z\)</span> con <span
+class="math inline">\(a_n\neq0\)</span>.</p></li>
+<li><p><em>Singularidad esencial.</em> La parte singular tiene infinitos
+términos no nulos. En ese caso si <span class="math inline">\(f\)</span>
+es holomorfa en <span
+class="math inline">\(U=D(z_0,r)\menos\{z_0\}\)</span>, <span
+class="math inline">\(\overline{f(U)}=\C\)</span>
+(Casorati-Weierstrass). Esto es porque si <span
+class="math inline">\(\alpha\in\C\)</span> cumple que hay <span
+class="math inline">\(s&gt;0\)</span> con <span
+class="math inline">\(\forall z\in U.|f(z)-\alpha|&gt;s\)</span>
+entonces <span class="math inline">\(g(z)=\frac1{f(z)-\alpha}\)</span>
+es holomorfa en <span class="math inline">\(U\)</span> y acotada en
+<span class="math inline">\(D\)</span>, y <span
+class="math inline">\(1/g\)</span> tiene como mucho un polo en <span
+class="math inline">\(z_0\)</span>, absurdo.</p></li>
+</ul>
+<p>Si <span class="math inline">\(f\)</span> es holomorfa en un abierto
+<span class="math inline">\(U\)</span> excepto en puntos <span
+class="math inline">\(z_1,\ldots,z_n\)</span> y <span
+class="math inline">\(\gamma\)</span> es una cadena homóloga a 0 en
+<span class="math inline">\(U\)</span> entonces <span
+class="math inline">\(\int_\gamma f=2\pi
+i\sum_{i=1}^nW(\gamma,z_i)\mm{res}_{z_i}f\)</span>, donde <span
+class="math inline">\(\mm{res}_{z}f\)</span>, el <em>residuo</em> de
+<span class="math inline">\(f\)</span> en <span
+class="math inline">\(z\)</span>, es <span
+class="math inline">\(a_{-1}\)</span> en el Laurent de <span
+class="math inline">\(f\)</span> en <span
+class="math inline">\(z\)</span>. Vale <span
+class="math inline">\(\mm{res}_zf&#39;/f=\mm{ord}_zf\)</span> si el
+orden no es infinito.</p>
+<p><strong>Rouché.</strong> Sea <span
+class="math inline">\(\gamma\)</span> homóloga a 0 en <span
+class="math inline">\(U\)</span> tal que <span
+class="math inline">\(W(\gamma,U)=\{0,1\}\)</span>, y <span
+class="math inline">\(f,g\)</span> holomorfas en <span
+class="math inline">\(U\)</span> tales que <span
+class="math inline">\(|f(z)-g(z)|&lt;|f(z)|\)</span> en <span
+class="math inline">\(\gamma\)</span>. Entonces tienen la misma cantidad
+de ceros en el “interior” de <span
+class="math inline">\(\gamma\)</span>, es decir en <span
+class="math inline">\(\{z\in U\mid W(\gamma,z)=0\}\)</span>.</p>
+<p><em>Prueba.</em> Por la condición no tienen ceros en <span
+class="math inline">\(\gamma\)</span>, y <span
+class="math inline">\(F=g/f\)</span> cumple que <span
+class="math inline">\(\im F\circ\gamma\subset D(1,1)\)</span>. Luego
+<span class="math inline">\(W(F\circ\gamma,0)=0\)</span> y <span
+class="math inline">\(0=\int_{F\circ\gamma}\frac1z=\int_\gamma
+\frac{F&#39;}{F}=\int_\gamma (\frac{g&#39;}g-\frac{f&#39;}f)\)</span>.
+<span class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Función abierta.</strong> Si <span
+class="math inline">\(f\)</span> es holomorfa en un abierto conexo <span
+class="math inline">\(U\)</span> y no es constante entonces <span
+class="math inline">\(f(U)\)</span> es abierto.</p>
+<p><em>Prueba.</em> Sea <span class="math inline">\(a\in U\)</span>,
+<span class="math inline">\(\alpha=f(a)\)</span> y <span
+class="math inline">\(m=\mm{ord}_a(f-\alpha)\)</span> (<span
+class="math inline">\(m\geqq1\)</span>). Sea <span
+class="math inline">\(\epsilon&gt;0\)</span> tal que <span
+class="math inline">\(D=D(a,2\epsilon)\subset U\)</span> y <span
+class="math inline">\(\forall z\in D\menos\{a\}.f(z)\neq\alpha\)</span>.
+Sea <span class="math inline">\(\gamma(t)=a+\epsilon e^{2\pi
+it}\)</span>. Tenemos que <span class="math inline">\(\alpha\not\in
+f\circ\gamma\)</span>, luego hay <span
+class="math inline">\(\delta&gt;0\)</span> tal que, en <span
+class="math inline">\(D(\alpha,\delta)\)</span>, <span
+class="math inline">\(W(f\circ\gamma,-)\)</span> es constante, y por lo
+tanto igual a <span
+class="math inline">\(W(f\circ\gamma,\alpha)=\int_{f\circ\gamma}\frac{dz}{z-\alpha}=\int_\gamma\frac{f&#39;}{f-\alpha}=m\)</span>.
+Luego si <span class="math inline">\(\beta\in D(\alpha,\delta)\)</span>,
+<span class="math inline">\(\int_\gamma
+\frac{(f-\beta)&#39;}{f-\beta}=m\)</span>, por lo cual en <span
+class="math inline">\(D\)</span> hay <span
+class="math inline">\(m\geqq1\)</span> raíces de <span
+class="math inline">\(f=\beta\)</span>. Entonces <span
+class="math inline">\(D(\alpha,\delta)\subset f(U)\)</span> y <span
+class="math inline">\(f(U)\)</span> es abierto. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>De la prueba se sigue que si <span
+class="math inline">\(f&#39;(z_0)\neq0\)</span> entonces en un entorno
+de <span class="math inline">\(z_0\)</span> <span
+class="math inline">\(f\)</span> es inversible: hay <span
+class="math inline">\(U,V\)</span> abiertos, <span
+class="math inline">\(z_0\in U\)</span> y <span
+class="math inline">\(f:U\to V\)</span> tiene inversa <span
+class="math inline">\(g:V\to U\)</span>. Es continua y se ve fácil que
+también holomorfa. Invocando el teorema se prueba lo siguiente:</p>
+<p><strong>Módulo máximo.</strong> Si <span
+class="math inline">\(f\)</span> es holomorfa en un abierto conexo <span
+class="math inline">\(U\)</span> y no es constante entonces <span
+class="math inline">\(|f|\)</span> no tiene máximo, y el único mínimo
+puede ser 0.</p>
+<h2 id="convergencia-casi-uniforme">Convergencia casi uniforme</h2>
+<p>Si <span class="math inline">\(U\)</span> es abierto, sea <span
+class="math inline">\(\HH(U)\)</span> el espacio de funciones holomorfas
+en <span class="math inline">\(U\)</span>. Defino <span
+class="math inline">\(K_n=\{z\in U\mid |z|\leqq n, d(z,\C\menos U)\geqq
+\frac1n\}\)</span>. Son compactos y vale <span
+class="math inline">\(K_1\subset K_2\subset\cdots\)</span> y <span
+class="math inline">\(U=\bigcup_{n=1}^\infty K_n\)</span>. Defino <span
+class="math inline">\(d(f,g)=\sum_{n=1}^\infty\frac1{2^n}\min\{1,\sup_{K_n}|f-g|\}\)</span>.
+Es una métrica e induce una topología, la de la <em>convergencia casi
+uniforme</em>. En ella, <span class="math inline">\(f_n\to f\)</span>
+sii <span class="math inline">\(f_n\to f\)</span> uniformemente en cada
+compacto <span class="math inline">\(K\subset U\)</span>.</p>
+<p><span class="math inline">\(\HH(U)\)</span> es completo y <span
+class="math inline">\(f\mapsto f&#39;\)</span> es continua.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(f_n\)</span> es de
+Cauchy, tiene límite <span class="math inline">\(f\)</span> continua, y
+por Morera holomorfa. Si <span class="math inline">\(f_n\to f\)</span>
+hay que ver <span class="math inline">\(f_n&#39;\to f&#39;\)</span>. En
+efecto, hay que probar que dado <span class="math inline">\(z_0\in
+U\)</span> hay un disco <span class="math inline">\(D=D(z_0,R)\)</span>
+tal que <span class="math inline">\(f_n&#39;\to f\)</span> uniformemente
+en <span class="math inline">\(D\)</span>; luego los compactos se cubren
+con finitos de estos. Ahora si <span
+class="math inline">\(D(z_0,3R)\subset U\)</span>, <span
+class="math inline">\(\gamma(t)=z_0+2Re^{2\pi it}\)</span> y <span
+class="math inline">\(z\in D\)</span>, <span
+class="math inline">\(|f_n&#39;(z)-f(z)|\leqq\frac1{2\pi}\int_\gamma|\frac{f_n(w)-f(w)}{(z-w)^2}|dw\leqq
+\frac2R\sup_{D(z_0,2R)}|f_n-f|\to0\)</span>, listo. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Montel.</strong> Sea <span class="math inline">\(U\)</span>
+abierto y <span class="math inline">\(\FF\subset\HH(U)\)</span>. Si es
+<em>acotado</em>, es decir, si para todo <span
+class="math inline">\(K\subset U\)</span> compacto hay <span
+class="math inline">\(M\)</span> con <span class="math inline">\(\forall
+f\in\FF.\sup_K|f|\leqq M\)</span>, entonces es <em>normal</em>, es
+decir, <span class="math inline">\(\overline\FF\)</span> es
+compacto.</p>
+<p><em>Prueba.</em> Sea <span class="math inline">\(f_n\in\FF\)</span>
+una sucesión. Sea <span class="math inline">\(D=\overline
+D(z_0,R)\subset U\)</span>. Hay <span class="math inline">\(M\)</span>
+con <span class="math inline">\(|f_n|\leqq M\)</span> en <span
+class="math inline">\(D\)</span>. Ponemos <span
+class="math inline">\(f_n(z)=\sum_{k=0}^\infty a_{nk}(z-z_0)^k\)</span>.
+Por Cauchy tenemos <span class="math inline">\(|a_{nk}|\leqq
+\frac{M}{R^k}\)</span>. Tomando subsucesiones y la diagonal conseguimos
+una subsucesión <span class="math inline">\(n_i\)</span> tal que para
+todo <span class="math inline">\(k\)</span> existe <span
+class="math inline">\(\lim_{i\to\infty}a_{n_ik}=a_k\)</span>. Vale <span
+class="math inline">\(|a_k|^{1/k}\leqq \frac{M^{1/k}}{R}\)</span>, luego
+<span class="math inline">\(f(z)=\sum_{k=0}^\infty
+a_{nk}(z-z_0)^k\)</span> es holomorfa en <span
+class="math inline">\(D(z_0,R)\)</span>. Y <span
+class="math inline">\(f_{n_i}\to f\)</span> ahí: si <span
+class="math inline">\(r&lt;R\)</span>, en <span
+class="math inline">\(\overline D(z_0,r)\)</span> vale <span
+class="math inline">\(|f_{n_i}(z)-f(z)|\leqq
+\sum_{k=0}^{k_0-1}|a_{n_ik}-a_k|r^k+2\sum_{k=k_0}^\infty M(\frac
+rR)^k\)</span>, que tiende a 0 tomando <span
+class="math inline">\(k_0\)</span> grande para el segundo término y
+luego <span class="math inline">\(i\)</span> grande para el primero.
+Entonces si <span class="math inline">\(D\subset U\)</span> es un disco,
+<span class="math inline">\(f_n\)</span> tiene una subsucesión que
+converge en <span class="math inline">\(D\)</span>.</p>
+<p>Entonces si <span class="math inline">\(K\)</span> es un compacto, lo
+cubrimos con finitos discos, y tomando finitas subsucesiones convergemos
+en <span class="math inline">\(K\)</span>. Luego tomando <span
+class="math inline">\(K_n\)</span> con <span
+class="math inline">\(\bigcup_{n=1}^\infty K_n=U\)</span>, tomando
+subsucesiones y su diagonal conseguimos una subsucesión que converge en
+todos ellos, y por lo tanto en <span class="math inline">\(U\)</span>.
+<span class="math inline">\(\blacksquare\)</span></p>
+<h2 id="productos">Productos</h2>
+<p>Dada una sucesión <span class="math inline">\(\{z_n\}\)</span>
+decimos que <span class="math inline">\(\prod_{n=1}^\infty z_n\)</span>
+<em>converge absolutamente</em> si <span
+class="math inline">\(\lim_{n\to\infty} z_n=1\)</span> y <span
+class="math inline">\(\sum_{n=n_0}^\infty \ln(z_n)\)</span> converge
+absolutamente para algún <span class="math inline">\(n_0\)</span>, donde
+<span class="math inline">\(\ln(z)=\int_1^z\frac{dw}w\)</span>. En ese
+caso <span
+class="math inline">\(\lim_{N\to\infty}\prod_{n=1}^Nz_n=\prod_{n=1}^{n_0-1}z_n
+e^{\sum_{n=n_0}^\infty \ln(z_n)}\)</span>. Equivale a que <span
+class="math inline">\(\sum_{n=1}^\infty |1-z_n|\)</span> converge.</p>
+<p>Si <span class="math inline">\(f_n\in\HH(U)\)</span> no tienen ceros
+y <span class="math inline">\(\sum_{n=1}^\infty |1-f_n|\)</span>
+converge casi uniformemente en <span class="math inline">\(U\)</span>,
+entonces <span class="math inline">\(\prod_{n=1}^N f_n\to f\)</span> en
+<span class="math inline">\(\HH(U)\)</span> y <span
+class="math inline">\(\frac{f&#39;}{f}=\sum_{n=1}^\infty\frac{f_n&#39;}{f_n}\)</span>.</p>
+<p>Defino <span
+class="math inline">\(E_n(z)=(1-z)e^{z+\frac{z^2}2+\cdots+\frac{z^{n-1}}{n-1}}\)</span>.
+Si <span class="math inline">\(|z|\leqq\frac12\)</span>, <span
+class="math inline">\(|\ln E_n(z)|\leqq 2|z|^n\)</span>.</p>
+<p><em>Prueba.</em> Tenemos que <span class="math inline">\(\ln
+E_n(z)=\ln(1-z)+z+\frac{z^2}2+\cdots+\frac{z^{n-1}}{n-1}=-\sum_{k=n}^\infty\frac{z^k}k\)</span>.
+Luego <span class="math inline">\(|\ln E_n(z)|\leqq
+\frac{|z|^n}{n}\sum_{k=0}^\infty\frac1{2^k}\leqq 2|z|^n\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Wierstrass.</strong> Si <span
+class="math inline">\(\{z_n\}\subset\C\menos\{0\}\)</span> cumple <span
+class="math inline">\(|z_n|\to\infty\)</span>, y <span
+class="math inline">\(\{k_n\}\subset\N\)</span> cumplen que <span
+class="math inline">\(\sum_{n=1}^\infty\left(\frac{R}{|z_n|}\right)^{k_n}\)</span>
+converge para todo <span class="math inline">\(R&gt;0\)</span> (por
+ejemplo si <span class="math inline">\(k_n=n\)</span>) entonces <span
+class="math inline">\(\prod_{n=1}^\infty E_{k_n}(\frac{z}{z_n})\)</span>
+converge en <span class="math inline">\(\HH(\C)\)</span> a una función
+cuyos únicos ceros son <span class="math inline">\(\{z_n\}\)</span> con
+su multiplicidad.</p>
+<p><em>Prueba.</em> Vale que <span class="math inline">\(k_n=n\)</span>
+funciona porque <span
+class="math inline">\(\sum_{n=N}^\infty\left(\frac{R}{|z_n|}\right)^{n}\leqq
+\sum_{n=N}^\infty\left(\frac{1}{2}\right)^n\)</span> si <span
+class="math inline">\(N\)</span> es grande. Dado <span
+class="math inline">\(R&gt;0\)</span> tomamos <span
+class="math inline">\(K=\{|z|\leqq R\}\)</span> y <span
+class="math inline">\(N\)</span> grande con <span
+class="math inline">\(|z_n|\geqq 2R\)</span> si <span
+class="math inline">\(n\geqq N\)</span>. Entonces en <span
+class="math inline">\(K\)</span> tenemos <span
+class="math inline">\(|\frac{z}{z_n}|\leqq\frac12\)</span> si <span
+class="math inline">\(n\geqq N\)</span>; luego <span
+class="math inline">\(\sum_{n=N}^\infty
+|\ln(E_{k_n}(\frac{z}{z_n}))|\leqq 2
+\sum_{n=N}^\infty|\frac{z}{z_n}|^{k_n}\leqq 2
+\sum_{n=N}^\infty\left(\frac{R}{|z_n|}\right)^{k_n}&lt;\infty\)</span>.
+Entonces <span class="math inline">\(\prod_{n=1}^\infty
+E_{k_n}(\frac{z}{z_n})\)</span> converge en <span
+class="math inline">\(\HH(\C)\)</span>. Ahora en <span
+class="math inline">\(K\)</span> <span
+class="math inline">\(\sum_{n=N}^\infty\ln(E_{k_n}(\frac{z}{z_n}))\to
+0\)</span> si <span class="math inline">\(N\to\infty\)</span>. Luego
+<span class="math inline">\(\prod_{n=N}^\infty E_{k_n}(\frac{z}{z_n})\to
+1\)</span>, por lo que no es 0 si <span class="math inline">\(N\)</span>
+es grande. Entonces los ceros en <span class="math inline">\(K\)</span>
+son los de <span class="math inline">\(\prod_{n=1}^N
+E_{k_n}(\frac{z}{z_n})\)</span>, luego son <span
+class="math inline">\(z_n\)</span> con su multiplicidad. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><em>Corolario.</em> Las funciones <em>meromorfas</em> en <span
+class="math inline">\(\C\)</span>, es decir, las que son holomorfas
+salvo en un conjunto de polos, son cociente de holomorfas.</p>
+<h2 id="función-gamma">Función gamma</h2>
+<p><span class="math display">\[\frac{\pi^2}{\sin^2\pi
+z}=\sum_{n\in\Z}\frac1{(z-n)^2},\pi\frac{cos\pi z}{\sin\pi
+z}=\frac1z+\sum_{n=1}^\infty \frac{2z}{z^2-n^2}\text{ y}\sin\pi z=\pi
+z\prod_{n=1}^\infty\left(1-\frac{z^2}{n^2}\right)\]</span></p>
+<p><em>Prueba.</em> Para la primera notar que la resta es meromorfa, las
+singularidades son evitables (porque la parte singular de los Laurent se
+anula) y tiende a 0 con <span
+class="math inline">\(|z|\to\infty\)</span>. Luego por Liouville es 0 y
+tenemos la igualdad. Para la segunda, la derivada de la resta es la
+primera, y viendo en <span class="math inline">\(z=0\)</span> se ve que
+son iguales. Para la tercera, las derivadas logarítmicas coinciden,
+luego son iguales salvo constante, pero <span
+class="math inline">\(\lim_{z\to 0}\frac{\sin\pi z}{\pi z}=1\)</span>,
+así que son iguales. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><em>Corolario</em>. <span class="math inline">\(\sum_{n=1}^\infty
+\frac1{n^2}=\frac{\pi^2}{6}\)</span>.</p>
+<p>Sea <span
+class="math inline">\(\gamma=\lim_{n\to\infty}\left(1+\frac12+\cdots+\frac1n-\log
+n\right)\)</span>. Defino <span class="math inline">\(\Gamma\)</span>
+por <span class="math display">\[\frac1{\Gamma(z)}=ze^{\gamma
+z}\prod_{n=1}^\infty\left(1+\frac zn\right)e^{-\frac zn},\]</span>
+meromorfa con polos en <span class="math inline">\(\Z_{\leqq
+0}\)</span>. Vale <span
+class="math inline">\(\Gamma(z+1)=z\Gamma(z)\)</span> y <span
+class="math inline">\(\Gamma(n+1)=n!\)</span> si <span
+class="math inline">\(n\in\N\)</span>.</p>
+<p><span class="math inline">\(\Gamma(z)=\int_0^\infty
+e^{-t}t^{z-1}\,dt\)</span> si <span
+class="math inline">\(\Re(z)&gt;0\)</span>.</p>
+<p><em>Prueba.</em> La función <span
+class="math inline">\(f(z)=\int_0^\infty e^{-t}t^{z-1}\,dt\)</span> es
+holomorfa si <span class="math inline">\(\Re(z)&gt;0\)</span>. Basta ver
+la igualdad para <span class="math inline">\(z\in\R_{&gt;0}\)</span>.
+Tenemos <span class="math inline">\(0\leqq e^{-t}-\left(1-\frac
+tn\right)^n\leqq \frac{e^{-t}t^2}{n}\)</span> para <span
+class="math inline">\(t&gt;0\)</span> (se ve derivando), luego <span
+class="math inline">\(f(x)=\lim_{n\to\infty}\int_0^n \left(1-\frac
+tn\right)^n t^{x-1}\,dt\)</span>. Integrando por partes se ve que <span
+class="math inline">\(f(x)=\lim_{n\to\infty}
+\frac{n!n^x}{x(x+1)\ldots(x+n)}\)</span>. Luego <span
+class="math inline">\(\Gamma(x)=f(x)\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><span class="math inline">\(\Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin\pi
+z}\)</span>.</p>
+<p><em>Prueba.</em> Tenemos <span
+class="math inline">\(\frac1{\Gamma(z)\Gamma(-z)}=-\frac{z}{\pi}\sin\pi
+z\)</span>, luego <span
+class="math inline">\(\Gamma(z)\Gamma(1-z)=-z\Gamma(z)\Gamma(-z)=\frac{\pi}{\sin\pi
+z}\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<h2 id="automorfismos">Automorfismos</h2>
+<p>Los únicos automorfismos de <span class="math inline">\(\C\)</span>
+son <span class="math inline">\(f(z)=az+b\)</span>.</p>
+<p><em>Prueba.</em> Defino <span
+class="math inline">\(g(z)=f(\frac1z)\)</span>. Por Casorati-Weierstrass
+tiene un polo en 0, luego <span class="math inline">\(f\)</span> es un
+polinomio. Como es inyectivo, <span
+class="math inline">\(f(z)=az+b\)</span>. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p><strong>Lema de Schwarz.</strong> Sea <span
+class="math inline">\(D=D(0,1)\)</span> y <span
+class="math inline">\(f:D\to D\)</span> holomorfa, con <span
+class="math inline">\(f(0)=0\)</span>. Entonces <span
+class="math inline">\(|f(z)|\leqq |z|\)</span> si <span
+class="math inline">\(z\in D\)</span> y <span
+class="math inline">\(|f&#39;(0)|\leqq 1\)</span>. Si hay <span
+class="math inline">\(z\in D\)</span>, <span
+class="math inline">\(z\neq0\)</span> con <span
+class="math inline">\(|f(z)|=|z|\)</span> o <span
+class="math inline">\(|f&#39;(0)|=1\)</span> entonces <span
+class="math inline">\(f(z)=az\)</span> con <span
+class="math inline">\(|a|=1\)</span>.</p>
+<p><em>Prueba.</em> Sea <span
+class="math inline">\(g(z)=\frac{f(z)}{z}\)</span>. Es holomorfa en
+<span class="math inline">\(D\)</span>. Si <span
+class="math inline">\(r&lt;1\)</span>, por módulo máximo en <span
+class="math inline">\(D(0,r)\)</span> vale <span
+class="math inline">\(|g(z)|\leqq |g(w)|&lt;\frac1{|w|}=\frac1r\)</span>
+si <span class="math inline">\(|z|&lt; r\)</span>, <span
+class="math inline">\(|w|=r\)</span>. Luego con <span
+class="math inline">\(r\to 1\)</span> queda <span
+class="math inline">\(|g(z)|\leqq 1\)</span> para todo <span
+class="math inline">\(z\in D\)</span>. Si <span
+class="math inline">\(|g(z)|=1\)</span> para algún <span
+class="math inline">\(z\)</span>, por módulo máximo <span
+class="math inline">\(g\)</span> es constante en <span
+class="math inline">\(D\)</span>, y queda. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>Los automorfismos de <span class="math inline">\(D=D(0,1)\)</span>
+son <span class="math inline">\(f(z)=a\frac{\alpha-z}{1-\overline\alpha
+z}\)</span> con <span class="math inline">\(|a|=1\)</span>, <span
+class="math inline">\(\alpha\in D\)</span>.</p>
+<p><em>Prueba.</em> Sea <span class="math inline">\(\alpha\)</span> con
+<span class="math inline">\(f(\alpha)=0\)</span>. Sea <span
+class="math inline">\(g_\alpha=\frac{\alpha-z}{1-\overline\alpha
+z}\)</span>. Es holomorfa en <span class="math inline">\(\overline
+D\)</span>, y, si <span class="math inline">\(|z|=1\)</span>, <span
+class="math inline">\(1-\overline\alpha
+z=-z\overline{\alpha-z}\)</span>, por lo que <span
+class="math inline">\(|g_\alpha(z)|=1\)</span>, y <span
+class="math inline">\(|g_\alpha(z)|&lt;1\)</span> en <span
+class="math inline">\(D\)</span>. Se ve <span
+class="math inline">\(g_\alpha\circ g_\alpha=\id\)</span>. Entonces
+<span class="math inline">\(h=f\circ g_\alpha\)</span> es un
+automorfismo con <span class="math inline">\(h(0)=0\)</span>; luego
+<span class="math inline">\(|h(z)|\leqq |z|\)</span> por Schwarz, pero
+también <span class="math inline">\(|z|\leqq|h(z)|\)</span> sobre la
+inversa, por lo que <span class="math inline">\(h(z)=az\)</span> con
+<span class="math inline">\(|a|=1\)</span> y el teorema sigue. <span
+class="math inline">\(\blacksquare\)</span></p>
+<p>Sea <span class="math inline">\(S=\mm{SL}_2(\R)=\{M\in\R^{2\times
+2}\mid \det M=1\}\)</span>. Si <span
+class="math inline">\(M=\left(\begin{array}{cc}a&amp;b\\c&amp;d\end{array}\right)\in
+S\)</span>, definimos <span
+class="math inline">\(f_M(z)=\frac{az+b}{cz+d}\)</span>. Sea <span
+class="math inline">\(H=\{\Im z&gt;0\}\)</span>. Entonces los
+automorfismos de <span class="math inline">\(H\)</span> son <span
+class="math inline">\(f_M\)</span> con <span class="math inline">\(M\in
+S\)</span>.</p>
+<p><em>Prueba.</em> Notar que si <span class="math inline">\(M\in
+S\)</span>, <span class="math inline">\(f_M\in\HH(H)\)</span> y <span
+class="math inline">\(f_M(H)\subset H\)</span>. Notar que <span
+class="math inline">\(S\)</span> es un grupo y que <span
+class="math inline">\(f_{MM&#39;}=f_M\circ f_{M&#39;}\)</span>. Luego
+<span class="math inline">\(f_M\)</span> son automorfismos. Sea <span
+class="math inline">\(f:H\to H\)</span> un automorfismo, y <span
+class="math inline">\(\alpha\in H\)</span> con <span
+class="math inline">\(f(\alpha)=i\)</span>. Se ve que hay <span
+class="math inline">\(M\)</span> con <span
+class="math inline">\(f_M(i)=\alpha\)</span>. Notar que <span
+class="math inline">\(g(z)=\frac{z-i}{z+i}\)</span> es holomorfa <span
+class="math inline">\(H\to D(0,1)\)</span> y que <span
+class="math inline">\(h(z)=i\frac{z+1}{1-z}\)</span> es su inversa.
+Entonces <span class="math inline">\(s=g\circ f\circ f_M\circ h\)</span>
+es un automorfismo de <span class="math inline">\(D\)</span> con <span
+class="math inline">\(s(0)=0\)</span>, luego <span
+class="math inline">\(s=az\)</span> con <span
+class="math inline">\(|a|=1\)</span>. Se comprueba que <span
+class="math inline">\(f\circ f_M=h\circ s\circ g=f_{M&#39;}\)</span> con
+<span class="math inline">\(M&#39;\in S\)</span>, y el teorema sigue.
+<span class="math inline">\(\blacksquare\)</span></p>
+<p>Sea <span class="math inline">\(G=\mm{GL}_2(\C)\)</span>. Los
+automorfismos de <span
+class="math inline">\(\hat\C=\C\cup\{\infty\}\)</span> son las <span
+class="math inline">\(f_M\)</span> con <span class="math inline">\(M\in
+G\)</span>, llamadas <em>homografías</em>. Si <span
+class="math inline">\(F=f_M\)</span>, <span
+class="math inline">\(f=az+b\)</span> o <span
+class="math inline">\(f=T_a\circ M_b\circ J\circ T_c\)</span>, con <span
+class="math inline">\(T_\alpha=z+\alpha\)</span>, <span
+class="math inline">\(M_\alpha=\alpha z\)</span> y <span
+class="math inline">\(J=\frac1z\)</span>. Las homografías transforman
+circunferencias o rectas en circunferencias o rectas (para eso usar que
+la ecuación de una circunferencia o recta en <span
+class="math inline">\(\R^2\)</span> es <span
+class="math inline">\(A(x^2+y^2)+Bx+Cy+D=0\)</span> y la
+descomposición).</p>
+<p>Dados <span
+class="math inline">\(z_1,z_2,z_3,w_1,w_2,w_3\in\hat\C\)</span> hay una
+única homografía <span class="math inline">\(f\)</span> con <span
+class="math inline">\(f(z_i)=w_i\)</span>. Si <span
+class="math inline">\(f,g\)</span> cumplen, <span
+class="math inline">\(f^{-1}\circ g\)</span> tiene 3 puntos fijos, pero
+se ve que sólo la identidad los tiene, luego <span
+class="math inline">\(f=g\)</span>. Se ve que <span
+class="math inline">\(f(z)=(z,z_1,z_2,z_3)=\frac{z-z_1}{z_1-z_2}\frac{z_2-z_3}{z_3-z}\)</span>
+manda <span class="math inline">\(z_1\mapsto 0,z_2\mapsto
+1,z_3\mapsto\infty\)</span>. Si <span class="math inline">\(f\)</span>
+es una homografía vale <span
+class="math inline">\((f(z_1),f(z_2),f(z_3),f(z_4))=(z_1,z_2,z_3,z_4)\)</span>.
+Vale que <span class="math inline">\((z_1,z_2,z_3,z_4)\in\R\)</span> sii
+los cuatro están en una misma recta o circunferencia. Si <span
+class="math inline">\(C\)</span> es una circunferencia o recta, <span
+class="math inline">\(z_1,z_2,z_3\in C\)</span>, se define el simétrico
+de <span class="math inline">\(z\in\C\)</span> con respecto a <span
+class="math inline">\(C\)</span> como el <span
+class="math inline">\(z^*\)</span> con <span
+class="math inline">\((z^*,z_1,z_2,z_3)=\overline{(z,z_1,z_2,z_3)}\)</span>.
+No depende de los <span class="math inline">\(z_i\)</span> sino de <span
+class="math inline">\(C\)</span>: si <span
+class="math inline">\(w_1,w_2,w_3\in C\)</span>, y <span
+class="math inline">\((z^{**},w_1,w_2,w_3)=\overline{(z,w_1,w_2,w_3)}\)</span>,
+si <span class="math inline">\(f(z)=(z,z_1,z_2,z_3)\)</span>, <span
+class="math inline">\(f(w_i)\in\R\)</span>, <span
+class="math inline">\((f(z^{**}),f(w_1),f(w_2),f(w_3))=\overline{(f(z),f(w_1),f(w_2),f(w_3))}\)</span>
+luego <span class="math inline">\(f(z^{**})=\overline{f(z)}\)</span> y
+<span class="math inline">\(z^{**}=z^*\)</span>.</p>
+<h2 id="teorema-de-riemann">Teorema de Riemann</h2>
+<p>Un abierto <span class="math inline">\(U\)</span> es isomorfo a <span
+class="math inline">\(D=D(0,1)\)</span> si y sólo si es simplemente
+conexo y no es <span class="math inline">\(\C\)</span>.</p>
+<p><em>Prueba.</em> Una implicación sale con Liouville y notando que los
+homeos preservan simple-conexidad. Veamos la otra. Sea <span
+class="math inline">\(U\)</span> abierto simplemente conexo, <span
+class="math inline">\(U\neq\C\)</span>. Hay <span
+class="math inline">\(\alpha\not\in U\)</span>, luego hay <span
+class="math inline">\(g(z)=\log(z-\alpha)\)</span> inyectiva. Sea <span
+class="math inline">\(z_0\in U\)</span> y <span
+class="math inline">\(\beta=g(z_0)+2\pi i\)</span>. Hay <span
+class="math inline">\(\epsilon&gt;0\)</span> con <span
+class="math inline">\(\forall z\in U.|g(z)-\beta|\geqq\epsilon\)</span>,
+porque si no hay <span class="math inline">\(z_n\)</span> con <span
+class="math inline">\(g(z_n)\to \beta\)</span>, luego <span
+class="math inline">\(z_n\to z\)</span>, absurdo. Entonces <span
+class="math inline">\(f(z)=\frac{\epsilon}{g(z)-\beta}\)</span> es
+inyectiva <span class="math inline">\(U\to D\)</span>. Entonces basta
+probarlo para <span class="math inline">\(U\subset D\)</span>, y de
+hecho con <span class="math inline">\(0\in U\)</span>.</p>
+<p>Sea <span class="math inline">\(\FF\)</span> el conjunto de funciones
+holomorfas inyectivas <span class="math inline">\(U\to D\)</span> con
+<span class="math inline">\(0\mapsto 0\)</span>; es no vacío porque está
+la inclusión. Por Cauchy <span
+class="math inline">\(|f&#39;(0)|\)</span> está acotado si <span
+class="math inline">\(f\in\FF\)</span>; aplicando Montel obtenemos <span
+class="math inline">\(f_n\in\FF\)</span> y <span
+class="math inline">\(f\in\HH(U)\)</span> con <span
+class="math inline">\(f_n\to f\)</span> y <span
+class="math inline">\(|f&#39;(0)|\)</span> máximo; veamos que <span
+class="math inline">\(f\in\FF\)</span>: si hay <span
+class="math inline">\(z\neq w\)</span> con <span
+class="math inline">\(f(z)=f(w)\)</span>, luego <span
+class="math inline">\(\int_\gamma
+\frac{f(t)\,dw}{f(t)-f(z)}&gt;0\)</span> con <span
+class="math inline">\(\gamma=\partial D(w,\epsilon)\)</span>, <span
+class="math inline">\(|z-w|&gt;\epsilon\)</span>, luego <span
+class="math inline">\(\int_\gamma
+\frac{f_n(t)\,dw}{f_n(t)-f_n(z)}&gt;0\)</span> y hay <span
+class="math inline">\(w_n\in D(w,\epsilon)\)</span> con <span
+class="math inline">\(f_n(w_n)=f_n(z)\)</span>, absurdo.</p>
+<p>Resta ver que <span class="math inline">\(f\)</span> es sobreyectiva.
+Si no sea <span class="math inline">\(\alpha\in D\)</span>, <span
+class="math inline">\(\alpha\not\in f(U)\)</span>. Sea <span
+class="math inline">\(R\in\Aut(D)\)</span> con <span
+class="math inline">\(R(\alpha)=0\)</span>, <span
+class="math inline">\(\log:Rf(U)\to\C\)</span>, <span
+class="math inline">\(S(z)=e^{\frac12\log(z)}\)</span> y <span
+class="math inline">\(T\in\Aut(D)\)</span>, <span
+class="math inline">\(TSR(0)=0\)</span>. Entonces <span
+class="math inline">\(g=TSRf\in\FF\)</span> y si <span
+class="math inline">\(h=R^{-1}S&#39;T\)</span>, <span
+class="math inline">\(f=hg\)</span>, con <span
+class="math inline">\(S&#39;(z)=z^2\)</span>. Ahora <span
+class="math inline">\(h:D\to D\)</span> no es inyectiva, luego por
+Schwarz <span class="math inline">\(|h&#39;(0)|&lt;1\)</span>, y <span
+class="math inline">\(|f&#39;(0)|=|h&#39;(0)||g&#39;(0)|&lt;|g&#39;(0)|\)</span>,
+absurdo. Entonces <span class="math inline">\(f\)</span> es sobreyectiva
+y es iso. <span class="math inline">\(\blacksquare\)</span></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

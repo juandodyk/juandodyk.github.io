@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+  <title>Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015</title>
+
+  <meta property="description" itemprop="description" content=""/>
+
+
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2015-09-20"/>
+  <meta property="article:created" itemprop="dateCreated" content="2015-09-20"/>
+
+  <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+  <meta property="og:title" content="Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:description" content=""/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!--  https://dev.twitter.com/cards/types/summary -->
+  <meta property="twitter:card" content="summary"/>
+  <meta property="twitter:title" content="Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015"/>
+  <meta property="twitter:description" content=""/>
+
+  <!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+  <script type="text/json" id="radix-rmarkdown-metadata">
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2015-09-20"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]}]}
+  </script>
+  <!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["elecciones-exactas_files/anchor-4.2.2/anchor.min.js","elecciones-exactas_files/bowser-1.9.3/bowser.min.js","elecciones-exactas_files/distill-2.2.21/template.v2.js","elecciones-exactas_files/header-attrs-2.13/header-attrs.js","elecciones-exactas_files/jquery-3.6.0/jquery-3.6.0.js","elecciones-exactas_files/jquery-3.6.0/jquery-3.6.0.min.js","elecciones-exactas_files/jquery-3.6.0/jquery-3.6.0.min.map","elecciones-exactas_files/popper-2.6.0/popper.min.js","elecciones-exactas_files/tippy-6.2.7/tippy-bundle.umd.min.js","elecciones-exactas_files/tippy-6.2.7/tippy-light-border.css","elecciones-exactas_files/tippy-6.2.7/tippy.css","elecciones-exactas_files/tippy-6.2.7/tippy.umd.min.js","elecciones-exactas_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+  <!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+  <style type="text/css">
+
+  body {
+    background-color: white;
+  }
+
+  .pandoc-table {
+    width: 100%;
+  }
+
+  .pandoc-table>caption {
+    margin-bottom: 10px;
+  }
+
+  .pandoc-table th:not([align]) {
+    text-align: left;
+  }
+
+  .pagedtable-footer {
+    font-size: 15px;
+  }
+
+  d-byline .byline {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  d-byline .byline h3 {
+    margin-block-start: 1.5em;
+  }
+
+  d-byline .byline .authors-affiliations h3 {
+    margin-block-start: 0.5em;
+  }
+
+  .authors-affiliations .orcid-id {
+    width: 16px;
+    height:16px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    padding-bottom: 2px;
+  }
+
+  d-title .dt-tags {
+    margin-top: 1em;
+    grid-column: text;
+  }
+
+  .dt-tags .dt-tag {
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0em 0.4em;
+    margin-right: 0.5em;
+    margin-bottom: 0.4em;
+    font-size: 70%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  d-article table.gt_table td,
+  d-article table.gt_table th {
+    border-bottom: none;
+  }
+
+  .html-widget {
+    margin-bottom: 2.0em;
+  }
+
+  .l-screen-inset {
+    padding-right: 16px;
+  }
+
+  .l-screen .caption {
+    margin-left: 10px;
+  }
+
+  .shaded {
+    background: rgb(247, 247, 247);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .html-widget {
+    margin-bottom: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .shaded .shaded-content {
+    background: white;
+  }
+
+  .text-output {
+    margin-top: 0;
+    line-height: 1.5em;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  d-article {
+    padding-top: 2.5rem;
+    padding-bottom: 30px;
+  }
+
+  d-appendix {
+    padding-top: 30px;
+  }
+
+  d-article>p>img {
+    width: 100%;
+  }
+
+  d-article h2 {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  d-article h3 {
+    margin-top: 1.5rem;
+  }
+
+  d-article iframe {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 2.0em;
+    width: 100%;
+  }
+
+  /* Tweak code blocks */
+
+  d-article div.sourceCode code,
+  d-article pre code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  }
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: auto;
+  }
+
+  d-article div.sourceCode {
+    background-color: white;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 10px;
+    font-size: 12px;
+    border-left: 2px solid rgba(0,0,0,0.1);
+  }
+
+  d-article pre {
+    font-size: 12px;
+    color: black;
+    background: none;
+    margin-top: 0;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  d-article pre a {
+    border-bottom: none;
+  }
+
+  d-article pre a:hover {
+    border-bottom: none;
+    text-decoration: underline;
+  }
+
+  d-article details {
+    grid-column: text;
+    margin-bottom: 0.8em;
+  }
+
+  @media(min-width: 768px) {
+
+  d-article pre,
+  d-article div.sourceCode,
+  d-article div.sourceCode pre {
+    overflow: visible !important;
+  }
+
+  d-article div.sourceCode pre {
+    padding-left: 18px;
+    font-size: 14px;
+  }
+
+  d-article pre {
+    font-size: 14px;
+  }
+
+  }
+
+  figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  /* CSS for d-contents */
+
+  .d-contents {
+    grid-column: text;
+    color: rgba(0,0,0,0.8);
+    font-size: 0.9em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    padding-left: 0.25em;
+    justify-self: start;
+  }
+
+  @media(min-width: 1000px) {
+    .d-contents.d-contents-float {
+      height: 0;
+      grid-column-start: 1;
+      grid-column-end: 4;
+      justify-self: center;
+      padding-right: 3em;
+      padding-left: 2em;
+    }
+  }
+
+  .d-contents nav h3 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+
+  .d-contents li {
+    list-style-type: none
+  }
+
+  .d-contents nav > ul {
+    padding-left: 0;
+  }
+
+  .d-contents ul {
+    padding-left: 1em
+  }
+
+  .d-contents nav ul li {
+    margin-top: 0.6em;
+    margin-bottom: 0.2em;
+  }
+
+  .d-contents nav a {
+    font-size: 13px;
+    border-bottom: none;
+    text-decoration: none
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  .d-contents nav a:hover {
+    text-decoration: underline solid rgba(0, 0, 0, 0.6)
+  }
+
+  .d-contents nav > ul > li > a {
+    font-weight: 600;
+  }
+
+  .d-contents nav > ul > li > ul {
+    font-weight: inherit;
+  }
+
+  .d-contents nav > ul > li > ul > li {
+    margin-top: 0.2em;
+  }
+
+
+  .d-contents nav ul {
+    margin-top: 0;
+    margin-bottom: 0.25em;
+  }
+
+  .d-article-with-toc h2:nth-child(2) {
+    margin-top: 0;
+  }
+
+
+  /* Figure */
+
+  .figure {
+    position: relative;
+    margin-bottom: 2.5em;
+    margin-top: 1.5em;
+  }
+
+  .figure img {
+    width: 100%;
+  }
+
+  .figure .caption {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 12px;
+    line-height: 1.5em;
+  }
+
+  .figure img.external {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    padding: 18px;
+    box-sizing: border-box;
+  }
+
+  .figure .caption a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .figure .caption b,
+  .figure .caption strong, {
+    font-weight: 600;
+    color: rgba(0, 0, 0, 1.0);
+  }
+
+  /* Citations */
+
+  d-article .citation {
+    color: inherit;
+    cursor: inherit;
+  }
+
+  div.hanging-indent{
+    margin-left: 1em; text-indent: -1em;
+  }
+
+  /* Citation hover box */
+
+  .tippy-box[data-theme~=light-border] {
+    background-color: rgba(250, 250, 250, 0.95);
+  }
+
+  .tippy-content > p {
+    margin-bottom: 0;
+    padding: 2px;
+  }
+
+
+  /* Tweak 1000px media break to show more text */
+
+  @media(min-width: 1000px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 16px;
+    }
+
+    .grid {
+      grid-column-gap: 16px;
+    }
+
+    d-article {
+      font-size: 1.06rem;
+      line-height: 1.7em;
+    }
+    figure .caption, .figure .caption, figure figcaption {
+      font-size: 13px;
+    }
+  }
+
+  @media(min-width: 1180px) {
+    .base-grid,
+    distill-header,
+    d-title,
+    d-abstract,
+    d-article,
+    d-appendix,
+    distill-appendix,
+    d-byline,
+    d-footnote-list,
+    d-citation-list,
+    distill-footer {
+      grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+      grid-column-gap: 32px;
+    }
+
+    .grid {
+      grid-column-gap: 32px;
+    }
+  }
+
+
+  /* Get the citation styles for the appendix (not auto-injected on render since
+     we do our own rendering of the citation appendix) */
+
+  d-appendix .citation-appendix,
+  .d-appendix .citation-appendix {
+    font-size: 11px;
+    line-height: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 18px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 10px 18px;
+    border-radius: 3px;
+    color: rgba(150, 150, 150, 1);
+    overflow: hidden;
+    margin-top: -12px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  /* Include appendix styles here so they can be overridden */
+
+  d-appendix {
+    contain: layout style;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-top: 60px;
+    margin-bottom: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+    padding-bottom: 48px;
+  }
+
+  d-appendix h3 {
+    grid-column: page-start / text-start;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: 1em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.65);
+  }
+
+  d-appendix h3 + * {
+    margin-top: 1em;
+  }
+
+  d-appendix ol {
+    padding: 0 0 0 15px;
+  }
+
+  @media (min-width: 768px) {
+    d-appendix ol {
+      padding: 0 0 0 30px;
+      margin-left: -30px;
+    }
+  }
+
+  d-appendix li {
+    margin-bottom: 1em;
+  }
+
+  d-appendix a {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  d-appendix > * {
+    grid-column: text;
+  }
+
+  d-appendix > d-footnote-list,
+  d-appendix > d-citation-list,
+  d-appendix > distill-appendix {
+    grid-column: screen;
+  }
+
+  /* Include footnote styles here so they can be overridden */
+
+  d-footnote-list {
+    contain: layout style;
+  }
+
+  d-footnote-list > * {
+    grid-column: text;
+  }
+
+  d-footnote-list a.footnote-backlink {
+    color: rgba(0,0,0,0.3);
+    padding-left: 0.5em;
+  }
+
+
+
+  /* Anchor.js */
+
+  .anchorjs-link {
+    /*transition: all .25s linear; */
+    text-decoration: none;
+    border-bottom: none;
+  }
+  *:hover > .anchorjs-link {
+    margin-left: -1.125em !important;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  /* Social footer */
+
+  .social_footer {
+    margin-top: 30px;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.67);
+  }
+
+  .disqus-comments {
+    margin-right: 30px;
+  }
+
+  .disqus-comment-count {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+  }
+
+  #disqus_thread {
+    margin-top: 30px;
+  }
+
+  .article-sharing a {
+    border-bottom: none;
+    margin-right: 8px;
+  }
+
+  .article-sharing a:hover {
+    border-bottom: none;
+  }
+
+  .sidebar-section.subscribe {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .subscribe p {
+    margin-bottom: 0.5em;
+  }
+
+
+  .article-footer .subscribe {
+    font-size: 15px;
+    margin-top: 45px;
+  }
+
+
+  .sidebar-section.custom {
+    font-size: 12px;
+    line-height: 1.6em;
+  }
+
+  .custom p {
+    margin-bottom: 0.5em;
+  }
+
+  /* Styles for listing layout (hide title) */
+  .layout-listing d-title, .layout-listing .d-title {
+    display: none;
+  }
+
+  /* Styles for posts lists (not auto-injected) */
+
+
+  .posts-with-sidebar {
+    padding-left: 45px;
+    padding-right: 45px;
+  }
+
+  .posts-list .description h2,
+  .posts-list .description p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  .posts-list .description h2 {
+    font-weight: 700;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .posts-list h2.post-tag {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 12px;
+  }
+  .posts-list {
+    margin-top: 60px;
+    margin-bottom: 24px;
+  }
+
+  .posts-list .post-preview {
+    text-decoration: none;
+    overflow: hidden;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 24px 0;
+  }
+
+  .post-preview-last {
+    border-bottom: none !important;
+  }
+
+  .posts-list .posts-list-caption {
+    grid-column: screen;
+    font-weight: 400;
+  }
+
+  .posts-list .post-preview h2 {
+    margin: 0 0 6px 0;
+    line-height: 1.2em;
+    font-style: normal;
+    font-size: 24px;
+  }
+
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.4em;
+    font-size: 16px;
+  }
+
+  .posts-list .post-preview .thumbnail {
+    box-sizing: border-box;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 500px;
+  }
+  .posts-list .post-preview img {
+    width: 100%;
+    display: block;
+  }
+
+  .posts-list .metadata {
+    font-size: 12px;
+    line-height: 1.4em;
+    margin-bottom: 18px;
+  }
+
+  .posts-list .metadata > * {
+    display: inline-block;
+  }
+
+  .posts-list .metadata .publishedDate {
+    margin-right: 2em;
+  }
+
+  .posts-list .metadata .dt-authors {
+    display: block;
+    margin-top: 0.3em;
+    margin-right: 2em;
+  }
+
+  .posts-list .dt-tags {
+    display: block;
+    line-height: 1em;
+  }
+
+  .posts-list .dt-tags .dt-tag {
+    display: inline-block;
+    color: rgba(0,0,0,0.6);
+    padding: 0.3em 0.4em;
+    margin-right: 0.2em;
+    margin-bottom: 0.4em;
+    font-size: 60%;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .posts-list img {
+    opacity: 1;
+  }
+
+  .posts-list img[data-src] {
+    opacity: 0;
+  }
+
+  .posts-more {
+    clear: both;
+  }
+
+
+  .posts-sidebar {
+    font-size: 16px;
+  }
+
+  .posts-sidebar h3 {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .sidebar-section {
+    margin-bottom: 30px;
+  }
+
+  .categories ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .categories li {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+  }
+
+  .categories li>a {
+    border-bottom: none;
+  }
+
+  .categories li>a:hover {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+
+  .categories .active {
+    font-weight: 600;
+  }
+
+  .categories .category-count {
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+
+  @media(min-width: 768px) {
+    .posts-list .post-preview h2 {
+      font-size: 26px;
+    }
+    .posts-list .post-preview .thumbnail {
+      float: right;
+      width: 30%;
+      margin-bottom: 0;
+    }
+    .posts-list .post-preview .description {
+      float: left;
+      width: 45%;
+    }
+    .posts-list .post-preview .metadata {
+      float: left;
+      width: 20%;
+      margin-top: 8px;
+    }
+    .posts-list .post-preview p {
+      margin: 0 0 12px 0;
+      line-height: 1.5em;
+      font-size: 16px;
+    }
+    .posts-with-sidebar .posts-list {
+      float: left;
+      width: 75%;
+    }
+    .posts-with-sidebar .posts-sidebar {
+      float: right;
+      width: 20%;
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
+
+  /* Improve display for browsers without grid (IE/Edge <= 15) */
+
+  .downlevel {
+    line-height: 1.6em;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+  }
+
+  .downlevel .d-title {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .downlevel .d-title h1 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.1em;
+    margin: 0 0 0.5rem;
+  }
+
+  .downlevel .d-title p {
+    font-weight: 300;
+    font-size: 1.2rem;
+    line-height: 1.55em;
+    margin-top: 0;
+  }
+
+  .downlevel .d-byline {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
+    font-size: 0.8rem;
+    line-height: 1.8em;
+  }
+
+  .downlevel .section-separator {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .downlevel .d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+
+  .downlevel .d-appendix {
+    padding-left: 0;
+    padding-right: 0;
+    max-width: none;
+    font-size: 0.8em;
+    line-height: 1.7em;
+    margin-bottom: 0;
+    color: rgba(0,0,0,0.5);
+    padding-top: 40px;
+    padding-bottom: 48px;
+  }
+
+  .downlevel .footnotes ol {
+    padding-left: 13px;
+  }
+
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media(min-width: 768px) {
+    .downlevel .base-grid,
+    .downlevel .distill-header,
+    .downlevel .d-title,
+    .downlevel .d-abstract,
+    .downlevel .d-article,
+    .downlevel .d-appendix,
+    .downlevel .distill-appendix,
+    .downlevel .d-byline,
+    .downlevel .d-footnote-list,
+    .downlevel .d-citation-list,
+    .downlevel .distill-footer,
+    .downlevel .appendix-bottom,
+    .downlevel .posts-container {
+    padding-left: 150px;
+    padding-right: 150px;
+    max-width: 900px;
+  }
+  }
+
+  .downlevel pre code {
+    display: block;
+    border-left: 2px solid rgba(0, 0, 0, .1);
+    padding: 0 0 0 20px;
+    font-size: 14px;
+  }
+
+  .downlevel code, .downlevel pre {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+  }
+
+  .downlevel .posts-list .post-preview {
+    color: inherit;
+  }
+
+
+
+  </style>
+
+  <script type="application/javascript">
+
+  function is_downlevel_browser() {
+    if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                   window.navigator.userAgent)) {
+      return true;
+    } else {
+      return window.load_distill_framework === undefined;
+    }
+  }
+
+  // show body when load is complete
+  function on_load_complete() {
+
+    // add anchors
+    if (window.anchors) {
+      window.anchors.options.placement = 'left';
+      window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+    }
+
+
+    // set body to visible
+    document.body.style.visibility = 'visible';
+
+    // force redraw for leaflet widgets
+    if (window.HTMLWidgets) {
+      var maps = window.HTMLWidgets.findAll(".leaflet");
+      $.each(maps, function(i, el) {
+        var map = this.getMap();
+        map.invalidateSize();
+        map.eachLayer(function(layer) {
+          if (layer instanceof L.TileLayer)
+            layer.redraw();
+        });
+      });
+    }
+
+    // trigger 'shown' so htmlwidgets resize
+    $('d-article').trigger('shown');
+  }
+
+  function init_distill() {
+
+    init_common();
+
+    // create front matter
+    var front_matter = $('<d-front-matter></d-front-matter>');
+    $('#distill-front-matter').wrap(front_matter);
+
+    // create d-title
+    $('.d-title').changeElementType('d-title');
+
+    // create d-byline
+    var byline = $('<d-byline></d-byline>');
+    $('.d-byline').replaceWith(byline);
+
+    // create d-article
+    var article = $('<d-article></d-article>');
+    $('.d-article').wrap(article).children().unwrap();
+
+    // move posts container into article
+    $('.posts-container').appendTo($('d-article'));
+
+    // create d-appendix
+    $('.d-appendix').changeElementType('d-appendix');
+
+    // flag indicating that we have appendix items
+    var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+    // replace footnotes with <d-footnote>
+    $('.footnote-ref').each(function(i, val) {
+      appendix = true;
+      var href = $(this).attr('href');
+      var id = href.replace('#', '');
+      var fn = $('#' + id);
+      var fn_p = $('#' + id + '>p');
+      fn_p.find('.footnote-back').remove();
+      var text = fn_p.html();
+      var dtfn = $('<d-footnote></d-footnote>');
+      dtfn.html(text);
+      $(this).replaceWith(dtfn);
+    });
+    // remove footnotes
+    $('.footnotes').remove();
+
+    // move refs into #references-listing
+    $('#references-listing').replaceWith($('#refs'));
+
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      var id = $(this).attr('id');
+      $('.d-contents a[href="#' + id + '"]').parent().remove();
+      appendix = true;
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+    });
+
+    // show d-appendix if we have appendix content
+    $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+    // localize layout chunks to just output
+    $('.layout-chunk').each(function(i, val) {
+
+      // capture layout
+      var layout = $(this).attr('data-layout');
+
+      // apply layout to markdown level block elements
+      var elements = $(this).children().not('details, div.sourceCode, pre, script');
+      elements.each(function(i, el) {
+        var layout_div = $('<div class="' + layout + '"></div>');
+        if (layout_div.hasClass('shaded')) {
+          var shaded_content = $('<div class="shaded-content"></div>');
+          $(this).wrap(shaded_content);
+          $(this).parent().wrap(layout_div);
+        } else {
+          $(this).wrap(layout_div);
+        }
+      });
+
+
+      // unwrap the layout-chunk div
+      $(this).children().unwrap();
+    });
+
+    // remove code block used to force  highlighting css
+    $('.distill-force-highlighting-css').parent().remove();
+
+    // remove empty line numbers inserted by pandoc when using a
+    // custom syntax highlighting theme
+    $('code.sourceCode a:empty').remove();
+
+    // load distill framework
+    load_distill_framework();
+
+    // wait for window.distillRunlevel == 4 to do post processing
+    function distill_post_process() {
+
+      if (!window.distillRunlevel || window.distillRunlevel < 4)
+        return;
+
+      // hide author/affiliations entirely if we have no authors
+      var front_matter = JSON.parse($("#distill-front-matter").html());
+      var have_authors = front_matter.authors && front_matter.authors.length > 0;
+      if (!have_authors)
+        $('d-byline').addClass('hidden');
+
+      // article with toc class
+      $('.d-contents').parent().addClass('d-article-with-toc');
+
+      // strip links that point to #
+      $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+      // add orcid ids
+      $('.authors-affiliations').find('.author').each(function(i, el) {
+        var orcid_id = front_matter.authors[i].orcidID;
+        if (orcid_id) {
+          var a = $('<a></a>');
+          a.attr('href', 'https://orcid.org/' + orcid_id);
+          var img = $('<img></img>');
+          img.addClass('orcid-id');
+          img.attr('alt', 'ORCID ID');
+          img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+          a.append(img);
+          $(this).append(a);
+        }
+      });
+
+      // hide elements of author/affiliations grid that have no value
+      function hide_byline_column(caption) {
+        $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+      }
+
+      // affiliations
+      var have_affiliations = false;
+      for (var i = 0; i<front_matter.authors.length; ++i) {
+        var author = front_matter.authors[i];
+        if (author.affiliation !== "&nbsp;") {
+          have_affiliations = true;
+          break;
+        }
+      }
+      if (!have_affiliations)
+        $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+      // published date
+      if (!front_matter.publishedDate)
+        hide_byline_column("Published");
+
+      // document object identifier
+      var doi = $('d-byline').find('h3:contains("DOI")');
+      var doi_p = doi.next().empty();
+      if (!front_matter.doi) {
+        // if we have a citation and valid citationText then link to that
+        if ($('#citation').length > 0 && front_matter.citationText) {
+          doi.html('Citation');
+          $('<a href="#citation"></a>')
+            .text(front_matter.citationText)
+            .appendTo(doi_p);
+        } else {
+          hide_byline_column("DOI");
+        }
+      } else {
+        $('<a></a>')
+           .attr('href', "https://doi.org/" + front_matter.doi)
+           .html(front_matter.doi)
+           .appendTo(doi_p);
+      }
+
+       // change plural form of authors/affiliations
+      if (front_matter.authors.length === 1) {
+        var grid = $('.authors-affiliations');
+        grid.children('h3:contains("Authors")').text('Author');
+        grid.children('h3:contains("Affiliations")').text('Affiliation');
+      }
+
+      // remove d-appendix and d-footnote-list local styles
+      $('d-appendix > style:first-child').remove();
+      $('d-footnote-list > style:first-child').remove();
+
+      // move appendix-bottom entries to the bottom
+      $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+      $('.appendix-bottom').remove();
+
+      // hoverable references
+      $('span.citation[data-cites]').each(function() {
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
+        window.tippy(this, {
+          allowHTML: true,
+          content: refHtml,
+          maxWidth: 500,
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start'
+        });
+      });
+
+      // clear polling timer
+      clearInterval(tid);
+
+      // show body now that everything is ready
+      on_load_complete();
+    }
+
+    var tid = setInterval(distill_post_process, 50);
+    distill_post_process();
+
+  }
+
+  function init_downlevel() {
+
+    init_common();
+
+     // insert hr after d-title
+    $('.d-title').after($('<hr class="section-separator"/>'));
+
+    // check if we have authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+    // manage byline/border
+    if (!have_authors)
+      $('.d-byline').remove();
+    $('.d-byline').after($('<hr class="section-separator"/>'));
+    $('.d-byline a').remove();
+
+    // remove toc
+    $('.d-contents').remove();
+
+    // move appendix elements
+    $('h1.appendix, h2.appendix').each(function(i, val) {
+      $(this).changeElementType('h3');
+    });
+    $('h3.appendix').each(function(i, val) {
+      $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+    });
+
+
+    // inject headers into references and footnotes
+    var refs_header = $('<h3></h3>');
+    refs_header.text('References');
+    $('#refs').prepend(refs_header);
+
+    var footnotes_header = $('<h3></h3');
+    footnotes_header.text('Footnotes');
+    $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // remove appendix if it's empty
+    if ($('.d-appendix').children().length === 0)
+      $('.d-appendix').remove();
+
+    // prepend separator above appendix
+    $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+    // trim code
+    $('pre>code').each(function(i, val) {
+      $(this).html($.trim($(this).html()));
+    });
+
+    // move posts-container right before article
+    $('.posts-container').insertBefore($('.d-article'));
+
+    $('body').addClass('downlevel');
+
+    on_load_complete();
+  }
+
+
+  function init_common() {
+
+    // jquery plugin to change element types
+    (function($) {
+      $.fn.changeElementType = function(newType) {
+        var attrs = {};
+
+        $.each(this[0].attributes, function(idx, attr) {
+          attrs[attr.nodeName] = attr.nodeValue;
+        });
+
+        this.replaceWith(function() {
+          return $("<" + newType + "/>", attrs).append($(this).contents());
+        });
+      };
+    })(jQuery);
+
+    // prevent underline for linked images
+    $('a > img').parent().css({'border-bottom' : 'none'});
+
+    // mark non-body figures created by knitr chunks as 100% width
+    $('.layout-chunk').each(function(i, val) {
+      var figures = $(this).find('img, .html-widget');
+      if ($(this).attr('data-layout') !== "l-body") {
+        figures.css('width', '100%');
+      } else {
+        figures.css('max-width', '100%');
+        figures.filter("[width]").each(function(i, val) {
+          var fig = $(this);
+          fig.css('width', fig.attr('width') + 'px');
+        });
+
+      }
+    });
+
+    // auto-append index.html to post-preview links in file: protocol
+    // and in rstudio ide preview
+    $('.post-preview').each(function(i, val) {
+      if (window.location.protocol === "file:")
+        $(this).attr('href', $(this).attr('href') + "index.html");
+    });
+
+    // get rid of index.html references in header
+    if (window.location.protocol !== "file:") {
+      $('.distill-site-header a[href]').each(function(i,val) {
+        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+      });
+    }
+
+    // add class to pandoc style tables
+    $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+    $('.kable-table').children('table').addClass('pandoc-table');
+
+    // add figcaption style to table captions
+    $('caption').parent('table').addClass("figcaption");
+
+    // initialize posts list
+    if (window.init_posts_list)
+      window.init_posts_list();
+
+    // implmement disqus comment link
+    $('.disqus-comment-count').click(function() {
+      window.headroom_prevent_pin = true;
+      $('#disqus_thread').toggleClass('hidden');
+      if (!$('#disqus_thread').hasClass('hidden')) {
+        var offset = $(this).offset();
+        $(window).resize();
+        $('html, body').animate({
+          scrollTop: offset.top - 35
+        });
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    if (is_downlevel_browser())
+      init_downlevel();
+    else
+      window.addEventListener('WebComponentsReady', init_distill);
+  });
+
+  </script>
+
+  <!--/radix_placeholder_distill-->
+  <script src="elecciones-exactas_files/header-attrs-2.13/header-attrs.js"></script>
+  <script src="elecciones-exactas_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="elecciones-exactas_files/popper-2.6.0/popper.min.js"></script>
+  <link href="elecciones-exactas_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="elecciones-exactas_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="elecciones-exactas_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="elecciones-exactas_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="elecciones-exactas_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="elecciones-exactas_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="elecciones-exactas_files/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+  <!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015","description":"","authors":[],"publishedDate":"2015-09-20T00:00:00.000-04:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#resultados">Resultados</a></li>
+<li><a href="#fem">FEM</a>
+<ul>
+<li><a href="#gestión">Gestión</a></li>
+<li><a href="#manejo-de-recursos-de-poder">Manejo de recursos de
+poder</a></li>
+<li><a href="#homogeneidad-y-presencia">Homogeneidad y
+presencia</a></li>
+<li><a href="#conflicto-por-el-presupuesto">Conflicto por el
+presupuesto</a></li>
+<li><a href="#cómo-traducir-un-conflicto-en-hegemonía-electoral">Cómo
+traducir un conflicto en hegemonía electoral</a></li>
+</ul></li>
+<li><a href="#la-izquierda-al-frente">La Izquierda al Frente</a></li>
+<li><a href="#exactas-puede-más">Exactas Puede Más</a></li>
+<li><a href="#fuentes">Fuentes</a></li>
+</ul>
+</nav>
+</div>
+<p>Se votaron consejeros estudiantiles (obligatorio) y representantes
+del CECEN (no obligatorio). Votaron 5675 personas para consejo y 2528
+para centro (el 44%).</p>
+<h2 id="resultados">Resultados</h2>
+<p>Se esperaba que gane el FEM (la Mella). Arrasó: 44% para consejo, 51%
+para centro. El segundo puesto estaba peleado entre la Izquierda al
+Frente (PO + Nuevo MAS + Izquierda Socialista + La Corriente) y Exactas
+Puede Más (La Cámpora + Nuevo Encuentro + Mov Evita + Seamos Libres). Se
+lo llevó la izquierda con facilidad: 21% tanto para consejo como para
+centro, quedándose con el consejero de la minoría. EPM sacó 16% para
+consejo y lo mismo para centro. Las dos listas restantes, Cambio de Base
+(Bandera Negra, anarquistas) y Nuevo Espacio (reformistas), fueron
+irrelevantes.</p>
+<h2 id="fem">FEM</h2>
+<p>El FEM hizo una elección notable. Tanto en comparación con años
+anteriores (27% en 2013, 35% en 2014) como en comparación con otras
+facultades (se profundizó la caída de la Mella en todas excepto Exactas,
+Psicología y -por aliarse al ganador- Fadu). Es récord histórico: sólo
+se puede comparar con la elección de 2011 (43% para consejo, 46% para
+centro). Esto se explica por los siguientes motivos: 1) una buena
+gestión, 2) un uso racional de los recursos de poder, 3) la homogeneidad
+y presencia visible en espacios académicos de su base militante, y 4) el
+apoyo de los estudiantes a su tratamiento del conflicto
+presupuestario.</p>
+<h3 id="gestión">Gestión</h3>
+<p>El FEM conducía el centro, y por lo tanto contó con la ventaja de ser
+oficialismo. Esto rindió electoralmente por su buena gestión. El CECEN
+amplió y mejoró espacios públicos y servicios (nuevo bar, mejoras en la
+biblioteca Noriega y el sum, desayuno y merienda baratos). Funcionó como
+herramienta gremial en los conflictos que surgieron (CBC, Tecnópolis,
+Becas Bicentenario, presupuesto). Tuvo una buena política de
+comunicación (carteles, presencia en redes sociales, asambleas). Y
+ofreció espacios de participación a los estudiantes (comisiones de
+carrera, comisiones del CECEN) que alcanzaron el objetivo mínimo de
+llevar a cabo actividades abiertas. En resumen: hizo bien lo que debe
+hacer un centro de estudiantes. Lo cual no es poco, dada la pésima
+gestión de la Izquierda al Frente en 2014.</p>
+<h3 id="manejo-de-recursos-de-poder">Manejo de recursos de poder</h3>
+<p>Los logros de gestión en el CECEN fueron capitalizados políticamente
+por el FEM. La estrategia para conseguir esto no fue la obvia (ponerle
+el sello de la agrupación a todo). Se apostó al CECEN como vehículo de
+acción política jugando inteligentemente con sus límites. Se invirtieron
+los recursos de poder racionalmente: el CECEN se expandió donde fue más
+redituable para el FEM y se detuvo o retrocedió en los terrenos más
+adversos, menos rendidores o más riesgosos.</p>
+<p>El FEM apostó al fortalecimiento y ampliación institucional del
+CECEN. Durante el año hizo sus campañas a través del centro sin la firma
+FEM. Con esto marcó la cancha a las demás agrupaciones: usó la
+legitimidad que da el sello CECEN para imponer los términos de la
+discusión pública (el mejor ejemplo: instalar el hashtag
+#DefendamosExactas). Al mismo tiempo amplió los espacios de
+representación: impulsó actividades desde las comisiones de carrera que
+saturaron esa agenda y cooptaron voluntades no partidarias.</p>
+<p>Pero así como el CECEN se expandió en espacios de participación bajo
+la conducción hegemónica del FEM, en otros espacios mostró nula
+iniciativa o incluso retrocesos por tensiones con otros actores que no
+quiso o no pudo resolver. Hubo tensiones con los “becarios”:
+trabajadores de las fotocopiadoras y kioskos del centro, que -¿sorprende
+a alguien?- están en negro y ganan poco. Algunos de ellos son
+independientes u opositores, y les costaron la elección de centro en
+2013. El FEM a principio de este año intentó echar a una administradora
+no partidaria y hacer electivos esos cargos para asegurarse el control
+de ese espacio de poder. Intentó justificarlo públicamente y falló.</p>
+<p>También hubo tensiones con las otras agrupaciones, cansadas de que
+les roben proyectos o campañas. Y con las autoridades y los consejeros
+de otros claustros: si bien hubo un diálogo fluido, el FEM no dudó en
+traicionarlos y jugar su propio juego cuando le resultó conveniente
+(reunirse con el rector Barbieri por el conflicto presupuestario a
+espaldas de las autoridades de la facultad). Lo cual tiene como costo el
+debilitamiento de su posición en el consejo directivo para avanzar
+proyectos a escala superior a la del CECEN. Por último, el FEM convive
+con una tensión con la institucionalidad misma del centro: el CECEN no
+tiene estatuto ni personería jurídica. El FEM calcula que la dificultad
+y el costo de llevar adelante estas reformas superan los posibles
+beneficios.</p>
+<h3 id="homogeneidad-y-presencia">Homogeneidad y presencia</h3>
+<p>El FEM no es una alianza política. No tiene facciones ni se observan
+grandes diferencias internas. Si bien proclama que tiene una clase de
+militantes diferenciada, los “independientes” (no orgánicos a la
+afiliación partidaria en Patria Grande), lo que hay es un gris de
+organicidad o adhesión ideológica que es común a cualquier agrupación
+política. Los militantes entran siendo “independientes” y van siendo
+persuadidos y formados gradualmente en la línea política. Hay -eso sí-
+flexibilidad y se incorporan nuevas ideas, las que mejor se adaptan a la
+sensibilidad de los estudiantes de la facultad. Pero la acción es
+coordinada y todos los éxitos son capitalizados por la organización.</p>
+<p>El FEM está resistiendo un recambio generacional. Pero no sólo no
+presenta grandes peligros en el corto plazo sino que constituye un
+activo, en tanto muchos veteranos permanecen en la facultad como
+docentes o investigadores y aportan su ayuda desde ese lugar. Esta
+presencia en espacios académicos se suma a la de la propia base
+militante estudiantil: el FEM tiene “codepers” en las comisiones
+departamentales (y si no los tiene intenta cooptarlos), y varios de sus
+miembros son ayudantes en materias de sus carreras.</p>
+<h3 id="conflicto-por-el-presupuesto">Conflicto por el presupuesto</h3>
+<p>Además de contar con estas tres ventajas frente a la competencia, el
+FEM protagonizó este año una campaña que entiendo que fue decisiva para
+el resultado electoral. Se trató de la campaña por más presupuesto para
+la Facultad. El FEM la condujo desde el movimiento estudiantil, fijó el
+significante (la etiqueta) con el que todos los actores la nombraron (el
+hashtag #DefendamosExactas, en clara imitación de #NiUnaMenos),
+estableció una narrativa que tuvo aceptación incluso entre la oposición
+de izquierda, y obtuvo una “victoria” controvertida pero validada como
+tal por una amplia mayoría de estudiantes.</p>
+<p>Resumo la historia. A principio de año el decano Reboreda anunció que
+con el presupuesto que le asignó el Consejo Superior para 2015 Exactas
+“no llega a Octubre”. El presupuesto de la UBA se reparte así: se
+destina lo necesario para el pago de salarios, y el resto se destina
+entre administración central (Rectorado), facultades y hospitales para
+“gastos de funcionamiento”. El presupuesto para facultades, a su vez, se
+reparte entre las trece. Está en discusión qué porcentaje le debería
+tocar a cada una. Hasta hace unos años, gracias la gestión del ex decano
+Jorge Aliaga, la repartición se hacía de acuerdo a un criterio que tenía
+en cuenta el tamaño y la complejidad de cada facultad. Exactas es
+pequeña demográficamente, pero sus laboratorios y sus tres edificios la
+hacen merecedora de entre 13 y 15% del presupuesto de acuerdo a ese
+criterio, muy por encima del promedio que, por ser 13 facultades, está
+en 7.7%. Exactas perdió el lugar político que tenía en esos años en el
+CS, lo cual recrudeció tras la elección del rector Barbieri en 2013,
+apoyado por casi todos los decanos pero no por el de Exactas. Por este
+motivo la porción del presupuesto que le asigna el CS viene cayendo
+desde ese momento, tendiendo al 10%, a lo cual se suma que por ser
+opositora al rector no recibe fondos discrecionales extra. Exactas tenía
+ahorros que fue gastando en este último tiempo, pero se terminaron el
+año pasado. Por eso este año el decano anunció la situación de
+emergencia presupuestaria.</p>
+<p>El decano lo anunció a toda la comunidad académica. El FEM reaccionó
+rápidamente poniéndose al hombro, a través del CECEN, la tarea de pelear
+por más presupuesto entendida como un reclamo estudiantil bajo la
+consigna “#DefendamosExactas”. Desde el primer momento hubo comunicación
+entre el FEM y las autoridades pero también desacuerdos en los métodos
+de presión. Las autoridades buscaban canalizar el reclamo por vía
+institucional dentro del CS, lo cual terminó en un fracaso rotundo (una
+primera propuesta de reasignación de una partida presupuestaria ni se
+trató en la comisión correspondiente del CS; una segunda, que llamaba a
+repartir una partida nueva con una variante del criterio que beneficiaba
+a Exactas fue rechazada incluso por el representante de la Mella en el
+claustro estudiantil). El FEM, en cambio, fue al choque: desde el CECEN
+colgó una bandera gigante con la consigna #DefendamosExactas y reunió a
+buena parte de la facultad en una foto, y organizó asambleas y
+movilizaciones al Rectorado desde el primer momento. Es altamente
+cuestionable que esto haya tenido algún impacto real en las decisiones
+del Rector. Estoy convencido de que no lo tuvo, pero entiendo que una
+mayoría de estudiantes creyó que sí. Y que tanto la instalación del
+conflicto en la agenda de los estudiantes como del relato de victoria
+fueron validados por los votantes y fueron determinantes en la
+elección.</p>
+<p>La “victoria” que se atribuye el FEM se dio como sigue. Lucas
+Tavolaro, militante del FEM y tesorero del CECEN, participó en la
+competencia de programación mundial ICPC como parte del equipo que
+representó a la UBA. Su equipo obtuvo un buen resultado, posicionándose
+en el ranking global como el mejor de Latinoamérica. Pero lo que llamó
+la atención de los medios locales no fue eso, sino un resultado
+anecdótico pero simbólicamente fuerte: la UBA le ganó a Harvard. Así lo
+editaron los medios, que por ese motivo entrevistaron a Tavolaro.
+Tavolaro aprovechó la cobertura mediática en diarios, programas de TV y
+radio para pedir más presupuesto para la Facultad. El rector Barbieri,
+muy atento a su imagen mediática, respondió al poco tiempo. El
+Ministerio de Educación le estaba girando a la UBA una partida
+presupuestaria extra de $20 millones (como pudimos reconstruir más
+tarde), seguramente no relacionada de ningún modo con el conflicto de
+Exactas. Barbieri se reunió con Tavolaro y Galpern, presidente del
+CECEN, en su oficina, a solas, para anunciarles la primicia de que iba a
+destinar $15 millones extra para gastos de funcionamiento a repartir
+entre las facultades (usando, por supuesto, el criterio que perjudica a
+Exactas, otorgándole un 10% de ese dinero). El FEM definió esto como una
+victoria estudiantil, e instaló el relato de que fue una conquista de
+todos los estudiantes organizados y movilizados por… ellos, el FEM. El
+consejo directivo de Exactas, sin embargo, no lo vio de esta manera: al
+legitimar desde la “izquierda” estudiantil la repartición de los $15
+millones, el FEM hizo que se debilite el reclamo de Exactas en el CS,
+dejándola en una posición política aún más precaria que la que tenía. El
+éxito del FEM en 2015 puede significar el fracaso de Exactas del 2016 en
+adelante. Y de los $5 millones de esa partida de $20 millones que
+recibió Barbieri y que no repartió entre las facultades nunca se supo
+nada, ni se hizo ningún reclamo. El triunfalismo no dejó lugar para esos
+detalles.</p>
+<h3 id="cómo-traducir-un-conflicto-en-hegemonía-electoral">Cómo traducir
+un conflicto en hegemonía electoral</h3>
+<p>No es la primera vez que el FEM lleva a cabo una campaña con este
+éxito. En 2010 organizó desde el CECEN (junto a AGD, gremio docente de
+izquierda) un plebiscito entre estudiantes, docentes y graduados que
+planteaba una pregunta: acreditar las carreras de grado en la CONEAU, sí
+o no. Un 92% votó que no. Junto a esto se confeccionó y colgó una
+bandera gigante con la leyenda “en Exactas no acreditamos”. El CECEN
+conducido por el FEM organizó asambleas y movilizaciones para defender
+esa posición. El resultado fue un éxito: si bien se acreditaron
+doctorados y maestrías, las carreras de grado continúan hasta hoy sin
+acreditar. Y el FEM cosechó resultados frondosos en las elecciones
+siguientes. Hay elementos en común con el conflicto por el presupuesto
+de este año de los que puede extraerse un patrón. 1) La instalación de
+un tema en la agenda estudiantil durante todo el año, más el esfuerzo
+por no perder la atención de los estudiantes en ningún momento. 2) El
+interesamiento de los demás actores académicos en la consigna,
+manteniendo un margen de autonomía siempre. 3) El uso del CECEN como
+vehículo exclusivo de organización estudiantil legítima. Y 4) el
+monopolio de los símbolos (la bandera gigante, la consigna simple:
+acreditar sí/no, #DefendamosExactas). Esto deja planteada una pregunta:
+¿podemos detectar este mismo patrón en hechos políticos exitosos de la
+política estudiantil democrática en otras facultades?</p>
+<h2 id="la-izquierda-al-frente">La Izquierda al Frente</h2>
+<p>La Izquierda al Frente (la izquierda, de ahora en más) salió segunda
+con el 21% de los votos tanto para centro como para consejo. Consiguió,
+así, el consejero por la minoría, peleado con el frente kirchnerista
+Exactas Puede Más. Pero no es para festejar: la izquierda en Exactas
+está en una decadencia sostenida. Obtuvo 24% el año pasado y ganó el
+centro con 30% en 2013. La Corriente (maoístas) está agonizando. Y el
+PTS ni siquiera perdió tiempo en presentarse. Prefirió invertirlo en
+dividir el voto de izquierda en FADU para que el PRO gane el centro. Y
+ni siquiera eso logró. La izquierda en Exactas está con vida gracias al
+PO -mayormente-, al Nuevo MAS y a IS.</p>
+<p>La campaña del PO se orientó a hacer reclamos y denuncias. Reclamos
+por más presupuesto, más becas, más y mejores laboratorios, mejoras
+edilicias, mejoras laborales para los trabajadores en Tecnópolis. Y
+denuncias de convenios con empresas privadas: Papel Prensa y Pan
+American Energy.</p>
+<p>El PO tiene presencia en espacios en donde se toman decisiones (el
+consejo directivo, pero no sólo ahí). Y una manera de procesar los
+conflictos de intereses híper eficiente: si hay que discutir cómo
+asignamos recursos escasos (difícil), decimos que no son suficientes y
+que hay que exigir más (fácil); si hay que discutir las condiciones de
+un convenio con un privado (difícil), decimos que hay que rechazarlo de
+plano ya que todo convenio es privatista y lleva a la mercantilización
+de la educación (fácil). De esta manera el PO puede mantener una línea
+discursiva activa y coherente en el tiempo con un costo muy bajo. Donde
+hay un conflicto el PO está, de manera visible y defendiendo banderas
+atractivas para los estudiantes. Pero jamás lo veremos impulsando
+discusiones profundas con capacidad transformadora. Su desempeño
+electoral depende más que nada de su buen manejo de la comunicación, de
+la conservación y reproducción de su base militante, y de que haya algo
+por lo que reclamar.</p>
+<p>El Nuevo MAS en su campaña promocionó enfrentamientos. Los enemigos:
+el ajuste, el estatuto universitario, los convenios con privados, los
+comedores, el patriarcado y el capitalismo. Aprovechó para hacer campaña
+por el MAS y Las Rojas. Izquierda Socialista hizo una campaña similar,
+con un énfasis también en la lucha feminista.</p>
+<p>Se pide el voto para que el representante, de ser elegido, luche.
+Pero no se hacen explícitos planes de lucha concretos en los que el
+movimiento estudiantil con los recursos institucionales que se ponen en
+juego en la elección tome la iniciativa. Hagamos asambleas, emitamos
+declaraciones, pintemos carteles, marchemos a rectorado, tomemos la
+facultad. Los instrumentos son específicos, pero los objetivos no. Y la
+capacidad de articular voluntades para acumular poder real se muestra
+limitada. Ofrecen más una vidriera del activismo más o menos real que se
+da afuera de la facultad que un proyecto creíble de lucha desde el
+interior. Sus votantes son simpatizantes, adherentes de sus causas. No
+hacen una apuesta política.</p>
+<h2 id="exactas-puede-más">Exactas Puede Más</h2>
+<p>Las tres agrupaciones kirchneristas (La Cámpora, Nuevo Encuentro y
+Mov Evita) se unieron en un frente político, Exactas Puede Más, que
+además incorporó a Seamos Libres. El año pasado los K fueron a
+elecciones en una lista única, pero con campañas diferenciadas. Seamos
+Libre se presentó aparte. La lista K obtuvo el 15% de los votos. Seamos
+Libres, el 6%. Este año obtuvieron juntos el 16%. Se puede computar como
+un retroceso: no lograron siquiera sumar los votos del año pasado. El
+objetivo era crecer y superar a la izquierda. No lo alcanzaron.</p>
+<p>La lista K venía de crecer 6% entre 2013 (obtuvo el 9%) y 2014 (15%).
+Sus militantes proyectaban un nuevo crecimiento del 6% para este año,
+que no se dio. Era verosímil: no por la extrapolación lineal que
+proponían sino porque ese 6% lo podían aportar los votantes de Seamos
+Libres, que se sumó al frente. Pero quizás lo que haya que explicar no
+sea la caída (o el estancamiento) del kirchnerismo en 2015, sino el
+crecimiento en 2014. Lo primero se explica fácil. La excelente elección
+del FEM hizo que fuera un año inusualmente difícil para la oposición. Y
+la izquierda demostró que tiene una base de apoyo sólida y una capacidad
+de llegada a los estudiantes que resiste.</p>
+<p>Lo segundo también tiene explicación: en 2014 la izquierda venía de
+hacer una pésima gestión del CECEN, lo que abría las puertas a la
+oposición. Y era el año de llegada a la facultad de Nuevo Encuentro, que
+conectó con los estudiantes con campañas basadas en acciones reales sin
+el aparato del CECEN o el voto en el consejo (filmación de teóricas,
+cursos de portugués, un festival, militancia por un menú de desayuno y
+merienda). A lo que contribuyó una buena comunicación (con recursos
+innovadores y el carisma de su representante).</p>
+<p>Este año, en cambio, Nuevo Encuentro se deslució. Buscó renovar y
+consolidar la organización hacia su interior, dejando de lado las
+campañas gremiales que le habían ganado el reconocimiento de los votos
+el año pasado. La Cámpora, contando con un liderazgo renovado a nivel
+UBA, apostó a seguir el camino que marcó NE en 2014. Con aciertos y
+algunos desaciertos se hizo más visible e hizo crecer su base militante.
+Lo cual quizás explique que en el contexto desfavorable no haya
+retrocedido tanto su voto.</p>
+<p>EPM buscó pelearle a la izquierda el consejero de la minoría con la
+consigna “pluralidad de voces”. La izquierda tuvo razón en burlarse: el
+consejo tiene mayoría kirchnerista (tanto en graduados como en
+profesores); sumar kirchnerismo no iba a hacer crecer la pluralidad.
+Pero, por esa misma razón, la apuesta política a la que llamó EPM fue la
+más sustancial.</p>
+<p>El FEM llamaba a validar su buena gestión del CECEN y su conducción
+de los conflictos gremiales. La izquierda llamaba a validar sus reclamos
+y sus luchas. EPM, en cambio, hizo una campaña propositiva, sin
+referencias partidarias. “Imaginate todo lo que podemos hacer”, fue el
+slogan. Resulta difícil imaginar el éxito de todas las propuestas que
+hicieron en su plataforma, incluso en un escenario hipotético de ser
+mayoría tanto en el CECEN como en el CD. Pero fueron los únicos que
+hicieron un planteo político transformador y hasta cierto punto creíble.
+Propusieron reformas académicas necesarias pero políticamente costosas,
+que requerirían un enorme trabajo y grandes consensos (una revisión del
+plan de estudios de biología y títulos intermedios para todas las
+carreras).</p>
+<p>Exactas es una facultad que produce investigación, más básica que
+aplicada. Pero tiene un enorme potencial para contribuir al proceso de
+desarrollo del país. Lograr eso requiere de una discusión profunda y de
+cambios de conducta y de valores por parte de todos los actores que la
+integran. El kirchnerismo, con su retórica y su política de promoción de
+la ciencia y la tecnología como sectores estratégicos, provee un fondo
+sobre el cual llevar adelante estas reformas. Hay, con esto, una
+oportunidad para que la política universitaria transforme
+significativamente su realidad, empoderando a los estudiantes en ese
+proceso. Lo cual tendría la chance de alcanzar un resultado muy distinto
+al caso paradigmático de la facultad de Económicas, que sí logró
+atravesar un proceso de gran transformación. Pero que, siendo un éxito
+de la política democrática, fue un fracaso para los valores que
+defienden los estudiantes de Exactas (Económicas consiguió su autonomía
+económica a cambio de su apertura al mercado, y logró cambios en sus
+planes de estudio a costa de multiplicar los posgrados arancelados).
+Hay, por lo tanto, una oportunidad pero también un enorme riesgo.</p>
+<p>Frente a este escenario la izquierda es conservadora. Tiene motivos
+ideológicos y prácticos para esto. En contraposición el kirchnerismo
+hace una apuesta arriesgada. Pero por ahora no despega. Frente el FEM
+tiene dos grandes desventajas. Los militantes del FEM están organizados
+en un espacio político coherente y durable, conocen el funcionamiento de
+la facultad desde adentro y son conocidos en los espacios en los que
+participan. Los militantes de EPM, en cambio, están distribuidos en
+cuatro espacios políticos que tienen sus propias identidades, que no
+están consolidados hacia adentro ni consolidaron una organización que
+les permita actuar compartiendo recursos y beneficios. La segunda
+ventaja del FEM está en que logró imponer su versión de los hechos en
+torno al conflicto por el presupuesto. EPM vindicó el reclamo
+estudiantil que condujo el FEM pero cuestionó la victoria. El FEM le
+ganó la batalla por la credibilidad, poniendo así a EPM en una posición
+impopular y reaccionaria.</p>
+<p>La victoria del kirchnerismo en Sociales se podría haber replicado en
+Exactas. Leandro Germán, un militante del PO, en un análisis muy
+interesante hace un listado de las condiciones que hicieron eso posible.
+Resumo: 1) Sociales está ligada institucional e ideológicamente al
+kirchnerismo (sociología a Carta Abierta, comunicación a la “ley de
+medios”, ciencia política a la “reforma política” del 2009, trabajo
+social a la AUH, relaciones del trabajo al Ministerio de Trabajo), 2)
+hay una mayoría kirchnerista en docentes, 3) el centro de estudiantes
+viene de ser conducido por La Mella (entre 2008 y 2013), una izquierda
+que no es abiertamente antikirchnerista, y 4) viene de una mala gestión
+de la izquierda. Las primeras tres condiciones se repiten en Exactas: 1)
+Exactas tiene un vínculo con el kirchnerismo en la repatriación de
+científicos y la creación del Ministerio de Ciencia, 2) tiene mayoría
+kirchnerista en docentes, y 3) La Mella conduce el centro de
+estudiantes. Hay una gran diferencia: la Mella se repuso a la crisis del
+2013 en Exactas. En Sociales no. La pregunta que queda abierta es por
+qué.</p>
+<h2 id="fuentes">Fuentes</h2>
+<ul>
+<li><p><a href="http://www.juventudinformada.com.ar/">Juventud
+Informada</a>.</p></li>
+<li><p>Max Pérez Fallik, <a
+href="http://jornadasdesociologia2015.sociales.uba.ar/wp-content/uploads/ponencias/1707_141.pdf">El
+“No a la CONEAU” en la Facultad de Ciencias Exactas y Naturales de la
+Universidad de Buenos Aires: rupturas y continuidades</a>.</p></li>
+<li><p>Leandro Germán, <a
+href="https://www.facebook.com/leandro.german.10/posts/10205785886543289">análisis
+de la elección en Sociales</a>.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

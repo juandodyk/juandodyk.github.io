@@ -1,0 +1,66 @@
+---
+title: "Juan Dodyk"
+image: "files/img/14206333.jpg"
+links:
+  - label: Email
+    url: "mailto:juandodyk@g.harvard.edu"
+  - label: Twitter
+    url: "https://twitter.com/jdodyk"
+  - label: GitHub
+    url: "https://github.com/juandodyk/"
+output:
+  postcards::trestles
+site: distill::distill_website
+---
+
+I'm a Ph.D. candidate in the Department of Government at Harvard University. I do research on lobbying and campaign contributions, both empirical and theoretical. I am interested in political economic theory more broadly.
+
+See my [research](research.html), my [CV](files/cv.pdf), my [teaching slides](teaching.html), and my [old blog](blog.html).
+
+
+<br>
+
+
+```{css, echo = FALSE}
+.columnname {
+  font-size: 1.4rem; 
+  font-weight: 600;
+}
+.grad-item {
+  list-style: none; 
+  background-image: url(files/img/graduation-cap-solid.png); 
+  background-repeat: no-repeat;  
+  background-size: 1.2rem; 
+  padding-left: 2rem;
+}
+.grad-location {
+  font-size: 0.8rem;
+  color: grey;
+}
+```
+
+
+:::: {style="display: grid; grid-template-columns: 40% 50%; grid-column-gap: 30px; line-height: 1.5rem;"}
+
+::: {}
+<span class = "columnname"> Interests </span>
+
+* Lobbying
+
+* Political economy theory
+
+* Networks
+:::
+
+::: {}
+<span class = "columnname"> Education </span>
+
+<ul>
+ 
+<li class = "grad-item">   PhD student in Political Science, expected 2024 <br> <p class = "grad-location"> Harvard University </p> </li>
+<li class = "grad-item">   Bachelor's degree in Mathematics, 2017 <br> <p class = "grad-location"> Universidad de Buenos Aires </p> 
+</li>
+
+</ul>
+:::
+::::

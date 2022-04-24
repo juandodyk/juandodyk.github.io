@@ -1,0 +1,19 @@
+---
+title: "Apuntes de matemática"
+description: "Apuntes con esencialmente toda la matemática que aprendí."
+date: 2018-08-01
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+1. [Análisis](../../files/data/analisis.pdf).
+
+2. [Álgebra](../../files/data/algebra.pdf).
+
+3. [Algoritmos](../../files/data/algoritmos.pdf).
+
+4. [Análisis funcional](../../files/data/funcional.pdf).
+
+5. [Modelos en economía política](../../files/data/modelos.pdf) (incluye algunos temas de análisis y de probabilidad/estadística).
+

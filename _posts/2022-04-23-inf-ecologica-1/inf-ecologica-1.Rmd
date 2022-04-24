@@ -1,0 +1,260 @@
+---
+title: "¿A dónde fueron los votos de Massa?"
+description: ""
+date: 2015-11-27
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+La pregunta del título no tiene respuesta: el voto es secreto. Pero igual queremos saber. La matemática nos permite hacer trampa. Lo primero que tenemos que hacer es generalizar la pregunta: ¿cómo se transfirieron los votos que obtuvo cada candidato presidencial en las elecciones generales a los dos candidatos que compitieron en el ballotage?
+
+## Primer modelo: Goodman remixado
+
+Podemos formular la pregunta así. Numeremos los candidatos de la primera vuelta: Scioli, Macri, Massa, Del Caño, Stolbizer, Rodríguez Saá serán 1, 2, …, 6, respectivamente. Agregamos una opción 7: no ir a votar o votar no afirmativamente (en blanco, nulo, etc.) Llamemos $A_1, A_2, \ldots, A_7$ a la cantidad de votos que obtuvo cada candidato en las elecciones generales, respectivamente.
+
+| | Candidato | Cantidad de votos
+:--------|:--------:|:---------:
+$A_1$ | Scioli | 9002242
+$A_2$ | Macri | 8382610
+$A_3$ | Massa | 5211705
+$A_4$ | Del Caño | 798031
+$A_5$ | Stolbizer | 619051
+$A_6$ | Rodríguez Saá | 407202
+$A_7$ | No Votó/Blanco | 7642568
+
+Llamemos $B_1$ y $B_2$ a la cantidad de gente que votó a Scioli y a Macri, respectivamente, en la *segunda* vuelta; y $B_3$ al resto, como $A_7$.
+
+| | Candidato | Cantidad de votos
+:--------|:--------:|:---------:
+$B_1$ | Scioli | 12198441
+$B_2$ | Macri | 12903301
+$B_3$ | No Votó/Blanco | 6962942
+
+Lo que buscamos es la matriz de transferencia, es decir, una matriz $T$ con 7 filas y 3 columnas tal que $T_{ij}$ sea la cantidad de votos del candidato $i$ en las generales que fueron al candidato $j$ en la segunda vuelta. La pregunta ¿a dónde fueron los votos de Massa? se transforma en ¿cuánto valen $T_{3,1}$ y $T_{3,2}$?
+
+| | Scioli | Macri | No Votó/Blanco
+:--------|:--------:|:---------:|:--------:
+**Scioli** | $T_{1,1}$ | $T_{1,2}$ | $T_{1,3}$
+**Macri** | $T_{2,1}$ | $T_{2,2}$ | $T_{2,3}$
+**Massa** | $T_{3,1}$ | $T_{3,2}$ | $T_{3,3}$
+**Del Caño** | $T_{4,1}$ | $T_{4,2}$ | $T_{4,3}$
+**Stolbizer** |  $T_{5,1}$ | $T_{5,2}$ | $T_{5,3}$
+**Rodríguez Saá** |  $T_{6,1}$ | $T_{6,2}$ | $T_{6,3}$
+**No Votó/Blanco** |  $T_{7,1}$ | $T_{7,2}$ | $T_{7,3}$
+
+Tenemos que $T_{i1}+T_{i2}+T_{i3}=A_i$ para cada $i$, ya que los votos del candidato $i$ en la primera vuelta tuvieron que ir a algún candidato en la segunda vuelta (o al “no candidato” que representa ausentarse o emitir un voto no afirmativo), así que sumados dan todos los votos iniciales para ese candidato, es decir, $A_i$.
+
+Tenemos, por otro lado, que $T_{1j}+T_{2j}+\cdots+T_{7j}=B_j$ para cada $j$, ya que los votos del candidato $j$ en la segunda vuelta tuvieron que provenir de algún candidato (o del "no candidato") en la primera.
+
+Definimos ahora otra matriz de las mismas dimensiones de $T$ así: $X_{ij} = T_{ij}/A_i$. Es decir, $X_{ij}$ es la proporción de votantes de $i$ en primera vuelta que votaron a $j$ en segunda vuelta. Las dos ecuaciones que obtuvimos se reescriben así: $X_{i1}+X_{i2}+X_{i3}=1$ para cada $i$, y $AX=B$, donde $AX$ es la multiplicación de matrices, entendiendo $A$ y $B$ como vectores horizontales:
+
+$$(\begin{array}{ccc} A_1 & \cdots & A_7 \end{array})\left(\begin{array}{ccc} X_{11}&X_{12}&X_{13} \\ & \vdots& \\ X_{71}&X_{72}&X_{73}\end{array}\right)=\left(\begin{array}{ccc} B_1&B_2&B_3\end{array}\right).$$
+
+(Además sabemos que los números $X_{ij}$ son no negativos: $X_{ij}\geqq0$.) Esto da un sistema de ecuaciones lineales con $3\times 7=21$ incógnitas y $7+3=10$ ecuaciones. Es obviamente indeterminado: el voto sigue siendo secreto.
+
+Pero sabemos algo más que los vectores $A$ y $B$. Contamos con los datos desagregados por mesa. Es decir, para cada mesa de votación del país sabemos cuánta gente estaba empadronada para votar ahí, cuánta gente votó a cada candidato, cuánta votó en blanco, nulo, etc. Tanto en las generales como en la segunda vuelta.
+
+Supongamos que en lugar de mirar el resultado de la elección a nivel global (la cantidad de votos total que recibió cada candidato en las elecciones) lo miramos a nivel local, en cada mesa. El razonamiento sobre la transferencia de votos se mantiene: en cada mesa podemos definir una matriz $X$ de transferencia de votos en esa mesa. Ahora **supongamos que la matriz de transferencia es la misma en cada mesa**. Eso es obviamente falso, pero desoigamos a la realidad por un momento. En ese caso, si tomamos cada mesa y apilamos sus vectores horizontales de resultados formando matrices $A$, de 7 columnas y $P$ filas (donde $P$ es la cantidad de mesas) y $B$, de 3 columnas y $P$ filas, la ecuación matricial $AX=B$ se mantiene.
+
+$$\left(\begin{array}{ccc} 87 & 11 & 3 & 113 & 17 & 32 & 80\\69 & 16 & 2 & 104 & 14 & 37 & 104\\80 & 11 & 5 & 102 & 21 & 31 & 95\\72 & 14 & 0 & 95 & 13 & 46 & 104\\ & & & \vdots &  &  &  \end{array}\right)\left(\begin{array}{ccc} X_{11}&X_{12}&X_{13} \\ & \vdots& \\ X_{71}&X_{72}&X_{73}\end{array}\right)=\left(\begin{array}{ccc} 113 & 138 & 92\\101 & 138 & 107\\106 & 139 & 100\\105 & 134 & 105\\ & \vdots & \end{array}\right)$$
+
+Sigue teniendo 21 incógnitas. Pero ahora tiene $7+3P$ ecuaciones. Hay más de 90 mil mesas. Seguimos teniendo un sistema de ecuaciones lineales, sólo que pasó de <i>in</i>determinado a <i>sobre</i>determinado.
+
+Que sea sobredeterminado es bueno. No podemos buscar la solución, porque no existe, pero podemos buscar la "solución" que le erre por menos margen. Es decir la matriz $X$ tal que la suma de los cuadrados de los elementos de $AX-B$ (el error) sea mínima. Apuntamos, pues, a minimizar $f(X)=\sum_{p=1}^P\sum_{j=1}^3 (AX-B)_{pj}^2$ bajo dos restricciones: $X_{i1}+X_{i2}+X_{i3}=1$ para cada $i$, y $X_{ij}\geqq0$ para cada $i,j$. Esto deja de ser un sistema de ecuaciones lineales. Pasa a ser un problema de [programación cuadrática](https://en.wikipedia.org/wiki/Quadratic_programming). Y hay algoritmos eficientes que lo resuelven con exactitud. En R se puede implementar [así](#primer-modelo-código-r). Este es el resultado:
+
+| | Scioli | Macri | No Votó/Blanco
+:----|:----:|:----:|:----:
+**Scioli** | 97.68% | 0% | 2.32%
+**Macri**  | 0% | 96.19% | 3.81%
+**Massa**  | 34.62% | 51.94% | 13.44%
+**Del Caño** | 67.52% | 5.69% | 26.79%
+**Stolbizer** | 17.71% | 33.43% | 48.86%
+**Rodríguez Saá** | 30.76% | 55.59% | 13.65%
+**No Votó/Blanco** | 8.67% | 21.11% | 70.22%
+
+¿Podemos confiar en esos números? No. Están basados en una suposición que sabemos que es falsa: que la matriz de transición sea igual en todas las mesas. El modelo funcionaría si lo que suponemos es que las matrices de cada mesa son *aproximadamente* iguales. A nivel país hay evidencia de que esto es falso: por ejemplo, el destino de los votos de Massa es distinto en Córdoba que en la PBA. Pero a niveles subnacionales suficientemente homogéneos (en cierto sentido) la asunción se hace plausible.
+
+¿Qué quiere decir "homogéneos"? Que en cada mesa las probabilidades `P(la persona vota a Scioli en la segunda vuelta | votó a Massa en primera)` son más o menos constantes. En cada mesa, `P(la persona vota a Scioli en segunda vuelta)` varía sensiblemente: si hay algo así como un clivaje territorial, aunque sea a escala pequeña (por ejemplo patrones versus peones en un pueblo rural), unas escuelas quedarán de un lado y otras del otro, lo cual afectaría directamente esas probabilidades. Pero incluso en ese caso es plausible que las probabilidades `P(vota a X en el ballotage | votó a Y en las generales)` sean constantes.
+
+Esto abre el camino a una modificación del modelo: se asume que las matrices de transición son constantes en unidades subnacionales (como provincias o departamentos), se calculan mediante el método que describí localmente, y al final se agregan los resultados. ¿Cómo agregamos matrices locales en una matriz global? Convertimos la matriz $X$ a $T$, que expresa la redistribución de votos en términos absolutos (cantidad de votos) y no relativos, con la fórmula $T_{ij}=X_{ij}\sum_{p=1}^PA_{pi}$. Y luego simplemente sumamos todas las matrices $T$.
+
+Esto son los resultados tomando como unidades las provincias:
+
+| | Scioli | Macri | No Votó/Blanco
+:----|:----:|:----:|:----:
+**Scioli** | 96.27% | 0.48% | 3.25%
+**Macri** | 0.06% | 95.81% | 4.13%
+**Massa** | 32.51% | 50.77% | 16.72%
+**Del Caño** | 54.03% | 16.88% | 29.09%
+**Stolbizer** | 5.05% | 61.02% | 33.93%
+**Rodríguez Saá** | 29.19% | 45.16% | 25.65%
+**No Votó/Blanco** | 14.67% | 18.61% | 66.73%
+
+Esto son los resultados tomando como unidades los departamentos:
+
+| | Scioli | Macri | No Votó/Blanco
+:----|:----:|:----:|:----:
+**Scioli** | 95.22% | 1.11% | 3.67%
+**Macri** | 0.45% | 94.7% | 4.85%
+**Massa** | 30.81% | 49.76% | 19.44%
+**Del Caño** | 39.09% | 29.25% | 31.66%
+**Stolbizer** | 12.33% | 59.45% | 28.22%
+**Rodríguez Saá** | 38.87% | 39.74% | 21.39%
+**No Votó/Blanco** | 17.28% | 18.92% | 63.8%
+
+Un argumento en contra de correr el modelo sobre unidades pequeñas y luego agregar los resultados es que si se corre sobre pocas mesas la información con la que se cuenta es poca, y por lo tanto el resultado puede ser arbitrario. Pensemos en el ejemplo extremo: si hay sólo una mesa, estamos en la situación de indeterminación de la que partimos. Además no sólo hacen falta muchas mesas sino mesas en las que el resultado de la elección sea suficientemente disímil: si en todas las mesas pasó lo mismo es como si hubiera una sola.
+
+Surgen pues preguntas que dejo abiertas: cómo expresar estas ideas en un modelo estadístico riguroso, y cómo detectar cuándo el modelo tiene "poca información". Esto último permitiría elegir las unidades subnacionales mínimas donde hay información suficiente.
+
+Pueden bajar el código y los datos [acá](../../files/data/Transferencia_Primera_Segunda_vuelta_via_QP.zip).
+
+## Segundo modelo: King, Rosen y Tanner, nonlinear least squares
+
+El modelo que acabo de describir se basa en el que propuso Leo Goodman en su paper [Ecological Regressions and Behavior of Individuals](http://www.jstor.org/stable/2088121), publicado en 1953. En 1997 [Gary King](http://gking.harvard.edu/) publicó un [libro](http://gking.harvard.edu/eicamera/kinroot.html) en el que propuso un modelo superador. En el 99, junto a Ori Rosen y Martin Tanner, [extendió](http://gking.harvard.edu/files/abs/binom-abs.shtml) el trabajo del libro incoporando [MCMC](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) y haciendo posible la aplicación a cantidades de datos más grandes, pero acotado a tablas de $2\times2$ (el caso que nos interesa es de $7\times3$). En el 2001 [extendieron](http://gking.harvard.edu/files/abs/rosen-abs.shtml) el modelo a tablas de tamaño general, lo que se aplica directamente sobre nuestro problema. Voy a hacer un comentario sobre ese [paper](http://gking.harvard.edu/files/gking/files/em.pdf?m=1360038990).
+
+El modelo de King, Rosen y Taner plantea lo siguiente. En cada mesa, el resultado de la elección en la segunda vuelta, es decir los números $B_1,B_2,B_3$ (para seguir con la notación que introduje en la sección anterior), se distribuye de acuerdo a una [distribución multinomial](https://en.wikipedia.org/wiki/Multinomial_distribution) con parámetros $\theta_1,\theta_2,\theta_3$, donde $\theta_j=\frac1{N}\sum_{i=1}^7A_i\beta_{ij}$, $N=\sum_{i=1}^7A_i$ es la cantidad de electores de la mesa y $\beta\in\mathbb{R}^{7\times 3}$ es una variable aleatoria que funciona como una estimación del $X_{ij}$ de la mesa.
+
+Dejamos de asumir que las matrices de transferencia de cada mesa son iguales. Por lo tanto hay una variable $\beta^p$ por cada mesa $p$. Los vectores $\beta^p_i=(\beta^p_{i1},\beta^p_{i2},\beta^p_{i3})$, según el modelo, siguen [distribuciones de Dirichlet](https://en.wikipedia.org/wiki/Dirichlet_distribution) independientes con parámetros $(d_ie^{\gamma_{i1}},d_ie^{\gamma_{i2}},d_i)$ (notar que estos parámetros son los mismos para todas las mesas). Finalmente, los parámetros $\gamma_{i1},\gamma_{i2}$ son independientes (desconocidos) y $d_i$ sigue una [distribución exponencial](https://en.wikipedia.org/wiki/Exponential_distribution) con media $1/\lambda$ ($\lambda$ está fijo; puede ser $2$, por ejemplo).
+
+La idea es estimar los parámetros $\gamma$ en base a las observaciones (los resultados por mesa). Si $f(A^p,\gamma)=\text{E}(B^p|\gamma)$ tenemos $B^p=f(A^p,\gamma)+\epsilon$, donde $\epsilon$ es un error con media cero. El método consiste en tomar los $\gamma$ que minimizan la desviación cuadrática $\text{SSE}(\gamma)=\sum_{p=1}^P\sum_{j=1}^3(B_j^p-f(A^p,\gamma)_j)^2$.
+
+Hay que calcular $f(A^p,\gamma)_j$. Es $\text{E}(B_j^p|\gamma)$. Como $B_j^p$ tiene distribución multinomial, 
+$$\text{E}(B_j^p|\gamma)=\text{E}(\text{E}(B_j^p|\beta,\gamma)|\gamma)=\text{E}\left(\sum_{i=1}^7A_i^p\beta_{ij}^p|\gamma\right)=$$
+$$=\sum_{i=1}^7A_i^p\text{E}(\beta_{ij}^p|\gamma)=\sum_{i=1}^7A^p_i\frac{d_ie^{\gamma_{ij}}}{d_i(1+e^{\gamma_{i1}}+e^{\gamma_{i2}})}=\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}.$$ 
+
+(Usé que $X_{ij}^p$ sigue la distribución Dirichlet que definí más arriba para calcular $\text{E}(\beta_{ij}^p|\gamma)$.) Entonces buscamos los $\gamma_{ij}$ que minimizan la función
+$$\text{SSE}(\gamma)=\sum_{p=1}^P\sum_{j=1}^3\left(B_j^p-\sum_{i=1}^7\frac{e^{\gamma_{ij}}A^p_i}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}\right)^2.$$
+
+En base a eso no podemos conocer los $X^p$ (lo que en realidad buscamos) por mesa, pero aceptando la estimación de los $\gamma$ podemos aproximarlos por $\text{E}(\beta^p)$. Esto nos da $X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$ para $j=1,2$ y $X_{i3}=1-X_{i1}-X_{i2}$. El resultado es este:
+
+| | Scioli | Macri | No Votó/Blanco
+:----|:----:|:----:|:----:
+**Scioli** | 99.7% | 0% | 0.3%
+**Macri** | 0% | 99.91% | 0.09%
+**Massa** | 32.78% | 52.92% | 14.3%
+**Del Caño** | 70.68% | 4.91% | 24.41%
+**Stolbizer** | 21.65% | 21.28% | 57.08%
+**Rodríguez Saá** | 32.9% | 53.52% | 13.58%
+**No Votó/Blanco** | 6.41% | 17.2% | 76.39%
+
+Este método es el que ha usado el politólogo [Ernesto Calvo](https://twitter.com/ecalvo68) en [varios](http://elestadista.com.ar/?p=7336) [artículos](http://ar.bastiondigital.com/notas/los-gatos-se-estaban-peleando) muy interesantes (y que son el origen de mi interés por el tema). Y es el que está detrás de [este gráfico](https://twitter.com/CIPPEC/status/669631428422983680) que publicó CIPPEC. Si quieren mirar el código, gentilmente publicado por Calvo, lo reproduzco y analizo [acá](#segundo-modelo-código-r).
+
+La pregunta que quiero plantear es: ¿qué diferencia *matemática* hay entre el resultado de este modelo y el que presento en la sección anterior? La diferencia teórica es enorme: este se basa en un modelo bayesiano jerárquico en el que no asume que las matrices de transferencia sean iguales en cada mesa. El anterior hace exactamente lo contrario.
+
+Pero matemáticamente los dos están buscando parámetros globales (en el primer caso $X$ y en este, $\gamma$) que minimizan $\sum_{p=1}^P\sum_{j=1}^3(AX-B)_{pj}^2$, sólo que en el primer modelo $X$ es una variable independiente y, en este, $X$ está controlado por otros parámetros que sí son independientes, los $\gamma$. Ambos están minimizando una misma función sobre un dominio. Afirmo que ese dominio es el mismo en ambos casos.
+
+Los posibles $X$ que explora el primer modelo son todos los que cumplen $\sum_{j=1}^3X_{ij}=1$ y $X_{ij}>0$. Ese es su dominio. Los posibles $X$ que explora este modelo son los que salen de la fórmula $X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$ para $j=1,2$ y $X_{i3}=1-X_{i1}-X_{i2}$, con $\gamma$ arbitrario. Pero hay una biyección entre ambos conjuntos: dado $X$ hay un único $\gamma$ de donde puede venir: $\gamma_{ij}=\ln\left(\frac{X_{ij}}{X_{i3}}\right)$. Como están minimizando la misma función sobre el mismo dominio, el resultado al que llegan va a ser el mismo. Las diferencias que haya se van a deber a los problemas numéricos que tiene el algoritmo que usa Calvo y que detallo [acá](#segundo-modelo-código-r).
+
+## Conclusión
+
+La conclusión es que si bien el modelo de King, Rosen y Tanner es teóricamente más sofisticado que el primer modelo que presenté, matemáticamente son equivalentes. El modelo bayesiano jerárquico no tiene ningún impacto en el resultado que lo diferencie de la regresión lineal "controlada" que propuse primero.
+
+Esto quiere decir que los resultados que presenta Calvo en sus trabajos, a pesar de estar hechos sobre un modelo sofisticado, pueden ser analizados matemáticamente como si provinieran de un modelo mucho más simple. Cuando Abel Fernández dice que ["se necesita un doctorado en matemática"](https://abelfer.wordpress.com/2015/11/13/anibal-julian-y-los-votos-de-buenos-aires/) para evaluar ese trabajo se equivoca.
+
+## Trabajo futuro
+
+El método de cuadrados mínimos que acabo de describir y analizar no es el único posible para estimar los parámetros en el modelo de King, Rosen y Tanner. Como exponen en su paper, se puede usar un algoritmo de tipo [MCMC](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) acompañado de [Gibbs sampling](https://en.wikipedia.org/wiki/Gibbs_sampling) para estimar la *distribución* de los parámetros (y no sólo su media) mediante inferencia bayesiana. Incluso hay una [librería R](http://rpackages.ianhowson.com/cran/eiPack/) que implementa dicho método. En cuanto tenga tiempo voy a aplicar esto y reportar los resultados. La desventaja del método bayesiano es que es computacionalmente más costoso, por lo que hay que "poner huevo" para correrlo (con esto quiero decir: ajustar los parámetros con suficiente pericia para que sea ejecutable en una notebook).
+
+En cuanto al problema general, llamado *inferencia ecológica*, al modelo de King, Rosen y Tanner le siguieron desarrollos más sofisticados, de los que podemos beneficiarnos para obtener una mejor solución de nuestro problema particular. Ernesto Calvo mismo desarrolló, junto a Marcelo Escolar, un modelo que parte del de King pero introduce una variable geográfica. Puede ser de especial interés para las elecciones argentinas, en las que es obvia la influencia de "factores geográficos" (simplificando *mucho*, un "voto urbano", un "voto sojero" y un "voto petrolero" manifiestos en la [distribución territorial](http://www.lanacion.com.ar/1848689-como-fue-el-resultado-del-ballottage-en-la-escuela-donde-votaste) del voto). El trabajo de Calvo y Escolar es el capítulo 11 de [este libro](http://gking.harvard.edu/files/abs/ecinf04-abs.shtml).
+
+## Notas
+
+### Primer modelo: código R
+
+```{r, eval=FALSE, echo=TRUE}
+ei.lls <- function(A, B) {
+  n <- ncol(A)
+  m <- ncol(B)
+  
+  myind <- function(i, j) (i-1)*m+(j-1)+1
+  AA <- t(A) %*% A
+  AB <- t(A) %*% B
+  Dmat <- matrix(0, nrow=n*m, ncol=n*m)
+  for(i1 in 1:n) for(i2 in 1:n) for(j in 1:m)
+    Dmat[myind(i1,j), myind(i2,j)] <- AA[i1, i2]
+  dvec <- rep(0, n*m)
+  for(i in 1:n) for(j in 1:m) dvec[myind(i,j)] <- AB[i,j]
+  Amat <- matrix(0, nrow=n*m+n, ncol=n*m)
+  bvec <- rep(0, n*m+n)
+  for(i in 1:n) for(j in 1:m) { Amat[i, myind(i, j)] <- 1; bvec[i] <- 1; }
+  for(ij in 1:(n*m)) { Amat[ij+n, ij] <- 1; bvec[ij+n] <- 0; }
+  
+  require(quadprog)
+  sc <- norm(Dmat,"2") # necesario para que no haya overflow
+  sol <- solve.QP(Dmat/sc, dvec/sc, t(Amat), bvec, meq=n)
+  S <- matrix(sol$solution, nrow=n, ncol=m, byrow=TRUE)
+  return(S)
+}
+```
+
+$\newcommand{\R}{\mathbb{R}}$Dadas matrices $A\in\mathbb{N}^{P\times n}$ y $B\in\mathbb{N}^{P\times m}$ devuelve la matriz $X\in\mathbb{R}_{\geqq0}^{n\times m}$ que minimiza la función $f(X)=\sum_{p=1}^P\sum_{j=1}^m (AX-B)_{pj}^2$, sujeta a las restricciones $\sum_{j=1}^m X_{ij} = 1$ para todo $i$ y, claro, $X_{ij}\geqq0$.
+
+Un problema de programación cuadrática es así: minimizar $m(x)=x^tDx-2d^tx+C$ dado $Rx\geqq b$, donde $x\in\mathbb{R}^N$, $D\in\mathbb{R}^{N\times N}$, $d\in\R^N$, $R\in\R^{r\times n}$ y $b\in\R^r$. Tenemos que plantear nuestro problema en estos términos.
+
+La función a minimizar es
+
+$$f(X)=\sum_{p=1}^P\sum_{j=1}^m (AX-B)_{pj}^2=\sum_{p=1}^P\sum_{j=1}^m \left(\sum_{i=1}^nA_{pi}X_{ij}-B_{pj}\right)^2=$$
+
+<div>$$=\sum_{p=1}^P\sum_{j=1}^m \left( \left(\sum_{i=1}^nA_{pi}X_{ij}\right)^2-2\left(\sum_{i=1}^nA_{pi}X_{ij}\right)B_{pj}+B_{pj}^2\right)=$$</div>
+
+<div>$$=\sum_{p=1}^P\sum_{j=1}^m \left( \sum_{i_1=1}^n\sum_{i_2=1}^nA_{pi_1}X_{i_1j}A_{pi_2}X_{i_2j}-2\sum_{i=1}^nA_{pi}X_{ij}B_{pj}+B_{pj}^2\right)=$$</div>
+
+<div>$$=\sum_{i_1=1}^n\sum_{i_2=1}^n\sum_{j=1}^m \left(\sum_{p=1}^P A_{pi_1}A_{pi_2}\right) X_{i_1j}X_{i_2j}-2\sum_{i=1}^n\sum_{j=1}^m\left(\sum_{p=1}^PA_{pi}B_{pj}\right)X_{ij}+\sum_{p=1}^P\sum_{j=1}^mB_{pj}^2=$$</div>
+
+<div>$$=\sum_{i_1=1}^n\sum_{i_2=1}^n\sum_{j=1}^m (A^tA)_{i_1i_2}X_{i_1j}X_{i_2j}-2\sum_{i=1}^n\sum_{j=1}^m(A^tB)_{ij}X_{ij}+C.$$</div>
+
+Podemos verla como $m(x)=x^tDx-2d^tx$ considerando la matriz $X$ como un vector $x\in\mathbb{R}^N$ con $N=nm$, y con $D_{i_1j,i_2j}=(A^tA)_{i_1i_2}$ y $d_{ij}=(A^tB)_{ij}$. Las restricciones serían $R=I_N$ y $b=0$, sumadas a las que fijan $\sum_{j=1}^m X_{ij} = 1$ para todo $i$, que se expresa similarmente. El código R usa `solve.QP` para resolver el problema cuadrático, calculando la entrada como acabo de comentar.
+
+### Segundo modelo: código R
+
+```{r, eval=FALSE, echo=TRUE}
+call.difp <- function(p,mx,my,nR,nC,const) {
+    gamma <- matrix(data=p,nrow=nR,ncol=nC-1,byrow=T);
+    ebeta <- exp(gamma)/(1 + apply(exp(gamma),1,sum));
+    yhat  <- mx %*% ebeta;
+    diff <- sum((yhat-my[,-nC])^2) + (const*sum(gamma^2));
+    return(diff);
+}
+
+params.estim <- function(data,nR,nC,const=0.001) {
+    mx <- data[,1:nR];
+    my <- data[,(nR+1):(nR+nC)];
+    nP <- nrow(data);
+    parSeed = rnorm(nR*(nC-1));
+    fit <- optim(parSeed, fn = call.difp, method="L-BFGS-B",
+                 nR = nR, nC = nC, mx = mx, my = my, const = const);
+    return(fit$par);
+}
+
+calc.fractions <- function(p,nR,nC) {
+    p.exp <- exp(p);
+    p.matrix <- matrix(p.exp,nrow=nR,byrow=T);
+    p.sums <- apply(p.matrix,1,sum);
+    p.sums <- p.sums + 1;
+    p.less <- p.matrix/p.sums;
+    ests <- cbind(p.less, 1 - apply(p.less,1,sum));
+    return(ests);
+}
+
+# Se llama esta función con A y B como parámetros
+ei.nls <- function(A,B) {
+    A <- A/rowSums(A); B <- B/rowSums(B)
+    Gamma <- params.estim(cbind(A,B),nR=7,nC=3)
+    X <- calc.fractions(Gamma,nR=7,nC=3)
+    colnames(X) <- colnames(B)
+    rownames(X) <- colnames(A)
+    return(X)
+}
+```
+
+Lo de arriba es una versión simplificada del código que en realidad publicó Calvo [acá](https://t.co/nxuPmn5pAR). Juro por la mitad de la carrera de Ciencia de la Computación que hice en la UBA que funcionalmente es equivalente, es decir, que hace lo mismo.
+
+`params.estim` devuelve $\gamma$, según mi notación. Para eso busca el mínimo de `call.difp`, que devuelve lo que llamé $\text{SSE}(\gamma)$ más un factor $c\sum_{i=1}^7\sum_{j=1}^2\gamma_{ij}^2$, con $c=.001$, que entiendo que está para controlar que los $\gamma_{ij}$ no entren a crecer indefinidamente (porque si uno suma una constante a todos el valor de $X$ no cambia mucho).
+
+`calc.fractions` devuelve $X$ dado $\gamma$. Lo que hace es aplicar la fórmula que escribí más arriba: $X_{ij}=\frac{e^{\gamma_{ij}}}{1+e^{\gamma_{i1}}+e^{\gamma_{i2}}}$ para $j=1,2$ y $X_{i3}=1-X_{i1}-X_{i2}$.
+
+Lo que hay que notar es que el método que usa para buscar el $\gamma$ que minimiza el error es `optim`, que implementa [L-BFGS-B](https://en.wikipedia.org/wiki/Limited-memory_BFGS). No es un método de optimización exacto ni específico para este problema, como sí es el método que usé para resolver el problema cuadrático que plantea el primer modelo. Como no es exacto y se alimenta, como valor inicial, con números al azar (la línea `parSeed = rnorm(nR*(nC-1))`), cada vez que se corre da números distintos, a veces *muy* distintos. **Es por eso que creo que el primer método es**, además de matemáticamente equivalente, **numéricamente mejor**.
+
+(En realidad hay dos diferencias más. 1) Cuando `call.difp` calcula el error dado $\gamma$ no tiene en cuenta la última columna de $B$. Es decir, sólo apunta a aproximar la cantidad de votos obtenida por Macri y Scioli; no cuántos votos se fueron a "No Votó/Blanco". Estimo que eso es redundante y que no tiene ningún impacto. Y si lo tiene entiendo que es mejor la opción que implemento para el primer modelo. 2) $A$ y $B$ se toman "normalizadas", es decir, se toma $A_{pi}'=\frac{A_{pi}}{\sum_{k=1}^7A_{pk}}$, y similarmente $B'$. Si los números $\sum_{k=1}^7A_{pk}$ fueran iguales en todas las mesas, es decir, si los empadronados en cada mesa fueran la misma cantidad, no habría diferencia: es lo mismo minimizar $f(x)$ que $\lambda f(x)$ si $\lambda>0$. En tanto sean distintos, el efecto es que el primer método penaliza más el error en mesas más populosas, mientras que este las cuenta todas igual. Estimo que el impacto es bajo y que si hubiera una diferencia es preferible la opción del primer modelo: las mesas "grandes" dan más información, así que está bien privilegiarlas proporcionalmente a su tamaño.)

@@ -1,0 +1,201 @@
+---
+title: "Apunte: Análisis complejo"
+description: ""
+date: 2016-01-13
+output:
+  distill::distill_article:
+    self_contained: false
+    toc: true
+---
+
+## Funciones holomorfas, Goursat, integrales paramétricas
+
+$\def\N{\mathbb{N}}
+\def\R{\mathbb{R}}
+\def\C{\mathbb{C}}
+\def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}}
+\def\FF{\mathcal{F}}
+\def\menos{\smallsetminus}
+\def\im{\mathop{\mathrm{im}}}
+\def\lim{\mathop{\text{lim}}\limits}
+\def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\text{inf}}\limits}
+\def\max{\mathop{\text{max}}\limits}
+\def\min{\mathop{\text{mín}}\limits}
+\def\mm{\mathrm}
+\def\id{\mm{id}}
+\def\Aut{\mathop{\mathrm{Aut}}}$Damos a $\C$ la topología inducida por la norma $|x+yi|=\sqrt{x^2+y^2}$. Si $U\subset\C$ es abierto y $f:U\to\C$ es una función, decimos que es *holomorfa* si para todo $z\in U$ existe el límite $f'(z)=\lim_{h\to0}\frac{f(z+h)-f(z)}h$. Las holomorfas forman un álgebra $\HH(U)$. Vale la regla de la cadena $(f\circ g)'(z)=f'(g(z))g'(z)$. La función $f$ es holomorfa si y sólo si vista como $f(x+yi)=u(x,y)+v(x,y)i$, con $u,v:\{(x,y)\in\R^2\mid x+yi\in U\}\to\R$, vale que $u$ y $v$ son diferenciables y $\frac{\partial u}{\partial x}=\frac{\partial v}{\partial y}$ y $\frac{\partial u}{\partial y}=-\frac{\partial v}{\partial x}$, las *ecuaciones de Cauchy-Riemann*. Defino $e^{x+yi}=e^x(\cos y+i\sin y)$, $\sin z=\frac{e^{iz}-e^{-iz}}{2i}$ y $\cos z=\frac{e^{iz}+e^{-iz}}2$; son holomorfas, $e^{z+w}=e^ze^w$, $\sin'z=\cos z$ y $\cos'z=-\sin z$.
+
+Si $U$ es abierto, $\gamma:[a,b]\to\C$ es $C^1$ a trozos y $f:U\to\C$ es continua, definimos $\int_\gamma f=\int_a^b f(\gamma(t))\gamma'(t)\,dt$. Es lineal y $|\int_\gamma f|\leqq \max_{z\in\gamma}|f(z)|\int_a^b|\gamma'|$. Si $F:U\to\C$ cumple $F'=f$, $\int_\gamma f=F(\gamma(b))-F(\gamma(a))$.
+
+**Goursat.** Si $R$ es un rectángulo y $f$ es holomorfa en un abierto que contiene a $R$, entonces $$\int_{\partial R} f = 0.$$
+
+*Prueba.* Tenemos $\int_{\partial R} f = \sum_{i=1}^4\int_{\partial R_i} f$, donde $R_1,\ldots,R_4$ son rectángulos iguales en los que dividimos a $R$. Hay rectángulos $R^1\supset R^2\supset\cdots$ tales que $|\int_{\partial R^{n+1}} f|\geqq\frac14|\int_{\partial R^n} f|$. Si $L_n$ es el perímetro de $R^n$, tenemos $L_n=\frac1{2^n}L_0$. La intersección de los $R^n$ es un punto $z_0$.
+
+Tenemos $f(z)=f(z_0)+f'(z_0)(z-z_0)+(z-z_0)h(z)$, con $h(z)\to 0$ si $z\to z_0$. Integrando y usando que las funciones con primitiva tienen integral cerrada nula, resulta $\int_{\partial R^n} f=\int_{\partial R^n}(z-z_0)h(z)$. Tenemos $|\int_{\partial R^n} f|\geqq \frac1{4^n}|\int_{\partial R}f|$ y $|\int_{\partial R^n}(z-z_0)h(z)|\leqq \frac1{2^n}L_0\text{diam}(R^n)\max_{z\in R^n}|h(z)|$, con $\text{diam}(R^n)=\frac1{2^n}\text{diam}(R)$. Luego $|\int_{\partial R}f|\leqq L_0\text{diam}(R)\max_{z\in R^n}|h(z)|$ para todo $n$, por lo que $\int_{\partial R}f=0$. $\blacksquare$
+
+La conclusión es que si $f$ es holomorfa en un disco, tiene primitiva.
+
+**Integrales paramétricas.** Si $U$ es abierto, $\gamma:[0,1]\to\C$ es $C^1$ a trozos y $f:U\times\gamma\to\C$ es continua entonces $F(z)=\int_\gamma f(x,w)\,dw$ es continua. Si $f(-,w)$ tiene derivada $f'(-,w)$ para todo $w\in\gamma$ y $f'$ es continua, $F'(z)=\int_\gamma f'(x,w)\,dw$.
+
+*Prueba.* Dado $z\in U$, hay $r>0$ con $\overline{B(z,r)}\subset U$; $f|_{\overline{B(z,r)}\times\gamma}$ es uniformemente continua, luego si $|h|<\delta$, $|f(z+h,w)-f(z,w)|<\epsilon$ para $z\in U,w\in\gamma$, y $|F(z+h)-F(z)|=|\int_\gamma(f(z+h,w)-f(z,w))\,dw|\leqq \epsilon |\gamma|$, por lo que $F$ es continua. Ahora si $f'$ es continua, usando continuidad uniforme, $|\frac{F(z+h)-F(z)}h - \int_\gamma f'(z,w)\,dw| = |\int_\gamma \int_z^{z+h}\frac{f'(t,w)-f'(z,w)}h\,dtdw|\leqq \epsilon|\gamma|$ si $|h|<\delta$, como queríamos. $\blacksquare$
+
+## Cauchy homotópico
+
+Sean $U$ un abierto, $f$ holomorfa en $U$ y $\gamma,\eta:[0,1]\to U$ caminos $C^1$ a trozos con $\gamma(0)=\eta(0)$, $\gamma(1)=\eta(1)$ *homotópicos*. Es decir existe $H:[0,1]\times[0,1]\to U$ continua tal que $H(-,0)=H(-,1)$, $H(0,-)=\gamma$ y $H(1,-)=\eta$. Entonces
+$$\int_{\gamma} f = \int_{\eta} f.$$
+
+*Prueba.* Por continuidad uniforme hay $n$ tal que $H([\frac {i-1}{n},\frac{i}{n}]\times[\frac{j-1}{n},\frac{j}{n}])\subset D_{ij}\subset U$, con $D_{ij}$ discos. Sean $I_i=\sum_{j=1}^{n}(g_{ij}(H(\frac{i}{n},\frac{j}{n})) - g_{ij}(H(\frac{i}{n},\frac{j-1}{n})))$, donde $g_{ij}'=f$ en $D_{ij}$, que existen por Goursat. Se ve que $I_i=I_{i-1}$. En particular $I_1=I_n$. Ahora $I_1=\int_\gamma f$ y $I_n=\int_\eta f$. $\blacksquare$
+
+En particular si $\gamma$ es homotópico a 0, $\int_{\gamma} f = 0$. Si $U$ es *simplemente conexo*, es decir, es conexo y toda curva cerrada es contráctil, eso vale siempre. Más aún, toda función holomorfa $f$ tiene primitiva. Un ejemplo es $\C\menos\R_{\leqq0}$. Por lo tanto ahí puede definirse el *logaritmo* como una primitiva $\ln$ de $\frac1z$ tal que $\ln(1)=2\pi ik$, $k\in\Z$. En general, si $f$ es holomorfa en $U$ simplemente conexo, y $f\neq0$, definimos $L_f(z)=\int_{z_0}^z\frac{f'}f+c$, con $z_0\in U$ y $e^c=f(z_0)$, y vale $e^{L_f(z)}=f(z)$.
+
+**Cauchy.** Sea $f$ holomorfa en un abierto $U$, y $D$ un disco con $\overline D\subset U$. Si $z_0\in D$ entonces $$f(z_0)=\frac1{2\pi i}\int_D \frac{f(z)}{z-z_0}dz.$$
+
+*Prueba.* La función $g(z)=\frac{f(z)-f(z_0)}{z-z_0}$ es holomorfa en $U\menos\{z_0\}$. Si $D(z_0,r)\subset D$, por Cauchy $\int_{D(z_0,r)}g=\int_{D}g$. Ahora $|\int_{D(z_0,r)}g|\leqq 2\pi r\max_{|z-z_0|=r}|g(z)|\to 0$ si $r\to0$. Luego $\int_{D}g=0$ y queda. $\blacksquare$
+
+Derivando la fórmula resulta $f^{(n)}(z_0)=\frac{n!}{2\pi i}\int_D\frac{f(z)}{(z-z_0)^{n+1}}dz.$
+
+Si $f$ es holomorfa en un abierto que contiene a $D=D(z_0,R)$ y $w\in D$ entonces $f(w)=\sum_{n=0}^\infty \frac{1}{n!}f^{(n)}(z_0)(w-z_0)^n$.
+
+*Prueba.* Tenemos $2\pi if(w)=\int_D\frac{f(z)}{z-w}dz=\int_D\frac{f(z)}{z-z_0}\frac1{1-\frac{w-z_0}{z-z_0}}dz=\int_D\frac{f(z)}{z-z_0}\sum_{n=0}^\infty\left(\frac{w-z_0}{z-z_0}\right)^ndz$. Sacando la serie afuera es $\sum_{n=0}^\infty\int_D\frac{f(z)}{(z-z_0)^{n+1}}dz(w-z_0)^n$ y queda. $\blacksquare$
+
+Si $f$ es holomorfa en un abierto $U$, sus ceros están aislados.
+
+*Prueba.* Si $f(z_0)=0$, $f(z)=(z-z_0)^mg(z)$ con $g$ holomorfa, $g(z_0)\neq0$. Sigue por continuidad de $g$. $\blacksquare$
+
+**Liouville.** Si $f:\C\to\C$ es holomorfa y acotada entonces es constante.
+
+*Prueba.* Tenemos $f'(z)=\frac1{2\pi i}\int_{D(z,R)}\frac{f(w)}{(w-z)^2}dw$. Luego $|f'(z)|\leqq \frac MR$, con $M$ tal que $|f|\leqq M$. Con $R\to\infty$ resulta $f'(z)=0$ y el teorema sigue. $\blacksquare$
+
+**Morera.** Si $f$ es continua en un abierto $U$ y para todo rectángulo $\gamma$ en $U$ vale $\int_\gamma f=0$ entonces es holomorfa.
+
+**Integral paramétrica 2.** Si $U$ es abierto, $\gamma:[0,1]\to\C$ es $C^1$ a trozos y $f:U\times\gamma\to\C$ es continua con $f(-,w)$ holomorfa para todo $w\in\gamma$, entonces $F(z)=\int_\gamma f(z,w)\,dw$ es holomorfa.
+
+*Prueba.* Vimos que es continua. Ahora si $R$ es un rectángulo en $U$, $\int_{\partial R}F=\int_{\partial R}\int_\gamma f(z,w)\,dwdz=\int_\gamma\int_{\partial R}f(z,w)\,dzdw=0$, y resulta por Morera. $\blacksquare$
+
+## Cauchy homológico
+
+Si $\gamma:[a,b]\to\mathbb{C}$ es $C^1$ a trozos y $\alpha\not\in\gamma$ definimos el *winding number* $$W(\gamma, \alpha)=\frac1{2\pi i}\int_\gamma\frac{dz}{z-\alpha}.$$
+
+Probamos que es un entero. Definimos $F(t)=\int_a^t\frac{\gamma'(t)}{\gamma(t)-\alpha}dt$. Es continua y derivable salvo en finitos puntos. Tenemos $\frac{d}{dt}e^{-F(t)}(\gamma(t)-\alpha)=0$ salvo en finitos puntos. Luego $e^{-F(t)}(\gamma(t)-\alpha)=C$, $e^{F(b)}=e^{F(a)}$, luego $F(b)=F(a)+2\pi ik$ con $k\in\mathbb{Z}$ y $W(\gamma,\alpha)=k$. Probamos además que es continua como función de $\alpha$.
+
+Una *cadena* es una suma formal de caminos cerrados. Sea $U$ un abierto, y $\gamma, \eta\in U$ dos cadenas. Decimos que son *homólogas en $U$* si $\forall\alpha\not\in U.W(\gamma,\alpha)=W(\eta,\alpha)$.
+
+**Fórmula de Cauchy.** Si $\gamma$ es homóloga a 0 en $U$, $f$ holomorfa en $U$, $z_0\in U$, $z_0\not\in\gamma$, entonces $$W(\gamma,z_0)f(z_0) = \frac1{2\pi i}\int_\gamma \frac{f(z)}{z-z_0}dz.$$
+
+*Prueba.* Definimos $g$ en $U\times U$ así: $$g(z,w)=\left\{\begin{matrix} \frac{f(w)-f(z)}{w-z} & \text{ si } w\neq z, \\ f'(z) & \text{ si } w=z.\end{matrix}\right.$$
+
+Sea $V=\{z\in\mathbb{C}\mid W(\gamma,z)=0\}$. Vale $\mathbb{C}=U\cup V$. Definimos $h$ así: $$h(z)=\left\{\begin{matrix} \int_\gamma g(z,w)\,dw & \text{ si } z\in U, \\ \int_\gamma \frac{f(w)}{w-z}\,dw & \text{ si } z\in V.\end{matrix}\right.$$
+
+Se ve que $g$ es continua y $g(-,w)$ es holomorfa, y lo mismo para $\frac{f(w)}{w-z}$. Luego $h$ es holomorfa en $\mathbb{C}$. Además es acotada y tiende a 0 en el límite. Por Liouville es nula y el teorema sigue. $\blacksquare$
+
+La fórmula $W(\gamma,z)f^{(n)}(z)=\frac1{2\pi i}\int_\gamma \frac{f(z)}{(z-z_0)^{n+1}}dz$ se obtiene derivando. Con $F(z)=(z-z_0)f(z)$ resulta el teorema de Cauchy $\int_\gamma f=0$.
+
+## Series de Laurent, singularidades, residuos
+
+Si $f$ es holomorfa en $\{z\mid r<|z-z_0|<R\}$ entonces hay únicos $a_n$ para $n\in\Z$ tales que $f(z)=\sum_{n=-\infty}^{\infty}a_n(z-z_0)^n$, y vale, para $r<\rho<R$, $$a_{n}=\frac{1}{2\pi i}\int_{|z-z_0|=\rho}\frac{f(z)}{(z-z_0)^{n+1}}dz.$$
+
+Sale como la fórmula de Cauchy pero usando dos círculos. Para ver la unicidad de $a_n$ se integra término a término $\frac{f(z)}{(z-z_0)^{n+1}}$.
+
+Si $f$ es holomorfa en un disco menos su centro $z_0$ hay tres posibilidades:
+
+* *Singularidad evitable.* El desarrollo de Laurent no tiene parte singular. Equivale a que $f$ sea acotada alrededor de $z_0$.
+
+* *Polo*. La parte singular tiene finitos términos. En ese caso definimos el *orden* como el menor $n\in\Z$ con $a_n\neq0$.
+
+* *Singularidad esencial.* La parte singular tiene infinitos términos no nulos. En ese caso si $f$ es holomorfa en $U=D(z_0,r)\menos\{z_0\}$, $\overline{f(U)}=\C$ (Casorati-Weierstrass). Esto es porque si $\alpha\in\C$ cumple que hay $s>0$ con $\forall z\in U.|f(z)-\alpha|>s$ entonces $g(z)=\frac1{f(z)-\alpha}$ es holomorfa en $U$ y acotada en $D$, y $1/g$ tiene como mucho un polo en $z_0$, absurdo.
+
+Si $f$ es holomorfa en un abierto $U$ excepto en puntos $z_1,\ldots,z_n$ y $\gamma$ es una cadena homóloga a 0 en $U$ entonces $\int_\gamma f=2\pi i\sum_{i=1}^nW(\gamma,z_i)\mm{res}_{z_i}f$, donde $\mm{res}_{z}f$, el *residuo* de $f$ en $z$, es $a_{-1}$ en el Laurent de $f$ en $z$. Vale $\mm{res}_zf'/f=\mm{ord}_zf$ si el orden no es infinito.
+
+**Rouché.** Sea $\gamma$ homóloga a 0 en $U$ tal que $W(\gamma,U)=\{0,1\}$, y $f,g$ holomorfas en $U$ tales que $|f(z)-g(z)|<|f(z)|$ en $\gamma$. Entonces tienen la misma cantidad de ceros en el "interior" de $\gamma$, es decir en $\{z\in U\mid W(\gamma,z)=0\}$.
+
+*Prueba.* Por la condición no tienen ceros en $\gamma$, y $F=g/f$ cumple que $\im F\circ\gamma\subset D(1,1)$. Luego $W(F\circ\gamma,0)=0$ y $0=\int_{F\circ\gamma}\frac1z=\int_\gamma \frac{F'}{F}=\int_\gamma (\frac{g'}g-\frac{f'}f)$. $\blacksquare$
+
+**Función abierta.** Si $f$ es holomorfa en un abierto conexo $U$ y no es constante entonces $f(U)$ es abierto.
+
+*Prueba.* Sea $a\in U$, $\alpha=f(a)$ y $m=\mm{ord}_a(f-\alpha)$ ($m\geqq1$). Sea $\epsilon>0$ tal que $D=D(a,2\epsilon)\subset U$ y $\forall z\in D\menos\{a\}.f(z)\neq\alpha$. Sea $\gamma(t)=a+\epsilon e^{2\pi it}$. Tenemos que $\alpha\not\in f\circ\gamma$, luego hay $\delta>0$ tal que, en $D(\alpha,\delta)$, $W(f\circ\gamma,-)$ es constante, y por lo tanto igual a $W(f\circ\gamma,\alpha)=\int_{f\circ\gamma}\frac{dz}{z-\alpha}=\int_\gamma\frac{f'}{f-\alpha}=m$. Luego si $\beta\in D(\alpha,\delta)$, $\int_\gamma \frac{(f-\beta)'}{f-\beta}=m$, por lo cual en $D$ hay $m\geqq1$ raíces de $f=\beta$. Entonces $D(\alpha,\delta)\subset f(U)$ y $f(U)$ es abierto. $\blacksquare$
+
+De la prueba se sigue que si $f'(z_0)\neq0$ entonces en un entorno de $z_0$ $f$ es inversible: hay $U,V$ abiertos, $z_0\in U$ y $f:U\to V$ tiene inversa $g:V\to U$. Es continua y se ve fácil que también holomorfa. Invocando el teorema se prueba lo siguiente:
+
+**Módulo máximo.** Si $f$ es holomorfa en un abierto conexo $U$ y no es constante entonces $|f|$ no tiene máximo, y el único mínimo puede ser 0.
+
+## Convergencia casi uniforme
+
+Si $U$ es abierto, sea $\HH(U)$ el espacio de funciones holomorfas en $U$. Defino $K_n=\{z\in U\mid |z|\leqq n, d(z,\C\menos U)\geqq \frac1n\}$. Son compactos y vale $K_1\subset K_2\subset\cdots$ y $U=\bigcup_{n=1}^\infty K_n$. Defino $d(f,g)=\sum_{n=1}^\infty\frac1{2^n}\min\{1,\sup_{K_n}|f-g|\}$. Es una métrica e induce una topología, la de la *convergencia casi uniforme*. En ella, $f_n\to f$ sii $f_n\to f$ uniformemente en cada compacto $K\subset U$.
+
+$\HH(U)$ es completo y $f\mapsto f'$ es continua.
+
+*Prueba.* Si $f_n$ es de Cauchy, tiene límite $f$ continua, y por Morera holomorfa. Si $f_n\to f$ hay que ver $f_n'\to f'$. En efecto, hay que probar que dado $z_0\in U$ hay un disco $D=D(z_0,R)$ tal que $f_n'\to f$ uniformemente en $D$; luego los compactos se cubren con finitos de estos. Ahora si $D(z_0,3R)\subset U$, $\gamma(t)=z_0+2Re^{2\pi it}$ y $z\in D$, $|f_n'(z)-f(z)|\leqq\frac1{2\pi}\int_\gamma|\frac{f_n(w)-f(w)}{(z-w)^2}|dw\leqq \frac2R\sup_{D(z_0,2R)}|f_n-f|\to0$, listo. $\blacksquare$
+
+**Montel.** Sea $U$ abierto y $\FF\subset\HH(U)$. Si es *acotado*, es decir, si para todo $K\subset U$ compacto hay $M$ con $\forall f\in\FF.\sup_K|f|\leqq M$, entonces es *normal*, es decir, $\overline\FF$ es compacto.
+
+*Prueba.* Sea $f_n\in\FF$ una sucesión. Sea $D=\overline D(z_0,R)\subset U$. Hay $M$ con $|f_n|\leqq M$ en $D$. Ponemos $f_n(z)=\sum_{k=0}^\infty a_{nk}(z-z_0)^k$. Por Cauchy tenemos $|a_{nk}|\leqq \frac{M}{R^k}$. Tomando subsucesiones y la diagonal conseguimos una subsucesión $n_i$ tal que para todo $k$ existe $\lim_{i\to\infty}a_{n_ik}=a_k$. Vale $|a_k|^{1/k}\leqq \frac{M^{1/k}}{R}$, luego $f(z)=\sum_{k=0}^\infty a_{nk}(z-z_0)^k$ es holomorfa en $D(z_0,R)$. Y $f_{n_i}\to f$ ahí: si $r<R$, en $\overline D(z_0,r)$ vale $|f_{n_i}(z)-f(z)|\leqq \sum_{k=0}^{k_0-1}|a_{n_ik}-a_k|r^k+2\sum_{k=k_0}^\infty M(\frac rR)^k$, que tiende a 0 tomando $k_0$ grande para el segundo término y luego $i$ grande para el primero. Entonces si $D\subset U$ es un disco, $f_n$ tiene una subsucesión que converge en $D$.
+
+Entonces si $K$ es un compacto, lo cubrimos con finitos discos, y tomando finitas subsucesiones convergemos en $K$. Luego tomando $K_n$ con $\bigcup_{n=1}^\infty K_n=U$, tomando subsucesiones y su diagonal conseguimos una subsucesión que converge en todos ellos, y por lo tanto en $U$. $\blacksquare$
+
+## Productos
+
+Dada una sucesión $\{z_n\}$ decimos que $\prod_{n=1}^\infty z_n$ *converge absolutamente* si $\lim_{n\to\infty} z_n=1$ y $\sum_{n=n_0}^\infty \ln(z_n)$ converge absolutamente para algún $n_0$, donde $\ln(z)=\int_1^z\frac{dw}w$. En ese caso $\lim_{N\to\infty}\prod_{n=1}^Nz_n=\prod_{n=1}^{n_0-1}z_n e^{\sum_{n=n_0}^\infty \ln(z_n)}$. Equivale a que $\sum_{n=1}^\infty |1-z_n|$ converge.
+
+Si $f_n\in\HH(U)$ no tienen ceros y $\sum_{n=1}^\infty |1-f_n|$ converge casi uniformemente en $U$, entonces $\prod_{n=1}^N f_n\to f$ en $\HH(U)$ y $\frac{f'}{f}=\sum_{n=1}^\infty\frac{f_n'}{f_n}$.
+
+Defino $E_n(z)=(1-z)e^{z+\frac{z^2}2+\cdots+\frac{z^{n-1}}{n-1}}$. Si $|z|\leqq\frac12$, $|\ln E_n(z)|\leqq 2|z|^n$.
+
+*Prueba.* Tenemos que $\ln E_n(z)=\ln(1-z)+z+\frac{z^2}2+\cdots+\frac{z^{n-1}}{n-1}=-\sum_{k=n}^\infty\frac{z^k}k$. Luego $|\ln E_n(z)|\leqq \frac{|z|^n}{n}\sum_{k=0}^\infty\frac1{2^k}\leqq 2|z|^n$. $\blacksquare$
+
+**Wierstrass.** Si $\{z_n\}\subset\C\menos\{0\}$ cumple $|z_n|\to\infty$, y $\{k_n\}\subset\N$ cumplen que $\sum_{n=1}^\infty\left(\frac{R}{|z_n|}\right)^{k_n}$ converge para todo $R>0$ (por ejemplo si $k_n=n$) entonces $\prod_{n=1}^\infty E_{k_n}(\frac{z}{z_n})$ converge en $\HH(\C)$ a una función cuyos únicos ceros son $\{z_n\}$ con su multiplicidad.
+
+*Prueba.* Vale que $k_n=n$ funciona porque $\sum_{n=N}^\infty\left(\frac{R}{|z_n|}\right)^{n}\leqq \sum_{n=N}^\infty\left(\frac{1}{2}\right)^n$ si $N$ es grande. Dado $R>0$ tomamos $K=\{|z|\leqq R\}$ y $N$ grande con $|z_n|\geqq 2R$ si $n\geqq N$. Entonces en $K$ tenemos $|\frac{z}{z_n}|\leqq\frac12$ si $n\geqq N$; luego $\sum_{n=N}^\infty |\ln(E_{k_n}(\frac{z}{z_n}))|\leqq 2 \sum_{n=N}^\infty|\frac{z}{z_n}|^{k_n}\leqq 2 \sum_{n=N}^\infty\left(\frac{R}{|z_n|}\right)^{k_n}<\infty$. Entonces $\prod_{n=1}^\infty E_{k_n}(\frac{z}{z_n})$ converge en $\HH(\C)$. Ahora en $K$ $\sum_{n=N}^\infty\ln(E_{k_n}(\frac{z}{z_n}))\to 0$ si $N\to\infty$. Luego $\prod_{n=N}^\infty E_{k_n}(\frac{z}{z_n})\to 1$, por lo que no es 0 si $N$ es grande. Entonces los ceros en $K$ son los de $\prod_{n=1}^N E_{k_n}(\frac{z}{z_n})$, luego son $z_n$ con su multiplicidad. $\blacksquare$
+
+*Corolario.* Las funciones *meromorfas* en $\C$, es decir, las que son holomorfas salvo en un conjunto de polos, son cociente de holomorfas.
+
+## Función gamma
+
+$$\frac{\pi^2}{\sin^2\pi z}=\sum_{n\in\Z}\frac1{(z-n)^2},\pi\frac{cos\pi z}{\sin\pi z}=\frac1z+\sum_{n=1}^\infty \frac{2z}{z^2-n^2}\text{ y}\sin\pi z=\pi z\prod_{n=1}^\infty\left(1-\frac{z^2}{n^2}\right)$$
+
+*Prueba.* Para la primera notar que la resta es meromorfa, las singularidades son evitables (porque la parte singular de los Laurent se anula) y tiende a 0 con $|z|\to\infty$. Luego por Liouville es 0 y tenemos la igualdad. Para la segunda, la derivada de la resta es la primera, y viendo en $z=0$ se ve que son iguales. Para la tercera, las derivadas logarítmicas coinciden, luego son iguales salvo constante, pero $\lim_{z\to 0}\frac{\sin\pi z}{\pi z}=1$, así que son iguales. $\blacksquare$
+
+*Corolario*. $\sum_{n=1}^\infty \frac1{n^2}=\frac{\pi^2}{6}$.
+
+Sea $\gamma=\lim_{n\to\infty}\left(1+\frac12+\cdots+\frac1n-\log n\right)$. Defino $\Gamma$ por $$\frac1{\Gamma(z)}=ze^{\gamma z}\prod_{n=1}^\infty\left(1+\frac zn\right)e^{-\frac zn},$$ meromorfa con polos en $\Z_{\leqq 0}$. Vale $\Gamma(z+1)=z\Gamma(z)$ y $\Gamma(n+1)=n!$ si $n\in\N$.
+
+$\Gamma(z)=\int_0^\infty e^{-t}t^{z-1}\,dt$ si $\Re(z)>0$.
+
+*Prueba.* La función $f(z)=\int_0^\infty e^{-t}t^{z-1}\,dt$ es holomorfa si $\Re(z)>0$. Basta ver la igualdad para $z\in\R_{>0}$. Tenemos $0\leqq e^{-t}-\left(1-\frac tn\right)^n\leqq \frac{e^{-t}t^2}{n}$ para $t>0$ (se ve derivando), luego $f(x)=\lim_{n\to\infty}\int_0^n \left(1-\frac tn\right)^n t^{x-1}\,dt$. Integrando por partes se ve que $f(x)=\lim_{n\to\infty} \frac{n!n^x}{x(x+1)\ldots(x+n)}$. Luego $\Gamma(x)=f(x)$. $\blacksquare$
+
+$\Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin\pi z}$.
+
+*Prueba.* Tenemos $\frac1{\Gamma(z)\Gamma(-z)}=-\frac{z}{\pi}\sin\pi z$, luego $\Gamma(z)\Gamma(1-z)=-z\Gamma(z)\Gamma(-z)=\frac{\pi}{\sin\pi z}$. $\blacksquare$
+
+## Automorfismos
+
+Los únicos automorfismos de $\C$ son $f(z)=az+b$.
+
+*Prueba.* Defino $g(z)=f(\frac1z)$. Por Casorati-Weierstrass tiene un polo en 0, luego $f$ es un polinomio. Como es inyectivo, $f(z)=az+b$. $\blacksquare$
+
+**Lema de Schwarz.** Sea $D=D(0,1)$ y $f:D\to D$ holomorfa, con $f(0)=0$. Entonces $|f(z)|\leqq |z|$ si $z\in D$ y $|f'(0)|\leqq 1$. Si hay $z\in D$, $z\neq0$ con $|f(z)|=|z|$ o $|f'(0)|=1$ entonces $f(z)=az$ con $|a|=1$.
+
+*Prueba.* Sea $g(z)=\frac{f(z)}{z}$. Es holomorfa en $D$. Si $r<1$, por módulo máximo en $D(0,r)$ vale $|g(z)|\leqq |g(w)|<\frac1{|w|}=\frac1r$ si $|z|< r$, $|w|=r$. Luego con $r\to 1$ queda $|g(z)|\leqq 1$ para todo $z\in D$. Si $|g(z)|=1$ para algún $z$, por módulo máximo $g$ es constante en $D$, y queda. $\blacksquare$
+
+Los automorfismos de $D=D(0,1)$ son $f(z)=a\frac{\alpha-z}{1-\overline\alpha z}$ con $|a|=1$, $\alpha\in D$.
+
+*Prueba.* Sea $\alpha$ con $f(\alpha)=0$. Sea $g_\alpha=\frac{\alpha-z}{1-\overline\alpha z}$. Es holomorfa en $\overline D$, y, si $|z|=1$, $1-\overline\alpha z=-z\overline{\alpha-z}$, por lo que $|g_\alpha(z)|=1$, y $|g_\alpha(z)|<1$ en $D$. Se ve $g_\alpha\circ g_\alpha=\id$. Entonces $h=f\circ g_\alpha$ es un automorfismo con $h(0)=0$; luego $|h(z)|\leqq |z|$ por Schwarz, pero también $|z|\leqq|h(z)|$ sobre la inversa, por lo que $h(z)=az$ con $|a|=1$ y el teorema sigue. $\blacksquare$
+
+Sea $S=\mm{SL}_2(\R)=\{M\in\R^{2\times 2}\mid \det M=1\}$. Si $M=\left(\begin{array}{cc}a&b\\c&d\end{array}\right)\in S$, definimos $f_M(z)=\frac{az+b}{cz+d}$. Sea $H=\{\Im z>0\}$. Entonces los automorfismos de $H$ son $f_M$ con $M\in S$.
+
+*Prueba.* Notar que si $M\in S$, $f_M\in\HH(H)$ y $f_M(H)\subset H$. Notar que $S$ es un grupo y que $f_{MM'}=f_M\circ f_{M'}$. Luego $f_M$ son automorfismos. Sea $f:H\to H$ un automorfismo, y $\alpha\in H$ con $f(\alpha)=i$. Se ve que hay $M$ con $f_M(i)=\alpha$. Notar que $g(z)=\frac{z-i}{z+i}$ es holomorfa $H\to D(0,1)$ y que $h(z)=i\frac{z+1}{1-z}$ es su inversa. Entonces $s=g\circ f\circ f_M\circ h$ es un automorfismo de $D$ con $s(0)=0$, luego $s=az$ con $|a|=1$. Se comprueba que $f\circ f_M=h\circ s\circ g=f_{M'}$ con $M'\in S$, y el teorema sigue. $\blacksquare$
+
+Sea $G=\mm{GL}_2(\C)$. Los automorfismos de $\hat\C=\C\cup\{\infty\}$ son las $f_M$ con $M\in G$, llamadas *homografías*. Si $F=f_M$, $f=az+b$ o $f=T_a\circ M_b\circ J\circ T_c$, con $T_\alpha=z+\alpha$, $M_\alpha=\alpha z$ y $J=\frac1z$. Las homografías transforman circunferencias o rectas en circunferencias o rectas (para eso usar que la ecuación de una circunferencia o recta en $\R^2$ es $A(x^2+y^2)+Bx+Cy+D=0$ y la descomposición).
+
+Dados $z_1,z_2,z_3,w_1,w_2,w_3\in\hat\C$ hay una única homografía $f$ con $f(z_i)=w_i$. Si $f,g$ cumplen, $f^{-1}\circ g$ tiene 3 puntos fijos, pero se ve que sólo la identidad los tiene, luego $f=g$. Se ve que $f(z)=(z,z_1,z_2,z_3)=\frac{z-z_1}{z_1-z_2}\frac{z_2-z_3}{z_3-z}$ manda $z_1\mapsto 0,z_2\mapsto 1,z_3\mapsto\infty$. Si $f$ es una homografía vale $(f(z_1),f(z_2),f(z_3),f(z_4))=(z_1,z_2,z_3,z_4)$. Vale que $(z_1,z_2,z_3,z_4)\in\R$ sii los cuatro están en una misma recta o circunferencia. Si $C$ es una circunferencia o recta, $z_1,z_2,z_3\in C$, se define el simétrico de $z\in\C$ con respecto a $C$ como el $z^*$ con $(z^*,z_1,z_2,z_3)=\overline{(z,z_1,z_2,z_3)}$. No depende de los $z_i$ sino de $C$: si $w_1,w_2,w_3\in C$, y $(z^{**},w_1,w_2,w_3)=\overline{(z,w_1,w_2,w_3)}$, si $f(z)=(z,z_1,z_2,z_3)$, $f(w_i)\in\R$, $(f(z^{**}),f(w_1),f(w_2),f(w_3))=\overline{(f(z),f(w_1),f(w_2),f(w_3))}$ luego $f(z^{**})=\overline{f(z)}$ y $z^{**}=z^*$.
+
+## Teorema de Riemann
+
+Un abierto $U$ es isomorfo a $D=D(0,1)$ si y sólo si es simplemente conexo y no es $\C$.
+
+*Prueba.* Una implicación sale con Liouville y notando que los homeos preservan simple-conexidad. Veamos la otra. Sea $U$ abierto simplemente conexo, $U\neq\C$. Hay $\alpha\not\in U$, luego hay $g(z)=\log(z-\alpha)$ inyectiva. Sea $z_0\in U$ y $\beta=g(z_0)+2\pi i$. Hay $\epsilon>0$ con $\forall z\in U.|g(z)-\beta|\geqq\epsilon$, porque si no hay $z_n$ con $g(z_n)\to \beta$, luego $z_n\to z$, absurdo. Entonces $f(z)=\frac{\epsilon}{g(z)-\beta}$ es inyectiva $U\to D$. Entonces basta probarlo para $U\subset D$, y de hecho con $0\in U$.
+
+Sea $\FF$ el conjunto de funciones holomorfas inyectivas $U\to D$ con $0\mapsto 0$; es no vacío porque está la inclusión. Por Cauchy $|f'(0)|$ está acotado si $f\in\FF$; aplicando Montel obtenemos $f_n\in\FF$ y $f\in\HH(U)$ con $f_n\to f$ y $|f'(0)|$ máximo; veamos que $f\in\FF$: si hay $z\neq w$ con $f(z)=f(w)$, luego $\int_\gamma \frac{f(t)\,dw}{f(t)-f(z)}>0$ con $\gamma=\partial D(w,\epsilon)$, $|z-w|>\epsilon$, luego $\int_\gamma \frac{f_n(t)\,dw}{f_n(t)-f_n(z)}>0$ y hay $w_n\in D(w,\epsilon)$ con $f_n(w_n)=f_n(z)$, absurdo.
+
+Resta ver que $f$ es sobreyectiva. Si no sea $\alpha\in D$, $\alpha\not\in f(U)$. Sea $R\in\Aut(D)$ con $R(\alpha)=0$, $\log:Rf(U)\to\C$, $S(z)=e^{\frac12\log(z)}$ y $T\in\Aut(D)$, $TSR(0)=0$. Entonces $g=TSRf\in\FF$ y si $h=R^{-1}S'T$, $f=hg$, con $S'(z)=z^2$. Ahora $h:D\to D$ no es inyectiva, luego por Schwarz $|h'(0)|<1$, y $|f'(0)|=|h'(0)||g'(0)|<|g'(0)|$, absurdo. Entonces $f$ es sobreyectiva y es iso. $\blacksquare$

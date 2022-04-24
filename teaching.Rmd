@@ -1,0 +1,42 @@
+---
+title: "Teaching"
+output: distill::distill_article
+---
+
+I was teaching fellow for the following courses at Harvard.
+
+### Gov 2006: Formal Theory II (Prof. Peter Buisseret)
+
+I taught this class twice -- during Spring 2021 and Spring 2022. Slides I made for my classes:
+
+1. [Refinements of PBE](files/data/gov2006/section1.pdf).
+
+2. [The Principal-Agent Model](files/data/gov2006/section2.pdf).
+
+3. [Cheap Talk](files/data/gov2006/section3.pdf).
+
+4. [Global Games](files/data/gov2006/section4.pdf).
+
+5. [Electoral Competition](files/data/gov2006/section5.pdf).
+
+6. [Valence Advantage](files/data/gov2006/section6.pdf).
+
+7. [Repeated elections with two parties](files/data/gov2006/section7.pdf).
+
+8. [Accountability, Selection and Pandering](files/data/gov2006/section8.pdf).
+
+9. [Legislative Bargaining](files/data/gov2006/section9.pdf).
+
+10. [Lobbying](files/data/gov2006/section10.pdf).
+
+11. [Monotone comparative statics and economic policy](files/data/gov2006/section11.pdf).
+
+12. [Correction to Acemoglu-Robinson QJE (2000)](files/data/gov2006/section12.pdf).
+
+13. [Real authority and expertise](files/data/gov2006/section13.pdf).
+
+### Gov 1780: International Political Economy (Prof. Jeffry Frieden)
+
+### Gov 51: Data Analysis and Politics (Prof. Matt Blackwell)
+
+See the [webpage](http://gov51.mattblackwell.org/) of the course.

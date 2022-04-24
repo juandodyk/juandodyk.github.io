@@ -1,0 +1,22 @@
+---
+title: "Research"
+output: distill::distill_article
+---
+
+### Published
+
+[**The Political Behavior of Family Firms: Evidence from Brazil**](https://www.sciencedirect.com/science/article/abs/pii/S0305750X21003624) (with Pablo Balan and Ignacio Puente). *World Development*, 2022. [PDF](files/WD.pdf). [Online Appendix](files/WD_online_appendix.pdf). [Replication Archive](files/WD_replication.zip). [Shiny App](https://familyfirms.shinyapps.io/contributions/).
+
+### Work in Progress
+
+**Kin in the Game:  How Family Ties Help Firms Overcome Campaign Finance Regulation** (with Pablo Balan and Ignacio Puente). [PDF](files/BDP_ban_20220214.pdf).
+
+**An Informational Theory of Coalitional Lobbying.** [Slides](files/lobbytogether.pdf).
+
+**A proof of Blackwell's Theorem for separable metric state spaces.** [PDF](files/blackwell_new.pdf).
+
+### Old stuff
+
+**Information, policy preferences and voting.** [PDF](files/infoandpolicy.pdf).
+
+**Enchufes, espejos y tijeras: efectos del diseño de las boletas sobre el comportamiento electoral** (with Juan Pablo Ruiz Nicolini). *Revista SAAP*, 2017. [PDF](files/Enchufes_espejos_y_tijeras.pdf).

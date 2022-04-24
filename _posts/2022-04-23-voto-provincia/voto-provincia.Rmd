@@ -1,0 +1,177 @@
+---
+title: "Distribución del voto por provincia"
+description: ""
+date: 2015-11-29
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+Distribución de votos a <select id="cand"></select> en la provincia <select id="provincia"></select>.
+
+<div id="hist"></div>
+
+<div id="tabla"></div>
+
+<div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/ar/ar-all.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="../../files/js/chroma.min.js"></script>
+<script>
+$(function() {
+
+var cands = ["Scioli","Macri","No Votó/Blanco"];
+var provs = JSON.parse('{"0":"Argentina","1":"Ciudad de Buenos Aires","2":"Buenos Aires","3":"Catamarca","4":"Córdoba","5":"Corrientes","6":"Chaco","7":"Chubut","8":"Entre Ríos","9":"Formosa","10":"Jujuy","11":"La Pampa","12":"La Rioja","13":"Mendoza","14":"Misiones","15":"Neuquén","16":"Río Negro","17":"Salta","18":"San Juan","19":"San Luis","20":"Santa Cruz","21":"Santa Fe","22":"Santiago del Estero","23":"Tucumán","24":"Tierra del Fuego"}');
+var colors = ['#538ed5', chroma('yellow').desaturate().hex(), 'darkgrey'];
+var mesas = JSON.parse('{"0":94956,"1":7365,"2":34502,"3":922,"4":8411,"5":2403,"6":2556,"7":1241,"8":3119,"9":1308,"10":1583,"11":829,"12":872,"13":3996,"14":2480,"15":1426,"16":1535,"17":2897,"18":1606,"19":1129,"20":810,"21":7934,"22":2123,"23":3474,"24":435}');
+var keys = JSON.parse('{"1":"ar-df","2":"ar-ba","3":"ar-ct","4":"ar-cb","5":"ar-cn","6":"ar-cc","7":"ar-ch","8":"ar-er","9":"ar-fm","10":"ar-jy","11":"ar-lp","12":"ar-lr","13":"ar-mz","14":"ar-mn","15":"ar-nq","16":"ar-rn","17":"ar-sa","18":"ar-sj","19":"ar-sl","20":"ar-sc","21":"ar-sf","22":"ar-se","23":"ar-tm","24":"ar-tf"}');
+
+var prov = "2";
+for(i in provs)
+	$("#provincia").append('<option value="'+i+'">'+provs[i]+'</option>');
+$('#provincia option:eq('+prov+')').attr('selected', 'selected');
+$("#provincia").change(function() {
+	prov = $("#provincia").val();
+	restart();
+});
+
+var cand = 0;
+for(i in cands)
+	$("#cand").append('<option value="'+i+'">'+cands[i]+'</option>');
+$('#cand option:eq('+cand+')').attr('selected', 'selected');
+$("#cand").change(function() {
+	cand = parseInt($("#cand").val());
+	restart();
+});
+
+var round = function(num) {
+	return Math.round(num * 100) / 100;
+}
+
+var mapa = function(data, colorAxis) { return new Highcharts.Map({
+	chart: {
+        renderTo: 'mapa',
+        height: 700
+    },
+    title : {
+        text : 'Votos a ' + cands[cand]
+    },
+    subtitle : {
+        text : 'Click para ver la distribución de votos por provincia'
+    },
+    plotOptions: { map: { events: { click: function(e) {
+    	for(i in keys) if(keys[i] == e.point['hc-key']) prov = i;
+    	restart();    	
+    }}}},
+    colorAxis: colorAxis,
+    series : [{
+        data : data,
+        mapData: Highcharts.maps['countries/ar/ar-all'],
+        joinBy: 'hc-key',
+        name: 'Media de la proporción de votos a ' + cands[cand],
+        states: {
+            hover: {
+                color: '#BADA55'
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            format: '{point.name}'
+        }
+    }]
+})};
+
+var hist = function(data) { return new Highcharts.Chart({
+    chart: {
+        renderTo: 'hist',
+        type: 'column',
+        height: $("#hist").width()
+    },
+    title: {
+        text: "Distribución de voto a "+cands[cand]+" en "+provs[prov]+" por mesa"
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de mesas'
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: 'Proporción de votos a '+cands[cand]+' sobre el total de empadronados en esa mesa'
+        }
+    },
+    series: [{
+        data: data,
+        pointRange: 1/100,
+        pointPadding: 0,
+        groupPadding: 0,
+        color: colors[cand]
+    }],
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+	    	formatter: function() {
+		        return '<table><tr><th>Desde:</th><td>'+round(this.x-1/200)+'</td></tr>' +
+	                '<tr><th>Hasta:</th><td>'+round(this.x+1/200)+'</td></tr>' +
+	                '<tr><th>Cantidad de mesas:</th><td>'+(this.y)+'</td></tr></table>';
+		    },
+            useHTML: true,
+            followPointer: true
+        },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: false
+            }
+        }
+    },
+}); };
+
+var json_data = null;
+
+var fill_tables = function() {
+	$("#provincia option[value="+prov+"]").attr('selected', 'selected');
+	var html = '<table style="padding-top:500px"><tr><th colspan="2">'+provs[prov]+'</th></tr>';
+	var rots = ["Cantidad de mesas", "Media", "Desviación estándar", "Mediana"];
+	var keys = ["num", "mean", "sd", "median"];
+	for(i in rots)
+		html += '<tr><th align="left">' + rots[i] + '</td><td align="center">' + round(json_data[prov][cand][keys[i]][0]) + '</td></tr>';
+	//html += '<tr><th align="left">Proporción de mesas sobre el total</td><td align="center">' + round(json_data[prov][cand].num[0]/mesas[prov]*100) + '%</td></tr>';
+	var num = json_data[prov][cand].num[0];
+	var tot = mesas[prov];
+	html += '<tr><th align="left">Mesas sin contar</th><td>'+(tot-num)+'</td></tr>';
+	html += '<tr><th align="left">Mesas sin contar (% total)</th><td>'+round((tot-num)/num*100)+'%</td></tr>';
+	html += '</table><div id="mapa" stye="height:1000px"></div>';
+	$("#container").html(html);
+};
+
+var main = function(data) {
+	if(!json_data) json_data = data;
+	fill_tables();
+	var hist_ = hist(data[prov][cand].hist);
+
+	var map_data = [];
+	for(i in keys)
+		map_data.push({"hc-key": keys[i], "value": data[i][cand].mean[0]});
+	var stops = [[0, '#FFFFFF'], [1, colors[cand]]];
+	var colorAxis = {stops: stops};
+	var mapa_ = mapa(map_data, colorAxis);
+};
+
+var restart = function() {
+	if(json_data) main(json_data);
+	else $.getJSON("../../files/json/hist_ballotage.json", main);
+};
+
+restart();
+
+});
+</script>
+</div>

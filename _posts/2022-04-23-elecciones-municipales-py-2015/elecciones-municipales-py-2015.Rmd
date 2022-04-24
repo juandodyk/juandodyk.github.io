@@ -1,0 +1,32 @@
+---
+title: "Elecciones municipales en Paraguay, 2015"
+description: ""
+date: 2015-11-16
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+![](../../files/img/anr_cartes.jpg)
+
+El presidente Horacio Cartes, del Partido Colorado (ANR), tomó la decisión de nacionalizar la elección. Se erigió como jefe de campaña y definió las elecciones como un "gran referéndum" de su gobierno. Perdió.
+
+> "La gran derrota del Partido Colorado se dio en Asunción, donde perdió su candidato Arnaldo Samaniego, en manos de Mario Ferreiro, por una diferencia de 23.000 votos entre los dos postulantes. [11 puntos porcentuales.]
+
+> Otra de las notas negativas para la ANR es que en Central solo se quedaron con 6 intendencias de las 19 posibles, el resto fue para el Partido Liberal Radical Auténtico (PLRA). Este es el departamento con mayor caudal de electores.
+
+> No obstante, la ANR logró imponerse en 148 distritos a nivel país, 10 más que lo obtenido en las elecciones municipales del 2010. Por eso, los analistas refieren que no es una tragedia para el partido oficialista y podrá reponerse rápidamente." [Fuente](http://www.ultimahora.com/cartes-el-gran-perdedor-las-elecciones-municipales-n946377.html)
+
+No es una tragedia para el partido. Ni para el bipartidismo. Sí para el liderazgo de Cartes dentro del Partido Colorado, que podría estar en disputa a partir de ahora, de cara a las elecciones generales del 2018.
+
+>"El vicepresidente Juan Afara sufrió la humillante derrota en su propio pueblo por el PDP, de Desirée Masi. En vez de resolver con inteligencia una interna, tomó el camino de la prepotencia y así le fue. Víctor Casas era intendente colorado, pero fue expulsado del partido por problemas con el matrimonio Afara. Se candidató por el PDP y asestó un duro golpe al vicepresidente.
+
+>Así como Asunción, otra derrota catastrófica para la ANR es Encarnación. Luis Yd, en una puja de infarto, se impuso anoche por 11 votos al candidato colorado que tuvo a su favor la poderosa estructura de Yacyretá y la Gobernación de Itapúa. Un golpe para el gobernador Luis Gneiting y Afara." [Fuente](http://www.ultimahora.com/el-voto-castigo-golpea-los-caudillos-la-anr-n946306.html)
+
+>"En Encarnación la oposición ganó por 100 votos, aclaran. Con su victoria, el opositor del Partido Patria Querida rompe una hegemonía de 87 años [del Partido Colorado]." [Fuente](http://www.hoy.com.py/politica/en-encarnacion-oposicion-gano-por-100-votos-aclaran)
+
+Se dice que Cartes, empresario tabacalero vinculado al narcotráfico, compró la estructura del Partido Colorado. Eso lo llevó al poder en las elecciones de 2013, tras el golpe parlamentario a Fernando Lugo. Pero su estilo de conducción del partido, calificado como prepotente, no está dando resultados electorales. Es posible que los dirigentes colorados desplazados impulsen un liderazgo alternativo.
+
+Por otra parte, Fernando Lugo también fue vencido. En Asunción no apoyó al opositor Mario Ferreiro sino a Ricardo Meyer, que quedó tercero con el 4.5% de los votos.
+
+> "Tras las elecciones municipales, en el Frente Guasu se habla como posible un “paso al costado” de Fernando Lugo, y la elección de un nuevo líder. La idea sería que el mismo negocie "con todos" (¿incluso con los colorados?) instalar la reelección para el 2018." [Fuente](http://www.hoy.com.py/politica/lugo-piensa-dejar-frente-guasu-para-negociar-con-todos-la-reeleccin)

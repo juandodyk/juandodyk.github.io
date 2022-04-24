@@ -1,0 +1,211 @@
+---
+title: "Contando intendentes en Paraguay"
+description: ""
+date: 2015-11-21
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+![](../../files/img/anr.jpg)
+
+En las elecciones municipales del domingo pasado se eligieron intendentes y concejales en los 250 distritos que conforman Paraguay.<!--more--> El primer dato que arrojaron las elecciones, antes de iniciarse, fue precisamente ese número: 250, la cantidad de municipios. En las elecciones de 2010 había 238: 12 menos. En las de 2006 había 230: 8 menos. Podemos decir: la geografía política distrital es dinámica.
+
+El Partido Colorado (ANR) presentó candidatos en todos los distritos. El Partido Liberal (PLRA) se presentó en 200. Lo siguió el Frente Guasú, en 86, y el UNACE en 68.
+
+<div id="container_cant_dis" style="min-height: 500px;"></div>
+
+Esto es hasta cierto punto engañoso, ya que liberales y miembros del Frente Guasú se presentaron en muchos distritos en partidos o alianzas con otro nombre. Los liberales tienen presencia en prácticamente todo el territorio, salvo en como mucho 25 distritos. En cambio, hay 97 distritos (un 39%) en los que el Frente Guasú no tiene presencia, ni siquiera a través de posibles aliados, si no entra en alianza con el PLRA. Es decir, hay 97 distritos en los que para el Frente Guasú es indispensable aliarse al PLRA. Esos distritos concentran un 23% de la población.
+
+El siguiente gráfico muestra cuántos candidatos se presentaron en cada distrito:
+
+<div id="container_cant_parts"></div>
+
+La anécdota: hubo 5 distritos en los que sólo se presentó un candidato. Fue, en todos los casos, colorado. En esos distritos el porcentaje de participación fue sólo levemente más bajo que el promedio nacional (50.5% frente al 56.6% nacional). Hubo más voto en blanco y nulo, pero no demasiado: 17.8% contra 5%.
+
+Descontemos los casos anecdóticos. El promedio es 2.98: en la mayoría de los distritos (un 57%) se presentaron 3 o más candidatos.
+
+¿Cómo quedó el mapa político? Así:
+
+![Mapa](../../files/img/mapa_py.jpg)
+
+<div id="container_cant_dis_ganados"></div>
+<div id="container_pop_dis_ganados"></div>
+
+Lo que se observa en el gráfico anterior es que en cantidad de habitantes el Partido Colorado sólo gobierna al 51% (descontando que tiene la presidencia), mientras que el Partido Liberal gobierna al 34%. Si sumamos Asunción (donde ganó el Partido Revolucionario Febrerista, encabezado por el PLRA), alcanza un 41%. Sólo 10 puntos por debajo de la ANR.
+
+Notar también que el UNACE, con sus 3 intendencias, está tercero, pero sólo gobierna al 0.3% de la población. El Frente Guasú está peor aún: el mismo 0.3% con una intendencia menos.
+
+<div id="container_cant_votos"></div>
+
+Si contamos la cantidad total de votos recibidos por cada partido, el Partido Colorado queda debajo del 50%: sólo obtuvo el 48.2% de los votos totales. El PLRA sumando Asunción obtuvo el 39.7%. De nuevo 10 puntos de diferencia. El Frente Guasú en soledad quedó tercero (descontando Asunción) con el 2.7% de los votos, seguido por el UNACE y su 1.1%.
+
+El Frente Guasú en soledad, librado a la lucha cuerpo a cuerpo por el territorio, es un partido de un dígito, como el trotskismo en Argentina. Y sin embargo el próximo presidente puede salir de ese Frente. Contar intendentes y pintar mapas nos dice algo: sin la ayuda del PLRA ese objetivo es imposible. Pero no hay que dejar de lado el primer número que mencioné: el mapa también cambia.
+
+Fuentes:
+
+* Los resultados los tomé de [acá](http://resultados.tsje.gov.py/divulgacion.html).
+* Los números de habitantes de cada distrito los tomé de [acá](https://es.wikipedia.org/wiki/Anexo:Ciudades_de_Paraguay_por_poblaci%C3%B3).
+* La cantidad de distritos en 2006 y 2010 salió de [acá](http://tsje.gov.py/elecciones-municipales-2006.html).
+* El mapa político fue publicado por [ABC](http://www.abc.com.py/).
+* Mis gráficos fueron hechos con [Highcharts](http://www.highcharts.com/).
+
+PD: [Pablo Touzon](http://panamarevista.com/2015/11/19/el-dron-del-politologo/) escribió un comentario sobre este tipo de análisis (incluyendo algunos infinitamente más sofisticados) que me parece pertinente.
+
+<div>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>
+$(function() {
+
+var cant_parts = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_parts',
+        type: 'column'
+    },
+    title: {
+        text: "Cantidad de candidatos en cada distrito"
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de distritos'
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: 'Cantidad de candidatos'
+        }
+    },
+    series: [{
+        data: JSON.parse('[[3,72],[2,102],[4,51],[6,5],[5,10],[1,5],[7,4],[9,1]]'),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_dis',
+        type: 'column'
+    },
+    title: {
+        text: "Cantidad de distritos en los que se presentó cada partido"
+    },
+    yAxis: {
+        title: {
+            text: 'Cantidad de distritos'
+        },
+        endOnTick: false,
+    },
+    xAxis: {
+        title: {
+            text: ''
+        },
+        categories: JSON.parse('["PARTIDO COLORADO","PARTIDO LIBERAL RADICAL AUTENTICO","CONCERTACION NACIONAL FRENTE GUASU","PARTIDO UNACE","CONCERTACION JUNTOS PODEMOS","PARTIDO ENCUENTRO NACIONAL","PARTIDO DEMOCRATICO PROGRESISTA","PARTIDO POPULAR TEKOJOJA","PARTIDO PARAGUAY TEKOPYAHU","PARTIDO PATRIA QUERIDA","MOVIMIENTO INDEPENDIENTE POICHO","PARTIDO DE LA JUVENTUD","ALIANZA PARA TODOS","PARTIDO DEMOCRATA CRISTIANO","PARTIDO REVOLUCIONARIO FEBRERISTA","PARTIDO DE LA PARTICIPACION CIUDADANA"]')
+    },
+    series: [{
+        data: JSON.parse('[{"y":250,"color":"#f8020e"},{"y":200,"color":"#069fff"},{"y":86,"color":"#aa72ff"},{"y":68,"color":"#7f7e92"},{"y":18,"color":"#ffcc03"},{"y":16,"color":"#ffff17"},{"y":11,"color":"#97de01"},{"y":11,"color":"#468a6a"},{"y":9,"color":"#913505"},{"y":8,"color":"#57947f"},{"y":5,"color":"#ffedee"},{"y":5,"color":"#8eff29"},{"y":4,"color":"#fffe03"},{"y":3,"color":"#ffffe5"},{"y":2,"color":"#00fe00"},{"y":2,"color":"#ff8754"}]'),
+        pointRange: 1,
+        pointPadding: 0,
+        groupPadding: 0,
+    }],
+    legend: {
+        enabled: false
+    },
+    plotOptions: {
+        column: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+});
+
+var cant_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_dis_ganados',
+        type: 'pie'
+    },
+    title: {
+        text: 'Cantidad de distritos ganados por partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.y}', //{point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":149,"color":"#e70000","name":"PARTIDO COLORADO"},{"y":76,"color":"#00bcff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":3,"color":"#917e85","name":"PARTIDO UNACE"},{"y":2,"color":"#9aff00","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":2,"color":"#e7ff00","name":"ALIANZA PARA TODOS"},{"y":2,"color":"#956ce6","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":16,"color":"#7b3e0c","name":"OTROS"}]')
+    }]
+});
+
+var pop_dis_ganados = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_pop_dis_ganados',
+        type: 'pie'
+    },
+    title: {
+        text: 'Población de los distritos donde ganó cada partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":3438519,"color":"#ff000c","name":"PARTIDO COLORADO"},{"y":2277736,"color":"#00c6ff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":526408,"color":"#00e506","name":"PARTIDO REVOLUCIONARIO FEBRERISTA"},{"y":125429,"color":"#ffffff","name":"ALIANZA ENCARNACION AL FRENTE"},{"y":72145,"color":"#f2ee00","name":"ALIANZA PARA TODOS"},{"y":59480,"color":"#97ff03","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":35275,"color":"#95cca6","name":"ALIANZA SAN JUAN DIFERENTE"},{"y":28332,"color":"#93c4a4","name":"ALIANZA TODOS POR YBY YAU"},{"y":23473,"color":"#a654ff","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":22629,"color":"#80756f","name":"PARTIDO UNACE"},{"y":144438,"color":"#815010","name":"OTROS"}]')
+    }]
+});
+
+var cant_votos = new Highcharts.Chart({
+    chart: {
+        renderTo: 'container_cant_votos',
+        type: 'pie'
+    },
+    title: {
+        text: 'Cantidad de votos totales obtenidos por cada partido'
+    },
+    plotOptions: {
+        pie: {
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        data: JSON.parse('[{"y":1015058,"color":"#ff0000","name":"PARTIDO COLORADO"},{"y":722238,"color":"#00b3ff","name":"PARTIDO LIBERAL RADICAL AUTENTICO"},{"y":114760,"color":"#00ff00","name":"PARTIDO REVOLUCIONARIO FEBRERISTA"},{"y":55985,"color":"#9966ff","name":"CONCERTACION NACIONAL FRENTE GUASU"},{"y":22535,"color":"#808080","name":"PARTIDO UNACE"},{"y":19378,"color":"#ffcc00","name":"CONCERTACION JUNTOS PODEMOS"},{"y":16475,"color":"#99ff00","name":"PARTIDO DEMOCRATICO PROGRESISTA"},{"y":16410,"color":"#ffffff","name":"ALIANZA ENCARNACION AL FRENTE"},{"y":124380,"color":"#783c1e","name":"OTROS"}]')
+    }]
+});
+
+});
+</script></div>
