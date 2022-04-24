@@ -1,0 +1,216 @@
+---
+title: "Cap 8. Justice as Mutual Advantage?"
+subtitle: "Vanderscraaf (2019), Strategic Justice"
+output:
+  xaringan::moon_reader:
+    nature:
+      countIncrementalSlides: false
+---
+
+# Condiciones necesarias
+
+Condiciones necesarias para que un sistema de reglas $S$ sea un sistema de justicia como beneficio mutuo para los miembros de una sociedad $N$:
+
+- *Conflicto de interés* (M1). $S$ require a los miembros que restrinjan la búsqueda de su propio interés para satisfacer el interés de otros.
+
+- *Mejora de Pareto* (M2). Si todos siguen $S$, todos están mejor que si nadie sigue $S$.
+
+-	*Expectativas mutuas negativas* (M3). Todos siguen $S$ porque esperan que si no lo hacen, otros los van a castigar como $S$ requiere.
+
+-	*Expectativas mutuas positivas* (M4). Todos esperan que si siguen $S$, los otros van a restringir su conducta respecto a ellos, como $S$ requiere.
+
+-	*Contribution requirement* (C*). $S$ requiere que las partes restrinjan su comportamiento respecto a un individuo sólo si éste aumenta el plusvalor cooperativo al seguir los requerimientos de $S$.
+
+---
+
+# The Vulnerability objection
+
+Miembros *vulnerables* son aquellos que no pueden contruir al plusvalor cooperativo.
+
+*La objeción por la vulnerabilidad*. La justicia como beneficio mutuo niega a los vulnerables sus ventajas, lo cual muestra que no es una teoría de la justicia satisfactoria.
+
+Esto último es porque toda teoría de la justicia satisfactoria tiene que ser consistente con nuestras creencias comunes sobre lo que es la justicia. Una de esas creencias es que los vulnerables merecen justicia.
+
+---
+
+### Tres respuestas no satisfactorias a la objeción
+
+1. Los vulnerables no merecen justicia.
+  
+2. Los vulnerables contribuyen pasivamente. No tiene por qué ser verdad y debería hacer falta requerir esto.
+
+3. Los vulnerables están protegidos porque los no vulnerables los defienden. Una versión de esto es que los vulnerables tienen secondary moral standing respecto a otros. Es decir, los otros restringen su conducta respecto a los vulnerables porque hay no vulnerables dispuestos a castigarlos en caso contrario.
+  - Problema: secondary moral standing introduce parcialidad, pero creemos que la justicia debe ser imparcial.
+  - Cita interesante: “[an] explicit assumption of this general theory [is] that parties obey the requirements of justice solely as a means to receiving benefits of the cooperative surplus” (p. 286).
+  
+---
+
+# The Repeated Provider-Recipient Game
+
+Lo simplifico un poco. Hay cuatro jugadores. Tres son activos y uno es vulnerable. En cada período uno de los tres activos (elegido al azar) no puede producir. Cada uno de los dos que sí producen se junta con uno de los dos inactivos, elegido al azar. Sea $i$ un productor y $j$ su pareja. Juegan el siguiente juego:
+1. $i$ elige $\lambda \in [0,1]$
+2. los pagos son $u_i = \sqrt[4]{1 - \lambda}$ y $u_j = \sqrt[4]{\lambda}$.
+  
+El juego entre el jugador que produce y su pareja es un *Dictator game*.
+
+El chiste es que los jugadores temporalmente inactivos se pueden vengar de un jugador activo que les da menos de $\lambda = \frac12$ ofreciéndole $\lambda  = 0$ cuando los roles cambian, pero el jugador vulnerable no puede defenderse.
+
+- Un equilibrio es no compartir nunca (i.e., todos eligen $\lambda = 0$ siempre).
+
+- Otro equilibrio es repartirse la producción equitativamente entre los activos y no darle nada al vulnerable.
+
+- El punto de esto: hay un equilibrio en el que le comparten también al vulnerable.
+
+---
+
+### Estrategia $g^*$
+
+Hay un equilibrio en el que le dan $\lambda=\frac12$ de la producción al jugador vulnerable:
+
+$g^*:$ cuando un jugador activo le ofrece menos de $\lambda=\frac12$ a su pareja, se considera *culpable* a partir de ese momento, y cuando se empareja con otro, el activo elige $\lambda = 0$.
+
+Veamos que es un equilibrio. Sea $\delta\in(0,1)$ el factor de descuento común.
+
+---
+
+- Hay que verificar que un jugador prefiere elegir $\lambda = \frac12$ antes que algo menor cuando es activo.
+  - Si elige $\lambda = \frac12$, gana $\sqrt[4]{\frac12}$ en ese período y todos los siguientes, es decir, gana $V = \frac{1}{1-\delta} \sqrt[4]{\frac12}$.
+  - Si elige $\lambda < \frac12$, gana a lo sumo $1$ en este período, y luego gana $1$ con probabilidad $\frac23$ (cuando le toca ser activo) y $0$ con probabilidad $\frac13$ en los siguientes períodos. Entonces gana $V' = 1 + \frac{\delta}{1-\delta} \frac23 = \frac{1}{1-\delta}(1-\frac13\delta)$.
+  - Prefiere compartir si $V > V'$, es decir, si $\sqrt[4]{\frac12} > 1 - \frac13\delta$, es decir, si $\delta > 3(1 - \sqrt[4]{\frac12}) \approx 0.48$.
+
+- Hay que verificar que los no culpables prefieren castigar al culpable. Si lo castigan, obtienen una ganancia sin ninguna consecuencia. Si no lo castigan, pierden y eso no tiene ninguna consecuencia. Así que prefieren castigarlo.
+
+---
+- Hay que verificar que los no culpables prefieren seguir eligiendo $\lambda=\frac12$ cuando interactúan entre ellos.
+  - Si el productor elige $\lambda = \frac12$, gana $\sqrt[4]{\frac12}$ en ese período y gana $\frac23 \sqrt[4]{\frac12} + \frac16$ en los períodos siguientes. Es decir, obtiene $$V = \frac{1}{1-\delta} \left(\left(1-\frac13\delta\right) \sqrt[4]{\frac12} + \frac16\delta\right).$$
+  - Si elige $\lambda < \frac12$, gana a lo sumo $1$ en este período, y luego gana $1$ con probabilidad $\frac23$ (cuando le toca producir) y $0$ con probabilidad $\frac13$ en los siguientes períodos. Entonces gana $$V' = 1 + \frac{\delta}{1-\delta} \frac23 = \frac{1}{1-\delta}\left(1-\frac13\delta\right).$$
+  - Eligen $\lambda = \frac12$ como dice el equilibrio si $V > V'$, es decir, si
+  $$\delta > \frac{1-\sqrt[4]{\frac12}}{\frac13 - \frac13\sqrt[4]{\frac12} + \frac16} \approx 0.72.$$
+
+---
+class: middle
+
+**Conclusión.** Los jugadores activos defienden al jugador vulnerable castigando al jugador que no comparte su producción con él. No lo hacen porque lo consideren justo sino por propio interés.
+
+*[T]he main point of this section: Justice as mutual advantage need not exclude the vulnerable from its benefits after all.*
+
+**Hay que rechazar el Contribution requirement (C*).**
+
+---
+
+# Setting the Boundaries
+
+La idea de justicia como beneficio mutuo es compatible con que todos los miembros de una sociedad reciban una parte del plusvalor cooperativo.
+
+¿Quiénes son "todos"?
+
+- Otras teorías sobre la justicia se ven obligadas a definir el límite.
+  - Una idea es que la justicia sólo aplica a los humanos, porque sólo ellos tienen la capacidad de tener un sentido de justicia.
+  - Otra es la idea de que ser una persona supone requerimientos funcionales.
+     - Problema: intermitencia funcional.
+  - Gauthier: si no contribuís hoy pero vas a contribuir en el futuro, te corresponde justicia hoy.
+     - Problema: los permanentemente vulnerables.
+  - "In my opinion the two currently most salient criteria for determining the inclusion boundary are (i) membership in the class of living born humans and (ii) membership in the class of all living humans, both born and unborn." (p. 301)
+  
+El punto de Vanderscraaf es que una teoría de la justicia como beneficio mutuo no requiere justificar quiénes deben recibir restricción de parte de los otros.
+
+---
+
+### El rol de "salience"
+
+Una frase importante que tira al pasar: "justice as mutual advantage is not committed to such salience explanations, although in fact I think these sorts of explanations of the inclusion boundary dovetail well with this theory of justice." (p. 298)
+
+"[I]f salience can serve to pick out some of the equilibria of norms of justice
+in the relevant games, why should salience not also serve to pick out who can be
+the agents in these games?" (p. 301)
+
+¿Qué rol cumple "salience" en una teoría de la justicia como beneficio mutuo?
+
+- El siguiente argumento me parece un error conceptual muy grave: una teoría de la justicia como beneficio mutuo supone que las reglas de justicia son una convención (i.e., un equilibrio); las convenciones son "salientes" porque son de conocimiento común; por lo tanto si un sistema de reglas es "saliente", es justo.
+
+- ¿Qué quiere decir que algo sea "saliente"? Vanderschraaf habla de "psychological salience" (p. 301). Reglas simples serían "inherentemente" salientes. Esto es irrelevante. En una sociedad real las reglas se vuelven salientes porque se las publicita. No pagamos 21% de IVA porque el número 21 tiene algo especial sino porque está escrito en la ley.
+
+---
+
+### Expando sobre el error conceptual
+
+La idea de Vanderschraaf es que las reglas de la justicia en una sociedad real *tienen que ser un equilibrio*. Esto se deduce inmediatamente de una suposición incuestionada: las personas hacen lo que más les conviene dadas sus expectativas sobre lo que van a hacer los demás.
+
+Podemos distinguir conceptualmente entre un *outcome* y su *implementación*. *Outcome* es el resultado de lo que hacen las personas en una sociedad. En teoría de juegos uno *implementa* un outcome $x$ cuando diseña las reglas de modo que $x$ sea un equilibrio. La teoría de implementación (de la cual mechanism design es la rama más famosa) se dedica a esta pregunta: ¿qué outcomes se pueden implementar? Dadas ciertas restricciones, ¿cuál es el mejor outcome que se puede implementar?
+
+Es un error pensar que el hecho de que un outcome sea implementable implica que es bueno. Son cosas distintas.
+
+En un juego de coordinación un outcome va a ser más fácil de implementar si es "saliente" en algún sentido ("psicólogicamente" saliente o hecho saliente por publicidad). Vanderschraaf comete el error: si un outcome es saliente, es fácil de implementar, y por ese motivo es bueno (justo).
+
+---
+
+# Too Many Equilibria?
+
+Problema obvio y serio (que no se entiende por qué trata recién en la última sección del último capítulo): si la teoría de justicia como beneficio mutuo lo único que dice es que las reglas tienen que ser un equilibrio, entonces no dice nada, porque hay muchos equilibrios.
+
+"I think that by itself the salience-learning approach will not suffice for the present purpose of completing the description of justice as mutual advantage." (p. 308) Bien.
+
+---
+
+### ¿Qué hicieron otros? Rational choice approach.
+
+- *"The general idea here is that rational agents in special and possibly hypothetical circumstances select the equilibria that define the system of justice."* (Harsanyi, Rawls, Scanlon, Binmore, Gauthier.)
+
+- Binmore propone explícitamente una manera de seleccionar equilibrios. Según Vanderschraaf el problema es que la situación hipótetica de elección de equilibrio incorpora elementos de imparcialidad que no se siguen sólo del presupuesto de beneficio mutuo.
+- Este argumento me parece que muestra la posición de Vanderschraaf: él cree que puede crear una teoría de la justicia que sea fundamentalmente normativa (i.e., se ajuste a nuestras intuiciones normativas como que miembros vulnerables merecen justicia, ¡cosa que en la realidad no ocurre!), pero que en su fundamentación no tenga elementos normativos más allá de la idea de beneficio mutuo. ¿Se puede hacer esto? Para mí es obvio que no se puede. Pero me parece una buena formulación de lo que quiere hacer Vanderschraaf.
+
+- **Gauthier.** Los agentes seleccionan un equilibrio mediante Nash bargaining (sin velo de ignorancia). *Lockean proviso*: el nonagreement point es un estado de naturaleza en el que todos tienen acceso libre e igual a recursos y un sistema mínimo de derechos de propiedad. Problema: el baseline contiene mucho de la estructura moral que se busca desarrollar como resultado de la negociación.
+
+---
+
+### Su propuesta: *Baseline Consistency* criterion
+
+(M5) *Baseline Consistency.* Let $s_{C_0}^*$ denote the social state defined by $S_N$ applied with respect to a given cooperative surplus $C_0$ with baseline $\sigma_0^*$ where the parties act without any restraint toward each other. Given an increase in cooperative surplus, then at the larger cooperative surplus $C'$ each Party $i$ fares as well when $S_N$ is applied with respect to $C'$ with baseline defined by $s_{C_0}^*$ as Party $i$ fares when $S_N$ is applied with respect to with baseline $C_0$.
+
+En otras palabras: si las partes anticipan algún cambio en su situación que resulta en la generación de un plusvalor cooperativo distinto, deberían estar dispuestos a continuar usando los requerimientos de $S_N$ empezando desde donde están.
+
+Qué quiere decir esto???
+
+- ¿Qué quiere decir "aplicar el sistema respecto a un baseline"? ¿Las reglas están definidas respecto a un baseline?
+- Si cambia la situación (y por lo tanto cambia el "plusvalor cooperativo"), ¿está claro cómo aplicar el sistema? ¿Tenemos herramientas conceptuales para pensar esto? Si pensamos que el sistema de reglas es un equilibrio (se seguiría de la idea de justicia como equilibrio) no: en teoría de juegos las estrategias son dependientes del juego; no está claro cómo jugar las estrategias de un juego $G$ en otro, $G'$.
+
+---
+
+### *Baseline Consistency* criterion
+
+Entiendo que lo que tiene en mente es lo siguiente:
+- Como Binmore, imagina una situación hipotética en las que los agentes eligen un equilibrio. (El juego está dado.)
+- El "sistema de reglas" $S_N$ es el protocolo por el cual se elige un equilibrio (no el equilibrio en sí).
+- El protocolo está definido respecto a un baseline: es un protocolo de negociación.
+- El "cooperative surplus" es el conjunto de equilibrios que producen outcomes Pareto superiores (débilmente) al baseline.
+- Sea $S_N$ el protocolo, $C$ un cooperative surplus, y $s_C^*=S_N(C, \sigma_0^*)$ el equilibrio que se elige mediante el protocolo partiendo del baseline $\sigma_0^*$. Sea $C'$ otro cooperative surplus tal que $s_C^* \in C'$ (podemos pensar $C\subset C'$). Sea $S_N(C',\sigma_0^*)$ el equilibrio que se obtiene de aplicar el protocolo $S_N$ sobre $C'$ partiendo del baseline $\sigma_0^*$ y sea $S_N(C',s_C^*)$ el equilibrio que se obtiene partiende de $s_C^*$ como base. Baseline consistency quiere decir que $S_N(C',\sigma_0^*)$ y $S_N(C',s_C^*)$ son iguales (o payoff-equivalentes).
+- ¿Cuál es el chiste de esto? Que la "solución igualitaria" a una situación de negociación cumple con Baseline consistency. De hecho si uno asume el axioma de simetría, Baseline consistency implica la solución igualitaria.
+
+---
+
+### *Baseline Consistency* criterion
+
+**Conclusión.** Se puede obtener un sistema de reglas "igualitario" partiendo de premisas que no suponen ningún criterio normativo tipo imparcialidad (¿sí?).
+
+Como consecuencia de la teoría de la justicia de Vanderschraaf (asumiendo el axioma de simetría), obtenemos la siguiente definición: un outcome es justo si es la solución igualitaria de la negociación entre los miembros de una sociedad, en la que el conjunto de outcomes está dado por los equilibrios del juego definido por la interacción social (y los recursos disponibles, etc), y el nonagreement point está dado por el estado de naturaleza.
+
+**Los grandes problemas para mí.**
+- ¿Cómo sabemos qué pasa en el estado de naturaleza? Es una situación puramente especulativa. No hay manera de volver al estado de naturaleza histórico (si existió). Si uno quisiera usar esta teoría, habría que ponerse a discutir sobre cómo creemos que sería ese estado de naturaleza. ¿Es satisfactoria una teoría de la justicia que nos hace discutir sobre eso? ¿Es eso lo que realmente cabe discutir?
+- ¿Tenemos claro cómo son las reglas del "juego de la vida" si eliminamos todas nuestras instituciones (de manera que el estado de naturaleza Hobbesiano sea un outcome posible)? Esto es necesario para pensar qué equilibrios son posibles.
+
+---
+
+# Conclusión
+
+En la conclusión dice que su teoría tiene capacidad explicativa.
+- Para mí esto es un error. Hay que distinguir entre la justicia (cualidad normativa) y los sistemas de justicia (leyes y protocolos de resolución de disputas) que se encuentran en sociedades reales (que en general son súper injustos). Explicar el surgimiento y las características de lo segundo es una tarea para la ciencia empírica.
+
+- La teoría que propuso Vanderschraaf no me parece que tenga ninguna capacidad explicativa evaluada como ciencia social. Decir "la justicia es un equilibrio" no dice nada si uno presupone que la gente es racional (todo fenómeno social es un equilibrio, en particular la justicia). Lo único no obvio que propuso es el criterio de Baseline consistency. Pero no explicó por qué las reglas que seguimos en nuestra vida social cumplen ese criterio.
+
+---
+### Conclusión
+
+Otra cosa que dice: el resultado de la teoría convencionalista de la justicia propuesta en este libro no es muy diferente de otras teorías de la justicia, pero tiene menos suposiciones controvertidas y menos maquinaria sospechosa.
+- Para mí no mostró que el resultado es equitativo como dice. Lo que mostró es que en juegos determinados (construidos especialmente por él para mostrar su punto) su idea de justicia es compatible con el igualitarismo. Pero en el juego de la vida real, ¿hay equilibrios igualitarios? Y si los hay, ¿la negociación entre los agentes (sin velo de ignorancia) llevaría a elegir esos equilibrios? No lo mostró. Su teoría podría tener el resultado que dice, pero no mostró que lo tiene.
+
+- Otro problema es que para obtener el resultado igualitario hay que suponer baseline consistency y el axioma de simetría. No vi ningún argumento en favor de baseline consistency. No me queda claro por qué la justicia debería cumplir eso. Y el axioma de simetría es un tipo de imparcialidad, que según él no tiene que formar parte de su teoría. De hecho no lo incorpora en la formulación de su teoría, que son las condiciones M1-5. Sin el axioma de simetría su teoría no genera igualitarismo.

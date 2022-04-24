@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>Juan Dodyk: Consejos para olimpíadas matemáticas</title>
+
+<meta property="description" itemprop="description" content=""/>
+
+<link rel="canonical" href="http://juandodyk.github.io/posts/2022-04-23-olimpiadas/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2018-01-01"/>
+<meta property="article:created" itemprop="dateCreated" content="2018-01-01"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Juan Dodyk: Consejos para olimpíadas matemáticas"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="http://juandodyk.github.io/posts/2022-04-23-olimpiadas/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Juan Dodyk"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Juan Dodyk: Consejos para olimpíadas matemáticas"/>
+<meta property="twitter:description" content=""/>
+<meta property="twitter:url" content="http://juandodyk.github.io/posts/2022-04-23-olimpiadas/"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Consejos para olimpíadas matemáticas"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2018-01-01"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["http://juandodyk.github.io/posts/2022-04-23-olimpiadas/"]},{"type":"character","attributes":{},"value":["http://juandodyk.github.io/posts/2022-04-23-olimpiadas/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["olimpiadas_files/anchor-4.2.2/anchor.min.js","olimpiadas_files/bowser-1.9.3/bowser.min.js","olimpiadas_files/distill-2.2.21/template.v2.js","olimpiadas_files/header-attrs-2.13/header-attrs.js","olimpiadas_files/jquery-3.6.0/jquery-3.6.0.js","olimpiadas_files/jquery-3.6.0/jquery-3.6.0.min.js","olimpiadas_files/jquery-3.6.0/jquery-3.6.0.min.map","olimpiadas_files/popper-2.6.0/popper.min.js","olimpiadas_files/tippy-6.2.7/tippy-bundle.umd.min.js","olimpiadas_files/tippy-6.2.7/tippy-light-border.css","olimpiadas_files/tippy-6.2.7/tippy.css","olimpiadas_files/tippy-6.2.7/tippy.umd.min.js","olimpiadas_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Noto+Serif:400,400italic,700,700italic&display=swap');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Roboto", sans-serif;
+  --mono-font:       monospace;
+  --body-font:       "Noto Serif", sans-serif;
+  --navbar-font:     "Roboto", sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+d-article body {
+  color: #222222;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  transition: all 0.3s ease; }
+
+:is(d-article, d-title, d-post, .posts-list .description) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: #a2a2a2;
+  transition: all 0.3s ease; }
+a:hover {
+  color: #222222;
+}
+a .description {
+  color: #222222; transition: all 0.3s ease;
+}
+a .description :is(h1, h2, h3, h4, h5, h6) {
+  color: #222222; transition: all 0.3s ease;
+}
+a:hover .description {
+  color: #a2a2a2;
+}
+a:hover .description :is(h1, h2, h3, h4, h5, h6) {
+  color: #a2a2a2;
+}
+
+d-article blockquote {
+  border-left: 1px solid #ddd;
+  color: #6f6f6f;
+  padding-left: 30px;
+  margin-bottom: 1.0em;
+  margin: 0;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+d-article p a { color: #00b9e7; }
+d-article p a:hover { color: #e70000; }</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Consejos para olimpíadas matemáticas","description":"","authors":[],"publishedDate":"2018-01-01T00:00:00.000-05:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Juan Dodyk</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../research.html">Research</a>
+<a href="../../files/cv.pdf">CV</a>
+<a href="../../teaching.html">Teaching</a>
+<a href="../../blog.html">Blog</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Consejos para olimpíadas matemáticas</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#práctica">Práctica</a></li>
+<li><a href="#algunos-consejos">Algunos consejos</a></li>
+<li><a href="#teoría">Teoría</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="práctica">Práctica</h2>
+<p>Se aprende a resolver problemas principalmente resolviendo problemas.
+<em>Muchos</em> problemas. En primer lugar, por el mismo motivo por el
+que se requiere mucha práctica para tocar un instrumento o para escribir
+bien. Por esto mismo si a uno no le sale un problema al principio no
+debe desanimarse sino seguir practicando y aprendiendo. En segundo
+lugar, es útil practicar porque hay ideas que se repiten; cuantos más
+problemas uno haya resuelto, más probable es que en una prueba
+reaparezca una idea que uno ya conoce. En tercer lugar, las pruebas
+exigen no sólo resolver problemas sino resolverlos rápido, y la práctica
+ayuda también con eso. (Anécdota: hay <a
+href="https://omaforos.com.ar/viewtopic.php?f=16&amp;t=951">un
+problema</a> de olimpíadas que me tomó 10 años resolverlo; eso en una
+competencia de 4 horas no sirve.)</p>
+<h2 id="algunos-consejos">Algunos consejos</h2>
+<p>Primero que nada, siempre es mejor resolver los problemas nosotros
+mismos. Uno puede leer una solución y sentir que la entiende, pero es
+muy distinto el aprendizaje que da resolver el problema uno mismo. El
+consejo es, por lo tanto, no “quemarse” problemas. Es buena idea pasar
+mucho tiempo, horas, días, pensando un problema. No es una pérdida de
+tiempo: todo lo contrario. Uno incluso puede mantener una lista de
+problemas que no le salieron, y volver a ellos cada tanto, a ver si
+surge alguna idea nueva que permita avanzar. (Puede pasar que un
+problema no salga porque a uno le falta alguna herramienta; sobre eso
+hablo más adelante, pero este consejo vale incluso en esos casos.)
+Cuando uno resuelve problemas difíciles la mayor parte del tiempo está
+trabado, no avanza, y está bien que sea así. Los mejores problemas, los
+que hacen que las olimpíadas matemáticas (y la matemática en general)
+valgan la pena son los que requieren una idea nueva. No hay una receta
+para resolverlos: por eso son interesantes. Resisten el uso de cualquier
+herramienta de la que uno disponga. Requieren creatividad. Romperse la
+cabeza, intentar muchas cosas que fallan hasta encontrar la idea que
+funciona.</p>
+<p>Cuando uno está en una competencia tiene la presión del tiempo, y por
+lo tanto parece mala idea “desperdiciarlo” simplemente pensando. Pero
+hay que hacerlo. Cuando uno aprendió unas cuantas herramientas surge la
+tentación de “atacar” los problemas con todo el arsenal del que uno
+dispone, sin detenerse demasiado a pensar. Eso tiene cierto sentido,
+pero es importante desarrollar la intuición (que se gana con la
+experiencia, resolviendo muchos problemas) que nos dice qué herramientas
+pueden servir en un problema determinado. Qué caminos tienen una chance
+de llegar a destino y cuáles van a fracasar seguro y son una pérdida de
+tiempo. El consejo es tratar de pensar un poco antes de actuar.</p>
+<p>Una práctica que es útil en muchos casos es la de considerar “casos
+chicos” o, en general, una versión simplificada, “de juguete”, del
+problema. Por ejemplo, si un problema habla de un tablero de <span
+class="math inline">\(100\times 100\)</span>, tiene sentido pensar
+primero ese problema en un tablero de <span
+class="math inline">\(2\times 2\)</span>, o de <span
+class="math inline">\(4\times 4\)</span>, que uno tiene la posibilidad
+de visualizar. Estos “casos chicos” es más fácil que nos salgan, y que
+de ahí surja la idea para resolver el caso más difícil. Una anécdota: el
+problema 6 del tercer nivel del <a
+href="http://oma.org.ar/enunciados/oma25nac.htm">nacional de OMA
+2008</a> me salió, pero mi solución era horrible, y no quedó del todo
+bien escrita. Al finalizar la prueba hablé con Lucas Andisco
+(ex-olímpico), que contó una solución muy elegante. Le pregunté cómo se
+le ocurrió. Me dijo que se le ocurrió rápidamente mirando el caso <span
+class="math inline">\(2\times 2\)</span>. Yo le dije “ah pero el caso
+<span class="math inline">\(2\times 2\)</span> sale mucho más fácil: es
+un sistema de ecuaciones lineales, lo resolvés y listo”. Me dijo: “sí,
+obvio, me di cuenta de eso, pero también me di cuenta de que esa idea no
+iba a servir para resolver los casos grandes, entonces seguí pensando el
+caso <span class="math inline">\(2\times 2\)</span> hasta que tuve esa
+otra idea, que sí sirve en general”. Moraleja, si se me permite: no sólo
+pensar casos chicos, sino repensarlos hasta encontrar <em>la</em> manera
+de resolverlos.</p>
+<p>Algo que suele pasar en competencias matemáticas, y que corregirlo
+también requiere práctica, es dar argumentos que están mal. Cometer
+errores lógicos. A mí me pasa todo el tiempo. Por eso es importante
+revisar muchas veces todo lo que uno escribe, tanto las cuentas como los
+argumentos. Un error común es olvidarse algún caso, alguna situación en
+la que un argumento falla, en la que algo que decimos que se puede hacer
+en realidad no se puede. Hay que estar muy atentos a eso, desconfiar de
+nuestros propios argumentos. También es común cometer errores
+algebraicos, cosa que se cura con práctica pero también entendiendo la
+lógica detrás de las manipulaciones algebraicas: en última instancia (no
+lo considero necesario ni mucho menos) ser capaz de demostrar cualquier
+manipulación que uno haga a partir de los axiomas (me refiero a los
+axiomas de cuerpo ordenado de los reales).</p>
+<p>Matías Saucedo compiló <a
+href="https://omaforos.com.ar/viewtopic.php?f=2&amp;t=3043">acá</a> una
+lista de 10 consejos para competencias que me parecen muy buenos. Agrego
+uno: entregar todo lo que uno escribe. La mitad de una solución para uno
+puede no servir de nada, pero puede sumar para el que corrige. Algo que
+para uno está mal quizás está casi bien (y uno no lo sabe), así que por
+las dudas conviene entregarlo. Por otro lado, dibujos, cuentas,
+argumentos que para uno son redundantes o inútiles pueden aclarar una
+solución que no convence al jurado. Insisto en algo que dice Matías
+respecto a la claridad: una solución a un problema de matemática es un
+argumento que intenta convencer al lector de algo (si el problema pide
+hallar X, busca convencer al lector de que X vale lo que uno afirma que
+vale; si el problema pide demostrar P, la solución busca convencer al
+lector de que P es verdad). Es un texto escrito en español. Una sucesión
+de fórmulas y dibujos (por más coherencia y sentido que tengan para uno)
+no es una solución. Estrictamente una solución sólo debe contener los
+pasos lógicos necesarios para derivar la conclusión, pero ayuda al
+lector agregar el razonamiento detrás de la derivación lógica, el relato
+de cómo van surgiendo las ideas. Esto también lo ayuda a uno a verificar
+si el argumento es correcto.</p>
+<h2 id="teoría">Teoría</h2>
+<p>Para resolver problemas de olimpíadas matemáticas a partir de cierto
+nivel se espera que uno maneje cierto conjunto de herramientas
+matemáticas. Por ejemplo, en las primeras pruebas de OMA se espera que
+uno conozca el teorema de Pitágoras, la igualdad de ángulos entre rectas
+paralelas, el teorema de Thales y la fórmula del área del triángulo y el
+círculo. A partir de ciertas pruebas se espera que, además de eso, uno
+conozca los criterios de congruencia y de semejanza de triángulos, lo
+que implica el llamado “arco capaz”, y que sepa hacer construcciones con
+regla y compás básicas.</p>
+<p>De todas maneras creo que no hay un “programa” en el que se
+especifica la lista de herramientas que un competidor debe conocer para
+poder resolver los problemas de una olimpíada. Las herramientas, por
+otra parte, son eso: herramientas, que uno las adquiere en caso de
+querer resolver problemas que sin ellas son imposibles o extremadamente
+difíciles. Son un medio, no un fin. En olimpíadas hay un incentivo a que
+uno maneje por lo menos las herramientas básicas de cada tipo de
+problema (geometría, combinatoria, teoría de números, álgebra), y es
+bueno tener una guía de qué herramientas conviene aprender en cada
+momento, pero en última instancia esto responde (y está bien que así
+sea) al interés y las ganas del que compite. Dicho rápido: mi intención
+no es mandar a estudiar a nadie. Te puede ir bien sin estudiar: ingenio
+mata estudio en olimpíadas matemáticas. Ahora bien, estudiar
+determinados temas (y no otros) es útil, y para resolver algunos
+problemas es casi indispensable.</p>
+<p>Doy a continuación una lista de herramientas útiles.</p>
+<p><strong>Combinatoria enumerativa básica.</strong> Esto es lo más
+urgente. Sobre todo 1-3. Lo siguiente no es tan importante. (Esto lo
+aprendí con <a
+href="https://omaforos.com.ar/download/file.php?id=1263">este
+apunte</a>.)</p>
+<ol type="1">
+<li><p>Multiplicación: si me tengo que poner una remera y un pantalón y
+tengo <span class="math inline">\(A\)</span> remeras y <span
+class="math inline">\(B\)</span> pantalones, la cantidad de maneras de
+vestirme es <span class="math inline">\(A\cdot B\)</span>.</p></li>
+<li><p>Permutaciones: la cantidad de maneras de ordenar <span
+class="math inline">\(N\)</span> números distintos es <span
+class="math inline">\(N!\)</span>. Se deduce del principio de
+multiplicación: hay <span class="math inline">\(N\)</span> posibilidades
+para el primer número, <span class="math inline">\(N-1\)</span> para el
+segundo, <span class="math inline">\(N-2\)</span> para el tercero, etc,
+por lo que en total hay <span
+class="math inline">\(N\cdot(N-1)\cdot(N-2)\cdot\ldots\cdot1=N!\)</span>
+maneras.</p></li>
+<li><p>Números combinatorios: la cantidad de subconjuntos de <span
+class="math inline">\(k\)</span> elementos de un conjunto de <span
+class="math inline">\(n\)</span> elementos es <span
+class="math inline">\(\binom{n}{k} = \frac{n!}{k!(n-k)!}\)</span>. ¿Por
+qué? Si me importara el orden de los <span
+class="math inline">\(k\)</span> elementos, contaría cada subconjunto
+<span class="math inline">\(k!\)</span> veces (una por cada manera de
+ordenarlo), y habría <span
+class="math inline">\(\frac{n!}{(n-k)!}\)</span> maneras de tomar los
+<span class="math inline">\(k\)</span> elementos, ya que habría <span
+class="math inline">\(n\)</span> maneras para el primero, <span
+class="math inline">\(n-1\)</span> maneras para el segundo, etc, hasta
+<span class="math inline">\(n-k+1\)</span> maneras para el <span
+class="math inline">\(k\)</span>-ésimo; es decir, <span
+class="math inline">\(n\cdot (n-1) \cdot \ldots \cdot (n-k+1)\)</span>
+maneras, que es <span class="math inline">\(\frac{n\cdot (n-1) \cdot
+\ldots \cdot (n-k+1) \cdot (n-k) \cdot \ldots \cdot 1}{(n-k) \cdot
+\ldots \cdot 1} = \frac{n!}{(n-k)!}\)</span>, como dije. Entonces
+tenemos que <span class="math inline">\(\binom{n}{k} k! =
+\frac{n!}{(n-k)!}\)</span>, y despejando obtenemos <span
+class="math inline">\(\binom{n}{k} =
+\frac{n!}{k!(n-k)!}\)</span>.</p></li>
+<li><p>Cantidad de subconjuntos de un conjunto de <span
+class="math inline">\(n\)</span> elementos: cada subconjunto está
+determinado por la pertenencia o no de cada uno de los <span
+class="math inline">\(n\)</span> elementos; hay dos posibilidades para
+el primer elemento (pertenece o no pertenece), dos para el segundo, etc;
+en total hay <span class="math inline">\(\underbrace{2\cdot 2 \cdot
+\ldots \cdot 2}_{n\text{ veces}}\)</span>, es decir, <span
+class="math inline">\(2^n\)</span>.</p></li>
+<li><p>Cantidad de permutaciones de una secuencia: por ejemplo, cuántas
+palabras distintas se puede formar con las letras de la palabra BANANA;
+hay una B, tres A y dos N; hay <span class="math inline">\(6\)</span>
+lugares donde puede ir la B, luego las A ocupan un subconjunto de <span
+class="math inline">\(3\)</span> elementos entre los <span
+class="math inline">\(5\)</span> lugares restantes, y por lo tanto hay
+<span class="math inline">\(\binom{5}{3}\)</span> lugares para ellas;
+luego quedan 2 lugares libres y ahí deben ir las N (no hay opción); en
+total hay, pues, <span class="math inline">\(6 \cdot
+\binom{5}{3}\)</span> palabras. En general si hay <span
+class="math inline">\(k\)</span> letras distintas y la letra <span
+class="math inline">\(i\)</span> figura <span
+class="math inline">\(n_i\)</span> veces, se pueden formar <span
+class="math inline">\(\frac{(n_1+\cdots+n_k)!}{n_1!\ldots n_k!}\)</span>
+palabras distintas con esas letras (esta fórmula surge del mismo
+razonamiento). En el caso de BANANA esto da <span
+class="math inline">\(\frac{(1+3+2)!}{1!3!2!}\)</span>, que por supuesto
+es igual a <span class="math inline">\(6 \cdot
+\binom{5}{3}\)</span>.</p></li>
+<li><p>Cantidad de maneras de distribuir <span
+class="math inline">\(n\)</span> bolitas en <span
+class="math inline">\(k\)</span> cajas numeradas: la idea es pensar esto
+como una palabra de la forma BB|BBB||B, que quiere decir: 2 bolitas en
+la primera caja, 3 bolitas en la segunda, 0 en la tercera, y 1 en la
+cuarta (B representa una bolita, y | es un separador entre cajas); en
+general, uno tiene <span class="math inline">\(n\)</span> bolitas B y
+<span class="math inline">\(k-1\)</span> separadores |, por lo que la
+cantidad de asignaciones de <span class="math inline">\(n\)</span>
+bolitas a <span class="math inline">\(k\)</span> cajas es <span
+class="math inline">\(\frac{(n+k-1)!}{n!(k-1)!}\)</span>.</p></li>
+</ol>
+<p>Aplicación: problema 2 del certamen regional de OMA, año 2004, primer
+nivel.</p>
+<blockquote>
+<p>Nico debe elegir tres números enteros distintos entre 1 y 20
+inclusive de modo que al multiplicar los tres números se obtenga un
+múltuplo de 4. Calcular cuántas maneras tiene Nico de elegir sus tres
+números.<br />
+<strong>ACLARACIÓN:</strong> Dos elecciones que tienen los mismos tres
+números no importa en qué orden, son iguales.</p>
+</blockquote>
+<p>Hay algunas cosas más avanzadas de combinatoria enumerativa útiles en
+olimpíadas, pero se puede vivir sin ellas. Se me ocurren: <a
+href="https://omaforos.com.ar/viewtopic.php?t=770">números de
+Catalan</a>, <a
+href="http://www.imomath.com/index.php?options=249&amp;lmm=1">lema de
+Burnside</a>, <a
+href="http://web.cs.elte.hu/~csiki/generating_functions_Novakovic.pdf">funciones
+generatrices</a>. Comentario anecdótico: el lema de Burnside (explicado
+rápido en <a
+href="https://en.wikipedia.org/wiki/Burnside%27s_lemma">wikipedia</a>)
+es un resultado muy básico de teoría de grupos; no es nada muy
+sofisticado pero es, digamos, “matemática de universidad”; ahora, este
+problema de Ñandú (problema 3 de nacional, 3er nivel, 2002) sale con eso
+(y sin eso sólo sale enumerando a mano, que yo sepa):</p>
+<blockquote>
+<p>En el parque de diversiones van a pintar los 6 autitos de la
+calesita. Cada autito se pintará de un solo color. Se pueden usar todos
+o algunos de los siguientes colores: rojo, negro, blanco, verde. ¿De
+cuántas maneras se pueden pintar los 6 autitos, con la condición de que
+autitos vecinos queden de distinto color?</p>
+</blockquote>
+<p><strong>Geometría.</strong> Un gran material para esto es <a
+href="https://omaforos.com.ar/viewtopic.php?f=6&amp;t=4874">este
+excelente apunte</a> de Lucas Andisco. Es demasiado como para leerlo de
+un tirón, pero se puede ir leyendo de a poquito.</p>
+<ul>
+<li>Criterios de congruencia y de semejanza de triángulos. Están en las
+dos últimas páginas del apunte. Creo que para primer nivel esto es todo
+lo necesario (en cuanto a teoría; lo demás es práctica e ingenio). Para
+practicar semejanza pueden pensar el problema 3 del certamen regional de
+OMA, año 2004, primer nivel (también sale sin semejanza pero es un poco
+más difícil):</li>
+</ul>
+<blockquote>
+<p>En un trapecio ABCD de base mayor AB, base menor DC y lados no
+paralelos BC y DA, sea K el punto del lado BC tal que BK = 1/3 BC. Se
+traza por K la recta paralela a DA que corta a AB en L.<br />
+Si BL = CD y el área del trapecio ABCD es 20, calcular el área del
+triángulo ADL.</p>
+</blockquote>
+<ul>
+<li><p>Construcciones con regla y compás. <a
+href="https://omaforos.com.ar/download/file.php?id=1262">Este apunte</a>
+está bueno.</p></li>
+<li><p>“Arco capaz”. Está en el apunte de Lucas. A partir de segundo
+nivel de OMA se supone que uno sabe esto. <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=2641">Potencia
+de un punto</a>.</p></li>
+<li><p><a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=712">Teorema
+del seno</a> y <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=710">teorema
+del coseno</a>. <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=713">Teorema
+de la bisectriz</a>.</p></li>
+</ul>
+<p>A partir de acá hay mucho más, empezando por: <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=611">teorema
+de Ceva</a>, <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=1038">de
+Menelao</a>, de Pappus, de Pascal, de Brianchon, de Desargues (todo esto
+está en <a href="https://www.omaforos.com.ar/viewtopic.php?t=51">“El
+Retorno”</a>); <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=1014">cuadriláteros
+armónicos</a>; inversión (también está en El Retorno); <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=6&amp;t=52">razones
+dobles</a>. Transcribí algo que me contó Lucas Andisco sobre
+“rotohomotecias” (rotación seguida de homotecia) que es muy elemental
+pero muy fuerte; me lo pueden pedir. Está también el <a
+href="https://kskedlaya.org/geometryunbound/gu-060118.pdf">apunte de
+Kedlaya</a>, que incluye todas estas cosas y unas cuantas más (como
+números complejos, desigualdades, transformaciones afines). Y hay muchas
+más cosas dando vueltas en internet. Pero creo que todos los problemas
+de IMO deberían salir usando lo que listé hasta inversión y no más que
+eso.</p>
+<p>En geometría, como ven, hay mucha teoría para aprender. Aprender
+teoría ayuda pero no es indispensable. Por ejemplo, cuando quedé
+seleccionado para la IMO, en <a
+href="http://oma.org.ar/enunciados/imo49sel.htm">la prueba de
+selección</a> el problema 2 salía en cinco minutos usando razones
+dobles, cosa que sólo yo sabía entre los que participamos, así que fue
+una ventaja para mí. Pero, por supuesto, el problema también salía sin
+usar razones dobles, sólo que se volvía bastante más difícil. (Razones
+dobles no es nada muy sofisticado, se puede explicar en dos minutos
+usando el teorema del seno, pero en este caso saberlo hacía la
+diferencia.) En balance yo creo que en geometría no es bueno
+obsesionarse aprendiendo teoría (a pesar de que están los incentivos y
+la tentación de hacerlo); es mejor saber usar bien las herramientas más
+elementales, para lo cual hay que resolver <em>muchos</em>
+problemas.</p>
+<p><strong>Teoría de números.</strong> <a
+href="https://omaforos.com.ar/download/file.php?id=526">Este apunte</a>
+está bueno. Eso es lo básico, y si uno quiere participar en IMO tiene
+que saberlo. Para OMA alcanza con ir de a poco.</p>
+<ol type="1">
+<li><p>Teorema de la división. Dice que si <span
+class="math inline">\(a,b\)</span> son enteros con <span
+class="math inline">\(b\)</span> positivo entonces existen únicos
+enteros <span class="math inline">\(q\)</span> y <span
+class="math inline">\(r\)</span> tales que <span
+class="math inline">\(a=qb+r\)</span> y <span
+class="math inline">\(0\leqq r&lt;b\)</span>; <span
+class="math inline">\(r\)</span> es el resto de dividir <span
+class="math inline">\(a\)</span> por <span
+class="math inline">\(b\)</span>. Esto es la base de toda la teoría de
+números.</p></li>
+<li><p>Descomposición en primos (o Teorema Fundamental de la Aritmética,
+TFA). Un entero positivo <span class="math inline">\(n\)</span> se puede
+escribir de manera única (salvo permutación de los factores) como
+producto de números primos.</p></li>
+<li><p>Divisibilidad. Si <span class="math inline">\(a,b\)</span> son
+enteros decimos que <span class="math inline">\(a\mid b\)</span> si
+existe un entero <span class="math inline">\(c\)</span> tal que <span
+class="math inline">\(b=ac\)</span> (se lee “<span
+class="math inline">\(a\)</span> divide a <span
+class="math inline">\(b\)</span>”, o “<span
+class="math inline">\(b\)</span> es múltiplo de <span
+class="math inline">\(a\)</span>”). Tenemos que <span
+class="math inline">\(a\mid b\)</span> implica <span
+class="math inline">\(|a|\leqq |b|\)</span> si <span
+class="math inline">\(b\neq 0\)</span>; si <span
+class="math inline">\(a\mid b\)</span> y <span
+class="math inline">\(b\mid c\)</span> entonces <span
+class="math inline">\(a\mid c\)</span>; si <span
+class="math inline">\(a\mid b\)</span> entonces <span
+class="math inline">\(a\mid -b\)</span>; si <span
+class="math inline">\(a\mid b\)</span> y <span
+class="math inline">\(a\mid c\)</span> entonces <span
+class="math inline">\(a\mid b+c\)</span>; si <span
+class="math inline">\(a\mid b\)</span> y <span
+class="math inline">\(c\)</span> es entero entonces <span
+class="math inline">\(a\mid bc\)</span>. (Todas estas propiedades son
+obvias.) Si <span class="math inline">\(p\)</span> es primo y <span
+class="math inline">\(p\mid ab\)</span> entonces <span
+class="math inline">\(p\mid a\)</span> o <span
+class="math inline">\(p\mid b\)</span>. Si <span
+class="math inline">\(a\)</span> y <span
+class="math inline">\(b\)</span> son coprimos (su máximo común divisor
+es <span class="math inline">\(1\)</span>) y <span
+class="math inline">\(a\mid bc\)</span> entonces <span
+class="math inline">\(a\mid c\)</span>. (Estas dos últimas se deducen
+fácilmente del TFA, pero es hacer trampa, ya que se usan en la
+demostración del TFA; salen usando el algoritmo de Euclides; ver más
+abajo.)</p></li>
+<li><p><a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=811">Congruencias</a>.
+Decimos que <span class="math inline">\(a\equiv b\,(\text{mód
+}n)\)</span> o, más simple, <span class="math inline">\(a\equiv
+b\,(n)\)</span>, que se lee “<span class="math inline">\(a\)</span> es
+congruente a <span class="math inline">\(b\)</span> módulo <span
+class="math inline">\(n\)</span>” si y sólo si <span
+class="math inline">\(n \mid a-b\)</span> o, lo que es lo mismo, si y
+sólo si <span class="math inline">\(a\)</span> y <span
+class="math inline">\(b\)</span> tienen el mismo resto en la división
+por <span class="math inline">\(n\)</span>, donde <span
+class="math inline">\(a,b,n\)</span> son enteros, <span
+class="math inline">\(n\)</span> positivo. Notar que <span
+class="math inline">\(a\equiv r\,(n)\)</span> si <span
+class="math inline">\(r\)</span> es el resto de dividir <span
+class="math inline">\(a\)</span> por <span
+class="math inline">\(n\)</span>, y <span class="math inline">\(a\equiv
+0\,(n)\)</span> si y sólo si <span class="math inline">\(n\mid
+a\)</span>.<br>La utilidad de esto (que en principio es sólo una
+notación) es que se cumplen las siguientes propiedades (muy fáciles de
+demostrar): <span class="math inline">\(a\equiv a\,(n)\)</span>; si
+<span class="math inline">\(a\equiv b\,(n)\)</span> y <span
+class="math inline">\(b\equiv c\,(n)\)</span> entonces <span
+class="math inline">\(a\equiv c\,(n)\)</span>; si <span
+class="math inline">\(a\equiv b\, (n)\)</span> y <span
+class="math inline">\(c\equiv d\, (n)\)</span> entonces <span
+class="math inline">\(a+c \equiv b+d \, (n)\)</span>, <span
+class="math inline">\(a-c \equiv b-d\, (n)\)</span> y <span
+class="math inline">\(ac \equiv bd \, (n)\)</span>; además <span
+class="math inline">\(a\equiv b\, (n)\)</span> implica <span
+class="math inline">\(a^k\equiv b^k \, (n)\)</span> si <span
+class="math inline">\(k\)</span> es entero positivo.<br>Un ejemplo de
+aplicación de esto es el criterio de divisibilidad por <span
+class="math inline">\(9\)</span>: un número cuyos dígitos son <span
+class="math inline">\(a_ka_{k-1}\ldots a_1a_0\)</span> es divisible por
+<span class="math inline">\(9\)</span> si y sólo si la suma de sus
+dígitos <span class="math inline">\(a_k+a_{k-1}+\cdots+a_1+a_0\)</span>
+es divisible por <span class="math inline">\(9\)</span>. ¿Por qué?
+Porque <span class="math inline">\(10\equiv 1\,(9)\)</span>, y por lo
+tanto <span class="math inline">\(10^k \equiv 1^k \equiv 1 \,
+(9)\)</span>, pero el número es <span class="math inline">\(10^ka_k +
+\cdots+ 10a_1+a_0 \equiv a_k+\cdots+a_0 \, (9)\)</span>. Es decir, el
+número y la suma de sus dígitos tienen el mismo resto en la división por
+<span class="math inline">\(9\)</span>.</p></li>
+<li><p><a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=1556">Algoritmo de
+Euclides</a>. Si <span class="math inline">\(a,b\)</span> son enteros,
+su máximo común divisor, <span class="math inline">\((a:b)\)</span>, se
+define como el máximo entero positivo que divide a ambos. El algoritmo
+de Euclides dice que existen enteros <span
+class="math inline">\(x,y\)</span> tales que <span
+class="math inline">\(ax+by=(a:b)\)</span>, y dice cómo
+encontrarlos.<br>Aplicación: <span class="math inline">\(a\)</span> y
+<span class="math inline">\(n\)</span> (enteros con <span
+class="math inline">\(n&gt;0\)</span>) se dicen coprimos si <span
+class="math inline">\((a:n)=1\)</span>; en ese caso hay enteros <span
+class="math inline">\(x,y\)</span> con <span
+class="math inline">\(ax+ny=1\)</span>; tomando congruencias, <span
+class="math inline">\(1 = ax+ny \equiv ax+0y \equiv ax\,(n)\)</span>. Es
+decir, existe un entero <span class="math inline">\(x\)</span> tal que
+<span class="math inline">\(ax \equiv 1 \, (n)\)</span>. A <span
+class="math inline">\(x\)</span> se lo llama el <em>inverso</em>
+(multiplicativo) de <span class="math inline">\(a\)</span> módulo <span
+class="math inline">\(n\)</span>, y sólo existe si <span
+class="math inline">\(a\)</span> y <span
+class="math inline">\(n\)</span> son coprimos (ejercicio: verificar
+esto).<br>Aplicación: podemos demostrar “sin trampa” que si <span
+class="math inline">\(a\mid bc\)</span> y <span
+class="math inline">\((a:b)=1\)</span> entonces <span
+class="math inline">\(a\mid c\)</span>; en efecto, sea <span
+class="math inline">\(x\)</span> el inverso de <span
+class="math inline">\(b\)</span> módulo <span
+class="math inline">\(a\)</span>; tenemos <span
+class="math inline">\(bc\equiv 0\,(a)\)</span>, luego multiplicando por
+<span class="math inline">\(x\)</span> tenemos <span
+class="math inline">\(bcx\equiv 0\cdot x\equiv 0\,(a)\)</span>, pero
+<span class="math inline">\(bcx\equiv bxc\equiv 1\cdot c\equiv
+c\,(a)\)</span>, luego <span class="math inline">\(c\equiv
+0\,(a)\)</span> y <span class="math inline">\(a\mid c\)</span>, como
+queríamos. Con esto también podemos demostrar que si <span
+class="math inline">\(p\)</span> es primo y <span
+class="math inline">\(p\mid ab\)</span> entonces <span
+class="math inline">\(p\mid a\)</span> o <span
+class="math inline">\(p\mid b\)</span>; en efecto, si <span
+class="math inline">\(p\nmid a\)</span> entonces <span
+class="math inline">\((p:a)=1\)</span> (¿por qué?) y por lo tanto <span
+class="math inline">\(p\mid b\)</span>.</p></li>
+</ol>
+<p>Para el regional con saber 1-2 alcanza. Para el nacional conviene
+saber congruencias (punto 4). A partir de acá: el <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=4">pequeño teorema
+de Fermat</a>, el concepto de orden módulo <span
+class="math inline">\(n\)</span> (<code>*</code>), el teorema chino del
+resto, la <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=1785">función
+<span class="math inline">\(\varphi\)</span> de Euler</a>, el <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=842">teorema de
+Fermat-Euler</a>, el <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=378">lema de
+Hensel</a>, <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=601">raíces
+primitivas</a>, <a
+href="https://omaforos.com.ar/viewtopic.php?f=7&amp;t=1051">ternas
+pitagóricas</a>, el <a
+href="https://blogs.sch.gr/sotskot/files/2011/01/Vieta_Jumping.pdf">“truco
+de la cuadrática”</a>. Hay un par de apuntes de Carlos di Fiore de
+teoría de números excelentes que puedo conseguir si me los piden, que
+tratan algunos de estos temas y otros más avanzados.
+<br>(<code>*</code>) Si <span class="math inline">\(b\)</span> es
+coprimo con <span class="math inline">\(n\)</span> entonces existe <span
+class="math inline">\(k\)</span> positivo tal que <span
+class="math inline">\(b^k \equiv 1\, (n)\)</span>, ya que <span
+class="math inline">\(b,b^2,b^3,\ldots\)</span> en algún momento se
+repite módulo <span class="math inline">\(n\)</span> (sólo hay <span
+class="math inline">\(n\)</span> restos), es decir <span
+class="math inline">\(b^r\equiv b^s\, (n)\)</span> con <span
+class="math inline">\(r&lt;s\)</span>, luego <span
+class="math inline">\(n\mid b^s-b^r=b^r(b^{s-r}-1)\)</span>, pero como
+<span class="math inline">\((n:b)=1\)</span>, <span
+class="math inline">\((n:b^r)=1\)</span> y <span
+class="math inline">\(n\mid b^{s-r}-1\)</span>, por lo que <span
+class="math inline">\(b^{s-r}\equiv 1\,(n)\)</span>. El orden de <span
+class="math inline">\(b\)</span> mód <span
+class="math inline">\(n\)</span> se define como el mínimo <span
+class="math inline">\(k\)</span> entero positivo tal que <span
+class="math inline">\(b^k \equiv 1 \, (n)\)</span>. Tenemos que <span
+class="math inline">\(b^t \equiv 1\, (n)\)</span> si y sólo si <span
+class="math inline">\(k \mid t\)</span> (¿por qué?).</p>
+<p><strong>Combinatoria.</strong> No es sólo contar cosas sino más en
+general estudiar estructuras discretas. Los problemas de combinatoria en
+este sentido amplio son los que menos se parecen a la matemática que se
+enseña en la secundaria (al principio ni siquiera parecen problemas de
+matemática, sino más bien de “ingenio” o de “lógica”), pero son los
+problemas que tienen un vínculo más estrecho con la matemática que
+producen los matemáticos hoy en día. En OMA, en los certámenes
+nacionales y en los selectivos, hay una tradición de problemas de
+combinatoria muy rica (problemas buenos y difíciles). No hay mucha
+teoría en forma de teoremas que sirva para resolver problemas de
+combinatoria, pero sí hay algunas ideas. Lucas Andisco escribió <a
+href="https://omaforos.com.ar/viewtopic.php?f=5&amp;t=3740">este
+excelente apunte</a> que sirve de introducción; lo recomiendo mucho.</p>
+<ul>
+<li><a href="https://omaforos.com.ar/download/file.php?id=527">Principio
+del palomar</a>. El enunciado básico es que si entran <span
+class="math inline">\(n+1\)</span> palomas en <span
+class="math inline">\(n\)</span> palomares, habrá algún palomar en el
+que hayan entrado al menos <span class="math inline">\(2\)</span>
+palomas (piénsenlo: es una obviedad). Aplicación inmediata: si hay <span
+class="math inline">\(13\)</span> personas en una habitación, al menos
+dos de ellas cumplen años el mismo mes. El enunciado, más general, que
+me gusta a mí es el siguiente: si tenemos números <span
+class="math inline">\(a_1, \ldots, a_n\)</span> entonces hay alguno (el
+máximo) que es mayor o igual al promedio, y uno (el mínimo) que es menor
+o igual al promedio; si hay igualdad entonces son todos iguales. La
+vinculación con los palomares es la siguiente: si <span
+class="math inline">\(a_i\)</span> (con <span
+class="math inline">\(i=1,\ldots,n\)</span>) es la cantidad de palomas
+en el palomar <span class="math inline">\(i\)</span>, tenemos que <span
+class="math inline">\(a_1+\cdots+a_n=n+1\)</span>, la cantidad total de
+palomas, luego hay un palomar <span class="math inline">\(i\)</span> tal
+que <span class="math inline">\(a_i \geqq
+\frac{a_1+\cdots+a_n}n=\frac{n+1}n&gt;1\)</span>; como <span
+class="math inline">\(a_i\)</span> es entero y <span
+class="math inline">\(a_i&gt;1\)</span>, <span class="math inline">\(a_i
+\geqq 2\)</span>, es decir, hay un palomar con al menos <span
+class="math inline">\(2\)</span> palomas. En general, si metemos <span
+class="math inline">\(m\)</span> palomas en <span
+class="math inline">\(n\)</span> palomares, hay uno en el que entraron
+al menos <span class="math inline">\(\frac{m}{n}\)</span> palomas. La
+idea sirve cuando uno tiene muchos objetos y no tiene ningún control
+sobre lo que pasa en cada uno de ellos, pero tiene alguna idea de lo que
+pasa “globalmente” en forma de una suma; ahí se puede aplicar esta
+idea.<br> Aplicación: problema 3 del certamen nacional de OMA, 2004,
+primer nivel.</li>
+</ul>
+<blockquote>
+<p>Nico ordena los números enteros del 1 al 21 inclusive y luego Pablo
+elige 4 números que estén consecutivos de la lista de Nico. Nico debe
+pagarle a Pablo una cantidad de pesos igual a la suma de los 4 números
+que eligió Pablo. Determinar la menor cantidad de dinero que deberá
+pagar Nico y cómo debe ordenar los números para no tener que pagar más.
+<br>ACLARACIÓN: El objetivo de Pablo es cobrar lo más posible y el de
+Nico es pagar lo menos posible.</p>
+</blockquote>
+<p>Sean <span class="math inline">\(a_1,\ldots,a_{21}\)</span> los
+números del 1 al 21 ordenados por Nico. Pablo puede elegir (entre otros
+conjuntos) <span class="math inline">\(a_1,a_2,a_3,a_4\)</span>, o los
+siguientes cuatro, etc, hasta <span
+class="math inline">\(a_{17},a_{18},a_{19},a_{20}\)</span>. Son 5
+conjuntos cuya suma total es <span
+class="math inline">\(a_1+\cdots+a_{20}\)</span>; alguno de ellos va a
+sumar al menos el promedio: <span
+class="math inline">\(\frac{a_1+\cdots+a_{20}}{5}\)</span>. Ahora <span
+class="math inline">\(a_1+\cdots+a_{20} =
+a_1+\cdots+a_{20}+a_{21}-a_{21}\)</span>. Como <span
+class="math inline">\(a_1,\ldots,a_{21}\)</span> es una permutación de
+<span class="math inline">\(1,\ldots,21\)</span>, su suma es <span
+class="math inline">\(1+\cdots+21 = \frac{21\cdot 22}2 = 231\)</span>.
+Entonces <span class="math inline">\(a_1+\cdots+a_{20} =
+231-a_{21}\)</span>. Como <span class="math inline">\(a_{21}\leqq
+21\)</span>, tenemos que <span class="math inline">\(a_1+\cdots+a_{20} =
+231-a_{21} \geqq 231-21=210\)</span>. Luego entre los 5 conjuntos de 4
+números consecutivos que consideramos, alguno suma al menos <span
+class="math inline">\(\frac{a_1+\cdots+a_{20}}{5} \geqq
+\frac{210}5=42\)</span>. ¿Puede ser <span
+class="math inline">\(42\)</span> la suma máxima? Para eso los <span
+class="math inline">\(\geqq\)</span> deben ser <span
+class="math inline">\(=\)</span>, las 5 sumas deben ser iguales (única
+manera de que la mayor sea igual al promedio) y <span
+class="math inline">\(a_{21}=21\)</span>; pero entonces <span
+class="math inline">\(a_{17}+a_{18}+a_{19}+a_{20}=42\)</span> y <span
+class="math inline">\(a_{18}+a_{19}+a_{20}+a_{21}\leqq 42\)</span>, lo
+que implica que <span class="math inline">\(21=a_{21}\leqq
+42-(a_{18}+a_{19}+a_{20}) = a_{17}\)</span>, y por tanto <span
+class="math inline">\(21\leqq a_{17}\)</span>, pero <span
+class="math inline">\(a_{17}\leqq 21\)</span>, luego <span
+class="math inline">\(a_{17}=a_{21}\)</span>, absurdo ya que todos los
+números son distintos. Entonces la máxima suma de 4 números consecutivos
+debe ser por lo menos <span class="math inline">\(43\)</span>. Con esto
+demostramos que, sin importar cómo ordene los números Nico, Pablo
+siempre puede ganar <span class="math inline">\(43\)</span> pesos. El
+problema pide determinar la menor cantidad de dinero que deberá pagar
+Nico. Demostramos que deberá pagar por lo menos <span
+class="math inline">\(43\)</span> pesos. ¿Puede lograr pagar exactamente
+<span class="math inline">\(43\)</span> pesos (y no más que eso)? La
+respuesta es sí, y para eso hay que mostrar cómo. Sugiero que el lector
+lo intente por su cuenta. Por si no le sale, esta es la solución:
+<code>16 10 11 5 17 9 12 4 18 8 13 3 19 7 14 2 20 6 15 1 21</code>.</p>
+<ul>
+<li><p><a
+href="https://omaforos.com.ar/viewtopic.php?f=5&amp;t=650">Coloraciones</a>.
+El problema clásico es: si le quitamos dos casillas que están en
+esquinas opuestas a un tablero de <span class="math inline">\(8\times
+8\)</span>, ¿de cuántas maneras se puede cubrir con fichas que ocupan
+<span class="math inline">\(1\times 2\)</span> casillas del tablero?
+Respuesta: de ninguna. ¿Por qué? Pintamos de blanco y negro como en el
+ajedrez. Las esquinas opuestas tienen el mismo color. Entonces al
+sacarlas hay más casillas de un color que del otro. Pero si logramos
+cubrir el tablero con fichas de <span class="math inline">\(1\times
+2\)</span>, cada una ocupa una casilla blanca y una negra, y por lo
+tanto la cantidad total de blancas y de negras debe ser la misma:
+contradicción. Otro muy lindo problema que sale con coloraciones es <a
+href="https://omaforos.com.ar/viewtopic.php?f=9&amp;t=4950">este</a>, de
+la IMO 2018. A mí me costó mucho, pero sale, así que no se lo quemen. La
+única pista que voy a dar es que basta con resolver el caso <span
+class="math inline">\(4\times 4\)</span>.</p></li>
+<li><p>Mirar elementos extremos: el que maximiza o minimiza alguna
+cantidad. El principio del palomar se puede pensar como una aplicación
+de esta idea: tomamos el palomar con mayor cantidad de palomas; ese
+palomar debe tener al menos <span class="math inline">\(2\)</span>
+palomas. Para más aplicaciones miren <a
+href="https://www.omaforos.com.ar/viewtopic.php?f=5&amp;t=1665">este</a>
+y <a
+href="https://omaforos.com.ar/viewtopic.php?f=2&amp;t=3297">este</a>
+apunte.</p></li>
+<li><p>Grafos. Un <a
+href="https://es.wikipedia.org/wiki/Grafo">grafo</a> es un conjunto de
+nodos o vértices <span class="math inline">\(V\)</span> conectados por
+aristas o ejes <span class="math inline">\(E\)</span>. Por ejemplo, un
+grupo de personas forma un grafo donde las personas son los vértices y
+hay una arista entre dos personas si son amigas entre sí. El grado de un
+vértice se define como la cantidad de vértices con los que está
+conectado. La suma de los grados de todos los vértices es igual a <span
+class="math inline">\(2|E|\)</span>, donde <span
+class="math inline">\(|E|\)</span> es la cantidad de aristas (es obvio:
+cada arista la contamos dos veces cuando sumamos los grados). Un camino
+entre dos vértices <span class="math inline">\(u\)</span> y <span
+class="math inline">\(v\)</span> es una secuencia de vértices <span
+class="math inline">\(u_1, u_2, \ldots, u_k\)</span> donde <span
+class="math inline">\(u_1=u\)</span>, <span
+class="math inline">\(u_k=v\)</span> y hay una arista entre <span
+class="math inline">\(u_i\)</span> y <span
+class="math inline">\(u_{i+1}\)</span> para todo <span
+class="math inline">\(i=1,\ldots,k-1\)</span>. Podemos partir el grafo
+en componentes conexas, que son, para cada vértice, el conjunto de
+vértices a los cuales hay un camino (incluyéndolo). Con esta idea sale
+<a href="https://omaforos.com.ar/viewtopic.php?f=16&amp;t=309">este
+problema</a> (el 5 del selectivo de IMO de 2009). La teoría de grafos
+existe, pero en olimpíadas creo que no es útil (en su momento compré un
+libro de teoría de grafos y no me sirvió para nada), salvo quizás por el
+<a href="https://omaforos.com.ar/viewtopic.php?f=5&amp;t=299">teorema de
+Turán</a> y el teorema de Hall (está en <a
+href="https://omaforos.com.ar/download/file.php?id=1533">este excelente
+apunte</a> de Agustín Gutiérrez, que no creo que sea muy útil para
+olimpíadas pero es realmente muy bueno).</p></li>
+<li><p>Inducción y principio del mínimo. Leer <a
+href="https://omaforos.com.ar/download/file.php?id=362">este</a> y <a
+href="https://omaforos.com.ar/viewtopic.php?f=2&amp;t=3739&amp;hilit=inducci%C3%B3n">este</a>
+apunte. Principio del mínimo: todo conjunto de números enteros positivos
+tiene un mínimo. Esto sirve en teoría de números y álgebra
+también.</p></li>
+<li><p>Invariantes. Lean <a
+href="https://omaforos.com.ar/viewtopic.php?f=5&amp;t=2570">este
+apunte</a>. Recomiendo pensar <a
+href="https://omaforos.com.ar/viewtopic.php?f=9&amp;t=4295">este
+problema</a> genial, que lamentablemente me quemé (¡no se lo quemen!
+pero sepan que sale buscando invariantes).</p></li>
+<li><p>Juegos. Lean <a
+href="https://omaforos.com.ar/viewtopic.php?f=5&amp;t=1664">este
+apunte</a>.</p></li>
+</ul>
+<p><strong>Álgebra.</strong> En OMA creo que es raro que haya problemas
+100% de álgebra (salvo problemas muy tontos de resolver ecuaciones en
+los primeros certámenes). Pero en selectivos y en olimpíadas
+internacionales sí hay.</p>
+<ol type="1">
+<li><p>Resolver ecuaciones cuadráticas. Completar cuadrados. Esto en los
+nacionales a partir de segundo nivel se asume que los participantes lo
+saben si no me equivoco.</p></li>
+<li><p>Factorización <span
+class="math inline">\(x^n-y^n=(x-y)(x^{n-1}+x^{n-2}y+\cdots+xy^{n-2}+y^{n-1})\)</span>.
+Fórmula de Newton <span class="math inline">\((x+y)^n = \sum_{k=0}^n
+\binom{n}{k} x^{n-k}y^{k}\)</span>.</p></li>
+<li><p>Polinomios. División de polinomios: si <span
+class="math inline">\(a\)</span> y <span
+class="math inline">\(b\)</span> son polinomios con coeficientes reales
+y el grado de <span class="math inline">\(b\)</span> es al menos 1
+entonces existen únicos polinomios <span
+class="math inline">\(q\)</span> y <span
+class="math inline">\(r\)</span> tales que <span
+class="math inline">\(a=qb+r\)</span> y el grado de <span
+class="math inline">\(r\)</span> es menor al grado de <span
+class="math inline">\(b\)</span>. (Esto permite hacer aritmética con
+polinomios: hay polinomios primos, factorización única en primos,
+congruencias módulo polinomio, etc. En coeficientes reales esto no es
+muy interesante por el teorema fundamental del álgebra, del cual se
+deduce que los polinomios primos son de grado 1 o 2, pero en
+coeficientes racionales sí hay mucha tela para cortar. De todos modos
+esto no es muy de olimpíadas.) Sigo. Un polinomio de grado <span
+class="math inline">\(n\)</span> tiene a lo sumo <span
+class="math inline">\(n\)</span> raíces. Ruffini. Un polinomio de grado
+impar tiene al menos una raíz real. Si <span
+class="math inline">\(P\)</span> es un polinomio con coeficientes
+enteros y <span class="math inline">\(a,b\)</span> son enteros entonces
+<span class="math inline">\(a-b\mid P(a)-P(b)\)</span>.</p></li>
+<li><p>Ecuaciones funcionales. Lean <a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=3742">este
+apunte</a>.</p></li>
+<li><p>Desigualdades. La base son las siguientes tres desigualdades. <a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=933">AM-GM</a>
+(media aritmética-media geométrica): si <span
+class="math inline">\(a_1,\ldots,a_n\)</span> son reales positivos
+entonces <span class="math display">\[\frac{a_1+\cdots+a_n}n \geqq
+\sqrt[n]{a_1\ldots a_n},\]</span> con igualdad si y sólo si son todos
+iguales. <a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=813">Cauchy-Schwarz</a>:
+si <span class="math inline">\(a_1,\ldots,a_n\)</span> y <span
+class="math inline">\(b_1,\ldots,b_n\)</span> son reales, <span
+class="math display">\[(a_1^2+\cdots+a_n^2)(b_1^2+\cdots+b_n^2) \geqq
+(a_1b_1+\cdots+a_nb_n)^2,\]</span> con igualdad si y sólo si existe un
+número real <span class="math inline">\(\lambda\)</span> tal que <span
+class="math inline">\(a_1=\lambda b_1, \ldots, a_n = \lambda
+b_n\)</span> o <span class="math inline">\(a_1=\cdots=a_n=0\)</span>. <a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=932">Rearrangement</a>.
+Hay muchas más cosas, pero creo que no conviene invertir mucho tiempo en
+esto. Si les interesa escribí un apunte con mucha (demasiada) teoría
+sobre desigualdades, pero no recomiendo su consumo; en general todas las
+desigualdades razonables de olimpíadas deberían salir con esas tres. A
+lo sumo <a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=1012">Schur</a>,
+<a
+href="https://omaforos.com.ar/viewtopic.php?f=4&amp;t=2825">Hölder</a>.</p></li>
+</ol>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>

@@ -1,0 +1,3378 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <meta name="generator" content="distill" />
+
+  <style type="text/css">
+  /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
+  body {
+    visibility: hidden;
+  }
+  </style>
+
+ <!--radix_placeholder_import_source-->
+ <!--/radix_placeholder_import_source-->
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ad0000; } /* Alert */
+code span.an { color: #5e5e5e; } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #ad0000; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007ba5; } /* ControlFlow */
+code span.ch { color: #20794d; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #5e5e5e; } /* Comment */
+code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+code span.dt { color: #ad0000; } /* DataType */
+code span.dv { color: #ad0000; } /* DecVal */
+code span.er { color: #ad0000; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #ad0000; } /* Float */
+code span.fu { color: #4758ab; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #5e5e5e; } /* Information */
+code span.kw { color: #007ba5; } /* Keyword */
+code span.op { color: #5e5e5e; } /* Operator */
+code span.ot { color: #007ba5; } /* Other */
+code span.pp { color: #ad0000; } /* Preprocessor */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
+code span.ss { color: #20794d; } /* SpecialString */
+code span.st { color: #20794d; } /* String */
+code span.va { color: #111111; } /* Variable */
+code span.vs { color: #20794d; } /* VerbatimString */
+code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+</style>
+
+
+  <!--radix_placeholder_meta_tags-->
+<title>Juan Dodyk: Apunte: Elementos de cálculo numérico</title>
+
+<meta property="description" itemprop="description" content=""/>
+
+<link rel="canonical" href="http://juandodyk.github.io/posts/2022-04-23-numerico/"/>
+
+<!--  https://schema.org/Article -->
+<meta property="article:published" itemprop="datePublished" content="2016-06-25"/>
+<meta property="article:created" itemprop="dateCreated" content="2016-06-25"/>
+
+<!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
+<meta property="og:title" content="Juan Dodyk: Apunte: Elementos de cálculo numérico"/>
+<meta property="og:type" content="article"/>
+<meta property="og:description" content=""/>
+<meta property="og:url" content="http://juandodyk.github.io/posts/2022-04-23-numerico/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:site_name" content="Juan Dodyk"/>
+
+<!--  https://dev.twitter.com/cards/types/summary -->
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Juan Dodyk: Apunte: Elementos de cálculo numérico"/>
+<meta property="twitter:description" content=""/>
+<meta property="twitter:url" content="http://juandodyk.github.io/posts/2022-04-23-numerico/"/>
+
+<!--/radix_placeholder_meta_tags-->
+  <!--radix_placeholder_rmarkdown_metadata-->
+
+<script type="text/json" id="radix-rmarkdown-metadata">
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Apunte: Elementos de cálculo numérico"]},{"type":"character","attributes":{},"value":[""]},{"type":"character","attributes":{},"value":["2016-06-25"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["http://juandodyk.github.io/posts/2022-04-23-numerico/"]},{"type":"character","attributes":{},"value":["http://juandodyk.github.io/posts/2022-04-23-numerico/"]}]}
+</script>
+<!--/radix_placeholder_rmarkdown_metadata-->
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["numerico_files/anchor-4.2.2/anchor.min.js","numerico_files/bowser-1.9.3/bowser.min.js","numerico_files/distill-2.2.21/template.v2.js","numerico_files/header-attrs-2.13/header-attrs.js","numerico_files/jquery-3.6.0/jquery-3.6.0.js","numerico_files/jquery-3.6.0/jquery-3.6.0.min.js","numerico_files/jquery-3.6.0/jquery-3.6.0.min.map","numerico_files/popper-2.6.0/popper.min.js","numerico_files/tippy-6.2.7/tippy-bundle.umd.min.js","numerico_files/tippy-6.2.7/tippy-light-border.css","numerico_files/tippy-6.2.7/tippy.css","numerico_files/tippy-6.2.7/tippy.umd.min.js","numerico_files/webcomponents-2.0.0/webcomponents.js"]}
+  </script>
+  <!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content="../.."/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="../../site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="../../site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="../../site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="../../site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="../../site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+  <!--radix_placeholder_distill-->
+
+<style type="text/css">
+
+body {
+  background-color: white;
+}
+
+.pandoc-table {
+  width: 100%;
+}
+
+.pandoc-table>caption {
+  margin-bottom: 10px;
+}
+
+.pandoc-table th:not([align]) {
+  text-align: left;
+}
+
+.pagedtable-footer {
+  font-size: 15px;
+}
+
+d-byline .byline {
+  grid-template-columns: 2fr 2fr;
+}
+
+d-byline .byline h3 {
+  margin-block-start: 1.5em;
+}
+
+d-byline .byline .authors-affiliations h3 {
+  margin-block-start: 0.5em;
+}
+
+.authors-affiliations .orcid-id {
+  width: 16px;
+  height:16px;
+  margin-left: 4px;
+  margin-right: 4px;
+  vertical-align: middle;
+  padding-bottom: 2px;
+}
+
+d-title .dt-tags {
+  margin-top: 1em;
+  grid-column: text;
+}
+
+.dt-tags .dt-tag {
+  text-decoration: none;
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0em 0.4em;
+  margin-right: 0.5em;
+  margin-bottom: 0.4em;
+  font-size: 70%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+d-article table.gt_table td,
+d-article table.gt_table th {
+  border-bottom: none;
+}
+
+.html-widget {
+  margin-bottom: 2.0em;
+}
+
+.l-screen-inset {
+  padding-right: 16px;
+}
+
+.l-screen .caption {
+  margin-left: 10px;
+}
+
+.shaded {
+  background: rgb(247, 247, 247);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .html-widget {
+  margin-bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.shaded .shaded-content {
+  background: white;
+}
+
+.text-output {
+  margin-top: 0;
+  line-height: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+d-article {
+  padding-top: 2.5rem;
+  padding-bottom: 30px;
+}
+
+d-appendix {
+  padding-top: 30px;
+}
+
+d-article>p>img {
+  width: 100%;
+}
+
+d-article h2 {
+  margin: 1rem 0 1.5rem 0;
+}
+
+d-article h3 {
+  margin-top: 1.5rem;
+}
+
+d-article iframe {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2.0em;
+  width: 100%;
+}
+
+/* Tweak code blocks */
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+}
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: auto;
+}
+
+d-article div.sourceCode {
+  background-color: white;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 10px;
+  font-size: 12px;
+  border-left: 2px solid rgba(0,0,0,0.1);
+}
+
+d-article pre {
+  font-size: 12px;
+  color: black;
+  background: none;
+  margin-top: 0;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+d-article pre a {
+  border-bottom: none;
+}
+
+d-article pre a:hover {
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+d-article details {
+  grid-column: text;
+  margin-bottom: 0.8em;
+}
+
+@media(min-width: 768px) {
+
+d-article pre,
+d-article div.sourceCode,
+d-article div.sourceCode pre {
+  overflow: visible !important;
+}
+
+d-article div.sourceCode pre {
+  padding-left: 18px;
+  font-size: 14px;
+}
+
+d-article pre {
+  font-size: 14px;
+}
+
+}
+
+figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+/* CSS for d-contents */
+
+.d-contents {
+  grid-column: text;
+  color: rgba(0,0,0,0.8);
+  font-size: 0.9em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+  padding-left: 0.25em;
+  justify-self: start;
+}
+
+@media(min-width: 1000px) {
+  .d-contents.d-contents-float {
+    height: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    justify-self: center;
+    padding-right: 3em;
+    padding-left: 2em;
+  }
+}
+
+.d-contents nav h3 {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.d-contents li {
+  list-style-type: none
+}
+
+.d-contents nav > ul {
+  padding-left: 0;
+}
+
+.d-contents ul {
+  padding-left: 1em
+}
+
+.d-contents nav ul li {
+  margin-top: 0.6em;
+  margin-bottom: 0.2em;
+}
+
+.d-contents nav a {
+  font-size: 13px;
+  border-bottom: none;
+  text-decoration: none
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.d-contents nav a:hover {
+  text-decoration: underline solid rgba(0, 0, 0, 0.6)
+}
+
+.d-contents nav > ul > li > a {
+  font-weight: 600;
+}
+
+.d-contents nav > ul > li > ul {
+  font-weight: inherit;
+}
+
+.d-contents nav > ul > li > ul > li {
+  margin-top: 0.2em;
+}
+
+
+.d-contents nav ul {
+  margin-top: 0;
+  margin-bottom: 0.25em;
+}
+
+.d-article-with-toc h2:nth-child(2) {
+  margin-top: 0;
+}
+
+
+/* Figure */
+
+.figure {
+  position: relative;
+  margin-bottom: 2.5em;
+  margin-top: 1.5em;
+}
+
+.figure img {
+  width: 100%;
+}
+
+.figure .caption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
+}
+
+.figure img.external {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.figure .caption a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.figure .caption b,
+.figure .caption strong, {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1.0);
+}
+
+/* Citations */
+
+d-article .citation {
+  color: inherit;
+  cursor: inherit;
+}
+
+div.hanging-indent{
+  margin-left: 1em; text-indent: -1em;
+}
+
+/* Citation hover box */
+
+.tippy-box[data-theme~=light-border] {
+  background-color: rgba(250, 250, 250, 0.95);
+}
+
+.tippy-content > p {
+  margin-bottom: 0;
+  padding: 2px;
+}
+
+
+/* Tweak 1000px media break to show more text */
+
+@media(min-width: 1000px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 80px [middle-start] 50px [text-start kicker-end] 65px 65px 65px 65px 65px 65px 65px 65px [text-end gutter-start] 65px [middle-end] 65px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 16px;
+  }
+
+  .grid {
+    grid-column-gap: 16px;
+  }
+
+  d-article {
+    font-size: 1.06rem;
+    line-height: 1.7em;
+  }
+  figure .caption, .figure .caption, figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media(min-width: 1180px) {
+  .base-grid,
+  distill-header,
+  d-title,
+  d-abstract,
+  d-article,
+  d-appendix,
+  distill-appendix,
+  d-byline,
+  d-footnote-list,
+  d-citation-list,
+  distill-footer {
+    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+    grid-column-gap: 32px;
+  }
+
+  .grid {
+    grid-column-gap: 32px;
+  }
+}
+
+
+/* Get the citation styles for the appendix (not auto-injected on render since
+   we do our own rendering of the citation appendix) */
+
+d-appendix .citation-appendix,
+.d-appendix .citation-appendix {
+  font-size: 11px;
+  line-height: 15px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+  padding-left: 18px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.02);
+  padding: 10px 18px;
+  border-radius: 3px;
+  color: rgba(150, 150, 150, 1);
+  overflow: hidden;
+  margin-top: -12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Include appendix styles here so they can be overridden */
+
+d-appendix {
+  contain: layout style;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-top: 60px;
+  margin-bottom: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0,0,0,0.5);
+  padding-top: 60px;
+  padding-bottom: 48px;
+}
+
+d-appendix h3 {
+  grid-column: page-start / text-start;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.65);
+}
+
+d-appendix h3 + * {
+  margin-top: 1em;
+}
+
+d-appendix ol {
+  padding: 0 0 0 15px;
+}
+
+@media (min-width: 768px) {
+  d-appendix ol {
+    padding: 0 0 0 30px;
+    margin-left: -30px;
+  }
+}
+
+d-appendix li {
+  margin-bottom: 1em;
+}
+
+d-appendix a {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+d-appendix > * {
+  grid-column: text;
+}
+
+d-appendix > d-footnote-list,
+d-appendix > d-citation-list,
+d-appendix > distill-appendix {
+  grid-column: screen;
+}
+
+/* Include footnote styles here so they can be overridden */
+
+d-footnote-list {
+  contain: layout style;
+}
+
+d-footnote-list > * {
+  grid-column: text;
+}
+
+d-footnote-list a.footnote-backlink {
+  color: rgba(0,0,0,0.3);
+  padding-left: 0.5em;
+}
+
+
+
+/* Anchor.js */
+
+.anchorjs-link {
+  /*transition: all .25s linear; */
+  text-decoration: none;
+  border-bottom: none;
+}
+*:hover > .anchorjs-link {
+  margin-left: -1.125em !important;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+/* Social footer */
+
+.social_footer {
+  margin-top: 30px;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.67);
+}
+
+.disqus-comments {
+  margin-right: 30px;
+}
+
+.disqus-comment-count {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+#disqus_thread {
+  margin-top: 30px;
+}
+
+.article-sharing a {
+  border-bottom: none;
+  margin-right: 8px;
+}
+
+.article-sharing a:hover {
+  border-bottom: none;
+}
+
+.sidebar-section.subscribe {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.subscribe p {
+  margin-bottom: 0.5em;
+}
+
+
+.article-footer .subscribe {
+  font-size: 15px;
+  margin-top: 45px;
+}
+
+
+.sidebar-section.custom {
+  font-size: 12px;
+  line-height: 1.6em;
+}
+
+.custom p {
+  margin-bottom: 0.5em;
+}
+
+/* Styles for listing layout (hide title) */
+.layout-listing d-title, .layout-listing .d-title {
+  display: none;
+}
+
+/* Styles for posts lists (not auto-injected) */
+
+
+.posts-with-sidebar {
+  padding-left: 45px;
+  padding-right: 45px;
+}
+
+.posts-list .description h2,
+.posts-list .description p {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+.posts-list .description h2 {
+  font-weight: 700;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.posts-list h2.post-tag {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 12px;
+}
+.posts-list {
+  margin-top: 60px;
+  margin-bottom: 24px;
+}
+
+.posts-list .post-preview {
+  text-decoration: none;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 24px 0;
+}
+
+.post-preview-last {
+  border-bottom: none !important;
+}
+
+.posts-list .posts-list-caption {
+  grid-column: screen;
+  font-weight: 400;
+}
+
+.posts-list .post-preview h2 {
+  margin: 0 0 6px 0;
+  line-height: 1.2em;
+  font-style: normal;
+  font-size: 24px;
+}
+
+.posts-list .post-preview p {
+  margin: 0 0 12px 0;
+  line-height: 1.4em;
+  font-size: 16px;
+}
+
+.posts-list .post-preview .thumbnail {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  position: relative;
+  max-width: 500px;
+}
+.posts-list .post-preview img {
+  width: 100%;
+  display: block;
+}
+
+.posts-list .metadata {
+  font-size: 12px;
+  line-height: 1.4em;
+  margin-bottom: 18px;
+}
+
+.posts-list .metadata > * {
+  display: inline-block;
+}
+
+.posts-list .metadata .publishedDate {
+  margin-right: 2em;
+}
+
+.posts-list .metadata .dt-authors {
+  display: block;
+  margin-top: 0.3em;
+  margin-right: 2em;
+}
+
+.posts-list .dt-tags {
+  display: block;
+  line-height: 1em;
+}
+
+.posts-list .dt-tags .dt-tag {
+  display: inline-block;
+  color: rgba(0,0,0,0.6);
+  padding: 0.3em 0.4em;
+  margin-right: 0.2em;
+  margin-bottom: 0.4em;
+  font-size: 60%;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.posts-list img {
+  opacity: 1;
+}
+
+.posts-list img[data-src] {
+  opacity: 0;
+}
+
+.posts-more {
+  clear: both;
+}
+
+
+.posts-sidebar {
+  font-size: 16px;
+}
+
+.posts-sidebar h3 {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sidebar-section {
+  margin-bottom: 30px;
+}
+
+.categories ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.categories li {
+  color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 0;
+}
+
+.categories li>a {
+  border-bottom: none;
+}
+
+.categories li>a:hover {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.categories .active {
+  font-weight: 600;
+}
+
+.categories .category-count {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+@media(min-width: 768px) {
+  .posts-list .post-preview h2 {
+    font-size: 26px;
+  }
+  .posts-list .post-preview .thumbnail {
+    float: right;
+    width: 30%;
+    margin-bottom: 0;
+  }
+  .posts-list .post-preview .description {
+    float: left;
+    width: 45%;
+  }
+  .posts-list .post-preview .metadata {
+    float: left;
+    width: 20%;
+    margin-top: 8px;
+  }
+  .posts-list .post-preview p {
+    margin: 0 0 12px 0;
+    line-height: 1.5em;
+    font-size: 16px;
+  }
+  .posts-with-sidebar .posts-list {
+    float: left;
+    width: 75%;
+  }
+  .posts-with-sidebar .posts-sidebar {
+    float: right;
+    width: 20%;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Improve display for browsers without grid (IE/Edge <= 15) */
+
+.downlevel {
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+}
+
+.downlevel .d-title {
+  padding-top: 6rem;
+  padding-bottom: 1.5rem;
+}
+
+.downlevel .d-title h1 {
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.1em;
+  margin: 0 0 0.5rem;
+}
+
+.downlevel .d-title p {
+  font-weight: 300;
+  font-size: 1.2rem;
+  line-height: 1.55em;
+  margin-top: 0;
+}
+
+.downlevel .d-byline {
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  font-size: 0.8rem;
+  line-height: 1.8em;
+}
+
+.downlevel .section-separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.downlevel .d-article {
+  font-size: 1.06rem;
+  line-height: 1.7em;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.downlevel .d-appendix {
+  padding-left: 0;
+  padding-right: 0;
+  max-width: none;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.5);
+  padding-top: 40px;
+  padding-bottom: 48px;
+}
+
+.downlevel .footnotes ol {
+  padding-left: 13px;
+}
+
+.downlevel .base-grid,
+.downlevel .distill-header,
+.downlevel .d-title,
+.downlevel .d-abstract,
+.downlevel .d-article,
+.downlevel .d-appendix,
+.downlevel .distill-appendix,
+.downlevel .d-byline,
+.downlevel .d-footnote-list,
+.downlevel .d-citation-list,
+.downlevel .distill-footer,
+.downlevel .appendix-bottom,
+.downlevel .posts-container {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+@media(min-width: 768px) {
+  .downlevel .base-grid,
+  .downlevel .distill-header,
+  .downlevel .d-title,
+  .downlevel .d-abstract,
+  .downlevel .d-article,
+  .downlevel .d-appendix,
+  .downlevel .distill-appendix,
+  .downlevel .d-byline,
+  .downlevel .d-footnote-list,
+  .downlevel .d-citation-list,
+  .downlevel .distill-footer,
+  .downlevel .appendix-bottom,
+  .downlevel .posts-container {
+  padding-left: 150px;
+  padding-right: 150px;
+  max-width: 900px;
+}
+}
+
+.downlevel pre code {
+  display: block;
+  border-left: 2px solid rgba(0, 0, 0, .1);
+  padding: 0 0 0 20px;
+  font-size: 14px;
+}
+
+.downlevel code, .downlevel pre {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+.downlevel .posts-list .post-preview {
+  color: inherit;
+}
+
+
+
+</style>
+
+<script type="application/javascript">
+
+function is_downlevel_browser() {
+  if (bowser.isUnsupportedBrowser({ msie: "12", msedge: "16"},
+                                 window.navigator.userAgent)) {
+    return true;
+  } else {
+    return window.load_distill_framework === undefined;
+  }
+}
+
+// show body when load is complete
+function on_load_complete() {
+
+  // add anchors
+  if (window.anchors) {
+    window.anchors.options.placement = 'left';
+    window.anchors.add('d-article > h2, d-article > h3, d-article > h4, d-article > h5');
+  }
+
+
+  // set body to visible
+  document.body.style.visibility = 'visible';
+
+  // force redraw for leaflet widgets
+  if (window.HTMLWidgets) {
+    var maps = window.HTMLWidgets.findAll(".leaflet");
+    $.each(maps, function(i, el) {
+      var map = this.getMap();
+      map.invalidateSize();
+      map.eachLayer(function(layer) {
+        if (layer instanceof L.TileLayer)
+          layer.redraw();
+      });
+    });
+  }
+
+  // trigger 'shown' so htmlwidgets resize
+  $('d-article').trigger('shown');
+}
+
+function init_distill() {
+
+  init_common();
+
+  // create front matter
+  var front_matter = $('<d-front-matter></d-front-matter>');
+  $('#distill-front-matter').wrap(front_matter);
+
+  // create d-title
+  $('.d-title').changeElementType('d-title');
+
+  // create d-byline
+  var byline = $('<d-byline></d-byline>');
+  $('.d-byline').replaceWith(byline);
+
+  // create d-article
+  var article = $('<d-article></d-article>');
+  $('.d-article').wrap(article).children().unwrap();
+
+  // move posts container into article
+  $('.posts-container').appendTo($('d-article'));
+
+  // create d-appendix
+  $('.d-appendix').changeElementType('d-appendix');
+
+  // flag indicating that we have appendix items
+  var appendix = $('.appendix-bottom').children('h3').length > 0;
+
+  // replace footnotes with <d-footnote>
+  $('.footnote-ref').each(function(i, val) {
+    appendix = true;
+    var href = $(this).attr('href');
+    var id = href.replace('#', '');
+    var fn = $('#' + id);
+    var fn_p = $('#' + id + '>p');
+    fn_p.find('.footnote-back').remove();
+    var text = fn_p.html();
+    var dtfn = $('<d-footnote></d-footnote>');
+    dtfn.html(text);
+    $(this).replaceWith(dtfn);
+  });
+  // remove footnotes
+  $('.footnotes').remove();
+
+  // move refs into #references-listing
+  $('#references-listing').replaceWith($('#refs'));
+
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    var id = $(this).attr('id');
+    $('.d-contents a[href="#' + id + '"]').parent().remove();
+    appendix = true;
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('d-appendix'));
+  });
+
+  // show d-appendix if we have appendix content
+  $("d-appendix").css('display', appendix ? 'grid' : 'none');
+
+  // localize layout chunks to just output
+  $('.layout-chunk').each(function(i, val) {
+
+    // capture layout
+    var layout = $(this).attr('data-layout');
+
+    // apply layout to markdown level block elements
+    var elements = $(this).children().not('details, div.sourceCode, pre, script');
+    elements.each(function(i, el) {
+      var layout_div = $('<div class="' + layout + '"></div>');
+      if (layout_div.hasClass('shaded')) {
+        var shaded_content = $('<div class="shaded-content"></div>');
+        $(this).wrap(shaded_content);
+        $(this).parent().wrap(layout_div);
+      } else {
+        $(this).wrap(layout_div);
+      }
+    });
+
+
+    // unwrap the layout-chunk div
+    $(this).children().unwrap();
+  });
+
+  // remove code block used to force  highlighting css
+  $('.distill-force-highlighting-css').parent().remove();
+
+  // remove empty line numbers inserted by pandoc when using a
+  // custom syntax highlighting theme
+  $('code.sourceCode a:empty').remove();
+
+  // load distill framework
+  load_distill_framework();
+
+  // wait for window.distillRunlevel == 4 to do post processing
+  function distill_post_process() {
+
+    if (!window.distillRunlevel || window.distillRunlevel < 4)
+      return;
+
+    // hide author/affiliations entirely if we have no authors
+    var front_matter = JSON.parse($("#distill-front-matter").html());
+    var have_authors = front_matter.authors && front_matter.authors.length > 0;
+    if (!have_authors)
+      $('d-byline').addClass('hidden');
+
+    // article with toc class
+    $('.d-contents').parent().addClass('d-article-with-toc');
+
+    // strip links that point to #
+    $('.authors-affiliations').find('a[href="#"]').removeAttr('href');
+
+    // add orcid ids
+    $('.authors-affiliations').find('.author').each(function(i, el) {
+      var orcid_id = front_matter.authors[i].orcidID;
+      if (orcid_id) {
+        var a = $('<a></a>');
+        a.attr('href', 'https://orcid.org/' + orcid_id);
+        var img = $('<img></img>');
+        img.addClass('orcid-id');
+        img.attr('alt', 'ORCID ID');
+        img.attr('src','data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo1N0NEMjA4MDI1MjA2ODExOTk0QzkzNTEzRjZEQTg1NyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozM0NDOEJGNEZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozM0NDOEJGM0ZGNTcxMUUxODdBOEVCODg2RjdCQ0QwOSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkZDN0YxMTc0MDcyMDY4MTE5NUZFRDc5MUM2MUUwNEREIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU3Q0QyMDgwMjUyMDY4MTE5OTRDOTM1MTNGNkRBODU3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+84NovQAAAR1JREFUeNpiZEADy85ZJgCpeCB2QJM6AMQLo4yOL0AWZETSqACk1gOxAQN+cAGIA4EGPQBxmJA0nwdpjjQ8xqArmczw5tMHXAaALDgP1QMxAGqzAAPxQACqh4ER6uf5MBlkm0X4EGayMfMw/Pr7Bd2gRBZogMFBrv01hisv5jLsv9nLAPIOMnjy8RDDyYctyAbFM2EJbRQw+aAWw/LzVgx7b+cwCHKqMhjJFCBLOzAR6+lXX84xnHjYyqAo5IUizkRCwIENQQckGSDGY4TVgAPEaraQr2a4/24bSuoExcJCfAEJihXkWDj3ZAKy9EJGaEo8T0QSxkjSwORsCAuDQCD+QILmD1A9kECEZgxDaEZhICIzGcIyEyOl2RkgwAAhkmC+eAm0TAAAAABJRU5ErkJggg==');
+        a.append(img);
+        $(this).append(a);
+      }
+    });
+
+    // hide elements of author/affiliations grid that have no value
+    function hide_byline_column(caption) {
+      $('d-byline').find('h3:contains("' + caption + '")').parent().css('visibility', 'hidden');
+    }
+
+    // affiliations
+    var have_affiliations = false;
+    for (var i = 0; i<front_matter.authors.length; ++i) {
+      var author = front_matter.authors[i];
+      if (author.affiliation !== "&nbsp;") {
+        have_affiliations = true;
+        break;
+      }
+    }
+    if (!have_affiliations)
+      $('d-byline').find('h3:contains("Affiliations")').css('visibility', 'hidden');
+
+    // published date
+    if (!front_matter.publishedDate)
+      hide_byline_column("Published");
+
+    // document object identifier
+    var doi = $('d-byline').find('h3:contains("DOI")');
+    var doi_p = doi.next().empty();
+    if (!front_matter.doi) {
+      // if we have a citation and valid citationText then link to that
+      if ($('#citation').length > 0 && front_matter.citationText) {
+        doi.html('Citation');
+        $('<a href="#citation"></a>')
+          .text(front_matter.citationText)
+          .appendTo(doi_p);
+      } else {
+        hide_byline_column("DOI");
+      }
+    } else {
+      $('<a></a>')
+         .attr('href', "https://doi.org/" + front_matter.doi)
+         .html(front_matter.doi)
+         .appendTo(doi_p);
+    }
+
+     // change plural form of authors/affiliations
+    if (front_matter.authors.length === 1) {
+      var grid = $('.authors-affiliations');
+      grid.children('h3:contains("Authors")').text('Author');
+      grid.children('h3:contains("Affiliations")').text('Affiliation');
+    }
+
+    // remove d-appendix and d-footnote-list local styles
+    $('d-appendix > style:first-child').remove();
+    $('d-footnote-list > style:first-child').remove();
+
+    // move appendix-bottom entries to the bottom
+    $('.appendix-bottom').appendTo('d-appendix').children().unwrap();
+    $('.appendix-bottom').remove();
+
+    // hoverable references
+    $('span.citation[data-cites]').each(function() {
+      var refs = $(this).attr('data-cites').split(" ");
+      var refHtml = refs.map(function(ref) {
+        return "<p>" + $('#ref-' + ref).html() + "</p>";
+      }).join("\n");
+      window.tippy(this, {
+        allowHTML: true,
+        content: refHtml,
+        maxWidth: 500,
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'light-border',
+        placement: 'bottom-start'
+      });
+    });
+
+    // clear polling timer
+    clearInterval(tid);
+
+    // show body now that everything is ready
+    on_load_complete();
+  }
+
+  var tid = setInterval(distill_post_process, 50);
+  distill_post_process();
+
+}
+
+function init_downlevel() {
+
+  init_common();
+
+   // insert hr after d-title
+  $('.d-title').after($('<hr class="section-separator"/>'));
+
+  // check if we have authors
+  var front_matter = JSON.parse($("#distill-front-matter").html());
+  var have_authors = front_matter.authors && front_matter.authors.length > 0;
+
+  // manage byline/border
+  if (!have_authors)
+    $('.d-byline').remove();
+  $('.d-byline').after($('<hr class="section-separator"/>'));
+  $('.d-byline a').remove();
+
+  // remove toc
+  $('.d-contents').remove();
+
+  // move appendix elements
+  $('h1.appendix, h2.appendix').each(function(i, val) {
+    $(this).changeElementType('h3');
+  });
+  $('h3.appendix').each(function(i, val) {
+    $(this).nextUntil($('h1, h2, h3')).addBack().appendTo($('.d-appendix'));
+  });
+
+
+  // inject headers into references and footnotes
+  var refs_header = $('<h3></h3>');
+  refs_header.text('References');
+  $('#refs').prepend(refs_header);
+
+  var footnotes_header = $('<h3></h3');
+  footnotes_header.text('Footnotes');
+  $('.footnotes').children('hr').first().replaceWith(footnotes_header);
+
+  // move appendix-bottom entries to the bottom
+  $('.appendix-bottom').appendTo('.d-appendix').children().unwrap();
+  $('.appendix-bottom').remove();
+
+  // remove appendix if it's empty
+  if ($('.d-appendix').children().length === 0)
+    $('.d-appendix').remove();
+
+  // prepend separator above appendix
+  $('.d-appendix').before($('<hr class="section-separator" style="clear: both"/>'));
+
+  // trim code
+  $('pre>code').each(function(i, val) {
+    $(this).html($.trim($(this).html()));
+  });
+
+  // move posts-container right before article
+  $('.posts-container').insertBefore($('.d-article'));
+
+  $('body').addClass('downlevel');
+
+  on_load_complete();
+}
+
+
+function init_common() {
+
+  // jquery plugin to change element types
+  (function($) {
+    $.fn.changeElementType = function(newType) {
+      var attrs = {};
+
+      $.each(this[0].attributes, function(idx, attr) {
+        attrs[attr.nodeName] = attr.nodeValue;
+      });
+
+      this.replaceWith(function() {
+        return $("<" + newType + "/>", attrs).append($(this).contents());
+      });
+    };
+  })(jQuery);
+
+  // prevent underline for linked images
+  $('a > img').parent().css({'border-bottom' : 'none'});
+
+  // mark non-body figures created by knitr chunks as 100% width
+  $('.layout-chunk').each(function(i, val) {
+    var figures = $(this).find('img, .html-widget');
+    if ($(this).attr('data-layout') !== "l-body") {
+      figures.css('width', '100%');
+    } else {
+      figures.css('max-width', '100%');
+      figures.filter("[width]").each(function(i, val) {
+        var fig = $(this);
+        fig.css('width', fig.attr('width') + 'px');
+      });
+
+    }
+  });
+
+  // auto-append index.html to post-preview links in file: protocol
+  // and in rstudio ide preview
+  $('.post-preview').each(function(i, val) {
+    if (window.location.protocol === "file:")
+      $(this).attr('href', $(this).attr('href') + "index.html");
+  });
+
+  // get rid of index.html references in header
+  if (window.location.protocol !== "file:") {
+    $('.distill-site-header a[href]').each(function(i,val) {
+      $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+    });
+  }
+
+  // add class to pandoc style tables
+  $('tr.header').parent('thead').parent('table').addClass('pandoc-table');
+  $('.kable-table').children('table').addClass('pandoc-table');
+
+  // add figcaption style to table captions
+  $('caption').parent('table').addClass("figcaption");
+
+  // initialize posts list
+  if (window.init_posts_list)
+    window.init_posts_list();
+
+  // implmement disqus comment link
+  $('.disqus-comment-count').click(function() {
+    window.headroom_prevent_pin = true;
+    $('#disqus_thread').toggleClass('hidden');
+    if (!$('#disqus_thread').hasClass('hidden')) {
+      var offset = $(this).offset();
+      $(window).resize();
+      $('html, body').animate({
+        scrollTop: offset.top - 35
+      });
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (is_downlevel_browser())
+    init_downlevel();
+  else
+    window.addEventListener('WebComponentsReady', init_distill);
+});
+
+</script>
+
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    sans-serif;
+  --mono-font:       monospace;
+  --body-font:       sans-serif;
+  --navbar-font:     sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+</style>
+<style type="text/css">
+/* base variables */
+
+/* Edit the CSS properties in this file to create a custom
+   Distill theme. Only edit values in the right column
+   for each row; values shown are the CSS defaults.
+   To return any property to the default,
+   you may set its value to: unset
+   All rows must end with a semi-colon.                      */
+
+/* Optional: embed custom fonts here with `@import`          */
+/* This must remain at the top of this file.                 */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300|Noto+Serif:400,400italic,700,700italic&display=swap');
+
+html {
+  /*-- Main font sizes --*/
+  --title-size:      50px;
+  --body-size:       1.06rem;
+  --code-size:       14px;
+  --aside-size:      12px;
+  --fig-cap-size:    13px;
+  /*-- Main font colors --*/
+  --title-color:     #000000;
+  --header-color:    rgba(0, 0, 0, 0.8);
+  --body-color:      rgba(0, 0, 0, 0.8);
+  --aside-color:     rgba(0, 0, 0, 0.6);
+  --fig-cap-color:   rgba(0, 0, 0, 0.6);
+  /*-- Specify custom fonts ~~~ must be imported above   --*/
+  --heading-font:    "Roboto", sans-serif;
+  --mono-font:       monospace;
+  --body-font:       "Noto Serif", sans-serif;
+  --navbar-font:     "Roboto", sans-serif;  /* websites + blogs only */
+}
+
+/*-- ARTICLE METADATA --*/
+d-byline {
+  --heading-size:    0.6rem;
+  --heading-color:   rgba(0, 0, 0, 0.5);
+  --body-size:       0.8rem;
+  --body-color:      rgba(0, 0, 0, 0.8);
+}
+
+/*-- ARTICLE TABLE OF CONTENTS --*/
+.d-contents {
+  --heading-size:    18px;
+  --contents-size:   13px;
+}
+
+/*-- ARTICLE APPENDIX --*/
+d-appendix {
+  --heading-size:    15px;
+  --heading-color:   rgba(0, 0, 0, 0.65);
+  --text-size:       0.8em;
+  --text-color:      rgba(0, 0, 0, 0.5);
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+/* These properties only apply to Distill sites and blogs  */
+
+.distill-site-header {
+  --title-size:       18px;
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+.distill-site-footer {
+  --text-color:       rgba(255, 255, 255, 0.8);
+  --text-size:        15px;
+  --hover-color:      white;
+  --bkgd-color:       #0F2E3D;
+}
+
+
+/*-- Additional custom styles --*/
+/* Add any additional CSS rules below                      */
+
+d-article body {
+  color: #222222;
+  font-family: "Noto Serif", serif;
+  font-weight: 400;
+  transition: all 0.3s ease; }
+
+:is(d-article, d-title, d-post, .posts-list .description) :is(h1, h2, h3, h4, h5, h6) {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: #a2a2a2;
+  transition: all 0.3s ease; }
+a:hover {
+  color: #222222;
+}
+a .description {
+  color: #222222; transition: all 0.3s ease;
+}
+a .description :is(h1, h2, h3, h4, h5, h6) {
+  color: #222222; transition: all 0.3s ease;
+}
+a:hover .description {
+  color: #a2a2a2;
+}
+a:hover .description :is(h1, h2, h3, h4, h5, h6) {
+  color: #a2a2a2;
+}
+
+d-article blockquote {
+  border-left: 1px solid #ddd;
+  color: #6f6f6f;
+  padding-left: 30px;
+  margin-bottom: 1.0em;
+  margin: 0;
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+d-article p a { color: #00b9e7; }
+d-article p a:hover { color: #e70000; }</style>
+<style type="text/css">
+/* base style */
+
+/* FONT FAMILIES */
+
+:root {
+  --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+body,
+.posts-list .post-preview p,
+.posts-list .description p {
+  font-family: var(--body-font), var(--body-default);
+}
+
+h1, h2, h3, h4, h5, h6,
+.posts-list .post-preview h2,
+.posts-list .description h2 {
+  font-family: var(--heading-font), var(--heading-default);
+}
+
+d-article div.sourceCode code,
+d-article pre code {
+  font-family: var(--mono-font), var(--mono-default);
+}
+
+
+/*-- TITLE --*/
+d-title h1,
+.posts-list > h1 {
+  color: var(--title-color, black);
+}
+
+d-title h1 {
+  font-size: var(--title-size, 50px);
+}
+
+/*-- HEADERS --*/
+d-article h1,
+d-article h2,
+d-article h3,
+d-article h4,
+d-article h5,
+d-article h6 {
+  color: var(--header-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- BODY --*/
+d-article > p,  /* only text inside of <p> tags */
+d-article > ul, /* lists */
+d-article > ol {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+  font-size: var(--body-size, 1.06rem);
+}
+
+
+/*-- CODE --*/
+d-article div.sourceCode code,
+d-article pre code {
+  font-size: var(--code-size, 14px);
+}
+
+/*-- ASIDE --*/
+d-article aside {
+  font-size: var(--aside-size, 12px);
+  color: var(--aside-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- FIGURE CAPTIONS --*/
+figure .caption,
+figure figcaption,
+.figure .caption {
+  font-size: var(--fig-cap-size, 13px);
+  color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
+}
+
+/*-- METADATA --*/
+d-byline h3 {
+  font-size: var(--heading-size, 0.6rem);
+  color: var(--heading-color, rgba(0, 0, 0, 0.5));
+}
+
+d-byline {
+  font-size: var(--body-size, 0.8rem);
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+d-byline a,
+d-article d-byline a {
+  color: var(--body-color, rgba(0, 0, 0, 0.8));
+}
+
+/*-- TABLE OF CONTENTS --*/
+.d-contents nav h3 {
+  font-size: var(--heading-size, 18px);
+}
+
+.d-contents nav a {
+  font-size: var(--contents-size, 13px);
+}
+
+/*-- APPENDIX --*/
+d-appendix h3 {
+  font-size: var(--heading-size, 15px);
+  color: var(--heading-color, rgba(0, 0, 0, 0.65));
+}
+
+d-appendix {
+  font-size: var(--text-size, 0.8em);
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+d-appendix d-footnote-list a.footnote-backlink {
+  color: var(--text-color, rgba(0, 0, 0, 0.5));
+}
+
+/*-- WEBSITE HEADER + FOOTER --*/
+.distill-site-header .title {
+  font-size: var(--title-size, 18px);
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.distill-site-header a,
+.nav-dropdown .nav-dropbtn {
+  font-family: var(--navbar-font), var(--heading-default);
+}
+
+.nav-dropdown .nav-dropbtn {
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  font-size: var(--text-size, 15px);
+}
+
+.distill-site-header a:hover,
+.nav-dropdown:hover .nav-dropbtn {
+  color: var(--hover-color, white);
+}
+
+.distill-site-header {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer {
+  font-size: var(--text-size, 15px);
+  color: var(--text-color, rgba(255, 255, 255, 0.8));
+  background-color: var(--bkgd-color, #0F2E3D);
+}
+
+.distill-site-footer a:hover {
+  color: var(--hover-color, white);
+}</style>
+<!--/radix_placeholder_distill-->
+  <script src="../../site_libs/header-attrs-2.13/header-attrs.js"></script>
+  <script src="../../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="../../site_libs/popper-2.6.0/popper.min.js"></script>
+  <link href="../../site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="../../site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="../../site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
+  <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
+  <script src="../../site_libs/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="../../site_libs/distill-2.2.21/template.v2.js"></script>
+  <!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+
+</head>
+
+<body>
+
+<!--radix_placeholder_front_matter-->
+
+<script id="distill-front-matter" type="text/json">
+{"title":"Apunte: Elementos de cálculo numérico","description":"","authors":[],"publishedDate":"2016-06-25T00:00:00.000-04:00"}
+</script>
+
+<!--/radix_placeholder_front_matter-->
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="../../index.html" class="title">Juan Dodyk</a>
+<input id="distill-search" class="nav-search hidden" type="text" placeholder="Search..."/>
+</div>
+<div class="nav-right">
+<a href="../../index.html">Home</a>
+<a href="../../research.html">Research</a>
+<a href="../../files/cv.pdf">CV</a>
+<a href="../../teaching.html">Teaching</a>
+<a href="../../blog.html">Blog</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="d-title">
+<h1>Apunte: Elementos de cálculo numérico</h1>
+<!--radix_placeholder_categories-->
+<!--/radix_placeholder_categories-->
+
+</div>
+
+
+<div class="d-article">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#punto-flotante">Punto flotante</a></li>
+<li><a href="#normas-matriciales">Normas matriciales</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#raíces">Raíces</a></li>
+<li><a href="#interpolación-polinómica">Interpolación
+polinómica</a></li>
+<li><a href="#cuadrados-mínimos">Cuadrados mínimos</a></li>
+<li><a href="#integración-numérica">Integración numérica</a></li>
+<li><a href="#ecuaciones-diferenciales-ordinarias">Ecuaciones
+diferenciales ordinarias</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="punto-flotante">Punto flotante</h2>
+<p><span
+class="math inline">\(\def\inf{\mathop{\text{inf}}\limits}\def\la{\langle}
+\def\ra{\rangle}\def\mm{\mathrm}\def\menos{\smallsetminus}
+\newcommand{\comb}[2]{\binom{#1}{#2}}\def\then{\Rightarrow}\def\N{\mathbb{N}}
+\def\R{\mathbb{R}} \def\C{\mathbb{C}} \def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}} \def\FF{\mathcal{F}} \def\PP{\mathcal{P}}
+\def\E{\mm{E}} \def\Var{\mm{Var}} \def\Cond{\mm{Cond}}\)</span>Los
+<em>números de máquina</em> son de la forma <span
+class="math inline">\(0,a_1a_2\ldots a_m\cdot B^l=q\cdot B^l\)</span>,
+donde <span class="math inline">\(a_1\neq0\)</span>, <span
+class="math inline">\(a_i\in\{0,\ldots,B-1\}\)</span>, <span
+class="math inline">\(B\)</span> es la base y <span
+class="math inline">\(-M_1\leqq l\leqq M_2\)</span>. Dado <span
+class="math inline">\(x=0,a_1a_2\ldots\cdot B^l\in\R\)</span> definimos
+el truncado <span class="math inline">\(x^*=0,a_1a_2\ldots a_m \cdot
+B^l\)</span>; vale <span class="math inline">\(\frac{|x-x^*|}{|x|}\leqq
+B^{-m+1}\)</span>. El redondeo cumple <span
+class="math inline">\(\frac{|x-x^*|}{|x|}\leqq \frac12B^{-m+1}\)</span>.
+Tenemos pues <span class="math inline">\(x^*=(1+\delta)x\)</span>, con
+<span
+class="math inline">\(|\delta|\leqq\epsilon=\frac12B^{-m+1}\)</span>,
+donde <span class="math inline">\(\epsilon\)</span> se llama <em><span
+class="math inline">\(\epsilon\)</span> de máquina</em>; es el menor
+número tal que <span class="math inline">\((1+\epsilon)^*\neq
+1\)</span>. Sumar números muy distintos en magnitud es malo; restar
+números muy parecidos también; la mejor manera de sumar muchos números
+es de menor a mayor.</p>
+<h2 id="normas-matriciales">Normas matriciales</h2>
+<p><strong>Equivalencia de normas.</strong> Las normas en <span
+class="math inline">\(\R^n\)</span> son equivalentes, es decir, dadas
+<span class="math inline">\(\|{\cdot}\|\)</span>, <span
+class="math inline">\(\|{\cdot}\|&#39;\)</span> hay <span
+class="math inline">\(K_1,K_2&gt;0\)</span> con <span
+class="math inline">\(K_1\|{\cdot}\|&#39;\leqq\|{\cdot}\|\leqq
+K_2\|{\cdot}\|&#39;\)</span>.</p>
+<p><em>Prueba.</em> Basta probarlo para <span
+class="math inline">\(\|x\|&#39;=\|x\|_2=\sqrt{\sum_{i=1}^nx_i^2}\)</span>;
+tenemos <span
+class="math inline">\(\|\sum_{i=1}^nx_ie_i\|\leqq\sum_{i=1}^n|x_i|\|e_i\|\leqq
+\sqrt{\sum_{i=1}^n\|e_i\|}\|x\|_2\)</span> por Cauchy-Schwarz; la otra
+por el absurdo: si no, para todo <span class="math inline">\(n\)</span>
+hay <span class="math inline">\(x_n\)</span> con <span
+class="math inline">\(\|x_n\|&lt;\frac{1}{n}\|x_n\|_2\)</span>; podemos
+tomar <span class="math inline">\(\|x_n\|_2=1\)</span> y <span
+class="math inline">\(\|x_n\|&lt;\frac{1}{n}\)</span>; luego hay una
+subsecuencia con <span
+class="math inline">\(\|x_{n_k}-x\|_2\to0\)</span>, luego <span
+class="math inline">\(\|x_{n_k}-x\|\to0\)</span>, <span
+class="math inline">\(\|x\|=0\)</span>, <span
+class="math inline">\(x=0\)</span>, absurdo.∎</p>
+<p><strong>Normas matriciales.</strong> Dada una norma <span
+class="math inline">\(\|{\cdot}\|\)</span> de <span
+class="math inline">\(\R^n\)</span> obtenemos una norma para <span
+class="math inline">\(\R^{n\times n}\)</span> dada por <span
+class="math inline">\(\|A\|=\max_{\|x\|=1}\|Ax\|\)</span>, y tenemos
+<span class="math inline">\(\|Ax\|\leqq \|A\|\|x\|\)</span> y <span
+class="math inline">\(\|AB\|\leqq\|A\|\|B\|\)</span>. Vale <span
+class="math inline">\(\|A\|_\infty=\max_i\left\{\sum_{j=1}^n|A_{ij}|\right\}\)</span>,
+<span
+class="math inline">\(\|A\|_1=\max_j\left\{\sum_{i=1\vphantom{j}}^n|A_{ij}|\right\}\)</span>,
+<span class="math inline">\(\|A\|_2=\sqrt{\rho(A^tA)}\)</span>, donde
+<span class="math inline">\(\rho(A)=|\lambda_{\max}|\)</span> es el
+<em>radio espectral</em>, con <span
+class="math inline">\(\lambda_{\max}\in\C\)</span> el autovalor de norma
+máxima.</p>
+<p><em>Prueba.</em> Sea <span
+class="math inline">\(v_1,\ldots,v_n\)</span> una base ortonormal de
+autovectores de <span class="math inline">\(A^tA\)</span> con
+autovalores <span
+class="math inline">\(\lambda_1,\ldots,\lambda_n\)</span>. Dada <span
+class="math inline">\(x=\sum_{i=1}^na_iv_i\)</span> tenemos <span
+class="math inline">\(\|Ax\|_2^2=\la Ax,Ax\ra=\la A^tAx,x\ra=\)</span>
+<span
+class="math inline">\(\bigl\langle\sum_{i=1}^n\lambda_ia_iv_i,\sum_{i=1}^na_iv_i\bigl\rangle=\sum_{i=1}^n\lambda_ia_i^2\leqq
+|\lambda_{\max}|\|x\|_2^2\)</span>, con igualdad si <span
+class="math inline">\(x=v_{\max}\)</span>, luego <span
+class="math inline">\(\|A\|_2=\sqrt{\rho(A^tA)}\)</span>.∎</p>
+<p><strong>Número de condición.</strong> Si <span
+class="math inline">\(A\in\R^{n\times n}\)</span> es inversible
+definimos <span class="math inline">\(\Cond(A)=\|A\|\|A^{-1}\|\)</span>.
+Vale <span class="math inline">\(\Cond(A)\geqq 1\)</span> y <span
+class="math inline">\(\frac1{\Cond(A)}=\inf_{\text{$B$
+singular}}\frac{\|A-B\|}{\|A\|}\)</span>. Aplicación: si <span
+class="math inline">\(Ax=b\)</span> y <span
+class="math inline">\(A\tilde x=\tilde b\)</span>, <span
+class="math inline">\(\frac{\|\tilde
+x-x\|}{\|x\|}\leqq\Cond(A)\frac{\|\tilde b-b\|}{\|b\|}\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(B\)</span> es
+singular hay <span class="math inline">\(x\neq0\)</span> con <span
+class="math inline">\(Bx=0\)</span>; vale <span
+class="math inline">\(\|x\|=\|A^{-1}(A-B)x\|\)</span> luego <span
+class="math inline">\(1\leqq\|A^{-1}\|\|A-B\|\)</span> y <span
+class="math inline">\(\frac1{\Cond(A)}\leqq
+\frac{\|A-B\|}{\|A\|}\)</span>. Ahora tomo <span
+class="math inline">\(y\)</span> con <span
+class="math inline">\(\|A^{-1}y\|=\|A^{-1}\|\|y\|\)</span> y <span
+class="math inline">\(x\)</span> con <span
+class="math inline">\(Ax=y\)</span>, <span
+class="math inline">\(\|y\|=\frac{1}{\|A^{-1}\|}\)</span> y <span
+class="math inline">\(\|x\|=1\)</span>; tomo <span
+class="math inline">\(z\)</span> tal que <span
+class="math inline">\(z^tu\leqq 1\)</span> si <span
+class="math inline">\(\|u\|=1\)</span> pero <span
+class="math inline">\(z^tx=1\)</span> (hiperplano que pasa por <span
+class="math inline">\(x\)</span> y deja a la bola unitaria de un lado);
+<span class="math inline">\(B=A-yz^t\)</span> es singular porque <span
+class="math inline">\(Bx=0\)</span>; <span
+class="math inline">\(\|yz^tu\|\leqq\|y\|=\frac{1}{\|A^{-1}\|}\)</span>
+si <span class="math inline">\(\|u\|=1\)</span> con igualdad si <span
+class="math inline">\(u=x\)</span>, luego <span
+class="math inline">\(\|A-B\|=\|yz^t\|=\frac1{\|A^{-1}\|}\)</span>.∎</p>
+<p><strong>Radio espectral.</strong> Dado <span
+class="math inline">\(\epsilon&gt;0\)</span> hay una norma matricial
+<span class="math inline">\(\|{\cdot}\|\)</span> tal que <span
+class="math inline">\(\rho(A)\leqq \|A\|\leqq \rho(A)+\epsilon\)</span>.
+Equivalen <span class="math inline">\(A^n\to 0\)</span> y <span
+class="math inline">\(\rho(A)&lt;1\)</span>. Además, <span
+class="math inline">\(\|A^n\|^{\frac1n}\to\rho(A)\)</span>.</p>
+<p><em>Prueba.</em> Primero, sea <span
+class="math inline">\(v_1,\ldots,v_n\in\C^n\)</span> una base que pone a
+<span class="math inline">\(A\)</span> en su forma de Jordan;
+multiplicando los <span class="math inline">\(v_i\)</span> por potencias
+de <span class="math inline">\(\epsilon\)</span> logramos que los
+números fuera de la diagonal sean <span
+class="math inline">\(\epsilon\)</span>. Defino la norma <span
+class="math inline">\(\|\sum_{i=1}^n a_iv_i\|=\max_i|a_i|\)</span>; vale
+<span class="math inline">\(\|A\|\leqq \rho(A)+\epsilon\)</span> en esa
+norma. Segundo, si <span class="math inline">\(\rho(A)&lt;1\)</span> con
+<span class="math inline">\(\epsilon\)</span> chico obtengo <span
+class="math inline">\(\|A\|&lt;1\)</span>, luego <span
+class="math inline">\(\|A^n\|\leqq\|A\|^n\to0\)</span>; si <span
+class="math inline">\(A^n\to 0\)</span>, sea <span
+class="math inline">\(v_i\)</span> con <span
+class="math inline">\(Av_i=\lambda_{\max}v_i\)</span>; si <span
+class="math inline">\(v_i=x+yi\)</span>, con <span
+class="math inline">\(x,y\in\R^n\)</span>, <span
+class="math inline">\(A^nv_i=A^nx+A^nyi\to0\)</span>, pero <span
+class="math inline">\(\|A^nv_i\|=\rho(A)^n\)</span>, luego <span
+class="math inline">\(\rho(A)^n\to0\)</span> y <span
+class="math inline">\(\rho(A)&lt;1\)</span>. Tercero, de <span
+class="math inline">\(\|A\|\leqq \rho(A)+\epsilon\)</span> obtengo <span
+class="math inline">\(\|A^n\|^{\frac1n}\leqq \rho(A)+\epsilon\)</span>;
+por otro lado <span class="math inline">\(\rho(A)^n\leqq
+\rho(A^n)\leqq\|A^n\|\)</span> luego <span
+class="math inline">\(\rho(A)\leqq \|A^n\|^{\frac1n}\leqq
+\rho(A)+\epsilon\)</span> si <span class="math inline">\(n\)</span>
+grande.∎</p>
+<h2 id="matrices">Matrices</h2>
+<p><strong>Descomposición LU.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> hay una matriz de
+permutación <span class="math inline">\(P\)</span> con <span
+class="math inline">\(PA=LU\)</span>, <span
+class="math inline">\(L\)</span> diagonal inferior y con 1 en la
+diagonal y <span class="math inline">\(U\)</span> diagonal superior.</p>
+<p><strong>Descomposición de Cholesky.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> simétrica y definida
+positiva (o sea <span class="math inline">\(\la x,Ax\ra&gt;0\)</span> si
+<span class="math inline">\(x\neq0\)</span>) existe una única <span
+class="math inline">\(L\)</span> diagonal inferior con elementos de la
+diagonal positivos tal que <span
+class="math inline">\(A=LL^t\)</span>.</p>
+<p><em>Prueba.</em> Vale <span
+class="math inline">\(A_{ij}=\sum_{k=1}^{\min\{i,j\}}L_{ik}L_{jk}\)</span>.
+Si tenemos los <span class="math inline">\(L_{ij}\)</span> con <span
+class="math inline">\(j&lt; k\)</span>, tenemos <span
+class="math inline">\(A_{kk}=\sum_{j=1}^k L_{kj}^2\)</span>, luego <span
+class="math inline">\(L_{kk}^2=A_{kk}-\sum_{i=1}^{k-1}L_{kj}^2\)</span>.
+Veamos que podemos tomar una raíz positiva: si no, tomamos raíz <span
+class="math inline">\(L_{kk}\in\C\)</span>; tenemos que <span
+class="math inline">\(A_k,L_k\in\R^{k\times k}\)</span>, con <span
+class="math inline">\(A_{kij}=A_{ij}\)</span> y <span
+class="math inline">\(L_{kij}=L_{ij}\)</span> cumplen <span
+class="math inline">\(A_k=L_kL_k^t\)</span>, luego <span
+class="math inline">\(0&lt;|A_k|=|L_k|^2=L_{11}^2\ldots
+L_{kk}^2\)</span> (por Sylvester), con lo que <span
+class="math inline">\(L_{kk}^2&gt;0\)</span>. Faltarían los <span
+class="math inline">\(L_{ik}\)</span> con <span
+class="math inline">\(i&gt;k\)</span>; ahora <span
+class="math inline">\(A_{ik}=\sum_{j=1}^{k}L_{ij}L_{kj}\)</span>, luego
+<span
+class="math inline">\(L_{ik}=\frac1{L_{kk}}(A_{ik}-\sum_{j=1}^{k-1}L_{ij}L_{kj})\)</span>.∎</p>
+<p><strong>Descomposición en valores singulares (SVD).</strong> Dada
+<span class="math inline">\(A\in\R^{n\times m}\)</span> existen matrices
+ortogonales <span class="math inline">\(U\in\R^{n\times n}\)</span>,
+<span class="math inline">\(V\in\R^{m\times m}\)</span> y <span
+class="math inline">\(\Sigma\in\R^{n\times m}\)</span> diagonal tales
+que <span class="math inline">\(A=U\Sigma V\)</span> y si <span
+class="math inline">\(\sigma_1,\ldots,\sigma_r\)</span> son los valores
+de la diagonal de <span class="math inline">\(\Sigma\)</span> entonces
+<span class="math inline">\(\sigma_1 \geqq \cdots \geqq \sigma_r \geqq
+0\)</span>. Los números positivos <span
+class="math inline">\(\sigma_i\)</span> se llaman <em>valores
+singulares</em> de <span class="math inline">\(A\)</span>, son tantos
+como el rango de <span class="math inline">\(A\)</span>, y están
+determinados: son las raíces cuadradas de los autovalores no nulos de
+<span class="math inline">\(A^tA\)</span>.</p>
+<p><strong>Teorema de Eckart-Young.</strong> Si <span
+class="math inline">\(A=U\Sigma V\)</span> es la SVD de <span
+class="math inline">\(A\)</span> y <span class="math inline">\(k\leqq
+r\)</span>, donde <span class="math inline">\(r=\text{rg}(A)\)</span>,
+la matriz <span class="math inline">\(A_k=U\Sigma_k V\)</span> que viene
+de llenar con ceros <span class="math inline">\(\Sigma\)</span> a partir
+del valor singular <span class="math inline">\(k+1\)</span> es la matriz
+de rango <span class="math inline">\(k\)</span> que minimiza <span
+class="math inline">\(\|A-A_k\|\)</span> tanto en norma matricial <span
+class="math inline">\(\|\cdot\|_2\)</span> como en norma Frobenius. (<a
+href="https://en.wikipedia.org/wiki/Low-rank_approximation"><em>Prueba.</em></a>)</p>
+<p><strong>Componentes principales.</strong> Si <span
+class="math inline">\(X\in\R^{n\times m}\)</span> se interpreta como
+observaciones de <span class="math inline">\(m\)</span> variables
+(columnas) sobre <span class="math inline">\(n\)</span> unidades
+(filas), las variables están centradas (<span
+class="math inline">\(\sum_{i=1}^n A_{ij}=0\)</span> para <span
+class="math inline">\(j=1,\ldots,m\)</span>), su SVD es <span
+class="math inline">\(X=U\Sigma V\)</span>, <span
+class="math inline">\(k\leqq m\)</span> y <span
+class="math inline">\(V_k\in\R^{k\times m}\)</span> es <span
+class="math inline">\(V\)</span> con sólo sus primeras <span
+class="math inline">\(k\)</span> filas, <span
+class="math inline">\(Y=XV_k^t\)</span> es una representación de <span
+class="math inline">\(X\)</span> con sólo <span
+class="math inline">\(k\)</span> variables que minimiza el error de
+reconstrucción <span class="math inline">\(\|X-YV\|_F\)</span> entre
+transformaciones lineales. Además, las columnas (variables) de <span
+class="math inline">\(Y\)</span> no están correlacionadas; se denominan
+las <span class="math inline">\(k\)</span> <em>componentes
+principales</em> de <span class="math inline">\(X\)</span>. La varianza
+total de <span class="math inline">\(X\)</span> es <span
+class="math inline">\(\|X\|_F=\sum_{i=1}^r \sigma_i^2\)</span>, por lo
+que la proporción de la varianza que captura <span
+class="math inline">\(Y\)</span> es <span
+class="math inline">\(\frac{\|Y\|_F}{\|X\|_F}=\frac{\sum_{i=1}^k
+\sigma_i^2}{\sum_{i=1}^r \sigma_i^2}\)</span>.</p>
+<p><strong>Problema de Procrustes ortogonal.</strong> Si <span
+class="math inline">\(A,B\in\R^{n\times m}\)</span> buscamos <span
+class="math inline">\(R\in\R^{n\times n}\)</span> ortogonal tal que
+minimice <span class="math inline">\(\|RA-B\|_F\)</span>; la solución es
+<span class="math inline">\(R=UV\)</span>, donde <span
+class="math inline">\(BA^t=U\Sigma V\)</span> es la SVD.</p>
+<p><em><a
+href="https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem">Prueba</a>.</em>
+Primero notamos que si <span class="math inline">\(X,Y\in\R^{n\times
+m}\)</span>, podemos definir <span class="math inline">\(\langle
+X,Y\rangle = \sum_{i=1}^n \sum_{j=1}^m X_{ij}Y_{ij},\)</span> de manera
+que <span class="math inline">\(\|X\|_F^2=\langle X,X\rangle,\)</span> y
+se tiene <span class="math inline">\(\langle
+X,Y\rangle=\text{tr}(X^tY);\)</span> es bilineal, simétrico y <span
+class="math inline">\(\langle XY,Z\rangle=\langle Y,X^tZ\rangle=\langle
+X,ZY^t\rangle.\)</span> De aquí que minimizar <span
+class="math inline">\(\|RA-B\|_F^2\)</span> con <span
+class="math inline">\(R^tR=I\)</span> es maximizar <span
+class="math inline">\(\langle RA,B\rangle=\langle R,BA^t\rangle=\langle
+R,U\Sigma V\rangle=\langle U^tRV^t,\Sigma\rangle.\)</span> Si <span
+class="math inline">\(S=U^tRV^t\)</span>, <span
+class="math inline">\(S^tS=I\)</span>, luego <span
+class="math inline">\(\langle S, \Sigma\rangle\)</span> se maximiza con
+unos en la diagonal de <span class="math inline">\(S\)</span> y ceros
+afuera, lo que da <span class="math inline">\(R=UV\)</span>.∎</p>
+<p><strong>Métodos de Jacobi y Gauss-Seidel.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> escribimos <span
+class="math inline">\(A=L+D+U\)</span>, con <span
+class="math inline">\(L_{ij}=0\)</span> si <span
+class="math inline">\(i\leqq j\)</span>, <span
+class="math inline">\(D\)</span> diagonal y <span
+class="math inline">\(U_{ij}=0\)</span> si <span
+class="math inline">\(i\geqq j\)</span>. Queremos resolver <span
+class="math inline">\(Ax=b\)</span>. Métodos iterativos: dado <span
+class="math inline">\(x^0\)</span> ponemos <span
+class="math inline">\(x^{k+1}=Bx^k+c\)</span>, asumiendo <span
+class="math inline">\(x=Bx+c\)</span>. Jacobi: <span
+class="math inline">\(x^{k+1}=-D^{-1}(L+U)x^k+D^{-1}b\)</span>;
+Gauss-Seidel: <span
+class="math inline">\(x^{k+1}=-(D+L)^{-1}Ux^k+(D+L)^{-1}b\)</span>. O
+sea Jacobi es <span
+class="math inline">\(x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j\neq
+i}a_{ij}x^k_j)\)</span> y Gauss-Seidel, <span
+class="math inline">\(x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j&lt;i}a_{ij}x^{k+1}_j-\sum_{j&gt;i}a_{ij}x^k_j)\)</span>.
+El error <span class="math inline">\(e_k=x^k-x\)</span> cumple <span
+class="math inline">\(e_{k+1}=Be_k=B^ke_1\)</span>, luego el método
+converge para todo punto inicial si y sólo si <span
+class="math inline">\(B^k\to0\)</span>, es decir, sii <span
+class="math inline">\(\rho(B)&lt;1\)</span>. Si <span
+class="math inline">\(A\)</span> es <em>estrictamente diagonal
+dominante</em>, es decir, si <span
+class="math inline">\(|a_{ii}|&gt;\sum_{j\neq i}|a_{ij}|\)</span> para
+<span class="math inline">\(i=1,\ldots,n\)</span>, entonces tanto Jacobi
+como Gauss-Seidel convergen. Si <span class="math inline">\(A\)</span>
+es simétrica y definida positiva entonces Gauss-Seidel converge. Si
+<span class="math inline">\(A\)</span> es <em>tridiagonal</em> (<span
+class="math inline">\(A_{ij}=0\)</span> si <span
+class="math inline">\(|i-j|&gt;1\)</span>) entonces Jacobi converge si y
+sólo si Gauss-Seidel converge, y <span
+class="math inline">\(\rho(B_{GS})=\rho(B_J)^2\)</span>.</p>
+<p><em>Prueba.</em> Primero, que GS converge si <span
+class="math inline">\(A\)</span> cumple <span
+class="math inline">\(|a_{ii}|&gt;\sum_{j\neq i}|a_{ij}|\)</span>: <span
+class="math inline">\(B=-(D+L)^{-1}U\)</span> cumple <span
+class="math inline">\(B_{ij}=-\frac1{A_{ii}}(A_{ij}-\sum_{k=1}^{i-1}A_{ik}B_{kj})\)</span>
+si <span class="math inline">\(i&lt; j\)</span> y 0 si no; queremos ver
+que <span
+class="math inline">\(\|B\|_\infty=\max_{i}\{\sum_{j&gt;i}|B_{ij}|\}&lt;1\)</span>;
+supongamos que sabemos que <span
+class="math inline">\(\sum_{j&gt;k}|B_{kj}|&lt;1\)</span> para <span
+class="math inline">\(k&lt; i;\)</span> <span
+class="math inline">\(\sum_{j&gt;i}|B_{ki}|\leqq\frac1{|A_{ii}|}\sum_{j&gt;i}(|A_{ij}|+\sum_{k&lt;
+i}|A_{ik}||B_{kj}|)=\frac1{|A_{ii}|}(\sum_{j&gt;i}|A_{ij}|+\sum_{k&lt;i}|A_{ik}|\sum_{j&gt;i}|B_{kj}|)\leqq\)</span>
+<span
+class="math inline">\(\frac1{|A_{ii}|}(\sum_{j&gt;i}|A_{ij}|+\sum_{k&lt;i}|A_{ik}|)&lt;1\)</span>
+y vale para <span class="math inline">\(i\)</span>, luego <span
+class="math inline">\(\|B\|_\infty&lt;1\)</span>. Segundo, que GS
+converge si <span class="math inline">\(A\)</span> es simétrica y
+definida positiva: sea <span
+class="math inline">\(\lambda\in\C\)</span>, <span
+class="math inline">\(x\in\C^n\)</span>, <span
+class="math inline">\(x\neq0\)</span>, con <span
+class="math inline">\(Bx=\lambda x\)</span>; es <span
+class="math inline">\(-L^tx=\lambda(D+L)x\)</span>, <span
+class="math inline">\(Ax=(1-\lambda)(D+L)x\)</span>; tenemos <span
+class="math inline">\(\frac{1}{1-\lambda}=\frac{x^*(D+L)x}{x^*Ax}\)</span>
+y conjugando <span
+class="math inline">\(\frac{1}{1-\overline\lambda}=\frac{x^*(D+L^*)x}{x^*Ax}\)</span>;
+sumo: <span
+class="math inline">\(2\Re(\frac{1}{1-\lambda})=1+\frac{x^*Dx}{x^*Ax}&gt;1\)</span>,
+lo que da <span class="math inline">\(|\lambda|&lt;1\)</span>. Tercero,
+si <span class="math inline">\(A\)</span> es tridiagonal vale <span
+class="math inline">\(|A|=|D+\alpha^{-1}L+\alpha U|\)</span> si <span
+class="math inline">\(\alpha\neq0\)</span>: <span
+class="math inline">\(A+\alpha^{-1} L+\alpha U\)</span> es <span
+class="math inline">\(A\)</span> en la base <span
+class="math inline">\(v_1,\alpha v_2,\ldots,\alpha^{n-1}v_n\)</span>;
+con eso se ve que si <span class="math inline">\(\lambda\neq0\)</span>,
+<span class="math inline">\(\lambda^2\)</span> es autovalor de <span
+class="math inline">\(B_{GS}\)</span> sii <span
+class="math inline">\(\lambda\)</span> es autovalor de <span
+class="math inline">\(B_J\)</span>.∎</p>
+<h2 id="raíces">Raíces</h2>
+<p><strong>Punto fijo.</strong> Dada <span class="math inline">\(f:I\to
+I\)</span>, con <span class="math inline">\(I=[a,b]\)</span> intervalo,
+se busca <span class="math inline">\(r\)</span> con <span
+class="math inline">\(f(r)=r\)</span>. El algoritmo: tomar <span
+class="math inline">\(x_0\)</span> y luego <span
+class="math inline">\(x_n=f(x_{n-1})\)</span>. Si <span
+class="math inline">\(|f&#39;|\leqq\lambda&lt;1\)</span> converge y se
+tiene <span class="math inline">\(|x_n-r|\leqq
+\frac{\lambda^n}{1-\lambda}|x_1-x_0|\)</span>.</p>
+<p><em>Prueba.</em> <span
+class="math inline">\(|x_n-r|=|f(x_{n-1})-f(r)|\leqq
+\lambda|x_{n-1}-r|\leqq \cdots\leqq \lambda^n|x_0-r|\)</span>. Por otro
+lado <span class="math inline">\(|x_1-x_0|=|f(x_0)-x_0|\geqq
+|x_0-f(r)|-|f(r)-f(x_0)|\geqq
+|x_0-r|-\lambda|x_0-r|=(1-\lambda)|x_0-r|\)</span>.∎</p>
+<p><strong>Newton-Raphson.</strong> Dada <span
+class="math inline">\(f:I\to\R\)</span> consiste en buscar una raíz
+<span class="math inline">\(r\)</span> como punto fijo de <span
+class="math inline">\(g(x)=x-\frac{f(x)}{f&#39;(x)}\)</span>. Si <span
+class="math inline">\(f&#39;&#39;\)</span> está acotada y <span
+class="math inline">\(f&#39;(r)\neq0\)</span>, hay un entorno de <span
+class="math inline">\(r\)</span> en el que el algoritmo converge con
+orden 2, es decir <span
+class="math inline">\(\frac{|e_{n+1}|}{|e_n|^2}\)</span> está acotado,
+con <span class="math inline">\(e_n=x_n-r\)</span>. Si <span
+class="math inline">\(f&#39;&#39;&gt;0\)</span> converge partiendo de
+cualquier punto.</p>
+<p><em>Prueba.</em> Por Taylor <span
+class="math inline">\(\left|\frac{e_{n+1}}{e_n^2}\right|=\frac12\frac{|f&#39;&#39;(\xi)|}{|f&#39;(x_n)|}\)</span>,
+que está acotado, lo que prueba lo primero. La convexidad <span
+class="math inline">\(f&#39;&#39;&gt;0\)</span> da por Taylor que si
+<span class="math inline">\(f\)</span> decrece en <span
+class="math inline">\(I_1=(-\infty,v)\)</span> y crece en <span
+class="math inline">\(I_2=(v,\infty)\)</span>, si <span
+class="math inline">\(x_0\in I_i\)</span>, <span
+class="math inline">\(x_n\in I_i\)</span> para todo <span
+class="math inline">\(n\)</span>, y <span
+class="math inline">\(x_n\)</span> es creciente en <span
+class="math inline">\(I_1\)</span> y decreciente en <span
+class="math inline">\(I_2\)</span>, por lo que converge en ambos
+casos.∎</p>
+<p><strong>Secante.</strong> Algoritmo: <span
+class="math inline">\(x_{n+1}=x_n-f(x_n)\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}\)</span>.
+Si <span class="math inline">\(r\)</span> es raíz, <span
+class="math inline">\(f&#39;&#39;\)</span> acotado y <span
+class="math inline">\(f&#39;(r)\neq0\)</span>, hay un entorno de <span
+class="math inline">\(r\)</span> en el que converge con orden <span
+class="math inline">\(p&gt;0\)</span>, <span
+class="math inline">\(p^2=p+1\)</span>, es decir, <span
+class="math inline">\(\frac{|e_{n+1}|}{|e_n|^p}\)</span> está
+acotado.</p>
+<p><em>Prueba.</em> Se ve que <span
+class="math inline">\(e_{n+1}=e_ne_{n-1}\frac{f[x_n,r,x_{n-1}]}{f[x_n,x_{n-1}]}=\frac12\frac{f&#39;&#39;(\eta_n)}{f&#39;(\xi_n)}e_ne_{n-1}\)</span>.
+Sea <span class="math inline">\(y_n=\frac{|e_{n+1}|}{|e_n|^p}\)</span>,
+<span
+class="math inline">\(c_n=\frac12\frac{f&#39;&#39;(\eta_n)}{f&#39;(\xi_n)}\)</span>
+y <span
+class="math inline">\(c=\frac12\frac{f&#39;&#39;(r)}{f&#39;(r)}\)</span>.
+Tenemos <span class="math inline">\(y_n=|c_n|y_{n-1}^{1-p}\)</span>; si
+<span class="math inline">\(c_n\to c\neq0\)</span> se ve que <span
+class="math inline">\(|y_n|\to |c|^{1/p}\)</span>.∎</p>
+<h2 id="interpolación-polinómica">Interpolación polinómica</h2>
+<p><strong>Forma de Newton.</strong> Defino <span
+class="math inline">\(f[x_0]=f(x_0)\)</span> y <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f[x_0,\ldots,x_{n-1}]-f[x_1,\ldots,x_n]}{x_0-x_n}\)</span>.
+Defino <span class="math inline">\(\PP_n\)</span> como el conjunto de
+polinomios de grado a lo sumo <span class="math inline">\(n\)</span>. El
+<span class="math inline">\(p_n\in\PP_n\)</span> que interpola a <span
+class="math inline">\(f\)</span> en <span
+class="math inline">\(x_0,\ldots,x_n\)</span> es <span
+class="math display">\[p_n(x)=f(x_0)+f[x_0,x_1](x-x_0)+\cdots+f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})\]</span></p>
+<p>y vale <span
+class="math inline">\(f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+para todo <span class="math inline">\(x\)</span>. Si <span
+class="math inline">\(f\in C^n[a,b]\)</span> hay <span
+class="math inline">\(\xi\)</span> con <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}\)</span>.</p>
+<p><em>Prueba.</em> Lo primero es obvio por inducción, probando además
+que <span class="math inline">\(f[x_0,\ldots,x_n]\)</span> es simétrica.
+Para lo segundo <span
+class="math inline">\(F(x)=f(x)-p_{n-1}(x)-f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})\)</span>
+tiene <span class="math inline">\(n+1\)</span> raíces <span
+class="math inline">\(x_0,\ldots,x_n\)</span>, luego hay <span
+class="math inline">\(\xi\)</span> con <span
+class="math inline">\(F^{(n)}(\xi)=0\)</span>, es decir, <span
+class="math inline">\(f^{(n)}(\xi)-f[x_0,\ldots,x_n]n!=0\)</span>.∎</p>
+<p><strong>Interpolación de Hermite.</strong> Sea <span
+class="math inline">\(f\in C^n(I)\)</span>. La función <span
+class="math inline">\(f[x_0,\ldots,x_n]:I^n\menos\bigcup_{i\neq
+j}\{x_i=x_j\}\to\R\)</span> se puede extender a una función continua
+sobre <span class="math inline">\(I^n\)</span> calculada ordenando <span
+class="math inline">\((x_0,\ldots,x_n)\)</span> y usando la fórmula
+recursiva con base <span
+class="math inline">\(f[\underbrace{x,\ldots,x}_{\text{$k+1$
+veces}}]=\frac{f^{(k)}(x)}{k!}\)</span>. Con eso dados puntos <span
+class="math inline">\(x_0,\ldots,x_n\)</span> obtenemos <span
+class="math inline">\(p_n\in\PP_n\)</span> por la fórmula de Newton y es
+el único que satisface <span
+class="math inline">\(p_n^{(j)}(x)=f^{(j)}(x)\)</span> si <span
+class="math inline">\(x\)</span> aparece <span
+class="math inline">\(j+1\)</span> veces. Sigue valiendo <span
+class="math inline">\(f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+y <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}\)</span>.</p>
+<p><em>Prueba.</em> Que <span class="math inline">\(p_n\)</span> cumple
+la condición se ve reordenando <span
+class="math inline">\((x_i)\)</span> para que los <span
+class="math inline">\(x\)</span> estén al principio (se ve que el <span
+class="math inline">\(p_n\)</span> obtenido es el mismo perturbando los
+<span class="math inline">\((x_i)\)</span> para que sean distintos). Que
+es único: si <span class="math inline">\(q_n\)</span> cumple <span
+class="math inline">\(q_n(x)-p_n(x)=q_n[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+pero <span
+class="math inline">\(q_n[x_0,\ldots,x_n,x]=\frac{q_n^{(n+1)}(\xi)}{(n+1)!}=0\)</span>
+(porque <span class="math inline">\(q_n\in\PP_n\)</span>), entonces
+<span class="math inline">\(q_n=p_n\)</span>.∎</p>
+<p><strong>Polinomios de Chebyshev.</strong> Sea <span
+class="math inline">\(T_n(x)=\cos(n\cos^{-1}(x))\)</span>, donde <span
+class="math inline">\(\cos^{-1}:[-1,1]\to[0,\pi]\)</span>. Restringido a
+<span class="math inline">\([-1,1]\)</span> está en <span
+class="math inline">\(\PP_n\)</span>, sigue la recursión <span
+class="math inline">\(T_{n+1}=2xT_n-T_{n-1}\)</span>, <span
+class="math inline">\(T_1=x\)</span>, <span
+class="math inline">\(T_0=1\)</span>, tiene coeficiente principal <span
+class="math inline">\(2^{n-1}\)</span>, tiene <span
+class="math inline">\(n\)</span> raíces distintas en <span
+class="math inline">\([-1,1]\)</span>, <span
+class="math inline">\(|T_n|\leqq1\)</span> en <span
+class="math inline">\([-1,1]\)</span> y lo alcanza en <span
+class="math inline">\(n+1\)</span> puntos. Si <span
+class="math inline">\(P\)</span> es un polinomio mónico de grado <span
+class="math inline">\(n\)</span> entonces <span
+class="math inline">\(\|P\|_{L^\infty[-1,1]}\geqq
+\frac1{2^{n-1}}\)</span>. Por lo tanto la mejor interpolación sobre
+<span class="math inline">\(n\)</span> puntos en <span
+class="math inline">\([-1,1]\)</span> es sobre las raíces de <span
+class="math inline">\(T_{n+1}\)</span>. Esto se lleva a <span
+class="math inline">\([a,b]\)</span> tomando <span
+class="math inline">\(\tilde T_n(x)=T_n(\frac{2x-a-b}{b-a})\)</span>. Se
+obtiene <span class="math inline">\(\|f-p_n\|_{L^\infty[a,b]}\leqq
+\frac{\|f^{(n+1)}\|_{L^\infty[a,b]}}{2^{2n+1}(n+1)!}(b-a)^{n+1}\)</span>.</p>
+<p><em>Prueba.</em> Lo primero es claro. Supongamos que hay <span
+class="math inline">\(P\)</span> mónico de grado <span
+class="math inline">\(n\)</span> con <span
+class="math inline">\(|P(x)|&lt;\frac1{2^{n-1}}\)</span> para todo <span
+class="math inline">\(x\in[-1,1]\)</span>. Sea <span
+class="math inline">\(W_n=\frac1{2^{n-1}}T_n\)</span> y <span
+class="math inline">\(-1=y_0&lt;y_1&lt;\cdots&lt;y_n=1\)</span> con
+<span class="math inline">\(|W_n(y_i)|=\frac1{2^{n-1}}\)</span>,
+alternando de signo. Entonces <span
+class="math inline">\((P(y_i)-W_n(y_i))(P(y_{i+1})-W_n(y_{i+1}))&lt;0\)</span>,
+luego <span class="math inline">\(P-W_n\)</span> tiene <span
+class="math inline">\(n\)</span> raíces, pero grado a lo sumo <span
+class="math inline">\(n-1\)</span>; luego es nulo y <span
+class="math inline">\(P=W_n\)</span>, absurdo.∎</p>
+<p><strong>Splines cúbicos.</strong> Dada <span
+class="math inline">\(f\in C[a,b]\)</span> y <span
+class="math inline">\(a=x_0&lt;x_1&lt;\cdots&lt;x_n=b\)</span> hay una
+única <span class="math inline">\(S\in C^2[a,b]\)</span> tal que <span
+class="math inline">\(S|_{[x_i,x_{i+1}]}\)</span> es cúbica, <span
+class="math inline">\(S(x_i)=f(x_i)\)</span> y <span
+class="math inline">\(S&#39;&#39;(x_0)=S&#39;&#39;(x_n)=0\)</span>.</p>
+<h2 id="cuadrados-mínimos">Cuadrados mínimos</h2>
+<p><strong>Productos internos.</strong> Sea <span
+class="math inline">\(V\)</span> un <span
+class="math inline">\(\R\)</span>-espacio vectorial; un <em>producto
+interno</em> es una función bilineal <span
+class="math inline">\(\langle{\cdot},{\cdot}\rangle:V^2\to\R\)</span>
+simétrica tal que <span class="math inline">\(\langle
+x,x\rangle\geqq0\)</span>, con igualdad sii <span
+class="math inline">\(x=0\)</span>. Define una norma <span
+class="math inline">\(\|x\|=\sqrt{\langle x,x\rangle}\)</span>. Vale
+Cauchy-Schwarz: <span class="math inline">\(\langle
+x,y\rangle\leqq\|x\|\|y\|\)</span>, desigualdad triangular <span
+class="math inline">\(\|x+y\|\leqq\|x\|+\|y\|\)</span> y Pitágoras:
+<span class="math inline">\(\|x+y\|^2=\|x\|^2+\|y\|^2\)</span> si <span
+class="math inline">\(\la x,y\ra=0\)</span>. Sea <span
+class="math inline">\(S\subset V\)</span> un subespacio, y <span
+class="math inline">\(x\in V\)</span>; <span class="math inline">\(y\in
+S\)</span> minimiza <span class="math inline">\(\|x-y\|\)</span> sii
+para todo <span class="math inline">\(s\in S\)</span> vale <span
+class="math inline">\(\langle x-y,s\rangle\)</span>; en ese caso <span
+class="math inline">\(y\)</span> es único. Si <span
+class="math inline">\(S\)</span> es finitamente generado se puede tomar
+una base ortonormal <span class="math inline">\(v_1,\ldots,v_n\)</span>,
+con <span class="math inline">\(\|v_i\|=1\)</span> y <span
+class="math inline">\(\la v_i,v_j\ra=0\)</span> si <span
+class="math inline">\(i\neq j\)</span>. En ese caso <span
+class="math inline">\(y=\sum_{i=1}^n \la x,v_i\ra v_i\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(y\in S\)</span> hace
+a <span class="math inline">\(\|x-y\|\)</span> mínimo, <span
+class="math inline">\(\|x-y+ts\|\geqq \|x-y\|\)</span> para <span
+class="math inline">\(s\in S\)</span>, <span
+class="math inline">\(t\in\R\)</span>, luego <span
+class="math inline">\(t^2\langle s,s\rangle+2t\langle
+x-y,s\rangle\geqq0\)</span>, imposible si <span
+class="math inline">\(\langle x-y,s\rangle\neq0\)</span>; además hay
+igualdad sii <span class="math inline">\(s=0\)</span>, lo que dice que
+<span class="math inline">\(y\)</span> es único. Si <span
+class="math inline">\(\langle x-y,s\rangle=0\)</span> para todo <span
+class="math inline">\(s\in S\)</span>, <span
+class="math inline">\(\|x-y+s\|^2=\|x-y\|^2+\|s\|^2\geqq\|x-y\|^2\)</span>
+y <span class="math inline">\(\|x-y\|\)</span> es mínimo. Dado <span
+class="math inline">\(S\)</span> con base <span
+class="math inline">\(\{u_1,\ldots,u_n\}\)</span> hacemos Gram-Schmidt:
+ponemos <span class="math inline">\(v_k=u_k-\sum_{i=1}^{k-1}\frac{\la
+u_k,v_i\ra}{\la v_i,v_i\ra}v_i\)</span> y queda una base ortonormal
+<span class="math inline">\(e_n=\frac1{\|v_n\|}v_n\)</span>.∎</p>
+<p><strong>Regresión lineal.</strong> Dado <span
+class="math inline">\(y\in\R^n\)</span> y <span
+class="math inline">\(x\in\R^{n\times k}\)</span> queremos <span
+class="math inline">\(\beta\in\R^k\)</span> tal que <span
+class="math inline">\(\sum_{i=1}^n
+\left(y_i-\sum_{j=1}^k\beta_jx_{ij}\right)^2\)</span> sea mínimo. Se da
+sii <span class="math inline">\(x^tx\beta=x^ty\)</span>. Si las columnas
+de <span class="math inline">\(x\)</span> son independientes la solución
+es única: <span
+class="math inline">\(\beta=(x^tx)^{-1}x^ty\)</span>.</p>
+<p><em>Lema.</em> Si <span class="math inline">\(A\in\R^{n\times k},
+x\in\R^k, y\in\R^n\)</span> entonces <span class="math inline">\(\la
+Ax,y\ra=\la x,A^ty\ra\)</span>.</p>
+<p><em>Prueba.</em> <span class="math inline">\(S=\{x\beta\mid
+\beta\in\R^k\}\)</span> es un subespacio; queremos <span
+class="math inline">\(\beta\)</span> con <span
+class="math inline">\(\|y-x\beta\|\)</span> mínimo; luego <span
+class="math inline">\(\la y-x\beta,xs\ra=0\)</span> para todo <span
+class="math inline">\(s\in\R^k\)</span>, pero por el lema es <span
+class="math inline">\(\la x^t(y-x\beta),s\ra=0\)</span>, o sea <span
+class="math inline">\(x^tx\beta=x^ty\)</span>. Si las columnas de <span
+class="math inline">\(x\)</span> son independientes, <span
+class="math inline">\(\beta\mapsto x\beta\)</span> es inyectiva, luego
+<span class="math inline">\(\beta\)</span> es única; además <span
+class="math inline">\(\la x^tx\beta,\beta\ra=\la
+x\beta,x\beta\ra\)</span>, luego <span
+class="math inline">\(x^tx\beta=0\then \beta=0\)</span> y <span
+class="math inline">\(x^tx\)</span> es inversible.∎</p>
+<p><strong>Descomposición QR.</strong> Si <span
+class="math inline">\(A\in\R^{n\times k}\)</span>, sean <span
+class="math inline">\(a_1,\ldots,a_k\)</span> sus columnas; tomo <span
+class="math inline">\(u_i=a_i-\sum_{j=1}^{i-1}\frac{\la a_i,u_j\ra}{\la
+u_j,u_j\ra}u_j\)</span> y <span
+class="math inline">\(e_i=\frac1{\|u_i\|}u_i\)</span>; se ve <span
+class="math inline">\(a_i=\sum_{j=1}^i \la a_i,e_j\ra e_j\)</span>;
+luego <span class="math inline">\(A=QR\)</span> con <span
+class="math inline">\(Q_{ij}=e_{ji}\)</span> y <span
+class="math inline">\(R=\la a_i,e_j\ra\)</span>, <span
+class="math inline">\(Q\)</span> ortogonal (o sea <span
+class="math inline">\(Q^tQ=1\)</span>) y <span
+class="math inline">\(R\)</span> triangular superior.</p>
+<p><strong>Aproximación por polinomios.</strong> Wierstrass: si <span
+class="math inline">\(f\in C[0,1]\)</span> hay una sucesión <span
+class="math inline">\(p_n\in\PP_n\)</span> que converge uniformemente:
+<span class="math inline">\(p_n=\sum_{k=0}^n f\left(\frac
+kn\right)\comb{n}{k}x^k(1-x)^k\)</span>. Si <span
+class="math inline">\(w\in C[0,1]\)</span> es positiva, <span
+class="math inline">\(C[0,1]\)</span> tiene un producto interno <span
+class="math inline">\(\la f,g\ra=\int_0^1 wfg\)</span> y si <span
+class="math inline">\(p_n^*\)</span> es la proyección de <span
+class="math inline">\(f\)</span> en <span
+class="math inline">\(\PP_n\)</span> tenemos <span
+class="math inline">\(\|f-p_n^*\|\to0\)</span>, y por lo tanto
+(Parseval) <span class="math inline">\(\|f\|^2=\sum_{n=0}^\infty \la f,
+e_n\ra^2\)</span> si <span class="math inline">\(\{e_n\}\)</span> es la
+base ortonormal de polinomios.</p>
+<p><em>Prueba.</em> Sea <span class="math inline">\(f\in
+C[0,1]\)</span>. Sea <span class="math inline">\(x\in[0,1]\)</span>;
+dado <span class="math inline">\(n\)</span> sean <span
+class="math inline">\(X_n\)</span> variables aleatorias iid con <span
+class="math inline">\(P(X_n=1)=x\)</span>, <span
+class="math inline">\(P(X_n=0)=1-x\)</span>, y sea <span
+class="math inline">\(X=\frac1n\sum_{i=1}^nX_i\)</span>. Vale <span
+class="math inline">\(\E(X)=x\)</span>, <span
+class="math inline">\(\Var(X)=\frac1nx(1-x)\leqq \frac1{4n}\)</span>,
+<span class="math inline">\(P(X=\frac kn)=\comb{n}{k}x^k(1-x)^k\)</span>
+para <span class="math inline">\(k=0,\ldots,n\)</span>. Dado <span
+class="math inline">\(\delta&gt;0\)</span> tenemos <span
+class="math inline">\(P(|X-x|\geqq\delta)\leqq\frac{\Var(X)}{\delta^2}\leqq
+\frac1{4n\delta^2}\)</span> por <a
+href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality">Chebyshev</a>.
+Dado <span class="math inline">\(\epsilon&gt;0\)</span> hay <span
+class="math inline">\(\delta&gt;0\)</span> con <span
+class="math inline">\(|x-y|&lt;\delta\then|f(x)-f(y)|&lt;\epsilon\)</span>
+si <span class="math inline">\(x,y\in[0,1]\)</span>, luego <span
+class="math inline">\(\E(|f(X)-f(x)|)=\)</span><span
+class="math inline">\(\E_{|X-x|&lt;\delta}(|f(X)-f(x)|)+\E_{|X-x|\geqq\delta}(|f(X)-f(x)|)\leqq\epsilon+\frac{2\|f\|_\infty}{4n\delta^2}\)</span>.
+Luego <span class="math inline">\(|\E(f(X))-\E(f(x))|\leqq
+\E(|f(X)-f(x)|)\to0\)</span> uniformemente cuando <span
+class="math inline">\(n\to\infty\)</span>; ahora <span
+class="math inline">\(\E(f(X))=\sum_{k=0}^n f\left(\frac
+kn\right)\comb{n}{k}x^k(1-x)^k\)</span>, luego <span
+class="math inline">\(\|p_n-f\|_\infty\to0\)</span>, y probamos
+Wierstrass. Ahora dada <span class="math inline">\(w\)</span>, <span
+class="math inline">\(\la f,g\ra=\int_0^1 wfg\)</span>, <span
+class="math inline">\(f\)</span> y <span
+class="math inline">\(p_n^*\)</span> tenemos <span
+class="math inline">\(\|f-p_n^*\|\leqq\|f-p_n\|=\sqrt{\int_0^1w(f-p_n)^2}\leqq\)</span><span
+class="math inline">\(\sqrt{\int_0^1w\epsilon^2}=\epsilon\|1\|\to0\)</span>
+si <span class="math inline">\(n\to\infty\)</span>.∎</p>
+<h2 id="integración-numérica">Integración numérica</h2>
+<p>Dado <span class="math inline">\([a,b]\)</span> se buscan puntos
+<span class="math inline">\(x_0,\ldots,x_n\)</span> y pesos <span
+class="math inline">\(A_0,\ldots,A_n\)</span> para aproximar <span
+class="math inline">\(I(f)=\int_a^bfw\)</span>, con <span
+class="math inline">\(w&gt;0\)</span>, por <span
+class="math inline">\(Q(f)=\sum_{i=0}^n A_if(x_i)\)</span>. El <em>grado
+de exactitud</em> es el máximo <span class="math inline">\(k\)</span>
+tal que <span class="math inline">\(I(p)=Q(p)\)</span> para todo <span
+class="math inline">\(p\in\PP_k\)</span>; por linealidad basta testear
+<span class="math inline">\(x^k\)</span>. Si hay <span
+class="math inline">\(M\)</span> con <span
+class="math inline">\(|Q(f)|\leqq M(b-a)\|f\|_\infty\)</span> entonces
+si <span class="math inline">\(f\in C^{k+1}[a,b]\)</span> se tiene <span
+class="math inline">\(|R(f)|=|I(f)-Q(f)|\leqq
+\frac{(1+M)(b-a)^{k+2}}{(k+1)!}\|f^{(k+1)}\|_{\infty}\)</span>. Si
+partimos <span class="math inline">\([a,b]\)</span> en <span
+class="math inline">\(a=x_0&lt;\cdots&lt;x_n=b\)</span> y tenemos <span
+class="math inline">\(|Q_i(f|_{[x_{i-1},x_i]})|\leqq
+M(x_i-x_{i-1})\|f\|_\infty\)</span>, las combinamos en <span
+class="math inline">\(Q=\sum_{i=1}^nQ_i\)</span> y tenemos <span
+class="math inline">\(|R(f)|\leqq
+\frac{(1+M)(b-a)\max\{x_i-x_{i-1}\}^{k+1}}{(k+1)!}\|f^{(k+1)}\|_{\infty}\)</span>.</p>
+<p><strong>Newton-Côtes.</strong> Dados los <span
+class="math inline">\(x_i\)</span> tomamos el polinomio interpolador
+<span class="math inline">\(p(x)=\sum_{i=0}^nf(x_i)\prod_{j\neq
+i}\frac{x-x_j}{x_i-x_j}\)</span> y se obtiene <span
+class="math inline">\(A_i=\int_a^b\prod_{j\neq
+i}\frac{x-x_j}{x_i-x_j}w(x)dx\)</span>. Llevar la regla de <span
+class="math inline">\([-1,1]\)</span> a <span
+class="math inline">\([a,b]\)</span> da <span
+class="math inline">\(Q(f)=\frac{b-a}2\sum_{i=0}^nA_if\left(\frac{b-a}2x_i+\frac{a+b}2\right)\)</span>.</p>
+<p><strong>Trapecios.</strong> Es Newton-Côtes con <span
+class="math inline">\(w=1\)</span> y dos puntos: <span
+class="math inline">\(\{-1,1\}\)</span>, es decir, <span
+class="math inline">\(I(f)=f(-1)+f(1)\)</span>. (También está la versión
+abierta <span class="math inline">\(\{-\frac12,\frac12\}\)</span>.)
+Error: si <span class="math inline">\(f\in C^2[a,b]\)</span>, <span
+class="math inline">\(R(f)=-\frac{(b-a)^3}{12}f&#39;&#39;(\eta)\)</span>,
+con <span class="math inline">\(\eta\in(a,b)\)</span>. Si partimos <span
+class="math inline">\([a,b]\)</span> en <span
+class="math inline">\([x_i,x_i+h]\)</span> con <span
+class="math inline">\(h=\frac{b-a}n\)</span> y <span
+class="math inline">\(x_i=a+hi\)</span> resulta <span
+class="math inline">\(Q(f)=\left(\frac{f(a)}2+\sum_{i=1}^{n-1}f(x_i)+\frac{f(b)}2\right)h\)</span>
+y <span
+class="math inline">\(R(f)=-\frac{h^2}{12}(b-a)f&#39;&#39;(\xi)\)</span>.</p>
+<p><em>Prueba.</em> <span
+class="math inline">\(R(f)=\int_a^b(f-p)=\int_a^bf[a,b,x](x-a)(x-b)\,dx=\frac12f&#39;&#39;(\eta)\int_a^b(x-a)(x-b)\,dx=\)</span><span
+class="math inline">\(-\frac{(b-a)^3}{12}f&#39;&#39;(\eta)\)</span>
+(usamos valor medio integral).∎</p>
+<p><strong>Simpson.</strong> Es Newton-Côtes con <span
+class="math inline">\(w=1\)</span> y tres puntos: <span
+class="math inline">\(\{-1,0,1\}\)</span>, es decir, <span
+class="math inline">\(I(f)=\frac{f(-1)+4f(0)+f(1)}3\)</span>. (También
+está la versión abierta <span
+class="math inline">\(\{-\frac12,0,\frac12\}\)</span> que da <span
+class="math inline">\(\frac{4f(-\frac12)-2f(0)+4f(\frac12)}{3}\)</span>.)
+Error: si <span class="math inline">\(f\in C^4[a,b]\)</span>, <span
+class="math inline">\(R(f)=-\frac1{90}\left(\frac{b-a}2\right)^5f^{(4)}(\eta)\)</span>,
+con <span class="math inline">\(\eta\in(a,b)\)</span>. Si partimos <span
+class="math inline">\([a,b]\)</span> en <span
+class="math inline">\([x_i,x_i+2h]\)</span> con <span
+class="math inline">\(h=\frac{b-a}{2n}\)</span> y <span
+class="math inline">\(x_i=a+2hi\)</span> resulta <span
+class="math inline">\(Q(f)=\left(f(a)+2\sum_{i=1}^{n-1}f(x_i)+4\sum_{i=0}^{n-1}f(x_i+h)+f(b)\right)\frac{h}{3}\)</span>
+y <span
+class="math inline">\(R(f)=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\)</span>.</p>
+<p><em>Prueba.</em> La idea es ver el problema en <span
+class="math inline">\([-h,h]\)</span> y poner <span
+class="math inline">\(e(t)=\int_{-t}^t
+f-t\left(\frac{f(-t)+4f(0)+f(t)}{3}\right)\)</span>, calcular <span
+class="math inline">\(e&#39;&#39;&#39;(t)=\frac{f&#39;&#39;&#39;(-t)-f&#39;&#39;&#39;(t)}3t=-\frac23t^2f^{(4)}(\xi)\)</span>,
+luego obtener <span class="math inline">\(e&#39;&#39;\)</span>, <span
+class="math inline">\(e&#39;\)</span> y <span
+class="math inline">\(e\)</span> integrando y usando valor medio
+integral, lo que da <span
+class="math inline">\(e(h)=-\frac{h^5}{90}f^{(4)}(\eta)\)</span>.∎</p>
+<p><strong>Cuadratura gaussiana.</strong> Sea <span
+class="math inline">\(\la f, g\ra=\int_a^b fgw\)</span>; sean <span
+class="math inline">\(p_n\)</span> los polinomios ortonormales; <span
+class="math inline">\(p_n\)</span> tiene <span
+class="math inline">\(n\)</span> raíces distintas <span
+class="math inline">\(x_1,\ldots,x_n\)</span> en <span
+class="math inline">\((a,b)\)</span>. Newton-Côtes sobre <span
+class="math inline">\(x_i\)</span> da la <em>cuadratura gaussiana</em>
+<span class="math inline">\(Q(f)=\sum_{i=1}^n A_if(x_i)\)</span>; <span
+class="math inline">\(Q\)</span> tiene grado de exactitud <span
+class="math inline">\(2n-1\)</span>; el grado de exactitud es máximo
+para <span class="math inline">\(n\)</span> puntos y los <span
+class="math inline">\(x_i\)</span> son los únicos que lo alcazan; además
+<span class="math inline">\(A_i&gt;0\)</span>. Error: si <span
+class="math inline">\(f\in C^{2n}[a,b]\)</span>, <span
+class="math inline">\(R(f)=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b
+q_n^2w\)</span>, donde <span
+class="math inline">\(q_n=\prod_{i=1}^n(x-x_i)\)</span>.</p>
+<p><em>Prueba.</em> Primero, vemos que <span
+class="math inline">\(p_n\)</span> tiene raíz en <span
+class="math inline">\((a,b)\)</span> (viendo <span
+class="math inline">\(\la p_n,1\ra=0\)</span>); luego que no tiene
+raíces distintas (si no <span
+class="math inline">\(p_n=(x-x_0)^2q\)</span> y vemos <span
+class="math inline">\(\la p_n,q\ra=0\)</span>); luego que tiene <span
+class="math inline">\(n\)</span> raíces (si no <span
+class="math inline">\(p_n=qr\)</span> con <span
+class="math inline">\(\deg r&gt;0\)</span> sin raíces y vemos <span
+class="math inline">\(\la p_n,q\ra=0\)</span>). Segundo, <span
+class="math inline">\(Q\)</span> tiene grado de exactitud <span
+class="math inline">\(2n-1\)</span>: si <span
+class="math inline">\(f\in\PP_{2n-1}\)</span>, <span
+class="math inline">\(f=p_nq+r\)</span> con <span
+class="math inline">\(q,r\in\PP_{n-1}\)</span>, luego <span
+class="math inline">\(r\)</span> es el interpolador de <span
+class="math inline">\(f\)</span> en los <span
+class="math inline">\(x_i\)</span>, luego <span
+class="math inline">\(R(f)=\int_a^b(f-r)w=\la p_n,q\ra=0\)</span>; si
+<span class="math inline">\(f=\prod_{i=1}^n(x-x_i)^2\)</span>, <span
+class="math inline">\(r=0\)</span> y <span
+class="math inline">\(R(f)&gt;0\)</span>. Tercero, si <span
+class="math inline">\(x_0&#39;,\ldots,x_n&#39;\)</span> son otros puntos
+y <span class="math inline">\(R(f)=0\)</span> para todo <span
+class="math inline">\(f\in\PP_{2n-1}\)</span>, si <span
+class="math inline">\(p=\prod_{i=1}^n(x-x_i&#39;)\)</span> y <span
+class="math inline">\(q\in\PP_{n-1}\)</span> tengo <span
+class="math inline">\(0=R(pq)=\la p,q\ra\)</span>, luego <span
+class="math inline">\(p\)</span> es ortogonal a <span
+class="math inline">\(\PP_{n-1}\)</span> y tiene que ser <span
+class="math inline">\(\lambda p_n\)</span>. Cuarto, si <span
+class="math inline">\(f_i=\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}\)</span>,
+<span class="math inline">\(0&lt;\int_a^b f^2w=\sum_{i=1}^n
+A_if(x_i)^2=A_i\)</span>. Quinto, sea <span class="math inline">\(f\in
+C^{2n}[a,b]\)</span> y <span
+class="math inline">\(p\in\PP_{2n-1}\)</span> con <span
+class="math inline">\(p(x_i)=f(x_i)\)</span> y <span
+class="math inline">\(p&#39;(x_i)=f&#39;(x_i)\)</span>; tengo <span
+class="math inline">\(R(f)=R(f-p+p)=R(f-p)=\int_a^b(f-p)w=\int_a^b\frac{f^{(2n)}(\eta)}{(2n)!}q_n^2w=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b
+q_n^2w\)</span>.∎</p>
+<p><strong>Fórmula de Rodrígues.</strong> Los polinomios ortogonales
+para <span class="math inline">\(\la f, g\ra=\int_a^b fg\)</span> se
+llaman <em>polinomios de Legendre</em> <span
+class="math inline">\(\ell_n\)</span>. Rodrígues: <span
+class="math inline">\(\ell_n=\frac{n!}{(2n)!}\frac{d^n}{dx^n}(x^2-1)^n\)</span>
+y <span
+class="math inline">\(\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}\)</span>.
+Error de la cuadratura gausiana en <span
+class="math inline">\([a,b]\)</span>: <span
+class="math inline">\(R(f)=\frac{(n!)^4(b-a)^{2n+1}}{(2n+1)(2n)!^3}f^{(2n)}(\xi)\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(p\in
+\PP_{n-1}\)</span> se ve que <span class="math inline">\(\int_{-1}^1
+\ell_np=(-1)^n\int_{-1}^1 \frac{n!}{(2n)!}(x^2-1)^np^{(n)}=0\)</span>
+por integración por partes. Si <span
+class="math inline">\(q=(x^2-1)^n\)</span>, <span
+class="math inline">\(\int_{-1}^1 (\partial^n q)^2=(-1)^n\int_{-1}^1
+q\partial^{2n}q=(2n)!\int_{-1}^1(1-x^2)^n\)</span>, que es, con <span
+class="math inline">\(x=\sin y\)</span>, <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n}\sin&#39;=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}\sin^2=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}(1-\cos^2)\)</span>.
+Entonces <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{2n}{2n+1}\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n-1}\)</span>
+y <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{(2^nn!)^2}{(2n+1)!}\int_{-1\frac\pi2}^{\frac\pi2}\cos=\frac{2^{2n+1}(n!)^2}{(2n+1)!}\)</span>
+y se obtiene <span
+class="math inline">\(\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}\)</span>.∎</p>
+<h2 id="ecuaciones-diferenciales-ordinarias">Ecuaciones diferenciales
+ordinarias</h2>
+<p><strong>Método de Taylor.</strong> Dada la ecuación <span
+class="math inline">\(x&#39;(t)=f(t,x(t))\)</span>, <span
+class="math inline">\(x(t_0)=x_0\)</span> queremos encontrar <span
+class="math inline">\(x(T).\)</span> Tomamos <span
+class="math inline">\(n\)</span>, <span
+class="math inline">\(h=\frac{T-t_0}n\)</span>, <span
+class="math inline">\(t_i=t_0+hi\)</span>. Tenemos <span
+class="math inline">\(x(t_{i+1})=x(t_i+h)=\sum_{k=0}^p
+\frac{h^k}{k!}x^{(k)}(t_i)+\)</span> <span
+class="math inline">\(\frac{h^{p+1}}{(p+1)!}x^{(p+1)}(\xi)\)</span>.
+Dada una aproximación <span class="math inline">\(x_i\approx
+x(t_i)\)</span> podemos aproximar <span
+class="math inline">\(x&#39;(t_i)=f(t_i,x(t_i))\approx
+f(t_i,x_i)\)</span>, <span
+class="math inline">\(x&#39;&#39;(t_i)=f_t(t_i,x(t_i))+f_x(t_i,x(t_i))x&#39;(t_i)\approx\)</span>
+<span
+class="math inline">\(f_t(t_i,x_i)+f_x(t_i,x_i)f(t_i,x_i)\)</span>, etc,
+y obtenemos una aproximación de <span
+class="math inline">\(x_{i+1}\approx x(t_{i+1})\)</span>, hasta <span
+class="math inline">\(x_n\approx x(T)\)</span>.</p>
+<p><strong>Métodos de <a
+href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta</a>
+de orden 2.</strong> Dado <span
+class="math inline">\(\alpha\in[0,1]\)</span>, <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span>, con <span
+class="math inline">\(\Phi(t,x,h)=(1-\frac1{2\alpha}))f(t,x)+\frac1{2\alpha}f(t+\alpha
+h, x+\alpha hf(t,x))\)</span>. Vale por Taylor que <span
+class="math inline">\(x(t+h)-x(t)-h\Phi(t,x,h)=O(h^3)\)</span>.</p>
+<p><strong>Error.</strong> Dado <span class="math inline">\(n\)</span>,
+<span class="math inline">\(h=\frac{T-t_0}n\)</span>, <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span> con <span
+class="math inline">\(K\)</span> tal que <span
+class="math inline">\(|\Phi(t,x,h)-\Phi(t,y,h)|\leqq K|x-y|\)</span>
+para todos <span class="math inline">\(x,y\in\R\)</span>, <span
+class="math inline">\(t\in[t_0,T]\)</span>, y <span
+class="math inline">\(\tau\)</span> tal que <span
+class="math inline">\(\left|\frac{x(t_{i+1})-x(t_i)}h-\Phi(t_i,x(t_i),h)\right|\leqq\tau\)</span>,
+se tiene <span class="math inline">\(|x(T)-x_n|\leqq
+\frac{\tau}{K}(e^{K(T_0-t)}-1)\)</span>.</p>
+<p><em>Prueba.</em> Si <span
+class="math inline">\(e_i=|x(t_i)-x_i|\)</span> tenemos <span
+class="math inline">\(e_1\leqq h\tau\)</span>; <span
+class="math inline">\(x(t_{i+1})=x(t_i)+h\Phi(t_i,x(t_i),h)+h\tau_i\)</span>,
+con <span class="math inline">\(|\tau_i|\leqq\tau\)</span>; y <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span>; luego <span
+class="math inline">\(x(t_{i+1})-x_{i+1}=x(t_i)-x_i+\)</span> <span
+class="math inline">\(h(\Phi(t_i,x(t_i),h)-\Phi(t_i,x_i,h))+h\tau_i\)</span>
+y <span class="math inline">\(e_{i+1}\leqq
+e_i+hKe_i+h\tau=(1+Kh)e_i+\tau h\)</span>; luego <span
+class="math inline">\(e_n\leqq \frac{\tau}K((1+Kh)^{n}-1)\leqq
+\frac{\tau}{K}(e^{K(T_0-t)}-1)\)</span>.∎</p>
+<p><strong><a
+href="https://en.wikipedia.org/wiki/Linear_multistep_method">Métodos
+multipaso lineales</a>.</strong> Consisten en aproximar <span
+class="math inline">\(x_{n+k}\)</span> dados <span
+class="math inline">\(x_{n},\ldots,x_{n+k-1}\)</span> por una fórmula
+<span class="math inline">\(\sum_{i=0}^k \alpha_ix_{n+i}=h\sum_{i=0}^k
+\beta_if(t_{n+i},x_{n+i})\)</span>. Decimos que es de orden <span
+class="math inline">\(p\)</span> si <span
+class="math inline">\(\tau_th=\sum_{i=0}^k \alpha_ix(t+hi)-h\sum_{i=0}^k
+\beta_ix&#39;(t+hi)=O(h^{p+1})\)</span>; equivale a que <span
+class="math inline">\(\sum_{i=0}^k\alpha_i=0\)</span> y <span
+class="math inline">\(\sum_{i=0}^k i^q\alpha_i=q\sum_{i=0}^k
+i^{q-1}\beta_i\)</span> para <span
+class="math inline">\(q=1,\ldots,p\)</span>. Sea <span
+class="math inline">\(p(x)=\sum_{i=0}^k \alpha_ix^i\)</span>; si para
+toda raíz simple <span class="math inline">\(r\)</span> de <span
+class="math inline">\(p\)</span> vale <span
+class="math inline">\(|r|\leqq 1\)</span> y para toda raíz múltiple vale
+<span class="math inline">\(|r|&lt;1\)</span>, y además <span
+class="math inline">\(\lim_{h\to0}\tau_t=0\)</span>, entonces el método
+converge.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<!--radix_placeholder_article_footer-->
+<!--/radix_placeholder_article_footer-->
+</div>
+
+<div class="d-appendix">
+</div>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_appendices-->
+<div class="appendix-bottom"></div>
+<!--/radix_placeholder_appendices-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+</body>
+
+</html>
