@@ -20,3 +20,5 @@ output: distill::distill_article
 **Information, policy preferences and voting.** [PDF](files/infoandpolicy.pdf).
 
 **Enchufes, espejos y tijeras: efectos del diseño de las boletas sobre el comportamiento electoral** (with Juan Pablo Ruiz Nicolini). *Revista SAAP*, 2017. [PDF](files/Enchufes_espejos_y_tijeras.pdf).
+
+**Spatial variation in ecological inference.** [PDF](files/spatial_eco_inf.pdf).
