@@ -41,6 +41,9 @@ body {
 .nav-search {
   display: none;
 }
+.algolia-autocomplete {
+  display: none;
+}
 
 /*-- ARTICLE METADATA --*/
 d-byline {
