@@ -4,10 +4,10 @@ image: "files/img/DodykJuan.jpg"
 links:
   - label: Email
     url: "mailto:juandodyk@g.harvard.edu"
-  - label: Twitter
-    url: "https://twitter.com/jdodyk"
-  - label: GitHub
-    url: "https://github.com/juandodyk/"
+  - label: CV
+    url: "files/cv.pdf"
+  - label: Google Scholar
+    url: "https://scholar.google.com/citations?user=BLZlYpwAAAAJ&hl=en"
 output:
   postcards::trestles
 site: distill::distill_website

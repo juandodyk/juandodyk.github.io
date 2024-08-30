@@ -16,7 +16,8 @@
 html {
   /*-- Main font sizes --*/
   --title-size:      50px;
-  --body-size:       1.06rem;
+  --body-size:       1.1rem;
+  --font-size:       1.1rem;
   --code-size:       14px;
   --aside-size:      12px;
   --fig-cap-size:    13px;
@@ -33,11 +34,16 @@ html {
   --navbar-font:     "Roboto", sans-serif;  /* websites + blogs only */
 }
 
+body {
+  font-size: 18px;
+}
+  
+
 /*-- ARTICLE METADATA --*/
 d-byline {
   --heading-size:    0.6rem;
   --heading-color:   rgba(0, 0, 0, 0.5);
-  --body-size:       0.8rem;
+  --body-size:       0.9rem;
   --body-color:      rgba(0, 0, 0, 0.8);
 }
 
@@ -78,6 +84,7 @@ d-appendix {
 /* Add any additional CSS rules below                      */
 
 d-article body {
+  font-size: 18px;
   color: #222222;
   font-family: "Noto Serif", serif;
   font-weight: 400;
