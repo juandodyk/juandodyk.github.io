@@ -13,9 +13,9 @@ output:
 site: distill::distill_website
 ---
 
-I'm a Ph.D. candidate in the Department of Government at Harvard University. I am a political economist, interested in the politics of energy transitions and business lobbying more broadly. I study how the design of climate policies responds to the need to expand the coalition in support of more stringent policies, how coalitional strategies shape informational lobbying, and how family firms have an advantage in the use of campaign contributions in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
+I'm a Ph.D. candidate in the Department of Government at Harvard University. I am a political economist, interested in the politics of energy transitions and business lobbying more broadly. I study how policymakers strategically design climate policies to expand the political coalition in support of the energy transition, how coalitional strategies shape informational lobbying, and how family firms have an advantage in the use of campaign contributions in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
 
-See my [research](research.html), my [CV](files/cv.pdf), my [teaching slides](teaching.html), and my [old blog](blog.html).
+See my [research](research.html), my [CV](files/cv.pdf), and my [teaching slides](teaching.html).
 
 
 <br>
