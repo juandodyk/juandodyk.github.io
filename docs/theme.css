@@ -37,7 +37,10 @@ html {
 body {
   font-size: 18px;
 }
-  
+
+.nav-search {
+  display: none;
+}
 
 /*-- ARTICLE METADATA --*/
 d-byline {
