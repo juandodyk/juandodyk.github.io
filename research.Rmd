@@ -7,11 +7,13 @@ output: distill::distill_article
 
 [**The Political Behavior of Family Firms: Evidence from Brazil**](https://www.sciencedirect.com/science/article/abs/pii/S0305750X21003624) (with Pablo Balan and Ignacio Puente). *World Development*, 2022. [PDF](files/WD.pdf). [Online Appendix](files/WD_online_appendix.pdf). [Replication Archive](files/WD_replication.zip). [Shiny App](https://familyfirms.shinyapps.io/contributions/).
 
-### Work in Progress
+### Working Papers
 
-<!-- **Kin in the Game:  How Family Ties Help Firms Overcome Campaign Finance Regulation** (with Pablo Balan and Ignacio Puente). [PDF](files/BDP_ban_20220214.pdf). -->
+**JOB MARKET PAPER:** [**Inefficient Policies in the Green Transition.**](files/climate.pdf)
 
-**An Informational Theory of Coalitional Lobbying.** [Slides](files/lobbytogether.pdf).
+**Family Ties as Corporate Power** (with Pablo Balan and Ignacio Puente). *Revision Requested*. [PDF](https://www.chicagobooth.edu/-/media/research/stigler/pdfs/workingpapers/330bdpstiglerwp.pdf). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
+
+**An Informational Theory of Coalitional Lobbying.** [Early draft](files/collectivelobby.pdf).
 
 **A proof of Blackwell's Theorem for separable metric state spaces.** [PDF](files/blackwell_new.pdf).
 

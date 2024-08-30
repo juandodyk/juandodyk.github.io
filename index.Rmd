@@ -1,6 +1,6 @@
 ---
 title: "Juan Dodyk"
-image: "files/img/14206333.jpg"
+image: "files/img/DodykJuan.jpg"
 links:
   - label: Email
     url: "mailto:juandodyk@g.harvard.edu"
@@ -13,7 +13,7 @@ output:
 site: distill::distill_website
 ---
 
-I'm a Ph.D. candidate in the Department of Government at Harvard University. I do research on lobbying and campaign contributions, both empirical and theoretical. I am interested in political economic theory more broadly.
+I'm a Ph.D. candidate in the Department of Government at Harvard University. I am a political economist, interested in the politics of energy transitions and business lobbying more broadly. I study how the design of climate policies responds to the need to expand the coalition in support of more stringent policies, how coalitional strategies shape informational lobbying, and how family firms have an advantage in the use of campaign contributions in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
 
 See my [research](research.html), my [CV](files/cv.pdf), my [teaching slides](teaching.html), and my [old blog](blog.html).
 
@@ -45,11 +45,11 @@ See my [research](research.html), my [CV](files/cv.pdf), my [teaching slides](te
 ::: {}
 <span class = "columnname"> Interests </span>
 
-* Lobbying
+* Climate politics
 
-* Political economy theory
+* Lobbying and money in politics
 
-* Networks
+* Formal political theory
 :::
 
 ::: {}
@@ -57,7 +57,7 @@ See my [research](research.html), my [CV](files/cv.pdf), my [teaching slides](te
 
 <ul>
  
-<li class = "grad-item">   PhD student in Political Science, expected 2024 <br> <p class = "grad-location"> Harvard University </p> </li>
+<li class = "grad-item">   PhD in Government, expected May 2025 <br> <p class = "grad-location"> Harvard University </p> </li>
 <li class = "grad-item">   Bachelor's degree in Mathematics, 2017 <br> <p class = "grad-location"> Universidad de Buenos Aires </p> 
 </li>
 
