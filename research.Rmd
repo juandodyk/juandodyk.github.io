@@ -11,7 +11,7 @@ output: distill::distill_article
 
 **JOB MARKET PAPER:** [**Inefficient Policies in the Green Transition.**](files/jmp.pdf)
 
-**Family Ties as Corporate Power** (with Pablo Balan and Ignacio Puente). *Revision Requested*. [PDF](https://www.chicagobooth.edu/-/media/research/stigler/pdfs/workingpapers/330bdpstiglerwp.pdf). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
+**Family Ties as Corporate Power** (with Pablo Balan and Ignacio Puente). *Under Review*. [PDF](https://www.chicagobooth.edu/-/media/research/stigler/pdfs/workingpapers/330bdpstiglerwp.pdf). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
 
 **An Informational Theory of Coalitional Lobbying.** [Early draft](files/collectivelobby.pdf).
 
