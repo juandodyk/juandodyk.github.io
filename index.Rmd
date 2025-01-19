@@ -13,9 +13,9 @@ output:
 site: distill::distill_website
 ---
 
-I am a Ph.D. candidate in the Department of Government at Harvard University. I am a political economist interested in climate policy and business lobbying.
+I am a Ph.D. candidate in the Department of Government at Harvard University. Starting in July 2025, I will join Washington University in St. Louis as an Assistant Professor in Political Science and Environmental Studies.
 
-In my [Job Market Paper](files/jmp.pdf) I study how policymakers strategically design climate policies to expand the political coalition in support of the energy transition. I also study how coalitional strategies shape informational lobbying, and how family firms have an advantage in the use of campaign contributions in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
+I am a political economist interested in climate policy and business lobbying. I study how policymakers strategically design climate policies to overcome opposition from carbon-intensive industries, how interest groups use tactical coalitions to increase their effectiveness in informational lobbying, and how family firms build political power in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
 
 See my Job Market Paper, "Inefficient Policies in the Green Transition" [here](files/jmp.pdf), my [CV](files/cv.pdf), and my [research](research.html).
 
