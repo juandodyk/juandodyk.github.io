@@ -13,7 +13,7 @@ output: distill::distill_article
 
 **Family Ties as Corporate Power** (with Pablo Balán and Ignacio Puente). *Conditionally Accepted at the Journal of Politics*. [PDF](https://www.chicagobooth.edu/-/media/research/stigler/pdfs/workingpapers/330bdpstiglerwp.pdf). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
 
-**An Informational Theory of Coalitional Lobbying.** [Early draft](files/collectivelobby.pdf).
+**An Informational Theory of Coalitional Lobbying.** [Early draft](files/collectivelobby.pdf). [Slides](files/coalitions_presentation.pdf).
 
 **A proof of Blackwell's Theorem for separable metric state spaces.** [PDF](files/blackwell_new.pdf).
 
