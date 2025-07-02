@@ -1,9 +1,9 @@
 ---
 title: "Juan Dodyk"
-image: "files/img/DodykJuan.jpg"
+image: "files/img/potato.jpg"
 links:
   - label: Email
-    url: "mailto:juandodyk@g.harvard.edu"
+    url: "mailto:juandodyk@wustl.edu"
   - label: CV
     url: "files/cv.pdf"
   - label: Google Scholar
@@ -13,7 +13,7 @@ output:
 site: distill::distill_website
 ---
 
-I am a Ph.D. candidate in the Department of Government at Harvard University. Starting in July 2025, I will join Washington University in St. Louis as an Assistant Professor in Political Science and Environmental Studies.
+I am an Assistant Professor in Political Science and Environmental Studies at Washington University in St. Louis. I received my Ph.D. in the Department of Government at Harvard University.
 
 I am a political economist interested in climate policy and business lobbying. I study how policymakers strategically design climate policies to overcome opposition from carbon-intensive industries, how interest groups use tactical coalitions to increase their effectiveness in informational lobbying, and how family firms build political power in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
 
@@ -59,7 +59,7 @@ See my Job Market Paper, "Inefficient Policies in the Green Transition" [here](f
 
 <ul>
  
-<li class = "grad-item">   PhD in Government, expected May 2025 <br> <p class = "grad-location"> Harvard University </p> </li>
+<li class = "grad-item">   PhD in Government, 2025 <br> <p class = "grad-location"> Harvard University </p> </li>
 <li class = "grad-item">   Bachelor's degree in Mathematics, 2017 <br> <p class = "grad-location"> Universidad de Buenos Aires </p> 
 </li>
 
