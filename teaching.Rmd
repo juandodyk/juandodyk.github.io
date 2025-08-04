@@ -3,7 +3,19 @@ title: "Teaching"
 output: distill::distill_article
 ---
 
-I was teaching fellow for the following courses at Harvard.
+### Math Camp 2025 at WashU
+
+Lectures:
+
+1. [Lecture 1](files/mathcamp/lecture1.pdf).
+
+Problem Sets:
+
+1. [Problem Set 1](files/mathcamp/ps1.pdf).
+
+---
+
+I was a teaching assistant for the following courses at Harvard.
 
 ### Gov 2006: Formal Theory II (Prof. Peter Buisseret)
 

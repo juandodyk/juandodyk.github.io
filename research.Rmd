@@ -5,9 +5,10 @@ output: distill::distill_article
 
 ### Published
 
+[**Family Ties as Corporate Power**](https://www.journals.uchicago.edu/doi/10.1086/736563) (with Pablo Balán and Ignacio Puente). *Journal of Politics*, 2025. [PDF](files/BDP_JOP_Accepted.pdf). [Online Appendix](files/BDP_JOP_Online_Appendix.pdf). [Replication Archive](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C7LAYQ). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
+
 [**The Political Behavior of Family Firms: Evidence from Brazil**](https://www.sciencedirect.com/science/article/abs/pii/S0305750X21003624) (with Pablo Balán and Ignacio Puente). *World Development*, 2022. [PDF](files/WD.pdf). [Online Appendix](files/WD_online_appendix.pdf). [Replication Archive](files/WD_replication.zip). [Shiny App](https://familyfirms.shinyapps.io/contributions/).
 
-[**Family Ties as Corporate Power**](https://www.journals.uchicago.edu/doi/10.1086/736563) (with Pablo Balán and Ignacio Puente). *Journal of Politics*, 2025. [PDF](files/BDP_JOP_Accepted.pdf). [Online Appendix](files/BDP_JOP_Online_Appendix.pdf). [Replication Archive](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C7LAYQ). Media coverage: [ProMarket](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/).
 
 ### Working Papers
 
