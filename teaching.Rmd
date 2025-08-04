@@ -13,13 +13,10 @@ Problem Sets:
 
 1. [Problem Set 1](files/mathcamp/ps1.pdf).
 
----
-
-I was a teaching assistant for the following courses at Harvard.
 
 ### Gov 2006: Formal Theory II (Prof. Peter Buisseret)
 
-I taught this class twice -- during Spring 2021 and Spring 2022. Slides I made for my classes:
+I was a TA for this class twice -- during Spring 2021 and Spring 2022. Slides I made for my classes:
 
 1. [Refinements of PBE](files/data/gov2006/section1.pdf).
 
