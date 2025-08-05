@@ -8,10 +8,14 @@ output: distill::distill_article
 Lectures:
 
 1. [Lecture 1](files/mathcamp/lecture1.pdf).
+2. [Lecture 2](files/mathcamp/lecture2.pdf).
 
 Problem Sets:
 
 1. [Problem Set 1](files/mathcamp/ps1.pdf).
+2. [Problem Set 2](files/mathcamp/ps2.pdf).
+
+The book "Mathematics for Social Scientists" by Jonathan Kropko covers the topics we'll see. You can read it [here](https://methods-sagepub-com.libproxy.wustl.edu/book/mono/mathematics-for-social-scientists/toc).
 
 
 ### Gov 2006: Formal Theory II (Prof. Peter Buisseret)
@@ -44,8 +48,3 @@ I was a TA for this class twice -- during Spring 2021 and Spring 2022. Slides I 
 
 13. [Real authority and expertise](files/data/gov2006/section13.pdf).
 
-### Gov 1780: International Political Economy (Prof. Jeffry Frieden)
-
-### Gov 51: Data Analysis and Politics (Prof. Matt Blackwell)
-
-See the [webpage](http://gov51.mattblackwell.org/) of the course.
