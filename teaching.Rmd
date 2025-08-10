@@ -12,6 +12,7 @@ Lectures:
 3. [Lecture 3](files/mathcamp/lecture3.pdf).
 4. [Lecture 4](files/mathcamp/lecture4.pdf).
 5. [Lecture 5](files/mathcamp/lecture5.pdf).
+6. [Lecture 6](files/mathcamp/lecture6.pdf).
 
 Problem Sets:
 
@@ -20,6 +21,7 @@ Problem Sets:
 3. [Problem Set 3](files/mathcamp/ps3.pdf).
 4. [Problem Set 4](files/mathcamp/ps4.pdf).
 5. [Problem Set 5](files/mathcamp/ps5.pdf).
+6. [Problem Set 6](files/mathcamp/ps6.pdf).
 
 The book "Mathematics for Social Scientists" by Jonathan Kropko covers the topics we'll see. You can read it [here](https://methods-sagepub-com.libproxy.wustl.edu/book/mono/mathematics-for-social-scientists/toc).
 
