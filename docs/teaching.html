@@ -2309,7 +2309,15 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   }
 
   d-article p a { color: #00b9e7; }
-  d-article p a:hover { color: #e70000; }</style>
+  d-article p a:hover { color: #e70000; }
+
+  /* Make links in tables match paragraph link styling */
+  d-article table a { color: #00b9e7; }
+  d-article table a:hover,
+  d-article table a:focus {
+    color: #e70000;
+  }
+  </style>
   <style type="text/css">
   /* base style */
 
@@ -2521,32 +2529,60 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <h3 id="math-camp-2025-at-washu">Math Camp 2025 at WashU</h3>
-<p>Lectures:</p>
-<ol type="1">
-<li><a href="files/mathcamp/lecture1.pdf">Lecture 1</a>.</li>
-<li><a href="files/mathcamp/lecture2.pdf">Lecture 2</a>.</li>
-<li><a href="files/mathcamp/lecture3.pdf">Lecture 3</a>.</li>
-<li><a href="files/mathcamp/lecture4.pdf">Lecture 4</a>.</li>
-<li><a href="files/mathcamp/lecture5.pdf">Lecture 5</a>.</li>
-<li><a href="files/mathcamp/lecture6.pdf">Lecture 6</a>.</li>
-<li><a href="files/mathcamp/lecture7.pdf">Lecture 7</a>.</li>
-<li><a href="files/mathcamp/lecture8.pdf">Lecture 8</a>.</li>
-<li><a href="files/mathcamp/lecture9.pdf">Lecture 9</a>.</li>
-<li><a href="files/mathcamp/lecture10.pdf">Lecture 10</a>.</li>
-</ol>
-<p>Problem Sets:</p>
-<ol type="1">
-<li><a href="files/mathcamp/ps1.pdf">Problem Set 1</a>.</li>
-<li><a href="files/mathcamp/ps2.pdf">Problem Set 2</a>.</li>
-<li><a href="files/mathcamp/ps3.pdf">Problem Set 3</a>.</li>
-<li><a href="files/mathcamp/ps4.pdf">Problem Set 4</a>.</li>
-<li><a href="files/mathcamp/ps5.pdf">Problem Set 5</a>.</li>
-<li><a href="files/mathcamp/ps6.pdf">Problem Set 6</a>.</li>
-<li><a href="files/mathcamp/ps7.pdf">Problem Set 7</a>.</li>
-<li><a href="files/mathcamp/ps8.pdf">Problem Set 8</a>.</li>
-<li><a href="files/mathcamp/ps9.pdf">Problem Set 9</a>.</li>
-<li><a href="files/mathcamp/ps10.pdf">Problem Set 10</a>.</li>
-</ol>
+<table>
+<colgroup>
+<col style="width: 41%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Lectures</th>
+<th>Problem Sets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="files/mathcamp/lecture1.pdf">Lecture 1</a></td>
+<td><a href="files/mathcamp/ps1.pdf">Problem Set 1</a></td>
+</tr>
+<tr class="even">
+<td><a href="files/mathcamp/lecture2.pdf">Lecture 2</a></td>
+<td><a href="files/mathcamp/ps2.pdf">Problem Set 2</a></td>
+</tr>
+<tr class="odd">
+<td><a href="files/mathcamp/lecture3.pdf">Lecture 3</a></td>
+<td><a href="files/mathcamp/ps3.pdf">Problem Set 3</a></td>
+</tr>
+<tr class="even">
+<td><a href="files/mathcamp/lecture4.pdf">Lecture 4</a></td>
+<td><a href="files/mathcamp/ps4.pdf">Problem Set 4</a></td>
+</tr>
+<tr class="odd">
+<td><a href="files/mathcamp/lecture5.pdf">Lecture 5</a></td>
+<td><a href="files/mathcamp/ps5.pdf">Problem Set 5</a></td>
+</tr>
+<tr class="even">
+<td><a href="files/mathcamp/lecture6.pdf">Lecture 6</a></td>
+<td><a href="files/mathcamp/ps6.pdf">Problem Set 6</a></td>
+</tr>
+<tr class="odd">
+<td><a href="files/mathcamp/lecture7.pdf">Lecture 7</a></td>
+<td><a href="files/mathcamp/ps7.pdf">Problem Set 7</a></td>
+</tr>
+<tr class="even">
+<td><a href="files/mathcamp/lecture8.pdf">Lecture 8</a></td>
+<td><a href="files/mathcamp/ps8.pdf">Problem Set 8</a></td>
+</tr>
+<tr class="odd">
+<td><a href="files/mathcamp/lecture9.pdf">Lecture 9</a></td>
+<td><a href="files/mathcamp/ps9.pdf">Problem Set 9</a></td>
+</tr>
+<tr class="even">
+<td><a href="files/mathcamp/lecture10.pdf">Lecture 10</a></td>
+<td><a href="files/mathcamp/ps10.pdf">Problem Set 10</a></td>
+</tr>
+</tbody>
+</table>
 <p>The book “Mathematics for Social Scientists” by Jonathan Kropko covers the topics we’ll see. You can read it <a href="https://methods-sagepub-com.libproxy.wustl.edu/book/mono/mathematics-for-social-scientists/toc">here</a>.</p>
 <h3 id="gov-2006-formal-theory-ii-prof.-peter-buisseret">Gov 2006: Formal Theory II (Prof. Peter Buisseret)</h3>
 <p>I was a TA for this class twice – during Spring 2021 and Spring 2022. Slides I made for my classes:</p>

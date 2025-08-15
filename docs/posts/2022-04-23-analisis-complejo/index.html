@@ -2321,7 +2321,15 @@ d-article blockquote {
 }
 
 d-article p a { color: #00b9e7; }
-d-article p a:hover { color: #e70000; }</style>
+d-article p a:hover { color: #e70000; }
+
+/* Make links in tables match paragraph link styling */
+d-article table a { color: #00b9e7; }
+d-article table a:hover,
+d-article table a:focus {
+  color: #e70000;
+}
+</style>
 <style type="text/css">
 /* base style */
 
