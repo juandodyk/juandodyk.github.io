@@ -14,13 +14,13 @@ output: distill::distill_article
 
 **JOB MARKET PAPER:** [**Inefficient Policies in the Green Transition.**](files/jmp.pdf)
 
+**International Coordination of Trade and Green Industrial Policies.** [Preliminary Draft](files/tradegipcoord.pdf).
+
 **An Informational Theory of Coalitional Lobbying.** [Draft](files/collectivelobby.pdf). [Slides](files/coalitions_presentation.pdf).
 
 **A proof of Blackwell's Theorem for separable metric state spaces.** [PDF](files/blackwell_new.pdf).
 
 ### Work in Progress
-
-**The International Politics of Green Industrial Policies.**
 
 **Policy Feedback Effects of Green Subsidies: Evidence from Firm Lobbying after the Inflation Reduction Act.**
 
