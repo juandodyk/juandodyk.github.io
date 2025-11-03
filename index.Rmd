@@ -1,6 +1,6 @@
 ---
 title: "Juan Dodyk"
-image: "files/img/potato.jpg"
+image: "files/img/DodykJuan.jpg"
 links:
   - label: Email
     url: "mailto:juandodyk@wustl.edu"
