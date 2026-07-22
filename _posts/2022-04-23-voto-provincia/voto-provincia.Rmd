@@ -5,6 +5,7 @@ date: 2015-11-29
 output:
   distill::distill_article:
     self_contained: false
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js"
 ---
 
 Distribución de votos a <select id="cand"></select> en la provincia <select id="provincia"></select>.

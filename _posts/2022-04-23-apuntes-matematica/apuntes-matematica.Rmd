@@ -5,6 +5,7 @@ date: 2018-08-01
 output:
   distill::distill_article:
     self_contained: false
+    mathjax: "https://cdn.jsdelivr.net/npm/mathjax@4.1.3/tex-mml-chtml.js"
 ---
 
 1. [Análisis](../../files/data/analisis.pdf).
@@ -16,4 +17,3 @@ output:
 4. [Análisis funcional](../../files/data/funcional.pdf).
 
 5. [Modelos en economía política](../../files/data/modelos.pdf) (incluye algunos temas de análisis y de probabilidad/estadística).
-
