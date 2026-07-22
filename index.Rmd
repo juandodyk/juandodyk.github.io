@@ -1,15 +1,17 @@
 ---
-title: "Juan Dodyk"
+title: "Juan Dodyk | Political Economist"
 image: "files/img/potato.jpg"
 links:
   - label: Email
     url: "mailto:juandodyk@wustl.edu"
   - label: CV
-    url: "files/cv.pdf"
+    url: "files/Juan_Dodyk_CV.pdf"
   - label: Google Scholar
     url: "https://scholar.google.com/citations?user=BLZlYpwAAAAJ&hl=en"
 output:
-  postcards::trestles
+  postcards::trestles:
+    includes:
+      in_header: _includes/home-seo.html
 site: distill::distill_website
 ---
 
@@ -17,7 +19,7 @@ I am an Assistant Professor in Political Science and Environmental Studies at Wa
 
 I am a political economist interested in climate policy and business lobbying. I study how policymakers strategically design climate policies to overcome opposition from carbon-intensive industries, how interest groups use tactical coalitions to increase their effectiveness in informational lobbying, and how family firms build political power in developing countries. To address my research questions, I use formal models, original data collection, and causal inference methods.
 
-See my Job Market Paper, "Inefficient Policies in the Green Transition" [here](files/jmp.pdf), my [CV](files/cv.pdf), and my [research](research.html).
+See my Job Market Paper, "Inefficient Policies in the Green Transition" [here](files/jmp.pdf), my [CV](files/Juan_Dodyk_CV.pdf){rel="nofollow"}, and my [research](research.html).
 
 
 <br>

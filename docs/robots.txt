@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /files/Juan_Dodyk_CV.pdf
+
+Sitemap: https://juandodyk.github.io/sitemap.xml

@@ -1,8 +1,8 @@
 name: "website"
 title: "Juan Dodyk"
-description: "Juan Dodyk"
+description: "Juan Dodyk is a political economist and Assistant Professor at Washington University in St. Louis studying climate policy, lobbying, and political economy."
 output_dir: "docs"
-base_url: http://juandodyk.github.io
+base_url: https://juandodyk.github.io
 navbar:
   right:
     - text: "Home"
@@ -10,7 +10,7 @@ navbar:
     - text: "Research"
       href: research.html
     - text: "CV"
-      href: files/cv.pdf
+      href: files/Juan_Dodyk_CV.pdf
     - text: "Teaching"
       href: teaching.html
     - text: "Blog"
