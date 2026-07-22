@@ -1,5 +1,5 @@
 ---
-title: "Juan Dodyk | Political Economist"
+title: "Juan Dodyk"
 image: "files/img/potato.jpg"
 links:
   - label: Email
