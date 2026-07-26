@@ -1,0 +1,53 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - index.qmd
+    - research.qmd
+    - teaching.qmd
+    - notes.qmd
+    - posts/**/*.qmd
+  resources:
+    - files/**
+    - 404.html
+    - blog.html
+    - blog.xml
+    - googleeb746fad54d23bbe.html
+    - robots.txt
+  post-render:
+    - scripts/preserve-legacy.sh
+
+website:
+  title: "Juan Dodyk"
+  description: "Juan Dodyk is a political economist and Assistant Professor at Washington University in St. Louis studying climate policy, lobbying, and political economy."
+  site-url: "https://juandodyk.github.io"
+  favicon: "files/img/potato.jpg"
+  search: false
+  open-graph: true
+  twitter-card: true
+  navbar:
+    title: "Juan Dodyk"
+    background: light
+    pinned: false
+    right:
+      - text: "Home"
+        href: index.qmd
+      - text: "Research"
+        href: research.qmd
+      - text: "CV"
+        href: files/Juan_Dodyk_CV.pdf
+      - text: "Teaching"
+        href: teaching.qmd
+      - text: "Notes"
+        href: notes.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: theme.css
+    toc: false
+    canonical-url: true
+    link-external-newwindow: false
+    include-in-header: _includes/verification.html
+    include-after-body: _includes/link-behavior.html
+    lang: en

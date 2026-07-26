@@ -1,0 +1,42 @@
+<script>
+function applyLinkBehavior() {
+  var internalHosts = new Set([
+    window.location.hostname,
+    "juandodyk.github.io",
+    "www.juandodyk.github.io",
+    "127.0.0.1",
+    "localhost"
+  ]);
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    var href = link.getAttribute("href");
+    if (!href) return;
+
+    var url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (_error) {
+      return;
+    }
+
+    if (url.protocol !== "http:" && url.protocol !== "https:") return;
+
+    if (internalHosts.has(url.hostname)) {
+      link.removeAttribute("target");
+      return;
+    }
+
+    link.setAttribute("target", "_blank");
+    var rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    rel.add("noopener");
+    rel.add("noreferrer");
+    link.setAttribute("rel", Array.from(rel).join(" "));
+  });
+}
+
+if (document.readyState === "complete") {
+  applyLinkBehavior();
+} else {
+  window.addEventListener("load", applyLinkBehavior, { once: true });
+}
+</script>

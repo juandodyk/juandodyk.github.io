@@ -1,0 +1,903 @@
+---
+title: "Apunte: Elementos de cálculo numérico"
+date: 2016-06-25
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2022-04-23-numerico/"
+---
+
+::: {.math-trigger aria-hidden="true"}
+$0$
+:::
+
+```{=html}
+<div class="historical-note">
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#punto-flotante">Punto flotante</a></li>
+<li><a href="#normas-matriciales">Normas matriciales</a></li>
+<li><a href="#matrices">Matrices</a></li>
+<li><a href="#raíces">Raíces</a></li>
+<li><a href="#interpolación-polinómica">Interpolación
+polinómica</a></li>
+<li><a href="#cuadrados-mínimos">Cuadrados mínimos</a></li>
+<li><a href="#integración-numérica">Integración numérica</a></li>
+<li><a href="#ecuaciones-diferenciales-ordinarias">Ecuaciones
+diferenciales ordinarias</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="punto-flotante">Punto flotante</h2>
+<p><span
+class="math inline">\(\def\inf{\mathop{\text{inf}}\limits}\def\la{\langle}
+\def\ra{\rangle}\def\mm{\mathrm}\def\menos{\smallsetminus}
+\newcommand{\comb}[2]{\binom{#1}{#2}}\def\then{\Rightarrow}\def\N{\mathbb{N}}
+\def\R{\mathbb{R}} \def\C{\mathbb{C}} \def\Z{\mathbb{Z}}
+\def\HH{\mathcal{H}} \def\FF{\mathcal{F}} \def\PP{\mathcal{P}}
+\def\E{\mm{E}} \def\Var{\mm{Var}} \def\Cond{\mm{Cond}}\)</span>Los
+<em>números de máquina</em> son de la forma <span
+class="math inline">\(0,a_1a_2\ldots a_m\cdot B^l=q\cdot B^l\)</span>,
+donde <span class="math inline">\(a_1\neq0\)</span>, <span
+class="math inline">\(a_i\in\{0,\ldots,B-1\}\)</span>, <span
+class="math inline">\(B\)</span> es la base y <span
+class="math inline">\(-M_1\leqq l\leqq M_2\)</span>. Dado <span
+class="math inline">\(x=0,a_1a_2\ldots\cdot B^l\in\R\)</span> definimos
+el truncado <span class="math inline">\(x^*=0,a_1a_2\ldots a_m \cdot
+B^l\)</span>; vale <span class="math inline">\(\frac{|x-x^*|}{|x|}\leqq
+B^{-m+1}\)</span>. El redondeo cumple <span
+class="math inline">\(\frac{|x-x^*|}{|x|}\leqq \frac12B^{-m+1}\)</span>.
+Tenemos pues <span class="math inline">\(x^*=(1+\delta)x\)</span>, con
+<span
+class="math inline">\(|\delta|\leqq\epsilon=\frac12B^{-m+1}\)</span>,
+donde <span class="math inline">\(\epsilon\)</span> se llama <em><span
+class="math inline">\(\epsilon\)</span> de máquina</em>; es el menor
+número tal que <span class="math inline">\((1+\epsilon)^*\neq
+1\)</span>. Sumar números muy distintos en magnitud es malo; restar
+números muy parecidos también; la mejor manera de sumar muchos números
+es de menor a mayor.</p>
+<h2 id="normas-matriciales">Normas matriciales</h2>
+<p><strong>Equivalencia de normas.</strong> Las normas en <span
+class="math inline">\(\R^n\)</span> son equivalentes, es decir, dadas
+<span class="math inline">\(\|{\cdot}\|\)</span>, <span
+class="math inline">\(\|{\cdot}\|&#39;\)</span> hay <span
+class="math inline">\(K_1,K_2&gt;0\)</span> con <span
+class="math inline">\(K_1\|{\cdot}\|&#39;\leqq\|{\cdot}\|\leqq
+K_2\|{\cdot}\|&#39;\)</span>.</p>
+<p><em>Prueba.</em> Basta probarlo para <span
+class="math inline">\(\|x\|&#39;=\|x\|_2=\sqrt{\sum_{i=1}^nx_i^2}\)</span>;
+tenemos <span
+class="math inline">\(\|\sum_{i=1}^nx_ie_i\|\leqq\sum_{i=1}^n|x_i|\|e_i\|\leqq
+\sqrt{\sum_{i=1}^n\|e_i\|}\|x\|_2\)</span> por Cauchy-Schwarz; la otra
+por el absurdo: si no, para todo <span class="math inline">\(n\)</span>
+hay <span class="math inline">\(x_n\)</span> con <span
+class="math inline">\(\|x_n\|&lt;\frac{1}{n}\|x_n\|_2\)</span>; podemos
+tomar <span class="math inline">\(\|x_n\|_2=1\)</span> y <span
+class="math inline">\(\|x_n\|&lt;\frac{1}{n}\)</span>; luego hay una
+subsecuencia con <span
+class="math inline">\(\|x_{n_k}-x\|_2\to0\)</span>, luego <span
+class="math inline">\(\|x_{n_k}-x\|\to0\)</span>, <span
+class="math inline">\(\|x\|=0\)</span>, <span
+class="math inline">\(x=0\)</span>, absurdo.∎</p>
+<p><strong>Normas matriciales.</strong> Dada una norma <span
+class="math inline">\(\|{\cdot}\|\)</span> de <span
+class="math inline">\(\R^n\)</span> obtenemos una norma para <span
+class="math inline">\(\R^{n\times n}\)</span> dada por <span
+class="math inline">\(\|A\|=\max_{\|x\|=1}\|Ax\|\)</span>, y tenemos
+<span class="math inline">\(\|Ax\|\leqq \|A\|\|x\|\)</span> y <span
+class="math inline">\(\|AB\|\leqq\|A\|\|B\|\)</span>. Vale <span
+class="math inline">\(\|A\|_\infty=\max_i\left\{\sum_{j=1}^n|A_{ij}|\right\}\)</span>,
+<span
+class="math inline">\(\|A\|_1=\max_j\left\{\sum_{i=1\vphantom{j}}^n|A_{ij}|\right\}\)</span>,
+<span class="math inline">\(\|A\|_2=\sqrt{\rho(A^tA)}\)</span>, donde
+<span class="math inline">\(\rho(A)=|\lambda_{\max}|\)</span> es el
+<em>radio espectral</em>, con <span
+class="math inline">\(\lambda_{\max}\in\C\)</span> el autovalor de norma
+máxima.</p>
+<p><em>Prueba.</em> Sea <span
+class="math inline">\(v_1,\ldots,v_n\)</span> una base ortonormal de
+autovectores de <span class="math inline">\(A^tA\)</span> con
+autovalores <span
+class="math inline">\(\lambda_1,\ldots,\lambda_n\)</span>. Dada <span
+class="math inline">\(x=\sum_{i=1}^na_iv_i\)</span> tenemos <span
+class="math inline">\(\|Ax\|_2^2=\la Ax,Ax\ra=\la A^tAx,x\ra=\)</span>
+<span
+class="math inline">\(\bigl\langle\sum_{i=1}^n\lambda_ia_iv_i,\sum_{i=1}^na_iv_i\bigl\rangle=\sum_{i=1}^n\lambda_ia_i^2\leqq
+|\lambda_{\max}|\|x\|_2^2\)</span>, con igualdad si <span
+class="math inline">\(x=v_{\max}\)</span>, luego <span
+class="math inline">\(\|A\|_2=\sqrt{\rho(A^tA)}\)</span>.∎</p>
+<p><strong>Número de condición.</strong> Si <span
+class="math inline">\(A\in\R^{n\times n}\)</span> es inversible
+definimos <span class="math inline">\(\Cond(A)=\|A\|\|A^{-1}\|\)</span>.
+Vale <span class="math inline">\(\Cond(A)\geqq 1\)</span> y <span
+class="math inline">\(\frac1{\Cond(A)}=\inf_{\text{$B$
+singular}}\frac{\|A-B\|}{\|A\|}\)</span>. Aplicación: si <span
+class="math inline">\(Ax=b\)</span> y <span
+class="math inline">\(A\tilde x=\tilde b\)</span>, <span
+class="math inline">\(\frac{\|\tilde
+x-x\|}{\|x\|}\leqq\Cond(A)\frac{\|\tilde b-b\|}{\|b\|}\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(B\)</span> es
+singular hay <span class="math inline">\(x\neq0\)</span> con <span
+class="math inline">\(Bx=0\)</span>; vale <span
+class="math inline">\(\|x\|=\|A^{-1}(A-B)x\|\)</span> luego <span
+class="math inline">\(1\leqq\|A^{-1}\|\|A-B\|\)</span> y <span
+class="math inline">\(\frac1{\Cond(A)}\leqq
+\frac{\|A-B\|}{\|A\|}\)</span>. Ahora tomo <span
+class="math inline">\(y\)</span> con <span
+class="math inline">\(\|A^{-1}y\|=\|A^{-1}\|\|y\|\)</span> y <span
+class="math inline">\(x\)</span> con <span
+class="math inline">\(Ax=y\)</span>, <span
+class="math inline">\(\|y\|=\frac{1}{\|A^{-1}\|}\)</span> y <span
+class="math inline">\(\|x\|=1\)</span>; tomo <span
+class="math inline">\(z\)</span> tal que <span
+class="math inline">\(z^tu\leqq 1\)</span> si <span
+class="math inline">\(\|u\|=1\)</span> pero <span
+class="math inline">\(z^tx=1\)</span> (hiperplano que pasa por <span
+class="math inline">\(x\)</span> y deja a la bola unitaria de un lado);
+<span class="math inline">\(B=A-yz^t\)</span> es singular porque <span
+class="math inline">\(Bx=0\)</span>; <span
+class="math inline">\(\|yz^tu\|\leqq\|y\|=\frac{1}{\|A^{-1}\|}\)</span>
+si <span class="math inline">\(\|u\|=1\)</span> con igualdad si <span
+class="math inline">\(u=x\)</span>, luego <span
+class="math inline">\(\|A-B\|=\|yz^t\|=\frac1{\|A^{-1}\|}\)</span>.∎</p>
+<p><strong>Radio espectral.</strong> Dado <span
+class="math inline">\(\epsilon&gt;0\)</span> hay una norma matricial
+<span class="math inline">\(\|{\cdot}\|\)</span> tal que <span
+class="math inline">\(\rho(A)\leqq \|A\|\leqq \rho(A)+\epsilon\)</span>.
+Equivalen <span class="math inline">\(A^n\to 0\)</span> y <span
+class="math inline">\(\rho(A)&lt;1\)</span>. Además, <span
+class="math inline">\(\|A^n\|^{\frac1n}\to\rho(A)\)</span>.</p>
+<p><em>Prueba.</em> Primero, sea <span
+class="math inline">\(v_1,\ldots,v_n\in\C^n\)</span> una base que pone a
+<span class="math inline">\(A\)</span> en su forma de Jordan;
+multiplicando los <span class="math inline">\(v_i\)</span> por potencias
+de <span class="math inline">\(\epsilon\)</span> logramos que los
+números fuera de la diagonal sean <span
+class="math inline">\(\epsilon\)</span>. Defino la norma <span
+class="math inline">\(\|\sum_{i=1}^n a_iv_i\|=\max_i|a_i|\)</span>; vale
+<span class="math inline">\(\|A\|\leqq \rho(A)+\epsilon\)</span> en esa
+norma. Segundo, si <span class="math inline">\(\rho(A)&lt;1\)</span> con
+<span class="math inline">\(\epsilon\)</span> chico obtengo <span
+class="math inline">\(\|A\|&lt;1\)</span>, luego <span
+class="math inline">\(\|A^n\|\leqq\|A\|^n\to0\)</span>; si <span
+class="math inline">\(A^n\to 0\)</span>, sea <span
+class="math inline">\(v_i\)</span> con <span
+class="math inline">\(Av_i=\lambda_{\max}v_i\)</span>; si <span
+class="math inline">\(v_i=x+yi\)</span>, con <span
+class="math inline">\(x,y\in\R^n\)</span>, <span
+class="math inline">\(A^nv_i=A^nx+A^nyi\to0\)</span>, pero <span
+class="math inline">\(\|A^nv_i\|=\rho(A)^n\)</span>, luego <span
+class="math inline">\(\rho(A)^n\to0\)</span> y <span
+class="math inline">\(\rho(A)&lt;1\)</span>. Tercero, de <span
+class="math inline">\(\|A\|\leqq \rho(A)+\epsilon\)</span> obtengo <span
+class="math inline">\(\|A^n\|^{\frac1n}\leqq \rho(A)+\epsilon\)</span>;
+por otro lado <span class="math inline">\(\rho(A)^n\leqq
+\rho(A^n)\leqq\|A^n\|\)</span> luego <span
+class="math inline">\(\rho(A)\leqq \|A^n\|^{\frac1n}\leqq
+\rho(A)+\epsilon\)</span> si <span class="math inline">\(n\)</span>
+grande.∎</p>
+<h2 id="matrices">Matrices</h2>
+<p><strong>Descomposición LU.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> hay una matriz de
+permutación <span class="math inline">\(P\)</span> con <span
+class="math inline">\(PA=LU\)</span>, <span
+class="math inline">\(L\)</span> diagonal inferior y con 1 en la
+diagonal y <span class="math inline">\(U\)</span> diagonal superior.</p>
+<p><strong>Descomposición de Cholesky.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> simétrica y definida
+positiva (o sea <span class="math inline">\(\la x,Ax\ra&gt;0\)</span> si
+<span class="math inline">\(x\neq0\)</span>) existe una única <span
+class="math inline">\(L\)</span> diagonal inferior con elementos de la
+diagonal positivos tal que <span
+class="math inline">\(A=LL^t\)</span>.</p>
+<p><em>Prueba.</em> Vale <span
+class="math inline">\(A_{ij}=\sum_{k=1}^{\min\{i,j\}}L_{ik}L_{jk}\)</span>.
+Si tenemos los <span class="math inline">\(L_{ij}\)</span> con <span
+class="math inline">\(j&lt; k\)</span>, tenemos <span
+class="math inline">\(A_{kk}=\sum_{j=1}^k L_{kj}^2\)</span>, luego <span
+class="math inline">\(L_{kk}^2=A_{kk}-\sum_{i=1}^{k-1}L_{kj}^2\)</span>.
+Veamos que podemos tomar una raíz positiva: si no, tomamos raíz <span
+class="math inline">\(L_{kk}\in\C\)</span>; tenemos que <span
+class="math inline">\(A_k,L_k\in\R^{k\times k}\)</span>, con <span
+class="math inline">\(A_{kij}=A_{ij}\)</span> y <span
+class="math inline">\(L_{kij}=L_{ij}\)</span> cumplen <span
+class="math inline">\(A_k=L_kL_k^t\)</span>, luego <span
+class="math inline">\(0&lt;|A_k|=|L_k|^2=L_{11}^2\ldots
+L_{kk}^2\)</span> (por Sylvester), con lo que <span
+class="math inline">\(L_{kk}^2&gt;0\)</span>. Faltarían los <span
+class="math inline">\(L_{ik}\)</span> con <span
+class="math inline">\(i&gt;k\)</span>; ahora <span
+class="math inline">\(A_{ik}=\sum_{j=1}^{k}L_{ij}L_{kj}\)</span>, luego
+<span
+class="math inline">\(L_{ik}=\frac1{L_{kk}}(A_{ik}-\sum_{j=1}^{k-1}L_{ij}L_{kj})\)</span>.∎</p>
+<p><strong>Descomposición en valores singulares (SVD).</strong> Dada
+<span class="math inline">\(A\in\R^{n\times m}\)</span> existen matrices
+ortogonales <span class="math inline">\(U\in\R^{n\times n}\)</span>,
+<span class="math inline">\(V\in\R^{m\times m}\)</span> y <span
+class="math inline">\(\Sigma\in\R^{n\times m}\)</span> diagonal tales
+que <span class="math inline">\(A=U\Sigma V\)</span> y si <span
+class="math inline">\(\sigma_1,\ldots,\sigma_r\)</span> son los valores
+de la diagonal de <span class="math inline">\(\Sigma\)</span> entonces
+<span class="math inline">\(\sigma_1 \geqq \cdots \geqq \sigma_r \geqq
+0\)</span>. Los números positivos <span
+class="math inline">\(\sigma_i\)</span> se llaman <em>valores
+singulares</em> de <span class="math inline">\(A\)</span>, son tantos
+como el rango de <span class="math inline">\(A\)</span>, y están
+determinados: son las raíces cuadradas de los autovalores no nulos de
+<span class="math inline">\(A^tA\)</span>.</p>
+<p><strong>Teorema de Eckart-Young.</strong> Si <span
+class="math inline">\(A=U\Sigma V\)</span> es la SVD de <span
+class="math inline">\(A\)</span> y <span class="math inline">\(k\leqq
+r\)</span>, donde <span class="math inline">\(r=\text{rg}(A)\)</span>,
+la matriz <span class="math inline">\(A_k=U\Sigma_k V\)</span> que viene
+de llenar con ceros <span class="math inline">\(\Sigma\)</span> a partir
+del valor singular <span class="math inline">\(k+1\)</span> es la matriz
+de rango <span class="math inline">\(k\)</span> que minimiza <span
+class="math inline">\(\|A-A_k\|\)</span> tanto en norma matricial <span
+class="math inline">\(\|\cdot\|_2\)</span> como en norma Frobenius. (<a
+href="https://en.wikipedia.org/wiki/Low-rank_approximation"><em>Prueba.</em></a>)</p>
+<p><strong>Componentes principales.</strong> Si <span
+class="math inline">\(X\in\R^{n\times m}\)</span> se interpreta como
+observaciones de <span class="math inline">\(m\)</span> variables
+(columnas) sobre <span class="math inline">\(n\)</span> unidades
+(filas), las variables están centradas (<span
+class="math inline">\(\sum_{i=1}^n A_{ij}=0\)</span> para <span
+class="math inline">\(j=1,\ldots,m\)</span>), su SVD es <span
+class="math inline">\(X=U\Sigma V\)</span>, <span
+class="math inline">\(k\leqq m\)</span> y <span
+class="math inline">\(V_k\in\R^{k\times m}\)</span> es <span
+class="math inline">\(V\)</span> con sólo sus primeras <span
+class="math inline">\(k\)</span> filas, <span
+class="math inline">\(Y=XV_k^t\)</span> es una representación de <span
+class="math inline">\(X\)</span> con sólo <span
+class="math inline">\(k\)</span> variables que minimiza el error de
+reconstrucción <span class="math inline">\(\|X-YV\|_F\)</span> entre
+transformaciones lineales. Además, las columnas (variables) de <span
+class="math inline">\(Y\)</span> no están correlacionadas; se denominan
+las <span class="math inline">\(k\)</span> <em>componentes
+principales</em> de <span class="math inline">\(X\)</span>. La varianza
+total de <span class="math inline">\(X\)</span> es <span
+class="math inline">\(\|X\|_F=\sum_{i=1}^r \sigma_i^2\)</span>, por lo
+que la proporción de la varianza que captura <span
+class="math inline">\(Y\)</span> es <span
+class="math inline">\(\frac{\|Y\|_F}{\|X\|_F}=\frac{\sum_{i=1}^k
+\sigma_i^2}{\sum_{i=1}^r \sigma_i^2}\)</span>.</p>
+<p><strong>Problema de Procrustes ortogonal.</strong> Si <span
+class="math inline">\(A,B\in\R^{n\times m}\)</span> buscamos <span
+class="math inline">\(R\in\R^{n\times n}\)</span> ortogonal tal que
+minimice <span class="math inline">\(\|RA-B\|_F\)</span>; la solución es
+<span class="math inline">\(R=UV\)</span>, donde <span
+class="math inline">\(BA^t=U\Sigma V\)</span> es la SVD.</p>
+<p><em><a
+href="https://en.wikipedia.org/wiki/Orthogonal_Procrustes_problem">Prueba</a>.</em>
+Primero notamos que si <span class="math inline">\(X,Y\in\R^{n\times
+m}\)</span>, podemos definir <span class="math inline">\(\langle
+X,Y\rangle = \sum_{i=1}^n \sum_{j=1}^m X_{ij}Y_{ij},\)</span> de manera
+que <span class="math inline">\(\|X\|_F^2=\langle X,X\rangle,\)</span> y
+se tiene <span class="math inline">\(\langle
+X,Y\rangle=\text{tr}(X^tY);\)</span> es bilineal, simétrico y <span
+class="math inline">\(\langle XY,Z\rangle=\langle Y,X^tZ\rangle=\langle
+X,ZY^t\rangle.\)</span> De aquí que minimizar <span
+class="math inline">\(\|RA-B\|_F^2\)</span> con <span
+class="math inline">\(R^tR=I\)</span> es maximizar <span
+class="math inline">\(\langle RA,B\rangle=\langle R,BA^t\rangle=\langle
+R,U\Sigma V\rangle=\langle U^tRV^t,\Sigma\rangle.\)</span> Si <span
+class="math inline">\(S=U^tRV^t\)</span>, <span
+class="math inline">\(S^tS=I\)</span>, luego <span
+class="math inline">\(\langle S, \Sigma\rangle\)</span> se maximiza con
+unos en la diagonal de <span class="math inline">\(S\)</span> y ceros
+afuera, lo que da <span class="math inline">\(R=UV\)</span>.∎</p>
+<p><strong>Métodos de Jacobi y Gauss-Seidel.</strong> Dada <span
+class="math inline">\(A\in\R^{n\times n}\)</span> escribimos <span
+class="math inline">\(A=L+D+U\)</span>, con <span
+class="math inline">\(L_{ij}=0\)</span> si <span
+class="math inline">\(i\leqq j\)</span>, <span
+class="math inline">\(D\)</span> diagonal y <span
+class="math inline">\(U_{ij}=0\)</span> si <span
+class="math inline">\(i\geqq j\)</span>. Queremos resolver <span
+class="math inline">\(Ax=b\)</span>. Métodos iterativos: dado <span
+class="math inline">\(x^0\)</span> ponemos <span
+class="math inline">\(x^{k+1}=Bx^k+c\)</span>, asumiendo <span
+class="math inline">\(x=Bx+c\)</span>. Jacobi: <span
+class="math inline">\(x^{k+1}=-D^{-1}(L+U)x^k+D^{-1}b\)</span>;
+Gauss-Seidel: <span
+class="math inline">\(x^{k+1}=-(D+L)^{-1}Ux^k+(D+L)^{-1}b\)</span>. O
+sea Jacobi es <span
+class="math inline">\(x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j\neq
+i}a_{ij}x^k_j)\)</span> y Gauss-Seidel, <span
+class="math inline">\(x^{k+1}_i=\frac1{a_{ii}}(b_i-\sum_{j&lt;i}a_{ij}x^{k+1}_j-\sum_{j&gt;i}a_{ij}x^k_j)\)</span>.
+El error <span class="math inline">\(e_k=x^k-x\)</span> cumple <span
+class="math inline">\(e_{k+1}=Be_k=B^ke_1\)</span>, luego el método
+converge para todo punto inicial si y sólo si <span
+class="math inline">\(B^k\to0\)</span>, es decir, sii <span
+class="math inline">\(\rho(B)&lt;1\)</span>. Si <span
+class="math inline">\(A\)</span> es <em>estrictamente diagonal
+dominante</em>, es decir, si <span
+class="math inline">\(|a_{ii}|&gt;\sum_{j\neq i}|a_{ij}|\)</span> para
+<span class="math inline">\(i=1,\ldots,n\)</span>, entonces tanto Jacobi
+como Gauss-Seidel convergen. Si <span class="math inline">\(A\)</span>
+es simétrica y definida positiva entonces Gauss-Seidel converge. Si
+<span class="math inline">\(A\)</span> es <em>tridiagonal</em> (<span
+class="math inline">\(A_{ij}=0\)</span> si <span
+class="math inline">\(|i-j|&gt;1\)</span>) entonces Jacobi converge si y
+sólo si Gauss-Seidel converge, y <span
+class="math inline">\(\rho(B_{GS})=\rho(B_J)^2\)</span>.</p>
+<p><em>Prueba.</em> Primero, que GS converge si <span
+class="math inline">\(A\)</span> cumple <span
+class="math inline">\(|a_{ii}|&gt;\sum_{j\neq i}|a_{ij}|\)</span>: <span
+class="math inline">\(B=-(D+L)^{-1}U\)</span> cumple <span
+class="math inline">\(B_{ij}=-\frac1{A_{ii}}(A_{ij}-\sum_{k=1}^{i-1}A_{ik}B_{kj})\)</span>
+si <span class="math inline">\(i&lt; j\)</span> y 0 si no; queremos ver
+que <span
+class="math inline">\(\|B\|_\infty=\max_{i}\{\sum_{j&gt;i}|B_{ij}|\}&lt;1\)</span>;
+supongamos que sabemos que <span
+class="math inline">\(\sum_{j&gt;k}|B_{kj}|&lt;1\)</span> para <span
+class="math inline">\(k&lt; i;\)</span> <span
+class="math inline">\(\sum_{j&gt;i}|B_{ki}|\leqq\frac1{|A_{ii}|}\sum_{j&gt;i}(|A_{ij}|+\sum_{k&lt;
+i}|A_{ik}||B_{kj}|)=\frac1{|A_{ii}|}(\sum_{j&gt;i}|A_{ij}|+\sum_{k&lt;i}|A_{ik}|\sum_{j&gt;i}|B_{kj}|)\leqq\)</span>
+<span
+class="math inline">\(\frac1{|A_{ii}|}(\sum_{j&gt;i}|A_{ij}|+\sum_{k&lt;i}|A_{ik}|)&lt;1\)</span>
+y vale para <span class="math inline">\(i\)</span>, luego <span
+class="math inline">\(\|B\|_\infty&lt;1\)</span>. Segundo, que GS
+converge si <span class="math inline">\(A\)</span> es simétrica y
+definida positiva: sea <span
+class="math inline">\(\lambda\in\C\)</span>, <span
+class="math inline">\(x\in\C^n\)</span>, <span
+class="math inline">\(x\neq0\)</span>, con <span
+class="math inline">\(Bx=\lambda x\)</span>; es <span
+class="math inline">\(-L^tx=\lambda(D+L)x\)</span>, <span
+class="math inline">\(Ax=(1-\lambda)(D+L)x\)</span>; tenemos <span
+class="math inline">\(\frac{1}{1-\lambda}=\frac{x^*(D+L)x}{x^*Ax}\)</span>
+y conjugando <span
+class="math inline">\(\frac{1}{1-\overline\lambda}=\frac{x^*(D+L^*)x}{x^*Ax}\)</span>;
+sumo: <span
+class="math inline">\(2\Re(\frac{1}{1-\lambda})=1+\frac{x^*Dx}{x^*Ax}&gt;1\)</span>,
+lo que da <span class="math inline">\(|\lambda|&lt;1\)</span>. Tercero,
+si <span class="math inline">\(A\)</span> es tridiagonal vale <span
+class="math inline">\(|A|=|D+\alpha^{-1}L+\alpha U|\)</span> si <span
+class="math inline">\(\alpha\neq0\)</span>: <span
+class="math inline">\(A+\alpha^{-1} L+\alpha U\)</span> es <span
+class="math inline">\(A\)</span> en la base <span
+class="math inline">\(v_1,\alpha v_2,\ldots,\alpha^{n-1}v_n\)</span>;
+con eso se ve que si <span class="math inline">\(\lambda\neq0\)</span>,
+<span class="math inline">\(\lambda^2\)</span> es autovalor de <span
+class="math inline">\(B_{GS}\)</span> sii <span
+class="math inline">\(\lambda\)</span> es autovalor de <span
+class="math inline">\(B_J\)</span>.∎</p>
+<h2 id="raíces">Raíces</h2>
+<p><strong>Punto fijo.</strong> Dada <span class="math inline">\(f:I\to
+I\)</span>, con <span class="math inline">\(I=[a,b]\)</span> intervalo,
+se busca <span class="math inline">\(r\)</span> con <span
+class="math inline">\(f(r)=r\)</span>. El algoritmo: tomar <span
+class="math inline">\(x_0\)</span> y luego <span
+class="math inline">\(x_n=f(x_{n-1})\)</span>. Si <span
+class="math inline">\(|f&#39;|\leqq\lambda&lt;1\)</span> converge y se
+tiene <span class="math inline">\(|x_n-r|\leqq
+\frac{\lambda^n}{1-\lambda}|x_1-x_0|\)</span>.</p>
+<p><em>Prueba.</em> <span
+class="math inline">\(|x_n-r|=|f(x_{n-1})-f(r)|\leqq
+\lambda|x_{n-1}-r|\leqq \cdots\leqq \lambda^n|x_0-r|\)</span>. Por otro
+lado <span class="math inline">\(|x_1-x_0|=|f(x_0)-x_0|\geqq
+|x_0-f(r)|-|f(r)-f(x_0)|\geqq
+|x_0-r|-\lambda|x_0-r|=(1-\lambda)|x_0-r|\)</span>.∎</p>
+<p><strong>Newton-Raphson.</strong> Dada <span
+class="math inline">\(f:I\to\R\)</span> consiste en buscar una raíz
+<span class="math inline">\(r\)</span> como punto fijo de <span
+class="math inline">\(g(x)=x-\frac{f(x)}{f&#39;(x)}\)</span>. Si <span
+class="math inline">\(f&#39;&#39;\)</span> está acotada y <span
+class="math inline">\(f&#39;(r)\neq0\)</span>, hay un entorno de <span
+class="math inline">\(r\)</span> en el que el algoritmo converge con
+orden 2, es decir <span
+class="math inline">\(\frac{|e_{n+1}|}{|e_n|^2}\)</span> está acotado,
+con <span class="math inline">\(e_n=x_n-r\)</span>. Si <span
+class="math inline">\(f&#39;&#39;&gt;0\)</span> converge partiendo de
+cualquier punto.</p>
+<p><em>Prueba.</em> Por Taylor <span
+class="math inline">\(\left|\frac{e_{n+1}}{e_n^2}\right|=\frac12\frac{|f&#39;&#39;(\xi)|}{|f&#39;(x_n)|}\)</span>,
+que está acotado, lo que prueba lo primero. La convexidad <span
+class="math inline">\(f&#39;&#39;&gt;0\)</span> da por Taylor que si
+<span class="math inline">\(f\)</span> decrece en <span
+class="math inline">\(I_1=(-\infty,v)\)</span> y crece en <span
+class="math inline">\(I_2=(v,\infty)\)</span>, si <span
+class="math inline">\(x_0\in I_i\)</span>, <span
+class="math inline">\(x_n\in I_i\)</span> para todo <span
+class="math inline">\(n\)</span>, y <span
+class="math inline">\(x_n\)</span> es creciente en <span
+class="math inline">\(I_1\)</span> y decreciente en <span
+class="math inline">\(I_2\)</span>, por lo que converge en ambos
+casos.∎</p>
+<p><strong>Secante.</strong> Algoritmo: <span
+class="math inline">\(x_{n+1}=x_n-f(x_n)\frac{x_n-x_{n-1}}{f(x_n)-f(x_{n-1})}\)</span>.
+Si <span class="math inline">\(r\)</span> es raíz, <span
+class="math inline">\(f&#39;&#39;\)</span> acotado y <span
+class="math inline">\(f&#39;(r)\neq0\)</span>, hay un entorno de <span
+class="math inline">\(r\)</span> en el que converge con orden <span
+class="math inline">\(p&gt;0\)</span>, <span
+class="math inline">\(p^2=p+1\)</span>, es decir, <span
+class="math inline">\(\frac{|e_{n+1}|}{|e_n|^p}\)</span> está
+acotado.</p>
+<p><em>Prueba.</em> Se ve que <span
+class="math inline">\(e_{n+1}=e_ne_{n-1}\frac{f[x_n,r,x_{n-1}]}{f[x_n,x_{n-1}]}=\frac12\frac{f&#39;&#39;(\eta_n)}{f&#39;(\xi_n)}e_ne_{n-1}\)</span>.
+Sea <span class="math inline">\(y_n=\frac{|e_{n+1}|}{|e_n|^p}\)</span>,
+<span
+class="math inline">\(c_n=\frac12\frac{f&#39;&#39;(\eta_n)}{f&#39;(\xi_n)}\)</span>
+y <span
+class="math inline">\(c=\frac12\frac{f&#39;&#39;(r)}{f&#39;(r)}\)</span>.
+Tenemos <span class="math inline">\(y_n=|c_n|y_{n-1}^{1-p}\)</span>; si
+<span class="math inline">\(c_n\to c\neq0\)</span> se ve que <span
+class="math inline">\(|y_n|\to |c|^{1/p}\)</span>.∎</p>
+<h2 id="interpolación-polinómica">Interpolación polinómica</h2>
+<p><strong>Forma de Newton.</strong> Defino <span
+class="math inline">\(f[x_0]=f(x_0)\)</span> y <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f[x_0,\ldots,x_{n-1}]-f[x_1,\ldots,x_n]}{x_0-x_n}\)</span>.
+Defino <span class="math inline">\(\PP_n\)</span> como el conjunto de
+polinomios de grado a lo sumo <span class="math inline">\(n\)</span>. El
+<span class="math inline">\(p_n\in\PP_n\)</span> que interpola a <span
+class="math inline">\(f\)</span> en <span
+class="math inline">\(x_0,\ldots,x_n\)</span> es <span
+class="math display">\[p_n(x)=f(x_0)+f[x_0,x_1](x-x_0)+\cdots+f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})\]</span></p>
+<p>y vale <span
+class="math inline">\(f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+para todo <span class="math inline">\(x\)</span>. Si <span
+class="math inline">\(f\in C^n[a,b]\)</span> hay <span
+class="math inline">\(\xi\)</span> con <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}\)</span>.</p>
+<p><em>Prueba.</em> Lo primero es obvio por inducción, probando además
+que <span class="math inline">\(f[x_0,\ldots,x_n]\)</span> es simétrica.
+Para lo segundo <span
+class="math inline">\(F(x)=f(x)-p_{n-1}(x)-f[x_0,\ldots,x_n](x-x_0)\ldots(x-x_{n-1})\)</span>
+tiene <span class="math inline">\(n+1\)</span> raíces <span
+class="math inline">\(x_0,\ldots,x_n\)</span>, luego hay <span
+class="math inline">\(\xi\)</span> con <span
+class="math inline">\(F^{(n)}(\xi)=0\)</span>, es decir, <span
+class="math inline">\(f^{(n)}(\xi)-f[x_0,\ldots,x_n]n!=0\)</span>.∎</p>
+<p><strong>Interpolación de Hermite.</strong> Sea <span
+class="math inline">\(f\in C^n(I)\)</span>. La función <span
+class="math inline">\(f[x_0,\ldots,x_n]:I^n\menos\bigcup_{i\neq
+j}\{x_i=x_j\}\to\R\)</span> se puede extender a una función continua
+sobre <span class="math inline">\(I^n\)</span> calculada ordenando <span
+class="math inline">\((x_0,\ldots,x_n)\)</span> y usando la fórmula
+recursiva con base <span
+class="math inline">\(f[\underbrace{x,\ldots,x}_{\text{$k+1$
+veces}}]=\frac{f^{(k)}(x)}{k!}\)</span>. Con eso dados puntos <span
+class="math inline">\(x_0,\ldots,x_n\)</span> obtenemos <span
+class="math inline">\(p_n\in\PP_n\)</span> por la fórmula de Newton y es
+el único que satisface <span
+class="math inline">\(p_n^{(j)}(x)=f^{(j)}(x)\)</span> si <span
+class="math inline">\(x\)</span> aparece <span
+class="math inline">\(j+1\)</span> veces. Sigue valiendo <span
+class="math inline">\(f(x)-p_n(x)=f[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+y <span
+class="math inline">\(f[x_0,\ldots,x_n]=\frac{f^{(n)}(\xi)}{n!}\)</span>.</p>
+<p><em>Prueba.</em> Que <span class="math inline">\(p_n\)</span> cumple
+la condición se ve reordenando <span
+class="math inline">\((x_i)\)</span> para que los <span
+class="math inline">\(x\)</span> estén al principio (se ve que el <span
+class="math inline">\(p_n\)</span> obtenido es el mismo perturbando los
+<span class="math inline">\((x_i)\)</span> para que sean distintos). Que
+es único: si <span class="math inline">\(q_n\)</span> cumple <span
+class="math inline">\(q_n(x)-p_n(x)=q_n[x_0,\ldots,x_n,x](x-x_0)\ldots(x-x_n)\)</span>
+pero <span
+class="math inline">\(q_n[x_0,\ldots,x_n,x]=\frac{q_n^{(n+1)}(\xi)}{(n+1)!}=0\)</span>
+(porque <span class="math inline">\(q_n\in\PP_n\)</span>), entonces
+<span class="math inline">\(q_n=p_n\)</span>.∎</p>
+<p><strong>Polinomios de Chebyshev.</strong> Sea <span
+class="math inline">\(T_n(x)=\cos(n\cos^{-1}(x))\)</span>, donde <span
+class="math inline">\(\cos^{-1}:[-1,1]\to[0,\pi]\)</span>. Restringido a
+<span class="math inline">\([-1,1]\)</span> está en <span
+class="math inline">\(\PP_n\)</span>, sigue la recursión <span
+class="math inline">\(T_{n+1}=2xT_n-T_{n-1}\)</span>, <span
+class="math inline">\(T_1=x\)</span>, <span
+class="math inline">\(T_0=1\)</span>, tiene coeficiente principal <span
+class="math inline">\(2^{n-1}\)</span>, tiene <span
+class="math inline">\(n\)</span> raíces distintas en <span
+class="math inline">\([-1,1]\)</span>, <span
+class="math inline">\(|T_n|\leqq1\)</span> en <span
+class="math inline">\([-1,1]\)</span> y lo alcanza en <span
+class="math inline">\(n+1\)</span> puntos. Si <span
+class="math inline">\(P\)</span> es un polinomio mónico de grado <span
+class="math inline">\(n\)</span> entonces <span
+class="math inline">\(\|P\|_{L^\infty[-1,1]}\geqq
+\frac1{2^{n-1}}\)</span>. Por lo tanto la mejor interpolación sobre
+<span class="math inline">\(n\)</span> puntos en <span
+class="math inline">\([-1,1]\)</span> es sobre las raíces de <span
+class="math inline">\(T_{n+1}\)</span>. Esto se lleva a <span
+class="math inline">\([a,b]\)</span> tomando <span
+class="math inline">\(\tilde T_n(x)=T_n(\frac{2x-a-b}{b-a})\)</span>. Se
+obtiene <span class="math inline">\(\|f-p_n\|_{L^\infty[a,b]}\leqq
+\frac{\|f^{(n+1)}\|_{L^\infty[a,b]}}{2^{2n+1}(n+1)!}(b-a)^{n+1}\)</span>.</p>
+<p><em>Prueba.</em> Lo primero es claro. Supongamos que hay <span
+class="math inline">\(P\)</span> mónico de grado <span
+class="math inline">\(n\)</span> con <span
+class="math inline">\(|P(x)|&lt;\frac1{2^{n-1}}\)</span> para todo <span
+class="math inline">\(x\in[-1,1]\)</span>. Sea <span
+class="math inline">\(W_n=\frac1{2^{n-1}}T_n\)</span> y <span
+class="math inline">\(-1=y_0&lt;y_1&lt;\cdots&lt;y_n=1\)</span> con
+<span class="math inline">\(|W_n(y_i)|=\frac1{2^{n-1}}\)</span>,
+alternando de signo. Entonces <span
+class="math inline">\((P(y_i)-W_n(y_i))(P(y_{i+1})-W_n(y_{i+1}))&lt;0\)</span>,
+luego <span class="math inline">\(P-W_n\)</span> tiene <span
+class="math inline">\(n\)</span> raíces, pero grado a lo sumo <span
+class="math inline">\(n-1\)</span>; luego es nulo y <span
+class="math inline">\(P=W_n\)</span>, absurdo.∎</p>
+<p><strong>Splines cúbicos.</strong> Dada <span
+class="math inline">\(f\in C[a,b]\)</span> y <span
+class="math inline">\(a=x_0&lt;x_1&lt;\cdots&lt;x_n=b\)</span> hay una
+única <span class="math inline">\(S\in C^2[a,b]\)</span> tal que <span
+class="math inline">\(S|_{[x_i,x_{i+1}]}\)</span> es cúbica, <span
+class="math inline">\(S(x_i)=f(x_i)\)</span> y <span
+class="math inline">\(S&#39;&#39;(x_0)=S&#39;&#39;(x_n)=0\)</span>.</p>
+<h2 id="cuadrados-mínimos">Cuadrados mínimos</h2>
+<p><strong>Productos internos.</strong> Sea <span
+class="math inline">\(V\)</span> un <span
+class="math inline">\(\R\)</span>-espacio vectorial; un <em>producto
+interno</em> es una función bilineal <span
+class="math inline">\(\langle{\cdot},{\cdot}\rangle:V^2\to\R\)</span>
+simétrica tal que <span class="math inline">\(\langle
+x,x\rangle\geqq0\)</span>, con igualdad sii <span
+class="math inline">\(x=0\)</span>. Define una norma <span
+class="math inline">\(\|x\|=\sqrt{\langle x,x\rangle}\)</span>. Vale
+Cauchy-Schwarz: <span class="math inline">\(\langle
+x,y\rangle\leqq\|x\|\|y\|\)</span>, desigualdad triangular <span
+class="math inline">\(\|x+y\|\leqq\|x\|+\|y\|\)</span> y Pitágoras:
+<span class="math inline">\(\|x+y\|^2=\|x\|^2+\|y\|^2\)</span> si <span
+class="math inline">\(\la x,y\ra=0\)</span>. Sea <span
+class="math inline">\(S\subset V\)</span> un subespacio, y <span
+class="math inline">\(x\in V\)</span>; <span class="math inline">\(y\in
+S\)</span> minimiza <span class="math inline">\(\|x-y\|\)</span> sii
+para todo <span class="math inline">\(s\in S\)</span> vale <span
+class="math inline">\(\langle x-y,s\rangle\)</span>; en ese caso <span
+class="math inline">\(y\)</span> es único. Si <span
+class="math inline">\(S\)</span> es finitamente generado se puede tomar
+una base ortonormal <span class="math inline">\(v_1,\ldots,v_n\)</span>,
+con <span class="math inline">\(\|v_i\|=1\)</span> y <span
+class="math inline">\(\la v_i,v_j\ra=0\)</span> si <span
+class="math inline">\(i\neq j\)</span>. En ese caso <span
+class="math inline">\(y=\sum_{i=1}^n \la x,v_i\ra v_i\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(y\in S\)</span> hace
+a <span class="math inline">\(\|x-y\|\)</span> mínimo, <span
+class="math inline">\(\|x-y+ts\|\geqq \|x-y\|\)</span> para <span
+class="math inline">\(s\in S\)</span>, <span
+class="math inline">\(t\in\R\)</span>, luego <span
+class="math inline">\(t^2\langle s,s\rangle+2t\langle
+x-y,s\rangle\geqq0\)</span>, imposible si <span
+class="math inline">\(\langle x-y,s\rangle\neq0\)</span>; además hay
+igualdad sii <span class="math inline">\(s=0\)</span>, lo que dice que
+<span class="math inline">\(y\)</span> es único. Si <span
+class="math inline">\(\langle x-y,s\rangle=0\)</span> para todo <span
+class="math inline">\(s\in S\)</span>, <span
+class="math inline">\(\|x-y+s\|^2=\|x-y\|^2+\|s\|^2\geqq\|x-y\|^2\)</span>
+y <span class="math inline">\(\|x-y\|\)</span> es mínimo. Dado <span
+class="math inline">\(S\)</span> con base <span
+class="math inline">\(\{u_1,\ldots,u_n\}\)</span> hacemos Gram-Schmidt:
+ponemos <span class="math inline">\(v_k=u_k-\sum_{i=1}^{k-1}\frac{\la
+u_k,v_i\ra}{\la v_i,v_i\ra}v_i\)</span> y queda una base ortonormal
+<span class="math inline">\(e_n=\frac1{\|v_n\|}v_n\)</span>.∎</p>
+<p><strong>Regresión lineal.</strong> Dado <span
+class="math inline">\(y\in\R^n\)</span> y <span
+class="math inline">\(x\in\R^{n\times k}\)</span> queremos <span
+class="math inline">\(\beta\in\R^k\)</span> tal que <span
+class="math inline">\(\sum_{i=1}^n
+\left(y_i-\sum_{j=1}^k\beta_jx_{ij}\right)^2\)</span> sea mínimo. Se da
+sii <span class="math inline">\(x^tx\beta=x^ty\)</span>. Si las columnas
+de <span class="math inline">\(x\)</span> son independientes la solución
+es única: <span
+class="math inline">\(\beta=(x^tx)^{-1}x^ty\)</span>.</p>
+<p><em>Lema.</em> Si <span class="math inline">\(A\in\R^{n\times k},
+x\in\R^k, y\in\R^n\)</span> entonces <span class="math inline">\(\la
+Ax,y\ra=\la x,A^ty\ra\)</span>.</p>
+<p><em>Prueba.</em> <span class="math inline">\(S=\{x\beta\mid
+\beta\in\R^k\}\)</span> es un subespacio; queremos <span
+class="math inline">\(\beta\)</span> con <span
+class="math inline">\(\|y-x\beta\|\)</span> mínimo; luego <span
+class="math inline">\(\la y-x\beta,xs\ra=0\)</span> para todo <span
+class="math inline">\(s\in\R^k\)</span>, pero por el lema es <span
+class="math inline">\(\la x^t(y-x\beta),s\ra=0\)</span>, o sea <span
+class="math inline">\(x^tx\beta=x^ty\)</span>. Si las columnas de <span
+class="math inline">\(x\)</span> son independientes, <span
+class="math inline">\(\beta\mapsto x\beta\)</span> es inyectiva, luego
+<span class="math inline">\(\beta\)</span> es única; además <span
+class="math inline">\(\la x^tx\beta,\beta\ra=\la
+x\beta,x\beta\ra\)</span>, luego <span
+class="math inline">\(x^tx\beta=0\then \beta=0\)</span> y <span
+class="math inline">\(x^tx\)</span> es inversible.∎</p>
+<p><strong>Descomposición QR.</strong> Si <span
+class="math inline">\(A\in\R^{n\times k}\)</span>, sean <span
+class="math inline">\(a_1,\ldots,a_k\)</span> sus columnas; tomo <span
+class="math inline">\(u_i=a_i-\sum_{j=1}^{i-1}\frac{\la a_i,u_j\ra}{\la
+u_j,u_j\ra}u_j\)</span> y <span
+class="math inline">\(e_i=\frac1{\|u_i\|}u_i\)</span>; se ve <span
+class="math inline">\(a_i=\sum_{j=1}^i \la a_i,e_j\ra e_j\)</span>;
+luego <span class="math inline">\(A=QR\)</span> con <span
+class="math inline">\(Q_{ij}=e_{ji}\)</span> y <span
+class="math inline">\(R=\la a_i,e_j\ra\)</span>, <span
+class="math inline">\(Q\)</span> ortogonal (o sea <span
+class="math inline">\(Q^tQ=1\)</span>) y <span
+class="math inline">\(R\)</span> triangular superior.</p>
+<p><strong>Aproximación por polinomios.</strong> Wierstrass: si <span
+class="math inline">\(f\in C[0,1]\)</span> hay una sucesión <span
+class="math inline">\(p_n\in\PP_n\)</span> que converge uniformemente:
+<span class="math inline">\(p_n=\sum_{k=0}^n f\left(\frac
+kn\right)\comb{n}{k}x^k(1-x)^k\)</span>. Si <span
+class="math inline">\(w\in C[0,1]\)</span> es positiva, <span
+class="math inline">\(C[0,1]\)</span> tiene un producto interno <span
+class="math inline">\(\la f,g\ra=\int_0^1 wfg\)</span> y si <span
+class="math inline">\(p_n^*\)</span> es la proyección de <span
+class="math inline">\(f\)</span> en <span
+class="math inline">\(\PP_n\)</span> tenemos <span
+class="math inline">\(\|f-p_n^*\|\to0\)</span>, y por lo tanto
+(Parseval) <span class="math inline">\(\|f\|^2=\sum_{n=0}^\infty \la f,
+e_n\ra^2\)</span> si <span class="math inline">\(\{e_n\}\)</span> es la
+base ortonormal de polinomios.</p>
+<p><em>Prueba.</em> Sea <span class="math inline">\(f\in
+C[0,1]\)</span>. Sea <span class="math inline">\(x\in[0,1]\)</span>;
+dado <span class="math inline">\(n\)</span> sean <span
+class="math inline">\(X_n\)</span> variables aleatorias iid con <span
+class="math inline">\(P(X_n=1)=x\)</span>, <span
+class="math inline">\(P(X_n=0)=1-x\)</span>, y sea <span
+class="math inline">\(X=\frac1n\sum_{i=1}^nX_i\)</span>. Vale <span
+class="math inline">\(\E(X)=x\)</span>, <span
+class="math inline">\(\Var(X)=\frac1nx(1-x)\leqq \frac1{4n}\)</span>,
+<span class="math inline">\(P(X=\frac kn)=\comb{n}{k}x^k(1-x)^k\)</span>
+para <span class="math inline">\(k=0,\ldots,n\)</span>. Dado <span
+class="math inline">\(\delta&gt;0\)</span> tenemos <span
+class="math inline">\(P(|X-x|\geqq\delta)\leqq\frac{\Var(X)}{\delta^2}\leqq
+\frac1{4n\delta^2}\)</span> por <a
+href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality">Chebyshev</a>.
+Dado <span class="math inline">\(\epsilon&gt;0\)</span> hay <span
+class="math inline">\(\delta&gt;0\)</span> con <span
+class="math inline">\(|x-y|&lt;\delta\then|f(x)-f(y)|&lt;\epsilon\)</span>
+si <span class="math inline">\(x,y\in[0,1]\)</span>, luego <span
+class="math inline">\(\E(|f(X)-f(x)|)=\)</span><span
+class="math inline">\(\E_{|X-x|&lt;\delta}(|f(X)-f(x)|)+\E_{|X-x|\geqq\delta}(|f(X)-f(x)|)\leqq\epsilon+\frac{2\|f\|_\infty}{4n\delta^2}\)</span>.
+Luego <span class="math inline">\(|\E(f(X))-\E(f(x))|\leqq
+\E(|f(X)-f(x)|)\to0\)</span> uniformemente cuando <span
+class="math inline">\(n\to\infty\)</span>; ahora <span
+class="math inline">\(\E(f(X))=\sum_{k=0}^n f\left(\frac
+kn\right)\comb{n}{k}x^k(1-x)^k\)</span>, luego <span
+class="math inline">\(\|p_n-f\|_\infty\to0\)</span>, y probamos
+Wierstrass. Ahora dada <span class="math inline">\(w\)</span>, <span
+class="math inline">\(\la f,g\ra=\int_0^1 wfg\)</span>, <span
+class="math inline">\(f\)</span> y <span
+class="math inline">\(p_n^*\)</span> tenemos <span
+class="math inline">\(\|f-p_n^*\|\leqq\|f-p_n\|=\sqrt{\int_0^1w(f-p_n)^2}\leqq\)</span><span
+class="math inline">\(\sqrt{\int_0^1w\epsilon^2}=\epsilon\|1\|\to0\)</span>
+si <span class="math inline">\(n\to\infty\)</span>.∎</p>
+<h2 id="integración-numérica">Integración numérica</h2>
+<p>Dado <span class="math inline">\([a,b]\)</span> se buscan puntos
+<span class="math inline">\(x_0,\ldots,x_n\)</span> y pesos <span
+class="math inline">\(A_0,\ldots,A_n\)</span> para aproximar <span
+class="math inline">\(I(f)=\int_a^bfw\)</span>, con <span
+class="math inline">\(w&gt;0\)</span>, por <span
+class="math inline">\(Q(f)=\sum_{i=0}^n A_if(x_i)\)</span>. El <em>grado
+de exactitud</em> es el máximo <span class="math inline">\(k\)</span>
+tal que <span class="math inline">\(I(p)=Q(p)\)</span> para todo <span
+class="math inline">\(p\in\PP_k\)</span>; por linealidad basta testear
+<span class="math inline">\(x^k\)</span>. Si hay <span
+class="math inline">\(M\)</span> con <span
+class="math inline">\(|Q(f)|\leqq M(b-a)\|f\|_\infty\)</span> entonces
+si <span class="math inline">\(f\in C^{k+1}[a,b]\)</span> se tiene <span
+class="math inline">\(|R(f)|=|I(f)-Q(f)|\leqq
+\frac{(1+M)(b-a)^{k+2}}{(k+1)!}\|f^{(k+1)}\|_{\infty}\)</span>. Si
+partimos <span class="math inline">\([a,b]\)</span> en <span
+class="math inline">\(a=x_0&lt;\cdots&lt;x_n=b\)</span> y tenemos <span
+class="math inline">\(|Q_i(f|_{[x_{i-1},x_i]})|\leqq
+M(x_i-x_{i-1})\|f\|_\infty\)</span>, las combinamos en <span
+class="math inline">\(Q=\sum_{i=1}^nQ_i\)</span> y tenemos <span
+class="math inline">\(|R(f)|\leqq
+\frac{(1+M)(b-a)\max\{x_i-x_{i-1}\}^{k+1}}{(k+1)!}\|f^{(k+1)}\|_{\infty}\)</span>.</p>
+<p><strong>Newton-Côtes.</strong> Dados los <span
+class="math inline">\(x_i\)</span> tomamos el polinomio interpolador
+<span class="math inline">\(p(x)=\sum_{i=0}^nf(x_i)\prod_{j\neq
+i}\frac{x-x_j}{x_i-x_j}\)</span> y se obtiene <span
+class="math inline">\(A_i=\int_a^b\prod_{j\neq
+i}\frac{x-x_j}{x_i-x_j}w(x)dx\)</span>. Llevar la regla de <span
+class="math inline">\([-1,1]\)</span> a <span
+class="math inline">\([a,b]\)</span> da <span
+class="math inline">\(Q(f)=\frac{b-a}2\sum_{i=0}^nA_if\left(\frac{b-a}2x_i+\frac{a+b}2\right)\)</span>.</p>
+<p><strong>Trapecios.</strong> Es Newton-Côtes con <span
+class="math inline">\(w=1\)</span> y dos puntos: <span
+class="math inline">\(\{-1,1\}\)</span>, es decir, <span
+class="math inline">\(I(f)=f(-1)+f(1)\)</span>. (También está la versión
+abierta <span class="math inline">\(\{-\frac12,\frac12\}\)</span>.)
+Error: si <span class="math inline">\(f\in C^2[a,b]\)</span>, <span
+class="math inline">\(R(f)=-\frac{(b-a)^3}{12}f&#39;&#39;(\eta)\)</span>,
+con <span class="math inline">\(\eta\in(a,b)\)</span>. Si partimos <span
+class="math inline">\([a,b]\)</span> en <span
+class="math inline">\([x_i,x_i+h]\)</span> con <span
+class="math inline">\(h=\frac{b-a}n\)</span> y <span
+class="math inline">\(x_i=a+hi\)</span> resulta <span
+class="math inline">\(Q(f)=\left(\frac{f(a)}2+\sum_{i=1}^{n-1}f(x_i)+\frac{f(b)}2\right)h\)</span>
+y <span
+class="math inline">\(R(f)=-\frac{h^2}{12}(b-a)f&#39;&#39;(\xi)\)</span>.</p>
+<p><em>Prueba.</em> <span
+class="math inline">\(R(f)=\int_a^b(f-p)=\int_a^bf[a,b,x](x-a)(x-b)\,dx=\frac12f&#39;&#39;(\eta)\int_a^b(x-a)(x-b)\,dx=\)</span><span
+class="math inline">\(-\frac{(b-a)^3}{12}f&#39;&#39;(\eta)\)</span>
+(usamos valor medio integral).∎</p>
+<p><strong>Simpson.</strong> Es Newton-Côtes con <span
+class="math inline">\(w=1\)</span> y tres puntos: <span
+class="math inline">\(\{-1,0,1\}\)</span>, es decir, <span
+class="math inline">\(I(f)=\frac{f(-1)+4f(0)+f(1)}3\)</span>. (También
+está la versión abierta <span
+class="math inline">\(\{-\frac12,0,\frac12\}\)</span> que da <span
+class="math inline">\(\frac{4f(-\frac12)-2f(0)+4f(\frac12)}{3}\)</span>.)
+Error: si <span class="math inline">\(f\in C^4[a,b]\)</span>, <span
+class="math inline">\(R(f)=-\frac1{90}\left(\frac{b-a}2\right)^5f^{(4)}(\eta)\)</span>,
+con <span class="math inline">\(\eta\in(a,b)\)</span>. Si partimos <span
+class="math inline">\([a,b]\)</span> en <span
+class="math inline">\([x_i,x_i+2h]\)</span> con <span
+class="math inline">\(h=\frac{b-a}{2n}\)</span> y <span
+class="math inline">\(x_i=a+2hi\)</span> resulta <span
+class="math inline">\(Q(f)=\left(f(a)+2\sum_{i=1}^{n-1}f(x_i)+4\sum_{i=0}^{n-1}f(x_i+h)+f(b)\right)\frac{h}{3}\)</span>
+y <span
+class="math inline">\(R(f)=-\frac{h^4}{180}(b-a)f^{(4)}(\xi)\)</span>.</p>
+<p><em>Prueba.</em> La idea es ver el problema en <span
+class="math inline">\([-h,h]\)</span> y poner <span
+class="math inline">\(e(t)=\int_{-t}^t
+f-t\left(\frac{f(-t)+4f(0)+f(t)}{3}\right)\)</span>, calcular <span
+class="math inline">\(e&#39;&#39;&#39;(t)=\frac{f&#39;&#39;&#39;(-t)-f&#39;&#39;&#39;(t)}3t=-\frac23t^2f^{(4)}(\xi)\)</span>,
+luego obtener <span class="math inline">\(e&#39;&#39;\)</span>, <span
+class="math inline">\(e&#39;\)</span> y <span
+class="math inline">\(e\)</span> integrando y usando valor medio
+integral, lo que da <span
+class="math inline">\(e(h)=-\frac{h^5}{90}f^{(4)}(\eta)\)</span>.∎</p>
+<p><strong>Cuadratura gaussiana.</strong> Sea <span
+class="math inline">\(\la f, g\ra=\int_a^b fgw\)</span>; sean <span
+class="math inline">\(p_n\)</span> los polinomios ortonormales; <span
+class="math inline">\(p_n\)</span> tiene <span
+class="math inline">\(n\)</span> raíces distintas <span
+class="math inline">\(x_1,\ldots,x_n\)</span> en <span
+class="math inline">\((a,b)\)</span>. Newton-Côtes sobre <span
+class="math inline">\(x_i\)</span> da la <em>cuadratura gaussiana</em>
+<span class="math inline">\(Q(f)=\sum_{i=1}^n A_if(x_i)\)</span>; <span
+class="math inline">\(Q\)</span> tiene grado de exactitud <span
+class="math inline">\(2n-1\)</span>; el grado de exactitud es máximo
+para <span class="math inline">\(n\)</span> puntos y los <span
+class="math inline">\(x_i\)</span> son los únicos que lo alcazan; además
+<span class="math inline">\(A_i&gt;0\)</span>. Error: si <span
+class="math inline">\(f\in C^{2n}[a,b]\)</span>, <span
+class="math inline">\(R(f)=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b
+q_n^2w\)</span>, donde <span
+class="math inline">\(q_n=\prod_{i=1}^n(x-x_i)\)</span>.</p>
+<p><em>Prueba.</em> Primero, vemos que <span
+class="math inline">\(p_n\)</span> tiene raíz en <span
+class="math inline">\((a,b)\)</span> (viendo <span
+class="math inline">\(\la p_n,1\ra=0\)</span>); luego que no tiene
+raíces distintas (si no <span
+class="math inline">\(p_n=(x-x_0)^2q\)</span> y vemos <span
+class="math inline">\(\la p_n,q\ra=0\)</span>); luego que tiene <span
+class="math inline">\(n\)</span> raíces (si no <span
+class="math inline">\(p_n=qr\)</span> con <span
+class="math inline">\(\deg r&gt;0\)</span> sin raíces y vemos <span
+class="math inline">\(\la p_n,q\ra=0\)</span>). Segundo, <span
+class="math inline">\(Q\)</span> tiene grado de exactitud <span
+class="math inline">\(2n-1\)</span>: si <span
+class="math inline">\(f\in\PP_{2n-1}\)</span>, <span
+class="math inline">\(f=p_nq+r\)</span> con <span
+class="math inline">\(q,r\in\PP_{n-1}\)</span>, luego <span
+class="math inline">\(r\)</span> es el interpolador de <span
+class="math inline">\(f\)</span> en los <span
+class="math inline">\(x_i\)</span>, luego <span
+class="math inline">\(R(f)=\int_a^b(f-r)w=\la p_n,q\ra=0\)</span>; si
+<span class="math inline">\(f=\prod_{i=1}^n(x-x_i)^2\)</span>, <span
+class="math inline">\(r=0\)</span> y <span
+class="math inline">\(R(f)&gt;0\)</span>. Tercero, si <span
+class="math inline">\(x_0&#39;,\ldots,x_n&#39;\)</span> son otros puntos
+y <span class="math inline">\(R(f)=0\)</span> para todo <span
+class="math inline">\(f\in\PP_{2n-1}\)</span>, si <span
+class="math inline">\(p=\prod_{i=1}^n(x-x_i&#39;)\)</span> y <span
+class="math inline">\(q\in\PP_{n-1}\)</span> tengo <span
+class="math inline">\(0=R(pq)=\la p,q\ra\)</span>, luego <span
+class="math inline">\(p\)</span> es ortogonal a <span
+class="math inline">\(\PP_{n-1}\)</span> y tiene que ser <span
+class="math inline">\(\lambda p_n\)</span>. Cuarto, si <span
+class="math inline">\(f_i=\prod_{j\neq i}\frac{x-x_j}{x_i-x_j}\)</span>,
+<span class="math inline">\(0&lt;\int_a^b f^2w=\sum_{i=1}^n
+A_if(x_i)^2=A_i\)</span>. Quinto, sea <span class="math inline">\(f\in
+C^{2n}[a,b]\)</span> y <span
+class="math inline">\(p\in\PP_{2n-1}\)</span> con <span
+class="math inline">\(p(x_i)=f(x_i)\)</span> y <span
+class="math inline">\(p&#39;(x_i)=f&#39;(x_i)\)</span>; tengo <span
+class="math inline">\(R(f)=R(f-p+p)=R(f-p)=\int_a^b(f-p)w=\int_a^b\frac{f^{(2n)}(\eta)}{(2n)!}q_n^2w=\frac{f^{(2n)}(\xi)}{(2n)!}\int_a^b
+q_n^2w\)</span>.∎</p>
+<p><strong>Fórmula de Rodrígues.</strong> Los polinomios ortogonales
+para <span class="math inline">\(\la f, g\ra=\int_a^b fg\)</span> se
+llaman <em>polinomios de Legendre</em> <span
+class="math inline">\(\ell_n\)</span>. Rodrígues: <span
+class="math inline">\(\ell_n=\frac{n!}{(2n)!}\frac{d^n}{dx^n}(x^2-1)^n\)</span>
+y <span
+class="math inline">\(\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}\)</span>.
+Error de la cuadratura gausiana en <span
+class="math inline">\([a,b]\)</span>: <span
+class="math inline">\(R(f)=\frac{(n!)^4(b-a)^{2n+1}}{(2n+1)(2n)!^3}f^{(2n)}(\xi)\)</span>.</p>
+<p><em>Prueba.</em> Si <span class="math inline">\(p\in
+\PP_{n-1}\)</span> se ve que <span class="math inline">\(\int_{-1}^1
+\ell_np=(-1)^n\int_{-1}^1 \frac{n!}{(2n)!}(x^2-1)^np^{(n)}=0\)</span>
+por integración por partes. Si <span
+class="math inline">\(q=(x^2-1)^n\)</span>, <span
+class="math inline">\(\int_{-1}^1 (\partial^n q)^2=(-1)^n\int_{-1}^1
+q\partial^{2n}q=(2n)!\int_{-1}^1(1-x^2)^n\)</span>, que es, con <span
+class="math inline">\(x=\sin y\)</span>, <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n}\sin&#39;=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}\sin^2=\int_{-\frac\pi2}^{\frac\pi2}2n\cos^{2n-1}(1-\cos^2)\)</span>.
+Entonces <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{2n}{2n+1}\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n-1}\)</span>
+y <span
+class="math inline">\(\int_{-\frac\pi2}^{\frac\pi2}\cos^{2n+1}=\frac{(2^nn!)^2}{(2n+1)!}\int_{-1\frac\pi2}^{\frac\pi2}\cos=\frac{2^{2n+1}(n!)^2}{(2n+1)!}\)</span>
+y se obtiene <span
+class="math inline">\(\int_{-1}^1\ell_n^2=\frac{2^{2n+1}(n!)^4}{(2n+1)(2n)!^2}\)</span>.∎</p>
+<h2 id="ecuaciones-diferenciales-ordinarias">Ecuaciones diferenciales
+ordinarias</h2>
+<p><strong>Método de Taylor.</strong> Dada la ecuación <span
+class="math inline">\(x&#39;(t)=f(t,x(t))\)</span>, <span
+class="math inline">\(x(t_0)=x_0\)</span> queremos encontrar <span
+class="math inline">\(x(T).\)</span> Tomamos <span
+class="math inline">\(n\)</span>, <span
+class="math inline">\(h=\frac{T-t_0}n\)</span>, <span
+class="math inline">\(t_i=t_0+hi\)</span>. Tenemos <span
+class="math inline">\(x(t_{i+1})=x(t_i+h)=\sum_{k=0}^p
+\frac{h^k}{k!}x^{(k)}(t_i)+\)</span> <span
+class="math inline">\(\frac{h^{p+1}}{(p+1)!}x^{(p+1)}(\xi)\)</span>.
+Dada una aproximación <span class="math inline">\(x_i\approx
+x(t_i)\)</span> podemos aproximar <span
+class="math inline">\(x&#39;(t_i)=f(t_i,x(t_i))\approx
+f(t_i,x_i)\)</span>, <span
+class="math inline">\(x&#39;&#39;(t_i)=f_t(t_i,x(t_i))+f_x(t_i,x(t_i))x&#39;(t_i)\approx\)</span>
+<span
+class="math inline">\(f_t(t_i,x_i)+f_x(t_i,x_i)f(t_i,x_i)\)</span>, etc,
+y obtenemos una aproximación de <span
+class="math inline">\(x_{i+1}\approx x(t_{i+1})\)</span>, hasta <span
+class="math inline">\(x_n\approx x(T)\)</span>.</p>
+<p><strong>Métodos de <a
+href="https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods">Runge-Kutta</a>
+de orden 2.</strong> Dado <span
+class="math inline">\(\alpha\in[0,1]\)</span>, <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span>, con <span
+class="math inline">\(\Phi(t,x,h)=(1-\frac1{2\alpha}))f(t,x)+\frac1{2\alpha}f(t+\alpha
+h, x+\alpha hf(t,x))\)</span>. Vale por Taylor que <span
+class="math inline">\(x(t+h)-x(t)-h\Phi(t,x,h)=O(h^3)\)</span>.</p>
+<p><strong>Error.</strong> Dado <span class="math inline">\(n\)</span>,
+<span class="math inline">\(h=\frac{T-t_0}n\)</span>, <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span> con <span
+class="math inline">\(K\)</span> tal que <span
+class="math inline">\(|\Phi(t,x,h)-\Phi(t,y,h)|\leqq K|x-y|\)</span>
+para todos <span class="math inline">\(x,y\in\R\)</span>, <span
+class="math inline">\(t\in[t_0,T]\)</span>, y <span
+class="math inline">\(\tau\)</span> tal que <span
+class="math inline">\(\left|\frac{x(t_{i+1})-x(t_i)}h-\Phi(t_i,x(t_i),h)\right|\leqq\tau\)</span>,
+se tiene <span class="math inline">\(|x(T)-x_n|\leqq
+\frac{\tau}{K}(e^{K(T_0-t)}-1)\)</span>.</p>
+<p><em>Prueba.</em> Si <span
+class="math inline">\(e_i=|x(t_i)-x_i|\)</span> tenemos <span
+class="math inline">\(e_1\leqq h\tau\)</span>; <span
+class="math inline">\(x(t_{i+1})=x(t_i)+h\Phi(t_i,x(t_i),h)+h\tau_i\)</span>,
+con <span class="math inline">\(|\tau_i|\leqq\tau\)</span>; y <span
+class="math inline">\(x_{i+1}=x_i+h\Phi(t_i,x_i,h)\)</span>; luego <span
+class="math inline">\(x(t_{i+1})-x_{i+1}=x(t_i)-x_i+\)</span> <span
+class="math inline">\(h(\Phi(t_i,x(t_i),h)-\Phi(t_i,x_i,h))+h\tau_i\)</span>
+y <span class="math inline">\(e_{i+1}\leqq
+e_i+hKe_i+h\tau=(1+Kh)e_i+\tau h\)</span>; luego <span
+class="math inline">\(e_n\leqq \frac{\tau}K((1+Kh)^{n}-1)\leqq
+\frac{\tau}{K}(e^{K(T_0-t)}-1)\)</span>.∎</p>
+<p><strong><a
+href="https://en.wikipedia.org/wiki/Linear_multistep_method">Métodos
+multipaso lineales</a>.</strong> Consisten en aproximar <span
+class="math inline">\(x_{n+k}\)</span> dados <span
+class="math inline">\(x_{n},\ldots,x_{n+k-1}\)</span> por una fórmula
+<span class="math inline">\(\sum_{i=0}^k \alpha_ix_{n+i}=h\sum_{i=0}^k
+\beta_if(t_{n+i},x_{n+i})\)</span>. Decimos que es de orden <span
+class="math inline">\(p\)</span> si <span
+class="math inline">\(\tau_th=\sum_{i=0}^k \alpha_ix(t+hi)-h\sum_{i=0}^k
+\beta_ix&#39;(t+hi)=O(h^{p+1})\)</span>; equivale a que <span
+class="math inline">\(\sum_{i=0}^k\alpha_i=0\)</span> y <span
+class="math inline">\(\sum_{i=0}^k i^q\alpha_i=q\sum_{i=0}^k
+i^{q-1}\beta_i\)</span> para <span
+class="math inline">\(q=1,\ldots,p\)</span>. Sea <span
+class="math inline">\(p(x)=\sum_{i=0}^k \alpha_ix^i\)</span>; si para
+toda raíz simple <span class="math inline">\(r\)</span> de <span
+class="math inline">\(p\)</span> vale <span
+class="math inline">\(|r|\leqq 1\)</span> y para toda raíz múltiple vale
+<span class="math inline">\(|r|&lt;1\)</span>, y además <span
+class="math inline">\(\lim_{h\to0}\tau_t=0\)</span>, entonces el método
+converge.</p>
+</div>
+```

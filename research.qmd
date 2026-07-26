@@ -1,0 +1,67 @@
+---
+title: "Research"
+---
+
+## Published
+
+::: {.research-entry}
+[**Family Ties as Corporate Power**](https://www.journals.uchicago.edu/doi/10.1086/736563)  
+<span class="research-meta">with Pablo Balán and Ignacio Puente · *The Journal of Politics*, 2025</span>  
+<span class="research-links">[PDF](files/BDP_JOP_Accepted.pdf) · [Online appendix](files/BDP_JOP_Online_Appendix.pdf) · [Replication archive](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C7LAYQ) · [ProMarket coverage](https://www.promarket.org/2023/07/24/family-ties-as-corporate-power/)</span>
+:::
+
+::: {.research-entry}
+[**The Political Behavior of Family Firms: Evidence from Brazil**](https://www.sciencedirect.com/science/article/abs/pii/S0305750X21003624)  
+<span class="research-meta">with Pablo Balán and Ignacio Puente · *World Development*, 2022</span>  
+<span class="research-links">[PDF](files/WD.pdf) · [Online appendix](files/WD_online_appendix.pdf) · [Replication archive](files/WD_replication.zip) · [Shiny app](https://familyfirms.shinyapps.io/contributions/)</span>
+:::
+
+## Working Papers
+
+::: {.research-entry}
+**Inefficient Policies in the Green Transition**  
+<span class="research-links">[Draft](files/jmp.pdf) · [Slides](files/jmpresentation.pdf)</span>
+:::
+
+::: {.research-entry}
+**International Coordination of Trade and Green Industrial Policies**  
+<span class="research-links">[Draft](files/tradegipcoord.pdf)</span>
+:::
+
+::: {.research-entry}
+**An Informational Theory of Coalitional Lobbying**  
+<span class="research-links">[Draft](files/collectivelobby.pdf) · [Slides](files/cbs26.pdf)</span>
+:::
+
+::: {.research-entry}
+**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**  
+<span class="research-links">[PDF](files/blackwell_new.pdf)</span>
+:::
+
+## Work in Progress
+
+::: {.work-list}
+- **Policy Feedback Effects of Green Subsidies: Evidence from Firm Lobbying after the Inflation Reduction Act**
+- **Dynamic Climate Policymaking under Majoritarian and Proportional Electoral Rules**
+- **Endogenous Lobbying**
+- **Outside Experts as Scapegoats: A Theory of Management Consultants**
+- **A New Theory of Partisan Realignment**
+:::
+
+## Earlier Work
+
+::: {.research-entry}
+**Information, Policy Preferences, and Voting**  
+<span class="research-links">[PDF](files/infoandpolicy.pdf)</span>
+:::
+
+::: {.research-entry}
+**Enchufes, Espejos y Tijeras: Efectos del Diseño de las Boletas sobre el Comportamiento Electoral**  
+<span class="research-meta">with Juan Pablo Ruiz Nicolini · *Revista SAAP*, 2017</span>  
+<span class="research-links">[PDF](files/Enchufes_espejos_y_tijeras.pdf)</span>
+:::
+
+::: {.research-entry}
+**Spatial Variation in Ecological Inference**  
+<span class="research-links">[PDF](files/spatial_eco_inf.pdf)</span>
+:::

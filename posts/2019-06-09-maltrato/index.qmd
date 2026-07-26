@@ -1,0 +1,42 @@
+---
+title: "Maltrato"
+date: 2019-06-09
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2019-06-09-maltrato/"
+---
+
+::: {lang="es"}
+Quiero hacer explícito el juego que describí verbalmente en [esta nota](../2019-06-09-acostarse-con-boludos/). El punto de esa nota se puede resumir así: Magui dice
+
+> atribuir la salvación a que una mujer le diga “ándate gil” a un gil, es otra vez, ir por la salida individual
+
+Y yo respondo: si hubiera una salida individual, las mujeres la tomarían y listo. El problema es precisamente que no existe una salida individual, que la única salida es colectiva.
+
+En mi modelito esto lo pienso como un juego de coordinación. Si *una* mujer decide cortar individualmente con el maltrato, puede amenazar a su pareja con dejarla, pero eso no es creíble, porque las demás mujeres sí aceptan el maltrato, y los demás hombres maltratan. Ahora bien, si *todas* las mujeres amenazan con dejar a su pareja si reciben maltrato, esa amenaza se vuelve creíble, y los hombres aceptan no maltratar (para no ser sancionados).
+
+Una forma de pensarlo es la siguiente. Si un tipo espera que las mujeres con las que puede salir acepten el maltrato, va a maltratar. Si percibe que suficientes mujeres de su entorno no aceptan eso, le va a convenir “ser aliado”. En este modelo los hombres son “aliados” por conveniencia, porque esperan una sanción si no lo son. Si pudieran, volverían a las prácticas machistas. No hace falta que haya un cambio de valores, que los tipos se vuelvan buenos contra su interés: lo que hace falta es un cambio de expectativas. Concretamente, que tanto hombres como mujeres esperen que las mujeres sancionen el maltrato. La salida no es un “cambio cultural” sino un cambio de comportamiento colectivo.
+
+**Ahora sí, el modelo.** Hay un conjunto infinito de mujeres $M$ y un conjunto infinito de hombres $H$ con el mismo cardinal. Un *matching* es un conjunto $R$ de pares $(m,h)$, con $m \in M$ y $h \in H$, tal que si $(m,h), (m',h') \in R$, entonces $m=m'$ si y sólo si $h=h'$. El tiempo es discreto e infinito y lo denoto por $t=0,1,\ldots$. El juego arranca con un matching arbitrario $R_0$. En cada tiempo $t$ hay un matching $R_t$. Si $(m,h) \in R_t$, o sea, $m$ y $h$ son pareja, deciden simultáneamente acciones $x$ e $y$, respectivamente, que pueden ser $0$ o $1$. La mujer recibe utilidad $xr-yc$ y el hombre recibe $xr+yc$. La mujer elige si seguir o no con la relación ($x=1$ o $x=0$) y el hombre decide si maltratar ($y=1$) o no ($y=0$). Si la relación se da ($x=1$), ambos reciben $r>0$, que es el beneficio de la relación. Si el tipo maltrata, recibe un beneficio extra $c$, y le impone un costo $c$ a la mujer. Asumo que $c>0$ (el hombre se beneficia del maltrato y la mujer lo sufre) y $r>c$ (incluso si hay maltrato, la mujer prefiere estar en pareja). Esta hipótesis es cuestionable, pero si la mujer prefiriera estar sola, habría que meter coerción en el modelo, y todo cambia. Este modelo sólo dice algo sobre el caso en el que las mujeres pueden dejar a su pareja libremente.
+
+Si la mujer sigue con la relación, en el período siguiente $(m,h)$ sigue en el matching. Si no, $m$ se pone en pareja con alguien al azar distinto de $h$, y lo mismo con $h$. Detalle técnico: si una sola pareja se separa, en el período siguiente no tienen con quién emparejarse. Así que asumo que, en cada período, entre las parejas que continúan una es elegida al azar y se rompe, por lo que siempre hay al menos un hombre y una mujer disponibles. La idea es que algunas parejas se cortan por motivos exógenos. Pero para que no moleste en las cuentas, asumo que hay infinitas personas y una sola pareja se rompe, así que la probabilidad de que pase esto es $0$, y por lo tanto lo puedo ignorar.
+
+Finalmente, asumo que todas las personas descuentan el futuro con un factor $b$, donde $0<b<1$. Asumo que $b>\frac{c}{r-c}$ y $b>\frac{r}{r+c}$, es decir que los agentes son suficientemente pacientes. Para que esto funcione asumo que $c<\frac{r}{2}$ (ya estaba suponiendo $c<r$; necesito un poquito más). Esto sólo hace falta suponerlo sobre el beneficio de los hombres del maltrato (no el costo para las mujeres), pero hacer esto explícito requiere más notación, así que lo dejo así por simplicidad.
+
+El concepto de equilibrio es *Subgame Perfect Equilibrium* (SPE). Esto es, cada jugador tiene una estrategia, que es una función de todas las historias posibles del juego hasta tiempo $t$ a sus acciones posibles en el tiempo $t$. Las estrategias forman un equilibrio si, para cada tiempo $t$, y cada historia hasta ese tiempo, partiendo de ahí, las acciones de cada agente son óptimas asumiendo que los demás se van a comportar siguiendo sus estrategias a partir de ese momento.
+
+**Primer equilibrio.** En este equilibrio todos los hombres eligen maltratar y todas las mujeres eligen continuar con su relación siempre. Para comprobar que esto es un equilibrio, primero veamos la estrategia de los hombres. ¿Les serviría no maltratar en algún momento? No, porque pierden el beneficio $c$, y eso no tiene ninguna consecuencia sobre el futuro. ¿Les serviría a las mujeres dejar a su pareja? No, porque si una mujer deja a su pareja, recibe $-c$ en ese período, cambia de pareja en el período siguiente, y sigue siendo maltratada, así que sale perdiendo.
+
+**Segundo equilibrio.** Los hombres no maltratan a su pareja, salvo que la hayan maltratado en el período anterior, en cuyo caso vuelven a maltratar. Las mujeres dejan a su pareja si y sólo si las maltrató en el pasado. Veamos que es un equilibrio.
+
+Primero, veamos la estrategia de los hombres. Si no maltrataron en el pasado, les tiene que convenir no maltratar en el presente. Si no maltratan ganan $r$ en este período, la mujer no los deja en el período siguiente, etc., así que ganan $r$ por siempre. Si maltratan, ganan $r+c$ hoy, pero en el período siguiente la mujer los deja, así que sólo ganan $c$, luego tienen otra pareja y no la maltratan, así que ganan $r$ de ahí en adelante. La diferencia se da en los dos primeros períodos: si no maltrata, gana $r+br$ ($b$ es el factor de descuento); si maltrata, gana $r+c+bc$. Como asumo $b>\frac{c}{r-c}$, esto se cumple. Entonces el hombre prefiere no maltratar.
+
+Si el hombre maltrató a su actual pareja en el período anterior, tiene que preferir maltratarla en el período actual. Dada la estrategia de las mujeres, el hombre espera que su pareja lo deje, y luego arranca una relación nueva, en la que no puede volver a maltratar. Si maltrata, gana $c$, y eso no tiene ninguna consecuencia, así que lo hace.
+
+Segundo, veamos que la estrategia de las mujeres forma un equilibrio. Consideremos una mujer. Si su pareja no la maltrató en el pasado, tiene que preferir continuar la relación. Espera que la pareja no la maltrate, así que si continúa gana $r$ de acá en adelante. Si deja la relación, gana $0$ hoy, y $r$ a partir de mañana, lo cual no le conviene.
+
+Finalmente, consideremos el caso en el que a una mujer la maltrató su pareja en el pasado. Hay que comprobar que prefiere cortar la relación. Espera que su pareja la vuelva a maltratar hoy, así que si corta la relación recibe $-c$ hoy, pero en el período siguiente consigue otra pareja, que no la maltrata, así que gana $r$ de ahí en adelante. Si continúa la relación, recibe $r-c$ hoy, mañana su pareja la vuelve a maltratar, y ella corta la relación, así que recibe $-c$ mañana, y luego consigue otra pareja, ésta no la maltrata, y gana $r$ de ahí en adelante. A partir del tercer período la utilidad es la misma, así que sólo hay que comparar los primeros dos. Si deja a la pareja, recibe $-c+br$. Si no la deja, recibe $(r-c)+b(-c)$. Como asumo que $b>\frac{r}{r+c}$, esto se cumple. Fin de la comprobación.
+
+**¿Estos son los únicos equilibrios?** No. Por ejemplo, si las mujeres pueden observar las acciones pasadas de todos los hombres, pueden “escrachar” y “cancelar” a los hombres que maltratan. Pero esto genera el mismo efecto que el segundo equilibrio. No mejora la situación de las mujeres.
+:::
+
+<!-- Imported from https://medium.com/@juandodyk/maltrato-3937ff41c9b8 -->

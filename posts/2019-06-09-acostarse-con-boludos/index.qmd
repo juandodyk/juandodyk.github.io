@@ -1,0 +1,37 @@
+---
+title: "Acostarse con boludos"
+date: 2019-06-09
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2019-06-09-acostarse-con-boludos/"
+---
+
+::: {lang="es"}
+Magdalena López escribió [esta nota](http://latfem.org/por-una-pedagogia-del-cuidado-el-acuerdo-y-la-responsabilidad-afectiva/) en respuesta a una entrevista sobre la que no me interesa hablar. No quiero hacer un comentario de la nota de Magui, pero quiero mostrar una manera distinta de pensar estos temas. En la entrevista a la que responde Magui, la persona entrevistada dice:
+
+> Lo que es patriarcado es suponer que la mujer es sumisa, pasiva. Que no puede decirle “che, flaco, sos un tarado, chau”. Porque la pregunta es por qué seguís esperando a alguien que te clavó el visto.
+
+En su nota, en un momento Magui dice lo siguiente, que voy a tomar como una respuesta:
+
+> Atribuirle a la mujer la “culpa” de seguir deseando al varón que no le contesta los mensajes, no la llama, que es descuidado y cruel, es reproducir el argumento de la pollerita corta.
+
+Uno puede pensar esto como sigue. Una mujer y un hombre son pareja. El hombre maltrata a la mujer. La psicoanalista dice que la mujer debe simplemente dejar al hombre. Magui responde: si la mujer sigue deseando al hombre, no podemos esperar que lo deje. Entiendo que el deseo se puede moldear (evidencia: distintas personas tienen distintos gustos, y la distribución de esos gustos cambia con el tiempo), pero uno no puede (al menos en el corto plazo) modificar su deseo voluntariamente. Entonces las mujeres tienen que vivir con el deseo “recibido”. Podemos pensar la siguiente historia: las mujeres son socializadas de manera que su deseo por los hombres no decae ante el maltrato. Esto es, por supuesto, favorable a los hombres, ya que les permite maltratarlas sin consecuencias. Una historia que tiene un resultado similar es que los hombres sean socializados para desear mujeres sumisas. Esto genera un incentivo en las mujeres a no responder al maltrato para no ser menos deseadas, y un incentivo a maltratar porque permite revelar si la mujer es sumisa o no.
+
+Ahora supongamos que el deseo de la mujer por el hombre cae con el maltrato (razonable, ¿no?). ¿Por qué la mujer no deja al hombre que la maltrata en este caso? La explicación de Magui que cité ya no funciona. Supongamos que los hombres prefieren maltratar a las mujeres¹ (de nuevo, podemos pensar que las preferencias son moldeables y en parte recibidas). Supongamos además que la mujer prefiere estar en pareja con un hombre a estar sola, e igualmente el hombre prefiere estar en pareja que estar solo. Si la mujer deja al hombre, pasa un tiempo sola hasta conseguir otra pareja. El consejo de la psicoanalista a la mujer es “dejalo”. Incluso ignorando el costo de dejar al hombre, de esperar (la paciencia), y el tiempo esperado hasta encontrar otra pareja, hay un motivo muy simple para no dejarlo. Ese motivo es que si todos los hombres maltratan, no es racional pagar el costo de dejar a un maltratador, porque el resultado es estar sola un tiempo para después estar con otro maltratador.
+
+Hago todas estas suposiciones hiper-simplificadoras (todas las personas son iguales, sólo hay parejas heterosexuales, sólo hay parejas monogámicas, las parejas se formal al azar, etc.) porque permiten pensar esto como un juego (un modelo matemático). En el juego, en cada momento hay algunas parejas; el hombre puede maltratar o no; la mujere puede cortar la relación o seguir; si se corta la relación, por un período ambos están solos hasta que consiguen una pareja al azar del conjunto de parejas del otro sexo. Lo que quiero decir al respecto es que en este juego hay (al menos) dos equilibrios:
+
+1. En un equilibrio, todos los hombres maltratan. Dado eso, las mujeres aceptan el maltrato, porque la alternativa (dejar al hombre) no es mejor: implica un costo y luego estar con otro maltratador.
+2. En el otro equilibrio, todas las mujeres dejan al hombre si las maltrata. En anticipación a esto, los hombres no maltratan, porque saben que si maltrataran, su pareja los dejaría, pagarían un costo, y se juntarían con otra mujer que tampoco aceptaría un maltrato, etc.
+
+Es un poco tonto este planteo, pero provee el siguiente “insight”. **En una sociedad patriarcal (equilibrio 1), las mujeres están atrapadas, y no pueden resolver su problema individualmente. Ahora bien, si las mujeres se coordinan, si actúan colectivamente, quizás pagando algunos costos en el período de transición, pueden moverse al equilibrio 2 y liberarse del maltrato.**
+
+El “modelo” se puede enriquecer, por ejemplo, de la siguiente manera. En la realidad, cuando una mujer deja a su pareja, no consigue cualquier pareja al azar. Consigue una pareja de su entorno (con Tinder esto es menos cierto, pero dejemos eso en un paréntesis). Podemos suponer que vivimos bastante segregados por clase, nivel educativo, etc. Eso implica que en la sociedad pueden convivir “regiones” patriarcales con regiones que no lo son. Entonces: si los hombres que conocés no maltratan, sabés que podés dejar al “boludo” que te maltrata, porque sabés que vas a conseguir a otro mejor. Pero eso no vale para todas las mujeres. El consejo “dejalo, es un boludo” puede funcionar en algunos círculos sociales y no en otros.
+
+Por otra parte, notar que las mujeres “feministas” — llamémosle así a las que no aceptan el maltrato, quizás a un costo personal — generan una externalidad positiva sobre el resto de las mujeres con las que están vinculadas. Las no feministas se benefician de lo que hacen las feministas. Otra implicación: es importante que las mujeres hablen entre sí, compartan capturas de WhatsApp, porque incluso si eso no es suficiente para erradicar el patriarcado de toda la sociedad, puede servir para reducirlo en el entorno en el que viven. Dar una señal muy fuerte (una marcha masiva) es excelente para la coordinación, pero las redes locales también ayudan.
+
+Uno puede enriquecer el modelo incorporando desigualdad, por ejemplo, o que para algunas mujeres dejar a su pareja tiene un costo. Y seguramente haya maneras infinitamente mejores de pensar esto con modelos. Mi “apartado metodológico” es que el individualismo analítico no es malo, y la llamada “teoría de la elección racional” no sólo no es es funcional al neoliberalismo sino que puede ayudar a pensar estas cosas.
+
+¹ Es una suposición fea, pero, en primer lugar, es realista, al menos si admitimos cierta heterogeneidad. La evidencia obvia es que el maltrato sucede en el mundo real, si bien es cierto que los hombres pueden maltratar a las mujeres incluso si no lo prefieren como acción aislada. Por ejemplo, el maltrato puede servir para señalizar que uno no está demasiado interesado en el otro (lo cual aumenta el poder de negociación en la pareja), o un hombre puede maltratar porque entiende que “es lo correcto” (hay una norma, que habría que explicar por qué está ahí). Puede haber también una historia biológica quizás. Lo que quiero decir en segundo lugar es que me parece que en general todos somos un poco forritos si creemos que eso no tiene ninguna consecuencia. Somos altruistas, seguimos normas, pero por fuera de eso no somos siempre buenos con los demás. Creo que con un poco de introspección honesta el lector me puede conceder esto.
+:::
+
+<!-- Imported from https://medium.com/@juandodyk/acostarse-con-boludos-2b0d610fb1a7 -->

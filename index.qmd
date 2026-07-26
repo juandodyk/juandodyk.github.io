@@ -1,0 +1,112 @@
+---
+title: "Juan Dodyk"
+pagetitle: "Juan Dodyk"
+description: "Juan Dodyk is a political economist and Assistant Professor in Political Science and Environmental Studies at Washington University in St. Louis."
+image: "files/img/potato.jpg"
+canonical-url: "https://juandodyk.github.io/"
+title-block-style: none
+include-in-header: _includes/home-seo.html
+---
+
+:::: {.home-page}
+::: {.home-portrait}
+![](files/img/potato.jpg){.portrait-image fig-alt="Juan Dodyk holding his white cat Potato"}
+
+# Juan Dodyk
+
+::: {.profile-links aria-label="Contact and academic profiles"}
+[Email](mailto:juandodyk@wustl.edu) <span aria-hidden="true">/</span>
+[CV](files/Juan_Dodyk_CV.pdf){rel="nofollow"} <span aria-hidden="true">/</span>
+[Google Scholar](https://scholar.google.com/citations?user=BLZlYpwAAAAJ&hl=en)
+:::
+:::
+
+::: {.home-biography}
+I am an Assistant Professor in Political Science and Environmental Studies at Washington University in St. Louis. I study political economy, with a focus on climate policy, business lobbying, and formal political theory.
+
+I received my Ph.D. in Government from Harvard University.
+
+<p class="home-guide">You can find my <a href="#research">research</a> and <a href="#teaching">teaching materials</a> below, or download my <a href="files/Juan_Dodyk_CV.pdf" rel="nofollow">CV</a>.</p>
+
+::: {.home-details}
+::: {.detail-column}
+## Research interests
+
+- Climate policy and politics
+- Lobbying and money in politics
+- Formal political theory
+:::
+
+::: {.detail-column}
+## Education
+
+**Ph.D. in Government, 2025**  
+<span class="detail-meta">Harvard University</span>
+
+**B.Sc. in Mathematics, 2017**  
+<span class="detail-meta">Universidad de Buenos Aires</span>
+:::
+:::
+:::
+::::
+
+:::: {.home-sections}
+## Research {#research}
+
+::: {.home-research-grid}
+::: {.home-section-column}
+### Published
+
+::: {.compact-entry}
+[**Family Ties as Corporate Power**](https://www.journals.uchicago.edu/doi/10.1086/736563)  
+<span class="research-meta">with Pablo Balán and Ignacio Puente · *The Journal of Politics*, 2025</span>  
+<span class="research-links">[PDF](files/BDP_JOP_Accepted.pdf) · [Appendix](files/BDP_JOP_Online_Appendix.pdf) · [Replication](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C7LAYQ)</span>
+:::
+
+::: {.compact-entry}
+[**The Political Behavior of Family Firms: Evidence from Brazil**](https://www.sciencedirect.com/science/article/abs/pii/S0305750X21003624)  
+<span class="research-meta">with Pablo Balán and Ignacio Puente · *World Development*, 2022</span>  
+<span class="research-links">[PDF](files/WD.pdf) · [Appendix](files/WD_online_appendix.pdf) · [Replication](files/WD_replication.zip)</span>
+:::
+:::
+
+::: {.home-section-column}
+### Working papers
+
+::: {.compact-entry}
+**Inefficient Policies in the Green Transition**  
+<span class="research-links">[Draft](files/jmp.pdf) · [Slides](files/jmpresentation.pdf)</span>
+:::
+
+::: {.compact-entry}
+**International Coordination of Trade and Green Industrial Policies**  
+<span class="research-links">[Draft](files/tradegipcoord.pdf)</span>
+:::
+
+::: {.compact-entry}
+**An Informational Theory of Coalitional Lobbying**  
+<span class="research-links">[Draft](files/collectivelobby.pdf) · [Slides](files/cbs26.pdf)</span>
+:::
+
+::: {.compact-entry}
+**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**  
+<span class="research-links">[PDF](files/blackwell_new.pdf)</span>
+:::
+:::
+:::
+
+## Teaching {#teaching}
+
+::: {.compact-teaching}
+### Math Camp 2026 at WashU
+
+**Lectures:** [1](files/mathcamp/lecture1.pdf) · [2](files/mathcamp/lecture2.pdf) · [3](files/mathcamp/lecture3.pdf) · [4](files/mathcamp/lecture4.pdf) · [5](files/mathcamp/lecture5.pdf) · [6](files/mathcamp/lecture6.pdf) · [7](files/mathcamp/lecture7.pdf) · [8](files/mathcamp/lecture8.pdf) · [9](files/mathcamp/lecture9.pdf) · [10](files/mathcamp/lecture10.pdf)  
+**Problem sets:** [1](files/mathcamp/ps1.pdf) · [2](files/mathcamp/ps2.pdf) · [3](files/mathcamp/ps3.pdf) · [4](files/mathcamp/ps4.pdf) · [5](files/mathcamp/ps5.pdf) · [6](files/mathcamp/ps6.pdf) · [7](files/mathcamp/ps7.pdf) · [8](files/mathcamp/ps8.pdf) · [9](files/mathcamp/ps9.pdf) · [10](files/mathcamp/ps10.pdf)
+
+### Gov 2006: Formal Theory II
+
+<span class="section-context">Teaching assistant, Spring 2021 and Spring 2022 · Prof. Peter Buisseret</span>
+
+**Section slides:** [1](files/data/gov2006/section1.pdf) · [2](files/data/gov2006/section2.pdf) · [3](files/data/gov2006/section3.pdf) · [4](files/data/gov2006/section4.pdf) · [5](files/data/gov2006/section5.pdf) · [6](files/data/gov2006/section6.pdf) · [7](files/data/gov2006/section7.pdf) · [8](files/data/gov2006/section8.pdf) · [9](files/data/gov2006/section9.pdf) · [10](files/data/gov2006/section10.pdf) · [11](files/data/gov2006/section11.pdf) · [12](files/data/gov2006/section12.pdf) · [13](files/data/gov2006/section13.pdf)
+:::
+::::

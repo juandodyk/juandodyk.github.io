@@ -1,0 +1,42 @@
+---
+title: "Teaching"
+---
+
+## Math Camp 2026 at WashU
+
+<p class="section-context">Prof. Juan Dodyk</p>
+
+| Lectures | Problem sets |
+|---|---|
+| [Lecture 1](files/mathcamp/lecture1.pdf) | [Problem Set 1](files/mathcamp/ps1.pdf) |
+| [Lecture 2](files/mathcamp/lecture2.pdf) | [Problem Set 2](files/mathcamp/ps2.pdf) |
+| [Lecture 3](files/mathcamp/lecture3.pdf) | [Problem Set 3](files/mathcamp/ps3.pdf) |
+| [Lecture 4](files/mathcamp/lecture4.pdf) | [Problem Set 4](files/mathcamp/ps4.pdf) |
+| [Lecture 5](files/mathcamp/lecture5.pdf) | [Problem Set 5](files/mathcamp/ps5.pdf) |
+| [Lecture 6](files/mathcamp/lecture6.pdf) | [Problem Set 6](files/mathcamp/ps6.pdf) |
+| [Lecture 7](files/mathcamp/lecture7.pdf) | [Problem Set 7](files/mathcamp/ps7.pdf) |
+| [Lecture 8](files/mathcamp/lecture8.pdf) | [Problem Set 8](files/mathcamp/ps8.pdf) |
+| [Lecture 9](files/mathcamp/lecture9.pdf) | [Problem Set 9](files/mathcamp/ps9.pdf) |
+| [Lecture 10](files/mathcamp/lecture10.pdf) | [Problem Set 10](files/mathcamp/ps10.pdf) |
+
+The book *Mathematics for Social Scientists* by Jonathan Kropko covers the topics we will see. [Read it here](https://login.libproxy.washu.edu/login?url=https://methods.sagepub.com/book/mono/mathematics-for-social-scientists/toc).
+
+## Gov 2006: Formal Theory II
+
+<p class="section-context">Prof. Peter Buisseret</p>
+
+I was a teaching assistant for this course in Spring 2021 and Spring 2022. These are the slides I prepared for my sections:
+
+1. [Refinements of PBE](files/data/gov2006/section1.pdf)
+2. [The Principal–Agent Model](files/data/gov2006/section2.pdf)
+3. [Cheap Talk](files/data/gov2006/section3.pdf)
+4. [Global Games](files/data/gov2006/section4.pdf)
+5. [Electoral Competition](files/data/gov2006/section5.pdf)
+6. [Valence Advantage](files/data/gov2006/section6.pdf)
+7. [Repeated Elections with Two Parties](files/data/gov2006/section7.pdf)
+8. [Accountability, Selection, and Pandering](files/data/gov2006/section8.pdf)
+9. [Legislative Bargaining](files/data/gov2006/section9.pdf)
+10. [Lobbying](files/data/gov2006/section10.pdf)
+11. [Monotone Comparative Statics and Economic Policy](files/data/gov2006/section11.pdf)
+12. [Correction to Acemoglu–Robinson, *QJE* (2000)](files/data/gov2006/section12.pdf)
+13. [Real Authority and Expertise](files/data/gov2006/section13.pdf)

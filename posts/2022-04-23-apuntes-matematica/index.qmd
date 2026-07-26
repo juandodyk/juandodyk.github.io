@@ -1,0 +1,26 @@
+---
+title: "Apuntes de matemática"
+date: 2018-08-01
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2022-04-23-apuntes-matematica/"
+---
+
+::: {.math-trigger aria-hidden="true"}
+$0$
+:::
+
+```{=html}
+<div class="historical-note">
+<ol type="1">
+<li><p><a href="../../files/data/analisis.pdf">Análisis</a>.</p></li>
+<li><p><a href="../../files/data/algebra.pdf">Álgebra</a>.</p></li>
+<li><p><a
+href="../../files/data/algoritmos.pdf">Algoritmos</a>.</p></li>
+<li><p><a href="../../files/data/funcional.pdf">Análisis
+funcional</a>.</p></li>
+<li><p><a href="../../files/data/modelos.pdf">Modelos en economía
+política</a> (incluye algunos temas de análisis y de
+probabilidad/estadística).</p></li>
+</ol>
+</div>
+```

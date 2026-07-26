@@ -40,3 +40,9 @@ vignettes/*.pdf
 
 *_files/
 .positai
+
+/.quarto/
+**/*.quarto_ipynb
+
+# Temporary migration snapshot
+/_legacy/

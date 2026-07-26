@@ -1,0 +1,95 @@
+---
+title: "Notes"
+---
+
+::: {.notes-list}
+::: {.note-entry}
+<time datetime="2019-06-09">2019</time>
+[Maltrato](posts/2019-06-09-maltrato/)
+:::
+
+::: {.note-entry}
+<time datetime="2019-06-09">2019</time>
+[Acostarse con boludos](posts/2019-06-09-acostarse-con-boludos/)
+:::
+
+::: {.note-entry}
+<time datetime="2018-08-01">2018</time>
+[Apuntes de matemática](posts/2022-04-23-apuntes-matematica/)
+:::
+
+::: {.note-entry}
+<time datetime="2018-01-01">2018</time>
+[Consejos para olimpíadas matemáticas](posts/2022-04-23-olimpiadas/)
+:::
+
+::: {.note-entry}
+<time datetime="2016-11-21">2016</time>
+[Violencia, justicia y limitaciones de una agenda](posts/2016-11-21-violencia-justicia-y-limitaciones-de-una-agenda/)
+:::
+
+::: {.note-entry}
+<time datetime="2016-09-18">2016</time>
+[El cartismo cultural](posts/2022-04-23-cartismo-cultural/)
+:::
+
+::: {.note-entry}
+<time datetime="2016-06-25">2016</time>
+[Apunte: Elementos de cálculo numérico](posts/2022-04-23-numerico/)
+:::
+
+::: {.note-entry}
+<time datetime="2016-01-13">2016</time>
+[Apunte: Análisis complejo](posts/2022-04-23-analisis-complejo/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-29">2015</time>
+[Distribución del voto por provincia](posts/2022-04-23-voto-provincia/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-28">2015</time>
+[Transferencia de votos por provincia](posts/2022-04-23-inf-ecologica-2/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-27">2015</time>
+[¿A dónde fueron los votos de Massa?](posts/2022-04-23-inf-ecologica-1/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-26">2015</time>
+[Nuevo libro de Latour](posts/2015-11-26-nuevo-libro-de-latour/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-26">2015</time>
+[Comentario sobre Harman](posts/2015-11-26-comentario-sobre-harman/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-21">2015</time>
+[Contando intendentes en Paraguay](posts/2022-04-23-intendentes-py/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-11-16">2015</time>
+[Elecciones municipales en Paraguay, 2015](posts/2022-04-23-elecciones-municipales-py-2015/)
+:::
+
+::: {.note-entry}
+<time datetime="2015-09-20">2015</time>
+[Elecciones estudiantiles en la Facultad de Exactas, UBA, 2015](posts/2022-04-23-elecciones-exactas/)
+:::
+
+::: {.note-entry}
+<time datetime="2013-05-31">2013</time>
+[Quine: filosofía del lenguaje](posts/2022-04-23-quine/)
+:::
+
+::: {.note-entry}
+<time datetime="2012-10-21">2012</time>
+[Errores de los estudiantes en la materia Matemática del CBC](posts/2022-04-23-errores-cbc/)
+:::
+:::
