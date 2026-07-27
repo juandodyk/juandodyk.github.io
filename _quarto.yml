@@ -19,7 +19,7 @@ project:
 
 website:
   title: "Juan Dodyk"
-  description: "Juan Dodyk is a political economist and Assistant Professor at Washington University in St. Louis studying climate policy, lobbying, and political economy."
+  description: "Juan Dodyk is an Assistant Professor at Washington University in St. Louis studying climate policy, lobbying, and formal political theory."
   site-url: "https://juandodyk.github.io"
   favicon: "files/img/potato.jpg"
   search: false
