@@ -24,7 +24,7 @@ title: "Research"
 :::
 
 ::: {.research-entry}
-**International Coordination of Trade and Green Industrial Policies**  
+[**International Coordination of Trade and Green Industrial Policies**](files/tradegipcoord.pdf){.paper-title-link}  
 <span class="research-links">[Draft](files/tradegipcoord.pdf)</span>
 :::
 

@@ -727,3 +727,9 @@ main.content:has(.interactive-map-layout) {
     scroll-behavior: auto;
   }
 }
+.paper-title-link,
+.paper-title-link:hover,
+.paper-title-link:focus {
+  color: inherit;
+  text-decoration: none;
+}

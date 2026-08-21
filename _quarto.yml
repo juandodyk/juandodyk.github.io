@@ -31,7 +31,7 @@ website:
     pinned: false
     right:
       - text: "Home"
-        href: index.qmd
+        href: /
       - text: "Research"
         href: research.qmd
       - text: "CV"
