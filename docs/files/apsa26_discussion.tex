@@ -1,0 +1,403 @@
+\documentclass[ignorenonframetext,c,12pt]{beamer}
+
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\Huge\insertsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
+\usefonttheme{serif}
+\usepackage{parskip}
+\usepackage[percent]{overpic}
+
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{environ}         % provides \BODY
+\usepackage{etoolbox}        % provides \ifdimcomp
+\usepackage{graphicx}        % provides \resizebox
+\usepackage{tikz}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{tabularx}
+\usepackage{multirow,array}
+\usepackage{xcolor}
+\usepackage{csquotes}\MakeOuterQuote{"}
+\usepackage{fontawesome}
+
+\newlength{\myl}
+\let\origequation=\equation
+\let\origendequation=\endequation
+
+\RenewEnviron{equation}{
+  \settowidth{\myl}{$\BODY$}                       % calculate width and save as \myl
+  \origequation
+  \ifdimcomp{\the\linewidth}{>}{\the\myl}
+  {\ensuremath{\BODY}}                             % True
+  {\resizebox{\linewidth}{!}{\ensuremath{\BODY}}}  % False
+  \origendequation
+}
+
+\definecolor{yellow}{RGB}{240,228,66}
+\definecolor{green}{RGB}{0,158,115}
+\definecolor{BrickRed}{rgb}{0.8, 0.25, 0.33}
+\definecolor{blendedblue}{rgb}{0.2,0.2,0.7}
+\definecolor{darkgreen}{HTML}{006400}
+
+\geometry{paperwidth=170.67mm, paperheight=96mm}%, right=100mm}
+
+\hypersetup{colorlinks,linkcolor=BrickRed,urlcolor=BrickRed}
+\setbeamerfont{structure}{shape=\scshape,family=\rmfamily}
+\setbeamertemplate{frametitle}[default][center]
+\setbeamerfont{title}{size=\LARGE}
+\setbeamerfont{frametitle}{size=\LARGE}
+\setbeamerfont{quotation}{shape=\upshape,family=\rmfamily}
+\setbeamertemplate{itemize items}{$\bullet$}
+\setbeamercolor{itemize item}{fg=blendedblue}
+\setbeamercolor{itemize subitem}{fg=blendedblue}
+\setbeamercolor{enumerate item}{fg=blendedblue}
+\setbeamercolor{enumerate subitem}{fg=blendedblue}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,right]{date in head/foot}%
+      \insertframenumber\hspace{1em} % Only the current frame number
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\usepackage{bbm}
+\def\E{\mathrm{E}}
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+\def\ol{\overline}
+\newcommand{\red}[1]{{\color{BrickRed}#1}}
+\newcommand{\blue}[1]{{\color{blendedblue}#1}}
+\newcommand{\bfblue}[1]{\textbf{\blue{#1}}}
+\newcommand{\myemph}[1]{\bf{\blue{#1}}}
+\newcommand{\green}[1]{{\color{darkgreen}#1}}
+\newcommand{\pars}[1]{\left( #1 \right)}
+\newcommand{\braks}[1]{\left[ #1 \right]}
+\newcommand{\braces}[1]{\left\{ #1 \right\}}
+\def\1{\mathbbm{1}}
+\def\menos{\smallsetminus}
+\def\lim{\mathop{\text{lim}}\limits}
+\def\argmin{\mathop{\textnormal{argmin}}\limits}
+\def\argmax{\mathop{\textnormal{argmax}}\limits}
+\def\vacio{\varnothing}
+\def\ms{\medskip}
+\def\Pr{\text{Pr}}
+\newcommand{\pd}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\def\minus{\smallsetminus}
+\def\iff{\Leftrightarrow}
+\def\then{\Rightarrow}
+\let\originbf=\bf
+\renewcommand{\bf}[1]{{\boldsymbol{#1}}}
+\newcommand{\bp}[1]{\left({#1}\right)}
+\newcommand{\fp}[1]{{\left({#1}\right)}}
+\newcommand{\bc}[1]{\left\{{#1}\right\}}
+\newcommand{\bs}[1]{{\left[{#1}\right]}}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+
+\newcommand{\myquote}[1]{\begin{tabular}{l|P{0.9\textwidth}}\quad & {#1} \end{tabular}}
+\newcommand{\fnsize}[1]{{\footnotesize {#1}}}
+\newcommand{\mycomment}[1]{}
+
+\let\savedleq=\leq % save them in case you ever want them
+\let\savedgeq=\geq % 
+\let\leq=\leqslant % redefine them
+\let\geq=\geqslant % 
+
+\usepackage{bookmark,xurl}
+\urlstyle{same}
+\hypersetup{
+  pdftitle={MPSA 2026 Discussion},
+  pdfauthor={Juan Dodyk}
+  }
+
+\begin{document}
+
+\begin{frame}{}
+  \centering
+  \blue{\textsc{\LARGE Discussion Comments}}\ms\ms
+  
+  {\large Juan Dodyk}\ms
+    
+  Washington University in St.\ Louis
+\end{frame}
+
+\begin{frame}{}
+  \centering
+  \blue{\textsc{\LARGE "Convertible Public Goods, Power Shifts, and the  Shadow of Preventive War" \\[0.5em] by Haonan Dong}}
+\end{frame}
+
+\begin{frame}{The Paper}
+    \textbf{Question:} why absence of US--China cooperation on AI safety and green technology?
+
+    \textbf{Answer:} investments in those public goods may become useful for defense (convertible) in the future.
+
+    \textbf{Model ingredients:} threshold public good production; contributions asymmetrically increase probability of victory in a Fearon model of war.
+\end{frame}
+
+\begin{frame}{The Model}
+  \textbf{Players:} \bfblue{defending state $D$} and \bfblue{challenging state $C$}.
+  
+  \textbf{Interaction:}\vspace{-0.25em}
+  \begin{enumerate}\tightlist
+    \item[] First Period:
+    \item $C$ chooses contribution $\myemph{x_C} \in [0, \myemph{\Phi}]$.
+    \item $D$ chooses contribution $\myemph{x_D} \in [0, \myemph{\Phi}]$.
+    \item[] Public good $\myemph{g} = \1[x_C + x_D \geq \myemph{\kappa}]$.
+    \item $C$ offers a portion of the pie $\myemph{y_1} \in [0, 1]$.
+    \item $D$ accepts or not, $\myemph{a_1} \in \{0, 1\}$.\ms
+    \item[] Second Period:
+    \item[] If $g = 1$, $x_C$ becomes dual-use ($\myemph{d} = 1$) with probability $\myemph{r}$.
+    \item $C$ offers a portion of the pie $\myemph{y_2} \in [0, 1]$.
+    \item $D$ accepts or not, $\myemph{a_2} \in \{0, 1\}$.
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{The Model}
+  \textbf{Payoffs:}\vspace{-1em}
+  \begin{align*}
+    \myemph{u_C} ={}& g \myemph{\Theta} + \lambda a_1 (1 - y_1) + (1 - a_1) (\myemph{p_1 - c_C}) \\
+    & + (1 - \lambda) a_1 [a_2 (1 - y_2) + (1 - a_2) (\myemph{p_2 - c_C})] \\
+    \myemph{u_D} ={}& g \myemph{\Theta} + \lambda a_1 y_1 + (1 - a_1) (\myemph{1 - p_1 - c_D}) \\
+    & + (1 - \lambda) a_1 [a_2 y_2 + (1 - a_2) (\myemph{1 - p_2 - c_C})],
+  \end{align*}
+  where $\myemph{\lambda} \in (\frac12, 1]$ is time preference.
+
+  Probability of victory of $C$:
+  \begin{align*}
+    & \myemph{p_1} = \frac{\Phi - x_C}{\Phi - x_C + \Phi - x_D},
+    & \myemph{p_2} = \frac{\Phi - x_C + d \myemph{\gamma} x_C}{\Phi - x_C + \Phi - x_D + d \myemph{\gamma} x_C},
+  \end{align*}
+  where $\myemph{\gamma} > 0$ is level of convertibility.
+
+  \textbf{Assumption:} $\kappa > \Phi$.
+\end{frame}
+
+\begin{frame}{Analysis}
+  The following is fairly obvious:
+  \begin{itemize}
+    \item There's no reason to go to war in the second period.
+    \item If $r = 0$ ($C$'s contribution cannot become dual use) then there's no reason to go to war in the first period either.
+    \item Contributing to the public good is useful but it makes you weaker, so it only happens if states find it sufficiently valuable, i.e., iff $\Theta$ is above some threshold $\Theta^*$.
+  \end{itemize}
+
+  Notice that with this we already get a (fairly trivial) answer to the motivating question: why do states not contribute to public goods? Because they may prefer to use that money for defense.
+\end{frame}
+
+\begin{frame}{Dual-use Case}
+  If the contribution can become dual-use there can be war in the first period, because $D$ may want to fight before $C$ becomes stronger. (This is Fearon's commitment problem reason for war.)
+
+  \begin{itemize}
+    \item If $\Theta$ is above some threshold $\Theta^*$, $C$ is willing to induce production of the public good, assuming peace.
+    \item If $\Theta$ is above some threshold $\Theta^W > \Theta^*$, $C$ is willing to induce production of the public good, assuming war.
+    \item If $\Theta$ is above some threshold $\Theta_w$, conditional on the public good being produced, there is no war.
+    \begin{itemize}
+      \item \textit{Key idea:} there is no point in increasing $x_C$ beyond what's required to get $D$ to pay $\kappa - x_C$, even if $\gamma$ is large, because if $C$ plans to avoid war, they have to compensate $D$ for their increase in power.
+      \item Therefore, $\Theta\uparrow$ implies $x_C\downarrow$, which makes war easier to avoid.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Proposition 2}
+  Therefore, we get:
+  \begin{itemize}
+    \item If $\Theta \geq \max\{\Theta^*, \Theta_w\}$ then the public good is produced and war is avoided.
+    \item If $\Theta^W \leq \Theta < \Theta_w$ then the public good is produced and there is war.
+    \item Otherwise the public good is not produced and war is avoided.
+  \end{itemize}
+
+  Important: if $\Theta^* < \Theta_w \leq \Theta^W$ then the public good is produced iff $\Theta \geq \Theta_w$.
+
+  Therefore, if $\Theta \in [\Theta^*, \Theta_w)$ the public good is not produced, even though with $r = 0$ it would have been produced.
+
+  \textit{Key idea:} with $r > 0$ it can happen that the public good is worth producing if war is avoided, but it's not valuable enough to make war avoidable.
+\end{frame}
+
+\begin{frame}{Convertibility and Peace}\vspace{0.5em}
+  Recall: $\Theta_w$ is the min value of the public good that makes war avoidable.
+
+  $\Theta_w(\gamma)$ is increasing: as $C$'s contribution becomes more useful for war, it's harder to avoid a preventative war.
+
+  But $\gamma$ doesn't affect $\Theta^*$ nor $\Theta^W$ (the min values of $\Theta$ that make the good worth producing conditional on peace and war, respectively).
+
+  So, if $\gamma$ is large, we get $\Theta_w > \Theta^W$.
+  \begin{itemize}
+    \item If $\Theta < \Theta^W$, we get no public good but peace.
+    \item If $\Theta^W \leq \Theta < \Theta_w$, \textit{we get the public good, but war}.
+    \item If $\Theta \geq \Theta_w$, we the public good and peace.
+  \end{itemize}
+
+  War happens only for public goods of intermediate value.
+
+  \textbf{Proposition 4.} $u_C$ weakly decreasing in $r$ and $\gamma$. Dual use is bad for the state that benefits from it.
+\end{frame}
+
+\begin{frame}{Comments}\vspace{0.5em}
+  \textbf{Nice paper.} Very simple and standard model, but nontrivial results.
+
+  But I wonder to what extent it provides an answer to the substantive question that motivates it:
+  \begin{itemize}\tightlist\vspace{-0.5em}
+    \item The paper didn't really convince me that green technology is dual use.
+    \item With AI safety, my understanding is that the public good is \textit{slowing down} development.
+    \begin{itemize}
+      \item So $x_C, x_D > 0$ means \textit{slowing} your development of AI. (Which, yeah, makes you militarily weaker, and only prevents a disaster if both states do enough of it.)
+      \item But it's hard to believe that $x_C$ can make you militarily stronger (i.e., $\gamma > 1$). Again, is anybody out there making this argument? I haven't heard it.
+  \end{itemize}
+  \item In both cases a big problem is exactly the opposite to the problem the paper studies: you may not want to decarbonize because \textit{fossil fuels} (not green tech) are useful in war; you don't want to stop AI because \textit{AI itself} is useful in war.
+  \item Also, a force in the opposite direction is that green tech being weaponizable may create an incentive for green subsidies (energy independence; EVs).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Comments}
+  \begin{itemize}
+    \item In the model contributing to the public good takes away resources from defense (butter vs guns logic).
+    \begin{itemize}
+      \item Unclear why spending on $x_C$ requires reducing the defense budget. You could raise taxes instead or cut another line of the budget.
+    \end{itemize}
+    \item Proposition 4 (dual use is bad for the state that benefits from it) is interesting but is not super robust.
+    \begin{itemize}
+      \item If $D$ makes the TIOLI offer $y_1$ instead, $C$ can benefit from future strength.
+      \item Notice that the argument is too strong and not super plausible: it shows that \textit{no investment} in military capability is worth doing, because before you are strong it either triggers a preventive war, or it forces you to compensate your opponent before the future benefit you get.
+    \end{itemize}
+    \item The paper uses a lot of unnecessary notation ($\alpha$, $s$, $M$, $q$, $\omega$, $\text{cost}_D$, $\Delta$, $\Omega$).
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+  \centering
+  \blue{\textsc{\LARGE "Climate Adaptation and War" \\[0.5em] by Hiroto Sawada}}
+\end{frame}
+
+\begin{frame}{The Paper}
+  \textbf{Question:} how do climate adaptation efforts affect the risk of armed conflict between rival political groups?
+
+  \textbf{Answer:} it depends.
+  \begin{itemize}
+    \item If every state can protect itself from climate disasters, adaptation reduces conflict (under reasonable assumptions).
+    \item But, suppose that one state can asymmetrically decrease its own exposure to climate disasters.
+    \begin{itemize}
+      \item This asymmetry can increase the chance of opportunistic aggression.
+    \end{itemize}
+    \item In both cases, the incentive to avoid war can inefficiently reduce adaptation investments.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{The Model}\vspace{0.5em}
+  \textbf{Players:} states $1, 2$.
+
+  \textbf{Interaction:}\vspace{-0.25em}
+  \begin{enumerate}\tightlist
+    \item[] Investment Phase:
+    \item Each $i$ chooses adaptation investment $\myemph{e_i} \geq 0$.
+    \item Each $i$ chooses to attack $\myemph{a_{i1}} \in \{0, 1\}$.\ms
+    \item[] Disaster Phase:
+    \item Nature draws disaster $\myemph{D} \sim \text{Bernoulli}(\pi)$ and $\myemph{(Z_1, Z_2)} \sim F(\cdot|e_1, e_2)$ with support on $[0, 1]^2$.
+    \item Each $i$ chooses to attack $\myemph{a_{i2}} \in \{0, 1\}$.
+  \end{enumerate}
+
+  Let $v_{i1} = \bar v$, $v_{i2} = (1 - D + D Z_i) \bar v$ be resources, and $p_i(v_t) = \frac{v_{it}}{v_{1t} + v_{2t}}$.
+
+  \textbf{Payoffs:}
+  $$u_i = \begin{cases}
+    v_{i2} + \bar V - \kappa_i e_i & \text{ if peace } (a_{jt} = 0 \text{ for all } j,t = 1, 2), \\
+    p_i(v_t) (1 - c) (v_{12} + v_{22} + 2 \bar V) - \kappa_i e_i & \text{ if war at $t$.}
+  \end{cases}$$
+\end{frame}
+
+\begin{frame}{Analysis: only state $1$ can invest}
+  Suppose that $Z_2 = 1 - Z_1$, i.e., climate risks are negatively correlated, and investment weakly decreases $\Pr(Z_1 \leq z)$ for all $z$, i.e., protects state $1$ but makes state $2$ more vulnerable.
+
+  In equilibrium, there is peace at $t=1$: state $1$ doesn't want to invest so much that it triggers a preventive war. This can inefficiently reduce investment.
+
+  There is war at $t=2$ iff $z \not\in [1-\bar z, \bar z]$ for some $\bar z \in (\frac12, 1)$, i.e., one state is temporarily much more powerful than the other.
+
+  Adaptation can either increase or decrease the probability of $z \in [1-\bar z, \bar z]$.
+
+  If it reduces it, adaptation increases the probability of war, and reduces aggregate welfare.
+\end{frame}
+
+\begin{frame}{Analysis: independent climate risks}
+  Suppose that $\Pr(Z_1 \leq z_1, Z_2 \leq z_2 | e_1, e_2) = \Pr(Z_1 \leq z_1 | e_1) \Pr(Z_2 \leq z_2 | e_2)$.
+
+  Again, peace at $t=1$. No state can invest so much that it triggers a preventive war. Again, we may have inefficient underinvestment because of this.
+
+  At $t=2$, there is war iff one state becomes much weaker than the other because of a climate disaster.
+
+  Again, adaptation can either increase or decrease the probability of war. Under reasonable conditions, it decreases the chance of war.
+
+  \textbf{Takeaway.} Adaptation can increase conflict when it's inherently asymmetric (e.g., a dam that affects who suffers from a drought). But when it can be symmetric (e.g., sea walls), it can reduce conflict, because it reduces the chance of opportunistic aggression.
+\end{frame}
+
+\begin{frame}{Comments}\vspace{0.5em}
+  \textbf{Very nice paper.} Important conceptual move. Nontrivial but transparent argument.
+
+  Some thoughts.
+  \begin{itemize}
+    \item The paper focuses on the temptation and deterrence effects.
+    \begin{itemize}\tightlist
+      \item The classic logic in the literature (e.g., McGuirk \& Nunn, "Transhumant Pastoralism, Climate Change, and Conflict in Africa") suggests a different mechanism.
+      \item If there is a drought in a neighboring state, that state has an incentive to fight (the opportunity cost of productive labor in agriculture goes down, say).
+      \item This creates an incentive for a state to invest in adaptation that reduces risk in the neighboring state.
+      \item The paper ignores this, which is fine, but maybe it should say something about what kinds of adaptation investments or in what contexts the forces in the model are more important than these other ones.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Comments}\vspace{0.5em}
+  \begin{itemize}
+    \item Another classic problem with adaptation is moral hazard (e.g., Hsiao, "Sea Level Rise and Urban Adaptation in Jakarta").
+    \begin{itemize}
+      \item People may make investments that are too risky because they expect the government to protect them inefficiently.
+      \item Does this interact with conflict? Maybe conflict makes moral hazard worse, because after people invest in a risky asset, the government has an extra incentive to protect it.
+      \item But maybe it helps? A security threat may increase the incentive of the state to be "tough" with domestic constituencies.
+    \end{itemize}
+    \item Climate adaptation is an extremely important topic. We need more work on it. IMO, to make progress we need to find the right distinctions (because "adaptation" includes extremely different things).
+    \begin{itemize}
+      \item This paper makes an important conceptual move: something that matters is how adaptation affects the correlation of climate risks across countries.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\end{document}
