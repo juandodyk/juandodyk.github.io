@@ -19,23 +19,21 @@ title: "Research"
 ## Working Papers
 
 ::: {.research-entry}
-**Inefficient Policies in the Green Transition**  
-<span class="research-links">[Draft](files/jmp.pdf) · [Slides](files/jmpresentation.pdf)</span>
+[**Inefficient Policies in the Green Transition**](files/jmp.pdf)<br>
+<span class="research-links">[Slides](files/jmpresentation.pdf)</span>
 :::
 
 ::: {.research-entry}
-[**International Coordination of Trade and Green Industrial Policies**](files/tradegipcoord.pdf){.paper-title-link}  
-<span class="research-links">[Draft](files/tradegipcoord.pdf)</span>
+[**International Coordination of Trade and Green Industrial Policies**](files/tradegipcoord.pdf)
 :::
 
 ::: {.research-entry}
-**An Informational Theory of Coalitional Lobbying**  
-<span class="research-links">[Draft](files/collectivelobby.pdf) · [Slides](files/cbs26.pdf)</span>
+[**An Informational Theory of Coalitional Lobbying**](files/collectivelobby.pdf)<br>
+<span class="research-links">[Slides](files/cbs26.pdf)</span>
 :::
 
 ::: {.research-entry}
-**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**  
-<span class="research-links">[PDF](files/blackwell_new.pdf)</span>
+[**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**](files/blackwell_new.pdf)
 :::
 
 ## Work in Progress

@@ -24,5 +24,3 @@ if [ -f "$sitemap" ]; then
       fi
     done
 fi
-
-find "$output_dir" -type f -name '*.html' -exec sed -i '' 's#href="\./index\.html"#href="/"#g' {} +

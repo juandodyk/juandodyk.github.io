@@ -28,25 +28,6 @@ I received my Ph.D. in Government from Harvard University.
 
 <p class="home-guide">You can find my <a href="#research">research</a> and <a href="#teaching">teaching materials</a> below, or download my <a href="files/Juan_Dodyk_CV.pdf" rel="nofollow">CV</a>.</p>
 
-::: {.home-details}
-::: {.detail-column}
-## Research interests
-
-- Climate policy and politics
-- Lobbying and money in politics
-- Formal political theory
-:::
-
-::: {.detail-column}
-## Education
-
-**Ph.D. in Government, 2025**  
-<span class="detail-meta">Harvard University</span>
-
-**B.Sc. in Mathematics, 2017**  
-<span class="detail-meta">Universidad de Buenos Aires</span>
-:::
-:::
 :::
 ::::
 
@@ -74,23 +55,21 @@ I received my Ph.D. in Government from Harvard University.
 ### Working papers
 
 ::: {.compact-entry}
-**Inefficient Policies in the Green Transition**  
-<span class="research-links">[Draft](files/jmp.pdf) · [Slides](files/jmpresentation.pdf)</span>
+[**Inefficient Policies in the Green Transition**](files/jmp.pdf)<br>
+<span class="research-links">[Slides](files/jmpresentation.pdf)</span>
 :::
 
 ::: {.compact-entry}
-[**International Coordination of Trade and Green Industrial Policies**](files/tradegipcoord.pdf){.paper-title-link}  
-<span class="research-links">[Draft](files/tradegipcoord.pdf)</span>
+[**International Coordination of Trade and Green Industrial Policies**](files/tradegipcoord.pdf)
 :::
 
 ::: {.compact-entry}
-**An Informational Theory of Coalitional Lobbying**  
-<span class="research-links">[Draft](files/collectivelobby.pdf) · [Slides](files/cbs26.pdf)</span>
+[**An Informational Theory of Coalitional Lobbying**](files/collectivelobby.pdf)<br>
+<span class="research-links">[Slides](files/cbs26.pdf)</span>
 :::
 
 ::: {.compact-entry}
-**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**  
-<span class="research-links">[PDF](files/blackwell_new.pdf)</span>
+[**A Proof of Blackwell’s Theorem for Separable Metric State Spaces**](files/blackwell_new.pdf)
 :::
 :::
 :::
@@ -100,7 +79,7 @@ I received my Ph.D. in Government from Harvard University.
 ::: {.compact-teaching}
 ### Math Camp 2026 at WashU
 
-**Lectures:** [1](files/mathcamp/lecture1.pdf) · [2](files/mathcamp/lecture2.pdf) · [3](files/mathcamp/lecture3.pdf) · [4](files/mathcamp/lecture4.pdf) · [5](files/mathcamp/lecture5.pdf) · [6](files/mathcamp/lecture6.pdf) · [7](files/mathcamp/lecture7.pdf) · [8](files/mathcamp/lecture8.pdf) · [9](files/mathcamp/lecture9.pdf) · [10](files/mathcamp/lecture10.pdf)  
+**Lectures:** [1: Basic Algebra](files/mathcamp/lecture1.pdf) · [2: Sets and Functions](files/mathcamp/lecture2.pdf) · [3: Limits](files/mathcamp/lecture3.pdf) · [4: Derivatives](files/mathcamp/lecture4.pdf) · [5: Integrals](files/mathcamp/lecture5.pdf) · [6: Vectors and Matrices](files/mathcamp/lecture6.pdf) · [7: Square Matrices](files/mathcamp/lecture7.pdf) · [8: Derivatives and Integrals in Rⁿ](files/mathcamp/lecture8.pdf) · [9: Probability](files/mathcamp/lecture9.pdf) · [10: Expectation and Variance](files/mathcamp/lecture10.pdf)<br>
 **Problem sets:** [1](files/mathcamp/ps1.pdf) · [2](files/mathcamp/ps2.pdf) · [3](files/mathcamp/ps3.pdf) · [4](files/mathcamp/ps4.pdf) · [5](files/mathcamp/ps5.pdf) · [6](files/mathcamp/ps6.pdf) · [7](files/mathcamp/ps7.pdf) · [8](files/mathcamp/ps8.pdf) · [9](files/mathcamp/ps9.pdf) · [10](files/mathcamp/ps10.pdf)
 
 ### Gov 2006: Formal Theory II

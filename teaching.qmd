@@ -8,16 +8,16 @@ title: "Teaching"
 
 | Lectures | Problem sets |
 |---|---|
-| [Lecture 1](files/mathcamp/lecture1.pdf) | [Problem Set 1](files/mathcamp/ps1.pdf) |
-| [Lecture 2](files/mathcamp/lecture2.pdf) | [Problem Set 2](files/mathcamp/ps2.pdf) |
-| [Lecture 3](files/mathcamp/lecture3.pdf) | [Problem Set 3](files/mathcamp/ps3.pdf) |
-| [Lecture 4](files/mathcamp/lecture4.pdf) | [Problem Set 4](files/mathcamp/ps4.pdf) |
-| [Lecture 5](files/mathcamp/lecture5.pdf) | [Problem Set 5](files/mathcamp/ps5.pdf) |
-| [Lecture 6](files/mathcamp/lecture6.pdf) | [Problem Set 6](files/mathcamp/ps6.pdf) |
-| [Lecture 7](files/mathcamp/lecture7.pdf) | [Problem Set 7](files/mathcamp/ps7.pdf) |
-| [Lecture 8](files/mathcamp/lecture8.pdf) | [Problem Set 8](files/mathcamp/ps8.pdf) |
-| [Lecture 9](files/mathcamp/lecture9.pdf) | [Problem Set 9](files/mathcamp/ps9.pdf) |
-| [Lecture 10](files/mathcamp/lecture10.pdf) | [Problem Set 10](files/mathcamp/ps10.pdf) |
+| [Lecture 1: Basic Algebra](files/mathcamp/lecture1.pdf) | [Problem Set 1](files/mathcamp/ps1.pdf) |
+| [Lecture 2: Sets and Functions](files/mathcamp/lecture2.pdf) | [Problem Set 2](files/mathcamp/ps2.pdf) |
+| [Lecture 3: Limits](files/mathcamp/lecture3.pdf) | [Problem Set 3](files/mathcamp/ps3.pdf) |
+| [Lecture 4: Derivatives](files/mathcamp/lecture4.pdf) | [Problem Set 4](files/mathcamp/ps4.pdf) |
+| [Lecture 5: Integrals](files/mathcamp/lecture5.pdf) | [Problem Set 5](files/mathcamp/ps5.pdf) |
+| [Lecture 6: Vectors and Matrices](files/mathcamp/lecture6.pdf) | [Problem Set 6](files/mathcamp/ps6.pdf) |
+| [Lecture 7: Square Matrices](files/mathcamp/lecture7.pdf) | [Problem Set 7](files/mathcamp/ps7.pdf) |
+| [Lecture 8: Derivatives and Integrals in Rⁿ](files/mathcamp/lecture8.pdf) | [Problem Set 8](files/mathcamp/ps8.pdf) |
+| [Lecture 9: Probability](files/mathcamp/lecture9.pdf) | [Problem Set 9](files/mathcamp/ps9.pdf) |
+| [Lecture 10: Expectation and Variance](files/mathcamp/lecture10.pdf) | [Problem Set 10](files/mathcamp/ps10.pdf) |
 
 The book *Mathematics for Social Scientists* by Jonathan Kropko covers the topics we will see. [Read it here](https://login.libproxy.washu.edu/login?url=https://methods.sagepub.com/book/mono/mathematics-for-social-scientists/toc).
 

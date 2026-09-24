@@ -88,7 +88,7 @@
     "href": "research.html#working-papers",
     "title": "Research",
     "section": "Working Papers",
-    "text": "Working Papers\n\nInefficient Policies in the Green Transition\nDraft · Slides\n\n\nInternational Coordination of Trade and Green Industrial Policies\nDraft\n\n\nAn Informational Theory of Coalitional Lobbying\nDraft · Slides\n\n\nA Proof of Blackwell’s Theorem for Separable Metric State Spaces\nPDF"
+    "text": "Working Papers\n\nInefficient Policies in the Green Transition Slides\n\n\nInternational Coordination of Trade and Green Industrial Policies\n\n\nAn Informational Theory of Coalitional Lobbying Slides\n\n\nA Proof of Blackwell’s Theorem for Separable Metric State Spaces"
   },
   {
     "objectID": "research.html#work-in-progress",
@@ -105,46 +105,32 @@
     "text": "Earlier Work\n\nInformation, Policy Preferences, and Voting\nPDF\n\n\nEnchufes, Espejos y Tijeras: Efectos del Diseño de las Boletas sobre el Comportamiento Electoral\nwith Juan Pablo Ruiz Nicolini · Revista SAAP, 2017\nPDF\n\n\nSpatial Variation in Ecological Inference\nPDF"
   },
   {
-    "objectID": "index.html#research-interests",
-    "href": "index.html#research-interests",
-    "title": "Juan Dodyk",
-    "section": "Research interests",
-    "text": "Research interests\n\nClimate policy and politics\nLobbying and money in politics\nFormal political theory"
-  },
-  {
-    "objectID": "index.html#education",
-    "href": "index.html#education",
-    "title": "Juan Dodyk",
-    "section": "Education",
-    "text": "Education\nPh.D. in Government, 2025\nHarvard University\nB.Sc. in Mathematics, 2017\nUniversidad de Buenos Aires"
-  },
-  {
     "objectID": "index.html#research",
     "href": "index.html#research",
     "title": "Juan Dodyk",
     "section": "Research",
-    "text": "Research\n\n\nPublished\n\nFamily Ties as Corporate Power\nwith Pablo Balán and Ignacio Puente · The Journal of Politics, 2025\nPDF · Appendix · Replication\n\n\nThe Political Behavior of Family Firms: Evidence from Brazil\nwith Pablo Balán and Ignacio Puente · World Development, 2022\nPDF · Appendix · Replication\n\n\n\nWorking papers\n\nInefficient Policies in the Green Transition\nDraft · Slides\n\n\nInternational Coordination of Trade and Green Industrial Policies\nDraft\n\n\nAn Informational Theory of Coalitional Lobbying\nDraft · Slides\n\n\nA Proof of Blackwell’s Theorem for Separable Metric State Spaces\nPDF"
+    "text": "Research\n\n\nPublished\n\nFamily Ties as Corporate Power\nwith Pablo Balán and Ignacio Puente · The Journal of Politics, 2025\nPDF · Appendix · Replication\n\n\nThe Political Behavior of Family Firms: Evidence from Brazil\nwith Pablo Balán and Ignacio Puente · World Development, 2022\nPDF · Appendix · Replication\n\n\n\nWorking papers\n\nInefficient Policies in the Green Transition Slides\n\n\nInternational Coordination of Trade and Green Industrial Policies\n\n\nAn Informational Theory of Coalitional Lobbying Slides\n\n\nA Proof of Blackwell’s Theorem for Separable Metric State Spaces"
   },
   {
     "objectID": "index.html#teaching",
     "href": "index.html#teaching",
     "title": "Juan Dodyk",
     "section": "Teaching",
-    "text": "Teaching\n\n\nMath Camp 2026 at WashU\nLectures: 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10\nProblem sets: 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10\n\n\nGov 2006: Formal Theory II\nTeaching assistant, Spring 2021 and Spring 2022 · Prof. Peter Buisseret\nSection slides: 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13"
+    "text": "Teaching\n\n\nMath Camp 2026 at WashU\nLectures: 1: Basic Algebra · 2: Sets and Functions · 3: Limits · 4: Derivatives · 5: Integrals · 6: Vectors and Matrices · 7: Square Matrices · 8: Derivatives and Integrals in Rⁿ · 9: Probability · 10: Expectation and Variance Problem sets: 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10\n\n\nGov 2006: Formal Theory II\nTeaching assistant, Spring 2021 and Spring 2022 · Prof. Peter Buisseret\nSection slides: 1 · 2 · 3 · 4 · 5 · 6 · 7 · 8 · 9 · 10 · 11 · 12 · 13"
   },
   {
     "objectID": "teaching.html",
     "href": "teaching.html",
     "title": "Teaching",
     "section": "",
-    "text": "Prof. Juan Dodyk\n\n\n\n\nLectures\nProblem sets\n\n\n\n\nLecture 1\nProblem Set 1\n\n\nLecture 2\nProblem Set 2\n\n\nLecture 3\nProblem Set 3\n\n\nLecture 4\nProblem Set 4\n\n\nLecture 5\nProblem Set 5\n\n\nLecture 6\nProblem Set 6\n\n\nLecture 7\nProblem Set 7\n\n\nLecture 8\nProblem Set 8\n\n\nLecture 9\nProblem Set 9\n\n\nLecture 10\nProblem Set 10\n\n\n\nThe book Mathematics for Social Scientists by Jonathan Kropko covers the topics we will see. Read it here."
+    "text": "Prof. Juan Dodyk\n\n\n\n\nLectures\nProblem sets\n\n\n\n\nLecture 1: Basic Algebra\nProblem Set 1\n\n\nLecture 2: Sets and Functions\nProblem Set 2\n\n\nLecture 3: Limits\nProblem Set 3\n\n\nLecture 4: Derivatives\nProblem Set 4\n\n\nLecture 5: Integrals\nProblem Set 5\n\n\nLecture 6: Vectors and Matrices\nProblem Set 6\n\n\nLecture 7: Square Matrices\nProblem Set 7\n\n\nLecture 8: Derivatives and Integrals in Rⁿ\nProblem Set 8\n\n\nLecture 9: Probability\nProblem Set 9\n\n\nLecture 10: Expectation and Variance\nProblem Set 10\n\n\n\nThe book Mathematics for Social Scientists by Jonathan Kropko covers the topics we will see. Read it here."
   },
   {
     "objectID": "teaching.html#math-camp-2026-at-washu",
     "href": "teaching.html#math-camp-2026-at-washu",
     "title": "Teaching",
     "section": "",
-    "text": "Prof. Juan Dodyk\n\n\n\n\nLectures\nProblem sets\n\n\n\n\nLecture 1\nProblem Set 1\n\n\nLecture 2\nProblem Set 2\n\n\nLecture 3\nProblem Set 3\n\n\nLecture 4\nProblem Set 4\n\n\nLecture 5\nProblem Set 5\n\n\nLecture 6\nProblem Set 6\n\n\nLecture 7\nProblem Set 7\n\n\nLecture 8\nProblem Set 8\n\n\nLecture 9\nProblem Set 9\n\n\nLecture 10\nProblem Set 10\n\n\n\nThe book Mathematics for Social Scientists by Jonathan Kropko covers the topics we will see. Read it here."
+    "text": "Prof. Juan Dodyk\n\n\n\n\nLectures\nProblem sets\n\n\n\n\nLecture 1: Basic Algebra\nProblem Set 1\n\n\nLecture 2: Sets and Functions\nProblem Set 2\n\n\nLecture 3: Limits\nProblem Set 3\n\n\nLecture 4: Derivatives\nProblem Set 4\n\n\nLecture 5: Integrals\nProblem Set 5\n\n\nLecture 6: Vectors and Matrices\nProblem Set 6\n\n\nLecture 7: Square Matrices\nProblem Set 7\n\n\nLecture 8: Derivatives and Integrals in Rⁿ\nProblem Set 8\n\n\nLecture 9: Probability\nProblem Set 9\n\n\nLecture 10: Expectation and Variance\nProblem Set 10\n\n\n\nThe book Mathematics for Social Scientists by Jonathan Kropko covers the topics we will see. Read it here."
   },
   {
     "objectID": "teaching.html#gov-2006-formal-theory-ii",
