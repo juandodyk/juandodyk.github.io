@@ -524,10 +524,10 @@ ol li {
 }
 
 .historical-note .math.inline {
-  display: inline-block;
-  max-width: 100%;
-  overflow-x: auto;
-  vertical-align: middle;
+  display: inline;
+  max-width: none;
+  overflow: visible;
+  vertical-align: baseline;
 }
 
 .historical-note .math.display {
