@@ -3,6 +3,7 @@ title: "Cap 8. Justice as Mutual Advantage?"
 subtitle: "Vanderscraaf (2019), Strategic Justice"
 output:
   xaringan::moon_reader:
+    self_contained: true
     nature:
       countIncrementalSlides: false
 ---
