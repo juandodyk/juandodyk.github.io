@@ -2,10 +2,10 @@
 title: "Violencia, justicia y limitaciones de una agenda"
 date: 2016-11-21
 date-format: "MMMM D, YYYY"
+lang: es
 canonical-url: "https://juandodyk.github.io/posts/2016-11-21-violencia-justicia-y-limitaciones-de-una-agenda/"
 ---
 
-::: {lang="es"}
 Quiero hacer una reflexión sobre la violencia contra las mujeres y los límites de una agenda que busque erradicarla.
 
 Parto, por supuesto, del texto que publicó Carolina Aguirre ayer en la Revista de La Nación. Hay muchas cosas muy valiosas que consigue. Una, mostrar a las mujeres cómo funciona el mecanismo: en las extorsiones del novio, la normalización del psiquiatra, sus propias dudas (¿estoy loca?, ¿seré yo la mala?). En eso puede ser liberador. Dos, menciona explícitamente la relevancia de un conjunto de recursos en la salvación, por decirlo de alguna manera, de la víctima. Cuando cuenta que el novio casi la mata y ella pudo tomarse un taxi e ir a un hotel dice: eso lo pudo hacer porque tenía plata. Me quiero centrar en ese punto.
@@ -35,6 +35,5 @@ Es deprimente, pero la muerte termina siendo algo “bueno” para impulsar una 
 Aclaro, finalmente: esto no es una crítica al “Ni Una Menos”. Al contrario. Quizás sí puede funcionar como una crítica a sus críticos. Los que dicen que se queda corto, que no es efectivo y qué sé yo. ¿Son concientes de las dificultades? Que funcione el movimiento Ni Una Menos es un mérito extraordinario, y se explica en parte, creo, por sus propias limitaciones. ¿Sabemos exactamente qué agenda tenemos que tratar de imponerle al Estado (y a nosotros mismos) para resolverle el problema a las mujeres de las historias que cuenta mi mamá? Yo creo que no. Que hay que empezar por algún lado, y se está haciendo, y hay que profundizar eso. Pero que hay un punto en el que no tenemos la respuesta, y es posible que no la tenga nadie. Un punto más allá del cual ninguna reforma progresista, ninguna reforma de género, puede avanzar.
 
 Por último. Sí, puede ser un poco irresponsable de mi parte decir todas estas cosas sin dar precisiones, sin involucrarme. Sí. Pero es sólo una reflexión, algo que dije en un chat y me dijeron que escriba. Hagan lo que se les canta con esto.
-:::
 
 <!-- Imported from https://medium.com/@juandodyk/violencia-justicia-y-limitaciones-de-una-agenda-cb4f82849a56 -->

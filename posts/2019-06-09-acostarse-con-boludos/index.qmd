@@ -2,10 +2,10 @@
 title: "Acostarse con boludos"
 date: 2019-06-09
 date-format: "MMMM D, YYYY"
+lang: es
 canonical-url: "https://juandodyk.github.io/posts/2019-06-09-acostarse-con-boludos/"
 ---
 
-::: {lang="es"}
 Magdalena López escribió [esta nota](http://latfem.org/por-una-pedagogia-del-cuidado-el-acuerdo-y-la-responsabilidad-afectiva/) en respuesta a una entrevista sobre la que no me interesa hablar. No quiero hacer un comentario de la nota de Magui, pero quiero mostrar una manera distinta de pensar estos temas. En la entrevista a la que responde Magui, la persona entrevistada dice:
 
 > Lo que es patriarcado es suponer que la mujer es sumisa, pasiva. Que no puede decirle “che, flaco, sos un tarado, chau”. Porque la pregunta es por qué seguís esperando a alguien que te clavó el visto.
@@ -32,6 +32,5 @@ Por otra parte, notar que las mujeres “feministas” — llamémosle así a la
 Uno puede enriquecer el modelo incorporando desigualdad, por ejemplo, o que para algunas mujeres dejar a su pareja tiene un costo. Y seguramente haya maneras infinitamente mejores de pensar esto con modelos. Mi “apartado metodológico” es que el individualismo analítico no es malo, y la llamada “teoría de la elección racional” no sólo no es es funcional al neoliberalismo sino que puede ayudar a pensar estas cosas.
 
 ¹ Es una suposición fea, pero, en primer lugar, es realista, al menos si admitimos cierta heterogeneidad. La evidencia obvia es que el maltrato sucede en el mundo real, si bien es cierto que los hombres pueden maltratar a las mujeres incluso si no lo prefieren como acción aislada. Por ejemplo, el maltrato puede servir para señalizar que uno no está demasiado interesado en el otro (lo cual aumenta el poder de negociación en la pareja), o un hombre puede maltratar porque entiende que “es lo correcto” (hay una norma, que habría que explicar por qué está ahí). Puede haber también una historia biológica quizás. Lo que quiero decir en segundo lugar es que me parece que en general todos somos un poco forritos si creemos que eso no tiene ninguna consecuencia. Somos altruistas, seguimos normas, pero por fuera de eso no somos siempre buenos con los demás. Creo que con un poco de introspección honesta el lector me puede conceder esto.
-:::
 
 <!-- Imported from https://medium.com/@juandodyk/acostarse-con-boludos-2b0d610fb1a7 -->

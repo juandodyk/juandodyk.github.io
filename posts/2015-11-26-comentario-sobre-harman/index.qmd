@@ -2,10 +2,14 @@
 title: "Comentario sobre Harman"
 date: 2015-11-26
 date-format: "MMMM D, YYYY"
+lang: es
 canonical-url: "https://juandodyk.github.io/posts/2015-11-26-comentario-sobre-harman/"
+format:
+  html:
+    toc: true
+    toc-title: "Contents"
 ---
 
-::: {lang="es"}
 Comentario sobre el texto “Descubrir objetos nuevos es más importante que eliminar objetos viejos”, de Graham Harman.[^1]
 
 ## 1. Puesta en escena. Latour, irreduccionismo, y reduccionismo hacia arriba
@@ -44,6 +48,5 @@ Para finalizar, el último párrafo es simplemente estúpido. La matemática, po
     Carnap es *Semantics, empiricism, ontology*. Quine es *On what there is*, *Two dogmas of empiricism* y *Ontological relativity*. Putnam es *Reason, truth and history* y *Realism with a human face*.
 
 [^4]: Ver *Naming and necessity* de Kripke y *The meaning of ‘meaning’* de Putnam.
-:::
 
 <!-- Imported from https://medium.com/@juandodyk/comentario-sobre-harman-e062a278f2a9 -->

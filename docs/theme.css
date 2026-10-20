@@ -483,6 +483,15 @@ ol li {
   line-height: 1.35;
 }
 
+/* Table of contents */
+
+.sidebar nav[role="doc-toc"] ul > li > a.active,
+.sidebar nav[role="doc-toc"] ul > li > ul > li > a.active {
+  border-left-color: var(--ink);
+  color: var(--ink) !important;
+  font-weight: 700;
+}
+
 /* Historical note bodies */
 
 .historical-note {

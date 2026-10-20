@@ -2,10 +2,10 @@
 title: "Maltrato"
 date: 2019-06-09
 date-format: "MMMM D, YYYY"
+lang: es
 canonical-url: "https://juandodyk.github.io/posts/2019-06-09-maltrato/"
 ---
 
-::: {lang="es"}
 Quiero hacer explícito el juego que describí verbalmente en [esta nota](../2019-06-09-acostarse-con-boludos/). El punto de esa nota se puede resumir así: Magui dice
 
 > atribuir la salvación a que una mujer le diga “ándate gil” a un gil, es otra vez, ir por la salida individual
@@ -37,6 +37,5 @@ Segundo, veamos que la estrategia de las mujeres forma un equilibrio. Considerem
 Finalmente, consideremos el caso en el que a una mujer la maltrató su pareja en el pasado. Hay que comprobar que prefiere cortar la relación. Espera que su pareja la vuelva a maltratar hoy, así que si corta la relación recibe $-c$ hoy, pero en el período siguiente consigue otra pareja, que no la maltrata, así que gana $r$ de ahí en adelante. Si continúa la relación, recibe $r-c$ hoy, mañana su pareja la vuelve a maltratar, y ella corta la relación, así que recibe $-c$ mañana, y luego consigue otra pareja, ésta no la maltrata, y gana $r$ de ahí en adelante. A partir del tercer período la utilidad es la misma, así que sólo hay que comparar los primeros dos. Si deja a la pareja, recibe $-c+br$. Si no la deja, recibe $(r-c)+b(-c)$. Como asumo que $b>\frac{r}{r+c}$, esto se cumple. Fin de la comprobación.
 
 **¿Estos son los únicos equilibrios?** No. Por ejemplo, si las mujeres pueden observar las acciones pasadas de todos los hombres, pueden “escrachar” y “cancelar” a los hombres que maltratan. Pero esto genera el mismo efecto que el segundo equilibrio. No mejora la situación de las mujeres.
-:::
 
 <!-- Imported from https://medium.com/@juandodyk/maltrato-3937ff41c9b8 -->

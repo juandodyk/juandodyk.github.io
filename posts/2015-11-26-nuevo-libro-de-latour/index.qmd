@@ -2,10 +2,10 @@
 title: "Nuevo libro de Latour"
 date: 2015-11-26
 date-format: "MMMM D, YYYY"
+lang: es
 canonical-url: "https://juandodyk.github.io/posts/2015-11-26-nuevo-libro-de-latour/"
 ---
 
-::: {lang="es"}
 Hace un mes [esto fue escrito en Septiembre, 2013] se publicó la traducción al inglés del último libro de Bruno Latour, *An Inquiry Into Modes of Existence* (publicado en francés en septiembre del año pasado), traducción de Catherine Porter. En Internet está colgado el primer capítulo y el índice [http://www.bruno-latour.fr/node/252](http://www.bruno-latour.fr/node/252)
 
 Leí el primer capítulo. Parece un libro muy general, que sigue la línea de *Science in action* y *Reassembling the social*: tratados más o menos sistemáticos de teoría del actor-red, cada vez más ampliada (se podría poner *Irreductions* como predecesor en esta serie). ¿Qué se puede agregar a RTS? En palabras de Latour, la idea es hacer una antropología positiva de los Modernos, quienes, como recuerda, nunca fueron modernos, pero eso es sólo una definición negativa. El camino es estudiar los varios tipos de condiciones de felicidad de los varios tipos de producción de verdad, los varios *regímenes de enunciación* (científica, legal, religiosa, etc). Esta es la manera semiótica de decirlo; otra manera, mezcla de Simondon y William James, equivalente para Latour, es estudiar los diversos *modos de existencia* de las cosas que pueblan el mundo de los modernos, que recordemos son como “adverbios” directamente accesibles a la experiencia. El tema no es aprender a hablar *sobre* la ciencia, o *sobre* la ley, o *sobre* la religión, sino aprender lo que es hablar *científicamente*, *legalmente*, *religiosamente*. Capturar la “esencia” de la ciencia, la ley, la religión, no como *dominios* sino como *maneras* específicas de establecer relaciones entre elementos heterogéneos.
@@ -27,6 +27,5 @@ Pero, ¿qué pasó? ¿Qué hacen estas definiciones? ¿Para qué las queremos? �
 Conclusión: no sé, tendré que leer el libro. Pero el sabor que me deja leer el primer capítulo es agridulce. No sé si Latour está dando un paso adelante o un paso atrás con esto.
 
 PD: Ya está la traducción al español en librerías. No me esperaba que apareciera antes en español que en inglés. Parece que hay un público hispanoparlante.
-:::
 
 <!-- Imported from https://medium.com/@juandodyk/nuevo-libro-de-latour-3242fa088442 -->
