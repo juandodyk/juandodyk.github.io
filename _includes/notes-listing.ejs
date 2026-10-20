@@ -1,0 +1,7 @@
+<div class="notes-list list quarto-listing-container-default">
+<% for (const item of items) { %>
+<div class="note-entry"<%= metadataAttrs(item) %>>
+<p><time datetime="<%- item.date %>"><%- item.date %></time> <a href="<%- item.path.replace(/^\.\//, "").replace(/index\.html$/, "") %>"><%- item.title %></a></p>
+</div>
+<% } %>
+</div>

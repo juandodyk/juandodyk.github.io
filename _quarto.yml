@@ -18,6 +18,7 @@ project:
     - scripts/preserve-legacy.sh
 
 website:
+  draft-mode: gone
   title: "Juan Dodyk"
   description: "Juan Dodyk is an Assistant Professor at Washington University in St. Louis studying climate policy, lobbying, and formal political theory."
   site-url: "https://juandodyk.github.io"
