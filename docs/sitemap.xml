@@ -1,130 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-voto-provincia/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-olimpiadas/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.124Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-intendentes-py/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.121Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-inf-ecologica-1/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.118Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-elecciones-municipales-py-2015/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.114Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-cartismo-cultural/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.112Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-analisis-complejo/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.109Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2019-06-09-acostarse-con-boludos/index.html</loc>
-    <lastmod>2026-07-26T19:10:43.490Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2015-11-26-nuevo-libro-de-latour/index.html</loc>
-    <lastmod>2026-07-26T19:10:43.492Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/notes.html</loc>
-    <lastmod>2026-10-20T14:39:37.088Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/research.html</loc>
-    <lastmod>2026-09-24T15:32:57.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/</loc>
-    <lastmod>2026-09-24T15:32:57.198Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/teaching.html</loc>
-    <lastmod>2026-09-24T15:12:02.776Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2015-11-26-comentario-sobre-harman/index.html</loc>
-    <lastmod>2026-07-26T19:36:15.643Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2016-11-21-violencia-justicia-y-limitaciones-de-una-agenda/index.html</loc>
-    <lastmod>2026-07-26T19:10:43.491Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2019-06-09-maltrato/index.html</loc>
-    <lastmod>2026-07-26T19:23:47.711Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-apuntes-matematica/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.110Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-elecciones-exactas/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.113Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-errores-cbc/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.116Z</lastmod>
-  </url>
-  <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-inf-ecologica-2/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.120Z</lastmod>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-quine/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.125Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/posts/2022-04-23-numerico/index.html</loc>
     <lastmod>2026-07-26T19:45:45.122Z</lastmod>
   </url>
   <url>
-    <loc>https://juandodyk.github.io/posts/2022-04-23-quine/index.html</loc>
-    <lastmod>2026-07-26T19:45:45.125Z</lastmod>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-inf-ecologica-2/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.120Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-errores-cbc/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.116Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-elecciones-exactas/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.113Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-apuntes-matematica/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.110Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2019-06-09-maltrato/index.html</loc>
+    <lastmod>2026-07-26T19:23:47.711Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2016-11-21-violencia-justicia-y-limitaciones-de-una-agenda/index.html</loc>
+    <lastmod>2026-07-26T19:10:43.491Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2015-11-26-comentario-sobre-harman/index.html</loc>
+    <lastmod>2026-07-26T19:36:15.643Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/teaching.html</loc>
+    <lastmod>2026-09-24T15:12:02.776Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/</loc>
+    <lastmod>2026-09-24T15:32:57.198Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/research.html</loc>
+    <lastmod>2026-09-24T15:32:57.198Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/notes.html</loc>
+    <lastmod>2026-10-20T14:52:05.909Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2015-11-26-nuevo-libro-de-latour/index.html</loc>
+    <lastmod>2026-07-26T19:10:43.492Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2019-06-09-acostarse-con-boludos/index.html</loc>
+    <lastmod>2026-07-26T19:10:43.490Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-analisis-complejo/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.109Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-cartismo-cultural/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.112Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-elecciones-municipales-py-2015/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.114Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-inf-ecologica-1/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.118Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-intendentes-py/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.121Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-olimpiadas/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.124Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/posts/2022-04-23-voto-provincia/index.html</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/BDP_JOP_Accepted.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/BDP_JOP_Online_Appendix.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/Enchufes_espejos_y_tijeras.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/WD.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/WD_online_appendix.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/blackwell_new.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/cbs26.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/collectivelobby.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/infoandpolicy.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/jmp.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/jmpresentation.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/spatial_eco_inf.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
   </url>
   <url>
     <loc>https://juandodyk.github.io/files/tradegipcoord.pdf</loc>
+    <lastmod>2026-07-26T19:45:45.126Z</lastmod>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/Juan_Dodyk_CV.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section1.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section10.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section11.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section12.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section13.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section2.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section3.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section4.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section5.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section6.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section7.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section8.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/data/gov2006/section9.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture1.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture10.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture2.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture3.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture4.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture5.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture6.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture7.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture8.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/lecture9.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps1.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps10.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps2.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps3.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps4.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps5.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps6.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps7.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps8.pdf</loc>
+  </url>
+  <url>
+    <loc>https://juandodyk.github.io/files/mathcamp/ps9.pdf</loc>
   </url>
 </urlset>

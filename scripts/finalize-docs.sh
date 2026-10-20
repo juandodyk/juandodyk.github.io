@@ -14,8 +14,9 @@ if [ -f "$sitemap" ]; then
     "$sitemap" > "$output_dir/.sitemap-home.xml"
   mv "$output_dir/.sitemap-home.xml" "$sitemap"
 
-  grep -Eo 'files/[^)]*\.pdf' "$project_dir/research.qmd" | sort -u |
+  grep -Eoh "files/[A-Za-z0-9_./-]+\.pdf" "$project_dir"/index.qmd "$project_dir"/research.qmd "$project_dir"/teaching.qmd "$project_dir"/_quarto.yml | sort -u |
     while IFS= read -r pdf_path; do
+      [ -f "$project_dir/$pdf_path" ] || continue
       pdf_url="https://juandodyk.github.io/$pdf_path"
       if ! grep -Fq "<loc>$pdf_url</loc>" "$sitemap"; then
         sed "s#</urlset>#  <url>\n    <loc>$pdf_url</loc>\n  </url>\n</urlset>#" \
