@@ -12,8 +12,5 @@ The historical notes are native Quarto pages under `posts/`:
 - Quarto renders those pages with the same navigation, typography, and layout as
   the rest of the site while preserving their established `/posts/.../` URLs.
 
-The `_legacy/` directory is retained only as a temporary migration snapshot and
-is not used by the build.
-
 Run `node scripts/check-internal-links.mjs docs` after rendering to verify local
 links and resources.

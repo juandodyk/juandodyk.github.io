@@ -44,8 +44,5 @@ vignettes/*.pdf
 /.quarto/
 **/*.quarto_ipynb
 
-# Temporary migration snapshot
-/_legacy/
-
 # macOS metadata
 .DS_Store
