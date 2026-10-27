@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-23">
+
+<title>Wright–Fisher Fixation Time: The Logarithmic Correction – Juan Dodyk</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../files/img/potato.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-26d9cc88ab9604001aabd73cb1ea1d8f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="google-site-verification" content="gkuenT1mZqhsKzlbWaTQQ3tXeCM6DLj1l1PBrT6DWG8">
+
+<meta name="quarto:status" content="draft">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../theme.css">
+<meta property="og:title" content="Wright–Fisher Fixation Time: The Logarithmic Correction – Juan Dodyk">
+<meta property="og:description" content="Juan Dodyk is an Assistant Professor at Washington University in St.&nbsp;Louis studying climate policy, lobbying, and formal political theory.">
+<meta property="og:site_name" content="Juan Dodyk">
+<meta name="twitter:title" content="Wright–Fisher Fixation Time: The Logarithmic Correction – Juan Dodyk">
+<meta name="twitter:description" content="Juan Dodyk is an Assistant Professor at Washington University in St.&nbsp;Louis studying climate policy, lobbying, and formal political theory.">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher-sharp.html">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Dodyk</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../files/Juan_Dodyk_CV.pdf"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div style="display: none">
+\[
+\def\N{\mathbb{N}} \def\Z{\mathbb{Z}} \def\R{\mathbb{R}} \def\C{\mathbb{C}}
+\def\HH{\mathcal{H}} \def\FF{\mathcal{F}} \def\PP{\mathcal{P}}
+\def\E{\mathrm{E}} \def\Var{\mathrm{Var}}
+\def\mm{\mathrm} \def\id{\mathrm{id}} \def\im{\mathop{\mathrm{im}}}
+\def\la{\langle} \def\ra{\rangle} \def\menos{\smallsetminus}
+\def\then{\Rightarrow} \newcommand{\comb}[2]{\binom{#1}{#2}}
+\def\geq{\geqslant} \def\leq{\leqslant}
+\def\subset{\subseteq} \def\empty{\varnothing}
+\def\min{\mathop{\mathrm{min}}\limits} \def\max{\mathop{\mathrm{max}}\limits}
+\def\lim{\mathop{\mathrm{lim}}\limits} \def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\mathrm{inf}}\limits}
+\newcommand{\bp}[1]{{\left({#1}\right)}}
+\newcommand{\fp}[1]{{\left({#1}\right)}}
+\newcommand{\bc}[1]{{\left\{{#1}\right\}}}
+\newcommand{\bs}[1]{{\left[{#1}\right]}}
+\newcommand{\rs}[1]{\left.{#1}\right|}
+\newcommand{\norm}[1]{{\left\|{#1}\right\|}}
+\newcommand{\ba}[1]{{\left\langle{#1}\right\rangle}}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\floor}[1]{{\left\lfloor{#1}\right\rfloor}}
+\newcommand{\ceil}[1]{{\left\lceil{#1}\right\rceil}}
+\newcommand{\fld}[2]{\floor{\frac{#1}{#2}}}
+\newcommand{\cld}[2]{\ceil{\frac{#1}{#2}}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\ubar}[1]{\text{\underbar{\ensuremath{#1}}}}
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\an}[1]{{\left\langle{#1}\right\rangle}}
+\newcommand{\ssum}[1]{\sum_{\substack{#1}}}
+\]
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Wright–Fisher Fixation Time: The Logarithmic Correction</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 23, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="statement" class="level2">
+<h2 class="anchored" data-anchor-id="statement">Statement</h2>
+<p>The Wright–Fisher chain is <span class="math inline">\(X_0 = p\)</span> and, given <span class="math inline">\(X_t = x\)</span>, <span class="math inline">\(X_{t+1} = Z/n\)</span> with <span class="math inline">\(Z \sim \mathrm{Binomial}(n, x)\)</span>. Let <span class="math inline">\(\tau_n = \min\bc{t \geq 1 : X_t \in \{0, 1\}}\)</span> and <span class="math inline">\(H(x) = -2x\log x - 2(1-x)\log(1-x)\)</span>.</p>
+<p><strong>Theorem.</strong> There is an absolute constant <span class="math inline">\(C\)</span> such that for all <span class="math inline">\(n \geq 2\)</span> and <span class="math inline">\(p \in [0, 1]\)</span>, <span class="math display">\[\abs{\E_p[\tau_n] - nH(p) + \tfrac13 \log\bp{1 + np(1-p)}} \leq C.\]</span> In particular, <span class="math inline">\(\E_p[\tau_n] = nH(p) - \frac13 \log n + O(1)\)</span> for fixed <span class="math inline">\(p \in (0, 1)\)</span>.</p>
+<p>Numerically, the quantity inside the absolute value lies in <span class="math inline">\([-0.96, 0.03]\)</span> for <span class="math inline">\(n \in \{10, 50, 200, 1000, 3000\}\)</span>, at every lattice starting point and at several non-lattice ones.</p>
+<p>The idea is to work on the lattice with harmonic numbers <span class="math inline">\(\HH_m = \sum_{j=1}^m \frac1j\)</span> in place of logarithms. Binomial expectations of harmonic numbers have closed forms, so all drifts can be computed exactly up to errors that sum to <span class="math inline">\(O(1)\)</span>.</p>
+</section>
+<section id="tools" class="level2">
+<h2 class="anchored" data-anchor-id="tools">Tools</h2>
+<p>On the lattice we write states as integers <span class="math inline">\(k \in \{0, \ldots, n\}\)</span>, with <span class="math inline">\(x = k/n\)</span>, <span class="math inline">\(q = 1 - x\)</span> and <span class="math inline">\(Z \sim \mathrm{Binomial}(n, x)\)</span>. For a function <span class="math inline">\(f\)</span> on <span class="math inline">\(\{0, \ldots, n\}\)</span>, let <span class="math inline">\(\Delta f(k) = f(k) - \E[f(Z)]\)</span> be its expected drop in one step. For <span class="math inline">\(1 \leq k \leq n - 1\)</span>, let <span class="math inline">\(w = \frac{1}{k^2} + \frac{1}{(n-k)^2}\)</span>. Note that <span class="math inline">\(w \geq \frac{4}{n^2}\)</span>.</p>
+<p><strong>(T1) Euler–Maclaurin.</strong> <span class="math inline">\(\HH_m = \log m + \gamma + \frac{1}{2m} - e_m\)</span>, where <span class="math inline">\(0 \leq \frac{1}{12m^2} - e_m \leq \frac{1}{120m^4}\)</span>.</p>
+<p><strong>(T2) Binomial identities.</strong> If <span class="math inline">\(B \sim \mathrm{Binomial}(m, x)\)</span>, then <span class="math display">\[\E[\HH_B] = \sum_{r=1}^m \frac{1 - q^r}{r}, \qquad \E\bs{\frac{1}{B + 1}} = \frac{1 - q^{m+1}}{(m+1)x}.\]</span> <em>Proof.</em> Write <span class="math inline">\(\HH_B = \int_0^1 \frac{1 - t^B}{1 - t}\,dt\)</span> and <span class="math inline">\(\frac{1}{B+1} = \int_0^1 t^B\,dt\)</span>, use <span class="math inline">\(\E[t^B] = (q + xt)^m\)</span>, and substitute <span class="math inline">\(u = q + xt\)</span>. <span class="math inline">\(\square\)</span></p>
+<p><strong>(T3) Size bias.</strong> <span class="math inline">\(\E[Z f(Z)] = k\,\E[f(B + 1)]\)</span> with <span class="math inline">\(B \sim \mathrm{Binomial}(n - 1, x)\)</span>.</p>
+<p><strong>(T4) Tails.</strong> <span class="math inline">\(\sum_{r \geq 1} \frac{q^r}{r} = -\log x = \log\frac nk\)</span>. For <span class="math inline">\(N \geq n\)</span>, <span class="math inline">\(\sum_{r \geq N} \frac{q^r}{r} \leq \frac1N \cdot \frac{q^N}{x} \leq \frac{q^n}{k}\)</span>. Also <span class="math inline">\(q^n \leq e^{-k} \leq \frac{1}{k^2}\)</span>.</p>
+</section>
+<section id="three-drift-computations" class="level2">
+<h2 class="anchored" data-anchor-id="three-drift-computations">Three drift computations</h2>
+<p>Fix <span class="math inline">\(1 \leq k \leq n - 1\)</span>.</p>
+<p><strong>Lemma 1.</strong> Let <span class="math inline">\(u(k) = k(\HH_n - \HH_k)\)</span>. Then <span class="math inline">\(\Delta u(k) = \frac q2 + k e_k - k e_n + \rho\)</span> with <span class="math inline">\(\abs\rho \leq e^{-k}\)</span>.</p>
+<p><em>Proof.</em> By (T3) and (T2), using <span class="math inline">\(\sum_{r=1}^{n-1}\frac1r = \HH_n - \frac1n\)</span>, <span class="math display">\[\E[u(Z)] = k\HH_n - k\E\bs{\HH_B + \tfrac{1}{B+1}} = x + k\sum_{r=1}^{n-1}\frac{q^r}{r} - 1 + q^n.\]</span> By (T4), <span class="math inline">\(\sum_{r=1}^{n-1} \frac{q^r}{r} = \log\frac nk - T\)</span> with <span class="math inline">\(0 \leq kT \leq q^n\)</span>. By (T1), <span class="math inline">\(\HH_n - \HH_k - \log\frac nk = \frac{1}{2n} - \frac{1}{2k} - e_n + e_k\)</span>. Therefore <span class="math display">\[\Delta u(k) = k\bp{\tfrac{1}{2n} - \tfrac{1}{2k} - e_n + e_k} + 1 - x + (kT - q^n) = \tfrac q2 + ke_k - ke_n + (kT - q^n). \qquad \square\]</span></p>
+<p><strong>Lemma 2.</strong> <span class="math inline">\(\Delta \HH_k = \frac{1}{2k} - \frac{1}{2n} - e_k + e_n - \rho'\)</span> with <span class="math inline">\(0 \leq \rho' \leq \frac{e^{-k}}{k}\)</span>.</p>
+<p><em>Proof.</em> By (T2) and (T4), <span class="math inline">\(\E[\HH_Z] = \HH_n - \sum_{r=1}^n \frac{q^r}{r} = \HH_n - \log\frac nk + \rho'\)</span> with <span class="math inline">\(\rho' = \sum_{r &gt; n} \frac{q^r}{r}\)</span>. Now apply (T1) to <span class="math inline">\(\HH_k - \HH_n + \log\frac nk\)</span>. <span class="math inline">\(\square\)</span></p>
+<p><strong>Lemma 3.</strong> <span class="math inline">\(\Delta\bs{-\frac{1}{k+1}} \geq \frac{q}{12k^2}\)</span>.</p>
+<p><em>Proof.</em> By (T2) with <span class="math inline">\(m = n\)</span>, <span class="math display">\[\E\bs{\frac{1}{Z+1}} - \frac{1}{k+1} = \frac{q\bp{1 - (k+1)q^n}}{(n+1)x(k+1)} = \frac{n}{n+1} \cdot \frac{q\bp{1 - (k+1)q^n}}{k(k+1)}.\]</span> Since <span class="math inline">\((k+1)q^n \leq (k+1)e^{-k} \leq \frac2e\)</span>, <span class="math inline">\(\frac{n}{n+1} \geq \frac23\)</span> and <span class="math inline">\(k + 1 \leq 2k\)</span>, this is at least <span class="math inline">\(\frac{(1 - 2/e)\,q}{3k^2} \geq \frac{q}{12k^2}\)</span>. <span class="math inline">\(\square\)</span></p>
+</section>
+<section id="the-test-functions" class="level2">
+<h2 class="anchored" data-anchor-id="the-test-functions">The test functions</h2>
+<p>Define, on <span class="math inline">\(\{0, \ldots, n\}\)</span>, <span class="math display">\[G(k) = 2u(k) + 2u(n-k) - \tfrac13\bp{\HH_k + \HH_{n-k}}, \qquad \varphi(k) = -\frac{1}{k+1} - \frac{1}{n-k+1}.\]</span> Both are symmetric under <span class="math inline">\(k \leftrightarrow n - k\)</span>. Since <span class="math inline">\(Z \leftrightarrow n - Z\)</span> swaps <span class="math inline">\(x\)</span> and <span class="math inline">\(q\)</span>, the drift of <span class="math inline">\(u(n - k)\)</span> is given by Lemma 1 with <span class="math inline">\(x\)</span> and <span class="math inline">\(q\)</span> swapped, and similarly for <span class="math inline">\(\HH_{n-k}\)</span>.</p>
+<p><strong>Claim.</strong> For <span class="math inline">\(1 \leq k \leq n - 1\)</span>, <span class="math display">\[\abs{\Delta G(k) - 1 - \tfrac{1}{6n}} \leq 3w, \qquad \Delta\varphi(k) \geq \tfrac{w}{48}.\]</span></p>
+<p><em>Proof.</em> Add up Lemmas 1 and 2. The main terms are <span class="math inline">\(2 \cdot \frac q2 + 2 \cdot \frac x2 = 1\)</span> and <span class="math inline">\(-\frac13\bp{\frac{1}{2k} + \frac{1}{2(n-k)} - \frac1n}\)</span>. The <span class="math inline">\(e_n\)</span> terms from Lemma 1 combine to <span class="math inline">\(-2ne_n\)</span>. Grouping the rest, <span class="math display">\[\Delta G - 1 - \tfrac{1}{6n} = \bs{2ke_k - \tfrac{1}{6k}} + \bs{2(n-k)e_{n-k} - \tfrac{1}{6(n-k)}} + \bs{\tfrac{1}{6n} - 2ne_n} + \tfrac13\bp{e_k + e_{n-k} - 2e_n + \rho'_k + \rho'_{n-k}} + 2\rho_k + 2\rho_{n-k}.\]</span> By (T1) the first three brackets are at most <span class="math inline">\(\frac{1}{60k^3}\)</span>, <span class="math inline">\(\frac{1}{60(n-k)^3}\)</span> and <span class="math inline">\(\frac{1}{60n^3}\)</span> in absolute value. The rest is at most <span class="math inline">\(\frac{w}{36} + \frac{1}{18n^2} + \frac w3 + 2w\)</span> by (T1) and (T4). The total is below <span class="math inline">\(3w\)</span>.</p>
+<p>For <span class="math inline">\(\varphi\)</span>, Lemma 3 and its mirror give <span class="math inline">\(\Delta\varphi \geq \frac{1}{12}\bp{\frac{q}{k^2} + \frac{x}{(n-k)^2}}\)</span>. By symmetry, take <span class="math inline">\(k \leq \frac n2\)</span>. Then <span class="math inline">\(q \geq \frac12\)</span> and <span class="math inline">\(\frac{1}{k^2} \geq \frac w2\)</span>, so <span class="math inline">\(\Delta\varphi \geq \frac{w}{48}\)</span>. <span class="math inline">\(\square\)</span></p>
+</section>
+<section id="from-drifts-to-the-expected-time" class="level2">
+<h2 class="anchored" data-anchor-id="from-drifts-to-the-expected-time">From drifts to the expected time</h2>
+<p>Let <span class="math inline">\(\sigma = \min\bc{t \geq 0 : X_t \in \{0, 1\}}\)</span>. From every interior state the chain is absorbed in one step with probability at least <span class="math inline">\(n^{-n}\)</span>, so <span class="math inline">\(\E_k[\sigma] &lt; \infty\)</span>. For every function <span class="math inline">\(f\)</span> on the lattice, optional stopping gives <span class="math display">\[f(k) - \E_k[f(X_\sigma)] = \E_k\bs{\sum_{t &lt; \sigma} \Delta f(nX_t)}.\]</span></p>
+<p>Let <span class="math inline">\(F_\pm = G \pm 144\varphi\)</span>. By the Claim, <span class="math inline">\(\Delta F_+ \geq 1 + \frac{1}{6n}\)</span> and <span class="math inline">\(\Delta F_- \leq 1 + \frac{1}{6n}\)</span> at every interior state. Since <span class="math inline">\(F_\pm(0) = F_\pm(n)\)</span>, <span class="math display">\[F_-(k) - F_-(0) \leq \bp{1 + \tfrac{1}{6n}}\E_k[\sigma] \leq F_+(k) - F_+(0).\]</span> Since <span class="math inline">\(0 \leq \varphi(k) - \varphi(0) \leq \frac32\)</span>, <span class="math display">\[\abs{\bp{1 + \tfrac{1}{6n}}\E_k[\sigma] - G(k) + G(0)} \leq 216.\]</span></p>
+<p>Now we evaluate <span class="math inline">\(G(k) - G(0)\)</span>. Since <span class="math inline">\(u(0) = u(n) = 0\)</span>, we have <span class="math inline">\(G(0) = -\frac13\HH_n\)</span>. For <span class="math inline">\(1 \leq k \leq n - 1\)</span>, (T1) gives <span class="math display">\[2u(k) + 2u(n-k) = nH(x) - 1 + 2ke_k + 2(n-k)e_{n-k} - 2ne_n = nH(x) + O(1),\]</span> <span class="math display">\[\HH_k + \HH_{n-k} - \HH_n = \log\frac{k(n-k)}{n} + O(1) = \log(1 + nxq) + O(1).\]</span> For the second line, note that <span class="math inline">\(nxq \geq \frac12\)</span>. Hence <span class="math inline">\(G(k) - G(0) = nH(x) - \frac13\log(1 + nxq) + O(1)\)</span>. In particular <span class="math inline">\(\abs{G(k) - G(0)} = O(n)\)</span>, so dividing by <span class="math inline">\(1 + \frac{1}{6n}\)</span> costs only <span class="math inline">\(O(1)\)</span>. Therefore, for every lattice state <span class="math inline">\(x = k/n\)</span> (the cases <span class="math inline">\(k = 0, n\)</span> being trivial), <span class="math display">\[\E_x[\sigma] = nH(x) - \tfrac13\log(1 + nxq) + O(1).\]</span></p>
+</section>
+<section id="arbitrary-starting-point" class="level2">
+<h2 class="anchored" data-anchor-id="arbitrary-starting-point">Arbitrary starting point</h2>
+<p>Since the first step lands on the lattice, <span class="math display">\[\E_p[\tau_n] = 1 + n\E_p[H(X_1)] - \tfrac13\E_p\bs{\log\bp{1 + nX_1(1 - X_1)}} + O(1).\]</span> It remains to replace <span class="math inline">\(X_1\)</span> by <span class="math inline">\(p\)</span> in both terms, at cost <span class="math inline">\(O(1)\)</span>. By symmetry, assume <span class="math inline">\(p \leq \frac12\)</span>, and write <span class="math inline">\(q = 1 - p\)</span>.</p>
+<p><strong>The entropy term.</strong> Concavity of <span class="math inline">\(H\)</span> and <span class="math inline">\(\E_p[X_1] = p\)</span> give <span class="math inline">\(\E_p[H(X_1)] \leq H(p)\)</span>. Conversely, the size-bias identity (T3) with <span class="math inline">\(f(j) = \log\frac jn\)</span>, together with its mirror image, gives <span class="math display">\[\tfrac12\bp{H(p) - \E_p[H(X_1)]} = p\,\E\bs{\log\frac{B+1}{np}} + q\,\E\bs{\log\frac{B'+1}{nq}},\]</span> with <span class="math inline">\(B \sim \mathrm{Binomial}(n-1, p)\)</span> and <span class="math inline">\(B' \sim \mathrm{Binomial}(n-1, q)\)</span>. By concavity of <span class="math inline">\(\log\)</span>, the first term is at most <span class="math inline">\(p\log\bp{1 + \frac{q}{np}} \leq \frac qn\)</span>, and the second is at most <span class="math inline">\(\frac pn\)</span>. Hence <span class="math inline">\(nH(p) - 2 \leq n\E_p[H(X_1)] \leq nH(p)\)</span>.</p>
+<p><strong>The logarithmic term.</strong> Since <span class="math inline">\(y \mapsto \log(1 + ny)\)</span> is concave and <span class="math inline">\(\E_p[X_1(1-X_1)] = (1 - \frac1n)pq\)</span>, Jensen gives the upper bound <span class="math inline">\(\log(1 + npq)\)</span>.</p>
+<p>For the lower bound, if <span class="math inline">\(np \leq 8\)</span> there is nothing to prove, since then <span class="math inline">\(\log(1 + npq) \leq \log 9\)</span> and the expectation is nonnegative. Otherwise, let <span class="math inline">\(A = \bc{\abs{X_1 - p} \leq \frac p2}\)</span>. By Chebyshev, <span class="math inline">\(\Pr(A^c) \leq \frac{4pq}{np^2} \leq \frac{4}{np}\)</span>. On <span class="math inline">\(A\)</span>, <span class="math inline">\(X_1 \geq \frac p2\)</span> and <span class="math inline">\(1 - X_1 \geq \frac14 \geq \frac q4\)</span>, so <span class="math inline">\(1 + nX_1(1 - X_1) \geq \frac18(1 + npq)\)</span>. Therefore <span class="math display">\[\E_p\bs{\log\bp{1 + nX_1(1-X_1)}} \geq \log(1 + npq) - \log 8 - \frac{4\log(1 + np)}{np} \geq \log(1 + npq) - \log 8 - 4.\]</span> This completes the proof. <span class="math inline">\(\blacksquare\)</span></p>
+</section>
+<section id="remarks" class="level2">
+<h2 class="anchored" data-anchor-id="remarks">Remarks</h2>
+<ul>
+<li><strong>Where the <span class="math inline">\(\frac13\)</span> comes from.</strong> It is the Euler–Maclaurin coefficient <span class="math inline">\(\frac1{12}\)</span>: Lemma 1 gives an excess drift <span class="math inline">\(2ke_k \approx \frac{1}{6k}\)</span> at state <span class="math inline">\(k\)</span>. That excess is cancelled by <span class="math inline">\(\frac13\)</span> of the harmonic-number correction, whose drift is <span class="math inline">\(\frac{1}{2k}\)</span>. The correction itself changes by <span class="math inline">\(\frac13\HH_n \approx \frac13 \log n\)</span> between the middle and the boundary.</li>
+<li><strong>The other ingredients are bounded.</strong> The term <span class="math inline">\(\varphi\)</span> only absorbs errors of order <span class="math inline">\(\frac{1}{k^2}\)</span>, and its range is bounded. The <span class="math inline">\(\frac{1}{6n}\)</span> in the drift changes <span class="math inline">\(\E\sigma = O(n)\)</span> by <span class="math inline">\(O(1)\)</span>.</li>
+<li><strong>Constants.</strong> The constants (<span class="math inline">\(144\)</span>, <span class="math inline">\(216\)</span>, and the <span class="math inline">\(O(1)\)</span> terms) are far from optimal and were chosen for convenience.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+function applyLinkBehavior() {
+  var internalHosts = new Set([
+    window.location.hostname,
+    "juandodyk.github.io",
+    "www.juandodyk.github.io",
+    "127.0.0.1",
+    "localhost"
+  ]);
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    var href = link.getAttribute("href");
+    if (!href) return;
+
+    var url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (_error) {
+      return;
+    }
+
+    if (url.protocol !== "http:" && url.protocol !== "https:") return;
+
+    if (internalHosts.has(url.hostname)) {
+      link.removeAttribute("target");
+      return;
+    }
+
+    link.setAttribute("target", "_blank");
+    var rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    rel.add("noopener");
+    rel.add("noreferrer");
+    link.setAttribute("rel", Array.from(rel).join(" "));
+  });
+}
+
+if (document.readyState === "complete") {
+  applyLinkBehavior();
+} else {
+  window.addEventListener("load", applyLinkBehavior, { once: true });
+}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juandodyk\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

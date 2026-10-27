@@ -192,6 +192,13 @@ a[role="doc-noteref"] {
   line-height: 1.5;
 }
 
+/* Quarto's appendix wrapper draws its own rule; .footnotes already has one */
+#quarto-appendix.default {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .footnotes ol {
   margin-bottom: 0;
   padding-left: 1.35rem;

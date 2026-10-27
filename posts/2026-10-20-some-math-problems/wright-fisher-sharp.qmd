@@ -1,0 +1,107 @@
+---
+title: "Wright–Fisher Fixation Time: The Logarithmic Correction"
+date: 2026-10-23
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher-sharp.html"
+draft: true
+---
+
+## Statement
+
+The Wright–Fisher chain is $X_0 = p$ and, given $X_t = x$, $X_{t+1} = Z/n$ with $Z \sim \mathrm{Binomial}(n, x)$. Let $\tau_n = \min\bc{t \geq 1 : X_t \in \{0, 1\}}$ and $H(x) = -2x\log x - 2(1-x)\log(1-x)$.
+
+**Theorem.** There is an absolute constant $C$ such that for all $n \geq 2$ and $p \in [0, 1]$,
+$$\abs{\E_p[\tau_n] - nH(p) + \tfrac13 \log\bp{1 + np(1-p)}} \leq C.$$
+In particular, $\E_p[\tau_n] = nH(p) - \frac13 \log n + O(1)$ for fixed $p \in (0, 1)$.
+
+Numerically, the quantity inside the absolute value lies in $[-0.96, 0.03]$ for $n \in \{10, 50, 200, 1000, 3000\}$, at every lattice starting point and at several non-lattice ones.
+
+The idea is to work on the lattice with harmonic numbers $\HH_m = \sum_{j=1}^m \frac1j$ in place of logarithms. Binomial expectations of harmonic numbers have closed forms, so all drifts can be computed exactly up to errors that sum to $O(1)$.
+
+## Tools
+
+On the lattice we write states as integers $k \in \{0, \ldots, n\}$, with $x = k/n$, $q = 1 - x$ and $Z \sim \mathrm{Binomial}(n, x)$. For a function $f$ on $\{0, \ldots, n\}$, let $\Delta f(k) = f(k) - \E[f(Z)]$ be its expected drop in one step. For $1 \leq k \leq n - 1$, let $w = \frac{1}{k^2} + \frac{1}{(n-k)^2}$. Note that $w \geq \frac{4}{n^2}$.
+
+**(T1) Euler–Maclaurin.** $\HH_m = \log m + \gamma + \frac{1}{2m} - e_m$, where $0 \leq \frac{1}{12m^2} - e_m \leq \frac{1}{120m^4}$.
+
+**(T2) Binomial identities.** If $B \sim \mathrm{Binomial}(m, x)$, then
+$$\E[\HH_B] = \sum_{r=1}^m \frac{1 - q^r}{r}, \qquad \E\bs{\frac{1}{B + 1}} = \frac{1 - q^{m+1}}{(m+1)x}.$$
+*Proof.* Write $\HH_B = \int_0^1 \frac{1 - t^B}{1 - t}\,dt$ and $\frac{1}{B+1} = \int_0^1 t^B\,dt$, use $\E[t^B] = (q + xt)^m$, and substitute $u = q + xt$. $\square$
+
+**(T3) Size bias.** $\E[Z f(Z)] = k\,\E[f(B + 1)]$ with $B \sim \mathrm{Binomial}(n - 1, x)$.
+
+**(T4) Tails.** $\sum_{r \geq 1} \frac{q^r}{r} = -\log x = \log\frac nk$. For $N \geq n$, $\sum_{r \geq N} \frac{q^r}{r} \leq \frac1N \cdot \frac{q^N}{x} \leq \frac{q^n}{k}$. Also $q^n \leq e^{-k} \leq \frac{1}{k^2}$.
+
+## Three drift computations
+
+Fix $1 \leq k \leq n - 1$.
+
+**Lemma 1.** Let $u(k) = k(\HH_n - \HH_k)$. Then $\Delta u(k) = \frac q2 + k e_k - k e_n + \rho$ with $\abs\rho \leq e^{-k}$.
+
+*Proof.* By (T3) and (T2), using $\sum_{r=1}^{n-1}\frac1r = \HH_n - \frac1n$,
+$$\E[u(Z)] = k\HH_n - k\E\bs{\HH_B + \tfrac{1}{B+1}} = x + k\sum_{r=1}^{n-1}\frac{q^r}{r} - 1 + q^n.$$
+By (T4), $\sum_{r=1}^{n-1} \frac{q^r}{r} = \log\frac nk - T$ with $0 \leq kT \leq q^n$. By (T1), $\HH_n - \HH_k - \log\frac nk = \frac{1}{2n} - \frac{1}{2k} - e_n + e_k$. Therefore
+$$\Delta u(k) = k\bp{\tfrac{1}{2n} - \tfrac{1}{2k} - e_n + e_k} + 1 - x + (kT - q^n) = \tfrac q2 + ke_k - ke_n + (kT - q^n). \qquad \square$$
+
+**Lemma 2.** $\Delta \HH_k = \frac{1}{2k} - \frac{1}{2n} - e_k + e_n - \rho'$ with $0 \leq \rho' \leq \frac{e^{-k}}{k}$.
+
+*Proof.* By (T2) and (T4), $\E[\HH_Z] = \HH_n - \sum_{r=1}^n \frac{q^r}{r} = \HH_n - \log\frac nk + \rho'$ with $\rho' = \sum_{r > n} \frac{q^r}{r}$. Now apply (T1) to $\HH_k - \HH_n + \log\frac nk$. $\square$
+
+**Lemma 3.** $\Delta\bs{-\frac{1}{k+1}} \geq \frac{q}{12k^2}$.
+
+*Proof.* By (T2) with $m = n$,
+$$\E\bs{\frac{1}{Z+1}} - \frac{1}{k+1} = \frac{q\bp{1 - (k+1)q^n}}{(n+1)x(k+1)} = \frac{n}{n+1} \cdot \frac{q\bp{1 - (k+1)q^n}}{k(k+1)}.$$
+Since $(k+1)q^n \leq (k+1)e^{-k} \leq \frac2e$, $\frac{n}{n+1} \geq \frac23$ and $k + 1 \leq 2k$, this is at least $\frac{(1 - 2/e)\,q}{3k^2} \geq \frac{q}{12k^2}$. $\square$
+
+## The test functions
+
+Define, on $\{0, \ldots, n\}$,
+$$G(k) = 2u(k) + 2u(n-k) - \tfrac13\bp{\HH_k + \HH_{n-k}}, \qquad \varphi(k) = -\frac{1}{k+1} - \frac{1}{n-k+1}.$$
+Both are symmetric under $k \leftrightarrow n - k$. Since $Z \leftrightarrow n - Z$ swaps $x$ and $q$, the drift of $u(n - k)$ is given by Lemma 1 with $x$ and $q$ swapped, and similarly for $\HH_{n-k}$.
+
+**Claim.** For $1 \leq k \leq n - 1$,
+$$\abs{\Delta G(k) - 1 - \tfrac{1}{6n}} \leq 3w, \qquad \Delta\varphi(k) \geq \tfrac{w}{48}.$$
+
+*Proof.* Add up Lemmas 1 and 2. The main terms are $2 \cdot \frac q2 + 2 \cdot \frac x2 = 1$ and $-\frac13\bp{\frac{1}{2k} + \frac{1}{2(n-k)} - \frac1n}$. The $e_n$ terms from Lemma 1 combine to $-2ne_n$. Grouping the rest,
+$$\Delta G - 1 - \tfrac{1}{6n} = \bs{2ke_k - \tfrac{1}{6k}} + \bs{2(n-k)e_{n-k} - \tfrac{1}{6(n-k)}} + \bs{\tfrac{1}{6n} - 2ne_n} + \tfrac13\bp{e_k + e_{n-k} - 2e_n + \rho'_k + \rho'_{n-k}} + 2\rho_k + 2\rho_{n-k}.$$
+By (T1) the first three brackets are at most $\frac{1}{60k^3}$, $\frac{1}{60(n-k)^3}$ and $\frac{1}{60n^3}$ in absolute value. The rest is at most $\frac{w}{36} + \frac{1}{18n^2} + \frac w3 + 2w$ by (T1) and (T4). The total is below $3w$.
+
+For $\varphi$, Lemma 3 and its mirror give $\Delta\varphi \geq \frac{1}{12}\bp{\frac{q}{k^2} + \frac{x}{(n-k)^2}}$. By symmetry, take $k \leq \frac n2$. Then $q \geq \frac12$ and $\frac{1}{k^2} \geq \frac w2$, so $\Delta\varphi \geq \frac{w}{48}$. $\square$
+
+## From drifts to the expected time
+
+Let $\sigma = \min\bc{t \geq 0 : X_t \in \{0, 1\}}$. From every interior state the chain is absorbed in one step with probability at least $n^{-n}$, so $\E_k[\sigma] < \infty$. For every function $f$ on the lattice, optional stopping gives
+$$f(k) - \E_k[f(X_\sigma)] = \E_k\bs{\sum_{t < \sigma} \Delta f(nX_t)}.$$
+
+Let $F_\pm = G \pm 144\varphi$. By the Claim, $\Delta F_+ \geq 1 + \frac{1}{6n}$ and $\Delta F_- \leq 1 + \frac{1}{6n}$ at every interior state. Since $F_\pm(0) = F_\pm(n)$,
+$$F_-(k) - F_-(0) \leq \bp{1 + \tfrac{1}{6n}}\E_k[\sigma] \leq F_+(k) - F_+(0).$$
+Since $0 \leq \varphi(k) - \varphi(0) \leq \frac32$,
+$$\abs{\bp{1 + \tfrac{1}{6n}}\E_k[\sigma] - G(k) + G(0)} \leq 216.$$
+
+Now we evaluate $G(k) - G(0)$. Since $u(0) = u(n) = 0$, we have $G(0) = -\frac13\HH_n$. For $1 \leq k \leq n - 1$, (T1) gives
+$$2u(k) + 2u(n-k) = nH(x) - 1 + 2ke_k + 2(n-k)e_{n-k} - 2ne_n = nH(x) + O(1),$$
+$$\HH_k + \HH_{n-k} - \HH_n = \log\frac{k(n-k)}{n} + O(1) = \log(1 + nxq) + O(1).$$
+For the second line, note that $nxq \geq \frac12$. Hence $G(k) - G(0) = nH(x) - \frac13\log(1 + nxq) + O(1)$. In particular $\abs{G(k) - G(0)} = O(n)$, so dividing by $1 + \frac{1}{6n}$ costs only $O(1)$. Therefore, for every lattice state $x = k/n$ (the cases $k = 0, n$ being trivial),
+$$\E_x[\sigma] = nH(x) - \tfrac13\log(1 + nxq) + O(1).$$
+
+## Arbitrary starting point
+
+Since the first step lands on the lattice,
+$$\E_p[\tau_n] = 1 + n\E_p[H(X_1)] - \tfrac13\E_p\bs{\log\bp{1 + nX_1(1 - X_1)}} + O(1).$$
+It remains to replace $X_1$ by $p$ in both terms, at cost $O(1)$. By symmetry, assume $p \leq \frac12$, and write $q = 1 - p$.
+
+**The entropy term.** Concavity of $H$ and $\E_p[X_1] = p$ give $\E_p[H(X_1)] \leq H(p)$. Conversely, the size-bias identity (T3) with $f(j) = \log\frac jn$, together with its mirror image, gives
+$$\tfrac12\bp{H(p) - \E_p[H(X_1)]} = p\,\E\bs{\log\frac{B+1}{np}} + q\,\E\bs{\log\frac{B'+1}{nq}},$$
+with $B \sim \mathrm{Binomial}(n-1, p)$ and $B' \sim \mathrm{Binomial}(n-1, q)$. By concavity of $\log$, the first term is at most $p\log\bp{1 + \frac{q}{np}} \leq \frac qn$, and the second is at most $\frac pn$. Hence $nH(p) - 2 \leq n\E_p[H(X_1)] \leq nH(p)$.
+
+**The logarithmic term.** Since $y \mapsto \log(1 + ny)$ is concave and $\E_p[X_1(1-X_1)] = (1 - \frac1n)pq$, Jensen gives the upper bound $\log(1 + npq)$.
+
+For the lower bound, if $np \leq 8$ there is nothing to prove, since then $\log(1 + npq) \leq \log 9$ and the expectation is nonnegative. Otherwise, let $A = \bc{\abs{X_1 - p} \leq \frac p2}$. By Chebyshev, $\Pr(A^c) \leq \frac{4pq}{np^2} \leq \frac{4}{np}$. On $A$, $X_1 \geq \frac p2$ and $1 - X_1 \geq \frac14 \geq \frac q4$, so $1 + nX_1(1 - X_1) \geq \frac18(1 + npq)$. Therefore
+$$\E_p\bs{\log\bp{1 + nX_1(1-X_1)}} \geq \log(1 + npq) - \log 8 - \frac{4\log(1 + np)}{np} \geq \log(1 + npq) - \log 8 - 4.$$
+This completes the proof. $\blacksquare$
+
+## Remarks
+
+- **Where the $\frac13$ comes from.** It is the Euler–Maclaurin coefficient $\frac1{12}$: Lemma 1 gives an excess drift $2ke_k \approx \frac{1}{6k}$ at state $k$. That excess is cancelled by $\frac13$ of the harmonic-number correction, whose drift is $\frac{1}{2k}$. The correction itself changes by $\frac13\HH_n \approx \frac13 \log n$ between the middle and the boundary.
+- **The other ingredients are bounded.** The term $\varphi$ only absorbs errors of order $\frac{1}{k^2}$, and its range is bounded. The $\frac{1}{6n}$ in the drift changes $\E\sigma = O(n)$ by $O(1)$.
+- **Constants.** The constants ($144$, $216$, and the $O(1)$ terms) are far from optimal and were chosen for convenience.

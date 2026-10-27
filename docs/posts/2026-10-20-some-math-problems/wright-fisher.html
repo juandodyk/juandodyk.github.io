@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-10-23">
+
+<title>Wright–Fisher Fixation Time – Juan Dodyk</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<link href="../../files/img/potato.jpg" rel="icon" type="image/jpeg">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-26d9cc88ab9604001aabd73cb1ea1d8f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<meta name="google-site-verification" content="gkuenT1mZqhsKzlbWaTQQ3tXeCM6DLj1l1PBrT6DWG8">
+
+<meta name="quarto:status" content="draft">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../theme.css">
+<meta property="og:title" content="Wright–Fisher Fixation Time – Juan Dodyk">
+<meta property="og:description" content="Juan Dodyk is an Assistant Professor at Washington University in St.&nbsp;Louis studying climate policy, lobbying, and formal political theory.">
+<meta property="og:site_name" content="Juan Dodyk">
+<meta name="twitter:title" content="Wright–Fisher Fixation Time – Juan Dodyk">
+<meta name="twitter:description" content="Juan Dodyk is an Assistant Professor at Washington University in St.&nbsp;Louis studying climate policy, lobbying, and formal political theory.">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher.html">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top"><div id="quarto-draft-alert" class="alert alert-warning"><i class="bi bi-pencil-square"></i>Draft</div>
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Juan Dodyk</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../research.html"> 
+<span class="menu-text">Research</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../files/Juan_Dodyk_CV.pdf"> 
+<span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../teaching.html"> 
+<span class="menu-text">Teaching</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../notes.html"> 
+<span class="menu-text">Notes</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<div style="display: none">
+\[
+\def\N{\mathbb{N}} \def\Z{\mathbb{Z}} \def\R{\mathbb{R}} \def\C{\mathbb{C}}
+\def\HH{\mathcal{H}} \def\FF{\mathcal{F}} \def\PP{\mathcal{P}}
+\def\E{\mathrm{E}} \def\Var{\mathrm{Var}}
+\def\mm{\mathrm} \def\id{\mathrm{id}} \def\im{\mathop{\mathrm{im}}}
+\def\la{\langle} \def\ra{\rangle} \def\menos{\smallsetminus}
+\def\then{\Rightarrow} \newcommand{\comb}[2]{\binom{#1}{#2}}
+\def\geq{\geqslant} \def\leq{\leqslant}
+\def\subset{\subseteq} \def\empty{\varnothing}
+\def\min{\mathop{\mathrm{min}}\limits} \def\max{\mathop{\mathrm{max}}\limits}
+\def\lim{\mathop{\mathrm{lim}}\limits} \def\sup{\mathop{\mathrm{sup}}\limits}
+\def\inf{\mathop{\mathrm{inf}}\limits}
+\newcommand{\bp}[1]{{\left({#1}\right)}}
+\newcommand{\fp}[1]{{\left({#1}\right)}}
+\newcommand{\bc}[1]{{\left\{{#1}\right\}}}
+\newcommand{\bs}[1]{{\left[{#1}\right]}}
+\newcommand{\rs}[1]{\left.{#1}\right|}
+\newcommand{\norm}[1]{{\left\|{#1}\right\|}}
+\newcommand{\ba}[1]{{\left\langle{#1}\right\rangle}}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\floor}[1]{{\left\lfloor{#1}\right\rfloor}}
+\newcommand{\ceil}[1]{{\left\lceil{#1}\right\rceil}}
+\newcommand{\fld}[2]{\floor{\frac{#1}{#2}}}
+\newcommand{\cld}[2]{\ceil{\frac{#1}{#2}}}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\ul}[1]{\underline{#1}}
+\newcommand{\ubar}[1]{\text{\underbar{\ensuremath{#1}}}}
+\newcommand{\ub}[1]{\underbrace{#1}}
+\newcommand{\wh}[1]{\widehat{#1}}
+\newcommand{\wt}[1]{\widetilde{#1}}
+\newcommand{\an}[1]{{\left\langle{#1}\right\rangle}}
+\newcommand{\ssum}[1]{\sum_{\substack{#1}}}
+\]
+</div>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Wright–Fisher Fixation Time</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 23, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="setup-and-statement" class="level2">
+<h2 class="anchored" data-anchor-id="setup-and-statement">Setup and statement</h2>
+<p>Let <span class="math inline">\(n \geq 2\)</span> and <span class="math inline">\(p \in [0, 1]\)</span>. The Wright–Fisher chain is <span class="math inline">\(X_0 = p\)</span> and, given <span class="math inline">\(X_t = x\)</span>, <span class="math inline">\(nX_{t+1} \sim \mathrm{Binomial}(n, x)\)</span>. Let <span class="math inline">\(\tau_n = \min\bc{t \geq 1 : X_t \in \{0, 1\}}\)</span> and <span class="math inline">\(H(x) = -2x \log x - 2(1 - x) \log(1 - x)\)</span>.</p>
+<p><strong>Claim.</strong> <span class="math inline">\(\E_p[\tau_n] = nH(p) + O(\log n)\)</span>, uniformly in <span class="math inline">\(p\)</span>.</p>
+<p>Here and below, <span class="math inline">\(A = O(B)\)</span> means <span class="math inline">\(\abs A \leq CB\)</span> for an absolute constant <span class="math inline">\(C\)</span>.</p>
+<p>Throughout, <span class="math inline">\(x\)</span> is a lattice point with <span class="math inline">\(\frac1n \leq x \leq 1 - \frac1n\)</span>, <span class="math inline">\(Z \sim \mathrm{Binomial}(n, x)\)</span>, and <span class="math inline">\(B \sim \mathrm{Binomial}(n - 1, x)\)</span>. We use <span class="math inline">\(\E[(Z - nx)^2] = nx(1-x)\)</span> and <span class="math inline">\(\abs{\E[(Z - nx)^3]} \leq nx(1-x)\)</span>, and the same bounds for <span class="math inline">\(B\)</span> with <span class="math inline">\(n - 1\)</span> in place of <span class="math inline">\(n\)</span>.</p>
+</section>
+<section id="idea" class="level2">
+<h2 class="anchored" data-anchor-id="idea">Idea</h2>
+<p>The drift of <span class="math inline">\(nH\)</span> is <span class="math inline">\(1\)</span> up to an error of order <span class="math inline">\(\frac{1}{nx(1-x)}\)</span>, which is large only near the boundary. We absorb that error with <span class="math display">\[\psi(x) = \log\bp{x + \tfrac1n} + \log\bp{1 - x + \tfrac1n},\]</span> which drops by at least that much there. The function <span class="math inline">\(\psi\)</span> is concave and symmetric, so <span class="math inline">\(\log\frac{n+1}{n^2} = \psi(0) \leq \psi \leq \psi(\frac12) = 2\log(\frac12 + \frac1n) \leq 0\)</span>. In particular <span class="math inline">\(-\log n \leq \psi \leq 0\)</span>.</p>
+</section>
+<section id="two-inequalities" class="level2">
+<h2 class="anchored" data-anchor-id="two-inequalities">Two inequalities</h2>
+<p>For <span class="math inline">\(r &gt; -1\)</span>, <span class="math display">\[r - \frac{r^2}{2} + \frac{r^3}{3(1 + r)} \leq \log(1 + r) \leq r - \frac{r^2}{2} + \frac{r^3}{3}.\]</span> In each case the two sides agree at <span class="math inline">\(r = 0\)</span>. The derivative of right minus left is <span class="math inline">\(-\frac{r^3}{3(1+r)^2}\)</span> for the lower bound and <span class="math inline">\(\frac{r^3}{1+r}\)</span> for the upper bound, and each changes sign only at <span class="math inline">\(0\)</span>.</p>
+</section>
+<section id="estimate-1-the-drift-of-nh" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-1-the-drift-of-nh">Estimate 1: the drift of <span class="math inline">\(nH\)</span></h2>
+<p><strong>Estimate 1.</strong> <span class="math inline">\(nH(x) - n\E[H(Z/n)] = 1 + O\bp{\frac{1}{nx(1-x)}}\)</span>.</p>
+<p>Summing over <span class="math inline">\(Z = j \geq 1\)</span> gives <span class="math inline">\(\E[Z f(Z)] = nx \E[f(B + 1)]\)</span>. Apply this with <span class="math inline">\(f(j) = \log\frac jn\)</span>, and do the same for <span class="math inline">\(n - Z \sim \mathrm{Binomial}(n, 1 - x)\)</span>, noting that <span class="math inline">\(n - 1 - B \sim \mathrm{Binomial}(n - 1, 1 - x)\)</span>. This gives <span class="math display">\[\tfrac12\bp{H(x) - \E[H(Z/n)]} = x \E\bs{\log \frac{B + 1}{nx}} + (1 - x) \E\bs{\log \frac{n - B}{n(1 - x)}}.\]</span> We show that the first term is <span class="math inline">\(\frac{1-x}{2n} + O\bp{\frac{1}{n^2x}}\)</span>. By symmetry, the second term is then <span class="math inline">\(\frac{x}{2n} + O\bp{\frac{1}{n^2(1-x)}}\)</span>. Adding the two and multiplying by <span class="math inline">\(2n\)</span> gives Estimate 1.</p>
+<p>Let <span class="math inline">\(\mu = \E[B + 1] = nx + 1 - x \geq nx\)</span>, and split <span class="math display">\[x \E\bs{\log \frac{B + 1}{nx}} = x\log\bp{1 + \frac{1-x}{nx}} + x\E[\log(1 + r)], \qquad r = \frac{B + 1}{\mu} - 1.\]</span> The first piece is <span class="math inline">\(\frac{1-x}{n} + O\bp{\frac{1}{n^2x}}\)</span>.</p>
+<p>For the second piece, <span class="math inline">\(\E[r] = 0\)</span> and <span class="math inline">\(\E[r^2] = \frac{(n-1)x(1-x)}{\mu^2}\)</span>. The cubic terms in the two inequalities are small:</p>
+<ul>
+<li>for the upper bound, <span class="math inline">\(\E[r^3] \leq \frac{nx(1-x)}{\mu^3} = O\bp{\frac{1}{n^2x^2}}\)</span>;</li>
+<li>for the lower bound, use <span class="math inline">\(\frac{r^3}{1 + r} = \frac{(B + 1 - \mu)^3}{\mu^2 (B + 1)}\)</span> and expand the cube. The identity <span class="math inline">\(\frac{1}{j+1}\comb{n-1}{j} = \frac1n\comb{n}{j+1}\)</span> gives <span class="math inline">\(\E\bs{\frac{1}{B+1}} \leq \frac{1}{nx}\)</span>, so <span class="math display">\[\E\bs{\frac{(B + 1 - \mu)^3}{B + 1}} \geq \E[(B+1)^2] - \frac{\mu^3}{nx} = -x(1-x) - 2(1-x)^2 - \frac{(1-x)^3}{nx} \geq -3.\]</span></li>
+</ul>
+<p>Hence <span class="math inline">\(\E[\log(1 + r)] = -\frac12\E[r^2] + O\bp{\frac{1}{n^2x^2}}\)</span>. Finally, <span class="math display">\[\frac x2 \E[r^2] = \frac{(n-1)x^2(1-x)}{2\mu^2} = \frac{1-x}{2n} + O\bp{\frac{1}{n^2x}},\]</span> because <span class="math inline">\(\mu^2 - n(n-1)x^2 = O(nx)\)</span>. Collecting terms, the first term is <span class="math inline">\(\frac{1-x}{n} - \frac{1-x}{2n} + O\bp{\frac{1}{n^2x}}\)</span>, as claimed.</p>
+</section>
+<section id="estimate-2-the-drift-of-psi" class="level2">
+<h2 class="anchored" data-anchor-id="estimate-2-the-drift-of-psi">Estimate 2: the drift of <span class="math inline">\(\psi\)</span></h2>
+<p><strong>Estimate 2.</strong> <span class="math inline">\(\psi(x) - \E[\psi(Z/n)] \geq \frac{1}{24nx(1-x)}\)</span>.</p>
+<p>Apply the upper inequality with <span class="math inline">\(1 + r = \frac{Z + 1}{nx + 1}\)</span>, using <span class="math inline">\(\E[r] = 0\)</span>, <span class="math inline">\(\E[r^2] = \frac{nx(1-x)}{(nx+1)^2}\)</span> and <span class="math inline">\(\E[r^3] \leq \frac{nx(1-x)}{(nx+1)^3}\)</span>. Since <span class="math inline">\(2 \leq nx + 1 \leq 2nx\)</span>, <span class="math display">\[\log\bp{x + \tfrac1n} - \E\bs{\log\tfrac{Z + 1}{n}} = -\E[\log(1 + r)] \geq \frac{nx(1-x)}{(nx+1)^2}\bp{\frac12 - \frac{1}{3(nx+1)}} \geq \frac{nx(1-x)}{3(nx+1)^2} \geq \frac{1-x}{12nx}.\]</span> The second logarithm in <span class="math inline">\(\psi\)</span> drops by at least <span class="math inline">\(\frac{x}{12n(1-x)}\)</span> in the same way. Adding the two and using <span class="math inline">\(x^2 + (1-x)^2 \geq \frac12\)</span> proves Estimate 2.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>By Estimates 1 and 2, there is an absolute constant <span class="math inline">\(C\)</span> such that <span class="math inline">\(F_\pm = nH \pm C\psi\)</span> satisfy, at every non-absorbing lattice point, <span class="math display">\[F_+(x) - \E[F_+(Z/n)] \geq 1, \qquad F_-(x) - \E[F_-(Z/n)] \leq 1.\]</span></p>
+<p>Start from a lattice point <span class="math inline">\(x\)</span>, and let <span class="math inline">\(\sigma = \min\bc{t \geq 0 : X_t \in \{0, 1\}}\)</span>. From every non-absorbing state the chain is absorbed in one step with probability at least <span class="math inline">\(n^{-n}\)</span>, so <span class="math inline">\(\E_x[\sigma] &lt; \infty\)</span>. For any function <span class="math inline">\(f\)</span> on the lattice, optional stopping gives <span class="math display">\[f(x) - \E_x[f(X_\sigma)] = \E_x\bs{\sum_{t &lt; \sigma}\bp{f(X_t) - \E[f(X_{t+1}) \mid X_t]}}.\]</span> Apply this to <span class="math inline">\(F_\pm\)</span>, and use <span class="math inline">\(F_\pm(0) = F_\pm(1) = \pm C\psi(0)\)</span>: <span class="math display">\[F_-(x) + C\psi(0) \leq \E_x[\sigma] \leq F_+(x) - C\psi(0).\]</span> Since <span class="math inline">\(-\log n \leq \psi \leq 0\)</span>, this gives <span class="math inline">\(\abs{\E_x[\sigma] - nH(x)} \leq C\log n\)</span>.</p>
+<p>For arbitrary <span class="math inline">\(p\)</span>, the first step lands on the lattice, so <span class="math inline">\(\E_p[\tau_n] = 1 + \E_p\bs{\E_{X_1}[\sigma]}\)</span>. It remains to compare <span class="math inline">\(\E_p[H(X_1)]\)</span> with <span class="math inline">\(H(p)\)</span>. Since <span class="math inline">\(H\)</span> is concave and <span class="math inline">\(\E_p[X_1] = p\)</span>, Jensen gives <span class="math inline">\(\E_p[H(X_1)] \leq H(p)\)</span>. Conversely, the identity in Estimate 1 holds for every <span class="math inline">\(x \in (0, 1)\)</span>. By concavity of <span class="math inline">\(\log\)</span>, its first term is at most <span class="math inline">\(x\log\frac{\mu}{nx} \leq \frac{1-x}{n}\)</span>, and its second term is at most <span class="math inline">\(\frac xn\)</span>. So <span class="math inline">\(H(p) - \E_p[H(X_1)] \leq \frac2n\)</span>, and <span class="math display">\[\abs{\E_p[\tau_n] - nH(p)} \leq C\log n + 1. \qquad \blacksquare\]</span></p>
+<p>The <span class="math inline">\(\log n\)</span> is the right order: see the sharp version, which shows <span class="math inline">\(\E_p[\tau_n] = nH(p) - \frac13 \log\bp{1 + np(1-p)} + O(1)\)</span>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script>
+function applyLinkBehavior() {
+  var internalHosts = new Set([
+    window.location.hostname,
+    "juandodyk.github.io",
+    "www.juandodyk.github.io",
+    "127.0.0.1",
+    "localhost"
+  ]);
+
+  document.querySelectorAll("a[href]").forEach(function (link) {
+    var href = link.getAttribute("href");
+    if (!href) return;
+
+    var url;
+    try {
+      url = new URL(href, window.location.href);
+    } catch (_error) {
+      return;
+    }
+
+    if (url.protocol !== "http:" && url.protocol !== "https:") return;
+
+    if (internalHosts.has(url.hostname)) {
+      link.removeAttribute("target");
+      return;
+    }
+
+    link.setAttribute("target", "_blank");
+    var rel = new Set((link.getAttribute("rel") || "").split(/\s+/).filter(Boolean));
+    rel.add("noopener");
+    rel.add("noreferrer");
+    link.setAttribute("rel", Array.from(rel).join(" "));
+  });
+}
+
+if (document.readyState === "complete") {
+  applyLinkBehavior();
+} else {
+  window.addEventListener("load", applyLinkBehavior, { once: true });
+}
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/juandodyk\.github\.io");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

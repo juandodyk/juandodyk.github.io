@@ -1,0 +1,75 @@
+---
+title: "Wright–Fisher Fixation Time"
+date: 2026-10-23
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher.html"
+draft: true
+---
+
+## Setup and statement
+
+Let $n \geq 2$ and $p \in [0, 1]$. The Wright–Fisher chain is $X_0 = p$ and, given $X_t = x$, $nX_{t+1} \sim \mathrm{Binomial}(n, x)$. Let $\tau_n = \min\bc{t \geq 1 : X_t \in \{0, 1\}}$ and $H(x) = -2x \log x - 2(1 - x) \log(1 - x)$.
+
+**Claim.** $\E_p[\tau_n] = nH(p) + O(\log n)$, uniformly in $p$.
+
+Here and below, $A = O(B)$ means $\abs A \leq CB$ for an absolute constant $C$.
+
+Throughout, $x$ is a lattice point with $\frac1n \leq x \leq 1 - \frac1n$, $Z \sim \mathrm{Binomial}(n, x)$, and $B \sim \mathrm{Binomial}(n - 1, x)$. We use $\E[(Z - nx)^2] = nx(1-x)$ and $\abs{\E[(Z - nx)^3]} \leq nx(1-x)$, and the same bounds for $B$ with $n - 1$ in place of $n$.
+
+## Idea
+
+The drift of $nH$ is $1$ up to an error of order $\frac{1}{nx(1-x)}$, which is large only near the boundary. We absorb that error with
+$$\psi(x) = \log\bp{x + \tfrac1n} + \log\bp{1 - x + \tfrac1n},$$
+which drops by at least that much there. The function $\psi$ is concave and symmetric, so $\log\frac{n+1}{n^2} = \psi(0) \leq \psi \leq \psi(\frac12) = 2\log(\frac12 + \frac1n) \leq 0$. In particular $-\log n \leq \psi \leq 0$.
+
+## Two inequalities
+
+For $r > -1$,
+$$r - \frac{r^2}{2} + \frac{r^3}{3(1 + r)} \leq \log(1 + r) \leq r - \frac{r^2}{2} + \frac{r^3}{3}.$$
+In each case the two sides agree at $r = 0$. The derivative of right minus left is $-\frac{r^3}{3(1+r)^2}$ for the lower bound and $\frac{r^3}{1+r}$ for the upper bound, and each changes sign only at $0$.
+
+## Estimate 1: the drift of $nH$
+
+**Estimate 1.** $nH(x) - n\E[H(Z/n)] = 1 + O\bp{\frac{1}{nx(1-x)}}$.
+
+Summing over $Z = j \geq 1$ gives $\E[Z f(Z)] = nx \E[f(B + 1)]$. Apply this with $f(j) = \log\frac jn$, and do the same for $n - Z \sim \mathrm{Binomial}(n, 1 - x)$, noting that $n - 1 - B \sim \mathrm{Binomial}(n - 1, 1 - x)$. This gives
+$$\tfrac12\bp{H(x) - \E[H(Z/n)]} = x \E\bs{\log \frac{B + 1}{nx}} + (1 - x) \E\bs{\log \frac{n - B}{n(1 - x)}}.$$
+We show that the first term is $\frac{1-x}{2n} + O\bp{\frac{1}{n^2x}}$. By symmetry, the second term is then $\frac{x}{2n} + O\bp{\frac{1}{n^2(1-x)}}$. Adding the two and multiplying by $2n$ gives Estimate 1.
+
+Let $\mu = \E[B + 1] = nx + 1 - x \geq nx$, and split
+$$x \E\bs{\log \frac{B + 1}{nx}} = x\log\bp{1 + \frac{1-x}{nx}} + x\E[\log(1 + r)], \qquad r = \frac{B + 1}{\mu} - 1.$$
+The first piece is $\frac{1-x}{n} + O\bp{\frac{1}{n^2x}}$.
+
+For the second piece, $\E[r] = 0$ and $\E[r^2] = \frac{(n-1)x(1-x)}{\mu^2}$. The cubic terms in the two inequalities are small:
+
+- for the upper bound, $\E[r^3] \leq \frac{nx(1-x)}{\mu^3} = O\bp{\frac{1}{n^2x^2}}$;
+- for the lower bound, use $\frac{r^3}{1 + r} = \frac{(B + 1 - \mu)^3}{\mu^2 (B + 1)}$ and expand the cube. The identity $\frac{1}{j+1}\comb{n-1}{j} = \frac1n\comb{n}{j+1}$ gives $\E\bs{\frac{1}{B+1}} \leq \frac{1}{nx}$, so
+$$\E\bs{\frac{(B + 1 - \mu)^3}{B + 1}} \geq \E[(B+1)^2] - \frac{\mu^3}{nx} = -x(1-x) - 2(1-x)^2 - \frac{(1-x)^3}{nx} \geq -3.$$
+
+Hence $\E[\log(1 + r)] = -\frac12\E[r^2] + O\bp{\frac{1}{n^2x^2}}$. Finally,
+$$\frac x2 \E[r^2] = \frac{(n-1)x^2(1-x)}{2\mu^2} = \frac{1-x}{2n} + O\bp{\frac{1}{n^2x}},$$
+because $\mu^2 - n(n-1)x^2 = O(nx)$. Collecting terms, the first term is $\frac{1-x}{n} - \frac{1-x}{2n} + O\bp{\frac{1}{n^2x}}$, as claimed.
+
+## Estimate 2: the drift of $\psi$
+
+**Estimate 2.** $\psi(x) - \E[\psi(Z/n)] \geq \frac{1}{24nx(1-x)}$.
+
+Apply the upper inequality with $1 + r = \frac{Z + 1}{nx + 1}$, using $\E[r] = 0$, $\E[r^2] = \frac{nx(1-x)}{(nx+1)^2}$ and $\E[r^3] \leq \frac{nx(1-x)}{(nx+1)^3}$. Since $2 \leq nx + 1 \leq 2nx$,
+$$\log\bp{x + \tfrac1n} - \E\bs{\log\tfrac{Z + 1}{n}} = -\E[\log(1 + r)] \geq \frac{nx(1-x)}{(nx+1)^2}\bp{\frac12 - \frac{1}{3(nx+1)}} \geq \frac{nx(1-x)}{3(nx+1)^2} \geq \frac{1-x}{12nx}.$$
+The second logarithm in $\psi$ drops by at least $\frac{x}{12n(1-x)}$ in the same way. Adding the two and using $x^2 + (1-x)^2 \geq \frac12$ proves Estimate 2.
+
+## Conclusion
+
+By Estimates 1 and 2, there is an absolute constant $C$ such that $F_\pm = nH \pm C\psi$ satisfy, at every non-absorbing lattice point,
+$$F_+(x) - \E[F_+(Z/n)] \geq 1, \qquad F_-(x) - \E[F_-(Z/n)] \leq 1.$$
+
+Start from a lattice point $x$, and let $\sigma = \min\bc{t \geq 0 : X_t \in \{0, 1\}}$. From every non-absorbing state the chain is absorbed in one step with probability at least $n^{-n}$, so $\E_x[\sigma] < \infty$. For any function $f$ on the lattice, optional stopping gives
+$$f(x) - \E_x[f(X_\sigma)] = \E_x\bs{\sum_{t < \sigma}\bp{f(X_t) - \E[f(X_{t+1}) \mid X_t]}}.$$
+Apply this to $F_\pm$, and use $F_\pm(0) = F_\pm(1) = \pm C\psi(0)$:
+$$F_-(x) + C\psi(0) \leq \E_x[\sigma] \leq F_+(x) - C\psi(0).$$
+Since $-\log n \leq \psi \leq 0$, this gives $\abs{\E_x[\sigma] - nH(x)} \leq C\log n$.
+
+For arbitrary $p$, the first step lands on the lattice, so $\E_p[\tau_n] = 1 + \E_p\bs{\E_{X_1}[\sigma]}$. It remains to compare $\E_p[H(X_1)]$ with $H(p)$. Since $H$ is concave and $\E_p[X_1] = p$, Jensen gives $\E_p[H(X_1)] \leq H(p)$. Conversely, the identity in Estimate 1 holds for every $x \in (0, 1)$. By concavity of $\log$, its first term is at most $x\log\frac{\mu}{nx} \leq \frac{1-x}{n}$, and its second term is at most $\frac xn$. So $H(p) - \E_p[H(X_1)] \leq \frac2n$, and
+$$\abs{\E_p[\tau_n] - nH(p)} \leq C\log n + 1. \qquad \blacksquare$$
+
+The $\log n$ is the right order: see [the sharp version](wright-fisher-sharp.qmd), which shows $\E_p[\tau_n] = nH(p) - \frac13 \log\bp{1 + np(1-p)} + O(1)$.

@@ -1,0 +1,41 @@
+---
+title: "Wright–Fisher Fixation Time: A Short Proof"
+date: 2026-10-24
+date-format: "MMMM D, YYYY"
+canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher-short.html"
+draft: true
+---
+
+Let $n \geq 2$ and $p \in [0, 1]$. The Wright–Fisher chain is $X_0 = p$ and, given $X_t = x$, $nX_{t+1} \sim \mathrm{Binomial}(n, x)$. Let $\tau_n = \min\bc{t \geq 0 : X_t \in \{0, 1\}}$ and $H(x) = -2x \log x - 2(1 - x) \log(1 - x)$.
+
+**Claim.** $\E_p[\tau_n] = nH(p) + O(n^{3/4}\log n)$, uniformly in $p$.
+
+## The drift of $nH$
+
+Let $Z \sim \mathrm{Binomial}(n, x)$, $y = Z/n$, and $v = nx(1-x)$, so $\E[(Z - nx)^2] = v$, $\E[(Z - nx)^3] = v(1 - 2x)$, and $\E[(Z - nx)^4] \leq v + 3v^2$. Let $D(x) = n\bp{H(x) - \E[H(y)]}$ be the expected drop of $nH$ in one step. Since $\E[y] = x$, we may subtract the tangent line of $H$ at $x$:
+$$D(x) = n\E\bs{H(x) + H'(x)(y - x) - H(y)} = 2n\E[\mathrm{KL}(y \,\|\, x)],$$
+because the gap between $H$ and its tangent line is twice the Kullback–Leibler divergence $\mathrm{KL}(y \,\|\, x) = y \log\frac yx + (1 - y)\log\frac{1-y}{1-x}$. By $\log u \leq u - 1$, $0 \leq \mathrm{KL}(y \,\|\, x) \leq \frac{(y - x)^2}{x(1-x)}$.
+
+**Bulk.** If $\delta \leq x \leq 1 - \delta$, then $D(x) = 1 + O(\delta^{-3}n^{-1})$.
+
+We have $H''(x) = -\frac{2}{x(1-x)}$, $H'''(x) = \frac{2}{x^2} - \frac{2}{(1-x)^2}$, and $\abs{H''''} \leq \frac{64}{\delta^3}$ on $[\frac\delta2, 1 - \frac\delta2]$. Write
+$$H(y) = H(x) + H'(x)(y - x) + \tfrac12 H''(x)(y - x)^2 + \tfrac16 H'''(x)(y - x)^3 + R(y).$$
+If $\abs{y - x} \leq \frac\delta2$, Taylor gives $\abs{R(y)} \leq \frac{8}{3\delta^3}(y - x)^4$. Otherwise, since $x(1-x) \geq \frac\delta2$, the bound on $\mathrm{KL}$ gives $\abs{R(y)} \leq \frac6\delta(y - x)^2 + \frac{1}{3\delta^2}\abs{y - x}^3 \leq \frac{25}{\delta^3}(y - x)^4$. Taking expectations, the quadratic term contributes exactly $1$ to $D(x)$, the cubic term contributes $-\frac{(1 - 2x)^2}{3nx(1-x)} = O(\delta^{-1}n^{-1})$, and $R$ contributes $O(\delta^{-3}n^{-1})$ by $\E[(y - x)^4] \leq n^{-2}$.
+
+**Lower bound.** At lattice points $0 < x < 1$, $D(x) \geq \frac{1}{12}$.
+
+By symmetry let $x \leq \frac12$, so $nx \geq 1$ and $\frac{nx}{2} \leq v \leq nx$. By Taylor's formula with integral remainder, $\mathrm{KL}(y \,\|\, x) = \int_x^y \frac{y - s}{s(1-s)}\,ds \geq \frac{(y - x)^2}{2\max(x, y)}$, so
+$$D(x) \geq \E\bs{\frac{(Z - nx)^2}{nx + \abs{Z - nx}}}.$$
+By Cauchy–Schwarz, $v^2 \leq \E\bs{\frac{(Z - nx)^2}{nx + \abs{Z - nx}}}\E\bs{(Z - nx)^2(nx + \abs{Z - nx})}$. Again by Cauchy–Schwarz, $\E\abs{Z - nx}^3 \leq \sqrt{v(v + 3v^2)} \leq 2(nx)^2$, so the last expectation is at most $3(nx)^2$. Hence $D(x) \geq \frac{1}{12}$.
+
+## Conclusion
+
+The chain is absorbed in one step with probability at least $n^{-n}$, so $\E_p[\tau_n] < \infty$, and for bounded $g$ with $g(0) = g(1) = 0$, optional stopping gives
+$$g(p) = \E_p\Bigl[\sum_{t < \tau_n}\bp{g(X_t) - \E[g(X_{t+1}) \mid X_t]}\Bigr].$$
+
+Let $\delta = n^{-1/4}$, and call a step *bulk* if $\delta \leq X_t \leq 1 - \delta$.
+
+Take $g = n\min(H, H(\delta))$. It is concave, so every drop is nonnegative. At a non-bulk step, $g(X_t) = nH(X_t)$ and $g \leq nH$, so the drop is at least $D(X_t)$. Hence the sum of $D(X_t)$ over non-bulk steps has expectation at most $nH(\delta)$, and by the lower bound the expected number of non-bulk steps is at most $1 + 12nH(\delta)$.
+
+Take $g = nH$: $nH(p) = \E_p\bs{\sum_{t < \tau_n} D(X_t)}$. Bulk steps contribute $1 + O(\delta^{-3}n^{-1})$ each, and non-bulk steps contribute $O(nH(\delta))$ in total. So the expected number of bulk steps is $nH(p) + O(\delta^{-3} + nH(\delta))$, and
+$$\E_p[\tau_n] = nH(p) + O\bp{\delta^{-3} + nH(\delta) + 1} = nH(p) + O(n^{3/4}\log n). \qquad \blacksquare$$

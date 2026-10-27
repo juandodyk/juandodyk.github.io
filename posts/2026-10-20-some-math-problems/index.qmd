@@ -1,9 +1,89 @@
 ---
-title: "Some Math Problems"
+title: "Some Math Problems I Like"
 date: 2026-10-20
 date-format: "MMMM D, YYYY"
 canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/"
-draft: true
 ---
 
-Hello.
+# Problems
+
+**Problem 1.** Let $d \leq k \leq n$ be positive integers and $x \in \R_{\geq 0}^{n \times d}$. Prove that there is $I \subset \{1, \ldots, n\}$ with $|I| \leq k$ such that
+$$\sum_{i \in I} x_{ij} \geq \frac{k - d + 1}{n} \sum_{i = 1}^n x_{ij}$$
+for all $j = 1, \ldots, d.$
+
+**Problem 2.** Let $n \geq 1$ be an integer, and $G$ be an undirected simple graph with at most $2n - 1$ vertices such that for every vertex $v$, there is a $n$-clique (i.e., a complete subgraph with $n$ vertices) that doesn't include $v$. Show that $G$ has a $n+1$-clique.
+
+**Problem 3.** Let $n$ be a positive integer, and $f : [0, n] \to \R$ be continuous and such that $f(0) = f(n)$. Show that there are at least $n$ pairs $\{x, y\} \subset [0, n]$ with $x \neq y$, $f(x) = f(y)$, and $x - y \in \Z$.
+
+
+# Solutions
+
+## Problem 1
+
+**Problem.** Let $d \leq k \leq n$ be positive integers and $x \in \R_{\geq 0}^{n \times d}$. Prove that there is $I \subset \{1, \ldots, n\}$ with $|I| \leq k$ such that
+$$\sum_{i \in I} x_{ij} \geq \frac{k - d + 1}{n} \sum_{i = 1}^n x_{ij}$$
+for all $j = 1, \ldots, d.$
+
+*Solution.* We can normalize $\sum_{i = 1}^n x_{ij} = 1$ for all $j$. Consider the set $$W = \bc{w \in \R^n : 0 \leq w_i \leq 1, \sum_{i = 1}^n w_i \leq k - d + 1, \sum_{i = 1}^n w_i x_{ij} \geq \frac{k - d + 1}{n} \text{ for all } j}.$$
+Clearly $(\frac{k - d + 1}{n}, \ldots, \frac{k - d + 1}{n}) \in W$, so it's nonempty. Let $w \in W$ with the smallest number $r$ of fractional coordinates $w_i \not\in \{0, 1\}$.
+
+Consider the $n - r$ vectors $e_i$ for $w_i \in \{0, 1\}$, plus the $d$ vectors $(x_{ij})_{i=1}^n$ for $j=1,\ldots,d$. If $n - r + d \leq n - 1$, i.e., $r \geq d + 1$, there is $v \in \R^n$ nonzero that is perpendicular to all these vectors. This means: $v_i = 0$ if $w_i \in \{0, 1\}$, $v_i \neq 0$ for some $i$, and $\sum_i v_i x_{ij} = 0$ for all $j$. Now, $w + tv \in W$ for $t \in \R$ close to 0. There is $\ol t > 0$ minimum, and $\ul t < 0$ maximum, such that $w_i + tv_i \in \{0, 1\}$ for some $i$ with $w_i$ fractional when $t = \ol t$ or $\ul t$. If $\sum_i v_i \geq 0$, take $t = \ul t$; otherwise, take $t = \ol t$. In both cases, $w + tv \in W$ and it has at most $r - 1$ fractional coordinates. This contradicts that $r$ is minimum. Therefore, $r < d + 1$, i.e., $r \leq d$.
+
+Take $I = \{i : w_i > 0\}$. I'll show that $|I| \leq k$. If $r = 0$ then $|I| = \sum_i w_i \leq k - d + 1 \leq k$. Suppose that $r \geq 1$. We have
+$$\sum_{i : w_i = 1} 1 = \sum_{i : w_i \in \{0, 1\}} w_i
+< \sum_{i : w_i \in \{0, 1\}} w_i + \sum_{i : 0 < w_i < 1} w_i = \sum_i w_i \leq k - d + 1;$$
+since it's an integer, $\sum_{i : w_i = 1} 1 \leq k - d$.
+Therefore, $|I| = \sum_{i : w_i = 1} 1 + r \leq k - d + d = k$, as desired.
+
+Now, for each $j$, $\sum_{i \in I} x_{ij} \geq \sum_{i} w_i x_{ij} \geq \frac{k - d + 1}{n}$, as desired. $\blacksquare$
+
+*Comment.* This is not always best possible, but it's best possible whenever $n = dp$ and $k = dq - 1$ with $p \geq q$ positive integers. We have $\frac{k - d + 1}{n} = \frac{d(q-1)}{dp} = \frac{q-1}{p}$. Take
+$$x^\top = \overset{\displaystyle
+\begin{matrix}\overbrace{\hphantom{1 \; \cdots \; 1}}^{p} & \overbrace{\hphantom{1 \; \cdots \; 1}}^{p} & \phantom{\cdots} & \overbrace{\hphantom{1 \; \cdots \; 1}}^{p}\end{matrix}}{\begin{pmatrix}
+1 \; \cdots \; 1 & 0 \; \cdots \; 0 & \cdots & 0 \; \cdots \; 0 \\
+0 \; \cdots \; 0 & 1 \; \cdots \; 1 & \cdots & 0 \; \cdots \; 0 \\
+\vdots & \vdots & \ddots & \vdots \\
+0 \; \cdots \; 0 & 0 \; \cdots \; 0 & \cdots & 1 \; \cdots \; 1
+\end{pmatrix}}.$$
+Suppose that $I \subset \{1, \ldots, n\}$ with $|I| \leq k$. We have $\sum_j \sum_{i \in I} x_{ij} = \sum_{i \in I} \sum_j x_{ij} = \sum_{i \in I} 1 = |I| \leq k$, so there is $j$ with $\sum_{i \in I} x_{ij} \leq k/d < q$; since it's an integer, $\sum_{i \in I} x_{ij} \leq q - 1 = \frac{q-1}{p} \sum_i x_{ij}$. So $\frac{k - d + 1}{n}$ is best possible in this case.
+
+
+## Problem 2
+
+**Problem.** Let $n \geq 1$ be an integer, and $G$ be an undirected simple graph with at most $2n - 1$ vertices such that for every vertex $v$, there is a $n$-clique (i.e., a complete subgraph with $n$ vertices) that doesn't include $v$. Show that $G$ has a $n+1$-clique.
+
+*Solution.* By induction. The case $n=1$ is trivial. Suppose $n \geq 2$. There is an $n$-clique $C_1$. For $i \geq 1$, until $C_1 \cap \cdots \cap C_i = \empty$, take $u \in C_1 \cap \cdots \cap C_i$ and find an $n$-clique $C_{i+1}$ with $u \not\in C_{i+1}$. We obtain $n$-cliques $C_1, \ldots, C_k$ with $k \geq 2$, and $A := C_1 \cap \cdots \cap C_{k-1} \neq \empty$ but $A \cap C_k = \empty$.
+
+Let $B := (C_1 \cup \cdots \cup C_{k-1}) \menos A$. If $B$ has at most $2(n - |A|) - 1$ vertices then the inductive hypothesis applies, since each vertex in $B$ is outside of some $C_i \menos A$, which is a $n - |A|$-clique. Therefore, $B$ has a $n - |A| + 1$-clique $C$. Now, $A \cup C$ is a $n+1$-clique, and we are done.
+
+Suppose that $|B| \geq 2(n - |A|)$. We have
+$$
+\begin{aligned}
+2n - 1 &\geq |A \cup B \cup C_k| \\
+&= |A| + |B \cup C_k| \\
+&= |A| + |B| + |C_k| - |B \cap C_k| \\
+&\geq |A| + 2(n - |A|) + n - |B \cap C_k| \\
+&= 3n - |A| - |B \cap C_k|,
+\end{aligned}
+$$
+so $|A| + |B \cap C_k| \geq n + 1$. But $A \cup (B \cap C_k)$ is a clique, and we are done. $\blacksquare$
+
+
+## Problem 3
+
+**Problem.** Let $n$ be a positive integer, and $f : [0, n] \to \R$ be continuous and such that $f(0) = f(n)$. Show that there are at least $n$ pairs $x, y \in [0, n]$ with $x \neq y$, $f(x) = f(y)$, and $x - y \in \Z$.
+
+*Solution.* By induction. The case $n = 1$ is trivial. Suppose that $n \geq 2$. We have $0 = f(n) - f(0) = \sum_{k = 0}^{n-1} (f(k+1) - f(k))$, so there is $k$ such that $f(k) = f(k+1)$, or $f(k+1) - f(k)$ and $f(k+2) - f(k+1)$ have opposite signs; either way, there is $r \in [k, k+1]$ such that $f(r+1) = f(r)$.
+
+Take $g : [0,n-1] \to \R$ given by $g(x) = f(x)$ for $x \leq r$ and $g(x) = f(x+1)$ for $x>r$. It satisfies the inductive hypothesis, so there are $n-1$ pairs $x, y \in [0,n-1]$ with $x-y\in\Z$, $x\neq y$ and $g(x)=g(y)$. By adding $1$ to numbers in $[r,n-1]$ we put all pairs in $[0,n]$, and they satisfy $f(x)=f(y)$. Add the pair $\{r, r+1\}$ and we obtain $n$ pairs, as desired. $\blacksquare$
+
+
+## Problem 4
+
+**Problem.** Let $n \geq 2$ an integer, $X_0 = p \in [0, 1]$ and $X_{t+1} = B/n$ with $B | X_t \sim \text{Binomial}(n, X_t)$ for all $t \geq 0$, and $\tau = \min\{t \geq 0 : X_t \in \{0, 1\}\}$. Show that $$\E(\tau) = H(p) n + o(n),$$ where $H(p) = -2p \log(p) - 2 (1-p) \log(1-p)$.
+
+*Solution.* Notice that $H$ is concave and $H(0) = H(1) = 0$. The idea is to study $D(x) = H(x) - \E[H(X)] \geq 0$ by Jensen, where $X = B/n$, $B \sim \text{Binomial}(n, x)$. We'll show that most of the time $D(X_t) \approx 1/n$, so $H(p) = \E[H(X_0) - H(X_\tau)] = \E\bs{\sum_{t<\tau} D(X_t)} \approx \E(\tau)/n$ and therefore $\E(\tau) \approx H(p) n$.
+
+*Claim 1.* We have $D(x) = 1/n + O(\delta^{-3} n^{-3/2})$ if $x \in [\delta, 1 - \delta]$.
+
+Proof. 
