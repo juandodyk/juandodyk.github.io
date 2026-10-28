@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap");
 
 :root {
   --paper: #ffffff;
@@ -7,9 +7,8 @@
   --rule: #dddddd;
   --link: #1f628a;
   --link-hover: #16445f;
-  --sans: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Helvetica, Arial, sans-serif;
-  --serif: var(--sans);
+  --sans: "Helvetica Neue", Helvetica, "Inter", Arial, sans-serif;
+  --serif: "Libre Baskerville", Georgia, Times, serif;
 }
 
 html,
@@ -25,11 +24,9 @@ html {
 
 body {
   font-family: var(--serif);
-  font-size: 1rem;
-  font-stretch: 97%;
-  font-weight: 430;
-  line-height: 1.55;
-  font-feature-settings: "ss04" on, "ss05" on, "ss07" on;
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -41,12 +38,14 @@ a {
   color: var(--link);
   text-decoration-line: underline;
   text-decoration-thickness: 0.06em;
+  text-decoration-color: rgba(31, 98, 138, 0.3);
   text-underline-offset: 0.16em;
 }
 
 a:hover,
 a:focus {
   color: var(--link-hover);
+  text-decoration-color: currentColor;
 }
 
 a:focus-visible,
@@ -61,7 +60,7 @@ p {
 }
 
 strong {
-  font-weight: 590;
+  font-weight: 700;
 }
 
 .navbar {
@@ -80,7 +79,7 @@ strong {
 .navbar-brand {
   color: var(--ink) !important;
   font-size: 1.16rem;
-  font-weight: 520;
+  font-weight: 400;
   letter-spacing: 0;
   text-decoration: none;
 }
@@ -119,10 +118,24 @@ strong {
 }
 
 main.content {
-  width: min(100% - 3rem, 760px);
+  width: min(100% - 3rem, 860px);
   margin: 0 auto;
-  padding-top: clamp(3rem, 6vw, 5rem);
   padding-bottom: 5rem;
+}
+
+/* The id beats Quarto's "#quarto-content > * { padding-top: 0 }" below 992px */
+#quarto-content > main.content {
+  padding-top: clamp(3rem, 6vw, 5rem);
+}
+
+/* Let every page without sidebars use the same width as the home page */
+body.fullcontent main.content {
+  grid-column: page-start / page-end;
+}
+
+/* Outside the home page and map posts, keep text to a readable measure */
+main.content:not(:has(.home-page, .interactive-map-layout)) {
+  width: min(100% - 3rem, 740px);
 }
 
 #title-block-header {
@@ -135,7 +148,7 @@ main.content > header h1 {
   color: var(--ink);
   font-family: var(--sans);
   font-size: clamp(2rem, 4vw, 2.7rem);
-  font-weight: 520;
+  font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1.1;
 }
@@ -160,18 +173,34 @@ main.content h2 {
   border-bottom: 1px solid var(--rule);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1.15rem;
-  font-weight: 550;
+  font-size: 1.35rem;
+  font-weight: 400;
   letter-spacing: -0.01em;
   line-height: 1.3;
+}
+
+/* Top-level headings inside post bodies (not the page title or home name) */
+main.content section.level1 > h1:not(.home-portrait h1) {
+  margin: 3.5rem 0 1.2rem;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+/* A ## that directly follows a # shouldn't add its own large top gap */
+main.content section.level1 > h1 + section.level2 > h2:first-child {
+  margin-top: 1.5rem;
 }
 
 main.content h3 {
   margin-top: 2.2rem;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 1.02rem;
-  font-weight: 520;
+  font-size: 1.15rem;
+  font-weight: 400;
   line-height: 1.35;
 }
 
@@ -221,9 +250,7 @@ a[role="doc-noteref"] {
 
 /* Home */
 
-main.content:has(.home-page) {
-  grid-column: page-start / page-end;
-  width: min(100% - 3rem, 980px);
+#quarto-content > main.content:has(.home-page) {
   padding-top: clamp(2.8rem, 5vw, 4.6rem);
 }
 
@@ -258,7 +285,7 @@ main.content:has(.home-page) > #title-block-header {
   color: var(--ink);
   font-family: var(--sans);
   font-size: clamp(2rem, 4vw, 2.75rem);
-  font-weight: 520;
+  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.08;
 }
@@ -275,8 +302,6 @@ main.content:has(.home-page) > #title-block-header {
 .home-biography {
   max-width: 660px;
   padding-top: 0;
-  font-size: 1rem;
-  line-height: 1.58;
 }
 
 .home-biography > p {
@@ -295,8 +320,8 @@ main.content:has(.home-page) > #title-block-header {
 /* Home sections */
 
 .home-sections {
-  width: min(100%, 920px);
-  margin: 1.5rem auto 0;
+  width: 100%;
+  margin: 1.5rem 0 0;
 }
 
 main.content .home-sections > section > h2 {
@@ -379,12 +404,18 @@ main.content .home-sections .compact-teaching h3 {
   font-size: 1.02rem;
 }
 
+.research-entry a > strong,
+.compact-entry a > strong {
+  font-weight: 400;
+}
+
 .research-meta {
   font-size: 0.88rem;
 }
 
 .research-links {
-  font-size: 0.8rem;
+  font-family: var(--sans);
+  font-size: 0.85rem;
 }
 
 .work-list ul {
@@ -423,32 +454,6 @@ table th {
   color: #444444;
   font-size: 0.76rem;
   font-weight: 600;
-}
-
-#math-camp-2026-at-washu > table.table {
-  width: max-content;
-  max-width: 100%;
-  margin-bottom: 2rem;
-  font-size: 0.9rem;
-}
-
-#math-camp-2026-at-washu > table.table th {
-  font-size: 0.9rem;
-}
-
-#math-camp-2026-at-washu > table.table th:first-child,
-#math-camp-2026-at-washu > table.table td:first-child {
-  padding-left: 0;
-  padding-right: 1.5rem;
-}
-
-#math-camp-2026-at-washu > table.table th:last-child,
-#math-camp-2026-at-washu > table.table td:last-child {
-  padding-right: 0;
-}
-
-#math-camp-2026-at-washu > table.table tbody td {
-  border-bottom: 0;
 }
 
 .section-context {
@@ -645,6 +650,11 @@ main.content:has(.interactive-map-layout) {
 }
 
 @media (max-width: 767.98px) {
+  /* Quarto's grid adds wide side gutters on phones; use our own instead */
+  body.fullcontent main.content {
+    grid-column: screen-start / screen-end;
+  }
+
   .navbar {
     min-height: 3.8rem;
   }
@@ -668,10 +678,15 @@ main.content:has(.interactive-map-layout) {
   }
 
   main.content,
-  main.content:has(.home-page) {
+  main.content:has(.home-page),
+  main.content:not(:has(.home-page, .interactive-map-layout)) {
     width: min(100% - 2rem, 760px);
-    padding-top: 2.5rem;
     padding-bottom: 4rem;
+  }
+
+  #quarto-content > main.content,
+  #quarto-content > main.content:has(.home-page) {
+    padding-top: 2.5rem;
   }
 
   #title-block-header {
@@ -710,7 +725,8 @@ main.content:has(.interactive-map-layout) {
   }
 
   main.content,
-  main.content:has(.home-page) {
+  main.content:has(.home-page),
+  main.content:not(:has(.home-page, .interactive-map-layout)) {
     width: calc(100% - 1.8rem);
   }
 
