@@ -21,7 +21,7 @@ And later:
 
 My answer is: if there were an individual way out, women would take it, and that would be that. The problem is precisely that there is no individual way out. The only way out is collective.
 
-## The argument
+## The Argument
 
 One can think about this as follows. A woman and a man are a couple. The man mistreats the woman. The psychoanalyst says the woman should simply leave him. Magui replies: if the woman keeps desiring the man, we can't expect her to leave him. I understand that desire can be shaped (evidence: different people have different tastes, and the distribution of tastes changes over time), but one can't change one's desire at will, at least not in the short run. So women have to live with the desire they "received." Here is one story: women are socialized so that their desire for men doesn't decline when they are mistreated. This is, of course, good for men, since it lets them mistreat women without consequences. A story with a similar result is that men are socialized to desire submissive women. This gives women an incentive not to respond to mistreatment, so as not to become less desirable, and gives men an incentive to mistreat, because it reveals whether the woman is submissive.
 
@@ -38,7 +38,7 @@ If *one* woman decides to put an end to mistreatment on her own, she can threate
 
 Put differently: if a man expects the women he can date to accept mistreatment, he will mistreat. If he sees that enough women around him don't accept it, it pays him to be an "ally." In this model men are allies out of convenience, because they expect a sanction otherwise; if they could, they would go back to their old ways. We don't need a change in values, men becoming good against their own interest. What we need is a change in expectations: that both men and women expect women to sanction mistreatment. The way out is not a "cultural change" but a change in collective behavior.
 
-## Some implications
+## Some Implications
 
 The model can be enriched as follows. In reality, when a woman leaves her partner she doesn't get a random partner; she gets one from her social circle (Tinder makes this less true, but let's leave that aside). We live fairly segregated by class, education, and so on, so patriarchal "regions" can coexist with non-patriarchal ones. If the men you know don't mistreat, you know you can leave the jerk who mistreats you, because you'll find someone better. But this is not true for all women. The advice "leave him, he's a jerk" may work in some social circles and not in others.
 
@@ -46,7 +46,7 @@ Also, "feminist" women, defined as the ones who don't accept mistreatment, perha
 
 One could add inequality, or the fact that for some women leaving is especially costly. And surely there are far better ways to model this. My methodological point is that analytical individualism can help us think about these things.
 
-## The model
+## The Model
 
 There is an infinite set of women $W$ and an infinite set of men $M$ of the same cardinality, both uncountable. A *matching* is a set $R$ of pairs $(w,m)$ with $w \in W$ and $m \in M$ such that if $(w,m), (w',m') \in R$, then $w = w'$ if and only if $m = m'$. Time is discrete and infinite, $t = 0, 1, \ldots$. The game starts with an arbitrary matching $R_0$, and at each time $t$ there is a matching $R_t$. If $(w,m) \in R_t$, they simultaneously choose actions $x$ and $y$, respectively, each $0$ or $1$. The woman gets utility $xr - yc$ and the man gets $xr + yc$. The woman chooses whether to stay in the relationship ($x = 1$) or not ($x = 0$), and the man chooses whether to mistreat ($y = 1$) or not ($y = 0$). If the relationship goes on, both get $r > 0$, the benefit of the relationship. If the man mistreats, he gets an extra benefit $c$ and imposes a cost $c$ on the woman. I assume $c > 0$ (the man benefits from mistreatment and the woman suffers it) and $r > c$ (even with mistreatment, the woman prefers to be in a couple). This last assumption is questionable, but if the woman preferred to be alone we would need to bring coercion into the model, and everything changes. The model only says something about the case in which women can leave freely.
 
