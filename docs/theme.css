@@ -342,10 +342,6 @@ main.content .home-sections #teaching > h2 {
   margin-top: 1.7rem;
 }
 
-.home-sections .compact-teaching {
-  margin-top: 1rem;
-}
-
 .home-research-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
