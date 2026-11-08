@@ -3,16 +3,16 @@ title: "Wright–Fisher Fixation Time: The Logarithmic Correction"
 date: 2026-10-23
 date-format: "MMMM D, YYYY"
 canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/wright-fisher-sharp.html"
-draft: true
+draft: false
 ---
 
 ## Statement
 
-The Wright–Fisher chain is $X_0 = p$ and, given $X_t = x$, $X_{t+1} = Z/n$ with $Z \sim \mathrm{Binomial}(n, x)$. Let $\tau_n = \min\bc{t \geq 1 : X_t \in \{0, 1\}}$ and $H(x) = -2x\log x - 2(1-x)\log(1-x)$.
+The Wright–Fisher chain is $X_0 = p$ and, given $X_t = x$, $X_{t+1} = Z/n$ with $Z \sim \mathrm{Binomial}(n, x)$. Let $\tau_n = \min\bc{t \geq 0 : X_t \in \{0, 1\}}$ and $H(x) = -x\log x - (1-x)\log(1-x)$.
 
 **Theorem.** There is an absolute constant $C$ such that for all $n \geq 2$ and $p \in [0, 1]$,
-$$\abs{\E_p[\tau_n] - nH(p) + \tfrac13 \log\bp{1 + np(1-p)}} \leq C.$$
-In particular, $\E_p[\tau_n] = nH(p) - \frac13 \log n + O(1)$ for fixed $p \in (0, 1)$.
+$$\abs{\E_p[\tau_n] - 2nH(p) + \tfrac13 \log\bp{1 + np(1-p)}} \leq C.$$
+In particular, $\E_p[\tau_n] = 2nH(p) - \frac13 \log n + O(1)$ for fixed $p \in (0, 1)$.
 
 Numerically, the quantity inside the absolute value lies in $[-0.96, 0.03]$ for $n \in \{10, 50, 200, 1000, 3000\}$, at every lattice starting point and at several non-lattice ones.
 
@@ -22,15 +22,32 @@ The idea is to work on the lattice with harmonic numbers $\HH_m = \sum_{j=1}^m \
 
 On the lattice we write states as integers $k \in \{0, \ldots, n\}$, with $x = k/n$, $q = 1 - x$ and $Z \sim \mathrm{Binomial}(n, x)$. For a function $f$ on $\{0, \ldots, n\}$, let $\Delta f(k) = f(k) - \E[f(Z)]$ be its expected drop in one step. For $1 \leq k \leq n - 1$, let $w = \frac{1}{k^2} + \frac{1}{(n-k)^2}$. Note that $w \geq \frac{4}{n^2}$.
 
-**(T1) Euler–Maclaurin.** $\HH_m = \log m + \gamma + \frac{1}{2m} - e_m$, where $0 \leq \frac{1}{12m^2} - e_m \leq \frac{1}{120m^4}$.
+**(T1) Euler–Maclaurin.** There is a constant $\gamma$ (Euler's constant) such that for all $m \geq 1$, $\HH_m = \log m + \gamma + \frac{1}{2m} - e_m$, where $0 \leq \frac{1}{12m^2} - e_m \leq \frac{1}{120m^4}$. In particular, $0 \leq e_m \leq \frac{1}{12m^2}$.
+
+*Proof.* Let $d_j = \frac{1}{2j} + \frac{1}{2(j+1)} - \log\bp{1 + \frac1j}$. This is the error of the trapezoidal rule for $\int_j^{j+1} \frac{dt}{t}$. Put $s = \frac{1}{2j+1}$. Then $\frac1j = \frac{2s}{1-s}$, $\frac{1}{j+1} = \frac{2s}{1+s}$ and $1 + \frac1j = \frac{1+s}{1-s}$, so
+expanding $\frac{2s}{1-s^2}$ and $\log\frac{1+s}{1-s}$ in powers of $s$,
+$$d_j = \frac{2s}{1-s^2} - \log\frac{1+s}{1-s} = \sum_{i \geq 1} \frac{4i}{2i+1}\, s^{2i+1}.$$
+In the same way,
+$$a_j := \frac{1}{12j^2} - \frac{1}{12(j+1)^2} = \frac{4s^3}{3(1-s^2)^2} = \sum_{i \geq 1} \frac{4i}{3}\, s^{2i+1},$$
+$$b_j := \frac{1}{120j^4} - \frac{1}{120(j+1)^4} = \frac{16s^5(1+s^2)}{15(1-s^2)^4},$$
+and the coefficient of $s^{2i+1}$ in $b_j$ is $\frac{4i}{3} \cdot \frac{2(i-1)(2i-1)}{15}$ for $i \geq 2$ (and $0$ for $i = 1$).
+Comparing coefficients gives $a_j - b_j \leq d_j \leq a_j$. The upper bound holds because $\frac{4i}{2i+1} \leq \frac{4i}{3}$. For the lower bound, the coefficients agree for $i = 1, 2$ (they are $\frac43$ and $\frac85$), and for $i \geq 3$ the coefficient of $a_j - b_j$ is negative, since $\frac{2(i-1)(2i-1)}{15} \geq \frac43$.
+
+In particular $\sum_j d_j < \infty$, so we can set $e_m = \sum_{j \geq m} d_j$. Summing the bounds over $j \geq m$, where the sums of $a_j$ and $b_j$ telescope, gives $\frac{1}{12m^2} - \frac{1}{120m^4} \leq e_m \leq \frac{1}{12m^2}$. Finally, $\HH_m - \log m - \frac{1}{2m} + e_m$ does not depend on $m$: going from $m$ to $m + 1$ changes it by $\frac{1}{m+1} - \log\bp{1 + \frac1m} - \frac{1}{2(m+1)} + \frac{1}{2m} - d_m = 0$. Call this constant $\gamma$. $\square$
 
 **(T2) Binomial identities.** If $B \sim \mathrm{Binomial}(m, x)$, then
 $$\E[\HH_B] = \sum_{r=1}^m \frac{1 - q^r}{r}, \qquad \E\bs{\frac{1}{B + 1}} = \frac{1 - q^{m+1}}{(m+1)x}.$$
 *Proof.* Write $\HH_B = \int_0^1 \frac{1 - t^B}{1 - t}\,dt$ and $\frac{1}{B+1} = \int_0^1 t^B\,dt$, use $\E[t^B] = (q + xt)^m$, and substitute $u = q + xt$. $\square$
 
-**(T3) Size bias.** $\E[Z f(Z)] = k\,\E[f(B + 1)]$ with $B \sim \mathrm{Binomial}(n - 1, x)$.
+**(T3) Size bias.** $\E[Z f(Z)] = nx\,\E[f(B + 1)]$ with $B \sim \mathrm{Binomial}(n - 1, x)$. This holds for any $x \in [0, 1]$; on the lattice, $nx = k$.
+
+*Proof.* Since $j\binom nj = n\binom{n-1}{j-1}$,
+$$\E[Zf(Z)] = \sum_{j=1}^n j\binom nj x^j q^{n-j} f(j) = nx\sum_{j=1}^n \binom{n-1}{j-1} x^{j-1} q^{n-j} f(j).$$
+The $j = 0$ term vanishes, so $f(0)$ never enters and need not be defined. $\square$
 
 **(T4) Tails.** $\sum_{r \geq 1} \frac{q^r}{r} = -\log x = \log\frac nk$. For $N \geq n$, $\sum_{r \geq N} \frac{q^r}{r} \leq \frac1N \cdot \frac{q^N}{x} \leq \frac{q^n}{k}$. Also $q^n \leq e^{-k} \leq \frac{1}{k^2}$.
+
+*Proof.* The first identity is the series of $-\log(1 - q)$. For the second, bound $\frac1r \leq \frac1N$ and sum the geometric series, then use $N \geq n$ and $nx = k$. For the third, $(1 - \frac kn)^n \leq e^{-k}$ because $1 - y \leq e^{-y}$, and $e^k \geq 1 + k + \frac{k^2}{2} + \frac{k^3}{6} \geq k^2$ for $k \geq 1$. $\square$
 
 ## Three drift computations
 
@@ -41,7 +58,10 @@ Fix $1 \leq k \leq n - 1$.
 *Proof.* By (T3) and (T2), using $\sum_{r=1}^{n-1}\frac1r = \HH_n - \frac1n$,
 $$\E[u(Z)] = k\HH_n - k\E\bs{\HH_B + \tfrac{1}{B+1}} = x + k\sum_{r=1}^{n-1}\frac{q^r}{r} - 1 + q^n.$$
 By (T4), $\sum_{r=1}^{n-1} \frac{q^r}{r} = \log\frac nk - T$ with $0 \leq kT \leq q^n$. By (T1), $\HH_n - \HH_k - \log\frac nk = \frac{1}{2n} - \frac{1}{2k} - e_n + e_k$. Therefore
-$$\Delta u(k) = k\bp{\tfrac{1}{2n} - \tfrac{1}{2k} - e_n + e_k} + 1 - x + (kT - q^n) = \tfrac q2 + ke_k - ke_n + (kT - q^n). \qquad \square$$
+$$\begin{aligned}
+\Delta u(k) &= k\bp{\tfrac{1}{2n} - \tfrac{1}{2k} - e_n + e_k} + 1 - x + (kT - q^n) \\
+&= \tfrac q2 + ke_k - ke_n + (kT - q^n). \qquad \square
+\end{aligned}$$
 
 **Lemma 2.** $\Delta \HH_k = \frac{1}{2k} - \frac{1}{2n} - e_k + e_n - \rho'$ with $0 \leq \rho' \leq \frac{e^{-k}}{k}$.
 
@@ -57,20 +77,23 @@ Since $(k+1)q^n \leq (k+1)e^{-k} \leq \frac2e$, $\frac{n}{n+1} \geq \frac23$ and
 
 Define, on $\{0, \ldots, n\}$,
 $$G(k) = 2u(k) + 2u(n-k) - \tfrac13\bp{\HH_k + \HH_{n-k}}, \qquad \varphi(k) = -\frac{1}{k+1} - \frac{1}{n-k+1}.$$
-Both are symmetric under $k \leftrightarrow n - k$. Since $Z \leftrightarrow n - Z$ swaps $x$ and $q$, the drift of $u(n - k)$ is given by Lemma 1 with $x$ and $q$ swapped, and similarly for $\HH_{n-k}$.
+Both are symmetric under $k \leftrightarrow n - k$. Since $Z \leftrightarrow n - Z$ swaps $x$ and $q$, the drift of $u(n - k)$ is given by Lemma 1 at state $n - k$, that is, with $k \leftrightarrow n - k$ and $x \leftrightarrow q$, and similarly for $\HH_{n-k}$.
 
 **Claim.** For $1 \leq k \leq n - 1$,
 $$\abs{\Delta G(k) - 1 - \tfrac{1}{6n}} \leq 3w, \qquad \Delta\varphi(k) \geq \tfrac{w}{48}.$$
 
-*Proof.* Add up Lemmas 1 and 2. The main terms are $2 \cdot \frac q2 + 2 \cdot \frac x2 = 1$ and $-\frac13\bp{\frac{1}{2k} + \frac{1}{2(n-k)} - \frac1n}$. The $e_n$ terms from Lemma 1 combine to $-2ne_n$. Grouping the rest,
-$$\Delta G - 1 - \tfrac{1}{6n} = \bs{2ke_k - \tfrac{1}{6k}} + \bs{2(n-k)e_{n-k} - \tfrac{1}{6(n-k)}} + \bs{\tfrac{1}{6n} - 2ne_n} + \tfrac13\bp{e_k + e_{n-k} - 2e_n + \rho'_k + \rho'_{n-k}} + 2\rho_k + 2\rho_{n-k}.$$
-By (T1) the first three brackets are at most $\frac{1}{60k^3}$, $\frac{1}{60(n-k)^3}$ and $\frac{1}{60n^3}$ in absolute value. The rest is at most $\frac{w}{36} + \frac{1}{18n^2} + \frac w3 + 2w$ by (T1) and (T4). The total is below $3w$.
+*Proof.* Write $\rho_k$ and $\rho'_k$ for the error terms of Lemmas 1 and 2 at state $k$, and $\rho_{n-k}$ and $\rho'_{n-k}$ for those of their mirror images. Add up Lemmas 1 and 2. The main terms are $2 \cdot \frac q2 + 2 \cdot \frac x2 = 1$ and $-\frac13\bp{\frac{1}{2k} + \frac{1}{2(n-k)} - \frac1n}$. The $e_n$ terms from Lemma 1 combine to $-2ne_n$. Grouping the rest,
+$$\begin{aligned}
+\Delta G - 1 - \tfrac{1}{6n} &= \bs{2ke_k - \tfrac{1}{6k}} + \bs{2(n-k)e_{n-k} - \tfrac{1}{6(n-k)}} + \bs{\tfrac{1}{6n} - 2ne_n} \\
+&\quad + \tfrac13\bp{e_k + e_{n-k} - 2e_n + \rho'_k + \rho'_{n-k}} + 2\rho_k + 2\rho_{n-k}.
+\end{aligned}$$
+By (T1) the first three brackets are at most $\frac{1}{60k^3}$, $\frac{1}{60(n-k)^3}$ and $\frac{1}{60n^3}$ in absolute value. The rest is at most $\frac{w}{36} + \frac{1}{18n^2} + \frac w3 + 2w$ by (T1) and (T4). Using $\frac{1}{k^3}, \frac{1}{(n-k)^3} \leq w$ and $\frac{1}{n^2} \leq \frac w4$, the total is below $3w$.
 
 For $\varphi$, Lemma 3 and its mirror give $\Delta\varphi \geq \frac{1}{12}\bp{\frac{q}{k^2} + \frac{x}{(n-k)^2}}$. By symmetry, take $k \leq \frac n2$. Then $q \geq \frac12$ and $\frac{1}{k^2} \geq \frac w2$, so $\Delta\varphi \geq \frac{w}{48}$. $\square$
 
 ## From drifts to the expected time
 
-Let $\sigma = \min\bc{t \geq 0 : X_t \in \{0, 1\}}$. From every interior state the chain is absorbed in one step with probability at least $n^{-n}$, so $\E_k[\sigma] < \infty$. For every function $f$ on the lattice, optional stopping gives
+When the chain starts at a lattice state $k$, write $\sigma = \tau_n$ and $\E_k$ for the expectation. From every interior state the chain is absorbed in one step with probability at least $n^{-n}$, so $\E_k[\sigma] < \infty$. For every function $f$ on the lattice, optional stopping gives
 $$f(k) - \E_k[f(X_\sigma)] = \E_k\bs{\sum_{t < \sigma} \Delta f(nX_t)}.$$
 
 Let $F_\pm = G \pm 144\varphi$. By the Claim, $\Delta F_+ \geq 1 + \frac{1}{6n}$ and $\Delta F_- \leq 1 + \frac{1}{6n}$ at every interior state. Since $F_\pm(0) = F_\pm(n)$,
@@ -79,25 +102,28 @@ Since $0 \leq \varphi(k) - \varphi(0) \leq \frac32$,
 $$\abs{\bp{1 + \tfrac{1}{6n}}\E_k[\sigma] - G(k) + G(0)} \leq 216.$$
 
 Now we evaluate $G(k) - G(0)$. Since $u(0) = u(n) = 0$, we have $G(0) = -\frac13\HH_n$. For $1 \leq k \leq n - 1$, (T1) gives
-$$2u(k) + 2u(n-k) = nH(x) - 1 + 2ke_k + 2(n-k)e_{n-k} - 2ne_n = nH(x) + O(1),$$
+$$2u(k) + 2u(n-k) = 2nH(x) - 1 + 2ke_k + 2(n-k)e_{n-k} - 2ne_n = 2nH(x) + O(1),$$
 $$\HH_k + \HH_{n-k} - \HH_n = \log\frac{k(n-k)}{n} + O(1) = \log(1 + nxq) + O(1).$$
-For the second line, note that $nxq \geq \frac12$. Hence $G(k) - G(0) = nH(x) - \frac13\log(1 + nxq) + O(1)$. In particular $\abs{G(k) - G(0)} = O(n)$, so dividing by $1 + \frac{1}{6n}$ costs only $O(1)$. Therefore, for every lattice state $x = k/n$ (the cases $k = 0, n$ being trivial),
-$$\E_x[\sigma] = nH(x) - \tfrac13\log(1 + nxq) + O(1).$$
+For the second line, note that $nxq \geq \frac12$. Hence $G(k) - G(0) = 2nH(x) - \frac13\log(1 + nxq) + O(1)$. In particular $\abs{G(k) - G(0)} = O(n)$, so dividing by $1 + \frac{1}{6n}$ costs only $O(1)$. Therefore, for every lattice state $x = k/n$ (the cases $k = 0, n$ being trivial),
+$$\E_x[\sigma] = 2nH(x) - \tfrac13\log(1 + nxq) + O(1).$$
 
 ## Arbitrary starting point
 
-Since the first step lands on the lattice,
-$$\E_p[\tau_n] = 1 + n\E_p[H(X_1)] - \tfrac13\E_p\bs{\log\bp{1 + nX_1(1 - X_1)}} + O(1).$$
+If $p \in \{0, 1\}$ there is nothing to prove. Otherwise $\tau_n \geq 1$ and the first step lands on the lattice, so
+$$\E_p[\tau_n] = 1 + 2n\E_p[H(X_1)] - \tfrac13\E_p\bs{\log\bp{1 + nX_1(1 - X_1)}} + O(1).$$
 It remains to replace $X_1$ by $p$ in both terms, at cost $O(1)$. By symmetry, assume $p \leq \frac12$, and write $q = 1 - p$.
 
-**The entropy term.** Concavity of $H$ and $\E_p[X_1] = p$ give $\E_p[H(X_1)] \leq H(p)$. Conversely, the size-bias identity (T3) with $f(j) = \log\frac jn$, together with its mirror image, gives
-$$\tfrac12\bp{H(p) - \E_p[H(X_1)]} = p\,\E\bs{\log\frac{B+1}{np}} + q\,\E\bs{\log\frac{B'+1}{nq}},$$
-with $B \sim \mathrm{Binomial}(n-1, p)$ and $B' \sim \mathrm{Binomial}(n-1, q)$. By concavity of $\log$, the first term is at most $p\log\bp{1 + \frac{q}{np}} \leq \frac qn$, and the second is at most $\frac pn$. Hence $nH(p) - 2 \leq n\E_p[H(X_1)] \leq nH(p)$.
+**The entropy term.** Concavity of $H$ and $\E_p[X_1] = p$ give $\E_p[H(X_1)] \leq H(p)$. Conversely, the size-bias identity (T3) with $f(j) = \log\frac jn$, together with its mirror image, gives (by (T3), $f(0)$ is never needed, which amounts to the convention $0 \log 0 = 0$ in $H$)
+$$H(p) - \E_p[H(X_1)] = p\,\E\bs{\log\frac{B+1}{np}} + q\,\E\bs{\log\frac{B'+1}{nq}},$$
+with $B \sim \mathrm{Binomial}(n-1, p)$ and $B' \sim \mathrm{Binomial}(n-1, q)$. By concavity of $\log$, the first term is at most $p\log\bp{1 + \frac{q}{np}} \leq \frac qn$, and the second is at most $\frac pn$. Hence $2nH(p) - 2 \leq 2n\E_p[H(X_1)] \leq 2nH(p)$.
 
 **The logarithmic term.** Since $y \mapsto \log(1 + ny)$ is concave and $\E_p[X_1(1-X_1)] = (1 - \frac1n)pq$, Jensen gives the upper bound $\log(1 + npq)$.
 
 For the lower bound, if $np \leq 8$ there is nothing to prove, since then $\log(1 + npq) \leq \log 9$ and the expectation is nonnegative. Otherwise, let $A = \bc{\abs{X_1 - p} \leq \frac p2}$. By Chebyshev, $\Pr(A^c) \leq \frac{4pq}{np^2} \leq \frac{4}{np}$. On $A$, $X_1 \geq \frac p2$ and $1 - X_1 \geq \frac14 \geq \frac q4$, so $1 + nX_1(1 - X_1) \geq \frac18(1 + npq)$. Therefore
-$$\E_p\bs{\log\bp{1 + nX_1(1-X_1)}} \geq \log(1 + npq) - \log 8 - \frac{4\log(1 + np)}{np} \geq \log(1 + npq) - \log 8 - 4.$$
+$$\begin{aligned}
+\E_p\bs{\log\bp{1 + nX_1(1-X_1)}} &\geq \log(1 + npq) - \log 8 - \frac{4\log(1 + np)}{np} \\
+&\geq \log(1 + npq) - \log 8 - 4.
+\end{aligned}$$
 This completes the proof. $\blacksquare$
 
 ## Remarks

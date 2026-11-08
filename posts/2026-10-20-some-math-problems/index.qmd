@@ -15,6 +15,8 @@ for all $j = 1, \ldots, d.$
 
 **Problem 3.** Let $n$ be a positive integer, and $f : [0, n] \to \R$ be continuous and such that $f(0) = f(n)$. Show that there are at least $n$ pairs $\{x, y\} \subset [0, n]$ with $x \neq y$, $f(x) = f(y)$, and $x - y \in \Z$.
 
+**Problem 4.** Let $p \in (0, 1)$, $n \geq 2$ be an integer, $X_0 = p$, $X_{t+1} = B/n$ with $B | X_t \sim \text{Binomial}(n, X_t)$ for all $t \geq 0$, and $\tau = \min\{t \geq 0 : X_t \in \{0, 1\}\}$. Show that $$\lim_{n\to\infty}\frac1n\E(\tau) = 2 H(p),$$ where $H(p) = -p \log(p) - (1-p) \log(1-p)$.
+
 
 # Solutions
 
@@ -80,10 +82,29 @@ Take $g : [0,n-1] \to \R$ given by $g(x) = f(x)$ for $x \leq r$ and $g(x) = f(x+
 
 ## Problem 4
 
-**Problem.** Let $n \geq 2$ an integer, $X_0 = p \in [0, 1]$ and $X_{t+1} = B/n$ with $B | X_t \sim \text{Binomial}(n, X_t)$ for all $t \geq 0$, and $\tau = \min\{t \geq 0 : X_t \in \{0, 1\}\}$. Show that $$\E(\tau) = H(p) n + o(n),$$ where $H(p) = -2p \log(p) - 2 (1-p) \log(1-p)$.
+**Problem.** Let $p \in (0, 1)$, $n \geq 2$ be an integer, $X_0 = p$, $X_{t+1} = B/n$ with $B | X_t \sim \text{Binomial}(n, X_t)$ for all $t \geq 0$, and $\tau = \min\{t \geq 0 : X_t \in \{0, 1\}\}$. Show that $$\lim_{n\to\infty}\frac1n\E(\tau) = 2 H(p),$$ where $H(p) = -p \log(p) - (1-p) \log(1-p)$.
 
-*Solution.* Notice that $H$ is concave and $H(0) = H(1) = 0$. The idea is to study $D(x) = H(x) - \E[H(X)] \geq 0$ by Jensen, where $X = B/n$, $B \sim \text{Binomial}(n, x)$. We'll show that most of the time $D(X_t) \approx 1/n$, so $H(p) = \E[H(X_0) - H(X_\tau)] = \E\bs{\sum_{t<\tau} D(X_t)} \approx \E(\tau)/n$ and therefore $\E(\tau) \approx H(p) n$.
+*Solution.* Notice that $H$ is concave and $H(0) = H(1) = 0$. The idea is to study $D(x) = \E[H(x) - H(X)] \geq 0$, where $X = B/n$, $B \sim \text{Binomial}(n, x)$. We'll show that most of the time $D(X_t) \approx \frac{1}{2n}$, so $H(p) = \E[H(X_0) - H(X_\tau)] = \E\bs{\sum_{t<\tau} D(X_t)} \approx \frac{1}{2n} \E(\tau)$ and therefore $\E(\tau) \approx 2 H(p) n$.
 
-*Claim 1.* We have $D(x) = 1/n + O(\delta^{-3} n^{-3/2})$ if $x \in [\delta, 1 - \delta]$.
+We use Taylor:
+$$\begin{aligned}
+H&(X) - H(x) = (X - x) H'(x) + \frac12 (X - x)^2 H''(x) \\
+&+ \frac16 (X - x)^3 H'''(x)
++ \frac16 (X - x)^4 \int_0^1 t^3 H^{(4)}(tx+(1-t)X) \, dt,
+\end{aligned}$$
+where $H'''(x) = \frac{1}{x^2} -\frac{1}{(1-x)^2}$ and $H^{(4)}(x) = -\frac{2}{x^3} - \frac{2}{(1-x)^3}$. Using the bounds $\frac{t}{tx+(1-t)X} \leq \frac1x$ and $\frac{t}{t(1-x)+(1-t)(1-X)} \leq \frac1{1-x}$ we get $0 \geq t^3 H^{(4)}(tx+(1-t)X) \geq H^{(4)}(x).$ Taking expectations,
+$$0 \leq D(x) - \frac{1}{2n} + \frac{1-4q}{6n^2q} \leq \frac{(1-3q) (1+3(n-2)q)}{3n^3 q^2}$$
+where $q=x(1-x)$ using $\E[(X-x)^3] = \frac{q(1-2x)}{n^2}$ and $\E[(X-x)^4] = \frac{3q^2}{n^2} + \frac{q(1-6q)}{n^3}$.
 
-Proof. 
+For $x \in [\frac1n,1-\frac1n]$ we get $D(x) \geq \frac{2n^2+n-4}{6n^2(n-1)} \geq \frac{1}{3n}$ and $D(x) = O(\frac1n)$.
+
+Fix $\delta = \frac1{\sqrt{n}} \leq \frac14$ (take $n\geq\max\{16,\frac1p,\frac{1}{1-p}\}$) and $\tau_0 = \sum_{t<\tau} 1_{X_t(1-X_t)<\delta}$. We want an upper bound for $\E(\tau_0)$. Let $g(x)=\min\{H(x),H(\ul x)\}$, where $\ul x (1 - \ul x) = \delta$. It's concave, so $\E[g(x) - g(X)] \geq 0$. If $0<x(1-x)<\delta$ then $g(x) = H(x)$ and $\E[g(X)]\leq\E[H(X)]$, so $\E[g(x)-g(X)] \geq D(x) \geq \frac{1}{3n}$. Therefore,
+$$g(X_0) = \E\bs{\sum_{t<\tau} (g(X_t) - g(X_{t+1}))} \geq \E\bs{\sum_{t<\tau} 1_{X_t(1-X_t)<\delta} \frac{1}{3n}} = \frac{1}{3n} \E(\tau_0),$$
+and $\E(\tau_0) \leq 3n H(\ul x)$.
+
+Now, for $q \geq \delta$ we get $D(x) = \frac{1}{2n} + O(\frac{1}{n^2\delta})$. Therefore,
+$$\begin{aligned}
+H(X_0) &= \E\bs{\sum_{t<\tau} D(X_t)} = \E\bs{\sum_{t<\tau} 1_{X_t(1-X_t)<\delta} D(X_t) + \sum_{t<\tau} 1_{X_t(1-X_t)\geq\delta} D(X_t)} \\
+&= O\bp{\frac{1}{n}} \E(\tau_0) + \frac{1}{2n} \bp{1 + O\bp{\frac{1}{n\delta}}} \E(\tau-\tau_0),
+\end{aligned}$$
+so $\E(\tau) = 2nH(p) + O(1/\delta) + O(nH(\ul x)) = 2nH(p) + O(\sqrt{n} \log n)$, as desired. (For the sharper asymptotics $\E(\tau) = 2nH(p) - \frac13 \log n + O(1)$, see [this note](wright-fisher-sharp.qmd).)
