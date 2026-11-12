@@ -3,6 +3,11 @@ title: "Some Math Problems I Like"
 date: 2026-10-20
 date-format: "MMMM D, YYYY"
 canonical-url: "https://juandodyk.github.io/posts/2026-10-20-some-math-problems/"
+format:
+  html:
+    toc: true
+    toc-title: "Contents"
+    toc-expand: true
 ---
 
 # Problems

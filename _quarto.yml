@@ -51,5 +51,7 @@ format:
     link-external-newwindow: false
     include-in-header: _includes/verification.html
     include-before-body: _includes/macros.html
-    include-after-body: _includes/link-behavior.html
+    include-after-body:
+      - _includes/link-behavior.html
+      - _includes/toc-inline.html
     lang: en

@@ -255,6 +255,31 @@ if (document.readyState === "complete") {
   window.addEventListener("load", applyLinkBehavior, { once: true });
 }
 </script>
+<script>
+// Quarto hides the margin TOC on narrow screens. Put a collapsible copy of it
+// under the title block; theme.css shows it only below 992px.
+(function () {
+  var toc = document.querySelector("#TOC > ul");
+  var header = document.getElementById("title-block-header");
+  if (!toc || !header) return;
+
+  var list = toc.cloneNode(true);
+  list.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
+  list.querySelectorAll("a").forEach(function (a) {
+    a.removeAttribute("class");
+    a.removeAttribute("data-scroll-target");
+  });
+
+  var details = document.createElement("details");
+  details.className = "toc-inline";
+  var summary = document.createElement("summary");
+  var title = document.getElementById("toc-title");
+  summary.textContent = title ? title.textContent : "Contents";
+  details.appendChild(summary);
+  details.appendChild(list);
+  header.insertAdjacentElement("afterend", details);
+})();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

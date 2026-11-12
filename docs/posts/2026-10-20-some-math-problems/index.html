@@ -99,7 +99,7 @@ window.Quarto = {
 <link rel="canonical" href="https://juandodyk.github.io/posts/2026-10-20-some-math-problems/">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -146,7 +146,22 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#problems" id="toc-problems" class="nav-link active" data-scroll-target="#problems">Problems</a></li>
+  <li><a href="#solutions" id="toc-solutions" class="nav-link" data-scroll-target="#solutions">Solutions</a>
+  <ul class="collapse">
+  <li><a href="#problem-1" id="toc-problem-1" class="nav-link" data-scroll-target="#problem-1">Problem 1</a></li>
+  <li><a href="#problem-2" id="toc-problem-2" class="nav-link" data-scroll-target="#problem-2">Problem 2</a></li>
+  <li><a href="#problem-3" id="toc-problem-3" class="nav-link" data-scroll-target="#problem-3">Problem 3</a></li>
+  <li><a href="#problem-4" id="toc-problem-4" class="nav-link" data-scroll-target="#problem-4">Problem 4</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 <div style="display: none">
@@ -320,6 +335,31 @@ if (document.readyState === "complete") {
 } else {
   window.addEventListener("load", applyLinkBehavior, { once: true });
 }
+</script>
+<script>
+// Quarto hides the margin TOC on narrow screens. Put a collapsible copy of it
+// under the title block; theme.css shows it only below 992px.
+(function () {
+  var toc = document.querySelector("#TOC > ul");
+  var header = document.getElementById("title-block-header");
+  if (!toc || !header) return;
+
+  var list = toc.cloneNode(true);
+  list.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
+  list.querySelectorAll("a").forEach(function (a) {
+    a.removeAttribute("class");
+    a.removeAttribute("data-scroll-target");
+  });
+
+  var details = document.createElement("details");
+  details.className = "toc-inline";
+  var summary = document.createElement("summary");
+  var title = document.getElementById("toc-title");
+  summary.textContent = title ? title.textContent : "Contents";
+  details.appendChild(summary);
+  details.appendChild(list);
+  header.insertAdjacentElement("afterend", details);
+})();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
